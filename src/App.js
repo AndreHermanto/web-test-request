@@ -1,21 +1,30 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import {
+  Grid,
+  Col,
+  Row,
+  Panel
+} from 'react-bootstrap';
+
 import './App.css';
 
-class App extends Component {
+// This will use ref later on, so I leave it to use the default class assigned by create-react-app.
+class App extends React.Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      
+      <div>
+        <Grid>
+          <Row>
+            <Col md={10} mdOffset={1}>
+              <h4>Web Test Request Base</h4>
+            </Col>
+          </Row>
+        </Grid>
       </div>
+      
     );
   }
-}
+};
 
 export default App;
