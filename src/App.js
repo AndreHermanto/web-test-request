@@ -1,15 +1,14 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
   Grid,
   Col,
-  Row,
-  Panel
+  Row
 } from 'react-bootstrap';
 
 import './App.css';
 
 // This will use ref later on, so I leave it to use the default class assigned by create-react-app.
-class App extends React.Component {
+class App extends Component {
   render() {
     return (
       
