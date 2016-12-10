@@ -5,9 +5,10 @@ import {
   Row
 } from 'react-bootstrap';
 
+import RequestPage from './Containers/RequestPage/RequestPage'
+
 import './App.css';
 
-// This will use ref later on, so I leave it to use the default class assigned by create-react-app.
 class App extends Component {
   render() {
     return (
@@ -16,7 +17,7 @@ class App extends Component {
         <Grid>
           <Row>
             <Col md={10} mdOffset={1}>
-              <h4>Web Test Request Base</h4>
+              <RequestPage />
             </Col>
           </Row>
         </Grid>
