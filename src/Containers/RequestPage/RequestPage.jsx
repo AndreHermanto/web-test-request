@@ -18,28 +18,17 @@ class RequestPage extends Component {
     };
   }
   
-  componentWillMount() {
-    this.getList('#','testList'); // # is only temporary url
-  }
-  
-  /**
-   * A shared function to retrieve the option list from the gateway
-   * e.g., retrieving the test list and gene list
-   *
-   * @param {String} url - url of the api call
-   * @param {String} stateChild - name of the state that the list applies
-   */
-  getList(url, stateChild) {
+  componentDidMount() {
     var func = this;
-    fetch(url)
+    fetch('#')
       .then(
-        (response) => response.text()
+        (response) => response.json()
       )
       .then(
         (json) => {
           func.setState(
             (state) => {
-              state[stateChild] = json;
+              state.testList = json;
               return state;
             }
           );
@@ -47,26 +36,11 @@ class RequestPage extends Component {
       );
   }
   
-  /**
-   * A shared function to generate options from a list contained in state.
-   * e.g., generating options for the test list and gene list
-   *
-   * @param {String} stateChild - name of the state that the list applies
-   */
-  genOptions(stateChild) {
-    this.state[stateChild].map(
-      (item) => {
-        return <option value={item}>{item}</option>
-      }
-    );
-  }
-  
   render() {
     return (
       
       <div>
         <h4>Web Test Request</h4>
-
         <FormGroup>
           <ControlLabel>Available Test List</ControlLabel>
           <FormControl 
@@ -75,7 +49,13 @@ class RequestPage extends Component {
             name="test"
           >
             
-          {this.genOptions('testList')}
+          {
+            this.state.testList.map(
+              (test) => {
+                return <option value={test}>{test}</option>
+              }
+            )
+          }
             
           </FormControl>
         </FormGroup>
