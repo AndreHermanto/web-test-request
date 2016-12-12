@@ -1,0 +1,21 @@
+exports[`App testing RequestPage renders without crashing 1`] = `
+<div>
+  <h4>
+    Web Test Request
+  </h4>
+  <div
+    className="form-group">
+    <label
+      className="control-label"
+      htmlFor={undefined}>
+      Available Test List
+    </label>
+    <select
+      className="form-control"
+      id={undefined}
+      name="test"
+      placeholder="Select test"
+      type={undefined} />
+  </div>
+</div>
+`;

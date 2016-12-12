@@ -52,7 +52,7 @@ class RequestPage extends Component {
           {
             this.state.testList.map(
               (test) => {
-                return <option value={test}>{test}</option>
+                return <option key={test.id} value={test.id}>{test.label}</option>
               }
             )
           }
