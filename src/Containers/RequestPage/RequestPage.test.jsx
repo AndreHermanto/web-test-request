@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import fetchMock from 'fetch-mock';
-import RequestPage from './RequestPage';
+import RequestPage from './index';
 
 describe('App testing', () => {
   it('RequestPage renders without crashing', () => {

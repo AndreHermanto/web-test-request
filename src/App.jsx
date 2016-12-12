@@ -5,7 +5,7 @@ import {
   Row
 } from 'react-bootstrap';
 
-import RequestPage from './Containers/RequestPage/RequestPage'
+import RequestPage from './Containers/RequestPage'
 
 import './App.css';
 
