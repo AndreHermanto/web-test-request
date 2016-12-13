@@ -3,7 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-scripts": "0.8.1"
+    "fbjs": "^0.8.6",
+    "fetch-mock": "^5.5.0",
+    "object-assign": "^4.1.0",
+    "react-scripts": "0.8.1",
+    "react-test-renderer": "^15.4.1"
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
