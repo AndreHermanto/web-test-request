@@ -7,7 +7,7 @@ describe('Apis', () => {
     FetchMock.get('*',['Test1','Test2','Test3']);
     await Utils.getTestList()
       .then((json) => {
-        expect(json.length > 0).toBe(true); 
+        expect(json.length > 0).toEqual(true); 
       });
   });
 });

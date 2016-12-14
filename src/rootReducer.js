@@ -1,3 +1,3 @@
-export function setTestList(target, list) {
-  target.setState({testList: list});
+export function setTestList(list) {
+  return {testList: list};
 }
