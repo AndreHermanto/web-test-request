@@ -5,35 +5,12 @@ import {
   ControlLabel
 } from 'react-bootstrap';
 
-
 /**
  * RequestPage - this generates the main page sending the test request.
  */
 class RequestPage extends Component {
   constructor(props) {
-    super(props); 
-    
-    this.state = {
-      testList: []
-    };
-  }
-  
-  componentDidMount() {
-    var func = this;
-    fetch('#')
-      .then(
-        (response) => response.json()
-      )
-      .then(
-        (json) => {
-          func.setState(
-            (state) => {
-              state.testList = json;
-              return state;
-            }
-          );
-        }
-      );
+    super(props);
   }
   
   render() {
@@ -50,9 +27,9 @@ class RequestPage extends Component {
           >
             
           {
-            this.state.testList.map(
+            (this.props.testList || []).map(
               (test) => {
-                return <option key={test.id} value={test.id}>{test.label}</option>
+                return <option key={test} value={test}>{test}</option>
               }
             )
           }

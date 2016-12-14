@@ -1,4 +1,4 @@
-exports[`App testing RequestPage renders without crashing 1`] = `
+exports[`RequestPage renders without crashing 1`] = `
 <div>
   <h4>
     Web Test Request
@@ -15,7 +15,20 @@ exports[`App testing RequestPage renders without crashing 1`] = `
       id={undefined}
       name="test"
       placeholder="Select test"
-      type={undefined} />
+      type={undefined}>
+      <option
+        value="test1">
+        test1
+      </option>
+      <option
+        value="test2">
+        test2
+      </option>
+      <option
+        value="test3">
+        test3
+      </option>
+    </select>
   </div>
 </div>
 `;
