@@ -5,7 +5,8 @@ import {
   Row
 } from 'react-bootstrap';
 
-import * as Utils from './Apis';
+import * as Apis from './Apis';
+import * as Reduce from './rootReducer';
 import RequestPage from './Containers/RequestPage';
 
 import './App.css';
@@ -21,8 +22,8 @@ class App extends Component {
   
   componentDidMount() {
     var ths = this;
-    Utils.getTestList()
-      .then((json) => ths.setState({testList: json}));
+    Apis.getTestList()
+      .then((json) => Reduce.setTestList(ths, json));
   }
   
   render() {

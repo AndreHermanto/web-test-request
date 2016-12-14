@@ -1,5 +1,3 @@
-import React from 'react';
-
 var baseURI = "http://localhost:3721/";
 
 /**

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {
   FormGroup,
   FormControl,
@@ -8,7 +8,7 @@ import {
 /**
  * RequestPage - this generates the main page sending the test request.
  */
-function RequestPage(props) {
+function RequestPage({testList}) {
   return (
 
     <div>
@@ -22,7 +22,7 @@ function RequestPage(props) {
         >
 
         {
-          props.testList.map(
+          testList.map(
             (test) => {
               return <option key={test} value={test}>{test}</option>
             }
