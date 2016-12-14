@@ -8,6 +8,7 @@ import {
 import * as Apis from './Apis';
 import * as Reduce from './rootReducer';
 import RequestPage from './Containers/RequestPage';
+import UniversalNavigation from './Containers/UniversalNavigation'
 
 import './App.css';
 
@@ -30,6 +31,7 @@ class App extends Component {
     return (
 
       <div>
+      <UniversalNavigation />
         <Grid>
           <Row>
             <Col md={10} mdOffset={1}>
