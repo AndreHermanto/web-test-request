@@ -1,6 +1,6 @@
 import React from 'react';
 import FetchMock from 'fetch-mock';
-import {getTestList} from './Apis';
+import {getTestList} from './../Apis';
 
 describe('Apis', () => {
   it('getTestList list out items', async () => {
