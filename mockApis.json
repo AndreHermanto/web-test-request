@@ -1,0 +1,44 @@
+{
+  "tests":[
+    "test1","test2","test3"
+  ],
+  "test1":{
+      "id": "test1",
+      "form": {
+          "name": "Hello world"
+      },
+      "genelists": [{
+          "disorder": "xxx1",
+          "genes": ["gene1", "gene2"]	
+          }, {
+          "disorder": "xxx2",
+          "genes": ["gene1", "gene2"]	
+      }]
+    },
+  "test2":{
+      "id": "test2",
+      "form": {
+          "name": "Hello world"
+      },
+      "genelists": [{
+          "disorder": "xxx3",
+          "genes": ["gene1", "gene2"]	
+          }, {
+          "disorder": "xxx4",
+          "genes": ["gene1", "gene2"]	
+      }]
+    },
+  "test3":{
+      "id": "test3",
+      "form": {
+          "name": "Hello world"
+      },
+      "genelists": [{
+          "disorder": "xxx5",
+          "genes": ["gene1", "gene2"]	
+          }, {
+          "disorder": "xxx6",
+          "genes": ["gene1", "gene2"]	
+      }]
+    }
+}
