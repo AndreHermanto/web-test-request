@@ -8,7 +8,7 @@ import {
 /**
  * RequestPage - this generates the main page sending the test request.
  */
-function RequestPage({testList}) {
+function RequestPage({ testList }) {
   return (
 
     <div>

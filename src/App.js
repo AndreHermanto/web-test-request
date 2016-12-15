@@ -1,12 +1,12 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   Grid,
   Col,
   Row
 } from 'react-bootstrap';
 
-import {getTestList} from './Apis';
-import {setTestList} from './rootReducer';
+import { getTestList } from './Apis';
+import { setTestList } from './rootReducer';
 import RequestPage from './Containers/RequestPage';
 import UniversalNavigation from './Containers/UniversalNavigation'
 
@@ -24,7 +24,7 @@ class App extends Component {
   componentDidMount() {
     var ths = this;
     getTestList()
-      .then((json) => ths.setState(setTestList(json)));
+      .then((json) => ths.setState(setTestList(ths.state, json)));
   }
   
   render() {
