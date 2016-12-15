@@ -5,6 +5,7 @@
  * @return {Object} newTestList New list of tests to be used for setState.
  */
 export function setTestList(state, list) {
-  const newTestList = state.testList = list;
-  return newTestList;
+  return Object.assign({}, state, { 
+    testList: list 
+  });
 }
