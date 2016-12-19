@@ -1,6 +1,10 @@
 import React from 'react';
 import FetchMock from 'fetch-mock';
-import { getTestList, getGeneList } from './../Apis';
+import { 
+  getTestList, 
+  getGeneList,
+  submitForm
+} from './../Apis';
 
 describe('Apis', () => {
   it('fetch GET a list of test', async () => {
@@ -29,6 +33,17 @@ describe('Apis', () => {
     await getGeneList()
       .then((geneList) => {
         expect(geneList.length > 0).toEqual(true); 
+      });
+    FetchMock.restore();
+  });
+
+
+  it('fetch POST the test request form to get a successful response - json with ID', async () => {
+    FetchMock.post('*', { "id": "ABC" });
+  
+    await submitForm({ "form": { "name": "Hello world" } })
+      .then((response) => {
+        expect(response.id).toEqual('ABC'); 
       });
     FetchMock.restore();
   });

@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
+import FetchMock from 'fetch-mock';
 import App from './../App';
 
 describe('App', () => {
@@ -22,5 +23,16 @@ describe('App', () => {
     });
     
     expect(app.state.form.test).toEqual('Test3');
+  });
+  
+  it('successful formSubmit should return something', async () => {
+    const app = TestUtils.renderIntoDocument(
+      <App />
+    );
+    FetchMock.post('*', { "id": "ABC" }); 
+    await app.formSubmit().then((response) => {
+      expect(response).toEqual({ "id": "ABC" }); 
+    });
+    FetchMock.restore();
   });
 });
