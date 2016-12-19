@@ -25,12 +25,12 @@ describe('App', () => {
     expect(app.state.form.test).toEqual('Test3');
   });
   
-  it('successful formSubmit should return something', async () => {
+  it('successful onFormSubmit should return something', async () => {
     const app = TestUtils.renderIntoDocument(
       <App />
     );
     FetchMock.post('*', { "id": "ABC" }); 
-    await app.formSubmit().then((response) => {
+    await app.onFormSubmit().then((response) => {
       expect(response).toEqual({ "id": "ABC" }); 
     });
     FetchMock.restore();

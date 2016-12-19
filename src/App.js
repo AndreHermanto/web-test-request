@@ -24,7 +24,7 @@ class App extends Component {
   constructor() {
     super(); 
     
-    this.formSubmit = this.formSubmit.bind(this);
+    this.onFormSubmit = this.onFormSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     
     this.state = {
@@ -56,7 +56,7 @@ class App extends Component {
       );
   }
   
-  formSubmit() {
+  onFormSubmit() {
     return submitForm({ 
       form: {
         name: 'Hello World' 
@@ -74,7 +74,7 @@ class App extends Component {
             <Col md={10} mdOffset={1}>
               <RequestPage
                 formState={this.state.form}
-                formSubmit={this.formSubmit}
+                onFormSubmit={this.onFormSubmit}
                 handleChange={this.handleChange}
                 testList={this.state.testList}
                 geneList={this.state.geneList}

@@ -11,7 +11,7 @@ import {
  */
 function RequestPage({ 
   formState,
-  formSubmit,
+  onFormSubmit,
   handleChange, 
   testList, 
   geneList 
@@ -66,7 +66,7 @@ function RequestPage({
       <Button 
         bsStyle="success" 
         type="submit" 
-        onClick={formSubmit}
+        onClick={onFormSubmit}
       >
         Submit Request
       </Button> 
