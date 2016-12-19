@@ -21,7 +21,6 @@ class App extends Component {
     super(); 
     
     this.handleChange = this.handleChange.bind(this);
-    this.updateGeneList = this.updateGeneList.bind(this);
     
     this.state = {
       testList: [],
@@ -32,13 +31,12 @@ class App extends Component {
   
   componentDidMount() {
     getTestList()
-      .then(
-        (json) => this.setState(setTestList(this.state, json), () => {
-          this.handleChange({
-            target: { name: 'test', value: json[0] }
-          })
-        })
-      );
+      .then((tests) => {
+        this.setState(setTestList(this.state, tests));
+        this.handleChange({
+          target: { name: 'test', value: tests[0] }
+        });
+      });
   }
   
   handleChange(event) {
@@ -46,13 +44,8 @@ class App extends Component {
         name = target.name,
         value = target.value;
     
-    this.setState(setFormData(this.state, name, value), () => {
-      this.updateGeneList(this.state.form.test);
-    });
-  }
-  
-  updateGeneList(test) {
-    getGeneList(test)
+    this.setState(setFormData(this.state, name, value));
+    getGeneList(value)
       .then(
         (json) => this.setState(setGeneList(this.state, json))
       );
@@ -69,7 +62,6 @@ class App extends Component {
               <RequestPage
                 formState={this.state.form}
                 handleChange={this.handleChange}
-                updateGeneList={this.updateGeneList}
                 testList={this.state.testList}
                 geneList={this.state.geneList}
               />
