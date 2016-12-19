@@ -8,7 +8,7 @@ import {
 /**
  * RequestPage - this generates the main page sending the test request.
  */
-function RequestPage({ testList }) {
+function RequestPage({ formState, handleChange, testList, geneList }) {
   return (
 
     <div>
@@ -17,8 +17,9 @@ function RequestPage({ testList }) {
         <ControlLabel>Available Test List</ControlLabel>
         <FormControl 
           componentClass="select" 
-          placeholder="Select test" 
+          placeholder="Select test"
           name="test"
+          onChange={handleChange}
         >
 
         {
@@ -30,6 +31,29 @@ function RequestPage({ testList }) {
         }
 
         </FormControl>
+      </FormGroup>
+      
+      <FormGroup>  
+        <ControlLabel>Gene List</ControlLabel>
+          <FormControl 
+            componentClass="select" 
+            placeholder="Select gene list" 
+            name="geneList"
+          >
+
+          {
+            geneList.map(
+              (gene) => {
+                return ( 
+                  <option key={gene.disorder} value={gene.disorder}>
+                    {gene.disorder}
+                  </option>
+                )
+              }
+            )
+          }
+
+          </FormControl>
       </FormGroup>
     </div>
 

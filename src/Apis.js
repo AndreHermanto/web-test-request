@@ -15,3 +15,19 @@ export function getTestList() {
       }
     );
 }
+
+/**
+ * This call returns a gene list.
+ * @return {Object} json Returns a list of disorders 
+ */
+export function getGeneList(test) {
+  return fetch(`${baseURI}v1/testrequest/test/${test}`)
+    .then(
+      (response) => response.json()
+    )
+    .then(
+      (json) => {
+        return json.genelists;
+      }
+    );
+}
