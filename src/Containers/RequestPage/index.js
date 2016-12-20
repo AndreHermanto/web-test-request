@@ -20,6 +20,16 @@ function RequestPage({
 
     <div>
       <h4>Web Test Request</h4>
+        <FormGroup>
+          <ControlLabel>Name</ControlLabel>
+          <FormControl
+            type="text"
+            name="name"
+            placeholder="Hello World"
+            onChange={handleChange}
+          />
+        </FormGroup>
+    
       <FormGroup>
         <ControlLabel>Available Test List</ControlLabel>
         <FormControl 
