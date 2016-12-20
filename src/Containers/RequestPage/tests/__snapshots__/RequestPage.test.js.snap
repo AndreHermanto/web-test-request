@@ -54,6 +54,13 @@ exports[`RequestPage renders without crashing - after a test is selected, geneLi
       </option>
     </select>
   </div>
+  <button
+    className="btn btn-success"
+    disabled={false}
+    onClick={undefined}
+    type="submit">
+    Submit Request
+  </button>
 </div>
 `;
 
@@ -104,5 +111,12 @@ exports[`RequestPage renders without crashing - initial state with empty geneLis
       placeholder="Select gene list"
       type={undefined} />
   </div>
+  <button
+    className="btn btn-success"
+    disabled={false}
+    onClick={undefined}
+    type="submit">
+    Submit Request
+  </button>
 </div>
 `;

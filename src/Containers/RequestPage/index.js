@@ -2,13 +2,20 @@ import React from 'react';
 import {
   FormGroup,
   FormControl,
-  ControlLabel
+  ControlLabel,
+  Button
 } from 'react-bootstrap';
 
 /**
  * RequestPage - this generates the main page sending the test request.
  */
-function RequestPage({ formState, handleChange, testList, geneList }) {
+function RequestPage({ 
+  formState,
+  onFormSubmit,
+  handleChange, 
+  testList, 
+  geneList 
+}) {
   return (
 
     <div>
@@ -55,6 +62,14 @@ function RequestPage({ formState, handleChange, testList, geneList }) {
 
           </FormControl>
       </FormGroup>
+          
+      <Button 
+        bsStyle="success" 
+        type="submit" 
+        onClick={onFormSubmit}
+      >
+        Submit Request
+      </Button> 
     </div>
 
   );

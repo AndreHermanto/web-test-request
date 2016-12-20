@@ -31,3 +31,26 @@ export function getGeneList(test) {
       }
     );
 }
+
+/**
+ * This call submits the form data.
+ * @param {Object} data Form state to be submitted as data.
+ * @return {Object} json 
+ */
+export function submitForm(data) {
+  return fetch(`${baseURI}v1/testrequest/tests`, {
+      method: 'POST',
+      body: JSON.stringify(data)
+    }).then(function(response) {
+      if (!response.ok) {
+        alert('POST failed');
+        return false;
+      }
+      alert('POST success');
+      return response.json();
+    }).then(
+      (json) => {
+        return json;
+      }
+    );
+}

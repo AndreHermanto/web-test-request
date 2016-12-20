@@ -5,7 +5,11 @@ import {
   Row
 } from 'react-bootstrap';
 
-import { getTestList, getGeneList } from './Apis';
+import { 
+  getTestList, 
+  getGeneList,
+  submitForm
+} from './Apis';
 import { 
   setTestList, 
   setFormData,
@@ -20,6 +24,7 @@ class App extends Component {
   constructor() {
     super(); 
     
+    this.onFormSubmit = this.onFormSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     
     this.state = {
@@ -51,6 +56,14 @@ class App extends Component {
       );
   }
   
+  onFormSubmit() {
+    return submitForm({ 
+      form: {
+        name: 'Hello World' 
+      }
+    });
+  }
+  
   render() {
     return (
 
@@ -61,6 +74,7 @@ class App extends Component {
             <Col md={10} mdOffset={1}>
               <RequestPage
                 formState={this.state.form}
+                onFormSubmit={this.onFormSubmit}
                 handleChange={this.handleChange}
                 testList={this.state.testList}
                 geneList={this.state.geneList}
