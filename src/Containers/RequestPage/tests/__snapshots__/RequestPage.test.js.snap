@@ -8,6 +8,21 @@ exports[`RequestPage renders without crashing - after a test is selected, geneLi
     <label
       className="control-label"
       htmlFor={undefined}>
+      Name
+    </label>
+    <input
+      className="form-control"
+      id={undefined}
+      name="name"
+      onChange={undefined}
+      placeholder="Hello World"
+      type="text" />
+  </div>
+  <div
+    className="form-group">
+    <label
+      className="control-label"
+      htmlFor={undefined}>
       Available Test List
     </label>
     <select
@@ -69,6 +84,21 @@ exports[`RequestPage renders without crashing - initial state with empty geneLis
   <h4>
     Web Test Request
   </h4>
+  <div
+    className="form-group">
+    <label
+      className="control-label"
+      htmlFor={undefined}>
+      Name
+    </label>
+    <input
+      className="form-control"
+      id={undefined}
+      name="name"
+      onChange={undefined}
+      placeholder="Hello World"
+      type="text" />
+  </div>
   <div
     className="form-group">
     <label
