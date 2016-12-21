@@ -1,11 +1,9 @@
-var baseURI = "http://localhost:3721/";
-
 /**
  * This call returns a list of test.
  * @return {string[]} json Currently returns an array of tests ID 
  */
 export function getTestList() {
-  return fetch(`${baseURI}v1/testrequest/tests`)
+  return fetch(`${process.env.REACT_APP_BASE_URL}/v1/testrequest/tests`)
     .then(
       (response) => response.json()
     )
@@ -21,7 +19,7 @@ export function getTestList() {
  * @return {Object} json Returns a list of disorders 
  */
 export function getGeneList(test) {
-  return fetch(`${baseURI}v1/testrequest/test/${test}`)
+  return fetch(`${process.env.REACT_APP_BASE_URL}/v1/testrequest/test/${test}`)
     .then(
       (response) => response.json()
     )
@@ -38,7 +36,7 @@ export function getGeneList(test) {
  * @return {Object} json 
  */
 export function submitForm(data) {
-  return fetch(`${baseURI}v1/testrequest/tests`, {
+  return fetch(`${process.env.REACT_APP_BASE_URL}/v1/testrequest/tests`, {
       method: 'POST',
       body: JSON.stringify(data)
     }).then(function(response) {
