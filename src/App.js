@@ -58,9 +58,7 @@ class App extends Component {
   
   onFormSubmit() {
     return submitForm({ 
-      form: {
-        name: 'Hello World' 
-      }
+      name: 'Hello World' 
     });
   }
   

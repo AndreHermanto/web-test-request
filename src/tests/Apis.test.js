@@ -43,7 +43,7 @@ describe('Apis', () => {
   it('fetch POST the test request form to get a successful response - json with ID', async () => {
     FetchMock.mock('*', { data: { "id": "ABC" } });
   
-    await submitForm({ "form": { "name": "Hello world" } })
+    await submitForm({ "name": "Hello world" })
       .then((response) => {
         expect(response.id).toEqual('ABC'); 
       });
@@ -53,7 +53,7 @@ describe('Apis', () => {
   it('fetch POST the test request form but failed', async () => {
     FetchMock.mock('*', 406);
   
-    await submitForm({ "form": { "name": "Hello world" } })
+    await submitForm({ "name": "Hello world" })
       .then((response) => {
         expect(response).toEqual(undefined); 
       });
