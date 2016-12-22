@@ -1,4 +1,4 @@
 {
-  "/api/gw-test-request/v1/tests/:id": "/:id",
-  "/api/gw-test-request/v1/tests": "/tests"
+  "/tests/:id": "/:id",
+  "/tests": "/tests"
 }

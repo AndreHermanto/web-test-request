@@ -1,4 +1,4 @@
-var baseURL = `${process.env.REACT_APP_BASE_URL}/api/gw-test-request/v1`;
+var baseURL = `${process.env.REACT_APP_BASE_URL}`;
 
 /**
  * This call returns a list of test.
