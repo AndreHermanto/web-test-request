@@ -50,10 +50,13 @@ class App extends Component {
         value = target.value;
     
     this.setState(setFormData(this.state, name, value));
-    getGeneList(value)
-      .then(
-        (json) => this.setState(setGeneList(this.state, json))
-      );
+    
+    if(name === 'test') {
+      getGeneList(value)
+        .then(
+          (json) => this.setState(setGeneList(this.state, json))
+        );
+    }
   }
   
   onFormSubmit() {
