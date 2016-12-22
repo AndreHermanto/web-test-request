@@ -40,6 +40,10 @@ export function getGeneList(test) {
 export function submitForm(formData) {
   return fetch(`${baseURL}/tests`, {
       method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify(formData)
     }).then(function(response) {
       if (!response.ok) {
