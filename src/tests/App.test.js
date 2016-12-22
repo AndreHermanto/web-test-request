@@ -29,7 +29,7 @@ describe('App', () => {
     const app = TestUtils.renderIntoDocument(
       <App />
     );
-    FetchMock.post('*', { "id": "ABC" }); 
+    FetchMock.post('*', { "data": { "id": "ABC" } }); 
     await app.onFormSubmit().then((response) => {
       expect(response).toEqual({ "id": "ABC" }); 
     });

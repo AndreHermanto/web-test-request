@@ -1,4 +1,4 @@
 {
-  "/v1/testrequest/tests": "/tests",
-  "/v1/testrequest/test/:id": "/:id"
+  "/tests/:id": "/:id",
+  "/tests": "/tests"
 }

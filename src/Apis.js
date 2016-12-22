@@ -1,17 +1,17 @@
-var baseURI = "http://localhost:3721/";
+var baseURL = `${process.env.REACT_APP_BASE_URL}`;
 
 /**
  * This call returns a list of test.
  * @return {string[]} json Currently returns an array of tests ID 
  */
 export function getTestList() {
-  return fetch(`${baseURI}v1/testrequest/tests`)
+  return fetch(`${baseURL}/tests`)
     .then(
       (response) => response.json()
     )
     .then(
       (json) => {
-        return json;
+        return json.data;
       }
     );
 }
@@ -21,13 +21,13 @@ export function getTestList() {
  * @return {Object} json Returns a list of disorders 
  */
 export function getGeneList(test) {
-  return fetch(`${baseURI}v1/testrequest/test/${test}`)
+  return fetch(`${baseURL}/tests/${test}`)
     .then(
       (response) => response.json()
     )
     .then(
       (json) => {
-        return json.genelists;
+        return json.data.geneLists;
       }
     );
 }
@@ -37,10 +37,14 @@ export function getGeneList(test) {
  * @param {Object} data Form state to be submitted as data.
  * @return {Object} json 
  */
-export function submitForm(data) {
-  return fetch(`${baseURI}v1/testrequest/tests`, {
+export function submitForm(formData) {
+  return fetch(`${baseURL}/tests`, {
       method: 'POST',
-      body: JSON.stringify(data)
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
     }).then(function(response) {
       if (!response.ok) {
         alert('POST failed');
@@ -50,7 +54,7 @@ export function submitForm(data) {
       return response.json();
     }).then(
       (json) => {
-        return json;
+        return json.data;
       }
     );
 }

@@ -1,44 +1,75 @@
 {
-  "tests":[
-    "test1","test2","test3"
-  ],
-  "test1":{
+  "tests": {"data":["test1","test2","test3"]},
+  "test1": {
+    "data": {
       "id": "test1",
       "form": {
-          "name": "Hello world"
+        "name": "Hello world"
       },
-      "genelists": [{
+      "geneLists": [
+        {
           "disorder": "xxx1",
-          "genes": ["gene1", "gene2"]	
-          }, {
+          "genes": [
+            "gene1",
+            "gene2"
+          ]
+        },
+        {
           "disorder": "xxx2",
-          "genes": ["gene1", "gene2"]	
-      }]
-    },
-  "test2":{
+          "genes": [
+            "gene1",
+            "gene2"
+          ]
+        }
+      ]
+    }
+  },
+  "test2": {
+    "data": {
       "id": "test2",
       "form": {
-          "name": "Hello world"
+        "name": "Hello world"
       },
-      "genelists": [{
+      "geneLists": [
+        {
           "disorder": "xxx3",
-          "genes": ["gene1", "gene2"]	
-          }, {
+          "genes": [
+            "gene1",
+            "gene2"
+          ]
+        },
+        {
           "disorder": "xxx4",
-          "genes": ["gene1", "gene2"]	
-      }]
-    },
-  "test3":{
+          "genes": [
+            "gene1",
+            "gene2"
+          ]
+        }
+      ]
+    }
+  },
+  "test3": {
+    "data": {
       "id": "test3",
       "form": {
-          "name": "Hello world"
+        "name": "Hello world"
       },
-      "genelists": [{
+      "geneLists": [
+        {
           "disorder": "xxx5",
-          "genes": ["gene1", "gene2"]	
-          }, {
+          "genes": [
+            "gene1",
+            "gene2"
+          ]
+        },
+        {
           "disorder": "xxx6",
-          "genes": ["gene1", "gene2"]	
-      }]
+          "genes": [
+            "gene1",
+            "gene2"
+          ]
+        }
+      ]
     }
+  }
 }
