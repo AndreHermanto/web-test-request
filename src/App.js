@@ -15,8 +15,8 @@ import {
   setFormData,
   setGeneList
 } from './rootReducer';
-import RequestPage from './Containers/RequestPage';
-import UniversalNavigation from './Containers/UniversalNavigation'
+import TestRequestForm from './components/TestRequestForm';
+import UniversalNavigation from './components/UniversalNavigation'
 
 import './App.css';
 
@@ -73,7 +73,7 @@ class App extends Component {
         <Grid>
           <Row>
             <Col md={10} mdOffset={1}>
-              <RequestPage
+              <TestRequestForm
                 formState={this.state.form}
                 onFormSubmit={this.onFormSubmit}
                 handleChange={this.handleChange}

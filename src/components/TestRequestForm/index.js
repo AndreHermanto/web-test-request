@@ -7,9 +7,9 @@ import {
 } from 'react-bootstrap';
 
 /**
- * RequestPage - this generates the main page sending the test request.
+ * TestRequestForm - this generates the main page sending the test request.
  */
-function RequestPage({ 
+function TestRequestForm({ 
   formState,
   onFormSubmit,
   handleChange, 
@@ -85,4 +85,4 @@ function RequestPage({
   );
 }
 
-export default RequestPage;
+export default TestRequestForm;
