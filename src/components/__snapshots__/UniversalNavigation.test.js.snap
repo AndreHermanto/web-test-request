@@ -1,0 +1,49 @@
+exports[`<UniversalNavigation /> renders correctly 1`] = `
+<nav
+  className="dYwTWr navbar navbar-default">
+  <div
+    className="container">
+    <div
+      className="container">
+      <div
+        className="navbar-header">
+        <span
+          className="navbar-brand">
+          <a
+            href="/">
+            <img
+              alt="logo"
+              src="test-file-stub"
+              style={
+                Object {
+                  "height": 30,
+                  "marginTop": -4,
+                  "width": 80,
+                }
+              } />
+          </a>
+          <span
+            className="hdMxID">
+            Test Request App
+          </span>
+        </span>
+        <button
+          className="navbar-toggle collapsed"
+          onClick={[Function]}
+          type="button">
+          <span
+            className="sr-only">
+            Toggle navigation
+          </span>
+          <span
+            className="icon-bar" />
+          <span
+            className="icon-bar" />
+          <span
+            className="icon-bar" />
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+`;
