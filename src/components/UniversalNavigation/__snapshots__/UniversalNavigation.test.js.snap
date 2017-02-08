@@ -1,0 +1,64 @@
+exports[`<UniversalNavigation /> renders correctly 1`] = `
+<nav
+  className="gfoiLG navbar navbar-default">
+  <div
+    className="container">
+    <div
+      className="container">
+      <div
+        className="navbar-header">
+        <a
+          className="navbar-brand"
+          href="/">
+          <img
+            alt="logo"
+            height="30px"
+            src="test-file-stub"
+            width="80px" />
+        </a>
+        <button
+          className="navbar-toggle collapsed"
+          onClick={[Function]}
+          type="button">
+          <span
+            className="sr-only">
+            Toggle navigation
+          </span>
+          <span
+            className="icon-bar" />
+          <span
+            className="icon-bar" />
+          <span
+            className="icon-bar" />
+        </button>
+      </div>
+      <ul
+        className="nav navbar-nav"
+        role={null}>
+        <li
+          className="gnscaH"
+          role="presentation"
+          style={undefined}>
+          <a
+            href="#"
+            onClick={[Function]}
+            role="button">
+            Link
+          </a>
+        </li>
+        <li
+          className="gnscaH"
+          role="presentation"
+          style={undefined}>
+          <a
+            href="#"
+            onClick={[Function]}
+            role="button">
+            Link
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+`;

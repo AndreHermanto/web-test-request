@@ -16,7 +16,7 @@ import {
   setGeneList
 } from './rootReducer';
 import RequestPage from './Containers/RequestPage';
-import UniversalNavigation from './Containers/UniversalNavigation'
+import UniversalNavigation from './components/UniversalNavigation'
 
 import './App.css';
 
