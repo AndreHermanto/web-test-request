@@ -15,8 +15,8 @@ import {
   setFormData,
   setGeneList
 } from './rootReducer';
-import RequestPage from './Containers/RequestPage';
-import UniversalNavigation from './Containers/UniversalNavigation'
+import RequestPage from './containers/RequestPage';
+import UniversalNavigation from './components/UniversalNavigation'
 
 import './App.css';
 
