@@ -1,0 +1,40 @@
+exports[`OrderTest: index renders without crashing - initial state with empty geneList 1`] = `
+<div>
+  <h3
+    className="fAmrmf">
+    Step 1: Order a Test
+  </h3>
+  <div
+    className="form-group">
+    <label
+      className="control-label"
+      htmlFor={undefined}>
+      Select a Disease Panel / Whole Genome Analysis
+    </label>
+    <select
+      className="form-control"
+      defaultValue=""
+      id={undefined}
+      name="test"
+      onChange={[Function]}
+      type={undefined}>
+      <option
+        disabled={true}
+        value="">
+        Select a panel.
+      </option>
+      <option
+        value="whole">
+        Whole Genome Analysis
+      </option>
+    </select>
+  </div>
+  <button
+    className="iMtXso btn btn-success"
+    disabled={false}
+    onClick={[Function]}
+    type="submit">
+    Confirm
+  </button>
+</div>
+`;
