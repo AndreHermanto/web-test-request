@@ -1,0 +1,161 @@
+exports[`<ClinicianDetails /> renders correctly 1`] = `
+<div
+  className="iNptmB">
+  <form>
+    <div
+      className="form-group has-success">
+      <div
+        className="checkbox has-success"
+        style={undefined}>
+        <label>
+          <input
+            disabled={false}
+            type="checkbox" />
+          Checkbox with success
+        </label>
+      </div>
+      <div
+        className="row">
+        <div
+          className="col-md-6">
+          <div
+            className="dLjgzW">
+            <input
+              className="htecwg"
+              required={true}
+              type="text" />
+            <label
+              className="cMSzMx"
+              htmlFor="provider-number">
+              Provider Number
+            </label>
+          </div>
+        </div>
+        <div
+          className="col-md-6">
+          <div
+            className="dLjgzW">
+            <input
+              className="htecwg"
+              required={true}
+              type="text" />
+            <label
+              className="cMSzMx"
+              htmlFor="medical-specialty">
+              Medical Specialty
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="form-group">
+      <div
+        className="row">
+        <div
+          className="col-md-6">
+          <div
+            className="dLjgzW">
+            <input
+              className="htecwg"
+              required={true}
+              type="text" />
+            <label
+              className="cMSzMx"
+              htmlFor="first-name">
+              First Name
+            </label>
+          </div>
+        </div>
+        <div
+          className="col-md-6">
+          <div
+            className="dLjgzW">
+            <input
+              className="htecwg"
+              required={true}
+              type="text" />
+            <label
+              className="cMSzMx"
+              htmlFor="last-name">
+              Last Name
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="form-group">
+      <div
+        className="row">
+        <div
+          className="col-md-12">
+          <div
+            className="dLjgzW">
+            <input
+              className="htecwg"
+              required={true}
+              type="text" />
+            <label
+              className="cMSzMx"
+              htmlFor="address">
+              Name of organisation, or address of practice
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="form-group">
+      <div
+        className="row">
+        <div
+          className="col-md-4">
+          <div
+            className="dLjgzW">
+            <input
+              className="htecwg"
+              required={true}
+              type="text" />
+            <label
+              className="cMSzMx"
+              htmlFor="phone">
+              Phone
+            </label>
+          </div>
+        </div>
+        <div
+          className="col-md-4">
+          <div
+            className="dLjgzW">
+            <input
+              className="htecwg"
+              required={true}
+              type="text" />
+            <label
+              className="cMSzMx"
+              htmlFor="email">
+              Email
+            </label>
+          </div>
+        </div>
+        <div
+          className="col-md-4">
+          <div
+            className="dLjgzW">
+            <input
+              className="htecwg"
+              required={true}
+              type="text" />
+            <label
+              className="cMSzMx"
+              htmlFor="fax">
+              Fax (Optional)
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import {
-  Grid,
-  Col,
-  Row
+  Grid
 } from 'react-bootstrap';
 
 import { 
@@ -15,7 +13,7 @@ import {
   setFormData,
   setGeneList
 } from './rootReducer';
-import RequestPage from './containers/RequestPage';
+import ClinicianDetails from './containers/ClinicianDetails';
 import UniversalNavigation from './components/UniversalNavigation'
 
 import './App.css';
@@ -71,17 +69,7 @@ class App extends Component {
       <div>
         <UniversalNavigation />
         <Grid>
-          <Row>
-            <Col md={10} mdOffset={1}>
-              <RequestPage
-                formState={this.state.form}
-                onFormSubmit={this.onFormSubmit}
-                handleChange={this.handleChange}
-                testList={this.state.testList}
-                geneList={this.state.geneList}
-              />
-            </Col>
-          </Row>
+        <ClinicianDetails/>
         </Grid>
       </div>
       
