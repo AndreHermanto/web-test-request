@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FormGroup, Row, Col, Checkbox } from 'react-bootstrap';
+import { FormGroup, Row, Col } from 'react-bootstrap';
 import { FormBox, InputContainer, Label, InputText } from './styledForm';
 
 class ClinicianDetails extends Component {
@@ -12,10 +12,7 @@ class ClinicianDetails extends Component {
     return (
       <FormBox>
         <form>
-          <FormGroup controlId="formControlsTextarea" validationState="success">
-          <Checkbox validationState="success">
-      Checkbox with success
-    </Checkbox>
+          <FormGroup controlId="formControlsTextarea">
             <Row>
               <Col md={6}>
                 <InputContainer >
