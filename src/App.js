@@ -1,18 +1,10 @@
 import React, { Component } from 'react';
 import {
-  Grid
+  Grid,
+  Row,
+  Col
 } from 'react-bootstrap';
 
-import { 
-  getTestList, 
-  getGeneList,
-  submitForm
-} from './Apis';
-import { 
-  setTestList, 
-  setFormData,
-  setGeneList
-} from './rootReducer';
 import OrderTest from './containers/OrderTest';
 import UniversalNavigation from './components/UniversalNavigation'
 import './App.css';
