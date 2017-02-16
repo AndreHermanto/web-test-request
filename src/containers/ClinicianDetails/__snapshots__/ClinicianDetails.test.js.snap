@@ -3,17 +3,7 @@ exports[`<ClinicianDetails /> renders correctly 1`] = `
   className="iNptmB">
   <form>
     <div
-      className="form-group has-success">
-      <div
-        className="checkbox has-success"
-        style={undefined}>
-        <label>
-          <input
-            disabled={false}
-            type="checkbox" />
-          Checkbox with success
-        </label>
-      </div>
+      className="form-group">
       <div
         className="row">
         <div
