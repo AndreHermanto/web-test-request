@@ -2,6 +2,10 @@ exports[`<ClinicianDetails /> renders correctly 1`] = `
 <div
   className="iNptmB">
   <form>
+    <h3
+      className="fAmrmf">
+      Step 4: Clinician Details
+    </h3>
     <div
       className="form-group">
       <div
@@ -11,13 +15,18 @@ exports[`<ClinicianDetails /> renders correctly 1`] = `
           <div
             className="dLjgzW">
             <input
-              className="htecwg"
+              className="hSCsvU"
+              name="providerNumber"
               required={true}
               type="text" />
             <label
               className="cMSzMx"
               htmlFor="provider-number">
-              Provider Number
+              Provider Number 
+              <span
+                className="heIIYa">
+                *
+              </span>
             </label>
           </div>
         </div>
@@ -26,13 +35,17 @@ exports[`<ClinicianDetails /> renders correctly 1`] = `
           <div
             className="dLjgzW">
             <input
-              className="htecwg"
+              className="hSCsvU"
               required={true}
               type="text" />
             <label
               className="cMSzMx"
               htmlFor="medical-specialty">
-              Medical Specialty
+              Medical Specialty 
+              <span
+                className="heIIYa">
+                *
+              </span>
             </label>
           </div>
         </div>
@@ -47,13 +60,17 @@ exports[`<ClinicianDetails /> renders correctly 1`] = `
           <div
             className="dLjgzW">
             <input
-              className="htecwg"
+              className="hSCsvU"
               required={true}
               type="text" />
             <label
               className="cMSzMx"
               htmlFor="first-name">
-              First Name
+              First Name 
+              <span
+                className="heIIYa">
+                *
+              </span>
             </label>
           </div>
         </div>
@@ -62,13 +79,17 @@ exports[`<ClinicianDetails /> renders correctly 1`] = `
           <div
             className="dLjgzW">
             <input
-              className="htecwg"
+              className="hSCsvU"
               required={true}
               type="text" />
             <label
               className="cMSzMx"
               htmlFor="last-name">
-              Last Name
+              Last Name 
+              <span
+                className="heIIYa">
+                *
+              </span>
             </label>
           </div>
         </div>
@@ -83,13 +104,17 @@ exports[`<ClinicianDetails /> renders correctly 1`] = `
           <div
             className="dLjgzW">
             <input
-              className="htecwg"
+              className="hSCsvU"
               required={true}
               type="text" />
             <label
               className="cMSzMx"
               htmlFor="address">
-              Name of organisation, or address of practice
+              Name of organisation, or address of practice 
+              <span
+                className="heIIYa">
+                *
+              </span>
             </label>
           </div>
         </div>
@@ -104,13 +129,17 @@ exports[`<ClinicianDetails /> renders correctly 1`] = `
           <div
             className="dLjgzW">
             <input
-              className="htecwg"
+              className="hSCsvU"
               required={true}
               type="text" />
             <label
               className="cMSzMx"
               htmlFor="phone">
-              Phone
+              Phone 
+              <span
+                className="heIIYa">
+                *
+              </span>
             </label>
           </div>
         </div>
@@ -119,13 +148,17 @@ exports[`<ClinicianDetails /> renders correctly 1`] = `
           <div
             className="dLjgzW">
             <input
-              className="htecwg"
+              className="hSCsvU"
               required={true}
               type="text" />
             <label
               className="cMSzMx"
               htmlFor="email">
-              Email
+              Email 
+              <span
+                className="heIIYa">
+                *
+              </span>
             </label>
           </div>
         </div>
@@ -134,18 +167,34 @@ exports[`<ClinicianDetails /> renders correctly 1`] = `
           <div
             className="dLjgzW">
             <input
-              className="htecwg"
-              required={true}
-              type="text" />
+              className="fwZVCe"
+              name="fax"
+              onChange={[Function]}
+              type="text"
+              value="" />
             <label
               className="cMSzMx"
               htmlFor="fax">
-              Fax (Optional)
+              Fax(optional)
             </label>
           </div>
         </div>
       </div>
     </div>
+    <button
+      className="iMtXso btn btn-warning"
+      disabled={false}
+      onClick={[Function]}
+      type="button">
+      Back
+    </button>
+    <button
+      className="iMtXso btn btn-success"
+      disabled={false}
+      onClick={[Function]}
+      type="submit">
+      Confirm
+    </button>
   </form>
 </div>
 `;
