@@ -24,10 +24,10 @@ export const LabelOut = keyframes`
     font-weight: 400;
   }
   100% {
-    font-size: 0.7em;
+    font-size: 14px;
     opacity: 1;
     left: 1px;
-    top: 0.2em;
+    top: -5px;
     color: #00A6B6;
     font-weight: 400;
   }
@@ -86,6 +86,8 @@ export const InputContainer = styled.div`
   }
 `;
 
+
+
 export const Label = styled.label`
   font-family: "Helvetica Neue", Helvetica, Arial;
   display: block;
@@ -98,7 +100,7 @@ export const Label = styled.label`
 `;
 
 
-export const InputText = styled.input`
+export const RequiredInput = styled.input`
   display: block;
   position: absolute;
   box-sizing: border-box;
@@ -115,15 +117,49 @@ export const InputText = styled.input`
     outline: 0;
   }
 
-  &:focus + label, &:valid + label {
+  &:focus + label, &:valid + label{
     animation-name: ${LabelOut};
     animation-duration: 0.35s;
     animation-direction: normal;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
   } 
+
 `;
 
+export const OptionalInput = styled.input`
+  display: block;
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  border: 0;
+  top: 1.2em;
+  background: none;
+  z-index: 1;
+  padding: 1px;
+  font-size: 1em;
+  font-family: "Helvetica Neue", Helvetica, Arial;
+  letter-spacing: 0.012em;
+  &:focus {
+    outline: 0;
+  }
+
+  &:focus + label, &:not([value='']) + label{
+    animation-name: ${LabelOut};
+    animation-duration: 0.35s;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+  } 
+
+`;
+
+
+
+
+export const RequiredField = styled.span`
+  color:rgb(244,67,54);
+`;
 export default { 
-  LabelOut, LabelIn, FormBox, InputContainer, Label, InputText
+  LabelOut, LabelIn, FormBox, InputContainer, Label, RequiredInput, RequiredField, OptionalInput
 }
