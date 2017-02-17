@@ -6,10 +6,30 @@ import {
 } from 'react-bootstrap';
 
 import Routes from './components/Routes';
-import UniversalNavigation from './components/UniversalNavigation'
+import UniversalNavigation from './components/UniversalNavigation';
+import { setFormInputData } from './rootReducer';
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.handleChange = this.handleChange.bind(this);
+    
+    this.state = {
+      formInput: {}
+    }
+  }
+  
+  handleChange(formComponent) {
+    if(!formComponent.state) return;
+                               
+    this.setState(setFormInputData(
+      this.state,
+      formComponent.constructor.name, 
+      formComponent.state.form
+    ));
+  }
+  
   render() {
     return (
 
@@ -21,7 +41,7 @@ class App extends Component {
               <Routes onChange={this.handleChange} />
             </Col>
           </Row>
-        </Grid>
+        </Grid> 
       </div>
       
     );
