@@ -1,101 +1,75 @@
 import React, { Component } from 'react';
-import { FormGroup, Row, Col } from 'react-bootstrap';
-import { FormBox, InputContainer, Label, RequiredInput, RequiredField, OptionalInput} from './styledForm';
+import { FormGroup, FormControl, ControlLabel, Row, Col } from 'react-bootstrap';
 import { 
   PageHeading,
   FormButton
 } from './../../components/SharedStyle';
+import { initialState, setFormData } from './reducer';
 class ClinicianDetails extends Component {
   constructor() {
     super();
-    this.state = { 
-      form: {},
-      fax: ''
-    };
+    this.state = initialState();
     this.handleBack = this.handleBack.bind(this);
     this.handleConfirm = this.handleConfirm.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
   handleBack() {
+    // this.props.router.push('/step4');
     //TODO
   }
   handleConfirm() {
+    // this.props.router.push('/step6');
     //TODO
   }
   handleChange(event) {
-    this.setState({
-      [event.target.name]: event.target.value
-    })
+    this.setState(setFormData(this.state, event.target.name, event.target.value))
   }
 
   render() {
-
     return (
-      <FormBox>
         <form>
-          <PageHeading>Step 4: Clinician Details</PageHeading>
+          <PageHeading>Step 5: Clinician Details</PageHeading>
           <FormGroup controlId="formControlsTextarea">
-            <Row>
-              <Col md={6}>
-                <InputContainer >
-                  <RequiredInput type="text" name="providerNumber" required/>
-                  <Label htmlFor="provider-number">Provider Number <RequiredField>*</RequiredField>
-                  </Label>
-                </InputContainer>
-              </Col>
-              <Col md={6}>
-                <InputContainer >
-                  <RequiredInput type="text" required/>
-                  <Label htmlFor="medical-specialty">Medical Specialty <RequiredField>*</RequiredField></Label>
-                </InputContainer>
-              </Col>
-            </Row>
+            <ControlLabel>Provider Number </ControlLabel>
+            <FormControl type="text" required name="providerNumber" onChange={this.handleChange}/>
+          </FormGroup>
+          <FormGroup controlId="formControlsTextarea">
+            <ControlLabel>Medical Specialty </ControlLabel>
+            <FormControl type="text" required name="medicalSpecialty" onChange={this.handleChange}/>
           </FormGroup>
           <FormGroup controlId="formControlsTextarea">
             <Row>
               <Col md={6}>
-                <InputContainer >
-                  <RequiredInput type="text" required/>
-                  <Label htmlFor="first-name">First Name <RequiredField>*</RequiredField></Label>
-                </InputContainer>
+                <ControlLabel>First Name </ControlLabel>
+                <FormControl type="text" required name="firstName" onChange={this.handleChange}/>
               </Col>
               <Col md={6}>
-                <InputContainer >
-                  <RequiredInput type="text" required/>
-                  <Label htmlFor="last-name">Last Name <RequiredField>*</RequiredField></Label>
-                </InputContainer>
+                <ControlLabel>Last Name </ControlLabel>
+                <FormControl type="text" required name="lastName" onChange={this.handleChange}/>
               </Col>
             </Row>
           </FormGroup>
           <FormGroup controlId="formControlsTextarea">
             <Row>
               <Col md={12}>
-                <InputContainer >
-                  <RequiredInput type="text" required/>
-                  <Label htmlFor="address">Name of organisation, or address of practice <RequiredField>*</RequiredField></Label>
-                </InputContainer>
+                <ControlLabel>Name of organisation, or address of practice </ControlLabel>
+                <FormControl type="text" required name="address" onChange={this.handleChange}/>
               </Col>
             </Row>
           </FormGroup>
           <FormGroup controlId="formControlsTextarea">
             <Row>
               <Col md={4}>
-                <InputContainer >
-                  <RequiredInput type="text" required/>
-                  <Label htmlFor="phone">Phone <RequiredField>*</RequiredField></Label>
-                </InputContainer>
+                <ControlLabel>Phone </ControlLabel>
+                <FormControl type="number" required name="phone" onChange={this.handleChange}/>
               </Col>
               <Col md={4}>
-                <InputContainer >
-                  <RequiredInput type="text" required/>
-                  <Label htmlFor="email">Email <RequiredField>*</RequiredField></Label>
-                </InputContainer>
+                <ControlLabel>Email </ControlLabel>
+                <FormControl type="email" value={this.state.form.get('email')} required name="email" onChange={this.handleChange}/>
               </Col>
               <Col md={4}>
-                <InputContainer>
-                  <OptionalInput value={this.state.fax} type="text" name="fax" onChange={(e) => this.handleChange(e)}/>
-                  <Label htmlFor="fax">Fax(optional)</Label>
-                </InputContainer>
+                <ControlLabel>Fax(optional)</ControlLabel>
+                <FormControl value={this.state.form.get('fax')} type="text" name="fax" onChange={this.handleChange}/>
               </Col>
             </Row>
           </FormGroup>
@@ -112,8 +86,7 @@ class ClinicianDetails extends Component {
         >
           Confirm
         </FormButton> 
-        </form>
-      </FormBox>
+      </form>
     );
   }
 }

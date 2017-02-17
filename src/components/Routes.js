@@ -10,8 +10,8 @@ import ClinicianDetails from './../containers/ClinicianDetails';
 function Routes({ onChange }) {
   return (
     <Router key={Math.random()} history={hashHistory}>
-      <Route path="/step1" component={OrderTest} onChange={onChange} />
-      <Route path="/step4" component={ClinicianDetails} onChange={onChange}/>
+      <Route path="/step4" component={OrderTest} onChange={onChange} />
+      <Route path="/step1" component={ClinicianDetails} onChange={onChange}/>
       <Redirect from="/" to="step1"/> 
     </Router>
   );
