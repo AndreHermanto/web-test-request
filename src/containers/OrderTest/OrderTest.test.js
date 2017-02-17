@@ -42,4 +42,16 @@ describe('OrderTest: index', () => {
     page.handleTestSelect(selection);
     expect(page.state.form.test.id).toEqual('whole');  
   });  
+  
+  test('handleConfirm works', () => {
+    var props = {
+      route: {
+        onChange: jest.fn()
+      },
+      router:[]
+    };
+    var page = TestUtils.renderIntoDocument(React.createElement(OrderTest, props));                                         
+    page.handleConfirm();
+    expect(page.props.router[0]).toEqual('/step2')
+  });
 });

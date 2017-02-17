@@ -31,12 +31,12 @@ const Gene = styled(Label)`
  * OrderTest - UI for ordering type of tests, selecting disorder and related genes for testing.
  */
 class OrderTest extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     
     this.handleTestSelect = this.handleTestSelect.bind(this);
     this.handleConfirm = this.handleConfirm.bind(this);
-    
+
     this.state = {
       testList: [],
       form: {}
@@ -69,7 +69,8 @@ class OrderTest extends Component {
   }
   
   handleConfirm() {
-    // TODO in GECO-407
+    this.props.route.onChange(this);
+    this.props.router.push('/step2');
   }
 
   render() {
