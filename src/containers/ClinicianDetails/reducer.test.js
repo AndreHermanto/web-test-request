@@ -1,5 +1,4 @@
 import React from 'react';
-import Immutable from 'immutable';
 import { setFormData } from './reducer';
 
 describe('ClinicianDetails: reducer', () => {
@@ -10,15 +9,16 @@ describe('ClinicianDetails: reducer', () => {
       type: 'text'
     }
     const state = { 
-        form: Immutable.fromJS({
-          fax:''      
-      })
+        form: {
+          copy: false
+        }
     }
-    const newState = setFormData(state, event.name, event.value);
+    const newState = setFormData(state, event);
     expect(newState).toEqual({ 
-      form: Immutable.fromJS({
+      form: {
+        copy: false,
         fax:'fax'
-      })
+      }
     });
   });
 });
