@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import {
   FormGroup,
-  ControlLabel,
-  Radio
+  ControlLabel
 } from 'react-bootstrap';
 
 import Toggle from 'react-toggle';
@@ -16,6 +15,7 @@ import {
   FormButton
 } from './../../components/SharedStyle';
 import Input from './../../components/Input';
+import RadioSet from './../../components/RadioSet';
 import DatePicker from './../../components/DatePicker';
 
 /**
@@ -27,7 +27,7 @@ class PatientDetails extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleBack = this.handleBack.bind(this);
     this.handleConfirm = this.handleConfirm.bind(this);
-    this.state = initData();
+    this.state = initData(props.route.data);
   }
   
   handleChange(event) {
@@ -35,6 +35,7 @@ class PatientDetails extends Component {
   }
   
   handleBack() {
+    this.props.route.onChange(this);
     this.props.router.push('/step1');
   }
   
@@ -68,6 +69,7 @@ class PatientDetails extends Component {
           label="Surname"
           onChange={this.handleChange}
           onValidate={this.validate()}
+          formState={this.state.form}
           required
         />
 
@@ -76,6 +78,7 @@ class PatientDetails extends Component {
           label="Given Name"
           onChange={this.handleChange}
           onValidate={this.validate()}
+          formState={this.state.form}
           required
         />
         
@@ -84,6 +87,7 @@ class PatientDetails extends Component {
           label="Date of Birth"
           onChange={this.handleChange}
           onValidate={this.validate()}
+          formState={this.state.form}
           required
         />                      
 
@@ -92,34 +96,28 @@ class PatientDetails extends Component {
           label="Medical Record Number"
           onChange={this.handleChange}
           onValidate={this.validate()}
+          formState={this.state.form}
           optional
         />
-      
-        <FormGroup onChange={this.handleChange}>
-          <ControlLabel>Gender</ControlLabel>
-          <br />
-          <Radio name="gender" value="male" inline>
-            Male
-          </Radio>
-          <Radio name="gender" value="female" inline>
-            Female
-          </Radio>
-          <Radio name="gender" value="unknown" defaultChecked inline>
-            Unknown
-          </Radio>
-          <Radio name="gender" value="other" inline>
-            Other
-          </Radio>
-      
-          {(this.state.form.gender === 'other') && (
+
+        <RadioSet 
+          field="gender"
+          label="Gender"
+          options={['Male', 'Female', 'Unknown', 'Other']}
+          onChange={this.handleChange}
+          formState={this.state.form}
+          inline
+        />
+            
+        {(this.state.form.gender === 'Other') && (
           <Input
             field="genderOther"
             placeholder="Enter a gender type other than male/female/unknown"
             onChange={this.handleChange}
+            formState={this.state.form}
             style={{ marginTop: 8 }}
           />   
-          )}
-        </FormGroup>
+        )}
       
         <Input
           field="ethnicity"
@@ -133,6 +131,7 @@ class PatientDetails extends Component {
           <br />
           <Toggle
             name='deceased'
+            checked={this.state.form.deceased === true}
             onChange={this.handleChange} />
             
           {this.state.form.deceased && (
@@ -140,6 +139,7 @@ class PatientDetails extends Component {
               field="sampleSource"
               label="Sample Source"
               onChange={this.handleChange}
+              formState={this.state.form}
               optional
             />
           )}
@@ -150,6 +150,7 @@ class PatientDetails extends Component {
           <br />
           <Toggle
             name='consent'
+            checked={this.state.form.consent === true}
             onChange={this.handleChange} />
             
           {this.state.form.consent && (
@@ -164,6 +165,7 @@ class PatientDetails extends Component {
           label="Email"
           onChange={this.handleChange}
           onValidate={this.validate()}
+          formState={this.state.form}
           optional
         />
       

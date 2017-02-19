@@ -11,7 +11,13 @@ describe('DatePicker', function() {
   
   test('onSelectionChange updates and parse the value to parent\'s date state correctly', async function() {
     var send;
-    const component = TestUtils.renderIntoDocument(<DatePicker name="dob" onChange={(a)=>{send = a.target.value;}} />);
+    const component = TestUtils.renderIntoDocument(
+      <DatePicker 
+        name="dob" 
+        onChange={(a)=>{send = a.target.value;}}
+        formState={{}}
+      />
+    );
     component.state = {}; 
     component.handleSelectionChange([{ name: 'year', value: '1999' }]);
     expect(send).toEqual('');
