@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {
   FormGroup,
-  FormControl,
   ControlLabel,
   Radio
 } from 'react-bootstrap';
@@ -9,12 +8,14 @@ import {
 import Toggle from 'react-toggle';
 import {
   initData,
-  setFormData
+  setFormData,
+  validatedToTrue
 } from './reducer'
 import { 
   PageHeading,
   FormButton
 } from './../../components/SharedStyle';
+import Input from './../../components/Input';
 import DatePicker from './../../components/DatePicker';
 
 /**
@@ -37,52 +38,62 @@ class PatientDetails extends Component {
     this.props.router.push('/step1');
   }
   
-  handleConfirm() {
-    this.props.route.onChange(this);
+  handleNext(passValidation) {
+    if(!passValidation) return false;
+    this.props.route.onChange(this); 
     this.props.router.push('/step3');
+  }
+  
+  handleConfirm() {
+    return this.setState(validatedToTrue(this.state), () => {    
+      var pass = true;
+      for (var field in this.state.validation) {
+        if(this.state.validation[field].status === 'error') pass = false;
+      }
+      this.handleNext(pass); 
+    });
+  }
+  
+  // This renders the validation result after confirm button is clicked.
+  validate() {
+    return this.state.validated && this.state.validation;
   }
   
   render() {
     return (
       <div>
         <PageHeading>Step 2: Patient Details</PageHeading>
-        <FormGroup required>
-          <ControlLabel>Surname</ControlLabel>
-          <FormControl
-            type="text"
-            name="lastName"
-            placeholder="Enter the surname"
-            onChange={this.handleChange}
-          />
-        </FormGroup>
+        <Input
+          field="lastName"
+          label="Surname"
+          onChange={this.handleChange}
+          onValidate={this.validate()}
+          required
+        />
+
+        <Input
+          field="firstName"
+          label="Given Name"
+          onChange={this.handleChange}
+          onValidate={this.validate()}
+          required
+        />
         
-        <FormGroup required>
-          <ControlLabel>Given Name</ControlLabel>
-          <FormControl
-            type="text"
-            name="firstName"
-            placeholder="Enter the given name"
-            onChange={this.handleChange}
-          />
-        </FormGroup>
-        
-        <FormGroup required>
-          <ControlLabel>Date of Birth</ControlLabel>
-          <DatePicker
-            name="dob"
-            onChange={this.handleChange}  
-          />                      
-        </FormGroup>
-          
-        <FormGroup>
-          <ControlLabel>Medical Record Number</ControlLabel>
-          <FormControl
-            type="text"
-            name="medicalRecordNo"
-            placeholder="Enter the medical record number"
-            onChange={this.handleChange}
-          />
-        </FormGroup>
+        <DatePicker
+          field="dob"
+          label="Date of Birth"
+          onChange={this.handleChange}
+          onValidate={this.validate()}
+          required
+        />                      
+
+        <Input
+          field="medicalRecordNo"
+          label="Medical Record Number"
+          onChange={this.handleChange}
+          onValidate={this.validate()}
+          optional
+        />
       
         <FormGroup onChange={this.handleChange}>
           <ControlLabel>Gender</ControlLabel>
@@ -93,7 +104,7 @@ class PatientDetails extends Component {
           <Radio name="gender" value="female" inline>
             Female
           </Radio>
-          <Radio name="gender" value="unknown" inline>
+          <Radio name="gender" value="unknown" defaultChecked inline>
             Unknown
           </Radio>
           <Radio name="gender" value="other" inline>
@@ -101,9 +112,8 @@ class PatientDetails extends Component {
           </Radio>
       
           {(this.state.form.gender === 'other') && (
-          <FormControl
-            type="text"
-            name="genderOther"
+          <Input
+            field="genderOther"
             placeholder="Enter a gender type other than male/female/unknown"
             onChange={this.handleChange}
             style={{ marginTop: 8 }}
@@ -111,16 +121,13 @@ class PatientDetails extends Component {
           )}
         </FormGroup>
       
-        <FormGroup>
-          <ControlLabel>Ethnicity</ControlLabel>
-          <FormControl
-            type="text"
-            name="ethnicity"
-            placeholder="Enter the ethnicity"
-            onChange={this.handleChange}
-          />
-        </FormGroup>
-      
+        <Input
+          field="ethnicity"
+          label="Ethnicity"
+          onChange={this.handleChange}
+          optional
+        />
+        
         <FormGroup>
           <ControlLabel>Is this person deceased?</ControlLabel>
           <br />
@@ -129,15 +136,12 @@ class PatientDetails extends Component {
             onChange={this.handleChange} />
             
           {this.state.form.deceased && (
-            <FormGroup>
-              <ControlLabel>Sample Source</ControlLabel>
-              <FormControl
-                type="text"
-                name="sampleSource"
-                placeholder="Enter the sample source"
-                onChange={this.handleChange}
-              />
-            </FormGroup>
+            <Input
+              field="sampleSource"
+              label="Sample Source"
+              onChange={this.handleChange}
+              optional
+            />
           )}
         </FormGroup>
             
@@ -155,19 +159,18 @@ class PatientDetails extends Component {
           )}
         </FormGroup>
 
-        <FormGroup>
-          <ControlLabel>Email</ControlLabel>
-          <FormControl
-            type="text"
-            name="email"
-            placeholder="Enter the email"
-            onChange={this.handleChange}
-          />
-        </FormGroup>
+        <Input
+          field="email"
+          label="Email"
+          onChange={this.handleChange}
+          onValidate={this.validate()}
+          optional
+        />
       
         <FormButton 
           bsStyle="warning" 
           onClick={this.handleBack}
+          label="Back"
         >
           Back
         </FormButton> 

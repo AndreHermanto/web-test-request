@@ -1,20 +1,39 @@
+import validator from './../../components/validator';
+
 export function initData() {
-  return Object.assign({}, {
+  var state = {
     form: {
-      lastName: null,
-      firstName: null,
-      dob: null,
-      medicalRecordNo: null,
-      gender: null,
-      genderOther: null,
-      ethnicity: null,
+      lastName: '',
+      firstName: '',
+      dob: '',
+      medicalRecordNo: '',
+      gender: 'unknown',
+      genderOther: '',
+      ethnicity: '',
       deceased: false,
-      sampleSource: null,
+      sampleSource: '',
       consent: false,
-      email: null    
+      email: ''    
+    },
+    validationRule: {
+      lastName: 'required',
+      firstName: 'required',
+      dob: 'required',
+      medicalRecordNo: 'number',
+      email: 'required email'
     },
     validated: false
-  });
+  };
+  
+  // This validates the data in the initial state.
+  state.validation = {};
+  for (var field in state.validationRule) {
+    if(field) {
+      state.validation[field] = validator(state.form[field], state.validationRule[field]);
+    }
+  }
+  
+  return Object.assign({}, state);
 }
 
 
@@ -25,7 +44,6 @@ export function initData() {
  */
 export function setFormData(state, target) {
   var value;
-    
   switch(target.type) {
     case 'checkbox':
       value = target.checked;
@@ -39,7 +57,22 @@ export function setFormData(state, target) {
     [target.name]: value
   });
   
+  var validationStateChild = Object.assign({}, state.validation, {
+    [target.name]: validator(value, state.validationRule[target.name])
+  });
+
   return Object.assign({}, state, {
-    form: formStateChild
+    form: formStateChild,
+    validation: validationStateChild
+  });
+}
+
+/**
+ * Set "validated" state to true - identifying the confirm button is clicked and validation processed.
+ * @param {Object} state Targeted state to be changed.
+ */
+export function validatedToTrue(state) {
+  return Object.assign({}, state, {
+    validated: true
   });
 }
