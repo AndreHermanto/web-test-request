@@ -17,7 +17,6 @@ export function setFormData(state, target) {
       value = target.value;
       break;
   } 
-  
   var formStateChild = Object.assign({}, state.form, {
     [target.name]: value
   });

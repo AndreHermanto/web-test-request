@@ -23,12 +23,10 @@ class ClinicianDetails extends Component {
   }
   handleBack() {
     this.props.router.push('/step2');
-    //TODO
   }
   handleConfirm() {
     this.props.route.onChange(this);
-    // this.props.router.push('/step6');
-    //TODO
+    this.props.router.push('/step6');
   }
   handleChange(event) {
     this.setState(setFormData(this.state, event.target))
