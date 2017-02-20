@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
+import {
+  FormGroup,
+  ControlLabel
+} from 'react-bootstrap';
+
 import { Typeahead } from 'react-bootstrap-typeahead';
 import styled from 'styled-components';
+import { 
+  SubLabel,
+  ValidationFeedback
+} from './SharedStyle';
 
 const DateSelect = styled(Typeahead)`
   float: left;
@@ -38,7 +47,7 @@ class DatePicker extends Component {
       
       this.props.onChange({
         target: {
-          name: this.props.name,
+          name: this.props.field,
           value: value,
           dataset: {
             index: this.props['data-index']
@@ -49,8 +58,21 @@ class DatePicker extends Component {
   }
   
   render() {
+    var validator;
+    if(!this.props.onValidate) {
+      validator = { status: null, rule: {} };
+    } else {
+      validator = this.props.onValidate[this.props.field] || { status: null, rule: {} };
+    }
+    
     return (
-      <div className="date">  
+      <FormGroup validationState={validator.status}>
+        <ControlLabel>
+          {this.props.label}
+          {this.props.required && (<SubLabel>Required</SubLabel>)}
+          {this.props.optional && (<SubLabel>Optional</SubLabel>)} 
+        </ControlLabel>
+        <br />
         <DateSelect
           labelKey={option => `${option.label}`}
           placeholder="Day"
@@ -112,7 +134,8 @@ class DatePicker extends Component {
           }
         />
         <br /><br />
-      </div>
+        <ValidationFeedback>{validator.feedback}</ValidationFeedback>
+      </FormGroup>
     )
   }
 }

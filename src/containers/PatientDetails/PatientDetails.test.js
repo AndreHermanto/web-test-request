@@ -15,7 +15,7 @@ describe('PatientDetails: index', () => {
     route: {
       onChange: jest.fn()
     },
-    router:[]
+    router:['/step2']
   };
   
   test('handleChange works - general', () => {
@@ -46,9 +46,17 @@ describe('PatientDetails: index', () => {
     expect(page.props.router.pop()).toEqual('/step1')
   });
   
-  test('handleConfirm works', () => {
-    var page = TestUtils.renderIntoDocument(React.createElement(PatientDetails, props));                                         
-    page.handleConfirm();
+  test('handleNext works', () => {
+    var page = TestUtils.renderIntoDocument(React.createElement(PatientDetails, props));
+    page.handleNext(false);
+    expect(page.props.router.pop()).toEqual('/step2')
+    page.handleNext(true);
     expect(page.props.router.pop()).toEqual('/step3')
+  });
+  
+  test('handleConfirm works', () => {
+    var page = TestUtils.renderIntoDocument(React.createElement(PatientDetails, props));
+    page.handleConfirm();
+    expect(page.state.validated).toEqual(true);
   });
 });
