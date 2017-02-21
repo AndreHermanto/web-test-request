@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import { FormGroup, FormControl, ControlLabel, Row, Col } from 'react-bootstrap';
+import { FormGroup, ControlLabel, Row, Col } from 'react-bootstrap';
 import Toggle from 'react-toggle';
+import { initialState, setFormData, validatedToTrue } from './reducer';
 import { 
   PageHeading,
   FormButton
 } from './../../components/SharedStyle';
 import styled from 'styled-components';
-import { initialState, setFormData } from './reducer';
+import Input from './../../components/Input';
+
 
 const AdditionalFormBox = styled.div`
   border-bottom: 1px solid #eee;
@@ -21,65 +23,111 @@ class ClinicianDetails extends Component {
     this.handleConfirm = this.handleConfirm.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
-  handleBack() {
-    this.props.router.push('/step2');
-  }
-  handleConfirm() {
-    this.props.route.onChange(this);
-    this.props.router.push('/step6');
-  }
+
   handleChange(event) {
     this.setState(setFormData(this.state, event.target))
   }
 
+  handleBack() {
+    this.props.router.push('/step2');
+  }
+
+  handleNext(passValidation) {
+    if(!passValidation) return false;
+    this.props.route.onChange(this);
+    this.props.router.push('/step6');
+  }
+
+  handleConfirm() {
+    return this.setState(validatedToTrue(this.state), () => {    
+      var pass = true;
+      for (var field in this.state.validation) {
+        if(this.state.validation[field].status === 'error') pass = false;
+      }
+      this.handleNext(pass); 
+    });
+  }
+
+  // This renders the validation result after confirm button is clicked.
+  validate() {
+    return this.state.validated && this.state.validation;
+  }
+
   render() {
     return (
-        <form>
+        <div>
           <PageHeading>Step 5: Clinician Details</PageHeading>
-          <FormGroup controlId="formControlsTextarea">
-            <ControlLabel>Provider Number </ControlLabel>
-            <FormControl type="text" name="providerNumber" onChange={this.handleChange}/>
-          </FormGroup>
-          <FormGroup controlId="formControlsTextarea">
-            <ControlLabel>Medical Specialty </ControlLabel>
-            <FormControl type="text" name="medicalSpecialty" onChange={this.handleChange}/>
-          </FormGroup>
-          <FormGroup controlId="formControlsTextarea">
-            <Row>
-              <Col md={6}>
-                <ControlLabel>First Name </ControlLabel>
-                <FormControl type="text" name="firstName" onChange={this.handleChange}/>
-              </Col>
-              <Col md={6}>
-                <ControlLabel>Last Name </ControlLabel>
-                <FormControl type="text" name="lastName" onChange={this.handleChange}/>
-              </Col>
-            </Row>
-          </FormGroup>
-          <FormGroup controlId="formControlsTextarea">
-            <Row>
-              <Col md={12}>
-                <ControlLabel>Name of organisation, or address of practice </ControlLabel>
-                <FormControl type="text" name="address" onChange={this.handleChange}/>
-              </Col>
-            </Row>
-          </FormGroup>
-          <FormGroup controlId="formControlsTextarea">
-            <Row>
-              <Col md={4}>
-                <ControlLabel>Phone </ControlLabel>
-                <FormControl type="number" name="phone" onChange={this.handleChange}/>
-              </Col>
-              <Col md={4}>
-                <ControlLabel>Email </ControlLabel>
-                <FormControl type="email" name="email" onChange={this.handleChange}/>
-              </Col>
-              <Col md={4}>
-                <ControlLabel>Fax(optional)</ControlLabel>
-                <FormControl type="text" name="fax" onChange={this.handleChange}/>
-              </Col>
-            </Row>
-          </FormGroup>
+          <Input
+            field="providerNumber"
+            label="Provider Number"
+            onChange={this.handleChange}
+            onValidate={this.validate()}
+            required
+          />
+          <Input
+            field="medicalSpecialty"
+            label="Medical Specialty"
+            onChange={this.handleChange}
+            onValidate={this.validate()}
+            required
+          />
+          <Row>
+            <Col md={6}>
+              <Input
+                field="firstName"
+                label="First Name"
+                onChange={this.handleChange}
+                onValidate={this.validate()}
+                required
+              />
+            </Col>
+            <Col md={6}>
+              <Input
+                field="lastName"
+                label="Last Name"
+                onChange={this.handleChange}
+                onValidate={this.validate()}
+                required
+              />
+            </Col>
+          </Row>
+
+          <Input
+            field="organisation"
+            label="Name of organisation, or address of practice"
+            onChange={this.handleChange}
+            onValidate={this.validate()}
+            required
+          />
+          <Row>
+            <Col md={4}>
+              <Input
+                field="phone"
+                label="Phone"
+                onChange={this.handleChange}
+                onValidate={this.validate()}
+                required
+              />
+            </Col>
+            <Col md={4}>
+              <Input
+                field="email"
+                label="Email"
+                onChange={this.handleChange}
+                onValidate={this.validate()}
+                required
+              />
+            </Col>
+            <Col md={4}>
+              <Input
+                field="fax"
+                label="Fax"
+                onChange={this.handleChange}
+                onValidate={this.validate()}
+                optional
+              />
+            </Col>
+          </Row>
           <FormGroup>
             <ControlLabel>Request a copy of report sent to another HCP</ControlLabel> <br/>
             <Toggle
@@ -89,34 +137,40 @@ class ClinicianDetails extends Component {
           {
             this.state.form.copy &&
             <AdditionalFormBox> 
-            <FormGroup controlId="formControlsTextarea">
             <Row>
               <Col md={6}>
-                <ControlLabel>First Name </ControlLabel>
-                <FormControl type="text" name="additionalFirstName" onChange={this.handleChange}/>
+                <Input
+                  field="additionalFirstName"
+                  label="First Name"
+                  onChange={this.handleChange}
+                  onValidate={this.validate()}
+                  optional
+                />
               </Col>
               <Col md={6}>
-                <ControlLabel>Last Name </ControlLabel>
-                <FormControl type="text" name="additionalLastName" onChange={this.handleChange}/>
+                <Input
+                  field="additionalLastName"
+                  label="Last Name"
+                  onChange={this.handleChange}
+                  onValidate={this.validate()}
+                  optional
+                />
               </Col>
             </Row>
-            </FormGroup>
-            <FormGroup controlId="formControlsTextarea">
-            <Row>
-              <Col md={12}>
-                <ControlLabel>Name of organisation, or address of practice </ControlLabel>
-                <FormControl type="text" name="additionalAddress" onChange={this.handleChange}/>
-              </Col>
-            </Row>
-            </FormGroup>
-            <FormGroup controlId="formControlsTextarea">
-            <Row>
-              <Col md={12}>
-                <ControlLabel> Email </ControlLabel>
-                <FormControl type="text" name="additionalEmail" onChange={this.handleChange}/>
-              </Col>
-            </Row>
-            </FormGroup>
+            <Input
+              field="additionalOrganisation"
+              label="Name of organisation, or address of practice"
+              onChange={this.handleChange}
+              onValidate={this.validate()}
+              optional
+            />
+            <Input
+              field="additionalEmail"
+              label="Email"
+              onChange={this.handleChange}
+              onValidate={this.validate()}
+              optional
+            />
             </AdditionalFormBox>
           }
           <FormButton 
@@ -131,7 +185,7 @@ class ClinicianDetails extends Component {
           >
           Confirm
           </FormButton> 
-      </form>
+      </div>
     );
   }
 }
