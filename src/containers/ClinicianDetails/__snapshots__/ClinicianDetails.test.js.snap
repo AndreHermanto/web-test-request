@@ -21,7 +21,8 @@ exports[`<ClinicianDetails /> renders correctly 1`] = `
       name="providerNumber"
       onChange={[Function]}
       placeholder="Enter the provider number"
-      type="text" />
+      type="text"
+      value={undefined} />
     <span
       className="SfhHK help-block" />
   </div>
@@ -42,7 +43,8 @@ exports[`<ClinicianDetails /> renders correctly 1`] = `
       name="medicalSpecialty"
       onChange={[Function]}
       placeholder="Enter the medical specialty"
-      type="text" />
+      type="text"
+      value={undefined} />
     <span
       className="SfhHK help-block" />
   </div>
@@ -67,7 +69,8 @@ exports[`<ClinicianDetails /> renders correctly 1`] = `
           name="firstName"
           onChange={[Function]}
           placeholder="Enter the first name"
-          type="text" />
+          type="text"
+          value={undefined} />
         <span
           className="SfhHK help-block" />
       </div>
@@ -91,7 +94,8 @@ exports[`<ClinicianDetails /> renders correctly 1`] = `
           name="lastName"
           onChange={[Function]}
           placeholder="Enter the last name"
-          type="text" />
+          type="text"
+          value={undefined} />
         <span
           className="SfhHK help-block" />
       </div>
@@ -114,7 +118,8 @@ exports[`<ClinicianDetails /> renders correctly 1`] = `
       name="organisation"
       onChange={[Function]}
       placeholder="Enter the name of organisation, or address of practice"
-      type="text" />
+      type="text"
+      value={undefined} />
     <span
       className="SfhHK help-block" />
   </div>
@@ -139,7 +144,8 @@ exports[`<ClinicianDetails /> renders correctly 1`] = `
           name="phone"
           onChange={[Function]}
           placeholder="Enter the phone"
-          type="text" />
+          type="text"
+          value={undefined} />
         <span
           className="SfhHK help-block" />
       </div>
@@ -163,7 +169,8 @@ exports[`<ClinicianDetails /> renders correctly 1`] = `
           name="email"
           onChange={[Function]}
           placeholder="Enter the email"
-          type="text" />
+          type="text"
+          value={undefined} />
         <span
           className="SfhHK help-block" />
       </div>
@@ -187,7 +194,8 @@ exports[`<ClinicianDetails /> renders correctly 1`] = `
           name="fax"
           onChange={[Function]}
           placeholder="Enter the fax"
-          type="text" />
+          type="text"
+          value={undefined} />
         <span
           className="SfhHK help-block" />
       </div>
