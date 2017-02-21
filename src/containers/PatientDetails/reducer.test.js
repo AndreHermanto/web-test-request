@@ -14,7 +14,6 @@ describe('PatientDetails: reducer', () => {
     const name = 'test';
     const state = initData();
     const newState = setFormData(state, event);
-    console.log(newState);
     expect(newState.form.lastName).toEqual('John');
   });
 });

@@ -26,10 +26,15 @@ class DatePicker extends Component {
 
     this.handleSelectionChange = this.handleSelectionChange.bind(this);
     
+    var prefill = [];
+    if(props.formState[props.field]) {
+      prefill = props.formState[props.field].split('-');
+    }
+    
     this.state = {
-      day:'',
-      month:'',
-      year:''
+      day: prefill[0] || '',
+      month: prefill[1] || '',
+      year: prefill[2] || ''
     }
   }
   
@@ -78,6 +83,7 @@ class DatePicker extends Component {
           placeholder="Day"
           style={{ width: 30 }}
           onChange={this.handleSelectionChange}
+          defaultSelected={[this.state.day]}
           options={ 
             (function() {
               var arr = [], i;
@@ -97,6 +103,7 @@ class DatePicker extends Component {
           labelKey={option => `${option.label}`}
           placeholder="Month"
           onChange={this.handleSelectionChange}
+          defaultSelected={[this.state.month]}
           options={ 
             ([
               'January', 'February', 'March', 
@@ -119,6 +126,7 @@ class DatePicker extends Component {
           labelKey={option => `${option.label}`}
           placeholder="Year"
           onChange={this.handleSelectionChange}
+          defaultSelected={[this.state.year]}
           options={ 
             (function() {
               var arr = [], i;

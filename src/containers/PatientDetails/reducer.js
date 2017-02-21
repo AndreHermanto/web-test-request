@@ -1,13 +1,13 @@
 import validator from './../../components/validator';
 
-export function initData() {
+export function initData(prefilled) {
   var state = {
     form: {
       lastName: '',
       firstName: '',
       dob: '',
       medicalRecordNo: '',
-      gender: 'unknown',
+      gender: 'Unknown',
       genderOther: '',
       ethnicity: '',
       deceased: false,
@@ -24,6 +24,8 @@ export function initData() {
     },
     validated: false
   };
+  
+  if(prefilled) state.form = prefilled;
   
   // This validates the data in the initial state.
   state.validation = {};

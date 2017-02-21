@@ -13,13 +13,14 @@ describe('PatientDetails: index', () => {
   
   var props = {
     route: {
-      onChange: jest.fn()
+      onChange: jest.fn(),
+      data: {}
     },
     router:['/step2']
   };
   
   test('handleChange works - general', () => {
-    const page = TestUtils.renderIntoDocument(<PatientDetails />);
+    const page = TestUtils.renderIntoDocument(React.createElement(PatientDetails, props));
     const selection = { "target": { 
       "value": "abc",
       "name": "name",
@@ -30,7 +31,7 @@ describe('PatientDetails: index', () => {
   });
   
   test('handleChange works - checkbox', () => {
-    const page = TestUtils.renderIntoDocument(<PatientDetails />);
+    const page = TestUtils.renderIntoDocument(React.createElement(PatientDetails, props));
     const selection = { "target": { 
       "checked": true,
       "name": "deceased",

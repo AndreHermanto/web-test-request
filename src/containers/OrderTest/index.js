@@ -39,7 +39,7 @@ class OrderTest extends Component {
 
     this.state = {
       testList: [],
-      form: {}
+      form: props.route.data || {}
     };
   }
   
@@ -82,7 +82,7 @@ class OrderTest extends Component {
           <FormControl 
             componentClass="select" 
             name="test"
-            defaultValue=""
+            value={this.state.form.test ? this.state.form.test.id : ''}
             onChange={this.handleTestSelect}
           >
             <option key="0" value="" disabled>Select a panel.</option> 

@@ -13,11 +13,11 @@ exports[`OrderTest: index renders without crashing - initial state with empty ge
     </label>
     <select
       className="form-control"
-      defaultValue=""
       id={undefined}
       name="test"
       onChange={[Function]}
-      type={undefined}>
+      type={undefined}
+      value="">
       <option
         disabled={true}
         value="">
