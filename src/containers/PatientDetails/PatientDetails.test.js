@@ -13,13 +13,14 @@ describe('PatientDetails: index', () => {
   
   var props = {
     route: {
-      onChange: jest.fn()
+      onChange: jest.fn(),
+      data: {}
     },
-    router:[]
+    router:['/step2']
   };
   
   test('handleChange works - general', () => {
-    const page = TestUtils.renderIntoDocument(<PatientDetails />);
+    const page = TestUtils.renderIntoDocument(React.createElement(PatientDetails, props));
     const selection = { "target": { 
       "value": "abc",
       "name": "name",
@@ -30,7 +31,7 @@ describe('PatientDetails: index', () => {
   });
   
   test('handleChange works - checkbox', () => {
-    const page = TestUtils.renderIntoDocument(<PatientDetails />);
+    const page = TestUtils.renderIntoDocument(React.createElement(PatientDetails, props));
     const selection = { "target": { 
       "checked": true,
       "name": "deceased",
@@ -46,9 +47,17 @@ describe('PatientDetails: index', () => {
     expect(page.props.router.pop()).toEqual('/step1')
   });
   
-  test('handleConfirm works', () => {
-    var page = TestUtils.renderIntoDocument(React.createElement(PatientDetails, props));                                         
-    page.handleConfirm();
+  test('handleNext works', () => {
+    var page = TestUtils.renderIntoDocument(React.createElement(PatientDetails, props));
+    page.handleNext(false);
+    expect(page.props.router.pop()).toEqual('/step2')
+    page.handleNext(true);
     expect(page.props.router.pop()).toEqual('/step3')
+  });
+  
+  test('handleConfirm works', () => {
+    var page = TestUtils.renderIntoDocument(React.createElement(PatientDetails, props));
+    page.handleConfirm();
+    expect(page.state.validated).toEqual(true);
   });
 });

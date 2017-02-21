@@ -18,6 +18,7 @@ export default function Input({
   placeholder,
   onChange,
   onValidate,
+  formState,
   required,
   optional
 }) {
@@ -30,16 +31,19 @@ export default function Input({
 
   return (
     <FormGroup validationState={validator.status}>
-      <ControlLabel>
-        {label}
-        {required && (<SubLabel>Required</SubLabel>)}
-        {optional && (<SubLabel>Optional</SubLabel>)} 
-      </ControlLabel>
+      {label && (
+        <ControlLabel>
+          {label}
+          {required && (<SubLabel>Required</SubLabel>)}
+          {optional && (<SubLabel>Optional</SubLabel>)} 
+        </ControlLabel>
+      )}
       <FormControl
         type="text"
         name={field}
         placeholder={placeholder || "Enter the " + label.toLowerCase()}
         onChange={onChange}
+        value={formState && formState[field]}
       />
       <FormControl.Feedback />
       <ValidationFeedback>{validator.feedback}</ValidationFeedback>

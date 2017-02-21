@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
 import {
   FormGroup,
-  FormControl,
-  ControlLabel,
-  Radio
+  ControlLabel
 } from 'react-bootstrap';
 
 import Toggle from 'react-toggle';
 import {
   initData,
-  setFormData
+  setFormData,
+  validatedToTrue
 } from './reducer'
 import { 
   PageHeading,
   FormButton
 } from './../../components/SharedStyle';
+import Input from './../../components/Input';
+import RadioSet from './../../components/RadioSet';
 import DatePicker from './../../components/DatePicker';
 
 /**
@@ -26,7 +27,7 @@ class PatientDetails extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleBack = this.handleBack.bind(this);
     this.handleConfirm = this.handleConfirm.bind(this);
-    this.state = initData();
+    this.state = initData(props.route.data);
   }
   
   handleChange(event) {
@@ -34,110 +35,113 @@ class PatientDetails extends Component {
   }
   
   handleBack() {
+    this.props.route.onChange(this);
     this.props.router.push('/step1');
   }
   
-  handleConfirm() {
-    this.props.route.onChange(this);
+  handleNext(passValidation) {
+    if(!passValidation) return false;
+    this.props.route.onChange(this); 
     this.props.router.push('/step3');
+  }
+  
+  handleConfirm() {
+    return this.setState(validatedToTrue(this.state), () => {    
+      var pass = true;
+      for (var field in this.state.validation) {
+        if(this.state.validation[field].status === 'error') pass = false;
+      }
+      this.handleNext(pass); 
+    });
+  }
+  
+  // This renders the validation result after confirm button is clicked.
+  validate() {
+    return this.state.validated && this.state.validation;
   }
   
   render() {
     return (
       <div>
         <PageHeading>Step 2: Patient Details</PageHeading>
-        <FormGroup required>
-          <ControlLabel>Surname</ControlLabel>
-          <FormControl
-            type="text"
-            name="lastName"
-            placeholder="Enter the surname"
-            onChange={this.handleChange}
-          />
-        </FormGroup>
+        <Input
+          field="lastName"
+          label="Surname"
+          onChange={this.handleChange}
+          onValidate={this.validate()}
+          formState={this.state.form}
+          required
+        />
+
+        <Input
+          field="firstName"
+          label="Given Name"
+          onChange={this.handleChange}
+          onValidate={this.validate()}
+          formState={this.state.form}
+          required
+        />
         
-        <FormGroup required>
-          <ControlLabel>Given Name</ControlLabel>
-          <FormControl
-            type="text"
-            name="firstName"
-            placeholder="Enter the given name"
-            onChange={this.handleChange}
-          />
-        </FormGroup>
-        
-        <FormGroup required>
-          <ControlLabel>Date of Birth</ControlLabel>
-          <DatePicker
-            name="dob"
-            onChange={this.handleChange}  
-          />                      
-        </FormGroup>
-          
-        <FormGroup>
-          <ControlLabel>Medical Record Number</ControlLabel>
-          <FormControl
-            type="text"
-            name="medicalRecordNo"
-            placeholder="Enter the medical record number"
-            onChange={this.handleChange}
-          />
-        </FormGroup>
-      
-        <FormGroup onChange={this.handleChange}>
-          <ControlLabel>Gender</ControlLabel>
-          <br />
-          <Radio name="gender" value="male" inline>
-            Male
-          </Radio>
-          <Radio name="gender" value="female" inline>
-            Female
-          </Radio>
-          <Radio name="gender" value="unknown" inline>
-            Unknown
-          </Radio>
-          <Radio name="gender" value="other" inline>
-            Other
-          </Radio>
-      
-          {(this.state.form.gender === 'other') && (
-          <FormControl
-            type="text"
-            name="genderOther"
+        <DatePicker
+          field="dob"
+          label="Date of Birth"
+          onChange={this.handleChange}
+          onValidate={this.validate()}
+          formState={this.state.form}
+          required
+        />                      
+
+        <Input
+          field="medicalRecordNo"
+          label="Medical Record Number"
+          onChange={this.handleChange}
+          onValidate={this.validate()}
+          formState={this.state.form}
+          optional
+        />
+
+        <RadioSet 
+          field="gender"
+          label="Gender"
+          options={['Male', 'Female', 'Unknown', 'Other']}
+          onChange={this.handleChange}
+          formState={this.state.form}
+          inline
+        />
+            
+        {(this.state.form.gender === 'Other') && (
+          <Input
+            field="genderOther"
             placeholder="Enter a gender type other than male/female/unknown"
             onChange={this.handleChange}
+            formState={this.state.form}
             style={{ marginTop: 8 }}
           />   
-          )}
-        </FormGroup>
+        )}
       
-        <FormGroup>
-          <ControlLabel>Ethnicity</ControlLabel>
-          <FormControl
-            type="text"
-            name="ethnicity"
-            placeholder="Enter the ethnicity"
-            onChange={this.handleChange}
-          />
-        </FormGroup>
-      
+        <Input
+          field="ethnicity"
+          label="Ethnicity"
+          onChange={this.handleChange}
+          optional
+        />
+        
         <FormGroup>
           <ControlLabel>Is this person deceased?</ControlLabel>
           <br />
           <Toggle
             name='deceased'
+            checked={this.state.form.deceased === true}
             onChange={this.handleChange} />
             
           {this.state.form.deceased && (
-            <FormGroup>
-              <ControlLabel>Sample Source</ControlLabel>
-              <FormControl
-                type="text"
-                name="sampleSource"
-                placeholder="Enter the sample source"
-                onChange={this.handleChange}
-              />
-            </FormGroup>
+            <Input
+              field="sampleSource"
+              label="Sample Source"
+              onChange={this.handleChange}
+              formState={this.state.form}
+              optional
+            />
           )}
         </FormGroup>
             
@@ -146,6 +150,7 @@ class PatientDetails extends Component {
           <br />
           <Toggle
             name='consent'
+            checked={this.state.form.consent === true}
             onChange={this.handleChange} />
             
           {this.state.form.consent && (
@@ -155,19 +160,19 @@ class PatientDetails extends Component {
           )}
         </FormGroup>
 
-        <FormGroup>
-          <ControlLabel>Email</ControlLabel>
-          <FormControl
-            type="text"
-            name="email"
-            placeholder="Enter the email"
-            onChange={this.handleChange}
-          />
-        </FormGroup>
+        <Input
+          field="email"
+          label="Email"
+          onChange={this.handleChange}
+          onValidate={this.validate()}
+          formState={this.state.form}
+          optional
+        />
       
         <FormButton 
           bsStyle="warning" 
           onClick={this.handleBack}
+          label="Back"
         >
           Back
         </FormButton> 

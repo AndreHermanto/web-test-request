@@ -9,12 +9,12 @@ import OrderTest from './../containers/OrderTest';
 import PatientDetails from './../containers/PatientDetails';
 import ClinicianDetails from './../containers/ClinicianDetails';
 
-function Routes({ onChange }) {
+function Routes({ onChange, data }) {
   return (
-    <Router key={Math.random()} history={hashHistory} >
-      <Route path="/step1" component={OrderTest} onChange={onChange} />
-      <Route path="/step2" component={PatientDetails} onChange={onChange} />
-      <Route path="/step3" component={ClinicianDetails} onChange={onChange} />
+    <Router key={Math.random()} history={hashHistory}>
+      <Route path="/step1" component={OrderTest} onChange={onChange} data={data.OrderTest}/>
+      <Route path="/step2" component={PatientDetails} onChange={onChange} data={data.PatientDetails}/>
+      <Route path="/step5" component={ClinicianDetails} onChange={onChange} data={data.ClinicianDetails} />
       <Redirect from="/" to="step1"/> 
     </Router>
   );
