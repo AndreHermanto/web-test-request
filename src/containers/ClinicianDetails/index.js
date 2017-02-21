@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { FormGroup, ControlLabel, Row, Col } from 'react-bootstrap';
-import Toggle from 'react-toggle';
-import { initialState, setFormData, validatedToTrue } from './reducer';
+import { FormGroup, Row, Col } from 'react-bootstrap';
+import { initialState, setFormData, validatedToTrue, addNewHCP, removeHCP, setHCPForm } from './reducer';
 import { 
   PageHeading,
   FormButton
@@ -15,6 +14,37 @@ const AdditionalFormBox = styled.div`
   border-top: 1px solid #eee;
   padding-top: 10px;
 `;
+
+const HCPButton = styled.label`
+  cursor: pointer;
+  position: relative;
+  padding: 7px 15px;
+  border: 1px solid #ccc;
+  -webkit-transition: border-color .3s ease,color .3s ease,background-color .3s ease;
+  transition: border-color .3s ease,color .3s ease,background-color .3s ease;
+  color: #00a6b6;
+`;
+
+const RemoveLabel = styled.span`
+  cursor: pointer;
+  position: absolute;
+  margin-top: 4px;
+  margin-left: 8px;
+  font-weight: normal;
+  font-size: 11px;
+  color: #fff;
+  background: #bbb;
+  padding: 5px;
+  background-color: #5cb85c;
+  border-radius: .25em;
+  &:hover {
+    background:#fff;
+    color: black;
+    border: 1px solid #5cb85c;
+  }
+`;
+
+
 class ClinicianDetails extends Component {
   constructor(props) {
     super(props);
@@ -22,6 +52,8 @@ class ClinicianDetails extends Component {
     this.handleBack = this.handleBack.bind(this);
     this.handleConfirm = this.handleConfirm.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.hanldeAddHCP = this.hanldeAddHCP.bind(this);
+    this.handleHCPChange = this.handleHCPChange.bind(this);
   }
 
   handleChange(event) {
@@ -39,7 +71,7 @@ class ClinicianDetails extends Component {
   }
 
   handleConfirm() {
-    return this.setState(validatedToTrue(this.state), () => {    
+    this.setState(validatedToTrue(this.state), () => {    
       var pass = true;
       for (var field in this.state.validation) {
         if(this.state.validation[field].status === 'error') pass = false;
@@ -48,11 +80,22 @@ class ClinicianDetails extends Component {
     });
   }
 
+  hanldeAddHCP() {
+    this.setState(addNewHCP(this.state));
+  }
+
+  handleRemoveHCP(index) {
+    this.setState(removeHCP(this.state, index));
+  }
+
+  handleHCPChange(event, index) {
+    this.setState(setHCPForm(this.state, event.target, index))
+  }
+
   // This renders the validation result after confirm button is clicked.
   validate() {
     return this.state.validated && this.state.validation;
   }
-
   render() {
     return (
         <div>
@@ -129,49 +172,42 @@ class ClinicianDetails extends Component {
             </Col>
           </Row>
           <FormGroup>
-            <ControlLabel>Request a copy of report sent to another HCP</ControlLabel> <br/>
-            <Toggle
-              name='copy'
-              onChange={this.handleChange} />
+            <HCPButton onClick={this.hanldeAddHCP}>
+              Request a copy of report sent to another HCP
+            </HCPButton> 
           </FormGroup>
           {
-            this.state.form.copy &&
-            <AdditionalFormBox> 
-            <Row>
-              <Col md={6}>
-                <Input
-                  field="additionalFirstName"
-                  label="First Name"
-                  onChange={this.handleChange}
-                  onValidate={this.validate()}
-                  optional
-                />
-              </Col>
-              <Col md={6}>
-                <Input
-                  field="additionalLastName"
-                  label="Last Name"
-                  onChange={this.handleChange}
-                  onValidate={this.validate()}
-                  optional
-                />
-              </Col>
-            </Row>
-            <Input
-              field="additionalOrganisation"
-              label="Name of organisation, or address of practice"
-              onChange={this.handleChange}
-              onValidate={this.validate()}
-              optional
-            />
-            <Input
-              field="additionalEmail"
-              label="Email"
-              onChange={this.handleChange}
-              onValidate={this.validate()}
-              optional
-            />
-            </AdditionalFormBox>
+            this.state.additionalForm.get('body').map((form, index) => {
+              return <AdditionalFormBox key={index}> 
+              <PageHeading>HCP {index + 1} <RemoveLabel onClick={() => this.handleRemoveHCP(index)}>Remove</RemoveLabel></PageHeading>
+              <Row>
+                <Col md={6}>
+                  <Input
+                    field="additionalFirstName"
+                    label="First Name"
+                    onChange={(e) => this.handleHCPChange(e, index)}
+                  />
+                </Col>
+                <Col md={6}>
+                  <Input
+                    field="additionalLastName"
+                    label="Last Name"
+                    onChange={(e) => this.handleHCPChange(e, index)}
+                  />
+                </Col>
+              </Row>
+              <Input
+                field="additionalOrganisation"
+                label="Name of organisation, or address of practice"
+                onChange={(e) => this.handleHCPChange(e, index)}
+              />
+              <Input
+                field="additionalEmail"
+                label="Email"
+                onChange={(e) => this.handleHCPChange(e, index)}
+              />
+              </AdditionalFormBox>
+            })
           }
           <FormButton 
           bsStyle="warning" 

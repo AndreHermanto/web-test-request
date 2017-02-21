@@ -1,14 +1,11 @@
 import validator from './../../components/validator';
+import Immutable from 'immutable';
 
 export function initialState() {
   var state = {
     form: {
       providerNumber:'',
       medicalSpecialty:'',
-      additionalFirstName:'',
-      additionalLastName:'',
-      additionalOrganisation:'',
-      additionalEmail:'',
       firstName: '',
       lastName: '',
       organisation:'',
@@ -17,7 +14,9 @@ export function initialState() {
       fax:'',
       copy:false    
     },
-    additionalForm:[],
+    additionalForm:Immutable.fromJS({
+      body: []
+    }),
     validationRule: {
       providerNumber:'required',
       medicalSpecialty:'required',
@@ -25,7 +24,7 @@ export function initialState() {
       lastName: 'required',
       organisation:'required',
       phone:'required',
-      email: 'required email'
+      email: 'required email',
     },
     validated: false
   };
@@ -42,22 +41,13 @@ export function initialState() {
 }
 
 export function setFormData(state, target) {
-  var value;
-    
-  switch(target.type) {
-    case 'checkbox':
-      value = target.checked;
-      break;
-    default:
-      value = target.value;
-      break;
-  } 
+
   var formStateChild = Object.assign({}, state.form, {
-    [target.name]: value
+    [target.name]: target.value
   });
   
   var validationStateChild = Object.assign({}, state.validation, {
-    [target.name]: validator(value, state.validationRule[target.name])
+    [target.name]: validator(target.value, state.validationRule[target.name])
   });
 
   return Object.assign({}, state, {
@@ -76,8 +66,43 @@ export function validatedToTrue(state) {
   });
 }
 
+export function addNewHCP(state) {
+  const newHCP = Immutable.fromJS({
+    additionalFirstName:'',
+    additionalLastName:'',
+    additionalOrganisation:'',
+    additionalEmail:'',
+  })
+
+  let additionalForm = state.additionalForm.update('body', body => 
+    body.push(newHCP)
+  );
+  return Object.assign({}, state, {
+    additionalForm: additionalForm,
+  });
+}
+
+export function removeHCP(state, index) {
+  let additionalForm = state.additionalForm.update('body', body => 
+    body.splice(index, 1)
+  );
+  return Object.assign({}, state, {
+    additionalForm: additionalForm
+  });
+}
+
+export function setHCPForm(state, target, index) {
+  let additionalForm = state.additionalForm.updateIn(['body', index, target.name], value => target.value);
+  return Object.assign({}, state, {
+    additionalForm: additionalForm
+  });
+}
+
 export default { 
   initialState,
   setFormData,
-  validatedToTrue
+  validatedToTrue,
+  addNewHCP,
+  removeHCP,
+  setHCPForm
 };
