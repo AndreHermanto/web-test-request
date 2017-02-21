@@ -1,136 +1,195 @@
 exports[`<ClinicianDetails /> renders correctly 1`] = `
-<form>
+<div>
   <h3
     className="fAmrmf">
     Step 5: Clinician Details
   </h3>
   <div
-    className="form-group">
+    className="form-group has-feedback">
     <label
       className="control-label"
-      htmlFor="formControlsTextarea">
-      Provider Number 
+      htmlFor={undefined}>
+      Provider Number
+      <span
+        className="jCNiHk">
+        Required
+      </span>
     </label>
     <input
       className="form-control"
-      id="formControlsTextarea"
+      id={undefined}
       name="providerNumber"
       onChange={[Function]}
+      placeholder="Enter the provider number"
       type="text" />
+    <span
+      className="SfhHK help-block" />
   </div>
   <div
-    className="form-group">
+    className="form-group has-feedback">
     <label
       className="control-label"
-      htmlFor="formControlsTextarea">
-      Medical Specialty 
+      htmlFor={undefined}>
+      Medical Specialty
+      <span
+        className="jCNiHk">
+        Required
+      </span>
     </label>
     <input
       className="form-control"
-      id="formControlsTextarea"
+      id={undefined}
       name="medicalSpecialty"
       onChange={[Function]}
+      placeholder="Enter the medical specialty"
       type="text" />
+    <span
+      className="SfhHK help-block" />
   </div>
   <div
-    className="form-group">
+    className="row">
     <div
-      className="row">
+      className="col-md-6">
       <div
-        className="col-md-6">
+        className="form-group has-feedback">
         <label
           className="control-label"
-          htmlFor="formControlsTextarea">
-          First Name 
+          htmlFor={undefined}>
+          First Name
+          <span
+            className="jCNiHk">
+            Required
+          </span>
         </label>
         <input
           className="form-control"
-          id="formControlsTextarea"
+          id={undefined}
           name="firstName"
           onChange={[Function]}
+          placeholder="Enter the first name"
           type="text" />
+        <span
+          className="SfhHK help-block" />
       </div>
+    </div>
+    <div
+      className="col-md-6">
       <div
-        className="col-md-6">
+        className="form-group has-feedback">
         <label
           className="control-label"
-          htmlFor="formControlsTextarea">
-          Last Name 
+          htmlFor={undefined}>
+          Last Name
+          <span
+            className="jCNiHk">
+            Required
+          </span>
         </label>
         <input
           className="form-control"
-          id="formControlsTextarea"
+          id={undefined}
           name="lastName"
           onChange={[Function]}
+          placeholder="Enter the last name"
           type="text" />
+        <span
+          className="SfhHK help-block" />
       </div>
     </div>
   </div>
   <div
-    className="form-group">
-    <div
-      className="row">
-      <div
-        className="col-md-12">
-        <label
-          className="control-label"
-          htmlFor="formControlsTextarea">
-          Name of organisation, or address of practice 
-        </label>
-        <input
-          className="form-control"
-          id="formControlsTextarea"
-          name="address"
-          onChange={[Function]}
-          type="text" />
-      </div>
-    </div>
+    className="form-group has-feedback">
+    <label
+      className="control-label"
+      htmlFor={undefined}>
+      Name of organisation, or address of practice
+      <span
+        className="jCNiHk">
+        Required
+      </span>
+    </label>
+    <input
+      className="form-control"
+      id={undefined}
+      name="organisation"
+      onChange={[Function]}
+      placeholder="Enter the name of organisation, or address of practice"
+      type="text" />
+    <span
+      className="SfhHK help-block" />
   </div>
   <div
-    className="form-group">
+    className="row">
     <div
-      className="row">
+      className="col-md-4">
       <div
-        className="col-md-4">
+        className="form-group has-feedback">
         <label
           className="control-label"
-          htmlFor="formControlsTextarea">
-          Phone 
+          htmlFor={undefined}>
+          Phone
+          <span
+            className="jCNiHk">
+            Required
+          </span>
         </label>
         <input
           className="form-control"
-          id="formControlsTextarea"
+          id={undefined}
           name="phone"
           onChange={[Function]}
-          type="number" />
+          placeholder="Enter the phone"
+          type="text" />
+        <span
+          className="SfhHK help-block" />
       </div>
+    </div>
+    <div
+      className="col-md-4">
       <div
-        className="col-md-4">
+        className="form-group has-feedback">
         <label
           className="control-label"
-          htmlFor="formControlsTextarea">
-          Email 
+          htmlFor={undefined}>
+          Email
+          <span
+            className="jCNiHk">
+            Required
+          </span>
         </label>
         <input
           className="form-control"
-          id="formControlsTextarea"
+          id={undefined}
           name="email"
           onChange={[Function]}
-          type="email" />
+          placeholder="Enter the email"
+          type="text" />
+        <span
+          className="SfhHK help-block" />
       </div>
+    </div>
+    <div
+      className="col-md-4">
       <div
-        className="col-md-4">
+        className="form-group has-feedback">
         <label
           className="control-label"
-          htmlFor="formControlsTextarea">
-          Fax(optional)
+          htmlFor={undefined}>
+          Fax
+          <span
+            className="jCNiHk">
+            Optional
+          </span>
         </label>
         <input
           className="form-control"
-          id="formControlsTextarea"
+          id={undefined}
           name="fax"
           onChange={[Function]}
+          placeholder="Enter the fax"
           type="text" />
+        <span
+          className="SfhHK help-block" />
       </div>
     </div>
   </div>
@@ -207,5 +266,5 @@ exports[`<ClinicianDetails /> renders correctly 1`] = `
     type="submit">
     Confirm
   </button>
-</form>
+</div>
 `;

@@ -3,25 +3,14 @@ import { initialState, setFormData } from './reducer';
 
 describe('ClinicianDetails: reducer', () => {
   test('set new data for form field', () => {
-    const initialState = {
-      form: {
-        copy: false
-      }
-    }
-    expect(initialState).toEqual(initialState);
-
     const event = {
       name: 'fax',
       value: 'fax',
       type: 'text'
     }
-    const newState = setFormData(initialState, event);
-    expect(newState).toEqual({ 
-      form: {
-        copy: false,
-        fax:'fax'
-      }
-    });
+    const state = initialState();
+    const newState = setFormData(state, event);
+    expect(newState.form.fax).toEqual('fax');
 
     const eventCheckbox = {
       name: 'copy',
@@ -30,7 +19,7 @@ describe('ClinicianDetails: reducer', () => {
       type:'checkbox'
     }
 
-    const checkboxState = setFormData(initialState, eventCheckbox);
+    const checkboxState = setFormData(state, eventCheckbox);
 
     expect(checkboxState.form.copy).toEqual(true);
 

@@ -41,9 +41,9 @@ describe('<ClinicianDetails />', function() {
     expect(view.props.router.pop()).toEqual('/step2')
   });
   
-  test('handleConfirm works', () => {
+  test('handleNext works', () => {
     var view = TestUtils.renderIntoDocument(React.createElement(ClinicianDetails, props));                                         
-    view.handleConfirm();
+    view.handleNext(true);
     expect(view.props.router.pop()).toEqual('/step6')
   });
 });
