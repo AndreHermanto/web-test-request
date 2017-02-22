@@ -109,7 +109,7 @@ class ClinicianDetails extends Component {
   render() {
     return (
         <div>
-          <PageHeading>Step 5: Clinician Details</PageHeading>
+          <PageHeading>Step 4: Clinician Details</PageHeading>
           <Input
             field="providerNumber"
             label="Provider Number"

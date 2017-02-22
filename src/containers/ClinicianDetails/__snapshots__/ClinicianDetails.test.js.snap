@@ -2,7 +2,7 @@ exports[`<ClinicianDetails /> renders correctly 1`] = `
 <div>
   <h3
     className="fAmrmf">
-    Step 5: Clinician Details
+    Step 4: Clinician Details
   </h3>
   <div
     className="form-group has-feedback">
