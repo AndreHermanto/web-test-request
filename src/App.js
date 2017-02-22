@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {
   Grid,
-  Row,
-  Col
+  Col,
+  Row
 } from 'react-bootstrap';
 
 import Routes from './components/Routes';

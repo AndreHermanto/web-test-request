@@ -51,7 +51,10 @@ const RemoveLabel = styled.span`
   }
 `;
 
-
+/**
+* ClinicianDetials form - UI for input clinician details.
+* also has UI for requesting copy to other HCP
+*/
 class ClinicianDetails extends Component {
   constructor(props) {
     super(props);

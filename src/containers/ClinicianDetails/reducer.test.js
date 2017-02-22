@@ -51,9 +51,7 @@ describe('ClinicianDetails: reducer', () => {
 
   test('validate form field', () => {
     let validateState = addNewHCP(state);
-
     let newState = validateClinicianForm(validateState);
-    console.log('a', newState)
     expect(newState.validated).toEqual(true);
   });
 });
