@@ -7,6 +7,7 @@ import {
 } from 'react-router';
 import OrderTest from './../containers/OrderTest';
 import PatientDetails from './../containers/PatientDetails';
+import ClinicianDetails from './../containers/ClinicianDetails';
 import ClinicalInfo from './../containers/ClinicalInfo';
 
 function Routes({ onChange, data }) {
@@ -15,6 +16,7 @@ function Routes({ onChange, data }) {
       <Route path="/step1" component={OrderTest} onChange={onChange} data={data.OrderTest}/>
       <Route path="/step2" component={PatientDetails} onChange={onChange} data={data.PatientDetails}/>
       <Route path="/step3" component={ClinicalInfo} onChange={onChange} data={data.ClinicalInfo}/>
+      <Route path="/step4" component={ClinicianDetails} onChange={onChange} data={data.ClinicianDetails} />
       <Redirect from="/" to="step1"/> 
     </Router>
   );

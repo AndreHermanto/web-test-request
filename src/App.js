@@ -4,6 +4,7 @@ import {
   Col,
   Row
 } from 'react-bootstrap';
+
 import Routes from './components/Routes';
 import UniversalNavigation from './components/UniversalNavigation';
 import { setFormInputData } from './rootReducer';
@@ -31,7 +32,6 @@ class App extends Component {
   
   render() {
     return (
-
       <div>
         <UniversalNavigation />
         <Grid>
@@ -42,7 +42,6 @@ class App extends Component {
           </Row>
         </Grid> 
       </div>
-      
     );
   }
 };

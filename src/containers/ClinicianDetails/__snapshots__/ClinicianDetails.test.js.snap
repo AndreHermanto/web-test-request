@@ -1,0 +1,227 @@
+exports[`<ClinicianDetails /> renders correctly 1`] = `
+<div>
+  <h3
+    className="fAmrmf">
+    Step 4: Clinician Details
+  </h3>
+  <div
+    className="form-group has-feedback">
+    <label
+      className="control-label"
+      htmlFor={undefined}>
+      Provider Number
+      <span
+        className="jCNiHk">
+        Required
+      </span>
+    </label>
+    <input
+      className="form-control"
+      id={undefined}
+      name="providerNumber"
+      onChange={[Function]}
+      placeholder="Enter the provider number"
+      type="text"
+      value={undefined} />
+    <span
+      className="SfhHK help-block" />
+  </div>
+  <div
+    className="form-group has-feedback">
+    <label
+      className="control-label"
+      htmlFor={undefined}>
+      Medical Specialty
+      <span
+        className="jCNiHk">
+        Required
+      </span>
+    </label>
+    <input
+      className="form-control"
+      id={undefined}
+      name="medicalSpecialty"
+      onChange={[Function]}
+      placeholder="Enter the medical specialty"
+      type="text"
+      value={undefined} />
+    <span
+      className="SfhHK help-block" />
+  </div>
+  <div
+    className="row">
+    <div
+      className="col-md-6">
+      <div
+        className="form-group has-feedback">
+        <label
+          className="control-label"
+          htmlFor={undefined}>
+          First Name
+          <span
+            className="jCNiHk">
+            Required
+          </span>
+        </label>
+        <input
+          className="form-control"
+          id={undefined}
+          name="firstName"
+          onChange={[Function]}
+          placeholder="Enter the first name"
+          type="text"
+          value={undefined} />
+        <span
+          className="SfhHK help-block" />
+      </div>
+    </div>
+    <div
+      className="col-md-6">
+      <div
+        className="form-group has-feedback">
+        <label
+          className="control-label"
+          htmlFor={undefined}>
+          Last Name
+          <span
+            className="jCNiHk">
+            Required
+          </span>
+        </label>
+        <input
+          className="form-control"
+          id={undefined}
+          name="lastName"
+          onChange={[Function]}
+          placeholder="Enter the last name"
+          type="text"
+          value={undefined} />
+        <span
+          className="SfhHK help-block" />
+      </div>
+    </div>
+  </div>
+  <div
+    className="form-group has-feedback">
+    <label
+      className="control-label"
+      htmlFor={undefined}>
+      Name of organisation, or address of practice
+      <span
+        className="jCNiHk">
+        Required
+      </span>
+    </label>
+    <input
+      className="form-control"
+      id={undefined}
+      name="organisation"
+      onChange={[Function]}
+      placeholder="Enter the name of organisation, or address of practice"
+      type="text"
+      value={undefined} />
+    <span
+      className="SfhHK help-block" />
+  </div>
+  <div
+    className="row">
+    <div
+      className="col-md-4">
+      <div
+        className="form-group has-feedback">
+        <label
+          className="control-label"
+          htmlFor={undefined}>
+          Phone
+          <span
+            className="jCNiHk">
+            Required
+          </span>
+        </label>
+        <input
+          className="form-control"
+          id={undefined}
+          name="phone"
+          onChange={[Function]}
+          placeholder="Enter the phone"
+          type="text"
+          value={undefined} />
+        <span
+          className="SfhHK help-block" />
+      </div>
+    </div>
+    <div
+      className="col-md-4">
+      <div
+        className="form-group has-feedback">
+        <label
+          className="control-label"
+          htmlFor={undefined}>
+          Email
+          <span
+            className="jCNiHk">
+            Required
+          </span>
+        </label>
+        <input
+          className="form-control"
+          id={undefined}
+          name="email"
+          onChange={[Function]}
+          placeholder="Enter the email"
+          type="text"
+          value={undefined} />
+        <span
+          className="SfhHK help-block" />
+      </div>
+    </div>
+    <div
+      className="col-md-4">
+      <div
+        className="form-group has-feedback">
+        <label
+          className="control-label"
+          htmlFor={undefined}>
+          Fax
+          <span
+            className="jCNiHk">
+            Optional
+          </span>
+        </label>
+        <input
+          className="form-control"
+          id={undefined}
+          name="fax"
+          onChange={[Function]}
+          placeholder="Enter the fax"
+          type="text"
+          value={undefined} />
+        <span
+          className="SfhHK help-block" />
+      </div>
+    </div>
+  </div>
+  <div
+    className="form-group">
+    <label
+      className="lesyKZ"
+      onClick={[Function]}>
+      Request a copy of report sent to another HCP
+    </label>
+  </div>
+  <button
+    className="iMtXso btn btn-warning"
+    disabled={false}
+    onClick={[Function]}
+    type="button">
+    Back
+  </button>
+  <button
+    className="iMtXso btn btn-success"
+    disabled={false}
+    onClick={[Function]}
+    type="submit">
+    Confirm
+  </button>
+</div>
+`;
