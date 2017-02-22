@@ -18,15 +18,4 @@ describe('OrderTest: api', () => {
       });
     FetchMock.restore();
   });
-  
-  test('fetch GET a test panel', async () => {
-    FetchMock.get('*', {data: 
-      { "id": "test1", "label": "Test1" },
-    });
-    await getTest('test1')
-      .then((response) => {
-        expect(response.label).toEqual('Test1'); 
-      });
-    FetchMock.restore();
-  });
 });
