@@ -6,10 +6,7 @@ import {
   Label,
   Well
 } from 'react-bootstrap';
-import { 
-  getTestList,
-  getTest
-} from './api';
+import { getTestList } from './api';
 import {
   setTestList,
   setTestType
@@ -62,10 +59,11 @@ class OrderTest extends Component {
       return;
     }
     
-    return getTest(event.target.value)
-      .then((test) => { 
-        this.setState(setTestType(this.state, test));
-      });
+    this.state.testList.forEach((panel) => {
+      if(panel.id === event.target.value) this.setState(setTestType(this.state, panel));
+    });
+    
+    return;
   }
   
   handleConfirm() {
@@ -116,7 +114,6 @@ class OrderTest extends Component {
             </Well>
           </div>
         )}
-
 
         <FormButton 
           bsStyle="success" 

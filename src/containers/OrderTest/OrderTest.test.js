@@ -36,13 +36,12 @@ describe('OrderTest: index', () => {
     FetchMock.restore();                           
   });
   
-  test('handleTestSelect works - select a test panel', async () => {
+  test('handleTestSelect works - select a test panel', () => {
     const page = TestUtils.renderIntoDocument(React.createElement(OrderTest, props));
+    page.state.testList = testList.data;
     const selection = { "target": { "value": testList.data[1].id }};
-    FetchMock.get('*', tests);
-    await page.handleTestSelect(selection);
+    page.handleTestSelect(selection);
     expect(page.state.form.test.id).toEqual(2);  
-    FetchMock.restore();
   });
   
   test('handleTestSelect works - select a whole genome analysis', () => {
