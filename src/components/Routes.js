@@ -10,6 +10,7 @@ import PatientDetails from './../containers/PatientDetails';
 import ClinicianDetails from './../containers/ClinicianDetails';
 import ClinicalInfo from './../containers/ClinicalInfo';
 import BillingInfo from './../containers/BillingInfo';
+import Summary from './../containers/Summary';
 
 function Routes({ onChange, data, previousData }) {
   return (
@@ -19,6 +20,7 @@ function Routes({ onChange, data, previousData }) {
       <Route path="/step3" component={ClinicalInfo} onChange={onChange} data={data.ClinicalInfo}/>
       <Route path="/step4" component={ClinicianDetails} onChange={onChange} data={data.ClinicianDetails} />
       <Route path="/step5" component={BillingInfo} onChange={onChange} data={data.BillingInfo} clinicianData={data.ClinicianDetails || {}} />
+      <Route path="/summary" component={Summary} onChange={onChange} data={data}/>
       <Redirect from="/" to="step1"/> 
     </Router>
   );

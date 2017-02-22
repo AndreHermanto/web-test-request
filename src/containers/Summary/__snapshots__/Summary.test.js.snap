@@ -1,0 +1,23 @@
+exports[`Summary: index renders without crashing - initial state with empty geneList 1`] = `
+<div>
+  <h3
+    className="fAmrmf">
+    Summary
+  </h3>
+  <button
+    className="iMtXso btn btn-warning"
+    disabled={false}
+    label="Back"
+    onClick={[Function]}
+    type="button">
+    Back
+  </button>
+  <button
+    className="iMtXso btn btn-success"
+    disabled={false}
+    onClick={[Function]}
+    type="submit">
+    Submit
+  </button>
+</div>
+`;
