@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import { FormGroup, Row, Col } from 'react-bootstrap';
-import { initialState, setFormData, validatedToTrue, addNewHCP, removeHCP, setHCPForm } from './reducer';
+import { 
+  initialState, 
+  setFormData,  
+  addNewHCP, 
+  removeHCP, 
+  setHCPForm,
+  validateClinicianForm
+} from './reducer';
 import { 
   PageHeading,
   FormButton
@@ -52,7 +59,7 @@ class ClinicianDetails extends Component {
     this.handleBack = this.handleBack.bind(this);
     this.handleConfirm = this.handleConfirm.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.hanldeAddHCP = this.hanldeAddHCP.bind(this);
+    this.handleAddHCP = this.handleAddHCP.bind(this);
     this.handleHCPChange = this.handleHCPChange.bind(this);
   }
 
@@ -61,17 +68,17 @@ class ClinicianDetails extends Component {
   }
 
   handleBack() {
-    this.props.router.push('/step2');
+    this.props.router.push('/step3');
   }
 
   handleNext(passValidation) {
     if(!passValidation) return false;
     this.props.route.onChange(this);
-    this.props.router.push('/step6');
+    this.props.router.push('/step5');
   }
 
   handleConfirm() {
-    this.setState(validatedToTrue(this.state), () => {    
+    this.setState(validateClinicianForm(this.state), () => {    
       var pass = true;
       for (var field in this.state.validation) {
         if(this.state.validation[field].status === 'error') pass = false;
@@ -80,7 +87,7 @@ class ClinicianDetails extends Component {
     });
   }
 
-  hanldeAddHCP() {
+  handleAddHCP() {
     this.setState(addNewHCP(this.state));
   }
 
@@ -172,7 +179,7 @@ class ClinicianDetails extends Component {
             </Col>
           </Row>
           <FormGroup>
-            <HCPButton onClick={this.hanldeAddHCP}>
+            <HCPButton onClick={this.handleAddHCP}>
               Request a copy of report sent to another HCP
             </HCPButton> 
           </FormGroup>

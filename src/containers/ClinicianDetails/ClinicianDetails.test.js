@@ -33,7 +33,7 @@ describe('<ClinicianDetails />', function() {
     view.handleChange(firstName);
     expect(view.state.form.firstName).toEqual('aa');  
 
-    view.hanldeAddHCP();
+    view.handleAddHCP();
     expect(view.state.additionalForm.get('body').size).toEqual(1);
     view.handleRemoveHCP(0);
     expect(view.state.additionalForm.get('body').size).toEqual(0);
@@ -46,7 +46,7 @@ describe('<ClinicianDetails />', function() {
 
   test('handleHCPChange works', () =>  {
     var view = TestUtils.renderIntoDocument(React.createElement(ClinicianDetails, props));                                         
-    view.hanldeAddHCP();
+    view.handleAddHCP();
     let event = {
       target: {
         value:'aa',
@@ -87,13 +87,13 @@ describe('<ClinicianDetails />', function() {
   test('handleBack works', () =>  {
     var view = TestUtils.renderIntoDocument(React.createElement(ClinicianDetails, props));                                         
     view.handleBack();
-    expect(view.props.router.pop()).toEqual('/step2')
+    expect(view.props.router.pop()).toEqual('/step3')
   });
   
   test('handleNext works', () => {
     var view = TestUtils.renderIntoDocument(React.createElement(ClinicianDetails, props));                                         
     view.handleNext(true);
-    expect(view.props.router.pop()).toEqual('/step6');
+    expect(view.props.router.pop()).toEqual('/step5');
     const fail = view.handleNext(false);
     expect(fail).toEqual(false);
   });

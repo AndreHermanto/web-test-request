@@ -1,9 +1,22 @@
 import React from 'react';
 import Immutable from 'immutable';
-import { initialState, setFormData, validatedToTrue, addNewHCP, removeHCP, setHCPForm } from './reducer';
+import { 
+  initialState, 
+  setFormData, 
+  addNewHCP, 
+  removeHCP,
+  setHCPForm,
+  validateClinicianForm
+} from './reducer';
 
 describe('ClinicianDetails: reducer', () => {
   const state = initialState();
+  const newHCP = Immutable.fromJS({
+    additionalFirstName:'',
+    additionalLastName:'',
+    additionalOrganisation:'',
+    additionalEmail:''
+  })
   test('set new data for form field', () => {
     let event = {
       name: 'fax',
@@ -19,18 +32,8 @@ describe('ClinicianDetails: reducer', () => {
     expect(requiredState.form.firstName).toEqual('aa');
 
   });
-  test('validate form field', () => {
-    const newState = validatedToTrue(state);
-    expect(newState.validated).toEqual(true);
-  });
 
   test('addNewHCP/removeHCP/setHCPForm reducer test', () => {
-    const newHCP = Immutable.fromJS({
-      additionalFirstName:'',
-      additionalLastName:'',
-      additionalOrganisation:'',
-      additionalEmail:'',
-    })
     let newState = addNewHCP(state);
     expect(newState.additionalForm.get('body').size).toEqual(1);
 
@@ -44,5 +47,13 @@ describe('ClinicianDetails: reducer', () => {
     }
     let additionalFormValue = setHCPForm(newState, target, 0);
     expect(additionalFormValue.additionalForm.getIn(['body', 0, 'additionalFirstName'])).toEqual('aa');
+  });
+
+  test('validate form field', () => {
+    let validateState = addNewHCP(state);
+
+    let newState = validateClinicianForm(validateState);
+    console.log('a', newState)
+    expect(newState.validated).toEqual(true);
   });
 });

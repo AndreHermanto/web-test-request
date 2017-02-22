@@ -1,6 +1,8 @@
 import validator from './../../components/validator';
 import Immutable from 'immutable';
-
+/**
+ * initialState for clinician details form
+ */
 export function initialState() {
   var state = {
     form: {
@@ -12,6 +14,7 @@ export function initialState() {
       phone: '',
       email: '',
       fax:'',
+      copyToHCP:[],
       copy:false    
     },
     additionalForm:Immutable.fromJS({
@@ -24,7 +27,7 @@ export function initialState() {
       lastName: 'required',
       organisation:'required',
       phone:'required',
-      email: 'required email',
+      email: 'required email'
     },
     validated: false
   };
@@ -40,6 +43,11 @@ export function initialState() {
   return Object.assign({}, state);
 }
 
+/**
+ * This sets the form data upon onChange.
+ * @param {Object} state Targeted state to be changed.
+ * @param {Object} target Target object captured from UI event change.
+ */
 export function setFormData(state, target) {
 
   var formStateChild = Object.assign({}, state.form, {
@@ -57,31 +65,28 @@ export function setFormData(state, target) {
 }
 
 /**
- * Set "validated" state to true - identifying the confirm button is clicked and validation processed.
- * @param {Object} state Targeted state to be changed.
- */
-export function validatedToTrue(state) {
-  return Object.assign({}, state, {
-    validated: true
-  });
-}
-
+* add new HCP copy form field to additionalForm state
+* unlimited copy 
+*/
 export function addNewHCP(state) {
   const newHCP = Immutable.fromJS({
     additionalFirstName:'',
     additionalLastName:'',
     additionalOrganisation:'',
-    additionalEmail:'',
+    additionalEmail:''
   })
 
   let additionalForm = state.additionalForm.update('body', body => 
     body.push(newHCP)
   );
   return Object.assign({}, state, {
-    additionalForm: additionalForm,
+    additionalForm: additionalForm
   });
 }
 
+/**
+* remove selected HCP copy base on it index 
+*/
 export function removeHCP(state, index) {
   let additionalForm = state.additionalForm.update('body', body => 
     body.splice(index, 1)
@@ -91,6 +96,11 @@ export function removeHCP(state, index) {
   });
 }
 
+/**
+ * This sets the form data upon onChange for immutable form.
+ * make change to form field base on index and target name
+ */
+
 export function setHCPForm(state, target, index) {
   let additionalForm = state.additionalForm.updateIn(['body', index, target.name], value => target.value);
   return Object.assign({}, state, {
@@ -98,11 +108,38 @@ export function setHCPForm(state, target, index) {
   });
 }
 
+/**
+* submit button validation before moving to next step
+* Set copyToHCP to empty array in case validation is fail
+* Check if user request a copy HCP
+* if yes then transfer it from additionalForm to copyToHCP form state
+* set validated to true and move to next step
+*/
+export function validateClinicianForm(state) {
+  let body = state.additionalForm.get('body');
+  state.form.copyToHCP = [];
+  if(body.size > 0) {
+    body.map((b, i)=> {
+      let copy = {
+        additionalFirstName: b.get('additionalFirstName'),
+        additionalLastName: b.get('additionalLastName'),
+        additionalOrganisation: b.get('additionalOrganisation'),
+        additionalEmail: b.get('additionalEmail')
+      }
+      return state.form.copyToHCP.push(copy);
+    })
+  }
+  return Object.assign({}, state, {
+    validated: true,
+    form: state.form
+  });
+}
+
 export default { 
   initialState,
   setFormData,
-  validatedToTrue,
   addNewHCP,
   removeHCP,
-  setHCPForm
+  setHCPForm,
+  validateClinicianForm
 };
