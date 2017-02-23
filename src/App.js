@@ -37,7 +37,7 @@ class App extends Component {
         <Grid>
           <Row>
             <Col md={10} mdOffset={1}>
-              <Routes onChange={this.handleChange} data={this.state.formInput}/>
+              <Routes onChange={this.handleChange} data={this.state.formInput} previousData={this.state.formInput}/>
             </Col>
           </Row>
         </Grid> 

@@ -15,6 +15,7 @@ export default function RadioSet({
   field,
   label,
   options,
+  subLabels,
   onChange,
   formState,
   required,
@@ -31,7 +32,7 @@ export default function RadioSet({
         </ControlLabel>
       )}
       <br />
-      {options.map((option) => {
+      {options.map((option, $index) => {
         return (
           <Radio
             key={option}
@@ -40,7 +41,7 @@ export default function RadioSet({
             inline={inline}
             defaultChecked={formState[field] === option}
           >
-            {option}
+            {option}{(subLabels && subLabels[$index]) && (<SubLabel>({subLabels[$index]})</SubLabel>)}
           </Radio>
         )
       })}
