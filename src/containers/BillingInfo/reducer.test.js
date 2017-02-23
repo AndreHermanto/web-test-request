@@ -21,7 +21,7 @@ describe('ClinicianDetails: reducer', () => {
     let eventCheckbox = {
       name: 'consent',
       type: 'checkbox',
-      checked:true
+      checked: true
     }
     const checkboxState = setFormData(state, eventCheckbox);
     expect(checkboxState.form.consent).toEqual(true);

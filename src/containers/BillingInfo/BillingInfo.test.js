@@ -8,16 +8,16 @@ describe('<BillingInfo/>', function() {
     route: {
       onChange: jest.fn(),
       data: {},
-      previousData: {firstName:'aa'}
+      clinicianData: { firstName:'aa' }
     },
     router:[]
   };
 
-  var emptyPreviousDataProps = {
+  var emptyClinicianDataProps = {
     route: {
       onChange: jest.fn(),
       data: {},
-      previousData: undefined
+      clinicianData: {}
     },
     router:[]
   };
@@ -54,7 +54,7 @@ describe('<BillingInfo/>', function() {
   });
 
   test('handlePhoneChange works', () =>  {
-    var view = TestUtils.renderIntoDocument(React.createElement(BillingInfo, props)); 
+    var view = TestUtils.renderIntoDocument(React.createElement(BillingInfo, props));
     const phone = 11111;                              
     view.handlePhoneChange(phone);
     expect(view.state.form.phone).toEqual(11111);
@@ -76,7 +76,7 @@ describe('<BillingInfo/>', function() {
       { value: 'Jane', label: 'Jane' },
       { value: 'Other', label: 'Other' }
     ];
-    var defaultView = TestUtils.renderIntoDocument(React.createElement(BillingInfo, emptyPreviousDataProps));
+    var defaultView = TestUtils.renderIntoDocument(React.createElement(BillingInfo, emptyClinicianDataProps));
     const defaultPayers = defaultView.getPayers();
     expect(defaultPayers).toEqual(defaultOption);
   });
@@ -96,7 +96,7 @@ describe('<BillingInfo/>', function() {
   test('handleNext works', () => {
     var view = TestUtils.renderIntoDocument(React.createElement(BillingInfo, props));                                         
     view.handleNext(true);
-    expect(view.props.router.pop()).toEqual('/step6');
+    expect(view.props.router.pop()).toEqual('/summary');
     const fail = view.handleNext(false);
     expect(fail).toEqual(false);
   });

@@ -18,7 +18,7 @@ function Routes({ onChange, data, previousData }) {
       <Route path="/step2" component={PatientDetails} onChange={onChange} data={data.PatientDetails}/>
       <Route path="/step3" component={ClinicalInfo} onChange={onChange} data={data.ClinicalInfo}/>
       <Route path="/step4" component={ClinicianDetails} onChange={onChange} data={data.ClinicianDetails} />
-      <Route path="/step5" component={BillingInfo} onChange={onChange} data={data.BillingInfo} previousData={data.ClinicianDetails}/>
+      <Route path="/step5" component={BillingInfo} onChange={onChange} data={data.BillingInfo} clinicianData={data.ClinicianDetails || {}} />
       <Redirect from="/" to="step1"/> 
     </Router>
   );

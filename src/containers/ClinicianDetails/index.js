@@ -71,6 +71,7 @@ class ClinicianDetails extends Component {
   }
 
   handleBack() {
+    this.props.route.onChange(this);
     this.props.router.push('/step3');
   }
 

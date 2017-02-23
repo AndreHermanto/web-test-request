@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import { FormGroup, ControlLabel, Col, Row } from 'react-bootstrap';
+import { 
+  FormGroup, 
+  ControlLabel, 
+  Col, 
+  Row 
+} from 'react-bootstrap';
 import {
   initData,
   setFormData,
@@ -26,7 +31,7 @@ const PayerConsent = styled(ControlLabel)`
 `;
 const MobileNumber = styled(Phone)`
   input {
-    width: 78%;
+    width: 200px;
     padding: 6px 12px;
     font-size: 14px;
     border: 1px solid #ccc;
@@ -42,7 +47,6 @@ const MobileNumber = styled(Phone)`
     border: 0px solid #fff;
   }
   .react-phone-number-input__country {
-    width: 20%;
     marginRight: 1.3em;
   }
 `;
@@ -74,13 +78,14 @@ class BillingInfo extends Component {
   }
 
   handleBack() {
+    this.props.route.onChange(this);
     this.props.router.push('/step4');
   }
 
   handleNext(passValidation) {
     if(!passValidation) return false;
-    this.props.route.onChange(this)
-    this.props.router.push('/step6');
+    this.props.route.onChange(this);
+    this.props.router.push('/summary');
   }
 
   handleConfirm() {
@@ -99,10 +104,10 @@ class BillingInfo extends Component {
   }
 
   getPayers() {
-    if(this.props.route.previousData !== undefined)
+    if(this.props.route.clinicianData.firstName)
     {
       return [
-        { value: this.props.route.previousData.firstName, label: this.props.route.previousData.firstName },
+        { value: this.props.route.clinicianData.firstName, label: this.props.route.clinicianData.firstName },
         { value: 'Bob', label: 'Bob' },
         { value: 'Jane', label: 'Jane' },
         { value: 'Other', label: 'Other' }
@@ -113,7 +118,7 @@ class BillingInfo extends Component {
         { value: 'Bob', label: 'Bob' },
         { value: 'Jane', label: 'Jane' },
         { value: 'Other', label: 'Other' }
-      ]
+      ];
     }
   }
   
@@ -133,18 +138,17 @@ class BillingInfo extends Component {
     return (
       <div>
         <PageHeading>Step 5: Billing info</PageHeading>
-        {
-          this.props.route.previousData !== undefined &&
-          <FormGroup>
-            <RadioSet
+        <FormGroup>
+          <RadioSet
             label="Select billing option"
             field="billOption"
-            options={[`Institution (${this.props.route.previousData.organisation})`, 'Private']}
+            options={['Institution', 'Private']}
+            subLabels={[this.props.route.clinicianData.organisation,'']}
             formState={this.state}
             onChange={this.handleChange}
-            />
-          </FormGroup>
-        }
+          />
+        </FormGroup>
+
         {
           this.state.form.billOption !== '' &&
           <div>  
