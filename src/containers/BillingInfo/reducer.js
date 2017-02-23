@@ -6,12 +6,38 @@ import validator from './../../components/validator';
 export function initData(prefilled) {
   var state = {
     form: {
-      options:['Institution', 'Private'],
-      billOption:''
+      billOption:'',
+      payer:'payer',
+      phone:'',
+      email:''
     },
     validationRule: {
+      firstName: 'required',
       lastName: 'required',
+      email: 'required email'
     },
+    priceList:[
+    {
+      info:'Whole genome analysis',
+      price:4360
+    },
+    {
+      info:'Extra family member',
+      price:1950
+    },
+    {
+      info:'Extra family member',
+      price:1950
+    },
+    {
+      info:'Banking fee for international samples',
+      price:50
+    },
+    {
+      info:'TOTAL PRICE',
+      price:8310
+    }
+    ],
     validated: false
   };
   
@@ -56,5 +82,39 @@ export function setFormData(state, target) {
   return Object.assign({}, state, {
     form: formStateChild,
     validation: validationStateChild
+  });
+}
+
+/**
+* set the phone state when user choose a payer
+*/
+export function setSelectData(state, value) {
+  var formStateChild = Object.assign({}, state.form, {
+    payer: value
+  });
+  return Object.assign({}, state, {
+    form: formStateChild
+  });
+}
+
+/**
+* set the phone state when user start typing phone number
+*/
+export function setPhoneData(state, value) {
+  var formStateChild = Object.assign({}, state.form, {
+    phone: value
+  });
+  return Object.assign({}, state, {
+    form: formStateChild
+  });
+}
+
+/**
+ * Set "validated" state to true - identifying the confirm button is clicked and validation processed.
+ * @param {Object} state Targeted state to be changed.
+ */
+export function validatedToTrue(state) {
+  return Object.assign({}, state, {
+    validated: true
   });
 }
