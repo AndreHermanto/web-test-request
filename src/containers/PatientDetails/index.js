@@ -107,6 +107,7 @@ class PatientDetails extends Component {
           onChange={this.handleChange}
           formState={this.state.form}
           inline
+          required
         />
             
         {(this.state.form.gender === 'Other') && (
@@ -166,7 +167,7 @@ class PatientDetails extends Component {
           onChange={this.handleChange}
           onValidate={this.validate()}
           formState={this.state.form}
-          optional
+          required
         />
       
         <FormButton 
