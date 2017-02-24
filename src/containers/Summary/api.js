@@ -8,7 +8,7 @@ export function submitTestRequest(data) {
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(data)
+    body: JSON.stringify({ "contents": data })
   });
 }
 
