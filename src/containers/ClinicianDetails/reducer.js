@@ -3,7 +3,7 @@ import Immutable from 'immutable';
 /**
  * initialState for clinician details form
  */
-export function initialState() {
+export function initialState(prefilled) {
   var state = {
     form: {
       providerNumber:'',
@@ -31,6 +31,8 @@ export function initialState() {
     },
     validated: false
   };
+
+  if(prefilled) state.form = prefilled;
   
   // This validates the data in the initial state.
   state.validation = {};
@@ -134,12 +136,3 @@ export function validateClinicianForm(state) {
     form: state.form
   });
 }
-
-export default { 
-  initialState,
-  setFormData,
-  addNewHCP,
-  removeHCP,
-  setHCPForm,
-  validateClinicianForm
-};
