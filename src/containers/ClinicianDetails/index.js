@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FormGroup, Row, Col } from 'react-bootstrap';
+import { FormGroup } from 'react-bootstrap';
 import { 
   initialState, 
   setFormData,  
@@ -58,12 +58,12 @@ const RemoveLabel = styled.span`
 class ClinicianDetails extends Component {
   constructor(props) {
     super(props);
-    this.state = initialState();
     this.handleBack = this.handleBack.bind(this);
     this.handleConfirm = this.handleConfirm.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleAddHCP = this.handleAddHCP.bind(this);
     this.handleHCPChange = this.handleHCPChange.bind(this);
+    this.state = initialState(props.route.data);
   }
 
   handleChange(event) {
@@ -116,6 +116,7 @@ class ClinicianDetails extends Component {
             label="Provider Number"
             onChange={this.handleChange}
             onValidate={this.validate()}
+            formState={this.state.form}
             required
           />
           <Input
@@ -123,65 +124,58 @@ class ClinicianDetails extends Component {
             label="Medical Specialty"
             onChange={this.handleChange}
             onValidate={this.validate()}
+            formState={this.state.form}
             required
           />
-          <Row>
-            <Col md={6}>
-              <Input
-                field="firstName"
-                label="First Name"
-                onChange={this.handleChange}
-                onValidate={this.validate()}
-                required
-              />
-            </Col>
-            <Col md={6}>
-              <Input
-                field="lastName"
-                label="Last Name"
-                onChange={this.handleChange}
-                onValidate={this.validate()}
-                required
-              />
-            </Col>
-          </Row>
-
+          <Input
+            field="firstName"
+            label="First Name"
+            onChange={this.handleChange}
+            onValidate={this.validate()}
+            formState={this.state.form}
+            required
+          />
+          <Input
+            field="lastName"
+            label="Last Name"
+            onChange={this.handleChange}
+            onValidate={this.validate()}
+            formState={this.state.form}
+            required
+          />
           <Input
             field="organisation"
             label="Name of organisation, or address of practice"
             onChange={this.handleChange}
             onValidate={this.validate()}
+            formState={this.state.form}
             required
           />
-          <Row>
-            <Col md={4}>
-              <Input
-                field="phone"
-                label="Phone"
-                onChange={this.handleChange}
-                onValidate={this.validate()}
-                required
-              />
-            </Col>
-            <Col md={4}>
-              <Input
-                field="email"
-                label="Email"
-                onChange={this.handleChange}
-                onValidate={this.validate()}
-                required
-              />
-            </Col>
-            <Col md={4}>
-              <Input
-                field="fax"
-                label="Fax"
-                onChange={this.handleChange}
-                onValidate={this.validate()}
-                optional
-              />
-            </Col>
-          </Row>
+          <Input
+            field="phone"
+            label="Phone"
+            onChange={this.handleChange}
+            onValidate={this.validate()}
+            formState={this.state.form}
+            required
+          />
+          <Input
+            field="email"
+            label="Email"
+            onChange={this.handleChange}
+            onValidate={this.validate()}
+            formState={this.state.form}
+            required
+          />
+          <Input
+            field="fax"
+            label="Fax"
+            onChange={this.handleChange}
+            onValidate={this.validate()}
+            formState={this.state.form}
+            optional
+          />
+
           <FormGroup>
             <HCPButton onClick={this.handleAddHCP}>
               Request a copy of report sent to another HCP
@@ -191,22 +185,16 @@ class ClinicianDetails extends Component {
             this.state.additionalForm.get('body').map((form, index) => {
               return <AdditionalFormBox key={index}> 
               <PageHeading>HCP {index + 1} <RemoveLabel onClick={() => this.handleRemoveHCP(index)}>Remove</RemoveLabel></PageHeading>
-              <Row>
-                <Col md={6}>
-                  <Input
-                    field="additionalFirstName"
-                    label="First Name"
-                    onChange={(e) => this.handleHCPChange(e, index)}
-                  />
-                </Col>
-                <Col md={6}>
-                  <Input
-                    field="additionalLastName"
-                    label="Last Name"
-                    onChange={(e) => this.handleHCPChange(e, index)}
-                  />
-                </Col>
-              </Row>
+              <Input
+                field="additionalFirstName"
+                label="First Name"
+                onChange={(e) => this.handleHCPChange(e, index)}
+              />
+              <Input
+                field="additionalLastName"
+                label="Last Name"
+                onChange={(e) => this.handleHCPChange(e, index)}
+              />
               <Input
                 field="additionalOrganisation"
                 label="Name of organisation, or address of practice"
