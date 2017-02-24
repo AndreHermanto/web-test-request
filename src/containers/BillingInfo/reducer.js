@@ -9,10 +9,12 @@ export function initData(prefilled) {
       billOption:'',
       payer:'payer',
       phone:'',
+      givenName:'',
+      lastName:'',
       email:''
     },
     validationRule: {
-      firstName: 'required',
+      givenName: 'required',
       lastName: 'required',
       email: 'required email'
     },
