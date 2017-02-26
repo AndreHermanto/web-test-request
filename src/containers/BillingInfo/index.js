@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { 
   FormGroup, 
-  ControlLabel, 
-  Col, 
-  Row 
+  ControlLabel
 } from 'react-bootstrap';
 import {
   initData,
@@ -56,13 +54,13 @@ const MobileNumber = styled(Phone)`
 class BillingInfo extends Component {
   constructor(props) {
     super(props);
-    this.state = initData(props.route.data);
     this.handleChange = this.handleChange.bind(this);
     this.handleBack = this.handleBack.bind(this);
     this.getPayers = this.getPayers.bind(this);
     this.handleSelectChange = this.handleSelectChange.bind(this);
     this.handlePhoneChange = this.handlePhoneChange.bind(this);
     this.handleConfirm = this.handleConfirm.bind(this);
+    this.state = initData(props.route.data);
   }
 
   handleChange(event) {
@@ -138,16 +136,15 @@ class BillingInfo extends Component {
     return (
       <div>
         <PageHeading>Step 5: Billing info</PageHeading>
-        <FormGroup>
-          <RadioSet
-            label="Select billing option"
-            field="billOption"
-            options={['Institution', 'Private']}
-            subLabels={[this.props.route.clinicianData.organisation,'']}
-            formState={this.state}
-            onChange={this.handleChange}
-          />
-        </FormGroup>
+
+        <RadioSet
+          label="Select billing option"
+          field="billOption"
+          options={['Institution', 'Private']}
+          subLabels={[this.props.route.clinicianData.organisation,'']}
+          formState={this.state.form}
+          onChange={this.handleChange}
+        />
 
         {
           this.state.form.billOption !== '' &&
@@ -186,32 +183,28 @@ class BillingInfo extends Component {
             <PayerConsent>I have advised the patient that this test is dependent on private payment and will not proceed till it is received</PayerConsent>
           </FormGroup>
 
-          <Row>
-            <Col md={6}>
-              <Input
-                field="firstName"
-                label="First Name"
-                onChange={this.handleChange}
-                onValidate={this.validate()}
-                required
-              />
-            </Col>
-            <Col md={6}>
-              <Input
-                field="lastName"
-                label="Last Name"
-                onChange={this.handleChange}
-                onValidate={this.validate()}
-                required
-              />
-            </Col>
-          </Row>
+          <Input
+            field="givenName"
+            label="First Name"
+            onChange={this.handleChange}
+            onValidate={this.validate()}
+            formState={this.state.form}
+            required
+          />
+              
+          <Input
+            field="lastName"
+            label="Last Name"
+            onChange={this.handleChange}
+            onValidate={this.validate()}
+            formState={this.state.form}
+            required
+          />    
 
           <FormGroup>
             <ControlLabel>Mobile number</ControlLabel>
             <MobileNumber
               placeholder="Enter phone number"
-              value={ this.state.phone }
               country='AU'
               onChange={this.handlePhoneChange}
             />
@@ -222,6 +215,7 @@ class BillingInfo extends Component {
             label="Email"
             onChange={this.handleChange}
             onValidate={this.validate()}
+            formState={this.state.form}
             required
           />
 
