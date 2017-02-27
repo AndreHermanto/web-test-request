@@ -30,7 +30,7 @@ describe('Summary: index', () => {
   test('handleBack works', () =>  {
     var page = TestUtils.renderIntoDocument(React.createElement(Summary, props));                                         
     page.handleBack();
-    expect(page.props.router.pop()).toEqual('/step5')
+    expect(page.props.router.pop()).toEqual('/step6')
   });
   
   test('handleSubmit works', async () => {

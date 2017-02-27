@@ -90,7 +90,7 @@ describe('<BillingInfo/>', function() {
   test('handleBack works', () =>  {
     var view = TestUtils.renderIntoDocument(React.createElement(BillingInfo, props));                                         
     view.handleBack();
-    expect(view.props.router.pop()).toEqual('/step4')
+    expect(view.props.router.pop()).toEqual('/step5')
   });
   
   test('handleNext works', () => {

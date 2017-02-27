@@ -77,7 +77,7 @@ class BillingInfo extends Component {
 
   handleBack() {
     this.props.route.onChange(this);
-    this.props.router.push('/step4');
+    this.props.router.push('/step5');
   }
 
   handleNext(passValidation) {
@@ -135,7 +135,7 @@ class BillingInfo extends Component {
     const payers = this.getPayers();
     return (
       <div>
-        <PageHeading>Step 5: Billing info</PageHeading>
+        <PageHeading>Step 6: Billing info</PageHeading>
 
         <RadioSet
           label="Select billing option"

@@ -19,7 +19,7 @@ class Summary extends Component {
   }
   
   handleBack() {
-    this.props.router.push('/step5');
+    this.props.router.push('/step6');
   }
   
   handleSubmit() {

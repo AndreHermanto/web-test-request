@@ -72,13 +72,13 @@ class ClinicianDetails extends Component {
 
   handleBack() {
     this.props.route.onChange(this);
-    this.props.router.push('/step3');
+    this.props.router.push('/step4');
   }
 
   handleNext(passValidation) {
     if(!passValidation) return false;
     this.props.route.onChange(this);
-    this.props.router.push('/step5');
+    this.props.router.push('/step6');
   }
 
   handleConfirm() {
@@ -110,7 +110,7 @@ class ClinicianDetails extends Component {
   render() {
     return (
         <div>
-          <PageHeading>Step 4: Clinician Details</PageHeading>
+          <PageHeading>Step 5: Clinician Details</PageHeading>
           <Input
             field="providerNumber"
             label="Provider Number"
