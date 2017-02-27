@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { 
   FormGroup, 
-  ControlLabel,
-  Glyphicon
+  ControlLabel
 } from 'react-bootstrap';
 import {
   initData,
@@ -220,6 +219,26 @@ class BillingInfo extends Component {
             required
           />
 
+          <FormGroup>
+          <ControlLabel>Print out/Email invoice</ControlLabel>
+          <br />
+          <Toggle
+            name='export'
+            checked={this.state.form.export === true}
+            onChange={this.handleChange} />
+            
+          {this.state.form.export && (
+            <div>
+              <FormButton bsStyle="primary">
+                Print
+              </FormButton> 
+              <FormButton bsStyle="primary" >
+                Email
+              </FormButton> 
+            </div>
+          )}
+          </FormGroup>
+
           </div>
         }
         <FormButton 
@@ -229,20 +248,13 @@ class BillingInfo extends Component {
         >
           Back
         </FormButton> 
-
-        <FormButton 
-          bsStyle="info"
-          label="Print"  
-        >
-          <Glyphicon glyph="print" /> Print Invoice
-        </FormButton> 
- 
+      
         <FormButton 
           bsStyle="success" 
           type="submit" 
           onClick={this.handleConfirm}
         >
-          Confirm and email
+          Confirm
         </FormButton> 
       </div>
     );
