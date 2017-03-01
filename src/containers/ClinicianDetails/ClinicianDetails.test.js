@@ -74,13 +74,13 @@ describe('<ClinicianDetails />', function() {
   test('handleBack works', () =>  {
     var view = TestUtils.renderIntoDocument(React.createElement(ClinicianDetails, props));                                         
     view.handleBack();
-    expect(view.props.router.pop()).toEqual('/step3')
+    expect(view.props.router.pop()).toEqual('/step4')
   });
   
   test('handleNext works', () => {
     var view = TestUtils.renderIntoDocument(React.createElement(ClinicianDetails, props));                                         
     view.handleNext(true);
-    expect(view.props.router.pop()).toEqual('/step5');
+    expect(view.props.router.pop()).toEqual('/step6');
     const fail = view.handleNext(false);
     expect(fail).toEqual(false);
   });

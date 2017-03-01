@@ -1,0 +1,79 @@
+exports[`<FamilyMember/> renders without crashing 1`] = `
+<div>
+  <h3
+    className="fAmrmf">
+    Step 4: Family Members
+  </h3>
+  <div
+    className="row">
+    <div
+      className="col-md-12">
+      <div
+        className="thumbnail">
+        <img
+          alt={undefined}
+          src={undefined} />
+        <div
+          className="caption">
+          <label>
+            Patient: 
+          </label>
+           
+          <br />
+          <label>
+            DOB: 
+          </label>
+           
+          <br />
+          <label>
+            Gender: 
+          </label>
+           
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+  <br />
+  <label>
+    Family members associated with this patient:
+  </label>
+  <button
+    className="pull-right btn btn-default"
+    disabled={false}
+    onClick={[Function]}
+    type="button">
+    <span
+      className="glyphicon glyphicon-plus" />
+     Add family member
+  </button>
+  <br />
+  <br />
+  <div
+    className="row">
+    <div
+      className="col-md-12">
+      <br />
+      <i>
+        There is no family member associated with this patient. Please select \"Add family member\" to include a patients family member to be tested.
+      </i>
+      <br />
+    </div>
+  </div>
+  <button
+    className="iMtXso btn btn-warning"
+    disabled={false}
+    label="Back"
+    onClick={[Function]}
+    type="button">
+    Back
+  </button>
+  <button
+    className="iMtXso btn btn-success"
+    disabled={false}
+    onClick={[Function]}
+    type="submit">
+    Confirm
+  </button>
+</div>
+`;
