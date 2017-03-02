@@ -11,14 +11,17 @@ export function initData(prefilled) {
 }
 
 /**
- * This sets the form data upon onChange.
+ * Add a familyMember object into the familyMember array.
  * @param {Object} state Targeted state to be changed.
  * @param {Array} arr Modified array to be added to familyMember state.
  */
-export function setFamilyMemberArray(state, arr) {
+export function addFamilyMember(state, familyMemberArray) {
+  var newArray = familyMemberArray || [];
+  newArray.push({ FamilyMemberDetails: {}, FamilyMemberClinicalInfo: {} })
+  
   return Object.assign({}, state, {
     form: {
-      "familyMember": arr
+      "familyMember": newArray
     }
   });
 }

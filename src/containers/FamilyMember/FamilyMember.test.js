@@ -6,7 +6,8 @@ import FamilyMember from './index';
 describe('<FamilyMember/>', function() {
   var props = {
     route: {
-      onChange: jest.fn()
+      onChange: jest.fn(),
+      onDelete: jest.fn()
     },
     patientData:{
       firstName: 'John',
@@ -29,12 +30,19 @@ describe('<FamilyMember/>', function() {
     expect(view.state.form.familyMember.length).toEqual(1)
   });
   
-  test('handleDeleteFamilyMember adds an object in familyMember array', () =>  {
+  /*test('handleDeleteFamilyMember deletes an object in familyMember array', () =>  {
     var view = TestUtils.renderIntoDocument(React.createElement(FamilyMember, props));
     view.state.form.familyMember = [{},{}];
-    var select = { target: { name: 0 } }
+    var select = { currentTarget: { name: 0 } }
     view.handleDeleteFamilyMember(select);
     expect(view.state.form.familyMember.length).toEqual(1)
+  });*/
+  
+  test('handleEditFamilyMember redirects correctly', () =>  {
+    var view = TestUtils.renderIntoDocument(React.createElement(FamilyMember, props));
+    var select = { currentTarget: { name: 3 }}
+    view.handleEditFamilyMember(select);
+    expect(view.props.router.pop()).toEqual('/step4/edit/1/3')
   });
   
   test('handleBack works', () =>  {

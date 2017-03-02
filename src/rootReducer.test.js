@@ -2,7 +2,7 @@ import React from 'react';
 import { setFormInputData } from './rootReducer';
 
 describe('rootReducer', () => {
-  it('add a property in form state without interfering other state properties', () => {
+  test('add a property in form state without interfering other state properties', () => {
     const value = {};
     const name = 'form1';
     const state = { 
@@ -16,7 +16,7 @@ describe('rootReducer', () => {
     });
   });
   
-  it('update a property in form state without interfering other state properties', () => {
+  test('update a property in form state without interfering other state properties', () => {
     const value = {};
     const name = 'form2';
     const state = { 

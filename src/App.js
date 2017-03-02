@@ -7,14 +7,19 @@ import {
 
 import Routes from './components/Routes';
 import UniversalNavigation from './components/UniversalNavigation';
-import { setFormInputData } from './rootReducer';
+import { 
+  setFormInputData,
+  setFamilyMemberData,
+  deleteFamilyMemberData
+} from './rootReducer';
 import './App.css';
 
 class App extends Component {
   constructor() {
     super();
     this.handleChange = this.handleChange.bind(this);
-    
+    this.handleFamilyMemberChange = this.handleFamilyMemberChange.bind(this);
+    this.handleFamilyMemberDelete = this.handleFamilyMemberDelete.bind(this);
     this.state = {
       formInput: {}
     }
@@ -30,6 +35,24 @@ class App extends Component {
     ));
   }
   
+  handleFamilyMemberChange(formComponent) {
+    if(!formComponent.state) return;
+               
+    this.setState(setFamilyMemberData(
+      this.state,
+      formComponent.constructor.name,
+      formComponent.props.params.id, 
+      formComponent.state.form
+    ));
+  }
+  
+  handleFamilyMemberDelete(index) {           
+    this.setState(deleteFamilyMemberData(
+      this.state,
+      index
+    ));
+  }
+  
   render() {
     return (
       <div>
@@ -37,7 +60,12 @@ class App extends Component {
         <Grid>
           <Row>
             <Col md={10} mdOffset={1}>
-              <Routes onChange={this.handleChange} data={this.state.formInput} previousData={this.state.formInput}/>
+              <Routes 
+                onChange={this.handleChange}
+                onFamilyMemberChange={this.handleFamilyMemberChange}
+                onFamilyMemberDelete={this.handleFamilyMemberDelete}
+                data={this.state.formInput} 
+              />
             </Col>
           </Row>
         </Grid> 

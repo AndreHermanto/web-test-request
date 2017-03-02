@@ -1,13 +1,13 @@
 import React from 'react';
 import { 
   initData,
-  setFamilyMemberArray 
+  addFamilyMember 
 } from './reducer';
 
 describe('FamilyMember: reducer', () => {
-  test('update a property in form state without interfering other state properties', () => {
+  test('addFamilyMember add a family object', () => {
     const state = initData();
-    const newState = setFamilyMemberArray(state, [{}]);
+    const newState = addFamilyMember(state);
     expect(newState.form.familyMember.length).toEqual(1);
   });
 });
