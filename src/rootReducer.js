@@ -51,3 +51,12 @@ export function deleteFamilyMemberData(state, index, value) {
     formInput: formState
   });
 }
+
+/**
+ * set isEdited to true if user move back from summary page
+ */
+export function setFormEditState(state) {
+  return Object.assign({}, state, {
+    isEdited: true
+  })
+}

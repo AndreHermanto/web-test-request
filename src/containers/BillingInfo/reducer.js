@@ -7,16 +7,17 @@ export function initData(prefilled) {
   var state = {
     form: {
       billOption:'',
-      payer:'payer',
+      payer:'',
       phone:'',
       givenName:'',
       lastName:'',
-      email:''
+      payerEmail:'',
+      consent:false
     },
     validationRule: {
       givenName: 'required',
       lastName: 'required',
-      email: 'required email'
+      payerEmail: 'required email'
     },
     priceList:[
     {
@@ -91,10 +92,26 @@ export function setFormData(state, target) {
 /**
 * set the phone state when user choose a payer
 */
-export function setSelectData(state, value) {
-  var formStateChild = Object.assign({}, state.form, {
-    payer: value
-  });
+export function setSelectData(state, value, email) {
+  let formStateChild;
+  if(value !== 'Other')
+  {
+    let payer = value.split(' ');
+    formStateChild = Object.assign({}, state.form, {
+      payer: value,
+      givenName: payer[0],
+      lastName: payer[1],
+      email: email
+    });
+  }
+  else {
+    formStateChild = Object.assign({}, state.form, {
+      payer: value,
+      givenName: '',
+      lastName: '',
+      email: ''
+    });
+  }
   return Object.assign({}, state, {
     form: formStateChild
   });
@@ -116,7 +133,7 @@ export function setPhoneData(state, value) {
  * Set "validated" state to true - identifying the confirm button is clicked and validation processed.
  * @param {Object} state Targeted state to be changed.
  */
-export function validatedToTrue(state) {
+export function validatedToTrue(state, value) {
   return Object.assign({}, state, {
     validated: true
   });

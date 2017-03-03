@@ -9,6 +9,7 @@ import Routes from './components/Routes';
 import UniversalNavigation from './components/UniversalNavigation';
 import { 
   setFormInputData,
+  setFormEditState,
   setFamilyMemberData,
   deleteFamilyMemberData
 } from './rootReducer';
@@ -20,8 +21,10 @@ class App extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleFamilyMemberChange = this.handleFamilyMemberChange.bind(this);
     this.handleFamilyMemberDelete = this.handleFamilyMemberDelete.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
     this.state = {
-      formInput: {}
+      formInput: {},
+      isEdited: false
     }
   }
   
@@ -33,6 +36,10 @@ class App extends Component {
       formComponent.state.formId, 
       formComponent.state.form
     ));
+  }
+
+  handleEdit() {
+    this.setState(setFormEditState(this.state));
   }
   
   handleFamilyMemberChange(formComponent) {
@@ -64,7 +71,9 @@ class App extends Component {
                 onChange={this.handleChange}
                 onFamilyMemberChange={this.handleFamilyMemberChange}
                 onFamilyMemberDelete={this.handleFamilyMemberDelete}
-                data={this.state.formInput} 
+                data={this.state.formInput}
+                onEdit={this.handleEdit}
+                isEdited={this.state.isEdited}
               />
             </Col>
           </Row>

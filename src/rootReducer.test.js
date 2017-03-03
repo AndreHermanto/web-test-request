@@ -1,5 +1,5 @@
 import React from 'react';
-import { setFormInputData } from './rootReducer';
+import { setFormInputData, setFormEditState } from './rootReducer';
 
 describe('rootReducer', () => {
   test('add a property in form state without interfering other state properties', () => {
@@ -31,5 +31,14 @@ describe('rootReducer', () => {
         form2: {}
       }
     });
+  });
+
+  it('set edit state if move back from summary', () => {
+
+    const state = { 
+      isEdited: false
+    };
+    const newState = setFormEditState(true);
+    expect(newState.isEdited).toEqual(true);
   });
 });
