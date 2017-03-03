@@ -42,11 +42,11 @@ describe('<BillingInfo/>', function() {
 
     const firstName = { "target": { 
       "value": "aa",
-      "name": "givenName",
+      "name": "firstName",
       "type": "text"
     }};
     view.handleChange(firstName);
-    expect(view.state.form.givenName).toEqual('aa');  
+    expect(view.state.form.firstName).toEqual('aa');  
 
     const consent = { "target": { 
       "name": "consent",
