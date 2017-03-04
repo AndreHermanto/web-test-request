@@ -65,6 +65,7 @@ const active = {
   color: "black"
 };*/
 
+
 export default class ProgressBar extends Component 
 { 
   constructor(props) {
