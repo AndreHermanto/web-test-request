@@ -3,19 +3,29 @@ import validator from './../../components/validator';
 export function initData(prefilled) {
   var state = {
     form: {
-      clinicalInfo: '',
-      relevantInvestigation: '',
-      familyHistory: '',
-      consangunity: false
+      lastName: '',
+      firstName: '',
+      dob: '',
+      medicalRecordNo: '',
+      gender: 'Unknown',
+      genderOther: '',
+      ethnicity: '',
+      deceased: false,
+      sampleSource: '',
+      consent: false,
+      email: ''    
     },
     validationRule: {
-      clinicalInfo: 'required'
+      lastName: 'required',
+      firstName: 'required',
+      dob: 'required',
+      email: 'required email'
     },
     validated: false
   };
   
-  if(prefilled) state.form = prefilled;
-  
+  if(prefilled && Object.keys(prefilled).length !== 0) state.form = prefilled;
+
   // This validates the data in the initial state.
   state.validation = {};
   for (var field in state.validationRule) {

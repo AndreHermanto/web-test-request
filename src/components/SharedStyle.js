@@ -7,6 +7,7 @@ import {
 export const PageHeading = styled.h3`
   margin-bottom: 21px;
   font-weight: 300;
+  text-transform:capitalize;
 `;
  
 export const FormButton = styled(Button)`

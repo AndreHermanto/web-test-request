@@ -1,9 +1,10 @@
 import validator from './../../components/validator';
 
-export function initData(prefilled) {
+export function initData(prefilled, familyHistory) {
   var state = {
     form: {
       clinicalInfo: '',
+      unaffected: false,
       relevantInvestigation: '',
       familyHistory: '',
       consangunity: false
@@ -14,7 +15,8 @@ export function initData(prefilled) {
     validated: false
   };
   
-  if(prefilled) state.form = prefilled;
+  if(prefilled && Object.keys(prefilled).length !== 0) state.form = prefilled;
+  if(familyHistory) state.form.familyHistory = familyHistory;
   
   // This validates the data in the initial state.
   state.validation = {};

@@ -4,11 +4,12 @@ import {
   Glyphicon,
   Row,
   Col,
-  Button
+  Button,
+  Label
 } from 'react-bootstrap';
 import {
   initData,
-  setFamilyMemberArray
+  addFamilyMember
 } from './reducer'
 import { 
   PageHeading,
@@ -21,6 +22,10 @@ export const BlockButton = styled(Button)`
   float: right;
 `;
 
+export const Tag = styled(Label)`
+  margin-left: 16px;
+`;
+
 /**
  * FamilyMember - a hub page to insert, edit and delete family member of the patient.
  */
@@ -31,19 +36,24 @@ class FamilyMember extends Component {
     this.handleNext = this.handleNext.bind(this);
     this.handleAddFamilyMember = this.handleAddFamilyMember.bind(this);
     this.handleDeleteFamilyMember = this.handleDeleteFamilyMember.bind(this);
+    this.handleEditFamilyMember = this.handleEditFamilyMember.bind(this);
     this.state = initData(props.route.data);
   }
   
   handleAddFamilyMember() {
-    var arr = this.state.form.familyMember.slice();
-    arr.push({});
-    return this.setState(setFamilyMemberArray(this.state, arr));
+    return this.setState(addFamilyMember(this.state, this.state.form.familyMember), () => {
+      this.props.route.onChange(this);
+      this.props.router.push(`/step4/add/1/${(this.state.form.familyMember.length - 1)}`)
+    });
   }
   
   handleDeleteFamilyMember(event) {
-    var arr = this.state.form.familyMember.slice();
-    arr.splice(parseInt(event.target.name, 8), 1);
-    return this.setState(setFamilyMemberArray(this.state, arr));
+    this.props.route.onDelete(event.currentTarget.name);
+  }
+  
+  handleEditFamilyMember(event) {
+    this.props.route.onChange(this);
+    this.props.router.push(`/step4/edit/1/${event.currentTarget.name}`);
   }
   
   handleBack() {
@@ -81,12 +91,20 @@ class FamilyMember extends Component {
         <br /><br />
       
         <Row>
-        {this.state.form.familyMember.map((q, $index) => {
+        {this.state.form.familyMember.map((member, $index) => {
           return( 
-            <Col md={4} key={$index}>
+            <Col md={6} key={$index}>
               <Thumbnail>
-                Family Member
-                <BlockButton bsSize="xsmall">
+                {member.FamilyMemberDetails.firstName + ' ' + member.FamilyMemberDetails.lastName}
+                <Tag bsStyle={member.FamilyMemberClinicalInfo.unaffected ? 'success' : 'danger'}>
+                  {member.FamilyMemberClinicalInfo.unaffected ? 'Unaffected' : 'Affected'}
+                </Tag>
+            
+                <BlockButton 
+                  bsSize="xsmall"
+                  name={$index}
+                  onClick={this.handleEditFamilyMember}
+                >
                   <Glyphicon glyph="pencil"/> 
                 </BlockButton>
             
@@ -95,7 +113,7 @@ class FamilyMember extends Component {
                   name={$index}
                   onClick={this.handleDeleteFamilyMember}
                 >
-                  <Glyphicon glyph="trash" name={$index}/>
+                  <Glyphicon glyph="trash"/>
                 </BlockButton>
               </Thumbnail>
             </Col>
