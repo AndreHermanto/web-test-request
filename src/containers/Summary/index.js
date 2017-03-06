@@ -5,7 +5,17 @@ import {
   PageHeading,
   FormButton
 } from './../../components/SharedStyle';
-import { SummaryBox, SummaryHeading, SummaryBreakLine, EditButton, SummaryTitle, SummaryDetails, Gene, SummaryNotes, ClinicalButton } from './summaryStyled'; 
+import { 
+  SummaryBox,
+  SummaryHeading,
+  SummaryBreakLine,
+  EditButton,
+  SummaryTitle,
+  SummaryDetails,
+  Gene,
+  SummaryNotes,
+  ClinicalButton
+} from './summaryStyled'; 
 
 /**
 * Summary - UI for ordering type of tests, selecting disorder and related genes for testing.
@@ -50,7 +60,7 @@ class Summary extends Component {
         <PageHeading> Request summary</PageHeading>
         <SummaryBox>
           <EditButton className="glyphicon glyphicon-edit pull-right" onClick={() => this.handleEdit('step1')}/>
-          <SummaryHeading> Whole Genome Analysis </SummaryHeading>
+          <SummaryHeading> Order Test </SummaryHeading>
           <SummaryBreakLine/>
           <Row>
             <Col md={12}>
@@ -64,9 +74,17 @@ class Summary extends Component {
 
         <SummaryBox>
           <EditButton className="glyphicon glyphicon-edit pull-right" onClick={() => this.handleEdit('step2')}/>
-          <SummaryHeading> {this.props.route.data.PatientDetails.firstName} {this.props.route.data.PatientDetails.lastName} </SummaryHeading>
+          <SummaryHeading> Patient Details</SummaryHeading>
           <SummaryBreakLine/>
           <Row>
+            <Col md={12}>
+              <SummaryDetails> 
+                <strong>
+                  {this.props.route.data.PatientDetails.firstName + ' ' + this.props.route.data.PatientDetails.lastName}
+                </strong>
+              </SummaryDetails>
+            </Col>
+            
             <Col md={12}>
               <SummaryDetails> 
               <SummaryTitle> Date of Birth: </SummaryTitle>
@@ -125,15 +143,16 @@ class Summary extends Component {
             </Col>
           </Row>
         </SummaryBox>
+                  
         <SummaryBox>
-          <EditButton className="glyphicon glyphicon-edit pull-right" onClick={() => this.handleEdit('step4')}/>
-          <SummaryHeading> Physician details </SummaryHeading>
+          <EditButton className="glyphicon glyphicon-edit pull-right" onClick={() => this.handleEdit('step5')}/>
+          <SummaryHeading> Clinician details </SummaryHeading>
           <SummaryBreakLine/>
           <Row>
             <Col md={12}>
               <SummaryDetails> 
                 <strong>
-                  {this.props.route.data.ClinicianDetails.firstName} {this.props.route.data.ClinicianDetails.lastName}
+                  {this.props.route.data.ClinicianDetails.firstName + ' ' + this.props.route.data.ClinicianDetails.lastName}
                 </strong>
               </SummaryDetails>
             </Col>
@@ -210,8 +229,9 @@ class Summary extends Component {
             })
           }
         </SummaryBox>
+        
         <SummaryBox>
-          <EditButton className="glyphicon glyphicon-edit pull-right" onClick={() => this.handleEdit('step5')}/>
+          <EditButton className="glyphicon glyphicon-edit pull-right" onClick={() => this.handleEdit('step6')}/>
           <SummaryHeading> {this.props.route.data.BillingInfo.billOption} billing </SummaryHeading>
           <SummaryBreakLine/>
           <Row>
@@ -235,6 +255,7 @@ class Summary extends Component {
             </Col>
           </Row>
         </SummaryBox>
+              
         <FormButton 
           bsStyle="warning" 
           onClick={this.handleBack}

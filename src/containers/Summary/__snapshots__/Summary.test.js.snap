@@ -1,0 +1,367 @@
+exports[`Summary: index renders without crashing - initial state with empty geneList 1`] = `
+<div>
+  <h3
+    className="jhCkYx">
+     Request summary
+  </h3>
+  <div
+    className="htJaQZ">
+    <i
+      className="glyphicon glyphicon-edit pull-right vEVwV"
+      onClick={[Function]} />
+    <h3
+      className="dQtXWM">
+       Order Test 
+    </h3>
+    <div
+      className="dgEelt" />
+    <div
+      className="row">
+      <div
+        className="col-md-12">
+        <p
+          className="jXWIEx">
+           
+          <strong>
+            Consequatur adipisci modi laudantium tenetur ea exercitationem id
+          </strong>
+        </p>
+      </div>
+      <div
+        className="col-md-12">
+        <p
+          className="jXWIEx">
+           Total number of genes available: 
+          <span
+            className="fmanLU label label-default">
+            8
+             
+          </span>
+           
+        </p>
+      </div>
+    </div>
+  </div>
+  <div
+    className="htJaQZ">
+    <i
+      className="glyphicon glyphicon-edit pull-right vEVwV"
+      onClick={[Function]} />
+    <h3
+      className="dQtXWM">
+       Patient Details
+    </h3>
+    <div
+      className="dgEelt" />
+    <div
+      className="row">
+      <div
+        className="col-md-12">
+        <p
+          className="jXWIEx">
+          <strong>
+            Ngabcuyen abcabc
+          </strong>
+        </p>
+      </div>
+      <div
+        className="col-md-12">
+        <p
+          className="jXWIEx">
+          <span
+            className="bgdPDV">
+             Date of Birth: 
+          </span>
+          1-February-1917
+        </p>
+      </div>
+      <div
+        className="col-md-12">
+        <p
+          className="jXWIEx">
+          <span
+            className="bgdPDV">
+             Medical record number:  
+          </span>
+          123123
+        </p>
+      </div>
+      <div
+        className="col-md-12">
+        <p
+          className="jXWIEx">
+          <span
+            className="bgdPDV">
+             Gender:  
+          </span>
+          Male
+        </p>
+      </div>
+      <div
+        className="col-md-12">
+        <p
+          className="jXWIEx">
+          <span
+            className="bgdPDV">
+             Ethnicity:  
+          </span>
+          Asian
+        </p>
+      </div>
+      <div
+        className="col-md-12">
+        <p
+          className="jXWIEx">
+          <span
+            className="bgdPDV">
+             Email:  
+          </span>
+          abc@abc.gmail.com
+        </p>
+      </div>
+      <div
+        className="col-md-12">
+        <p
+          className="jXWIEx">
+          <span
+            className="bgdPDV">
+            Clinical notes
+            <span
+              className="eVDbRf label label-default"
+              onClick={[Function]}>
+              Edit
+            </span>
+          </span>
+        </p>
+        <div
+          className="jeRyhp">
+          abacbascs
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="htJaQZ">
+    <i
+      className="glyphicon glyphicon-edit pull-right vEVwV"
+      onClick={[Function]} />
+    <h3
+      className="dQtXWM">
+       Clinician details 
+    </h3>
+    <div
+      className="dgEelt" />
+    <div
+      className="row">
+      <div
+        className="col-md-12">
+        <p
+          className="jXWIEx">
+          <strong>
+            John Doe
+          </strong>
+        </p>
+      </div>
+      <div
+        className="col-md-12">
+        <p
+          className="jXWIEx">
+          as
+        </p>
+      </div>
+      <div
+        className="col-md-12">
+        <p
+          className="jXWIEx">
+          <span
+            className="bgdPDV">
+             Provider number:  
+          </span>
+          as
+        </p>
+      </div>
+      <div
+        className="col-md-12">
+        <p
+          className="jXWIEx">
+          <span
+            className="bgdPDV">
+             Medical specialty:  
+          </span>
+          as
+        </p>
+      </div>
+      <div
+        className="col-md-12">
+        <p
+          className="jXWIEx">
+          <span
+            className="bgdPDV">
+             Phone:  
+          </span>
+          as
+        </p>
+      </div>
+      <div
+        className="col-md-12">
+        <p
+          className="jXWIEx">
+          <span
+            className="bgdPDV">
+             Email:  
+          </span>
+          as
+        </p>
+      </div>
+      <div
+        className="col-md-12">
+        <p
+          className="jXWIEx">
+          <span
+            className="bgdPDV">
+             Fax:  
+          </span>
+          as
+        </p>
+      </div>
+    </div>
+    <div>
+      <div
+        className="dgEelt" />
+      <h3
+        className="dQtXWM">
+         Copy 
+      </h3>
+    </div>
+    <div
+      className="row">
+      <div
+        className="col-md-12">
+        <p
+          className="jXWIEx">
+          <strong>
+            asdf
+             
+            asdf
+          </strong>
+        </p>
+      </div>
+      <div
+        className="col-md-12">
+        <p
+          className="jXWIEx">
+          adsf
+        </p>
+      </div>
+      <div
+        className="col-md-12">
+        <p
+          className="jXWIEx">
+          <span
+            className="bgdPDV">
+             Email: 
+          </span>
+          asfd
+        </p>
+      </div>
+    </div>
+    <div
+      className="row">
+      <div
+        className="col-md-12">
+        <p
+          className="jXWIEx">
+          <strong>
+            asdf
+             
+            asdf
+          </strong>
+        </p>
+      </div>
+      <div
+        className="col-md-12">
+        <p
+          className="jXWIEx">
+          adsf
+        </p>
+      </div>
+      <div
+        className="col-md-12">
+        <p
+          className="jXWIEx">
+          <span
+            className="bgdPDV">
+             Email: 
+          </span>
+          asdf
+        </p>
+      </div>
+    </div>
+  </div>
+  <div
+    className="htJaQZ">
+    <i
+      className="glyphicon glyphicon-edit pull-right vEVwV"
+      onClick={[Function]} />
+    <h3
+      className="dQtXWM">
+       
+      Private
+       billing 
+    </h3>
+    <div
+      className="dgEelt" />
+    <div
+      className="row">
+      <div
+        className="col-md-12">
+        <p
+          className="jXWIEx">
+          <span
+            className="bgdPDV">
+             Payer:  
+          </span>
+          abc abc
+        </p>
+      </div>
+      <div
+        className="col-md-12">
+        <p
+          className="jXWIEx">
+          <span
+            className="bgdPDV">
+             Mobile:  
+          </span>
+          +61412334477
+        </p>
+      </div>
+      <div
+        className="col-md-12">
+        <p
+          className="jXWIEx">
+          <span
+            className="bgdPDV">
+             Email:  
+          </span>
+          abc@gmail.com
+        </p>
+      </div>
+    </div>
+  </div>
+  <button
+    className="iMtXso btn btn-warning"
+    disabled={false}
+    label="Back"
+    onClick={[Function]}
+    type="button">
+    Back
+  </button>
+  <button
+    className="iMtXso btn btn-success"
+    disabled={false}
+    onClick={[Function]}
+    type="submit">
+    Submit
+  </button>
+</div>
+`;
