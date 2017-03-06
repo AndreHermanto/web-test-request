@@ -21,7 +21,8 @@ export function initData(prefilled) {
       dob: 'required',
       email: 'required email'
     },
-    validated: false
+    validated: false,
+    formId: 'FamilyMemberDetails'
   };
   
   if(prefilled && Object.keys(prefilled).length !== 0) state.form = prefilled;

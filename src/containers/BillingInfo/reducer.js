@@ -40,10 +40,11 @@ export function initData(prefilled) {
       price:8310
     }
     ],
-    validated: false
+    validated: false,
+    formId: 'BillingInfo'
   };
   
-  if(prefilled) state.form = prefilled;
+  if(prefilled && Object.keys(prefilled).length !== 0) state.form = prefilled;
   
   // This validates the data in the initial state.
   state.validation = {};

@@ -1,0 +1,50 @@
+exports[`ProgressBar renders without crashing 1`] = `
+<div>
+  <div
+    className="row">
+    <div
+      className="jdYBqz">
+      <ul
+        className="LOkzU">
+        <li
+          className="jCRgif"
+          style={Object {}}>
+          Order Test
+        </li>
+        <li
+          className="jCRgif"
+          style={Object {}}>
+          Patient Details
+        </li>
+        <li
+          className="jCRgif"
+          style={Object {}}>
+          Clinical Information
+        </li>
+        <li
+          className="jCRgif"
+          style={Object {}}>
+          Family Member
+        </li>
+        <li
+          className="jCRgif"
+          style={Object {}}>
+          Clinician Details
+        </li>
+        <li
+          className="jCRgif"
+          style={Object {}}>
+          Billing Info
+        </li>
+        <li
+          className="jCRgif"
+          style={Object {}}>
+          Summary
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div
+    className="row" />
+</div>
+`;

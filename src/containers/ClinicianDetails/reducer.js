@@ -29,10 +29,11 @@ export function initialState(prefilled) {
       phone:'required',
       email: 'required email'
     },
-    validated: false
+    validated: false,
+    formId: 'ClinicianDetails'
   };
 
-  if(prefilled) state.form = prefilled;
+  if(prefilled && Object.keys(prefilled).length !== 0) state.form = prefilled;
   
   // This validates the data in the initial state.
   state.validation = {};
