@@ -44,7 +44,7 @@ describe('ProgressBar', function() {
     expect(page).toMatchSnapshot();
   });
 
-  it('checkPatientDetails', function() {
+  /*it('checkPatientDetails', function() {
   	expect(view.checkPatientDetails(props.route.data)).toBe(true);
   	expect(view.checkPatientDetails({})).toBe(false);
   });
@@ -63,4 +63,5 @@ describe('ProgressBar', function() {
   	expect(view.checkBillingInfo(props.route.data)).toBe(true);
   	expect(view.checkBillingInfo({})).toBe(false);
   });
+  */
 });
