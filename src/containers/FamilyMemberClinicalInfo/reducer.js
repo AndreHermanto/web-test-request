@@ -12,7 +12,8 @@ export function initData(prefilled, familyHistory) {
     validationRule: {
       clinicalInfo: 'required'
     },
-    validated: false
+    validated: false,
+    formId: 'FamilyMemberClinicalInfo'
   };
   
   if(prefilled && Object.keys(prefilled).length !== 0) state.form = prefilled;

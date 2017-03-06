@@ -31,8 +31,9 @@ describe('App', () => {
   
   test('handleChange works inserting form data into the state', () => {
     const page = TestUtils.renderIntoDocument(<App />);
-    const form = TestUtils.renderIntoDocument(React.createElement(OrderTest, props));
+    const form = TestUtils.renderIntoDocument(React.createElement(OrderTest, props)); 
     form.state.form.name = 'abc';
+    form.state.formId = 'OrderTest';
     page.handleChange(form);
     expect(page.state.formInput.OrderTest.name).toEqual('abc');  
   });

@@ -27,7 +27,7 @@ exports[`ClinicalInfo: index renders without crashing 1`] = `
         }
       }
       type={undefined}
-      value={undefined} />
+      value="" />
     <span
       className="SfhHK help-block" />
   </div>
@@ -54,7 +54,7 @@ exports[`ClinicalInfo: index renders without crashing 1`] = `
         }
       }
       type={undefined}
-      value={undefined} />
+      value="" />
     <span
       className="SfhHK help-block" />
   </div>
@@ -81,7 +81,7 @@ exports[`ClinicalInfo: index renders without crashing 1`] = `
         }
       }
       type={undefined}
-      value={undefined} />
+      value="" />
     <span
       className="SfhHK help-block" />
   </div>

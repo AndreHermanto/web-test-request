@@ -2,10 +2,11 @@ export function initData(prefilled) {
   var state = {
     form: {
       familyMember: []
-    }
+    },
+    formId: 'FamilyMember'
   };
   
-  if(prefilled) state.form = prefilled;
+  if(prefilled && Object.keys(prefilled).length !== 0) state.form = prefilled;
   
   return Object.assign({}, state);
 }

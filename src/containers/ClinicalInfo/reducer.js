@@ -11,10 +11,11 @@ export function initData(prefilled) {
     validationRule: {
       clinicalInfo: 'required'
     },
-    validated: false
+    validated: false,
+    formId: 'ClinicalInfo'
   };
   
-  if(prefilled) state.form = prefilled;
+  if(prefilled && Object.keys(prefilled).length !== 0) state.form = prefilled;
   
   // This validates the data in the initial state.
   state.validation = {};

@@ -5,7 +5,8 @@
  */
 export function setTestList(state, list) {
   return Object.assign({}, state, { 
-    testList: list 
+    testList: list,
+    formId: 'OrderTest'
   });
 }
 

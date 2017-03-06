@@ -27,10 +27,10 @@ class App extends Component {
   
   handleChange(formComponent) {
     if(!formComponent.state) return;
-                               
+         
     this.setState(setFormInputData(
       this.state,
-      formComponent.constructor.name, 
+      formComponent.state.formId, 
       formComponent.state.form
     ));
   }
@@ -40,7 +40,7 @@ class App extends Component {
                
     this.setState(setFamilyMemberData(
       this.state,
-      formComponent.constructor.name,
+      formComponent.state.formId,
       formComponent.props.params.id, 
       formComponent.state.form
     ));
