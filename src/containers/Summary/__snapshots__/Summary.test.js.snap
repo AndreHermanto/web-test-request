@@ -31,13 +31,11 @@ exports[`Summary: index renders without crashing - initial state with empty gene
         className="col-md-12">
         <p
           className="jXWIEx">
-           Total number of genes available: 
+           Total number of genes available:
           <span
             className="fmanLU label label-default">
             8
-             
           </span>
-           
         </p>
       </div>
     </div>
