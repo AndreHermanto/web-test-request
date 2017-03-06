@@ -67,8 +67,15 @@ class OrderTest extends Component {
   }
   
   handleConfirm() {
-    this.props.route.onChange(this);
-    this.props.router.push('/step2');
+    if(this.props.route.isEdited === true)
+    {
+      this.props.route.onChange(this);
+      this.props.router.push('/summary')
+    }
+    else {
+      this.props.route.onChange(this);
+      this.props.router.push('/step2'); 
+    }
   }
 
   render() {

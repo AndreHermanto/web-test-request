@@ -12,11 +12,11 @@ describe('ClinicianDetails: reducer', () => {
   const state = initData();
   test('set new data for form field', () => {
     let event = {
-      name: 'givenName',
+      name: 'firstName',
       value: 'John'    
     }
     const newState = setFormData(state, event);
-    expect(newState.form.givenName).toEqual('John');
+    expect(newState.form.firstName).toEqual('John');
 
     let eventCheckbox = {
       name: 'consent',

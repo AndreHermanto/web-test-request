@@ -40,7 +40,6 @@ const RemoveLabel = styled.span`
   font-weight: normal;
   font-size: 11px;
   color: #fff;
-  background: #bbb;
   padding: 5px;
   background-color: #5cb85c;
   border-radius: .25em;
@@ -77,8 +76,15 @@ class ClinicianDetails extends Component {
 
   handleNext(passValidation) {
     if(!passValidation) return false;
-    this.props.route.onChange(this);
-    this.props.router.push('/step6');
+    if(this.props.route.isEdited === true)
+    {
+      this.props.route.onChange(this);
+      this.props.router.push('/summary')
+    }
+    else {
+      this.props.route.onChange(this);
+      this.props.router.push('/step6'); 
+    }
   }
 
   handleConfirm() {
