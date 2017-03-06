@@ -67,7 +67,13 @@ class Summary extends Component {
               <SummaryDetails> <strong>{this.props.route.data.OrderTest.test.label}</strong></SummaryDetails>
             </Col>
             <Col md={12}>
-              <SummaryDetails> Total number of genes available: <Gene>{this.props.route.data.OrderTest.genes.length} </Gene> </SummaryDetails>
+              {this.props.route.data.OrderTest.genes && (
+                <SummaryDetails> Total number of genes available: 
+                  <Gene>
+                    {this.props.route.data.OrderTest.genes.length} 
+                  </Gene> 
+                </SummaryDetails>
+              )}
             </Col>
           </Row>
         </SummaryBox>
