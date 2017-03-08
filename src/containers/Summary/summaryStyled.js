@@ -58,6 +58,13 @@ export const Gene = styled(Label)`
   margin-left:5px;
 `;
 
+
+export const Tag = styled(Label)`
+  margin-left: 10px;
+  margin-top: 3px;
+  position: absolute;
+`;
+
 export const SummaryNotes = styled.div`
   background-color: #fafafa;
   padding: 1.3em;

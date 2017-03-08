@@ -15,7 +15,8 @@ import {
   SummaryDetails,
   SectionHeading,
   Gene,
-  SummaryNotes
+  SummaryNotes,
+  Tag
 } from './summaryStyled'; 
 import Toggle from './../../components/Toggle';
 import {
@@ -91,13 +92,13 @@ class Summary extends Component {
               <SummaryDetails> <strong>{this.props.route.data.OrderTest.test.label}</strong></SummaryDetails>
             </Col>
             <Col md={12}>
-              {this.props.route.data.OrderTest.genes && (
+              {this.props.route.data.OrderTest.genes && 
                 <SummaryDetails> Total number of genes available: 
                   <Gene>
                     {this.props.route.data.OrderTest.genes.length} 
                   </Gene> 
                 </SummaryDetails>
-              )}
+              }
             </Col>
           </Row>
         </SummaryBox>
@@ -207,7 +208,122 @@ class Summary extends Component {
             </Col>
           </Row>
         </SummaryBox>
-         <SummaryBox>
+        {
+            this.props.route.data.FamilyMember.familyMember.length > 0 &&
+            this.props.route.data.FamilyMember.familyMember.map((member, i) => 
+            {
+              return <SummaryBox key={i}>
+                <SummaryHeading> Family Member ({member.FamilyMemberDetails.firstName + ' ' + member.FamilyMemberDetails.lastName}) 
+                  <Tag bsStyle={member.FamilyMemberClinicalInfo.affected ? 'danger' : 'success'}>
+                    {member.FamilyMemberClinicalInfo.affected ? 'Affected' : 'Unaffected'}
+                  </Tag>
+                </SummaryHeading>
+                <SummaryBreakLine/>
+                  <Row>
+                    <Col md={12}>
+                      <SectionHeading> 
+                        Details
+                        <EditButtonXS className="glyphicon glyphicon-edit" onClick={() => this.handleEdit(`/step4/edit/1/${i}`)}/>
+                      </SectionHeading>
+                    </Col>
+                    <Col md={12}>
+                      <SummaryDetails> 
+                        <SummaryTitle> Date of Birth:  </SummaryTitle>
+                          {member.FamilyMemberDetails.dob}
+                      </SummaryDetails>
+                    </Col>
+                    {
+                      member.FamilyMemberDetails.medicalRecordNo !== '' && 
+                      <Col md={12}>
+                        <SummaryDetails> 
+                          <SummaryTitle> Medical record number:  </SummaryTitle>
+                          {member.FamilyMemberDetails.medicalRecordNo}
+                        </SummaryDetails>
+                      </Col>
+                    }
+                    <Col md={12}>
+                      <SummaryDetails> 
+                        <SummaryTitle> Gender:  </SummaryTitle>
+                        {member.FamilyMemberDetails.gender}
+                        {
+                          member.FamilyMemberDetails.gender === 'Other' ?
+                          member.FamilyMemberDetails.genderOther + ' (Other)' :
+                          member.FamilyMemberDetails.gender
+                        } 
+                      </SummaryDetails>
+                    </Col>
+                    {
+                      member.FamilyMemberDetails.ethnicity !== '' && 
+                      <Col md={12}>
+                        <SummaryDetails> 
+                          <SummaryTitle> Ethnicity:  </SummaryTitle>
+                          {member.FamilyMemberDetails.ethnicity}
+                        </SummaryDetails>
+                      </Col>
+                    }
+                    <Col md={12}>
+                      <SummaryDetails> 
+                      <SummaryTitle> Deceased:  </SummaryTitle>
+                          {this.props.route.data.PatientDetails.deceased ? 'Yes' : 'No'}
+                      </SummaryDetails>
+                    </Col>
+                    {
+                      member.FamilyMemberDetails.sampleSource !== '' && 
+                      <Col md={12}>
+                        <SummaryDetails> 
+                          <SummaryTitle> Sample source:  </SummaryTitle>
+                          {member.FamilyMemberDetails.sampleSource}
+                        </SummaryDetails>
+                      </Col>
+                    }
+                    <Col md={12}>
+                      <SummaryDetails> 
+                        <SummaryTitle> Email:  </SummaryTitle>
+                        {member.FamilyMemberDetails.email}
+                      </SummaryDetails>
+                    </Col>
+
+                    <Col md={12}>
+                      <SectionHeading> 
+                        Clinical Information
+                        <EditButtonXS className="glyphicon glyphicon-edit" onClick={() => this.handleEdit(`/step4/edit/2/${i}`)}/>
+                      </SectionHeading>
+                    </Col>
+                    <Col md={12}>
+                      <SummaryTitle> Clinical note </SummaryTitle>
+                      <SummaryNotes>
+                        {member.FamilyMemberClinicalInfo.clinicalInfo}
+                      </SummaryNotes>
+                    </Col>
+                    {
+                      member.FamilyMemberClinicalInfo.relevantInvestigation !== '' &&
+                      <Col md={12}>
+                        <SummaryTitle> Relevant investigation note </SummaryTitle>
+                        <SummaryNotes>
+                          {member.FamilyMemberClinicalInfo.relevantInvestigation}
+                        </SummaryNotes>
+                      </Col>
+                    }
+                    {
+                      member.FamilyMemberClinicalInfo.familyHistory !== '' &&
+                      <Col md={12}>
+                        <SummaryTitle> Family history note </SummaryTitle>
+                        <SummaryNotes>
+                          {member.FamilyMemberClinicalInfo.familyHistory}
+                        </SummaryNotes>
+                      </Col>
+                    }
+                    <Col md={12}>
+                      <SummaryDetails> 
+                      <SummaryTitle> Consanguinity:  </SummaryTitle>
+                        {this.props.route.data.ClinicalInfo.consanguinity ? 'Yes' : 'No'} 
+                      </SummaryDetails>
+                    </Col>
+                  </Row>
+                </SummaryBox>
+            })
+          }
+        <SummaryBox>
           <EditButton className="glyphicon glyphicon-edit pull-right" onClick={() => this.handleEdit('step5')}/>
           <SummaryHeading> Clinician details </SummaryHeading>
           <SummaryBreakLine/>
@@ -258,7 +374,6 @@ class Summary extends Component {
             </Col>
             }
           </Row>
-
           {
             this.props.route.data.ClinicianDetails.copyToHCP.length > 0 && 
             <div>
@@ -294,7 +409,7 @@ class Summary extends Component {
         </SummaryBox>
         
         <SummaryBox>
-          <EditButton className="glyphicon glyphicon-edit pull-right" onClick={() => this.handleEdit('step6')}/>
+          <EditButton className="glyphicon glyphicon-edit pull-right" onClick={this.handleBack}/>
           <SummaryHeading> {this.props.route.data.BillingInfo.billOption} billing </SummaryHeading>
           <SummaryBreakLine/>
           <Row>

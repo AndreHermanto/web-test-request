@@ -48,8 +48,15 @@ class FamilyMemberClinicalInfo extends Component {
   
   handleNext(passValidation) {
     if(!passValidation) return false;
-    this.props.route.onChange(this); 
-    this.props.router.push('/step4');
+    if(this.props.route.isEdited === true)
+    {
+      this.props.route.onChange(this);
+      this.props.router.push('/summary')
+    }
+    else {
+      this.props.route.onChange(this);
+      this.props.router.push('/step4'); 
+    }
   }
   
   handleConfirm() {
