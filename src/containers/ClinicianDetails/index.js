@@ -30,6 +30,7 @@ const HCPButton = styled.label`
   -webkit-transition: border-color .3s ease,color .3s ease,background-color .3s ease;
   transition: border-color .3s ease,color .3s ease,background-color .3s ease;
   color: #00a6b6;
+  margin-top: 10px;
 `;
 
 const RemoveLabel = styled.span`
@@ -181,12 +182,6 @@ class ClinicianDetails extends Component {
             formState={this.state.form}
             optional
           />
-
-          <FormGroup>
-            <HCPButton onClick={this.handleAddHCP}>
-              Request a copy of report sent to another HCP
-            </HCPButton> 
-          </FormGroup>
           {
             this.state.additionalForm.get('body').map((form, index) => {
               return <AdditionalFormBox key={index}> 
@@ -214,6 +209,11 @@ class ClinicianDetails extends Component {
               </AdditionalFormBox>
             })
           }
+          <FormGroup>
+            <HCPButton onClick={this.handleAddHCP}>
+              Request a copy of report sent to another HCP
+            </HCPButton> 
+          </FormGroup>
           <FormButton 
           bsStyle="warning" 
           onClick={this.handleBack}>
