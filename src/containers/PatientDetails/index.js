@@ -155,11 +155,9 @@ class PatientDetails extends Component {
           required
         />
             
-        {this.state.form.consent && (
-          <p style={{ fontSize: 11, fontStyle: 'italic'}}>
-          I confirm that the Genome.One Privacy Collection Statement has been provided to the patient and that I have received written informed consent for genomic testing
-          </p> 
-        )}
+        <p style={{ fontSize: 11, fontStyle: 'italic', marginTop: -12 }}>
+        I confirm that the Genome.One Privacy Collection Statement has been provided to the patient and that I have received written informed consent for genomic testing
+        </p> 
 
         <Input
           field="email"
