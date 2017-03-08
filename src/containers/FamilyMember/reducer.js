@@ -3,7 +3,11 @@ export function initData(prefilled) {
     form: {
       familyMember: []
     },
-    formId: 'FamilyMember'
+    formId: 'FamilyMember',
+    deleteModal:{
+      display: false,
+      familyMemberId: null
+    }
   };
   
   if(prefilled && Object.keys(prefilled).length !== 0) state.form = prefilled;
@@ -23,6 +27,21 @@ export function addFamilyMember(state, familyMemberArray) {
   return Object.assign({}, state, {
     form: {
       "familyMember": newArray
+    }
+  });
+}
+
+/**
+ * Add a familyMember object into the familyMember array.
+ * @param {Object} state Targeted state to be changed.
+ * @param {Boolean} display Whether to display the delete modal.
+ * @param {Integer} familyMemberId The index of family member to be removed.
+ */
+export function setDeleteModal(state, display, familyMemberId) {
+  return Object.assign({}, state, {
+    deleteModal: {
+      display: display,
+      familyMemberId: familyMemberId
     }
   });
 }

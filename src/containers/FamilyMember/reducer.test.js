@@ -1,7 +1,8 @@
 import React from 'react';
 import { 
   initData,
-  addFamilyMember 
+  addFamilyMember,
+  setDeleteModal
 } from './reducer';
 
 describe('FamilyMember: reducer', () => {
@@ -9,5 +10,12 @@ describe('FamilyMember: reducer', () => {
     const state = initData();
     const newState = addFamilyMember(state);
     expect(newState.form.familyMember.length).toEqual(1);
+  });
+  
+  test('setDeleteModal sets the delete modal', () => {
+    const state = initData();
+    const newState = setDeleteModal(state, true, 5);
+    expect(newState.deleteModal.display).toEqual(true);
+    expect(newState.deleteModal.familyMemberId).toEqual(5);
   });
 });
