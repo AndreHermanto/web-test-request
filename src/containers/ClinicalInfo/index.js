@@ -92,7 +92,7 @@ class ClinicalInfo extends Component {
         <TextArea
           field="familyHistory"
           label="Family history"
-          placeholder="Provide notes on the suspected inheritance model, affected relatives, or drop a scan of a pedigree."
+          placeholder="Provide notes on the suspected inheritance model and affected relatives."
           onChange={this.handleChange}
           onValidate={this.validate()}
           formState={this.state.form}
