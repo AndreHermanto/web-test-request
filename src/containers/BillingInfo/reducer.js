@@ -15,6 +15,7 @@ export function initData(prefilled) {
       consent:false
     },
     validationRule: {
+      consent: 'payerConsentTrue',
       firstName: 'required',
       lastName: 'required',
       payerEmail: 'required email'
