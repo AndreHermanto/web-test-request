@@ -1,5 +1,4 @@
 import validator from './../../components/validator';
-import Immutable from 'immutable';
 /**
  * initialState for clinician details form
  */
@@ -17,9 +16,6 @@ export function initialState(prefilled) {
       copyToHCP:[],
       copy:false    
     },
-    additionalForm:Immutable.fromJS({
-      body: []
-    }),
     validationRule: {
       providerNumber:'required',
       medicalSpecialty:'required',
@@ -71,31 +67,30 @@ export function setFormData(state, target) {
 * add new HCP copy form field to additionalForm state
 * unlimited copy 
 */
-export function addNewHCP(state) {
-  const newHCP = Immutable.fromJS({
+export function addNewHCP(state, HCPArray) {
+  const newHCP = {
     additionalFirstName:'',
     additionalLastName:'',
     additionalOrganisation:'',
     additionalEmail:''
-  })
+  }
+  var newArray = HCPArray || [];
+  newArray.push(newHCP);
 
-  let additionalForm = state.additionalForm.update('body', body => 
-    body.push(newHCP)
-  );
-  return Object.assign({}, state, {
-    additionalForm: additionalForm
+  return Object.assign({}, state.form, {
+    copyToHCP: newArray
   });
 }
 
 /**
 * remove selected HCP copy base on it index 
 */
-export function removeHCP(state, index) {
-  let additionalForm = state.additionalForm.update('body', body => 
-    body.splice(index, 1)
-  );
-  return Object.assign({}, state, {
-    additionalForm: additionalForm
+export function removeHCP(state, HCPArray,  index) {
+  var newArray = HCPArray || [];
+  newArray.splice(index, 1);
+
+  return Object.assign({}, state.form, {
+    copyToHCP: newArray
   });
 }
 
@@ -104,10 +99,11 @@ export function removeHCP(state, index) {
  * make change to form field base on index and target name
  */
 
-export function setHCPForm(state, target, index) {
-  let additionalForm = state.additionalForm.updateIn(['body', index, target.name], value => target.value);
-  return Object.assign({}, state, {
-    additionalForm: additionalForm
+export function setHCPForm(state, HCPArray,  target, index) {
+  var newArray = HCPArray || [];
+  newArray[index][target.name] = target.value;
+  return Object.assign({}, state.form, {
+    copyToHCP: newArray
   });
 }
 
@@ -119,19 +115,6 @@ export function setHCPForm(state, target, index) {
 * set validated to true and move to next step
 */
 export function validateClinicianForm(state) {
-  let body = state.additionalForm.get('body');
-  state.form.copyToHCP = [];
-  if(body.size > 0) {
-    body.map((b, i)=> {
-      let copy = {
-        additionalFirstName: b.get('additionalFirstName'),
-        additionalLastName: b.get('additionalLastName'),
-        additionalOrganisation: b.get('additionalOrganisation'),
-        additionalEmail: b.get('additionalEmail')
-      }
-      return state.form.copyToHCP.push(copy);
-    })
-  }
   return Object.assign({}, state, {
     validated: true,
     form: state.form

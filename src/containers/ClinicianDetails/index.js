@@ -98,15 +98,15 @@ class ClinicianDetails extends Component {
   }
 
   handleAddHCP() {
-    this.setState(addNewHCP(this.state));
+    this.setState(addNewHCP(this.state, this.state.form.copyToHCP));
   }
 
   handleRemoveHCP(index) {
-    this.setState(removeHCP(this.state, index));
+    this.setState(removeHCP(this.state, this.state.form.copyToHCP, index));
   }
 
   handleHCPChange(event, index) {
-    this.setState(setHCPForm(this.state, event.target, index))
+    this.setState(setHCPForm(this.state, this.state.form.copyToHCP, event.target, index))
   }
 
   // This renders the validation result after confirm button is clicked.
@@ -188,28 +188,32 @@ class ClinicianDetails extends Component {
             </HCPButton> 
           </FormGroup>
           {
-            this.state.additionalForm.get('body').map((form, index) => {
+            this.state.form.copyToHCP.map((form, index) => {
               return <AdditionalFormBox key={index}> 
               <PageHeading>HCP {index + 1} <RemoveLabel onClick={() => this.handleRemoveHCP(index)}>Remove</RemoveLabel></PageHeading>
               <Input
                 field="additionalFirstName"
                 label="First Name"
                 onChange={(e) => this.handleHCPChange(e, index)}
+                formState={form}
               />
               <Input
                 field="additionalLastName"
                 label="Last Name"
                 onChange={(e) => this.handleHCPChange(e, index)}
+                formState={form}
               />
               <Input
                 field="additionalOrganisation"
                 label="Name of organisation, or address of practice"
                 onChange={(e) => this.handleHCPChange(e, index)}
+                formState={form}
               />
               <Input
                 field="additionalEmail"
                 label="Email"
                 onChange={(e) => this.handleHCPChange(e, index)}
+                formState={form}
               />
               </AdditionalFormBox>
             })
