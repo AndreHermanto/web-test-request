@@ -38,8 +38,9 @@ exports[`<FamilyMember/> renders without crashing 1`] = `
   <label>
     Family members associated with this patient:
   </label>
+  <br />
   <button
-    className="pull-right btn btn-default"
+    className="btn btn-default"
     disabled={false}
     onClick={[Function]}
     type="button">
