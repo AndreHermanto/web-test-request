@@ -2,7 +2,7 @@ import React from 'react';
 import FetchMock from 'fetch-mock';
 import { submitTestRequest } from './api';
 
-describe('OrderTest: api', () => {
+describe('Summary: api', () => {
   test('fetch POST a list of test', async () => {
     FetchMock.post('*', {data: [
       { "id": "test1", "label": "Test1" },
