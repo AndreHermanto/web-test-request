@@ -22,9 +22,9 @@ describe('<ClinicianDetails />', function() {
     view.handleChange(selection);
     expect(view.state.form.name).toEqual('abc');
     view.handleAddHCP();
-    expect(view.state.additionalForm.get('body').size).toEqual(1);
+    expect(view.state.form.copyToHCP.length).toEqual(1);
     view.handleRemoveHCP(0);
-    expect(view.state.additionalForm.get('body').size).toEqual(0);
+    expect(view.state.form.copyToHCP.length).toEqual(0);
     view.validate();
     expect(view.state.validated).toEqual(false);
     view.handleConfirm();
@@ -37,11 +37,12 @@ describe('<ClinicianDetails />', function() {
     let event = {
       target: {
         value:'aa',
-        name:'additionFirstName'
+        name:'additionalFirstName'
       }
-    }
+    };
+
     view.handleHCPChange(event, 0)
-    expect(view.state.additionalForm.getIn(['body', 0, 'additionFirstName'])).toEqual('aa');
+    expect(view.state.copyToHCP[0].additionalFirstName).toEqual('aa');
 
     event = {
       target: {
@@ -50,7 +51,7 @@ describe('<ClinicianDetails />', function() {
       }
     }
     view.handleHCPChange(event, 0);
-    expect(view.state.additionalForm.getIn(['body', 0, 'additionalLastName'])).toEqual('lastname');
+    expect(view.state.copyToHCP[0].additionalLastName).toEqual('lastname');
 
     event = {
       target: {
@@ -59,7 +60,7 @@ describe('<ClinicianDetails />', function() {
       }
     }
     view.handleHCPChange(event, 0);
-    expect(view.state.additionalForm.getIn(['body', 0, 'additionalOrganisation'])).toEqual('additionalOrganisation');
+    expect(view.state.copyToHCP[0].additionalOrganisation).toEqual('additionalOrganisation');
 
     event = {
       target: {
@@ -68,7 +69,7 @@ describe('<ClinicianDetails />', function() {
       }
     }
     view.handleHCPChange(event, 0);
-    expect(view.state.additionalForm.getIn(['body', 0, event.target.name])).toEqual(event.target.value);
+    expect(view.state.copyToHCP[0].additionalEmail).toEqual(event.target.value);
   });
 
   test('handleBack works', () =>  {
