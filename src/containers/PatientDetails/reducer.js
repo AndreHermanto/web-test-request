@@ -19,7 +19,6 @@ export function initData(prefilled) {
       lastName: 'required',
       firstName: 'required',
       dob: 'required',
-      medicalRecordNo: 'number',
       email: 'required email'
     },
     validated: false,
