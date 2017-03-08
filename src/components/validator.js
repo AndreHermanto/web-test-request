@@ -26,6 +26,11 @@ export default function validator(value, rule) {
     validationState.feedback = 'This is not a number.';
   }
 
+  if(ruleObj.consentTrue && value === false) {
+    validationState.status = 'error';
+    validationState.feedback = 'You must have obtained consent from the patient to proceed.';
+  }
+
   if(ruleObj.required && !value) {
     validationState.status = 'error';
     validationState.feedback = 'This field is required.';
