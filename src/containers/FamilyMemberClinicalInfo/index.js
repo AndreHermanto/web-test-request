@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
 import {
-  FormGroup,
-  ControlLabel
-} from 'react-bootstrap';
-
-import Toggle from 'react-toggle';
-import {
   initData,
   setFormData,
   validatedToTrue
@@ -15,6 +9,7 @@ import {
   FormButton
 } from './../../components/SharedStyle';
 import TextArea from './../../components/TextArea';
+import Toggle from './../../components/Toggle';
 
 /**
  * FamilyMemberClinicalInfo - UI for input patient details.
@@ -86,14 +81,12 @@ class FamilyMemberClinicalInfo extends Component {
           required
         />
             
-        <FormGroup>
-          <ControlLabel>Unaffected</ControlLabel>
-          <br />
-          <Toggle
-            name="unaffected"
-            checked={this.state.form.unaffected === true}
-            onChange={this.handleChange} />
-        </FormGroup>    
+        <Toggle
+          field="affected"
+          label="Affected"
+          onChange={this.handleChange}
+          formState={this.state.form}
+        />
 
         <TextArea
           field="relevantInvestigation"
@@ -114,15 +107,13 @@ class FamilyMemberClinicalInfo extends Component {
           formState={this.state.form}
           optional
         />
-        
-        <FormGroup>
-          <ControlLabel>Consangunity</ControlLabel>
-          <br />
-          <Toggle
-            name="consangunity"
-            checked={this.state.form.consangunity === true}
-            onChange={this.handleChange} />
-        </FormGroup>
+            
+        <Toggle
+          field="consangunity"
+          label="Consangunity"
+          onChange={this.handleChange}
+          formState={this.state.form}
+        />
             
         <FormButton 
           bsStyle="warning" 
