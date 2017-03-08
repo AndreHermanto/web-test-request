@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
 import {
-  FormGroup,
-  ControlLabel
-} from 'react-bootstrap';
-
-import Toggle from 'react-toggle';
-import {
   initData,
   setFormData,
   validatedToTrue
@@ -15,6 +9,7 @@ import {
   FormButton
 } from './../../components/SharedStyle';
 import Input from './../../components/Input';
+import Toggle from './../../components/Toggle';
 import RadioSet from './../../components/RadioSet';
 import DatePicker from './../../components/DatePicker';
 
@@ -134,39 +129,38 @@ class FamilyMemberDetails extends Component {
           optional
         />
         
-        <FormGroup>
-          <ControlLabel>Is this person deceased?</ControlLabel>
-          <br />
-          <Toggle
-            name='deceased'
-            checked={this.state.form.deceased === true}
-            onChange={this.handleChange} />
+        <Toggle
+          field="deceased"
+          label="Is this person deceased?"
+          onChange={this.handleChange}
+          formState={this.state.form}
+          optional
+        />
+        
+        {this.state.form.deceased && (
+          <Input
+            field="sampleSource"
+            label="Sample Source"
+            onChange={this.handleChange}
+            formState={this.state.form}
+            optional
+          />
+        )}
+        
+        <Toggle
+          field="consent"
+          label="Consent confirmation"
+          onChange={this.handleChange}
+          onValidate={this.validate()}
+          formState={this.state.form}
+          required
+        />
             
-          {this.state.form.deceased && (
-            <Input
-              field="sampleSource"
-              label="Sample Source"
-              onChange={this.handleChange}
-              formState={this.state.form}
-              optional
-            />
-          )}
-        </FormGroup>
-            
-        <FormGroup>
-          <ControlLabel>Consent confirmation</ControlLabel>
-          <br />
-          <Toggle
-            name='consent'
-            checked={this.state.form.consent === true}
-            onChange={this.handleChange} />
-            
-          {this.state.form.consent && (
-            <p style={{ fontSize: 11, fontStyle: 'italic'}}>
-            I confirm that the Genome.One Privacy Collection Statement has been provided to the patient and that I have received written informed consent for genomic testing
-            </p> 
-          )}
-        </FormGroup>
+        {this.state.form.consent && (
+          <p style={{ fontSize: 11, fontStyle: 'italic'}}>
+          I confirm that the Genome.One Privacy Collection Statement has been provided to the patient and that I have received written informed consent for genomic testing
+          </p> 
+        )}
 
         <Input
           field="email"

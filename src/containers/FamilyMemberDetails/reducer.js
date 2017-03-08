@@ -19,6 +19,7 @@ export function initData(prefilled) {
       lastName: 'required',
       firstName: 'required',
       dob: 'required',
+      consent: 'consentTrue',
       email: 'required email'
     },
     validated: false,
