@@ -20,7 +20,8 @@ export default function Input({
   onValidate,
   formState,
   required,
-  optional
+  optional,
+  disabled
 }) {
   var validator;
   if(!onValidate) {
@@ -44,6 +45,7 @@ export default function Input({
         placeholder={placeholder || "Enter the " + label.toLowerCase()}
         onChange={onChange}
         value={formState && formState[field]}
+        disabled={disabled}
       />
       <FormControl.Feedback />
       <ValidationFeedback>{validator.feedback}</ValidationFeedback>

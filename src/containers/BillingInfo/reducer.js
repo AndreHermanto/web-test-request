@@ -111,17 +111,17 @@ export function setSelectData(state, value, email) {
     let payer = value.split(' ');
     formStateChild = Object.assign({}, state.form, {
       payer: value,
-      givenName: payer[0],
+      firstName: payer[0],
       lastName: payer[1],
-      email: email
+      payerEmail: email
     });
   }
   else {
     formStateChild = Object.assign({}, state.form, {
       payer: value,
-      givenName: '',
+      firstName: '',
       lastName: '',
-      email: ''
+      payerEmail: ''
     });
   }
   return Object.assign({}, state, {
