@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FormGroup } from 'react-bootstrap';
+import { FormGroup, Glyphicon } from 'react-bootstrap';
 import { 
   initialState, 
   setFormData,  
@@ -34,6 +34,7 @@ const HCPButton = styled.label`
 `;
 
 const RemoveLabel = styled.span`
+  margin-top: -3px;
   cursor: pointer;
   position: absolute;
   margin-top: 4px;
@@ -42,13 +43,8 @@ const RemoveLabel = styled.span`
   font-size: 11px;
   color: #fff;
   padding: 5px;
-  background-color: #5cb85c;
+  background-color: #d43f3a;
   border-radius: .25em;
-  &:hover {
-    background:#fff;
-    color: black;
-    border: 1px solid #5cb85c;
-  }
 `;
 
 /**
@@ -185,7 +181,11 @@ class ClinicianDetails extends Component {
           {
             this.state.form.copyToHCP.map((form, index) => {
               return <AdditionalFormBox key={index}> 
-              <PageHeading>HCP {index + 1} <RemoveLabel onClick={() => this.handleRemoveHCP(index)}>Remove</RemoveLabel></PageHeading>
+              <PageHeading>HCP {index + 1} <RemoveLabel 
+                bsSize="xsmall"
+                onClick={() => this.handleRemoveHCP(index)}>
+                <Glyphicon glyph="trash"/> Remove</RemoveLabel>
+              </PageHeading>
               <Input
                 field="additionalFirstName"
                 label="First Name"
