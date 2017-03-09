@@ -5,29 +5,20 @@ exports[`OrderTest: index renders without crashing - initial state with empty ge
     Step 1: Order a Test
   </h3>
   <div
-    className="form-group">
+    className="form-group"
+    onChange={[Function]}>
     <label
       className="control-label"
       htmlFor={undefined}>
       Select a Disease Panel / Whole Genome Analysis
+      <span
+        className="jCNiHk">
+        Required
+      </span>
     </label>
-    <select
-      className="form-control"
-      id={undefined}
-      name="test"
-      onChange={[Function]}
-      type={undefined}
-      value="">
-      <option
-        disabled={true}
-        value="">
-        Select a panel.
-      </option>
-      <option
-        value="whole">
-        Whole Genome Analysis
-      </option>
-    </select>
+    <br />
+    <span
+      className="SfhHK help-block" />
   </div>
   <button
     className="iMtXso btn btn-success"

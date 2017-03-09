@@ -5,7 +5,8 @@ import {
   Radio
 } from 'react-bootstrap';
 import { 
-  SubLabel
+  SubLabel,
+  ValidationFeedback
 } from './SharedStyle';
 
 /**
@@ -17,13 +18,21 @@ export default function RadioSet({
   options,
   subLabels,
   onChange,
+  onValidate,
   formState,
   required,
   optional,
   inline
 }) {
+  var validator;
+  if(!onValidate) {
+    validator = { status: null, rule: {} };
+  } else {
+    validator = onValidate[field] || { status: null, rule: {} };
+  }
+  
   return (
-    <FormGroup onChange={onChange}>
+    <FormGroup onChange={onChange} validationState={validator.status}>
       {label && (
         <ControlLabel>
           {label}
@@ -33,18 +42,31 @@ export default function RadioSet({
       )}
       <br />
       {options.map((option, $index) => {
+        var id, label, defaultVal;
+        // This support object with label and id
+        if(typeof option === "object") {
+          label = option.label;
+          id = option.id;
+          defaultVal = formState[field] ? formState[field].id : '';
+        } else {
+          label = option;
+          id = option;
+          defaultVal = formState[field];
+        }
+       
         return (
           <Radio
-            key={option}
+            key={id}
             name={field} 
-            value={option} 
+            value={id} 
             inline={inline}
-            defaultChecked={formState[field] === option}
+            defaultChecked={defaultVal === id}
           >
-            {option}{(subLabels && subLabels[$index]) && (<SubLabel>({subLabels[$index]})</SubLabel>)}
+            {label}{(subLabels && subLabels[$index]) && (<SubLabel>({subLabels[$index]})</SubLabel>)}
           </Radio>
         )
       })}
+      <ValidationFeedback>{validator.feedback}</ValidationFeedback> 
     </FormGroup>
   );
 } 

@@ -27,12 +27,11 @@ describe('OrderTest: index', () => {
     expect(page).toMatchSnapshot();
   });
   
-  
   test('companyWillMount runs the function getting the test list', async () => {
     const page = TestUtils.renderIntoDocument(React.createElement(OrderTest, props));
     FetchMock.get('*', testList);
     await page.componentWillMount();
-    expect(page.state.testList).toEqual(testList.data);
+    expect(page.state.testList[1].id).toEqual(2);
     FetchMock.restore();                           
   });
   
@@ -44,16 +43,35 @@ describe('OrderTest: index', () => {
     expect(page.state.form.test.id).toEqual(2);  
   });
   
-  test('handleTestSelect works - select a whole genome analysis', () => {
-    const page = TestUtils.renderIntoDocument(React.createElement(OrderTest, props));
-    const selection = { "target": { "value": "whole" }};
-    page.handleTestSelect(selection);
-    expect(page.state.form.test.id).toEqual('whole');  
-  });  
-  
-  test('handleConfirm works', () => {
+  test('handleConfirm works without selection', () => {
     var page = TestUtils.renderIntoDocument(React.createElement(OrderTest, props));                                         
+    page.handleConfirm();
+    expect(page.props.router.pop()).toEqual('/step1')
+  });
+  
+  test('handleConfirm works after selection', () => {
+    var page = TestUtils.renderIntoDocument(React.createElement(OrderTest, props));
+    page.state.testList = testList.data;
+    const selection = { "target": { "value": testList.data[1].id }};
+    page.handleTestSelect(selection);
     page.handleConfirm();
     expect(page.props.router.pop()).toEqual('/step2')
   });
+  
+  test('handleConfirm works after selection in edit mode', () => {
+    var page = TestUtils.renderIntoDocument(React.createElement(OrderTest, props));
+    page.state.testList = testList.data;
+    page.props.route.isEdited = true;
+    const selection = { "target": { "value": testList.data[1].id }};
+    page.handleTestSelect(selection);
+    page.handleConfirm();
+    expect(page.props.router.pop()).toEqual('/summary')
+  });
+  
+  test('displayGenes shows a list of genes', () => {
+    var page = TestUtils.renderIntoDocument(React.createElement(OrderTest, props));
+    page.state.form.genes = ['AAAA', 'BBBB', 'CCCC']
+    expect(page.displayGenes().length).toEqual(3)
+  });
+  
 });

@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
 import {
-  FormGroup,
-  FormControl,
   ControlLabel,
   Label,
   Well
 } from 'react-bootstrap';
 import { getTestList } from './api';
 import {
+  initData,
   setTestList,
-  setTestType
+  setTestType,
+  validatedToTrue
 } from './reducer'
 import { 
   PageHeading,
   FormButton
 } from './../../components/SharedStyle';
+import RadioSet from './../../components/RadioSet';
 import styled from 'styled-components';
 
 const Gene = styled(Label)`
@@ -33,11 +34,8 @@ class OrderTest extends Component {
     
     this.handleTestSelect = this.handleTestSelect.bind(this);
     this.handleConfirm = this.handleConfirm.bind(this);
-
-    this.state = {
-      testList: [],
-      form: props.route.data || {}
-    };
+    this.displayGenes = this.displayGenes.bind(this);
+    this.state = initData(props.route.data);
   }
   
   componentWillMount() {
@@ -48,17 +46,6 @@ class OrderTest extends Component {
   }
   
   handleTestSelect(event) {
-    if(event.target.value === 'whole') {
-      var test = {
-        "id": "whole",
-        "label": "Whole Genome Analysis",
-        "description": "Analysis on the entire genome."
-      };
-
-      this.setState(setTestType(this.state, test));
-      return;
-    }
-    
     this.state.testList.forEach((panel) => {
       if(panel.id === event.target.value) this.setState(setTestType(this.state, panel));
     });
@@ -66,7 +53,8 @@ class OrderTest extends Component {
     return;
   }
   
-  handleConfirm() {
+  handleNext(passValidation) {
+    if(!passValidation) return false;
     if(this.props.route.isEdited === true)
     {
       this.props.route.onChange(this);
@@ -77,47 +65,48 @@ class OrderTest extends Component {
       this.props.router.push('/step2'); 
     }
   }
+  
+  handleConfirm() {
+    return this.setState(validatedToTrue(this.state), () => {    
+      var pass = true;
+      for (var field in this.state.validation) {
+        if(this.state.validation[field].status === 'error') pass = false;
+      }
+      this.handleNext(pass); 
+    });
+  }
+  
+  displayGenes() {
+    return this.state.form.genes.map((gene, $index) => {
+        return <Gene key={$index}>{gene}</Gene> 
+    })
+  }
 
+  // This renders the validation result after confirm button is clicked.
+  validate() {
+    return this.state.validated && this.state.validation;
+  }
+  
   render() {
     return (
       <div>
         <PageHeading>Step 1: Order a Test</PageHeading>
-        <FormGroup>
-          <ControlLabel>Select a Disease Panel / Whole Genome Analysis</ControlLabel>
-          <FormControl 
-            componentClass="select" 
-            name="test"
-            value={this.state.form.test ? this.state.form.test.id : ''}
-            onChange={this.handleTestSelect}
-          >
-            <option key="0" value="" disabled>Select a panel.</option> 
-      
-            {this.state.testList && (
-              this.state.testList.map(
-                (test) => {
-                  return <option key={test.id} value={test.id}>{test.label}</option>
-                }
-              )
-            )}
-  
-            <option key="whole" value="whole">Whole Genome Analysis</option>
-          </FormControl>
-        </FormGroup>
-          
-        {this.state.form.test && (
-          <div style={{ marginBottom: 24 }}>
-            {this.state.form.test.description}
-          </div>
-        )}
-          
+
+        <RadioSet 
+          field="test"
+          label="Select a Disease Panel / Whole Genome Analysis"
+          options={this.state.testList}
+          onChange={this.handleTestSelect}
+          onValidate={this.validate()}
+          formState={this.state.form}
+          required
+        />
 
         {this.state.form.genes && (
           <div> 
             <ControlLabel>Available Genes:</ControlLabel>
             <Well>
-            {this.state.form.genes.map((gene, $index) => {
-              return <Gene key={$index}>{gene}</Gene> 
-            })}
+            {this.displayGenes()}
             </Well>
           </div>
         )}
