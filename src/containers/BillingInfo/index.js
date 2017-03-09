@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { 
   FormGroup, 
-  ControlLabel,
-  Glyphicon
+  ControlLabel
 } from 'react-bootstrap';
 import {
   initData,
@@ -229,21 +228,14 @@ class BillingInfo extends Component {
           label="Back"
         >
           Back
-        </FormButton> 
-
-        <FormButton 
-          bsStyle="info" 
-          label="Print"
-        >
-          <Glyphicon glyph="print" /> Print Invoice
-        </FormButton> 
+        </FormButton>
       
         <FormButton 
           bsStyle="success" 
           type="submit" 
           onClick={this.handleConfirm}
         >
-          Confirm and email
+          Confirm
         </FormButton> 
       </div>
     );
