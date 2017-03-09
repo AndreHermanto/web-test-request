@@ -100,11 +100,11 @@ class ClinicalInfo extends Component {
         />
         
         <FormGroup>
-          <ControlLabel>Consangunity</ControlLabel>
+          <ControlLabel>Consanguinity</ControlLabel>
           <br />
           <Toggle
-            name="consangunity"
-            checked={this.state.form.consangunity === true}
+            name="consanguinity"
+            checked={this.state.form.consanguinity === true}
             onChange={this.handleChange} />
         </FormGroup>
             

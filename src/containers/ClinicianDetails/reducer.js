@@ -17,13 +17,13 @@ export function initialState(prefilled) {
       copy:false    
     },
     validationRule: {
-      providerNumber:'required',
+      /*providerNumber:'required',
       medicalSpecialty:'required',
       firstName: 'required',
       lastName: 'required',
       organisation:'required',
       phone:'required',
-      email: 'required email'
+      email: 'required email'*/
     },
     validated: false,
     formId: 'ClinicianDetails'
