@@ -82,10 +82,8 @@ class FamilyMember extends Component {
       
         <br /><br />
         <label>Family members associated with this patient:</label>
-        <Button
-          className="pull-right"
-          onClick={this.handleAddFamilyMember}
-        >
+        <br />
+        <Button onClick={this.handleAddFamilyMember} >
           <Glyphicon glyph="plus"/> Add family member       
         </Button>
         <br /><br />
