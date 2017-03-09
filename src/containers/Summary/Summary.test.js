@@ -28,10 +28,11 @@ describe('Summary: index', () => {
     "email":"abc@abc.gmail.com"
   }
 
-  const familyData = {"familyMember":[{"FamilyMemberDetails":{"lastName":"abc@abc.com","firstName":"abc@abc.com","dob":"2-January-1918","medicalRecordNo":"abc@abc.com","gender":"Female","genderOther":"","ethnicity":"","deceased":false,"sampleSource":"","consent":false,"email":"abc@abc.com"},"FamilyMemberClinicalInfo":{"clinicalInfo":"abc@abc.com","unaffected":true,"relevantInvestigation":"","familyHistory":"","consangunity":false}}]};
+  const familyData = {"familyMember":[{"FamilyMemberDetails":{"lastName":"abc@abc.com","firstName":"abc@abc.com","dob":"2-January-1918","medicalRecordNo":"abc@abc.com","gender":"Female","genderOther":"","ethnicity":"","deceased":false,"sampleSource":"","consent":false,"email":"abc@abc.com"},"FamilyMemberClinicalInfo":{"clinicalInfo":"abc@abc.com","affected":true,"relevantInvestigation":"asdasdasd","familyHistory":"asdasdasdasd","consangunity":false}},
+    {"FamilyMemberDetails":{"lastName":"ab.com","firstName":"abcsadkfhkladsfj","dob":"2-January-1918","medicalRecordNo":"abc@abc.com","gender":"Male","genderOther":"","ethnicity":"","deceased":true,"sampleSource":"","consent":false,"email":"abc@abc.com"},"FamilyMemberClinicalInfo":{"clinicalInfo":"abc@abc.com","affected":false,"relevantInvestigation":"asdasdasdasd","familyHistory":"asdasd","consangunity":true}}]};  
   const clinicianDetails = {
     "providerNumber":"as","medicalSpecialty":"as","firstName":"John",
-    "lastName":"Doe","organisation":"as","phone":"as","email":"as","fax":"as",
+    "lastName":"Doe","organisation":"as","phone":"as","email":"as@aca.com","fax":"as",
     "copyToHCP":[{"additionalFirstName":"asdf","additionalLastName":"asdf","additionalOrganisation":"adsf","additionalEmail":"asfd"},
     {"additionalFirstName":"asdf","additionalLastName":"asdf","additionalOrganisation":"adsf","additionalEmail":"asdf"}],
     "copy":false

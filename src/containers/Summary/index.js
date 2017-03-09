@@ -15,8 +15,8 @@ import {
   SummaryDetails,
   SectionHeading,
   Gene,
-  SummaryNotes,
-  Tag
+  Tag,
+  SummaryNotes
 } from './summaryStyled'; 
 import Toggle from './../../components/Toggle';
 import {
@@ -25,7 +25,7 @@ import {
   validatedToTrue
 } from './reducer';
 /**
-* Summary - UI for ordering type of tests, selecting disorder and related genes for testing.
+* Summary - UI for summary page to display all form data.
 */
 class Summary extends Component {
   constructor(props) {
@@ -102,7 +102,6 @@ class Summary extends Component {
             </Col>
           </Row>
         </SummaryBox>
-
         <SummaryBox>
           <SummaryHeading> Patient - {this.props.route.data.PatientDetails.firstName + ' ' + this.props.route.data.PatientDetails.lastName} </SummaryHeading>
           <SummaryBreakLine/>
@@ -147,7 +146,7 @@ class Summary extends Component {
               </Col>
             }
             {
-              this.props.route.data.PatientDetails.deceased !== '' &&
+              this.props.route.data.PatientDetails.deceased !== false &&
               <Col md={12}>
                 <SummaryDetails> 
                   <SummaryTitle> Deceased:  </SummaryTitle>
@@ -156,7 +155,7 @@ class Summary extends Component {
               </Col>
             }
             {
-              this.props.route.data.PatientDetails.deceased && this.props.route.data.PatientDetails.sampleSource !== '' &&
+              (this.props.route.data.PatientDetails.deceased !== false && this.props.route.data.PatientDetails.sampleSource !== '') &&
               <Col md={12}>
                 <SummaryDetails> 
                   <SummaryTitle> Sample source:  </SummaryTitle>
@@ -213,7 +212,7 @@ class Summary extends Component {
             this.props.route.data.FamilyMember.familyMember.map((member, i) => 
             {
               return <SummaryBox key={i}>
-                <SummaryHeading> Family Member ({member.FamilyMemberDetails.firstName + ' ' + member.FamilyMemberDetails.lastName}) 
+                <SummaryHeading> Family Member - {member.FamilyMemberDetails.firstName + ' ' + member.FamilyMemberDetails.lastName}
                   <Tag bsStyle={member.FamilyMemberClinicalInfo.affected ? 'danger' : 'success'}>
                     {member.FamilyMemberClinicalInfo.affected ? 'Affected' : 'Unaffected'}
                   </Tag>
@@ -244,7 +243,6 @@ class Summary extends Component {
                     <Col md={12}>
                       <SummaryDetails> 
                         <SummaryTitle> Gender:  </SummaryTitle>
-                        {member.FamilyMemberDetails.gender}
                         {
                           member.FamilyMemberDetails.gender === 'Other' ?
                           member.FamilyMemberDetails.genderOther + ' (Other)' :
@@ -261,14 +259,17 @@ class Summary extends Component {
                         </SummaryDetails>
                       </Col>
                     }
-                    <Col md={12}>
-                      <SummaryDetails> 
-                      <SummaryTitle> Deceased:  </SummaryTitle>
-                          {this.props.route.data.PatientDetails.deceased ? 'Yes' : 'No'}
-                      </SummaryDetails>
-                    </Col>
                     {
-                      member.FamilyMemberDetails.sampleSource !== '' && 
+                      member.FamilyMemberDetails.deceased !== false &&
+                      <Col md={12}>
+                        <SummaryDetails> 
+                        <SummaryTitle> Deceased:  </SummaryTitle>
+                          {member.FamilyMemberDetails.deceased ? 'Yes' : 'No'}
+                        </SummaryDetails>
+                      </Col>
+                    }
+                    {
+                      (member.FamilyMemberDetails.deceased !== false && member.FamilyMemberDetails.sampleSource !== '') && 
                       <Col md={12}>
                         <SummaryDetails> 
                           <SummaryTitle> Sample source:  </SummaryTitle>
@@ -316,14 +317,14 @@ class Summary extends Component {
                     <Col md={12}>
                       <SummaryDetails> 
                       <SummaryTitle> Consanguinity:  </SummaryTitle>
-                        {this.props.route.data.ClinicalInfo.consanguinity ? 'Yes' : 'No'} 
+                        {member.FamilyMemberClinicalInfo.consanguinity ? 'Yes' : 'No'} 
                       </SummaryDetails>
                     </Col>
                   </Row>
-                </SummaryBox>
+              </SummaryBox>
             })
           }
-        <SummaryBox>
+          <SummaryBox>
           <EditButton className="glyphicon glyphicon-edit pull-right" onClick={() => this.handleEdit('step5')}/>
           <SummaryHeading> Clinician details </SummaryHeading>
           <SummaryBreakLine/>
@@ -428,7 +429,7 @@ class Summary extends Component {
             <Col md={12}>
               <SummaryDetails> 
                 <SummaryTitle> Email:  </SummaryTitle>
-                {this.props.route.data.BillingInfo.email}
+                {this.props.route.data.BillingInfo.payerEmail}
               </SummaryDetails>
             </Col>
           </Row>

@@ -58,13 +58,6 @@ export const Gene = styled(Label)`
   margin-left:5px;
 `;
 
-
-export const Tag = styled(Label)`
-  margin-left: 10px;
-  margin-top: 3px;
-  position: absolute;
-`;
-
 export const SummaryNotes = styled.div`
   background-color: #fafafa;
   padding: 1.3em;
@@ -78,3 +71,13 @@ export const EditButtonXS = styled.i`
   color: #1ba8b7;
   margin-left:10px;
 `;
+
+
+export const Tag = styled(Label)`
+  margin-left: 10px;
+  position: absolute;
+  line-height: normal !important;
+  font-size: 12px !important;
+  margin-top: 9px;
+`;
+

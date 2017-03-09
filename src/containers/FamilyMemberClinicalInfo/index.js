@@ -55,7 +55,7 @@ class FamilyMemberClinicalInfo extends Component {
     }
     else {
       this.props.route.onChange(this);
-      this.props.router.push('/step4'); 
+      this.props.router.push('/step4');
     }
   }
   
