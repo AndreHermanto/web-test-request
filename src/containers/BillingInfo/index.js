@@ -191,6 +191,7 @@ class BillingInfo extends Component {
                 onChange={this.handleChange}
                 formState={this.state.form}
                 required
+                disabled={(this.state.form.payer !== 'Other')}
               />
               <Input
                 field="lastName"
@@ -198,7 +199,16 @@ class BillingInfo extends Component {
                 onChange={this.handleChange}
                 formState={this.state.form}
                 required
-              /> 
+                disabled={(this.state.form.payer !== 'Other')}
+              />
+              <Input
+                field="payerEmail"
+                label="Email"
+                onChange={this.handleChange}
+                formState={this.state.form}
+                required
+                disabled={(this.state.form.payer !== 'Other')}
+              />
               <FormGroup>   
                 <ControlLabel>
                   Mobile number
@@ -211,13 +221,6 @@ class BillingInfo extends Component {
                   value={this.state.form.phone}
                 />
               </FormGroup>
-              <Input
-                field="payerEmail"
-                label="Email"
-                onChange={this.handleChange}
-                formState={this.state.form}
-                required
-              />
             </div>
           }
 
