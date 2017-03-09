@@ -36,6 +36,11 @@ export default function validator(value, rule) {
     validationState.feedback = 'You must have obtained consent from the payer to proceed.';
   }
 
+  if(ruleObj.requireSelect && !value.id) {
+    validationState.status = 'error';
+    validationState.feedback = 'You must select one of above.';
+  }
+  
   if(ruleObj.required && !value) {
     validationState.status = 'error';
     validationState.feedback = 'This field is required.';
