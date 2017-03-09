@@ -94,8 +94,8 @@ class FamilyMember extends Component {
             <Col md={6} key={$index}>
               <Thumbnail>
                 {member.FamilyMemberDetails.firstName + ' ' + member.FamilyMemberDetails.lastName}
-                <Tag bsStyle={member.FamilyMemberClinicalInfo.unaffected ? 'success' : 'danger'}>
-                  {member.FamilyMemberClinicalInfo.unaffected ? 'Unaffected' : 'Affected'}
+                <Tag bsStyle={member.FamilyMemberClinicalInfo.affected ? 'danger' : 'success'}>
+                  {member.FamilyMemberClinicalInfo.affected ? 'Affected' : 'Unaffected'}
                 </Tag>
             
                 <BlockButton 
