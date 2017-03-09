@@ -76,6 +76,20 @@ describe('Summary: index', () => {
     page.handleBack();
     expect(page.props.router.pop()).toEqual('/step6')
   });
+
+  test('handleChange works', () =>  {
+    var page = TestUtils.renderIntoDocument(React.createElement(Summary, props)); 
+    let event = {
+      target: {
+        name:'signature',
+        type: 'checkbox',
+        checked: true
+      } 
+    }                         
+    page.handleChange(event);
+    expect(page.state.form.signature).toEqual(true); 
+
+  });
   
   test('handleSubmit works', async () => {
     var page = TestUtils.renderIntoDocument(React.createElement(Summary, props));
