@@ -30,6 +30,11 @@ export default function validator(value, rule) {
     validationState.status = 'error';
     validationState.feedback = 'You must have obtained consent from the patient to proceed.';
   }
+  
+  if(ruleObj.payerConsentTrue && value === false) {
+    validationState.status = 'error';
+    validationState.feedback = 'You must have obtained consent from the payer to proceed.';
+  }
 
   if(ruleObj.required && !value) {
     validationState.status = 'error';

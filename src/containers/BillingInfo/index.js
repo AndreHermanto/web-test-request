@@ -18,16 +18,10 @@ import {
 import Select from 'react-select';
 import Phone from 'react-phone-number-input';
 import Input from './../../components/Input';
+import Toggle from './../../components/Toggle';
 import RadioSet from './../../components/RadioSet';
 import PriceList from './components/PriceList';
-import Toggle from 'react-toggle';
 import styled from 'styled-components';
-
-const PayerConsent = styled(ControlLabel)`
-  position: absolute;
-  marginTop: 2px;
-  marginLeft: 5px;
-`;
 
 const MobileNumber = styled(Phone)`
   input {
@@ -104,6 +98,11 @@ class BillingInfo extends Component {
     ];
   }
   
+  // This renders the validation result after confirm button is clicked.
+  validate() {
+    return this.state.validated && this.state.validation;
+  }
+  
   render() {
     const even = {
       backgroundColor:'#f9f9f9'
@@ -159,13 +158,20 @@ class BillingInfo extends Component {
           </FormGroup>
           {
             this.state.form.payer !== '' &&
-            <FormGroup>
+            <div>
               <Toggle
-                name='consent'
-                checked={this.state.form.consent === true}
-                onChange={this.handleChange} />
-              <PayerConsent>I have advised the patient that this test is dependent on private payment and will not proceed till it is received</PayerConsent>
-            </FormGroup>
+                field="consent"
+                label="Payer's consent confirmation"
+                onChange={this.handleChange}
+                onValidate={this.validate()}
+                formState={this.state.form}
+                required
+              />
+
+              <p style={{ fontSize: 11, fontStyle: 'italic', marginTop: -12 }}>
+                I have advised the patient that this test is dependent on private payment and will not proceed till it is received.
+              </p>
+            </div>
           }
           {
             this.state.form.consent !== false &&
