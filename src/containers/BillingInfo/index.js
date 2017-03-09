@@ -91,6 +91,12 @@ class BillingInfo extends Component {
   }
 
   getPayers() {
+    if(
+      !this.props.route.patientData.firstName ||
+      !this.props.route.patientData.lastName
+    ) return [{ value: 'Other', label: 'Other' }];
+    
+    
     let patient = this.props.route.patientData.firstName.toString() + ' ' + this.props.route.patientData.lastName.toString();
     return [
       { value: patient, label: patient },
@@ -120,7 +126,6 @@ class BillingInfo extends Component {
     return (
       <div>
         <PageHeading>Step 6: Billing info</PageHeading>
-
         <RadioSet
           label="Select billing option"
           field="billOption"
@@ -147,17 +152,21 @@ class BillingInfo extends Component {
             })
           }
           </FormGroup>
-          <FormGroup>
-            <ControlLabel>Payer</ControlLabel>
-            <Select
-              name={payers.label}
-              value={this.state.form.payer}
-              options={payers}
-              onChange={this.handleSelectChange}
-            />
-          </FormGroup>
           {
-            this.state.form.payer !== '' &&
+            (this.state.form.billOption === 'Private') &&
+            <FormGroup>
+              <ControlLabel>Payer</ControlLabel>
+              <Select
+                name={payers.label}
+                value={this.state.form.payer}
+                options={payers}
+                onChange={this.handleSelectChange}
+                clearable={false}
+              />
+            </FormGroup>
+          }
+          {
+            (this.state.form.billOption === 'Private' && this.state.form.payer !== '') &&
             <div>
               <Toggle
                 field="consent"
@@ -174,10 +183,10 @@ class BillingInfo extends Component {
             </div>
           }
           {
-            this.state.form.consent !== false &&
+            (this.state.form.billOption === 'Private' && this.state.form.consent !== false) &&
             <div>
               <Input
-                field="givenName"
+                field="firstName"
                 label="First Name"
                 onChange={this.handleChange}
                 formState={this.state.form}

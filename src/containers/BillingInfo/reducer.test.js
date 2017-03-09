@@ -26,10 +26,32 @@ describe('ClinicianDetails: reducer', () => {
     expect(checkboxState.form.consent).toEqual(true);
   });
 
+  test('set billOption to "institution" should clear the payers info', () => {
+    let event = {
+      name: 'firstName',
+      value: 'Dave'    
+    }
+    const newState = setFormData(state, event);
+    expect(newState.form.firstName).toEqual('Dave');
+
+    let billOption = {
+      name: 'billOption',
+      value: 'Institution'
+    }
+    const afterBillOptionState = setFormData(newState, billOption);
+    expect(afterBillOptionState.form.firstName).toEqual('');
+  });
+
   test('set new select payer for form field', () => {
     let value = 'payer';
     const newState = setSelectData(state, value);
     expect(newState.form.payer).toEqual('payer');
+  });
+
+  test('set new other payer for form field, firstName attribute is blank', () => {
+    let value = 'Other';
+    const newState = setSelectData(state, value);
+    expect(newState.form.firstName).toEqual('');
   });
 
   test('set phone data for form field', () => {

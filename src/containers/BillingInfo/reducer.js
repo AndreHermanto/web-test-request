@@ -80,6 +80,17 @@ export function setFormData(state, target) {
     [target.name]: value
   });
   
+  if(target.name === 'billOption' && value === 'Institution') {
+    formStateChild = Object.assign({}, formStateChild, {
+      payer:'',
+      phone:'',
+      firstName:'',
+      lastName:'',
+      payerEmail:'',
+      consent:false
+    });
+  }
+  
   var validationStateChild = Object.assign({}, state.validation, {
     [target.name]: validator(value, state.validationRule[target.name])
   });
