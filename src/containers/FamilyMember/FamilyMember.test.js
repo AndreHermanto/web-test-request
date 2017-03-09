@@ -30,13 +30,17 @@ describe('<FamilyMember/>', function() {
     expect(view.state.form.familyMember.length).toEqual(1)
   });
   
-  /*test('handleDeleteFamilyMember deletes an object in familyMember array', () =>  {
+  test('handleDeleteFamilyMember deletes the appointed object in familyMember array and closes the modal', () =>  {
     var view = TestUtils.renderIntoDocument(React.createElement(FamilyMember, props));
-    view.state.form.familyMember = [{},{}];
+    view.state.form.familyMember = [
+      { FamilyMemberDetails: {}, FamilyMemberClinicalInfo: {} },
+      { FamilyMemberDetails: {}, FamilyMemberClinicalInfo: {} }
+    ];
     var select = { currentTarget: { name: 0 } }
     view.handleDeleteFamilyMember(select);
-    expect(view.state.form.familyMember.length).toEqual(1)
-  });*/
+    expect(view.state.deleteModal.familyMemberId).toEqual(null);
+    expect(view.state.deleteModal.display).toEqual(false);
+  });
   
   test('handleEditFamilyMember redirects correctly', () =>  {
     var view = TestUtils.renderIntoDocument(React.createElement(FamilyMember, props));
@@ -55,5 +59,18 @@ describe('<FamilyMember/>', function() {
     var view = TestUtils.renderIntoDocument(React.createElement(FamilyMember, props));                                         
     view.handleNext(true);
     expect(view.props.router.pop()).toEqual('/step5');
+  });
+  
+  test('closeDeleteModal hides the modal by setting the deleteModal - display state', () => {
+    var view = TestUtils.renderIntoDocument(React.createElement(FamilyMember, props));                                         
+    view.closeDeleteModal();
+    expect(view.state.deleteModal.display).toEqual(false);
+  });
+  
+  test('openDeleteModal hides the modal by setting the deleteModal - display state', () => {
+    var view = TestUtils.renderIntoDocument(React.createElement(FamilyMember, props));
+    var select = { currentTarget: { name: 0 } }
+    view.openDeleteModal(select);
+    expect(view.state.deleteModal.display).toEqual(true);
   });
 });

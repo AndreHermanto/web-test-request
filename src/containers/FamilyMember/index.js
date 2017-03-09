@@ -5,11 +5,13 @@ import {
   Row,
   Col,
   Button,
-  Label
+  Label,
+  Modal
 } from 'react-bootstrap';
 import {
   initData,
-  addFamilyMember
+  addFamilyMember,
+  setDeleteModal
 } from './reducer'
 import { 
   PageHeading,
@@ -37,6 +39,8 @@ class FamilyMember extends Component {
     this.handleAddFamilyMember = this.handleAddFamilyMember.bind(this);
     this.handleDeleteFamilyMember = this.handleDeleteFamilyMember.bind(this);
     this.handleEditFamilyMember = this.handleEditFamilyMember.bind(this);
+    this.closeDeleteModal = this.closeDeleteModal.bind(this);
+    this.openDeleteModal = this.openDeleteModal.bind(this);
     this.state = initData(props.route.data);
   }
   
@@ -47,8 +51,9 @@ class FamilyMember extends Component {
     });
   }
   
-  handleDeleteFamilyMember(event) {
-    this.props.route.onDelete(event.currentTarget.name);
+  handleDeleteFamilyMember() {
+    this.props.route.onDelete(this.state.deleteModal.familyMemberId);
+    this.closeDeleteModal();
   }
   
   handleEditFamilyMember(event) {
@@ -64,6 +69,14 @@ class FamilyMember extends Component {
   handleNext() {
     this.props.route.onChange(this);
     this.props.router.push('/step5');
+  }
+  
+  closeDeleteModal() {
+    this.setState(setDeleteModal(this.state, false, null));
+  }
+
+  openDeleteModal(event) {
+    this.setState(setDeleteModal(this.state, true, event.currentTarget.name));
   }
 
   render() {
@@ -100,18 +113,21 @@ class FamilyMember extends Component {
             
                 <BlockButton 
                   bsSize="xsmall"
+                  bsStyle="link"
                   name={$index}
                   onClick={this.handleEditFamilyMember}
                 >
-                  <Glyphicon glyph="pencil"/> 
+                  <Glyphicon glyph="pencil"/> Edit
                 </BlockButton>
             
                 <BlockButton 
                   bsSize="xsmall"
+                  bsStyle="link"
                   name={$index}
-                  onClick={this.handleDeleteFamilyMember}
+                  style={{ color: '#d66' }}
+                  onClick={this.openDeleteModal}
                 >
-                  <Glyphicon glyph="trash"/>
+                  <Glyphicon glyph="trash"/> Remove
                 </BlockButton>
               </Thumbnail>
             </Col>
@@ -122,6 +138,31 @@ class FamilyMember extends Component {
           <Col md={12}><br /><i>There is no family member associated with this patient. Please select "Add family member" to include a patients family member to be tested.</i><br /></Col>
         )}
         </Row>
+        
+        <Modal show={this.state.deleteModal.display} onHide={this.closeDeleteModal} style={{ paddingRight: 12 }}>
+          <Modal.Header closeButton>
+            <Modal.Title>
+              Remove family member ({
+                (this.state.form.familyMember[this.state.deleteModal.familyMemberId]) && (
+                  this.state.form.familyMember[this.state.deleteModal.familyMemberId].FamilyMemberDetails.firstName + ' ' +
+                  this.state.form.familyMember[this.state.deleteModal.familyMemberId].FamilyMemberDetails.lastName
+                )
+              })
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            Are you sure you want to remove this family member?
+          </Modal.Body>
+          <Modal.Footer>
+            <Button onClick={this.closeDeleteModal}>Cancel</Button>
+            <Button
+              bsStyle="danger"
+              onClick={this.handleDeleteFamilyMember}
+            >
+              <Glyphicon glyph="trash" /> Delete
+            </Button>
+          </Modal.Footer>
+        </Modal>
 
         <FormButton 
           bsStyle="warning" 
