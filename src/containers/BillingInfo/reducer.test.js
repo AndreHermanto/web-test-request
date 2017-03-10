@@ -42,6 +42,15 @@ describe('ClinicianDetails: reducer', () => {
     expect(afterBillOptionState.form.firstName).toEqual('');
   });
 
+  test('set billOption to "private" should not allow validation skip', () => {
+    let billOption = {
+      name: 'billOption',
+      value: 'Private'
+    }
+    const afterBillOptionState = setFormData(state, billOption);
+    expect(afterBillOptionState.validation.firstName.skip).toEqual(false);
+  });
+
   test('set new select payer for form field', () => {
     let value = 'payer';
     const newState = setSelectData(state, value);
@@ -52,12 +61,6 @@ describe('ClinicianDetails: reducer', () => {
     let value = 'Other';
     const newState = setSelectData(state, value);
     expect(newState.form.firstName).toEqual('');
-  });
-
-  test('set phone data for form field', () => {
-    let value = 1111;
-    const newState = setPhoneData(state, value);
-    expect(newState.form.phone).toEqual(1111);
   });
 
   test('validate to true test', () => {

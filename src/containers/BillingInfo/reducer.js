@@ -7,7 +7,7 @@ export function initData(prefilled) {
   var state = {
     form: {
       billOption:'',
-      payer:'',
+      payer:'Other',
       phone:'',
       firstName:'',
       lastName:'',
@@ -15,10 +15,12 @@ export function initData(prefilled) {
       consent:false
     },
     validationRule: {
+      billOption: 'requireSelectNoObj',
       consent: 'payerConsentTrue',
       firstName: 'required',
       lastName: 'required',
-      payerEmail: 'required email'
+      payerEmail: 'required email',
+      phone: 'required number'
     },
     priceList:[
     {
@@ -82,7 +84,7 @@ export function setFormData(state, target) {
   
   if(target.name === 'billOption' && value === 'Institution') {
     formStateChild = Object.assign({}, formStateChild, {
-      payer:'',
+      payer:'Other',
       phone:'',
       firstName:'',
       lastName:'',
@@ -94,6 +96,20 @@ export function setFormData(state, target) {
   var validationStateChild = Object.assign({}, state.validation, {
     [target.name]: validator(value, state.validationRule[target.name])
   });
+  
+  // BillOption change will change the validation
+  if(target.name === 'billOption') {
+    var field;
+    if(value === 'Institution') {
+      for (field in validationStateChild) {
+        if(field !== 'billOption') validationStateChild[field].skip = true;
+      }
+    } else {
+      for (field in validationStateChild) {
+        if(field !== 'billOption') validationStateChild[field].skip = false;
+      }
+    }
+  }
 
   return Object.assign({}, state, {
     form: formStateChild,
@@ -105,7 +121,8 @@ export function setFormData(state, target) {
 * set the phone state when user choose a payer
 */
 export function setSelectData(state, value, email) {
-  let formStateChild;
+  let formStateChild, 
+      validationStateChild = Object.assign({}, state.validation);
   if(value !== 'Other')
   {
     let payer = value.split(' ');
@@ -124,20 +141,15 @@ export function setSelectData(state, value, email) {
       payerEmail: ''
     });
   }
+  
+  // This also involve with validation    
+  for (var field in validationStateChild) {
+    if(field) validationStateChild[field] = validator(formStateChild[field], state.validationRule[field]);
+  }
+  
   return Object.assign({}, state, {
-    form: formStateChild
-  });
-}
-
-/**
-* set the phone state when user start typing phone number
-*/
-export function setPhoneData(state, value) {
-  var formStateChild = Object.assign({}, state.form, {
-    phone: value
-  });
-  return Object.assign({}, state, {
-    form: formStateChild
+    form: formStateChild,
+    validation: validationStateChild
   });
 }
 

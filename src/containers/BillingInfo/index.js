@@ -7,7 +7,6 @@ import {
   initData,
   setFormData,
   setSelectData,
-  setPhoneData,
   validatedToTrue
 } from './reducer'
 import { 
@@ -15,34 +14,10 @@ import {
   FormButton
 } from './../../components/SharedStyle';
 import Select from 'react-select';
-import Phone from 'react-phone-number-input';
 import Input from './../../components/Input';
 import Toggle from './../../components/Toggle';
 import RadioSet from './../../components/RadioSet';
 import PriceList from './components/PriceList';
-import styled from 'styled-components';
-
-const MobileNumber = styled(Phone)`
-  input {
-    width: 200px;
-    padding: 6px 12px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  button {
-    width: 100%;
-    border-color: #ccc;
-  }
-  img {
-    width:30px;
-    height:30px;
-    border: 0px solid #fff;
-  }
-  .react-phone-number-input__country {
-    marginRight: 1.3em;
-  }
-`;
 
 /**
  * BillingInfo - UI for input billing details.
@@ -54,7 +29,7 @@ class BillingInfo extends Component {
     this.handleBack = this.handleBack.bind(this);
     this.getPayers = this.getPayers.bind(this);
     this.handleSelectChange = this.handleSelectChange.bind(this);
-    this.handlePhoneChange = this.handlePhoneChange.bind(this);
+    //this.handlePhoneChange = this.handlePhoneChange.bind(this);
     this.handleConfirm = this.handleConfirm.bind(this);
     this.state = initData(props.route.data);
   }
@@ -65,10 +40,6 @@ class BillingInfo extends Component {
 
   handleSelectChange(event) {
     this.setState(setSelectData(this.state, event.value, this.props.route.patientData.email));
-  }
-
-  handlePhoneChange(event) {
-    this.setState(setPhoneData(this.state, event.toString()));
   }
 
   handleBack() {
@@ -85,6 +56,11 @@ class BillingInfo extends Component {
   handleConfirm() {
     return this.setState(validatedToTrue(this.state), () => {    
       var pass = true;
+      for (var field in this.state.validation) {
+        if(!this.state.validation[field].skip) {
+          if(this.state.validation[field].status === 'error') pass = false;
+        }
+      }
       this.handleNext(pass); 
     });
   }
@@ -132,6 +108,7 @@ class BillingInfo extends Component {
           subLabels={[this.props.route.clinicianData.organisation,'']}
           formState={this.state.form}
           onChange={this.handleChange}
+          onValidate={this.validate()}
         />
         {
           this.state.form.billOption !== '' &&
@@ -165,7 +142,7 @@ class BillingInfo extends Component {
             </FormGroup>
           }
           {
-            (this.state.form.billOption === 'Private' && this.state.form.payer !== '') &&
+            (this.state.form.billOption === 'Private') &&
             <div>
               <Toggle
                 field="consent"
@@ -182,12 +159,13 @@ class BillingInfo extends Component {
             </div>
           }
           {
-            (this.state.form.billOption === 'Private' && this.state.form.consent !== false) &&
+            (this.state.form.billOption === 'Private') &&
             <div>
               <Input
                 field="firstName"
                 label="First Name"
                 onChange={this.handleChange}
+                onValidate={this.validate()}
                 formState={this.state.form}
                 required
                 disabled={(this.state.form.payer !== 'Other')}
@@ -196,6 +174,7 @@ class BillingInfo extends Component {
                 field="lastName"
                 label="Last Name"
                 onChange={this.handleChange}
+                onValidate={this.validate()}
                 formState={this.state.form}
                 required
                 disabled={(this.state.form.payer !== 'Other')}
@@ -204,22 +183,19 @@ class BillingInfo extends Component {
                 field="payerEmail"
                 label="Email"
                 onChange={this.handleChange}
+                onValidate={this.validate()}
                 formState={this.state.form}
                 required
                 disabled={(this.state.form.payer !== 'Other')}
               />
-              <FormGroup>   
-                <ControlLabel>
-                  Mobile number
-                </ControlLabel>
-                <MobileNumber
-                  className="invalid"
-                  placeholder="Enter phone number"
-                  country='AU'
-                  onChange={this.handlePhoneChange}
-                  value={this.state.form.phone}
-                />
-              </FormGroup>
+              <Input
+                field="phone"
+                label="Mobile Number"
+                onChange={this.handleChange}
+                onValidate={this.validate()}
+                formState={this.state.form}
+                required
+              />
             </div>
           }
 

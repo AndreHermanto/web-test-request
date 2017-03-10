@@ -36,14 +36,19 @@ export default function validator(value, rule) {
     validationState.feedback = 'You must have obtained consent from the payer to proceed.';
   }
 
+  if(ruleObj.signatureTrue && value === false) {
+    validationState.status = 'error';
+    validationState.feedback = 'You must sign the electronic signature to submit.';
+  }
+  
   if(ruleObj.requireSelect && !value.id) {
     validationState.status = 'error';
     validationState.feedback = 'You must select one of above.';
   }
-  
-  if(ruleObj.signatureTrue && value === false) {
+
+  if(ruleObj.requireSelectNoObj && !value) {
     validationState.status = 'error';
-    validationState.feedback = 'You must sign the electronic signature to submit.';
+    validationState.feedback = 'You must select one of above.';
   }
 
   if(ruleObj.required && !value) {
