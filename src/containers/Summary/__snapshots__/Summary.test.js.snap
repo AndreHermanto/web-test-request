@@ -20,7 +20,7 @@ exports[`Summary: index renders without crashing - initial state with empty gene
       <div
         className="col-md-12">
         <p
-          className="jXWIEx">
+          className="doDOdK">
            
           <strong>
             Consequatur adipisci modi laudantium tenetur ea exercitationem id
@@ -30,10 +30,10 @@ exports[`Summary: index renders without crashing - initial state with empty gene
       <div
         className="col-md-12">
         <p
-          className="jXWIEx">
+          className="doDOdK">
            Total number of genes available:
           <span
-            className="fmanLU label label-default">
+            className="creeDZ label label-default">
             8
           </span>
         </p>
@@ -42,12 +42,11 @@ exports[`Summary: index renders without crashing - initial state with empty gene
   </div>
   <div
     className="htJaQZ">
-    <i
-      className="glyphicon glyphicon-edit pull-right vEVwV"
-      onClick={[Function]} />
     <h3
       className="dQtXWM">
-       Patient Details
+       Patient - 
+      Ngabcuyen abcabc
+       
     </h3>
     <div
       className="dgEelt" />
@@ -55,19 +54,20 @@ exports[`Summary: index renders without crashing - initial state with empty gene
       className="row">
       <div
         className="col-md-12">
-        <p
-          className="jXWIEx">
-          <strong>
-            Ngabcuyen abcabc
-          </strong>
-        </p>
+        <h4
+          className="hWtWAB">
+          Details
+          <i
+            className="glyphicon glyphicon-edit geUSvV"
+            onClick={[Function]} />
+        </h4>
       </div>
       <div
         className="col-md-12">
         <p
-          className="jXWIEx">
+          className="doDOdK">
           <span
-            className="bgdPDV">
+            className="jXWIEx">
              Date of Birth: 
           </span>
           1-February-1917
@@ -76,9 +76,9 @@ exports[`Summary: index renders without crashing - initial state with empty gene
       <div
         className="col-md-12">
         <p
-          className="jXWIEx">
+          className="doDOdK">
           <span
-            className="bgdPDV">
+            className="jXWIEx">
              Medical record number:  
           </span>
           123123
@@ -87,9 +87,9 @@ exports[`Summary: index renders without crashing - initial state with empty gene
       <div
         className="col-md-12">
         <p
-          className="jXWIEx">
+          className="doDOdK">
           <span
-            className="bgdPDV">
+            className="jXWIEx">
              Gender:  
           </span>
           Male
@@ -98,9 +98,9 @@ exports[`Summary: index renders without crashing - initial state with empty gene
       <div
         className="col-md-12">
         <p
-          className="jXWIEx">
+          className="doDOdK">
           <span
-            className="bgdPDV">
+            className="jXWIEx">
              Ethnicity:  
           </span>
           Asian
@@ -109,9 +109,20 @@ exports[`Summary: index renders without crashing - initial state with empty gene
       <div
         className="col-md-12">
         <p
-          className="jXWIEx">
+          className="doDOdK">
           <span
-            className="bgdPDV">
+            className="jXWIEx">
+             Deceased:  
+          </span>
+          No
+        </p>
+      </div>
+      <div
+        className="col-md-12">
+        <p
+          className="doDOdK">
+          <span
+            className="jXWIEx">
              Email:  
           </span>
           abc@abc.gmail.com
@@ -119,22 +130,53 @@ exports[`Summary: index renders without crashing - initial state with empty gene
       </div>
       <div
         className="col-md-12">
-        <p
+        <h4
+          className="hWtWAB">
+          Clinical Information
+          <i
+            className="glyphicon glyphicon-edit geUSvV"
+            onClick={[Function]} />
+        </h4>
+      </div>
+      <div
+        className="col-md-12">
+        <span
           className="jXWIEx">
-          <span
-            className="bgdPDV">
-            Clinical notes
-            <span
-              className="eVDbRf label label-default"
-              onClick={[Function]}>
-              Edit
-            </span>
-          </span>
-        </p>
+           Clinical note 
+        </span>
         <div
-          className="jeRyhp">
+          className="kjqPPK">
           abacbascs
         </div>
+      </div>
+      <div
+        className="col-md-12">
+        <span
+          className="jXWIEx">
+           Relevant investigation 
+        </span>
+        <div
+          className="kjqPPK" />
+      </div>
+      <div
+        className="col-md-12">
+        <span
+          className="jXWIEx">
+           Family history 
+        </span>
+        <div
+          className="kjqPPK" />
+      </div>
+      <div
+        className="col-md-12">
+        <p
+          className="doDOdK">
+          <span
+            className="jXWIEx">
+             Consanguinity:  
+          </span>
+          No
+        </p>
       </div>
     </div>
   </div>
@@ -154,7 +196,7 @@ exports[`Summary: index renders without crashing - initial state with empty gene
       <div
         className="col-md-12">
         <p
-          className="jXWIEx">
+          className="doDOdK">
           <strong>
             John Doe
           </strong>
@@ -163,16 +205,16 @@ exports[`Summary: index renders without crashing - initial state with empty gene
       <div
         className="col-md-12">
         <p
-          className="jXWIEx">
+          className="doDOdK">
           as
         </p>
       </div>
       <div
         className="col-md-12">
         <p
-          className="jXWIEx">
+          className="doDOdK">
           <span
-            className="bgdPDV">
+            className="jXWIEx">
              Provider number:  
           </span>
           as
@@ -181,9 +223,9 @@ exports[`Summary: index renders without crashing - initial state with empty gene
       <div
         className="col-md-12">
         <p
-          className="jXWIEx">
+          className="doDOdK">
           <span
-            className="bgdPDV">
+            className="jXWIEx">
              Medical specialty:  
           </span>
           as
@@ -192,9 +234,9 @@ exports[`Summary: index renders without crashing - initial state with empty gene
       <div
         className="col-md-12">
         <p
-          className="jXWIEx">
+          className="doDOdK">
           <span
-            className="bgdPDV">
+            className="jXWIEx">
              Phone:  
           </span>
           as
@@ -203,9 +245,9 @@ exports[`Summary: index renders without crashing - initial state with empty gene
       <div
         className="col-md-12">
         <p
-          className="jXWIEx">
+          className="doDOdK">
           <span
-            className="bgdPDV">
+            className="jXWIEx">
              Email:  
           </span>
           as
@@ -214,9 +256,9 @@ exports[`Summary: index renders without crashing - initial state with empty gene
       <div
         className="col-md-12">
         <p
-          className="jXWIEx">
+          className="doDOdK">
           <span
-            className="bgdPDV">
+            className="jXWIEx">
              Fax:  
           </span>
           as
@@ -236,7 +278,7 @@ exports[`Summary: index renders without crashing - initial state with empty gene
       <div
         className="col-md-12">
         <p
-          className="jXWIEx">
+          className="doDOdK">
           <strong>
             asdf
              
@@ -247,16 +289,16 @@ exports[`Summary: index renders without crashing - initial state with empty gene
       <div
         className="col-md-12">
         <p
-          className="jXWIEx">
+          className="doDOdK">
           adsf
         </p>
       </div>
       <div
         className="col-md-12">
         <p
-          className="jXWIEx">
+          className="doDOdK">
           <span
-            className="bgdPDV">
+            className="jXWIEx">
              Email: 
           </span>
           asfd
@@ -268,7 +310,7 @@ exports[`Summary: index renders without crashing - initial state with empty gene
       <div
         className="col-md-12">
         <p
-          className="jXWIEx">
+          className="doDOdK">
           <strong>
             asdf
              
@@ -279,16 +321,16 @@ exports[`Summary: index renders without crashing - initial state with empty gene
       <div
         className="col-md-12">
         <p
-          className="jXWIEx">
+          className="doDOdK">
           adsf
         </p>
       </div>
       <div
         className="col-md-12">
         <p
-          className="jXWIEx">
+          className="doDOdK">
           <span
-            className="bgdPDV">
+            className="jXWIEx">
              Email: 
           </span>
           asdf
@@ -314,9 +356,9 @@ exports[`Summary: index renders without crashing - initial state with empty gene
       <div
         className="col-md-12">
         <p
-          className="jXWIEx">
+          className="doDOdK">
           <span
-            className="bgdPDV">
+            className="jXWIEx">
              Payer:  
           </span>
           abc abc
@@ -325,9 +367,9 @@ exports[`Summary: index renders without crashing - initial state with empty gene
       <div
         className="col-md-12">
         <p
-          className="jXWIEx">
+          className="doDOdK">
           <span
-            className="bgdPDV">
+            className="jXWIEx">
              Mobile:  
           </span>
           +61412334477
@@ -336,9 +378,9 @@ exports[`Summary: index renders without crashing - initial state with empty gene
       <div
         className="col-md-12">
         <p
-          className="jXWIEx">
+          className="doDOdK">
           <span
-            className="bgdPDV">
+            className="jXWIEx">
              Email:  
           </span>
           abc@gmail.com

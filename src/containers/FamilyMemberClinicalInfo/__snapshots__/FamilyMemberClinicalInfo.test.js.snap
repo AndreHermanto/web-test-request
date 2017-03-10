@@ -154,7 +154,7 @@ exports[`FamilyMemberClinicalInfo: index renders without crashing 1`] = `
     <label
       className="control-label"
       htmlFor={undefined}>
-      Consangunity
+      Consanguinity
     </label>
     <br />
     <div
@@ -201,7 +201,7 @@ exports[`FamilyMemberClinicalInfo: index renders without crashing 1`] = `
       <input
         checked={false}
         className="react-toggle-screenreader-only"
-        name="consangunity"
+        name="consanguinity"
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}

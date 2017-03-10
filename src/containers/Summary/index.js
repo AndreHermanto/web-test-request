@@ -10,11 +10,12 @@ import {
   SummaryHeading,
   SummaryBreakLine,
   EditButton,
+  EditButtonXS,
   SummaryTitle,
   SummaryDetails,
+  SectionHeading,
   Gene,
-  SummaryNotes,
-  ClinicalButton
+  SummaryNotes
 } from './summaryStyled'; 
 
 /**
@@ -79,18 +80,15 @@ class Summary extends Component {
         </SummaryBox>
 
         <SummaryBox>
-          <EditButton className="glyphicon glyphicon-edit pull-right" onClick={() => this.handleEdit('step2')}/>
-          <SummaryHeading> Patient Details</SummaryHeading>
+          <SummaryHeading> Patient - {this.props.route.data.PatientDetails.firstName + ' ' + this.props.route.data.PatientDetails.lastName} </SummaryHeading>
           <SummaryBreakLine/>
           <Row>
             <Col md={12}>
-              <SummaryDetails> 
-                <strong>
-                  {this.props.route.data.PatientDetails.firstName + ' ' + this.props.route.data.PatientDetails.lastName}
-                </strong>
-              </SummaryDetails>
+              <SectionHeading> 
+                Details
+                <EditButtonXS className="glyphicon glyphicon-edit" onClick={() => this.handleEdit('step2')}/>
+              </SectionHeading>
             </Col>
-            
             <Col md={12}>
               <SummaryDetails> 
               <SummaryTitle> Date of Birth: </SummaryTitle>
@@ -109,7 +107,10 @@ class Summary extends Component {
             <Col md={12}>
               <SummaryDetails> 
                 <SummaryTitle> Gender:  </SummaryTitle>
-                {this.props.route.data.PatientDetails.gender} 
+                {this.props.route.data.PatientDetails.gender === 'Other' ?
+                  this.props.route.data.PatientDetails.genderOther + ' (Other)' :
+                  this.props.route.data.PatientDetails.gender
+                } 
               </SummaryDetails>
             </Col>
             {
@@ -122,7 +123,16 @@ class Summary extends Component {
               </Col>
             }
             {
-              this.props.route.data.PatientDetails.sampleSource !== '' &&
+              this.props.route.data.PatientDetails.deceased !== '' &&
+              <Col md={12}>
+                <SummaryDetails> 
+                  <SummaryTitle> Deceased:  </SummaryTitle>
+                  {this.props.route.data.PatientDetails.deceased ? 'Yes' : 'No'}
+                </SummaryDetails>
+              </Col>
+            }
+            {
+              this.props.route.data.PatientDetails.deceased && this.props.route.data.PatientDetails.sampleSource !== '' &&
               <Col md={12}>
                 <SummaryDetails> 
                   <SummaryTitle> Sample source:  </SummaryTitle>
@@ -137,20 +147,44 @@ class Summary extends Component {
               </SummaryDetails>
             </Col>
             <Col md={12}>
-              <SummaryDetails> 
-                <SummaryTitle> 
-                  Clinical notes  
-                  <ClinicalButton onClick={() => this.handleEdit('step3')}>Edit</ClinicalButton> 
-                </SummaryTitle>
-              </SummaryDetails>
+              <SectionHeading> 
+                Clinical Information
+                <EditButtonXS className="glyphicon glyphicon-edit" onClick={() => this.handleEdit('step3')}/>
+              </SectionHeading>
+            </Col>
+            <Col md={12}>
+              <SummaryTitle> Clinical note </SummaryTitle>
               <SummaryNotes>
                 {this.props.route.data.ClinicalInfo.clinicalInfo}
               </SummaryNotes>
             </Col>
+            {
+              this.props.route.data.ClinicalInfo.relevantInvestigation !== '' &&
+              <Col md={12}>
+                <SummaryTitle> Relevant investigation </SummaryTitle>
+                <SummaryNotes>
+                  {this.props.route.data.ClinicalInfo.relevantInvestigation}
+                </SummaryNotes>
+              </Col>
+            }
+            {
+              this.props.route.data.ClinicalInfo.familyHistory !== '' &&
+              <Col md={12}>
+                <SummaryTitle> Family history </SummaryTitle>
+                <SummaryNotes>
+                  {this.props.route.data.ClinicalInfo.familyHistory}
+                </SummaryNotes>
+              </Col>
+            }
+            <Col md={12}>
+              <SummaryDetails> 
+                <SummaryTitle> Consanguinity:  </SummaryTitle>
+                {this.props.route.data.ClinicalInfo.consanguinity ? 'Yes' : 'No'} 
+              </SummaryDetails>
+            </Col>
           </Row>
         </SummaryBox>
-                  
-        <SummaryBox>
+         <SummaryBox>
           <EditButton className="glyphicon glyphicon-edit pull-right" onClick={() => this.handleEdit('step5')}/>
           <SummaryHeading> Clinician details </SummaryHeading>
           <SummaryBreakLine/>
@@ -260,8 +294,8 @@ class Summary extends Component {
               </SummaryDetails>
             </Col>
           </Row>
-        </SummaryBox>
-              
+        </SummaryBox>        
+     
         <FormButton 
           bsStyle="warning" 
           onClick={this.handleBack}

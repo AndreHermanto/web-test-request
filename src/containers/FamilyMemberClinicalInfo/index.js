@@ -109,8 +109,8 @@ class FamilyMemberClinicalInfo extends Component {
         />
             
         <Toggle
-          field="consangunity"
-          label="Consangunity"
+          field="consanguinity"
+          label="Consanguinity"
           onChange={this.handleChange}
           formState={this.state.form}
         />
