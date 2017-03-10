@@ -181,7 +181,7 @@ class ClinicianDetails extends Component {
           {
             this.state.form.copyToHCP.map((form, index) => {
               return <AdditionalFormBox key={index}> 
-              <PageHeading> Clinician {index + 1} <RemoveLabel 
+              <PageHeading> Copy to clinician {index + 1} <RemoveLabel 
                 bsSize="xsmall"
                 onClick={() => this.handleRemoveHCP(index)}>
                 <Glyphicon glyph="trash"/> Remove</RemoveLabel>
