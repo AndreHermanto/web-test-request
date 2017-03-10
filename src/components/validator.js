@@ -41,6 +41,11 @@ export default function validator(value, rule) {
     validationState.feedback = 'You must select one of above.';
   }
   
+  if(ruleObj.signatureTrue && value === false) {
+    validationState.status = 'error';
+    validationState.feedback = 'You must sign the electronic signature to submit.';
+  }
+
   if(ruleObj.required && !value) {
     validationState.status = 'error';
     validationState.feedback = 'This field is required.';

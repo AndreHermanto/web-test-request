@@ -17,19 +17,27 @@ import {
   Gene,
   SummaryNotes
 } from './summaryStyled'; 
-
+import Toggle from './../../components/Toggle';
+import {
+  initData,
+  setSignatureData,
+  validatedToTrue
+} from './reducer';
 /**
 * Summary - UI for ordering type of tests, selecting disorder and related genes for testing.
 */
 class Summary extends Component {
   constructor(props) {
     super(props);
+    this.state = initData(props.route.data);
     this.handleBack = this.handleBack.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.state = { 
-      form: props.route.data || {}
-    }
+    this.handleValidateSubmit = this.handleValidateSubmit.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState(setSignatureData(this.state, event.target));
   }
 
   handleEdit(step) {
@@ -41,8 +49,13 @@ class Summary extends Component {
     this.props.route.onChange(this); 
     this.props.router.push('/step6');
   }
-  
-  handleSubmit() {
+
+  validate() {
+    return this.state.validated && this.state.validation;
+  }
+
+  handleSubmit()
+  {
     return submitTestRequest(this.state.form)
       .then((response) => {
         if(!response.ok) {
@@ -53,6 +66,16 @@ class Summary extends Component {
           return true;
         }
     })
+  }
+  
+  handleValidateSubmit() {
+    this.setState(validatedToTrue(this.state), () => {    
+      for (var field in this.state.validation) {
+        if(this.state.validation[field].status !== 'error') {
+          this.handleSubmit();
+        }
+      }
+    });
   }
 
   render() {
@@ -294,8 +317,15 @@ class Summary extends Component {
               </SummaryDetails>
             </Col>
           </Row>
-        </SummaryBox>        
-     
+        </SummaryBox>
+        <Toggle
+          field="signature"
+          label="Electronic signature"
+          onChange={this.handleChange}
+          onValidate={this.validate()}
+          formState={this.state.form}
+          required
+        />
         <FormButton 
           bsStyle="warning" 
           onClick={this.handleBack}
@@ -307,7 +337,7 @@ class Summary extends Component {
         <FormButton 
           bsStyle="success" 
           type="submit" 
-          onClick={this.handleSubmit}
+          onClick={this.handleValidateSubmit}
         >
           Submit
         </FormButton> 
