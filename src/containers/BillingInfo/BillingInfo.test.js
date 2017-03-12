@@ -67,13 +67,6 @@ describe('<BillingInfo/>', function() {
     expect(view.state.form.payer).toEqual('payer');
   });
 
-  test('handlePhoneChange works', () =>  {
-    var view = TestUtils.renderIntoDocument(React.createElement(BillingInfo, props));
-    const phone = +61411335466;                              
-    view.handlePhoneChange(phone);
-    expect(view.state.form.phone).toEqual(phone.toString());
-  });
-
   test('getPayers works', () =>  {
     var view = TestUtils.renderIntoDocument(React.createElement(BillingInfo, props));
     const options = [{"label": "bdf abc", "value": "bdf abc"}, {"label": "Other", "value": "Other"}];
