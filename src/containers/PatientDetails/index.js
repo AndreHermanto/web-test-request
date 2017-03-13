@@ -167,14 +167,16 @@ class PatientDetails extends Component {
           formState={this.state.form}
           required
         />
-      
-        <FormButton 
+        {
+          this.props.route.isEdited !== true &&
+          <FormButton 
           bsStyle="warning" 
           onClick={this.handleBack}
           label="Back"
-        >
-          Back
-        </FormButton> 
+          >
+            Back
+          </FormButton> 
+        }
       
         <FormButton 
           bsStyle="success" 

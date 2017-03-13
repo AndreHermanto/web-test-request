@@ -115,20 +115,25 @@ class FamilyMemberClinicalInfo extends Component {
           formState={this.state.form}
         />
             
-        <FormButton 
+        {
+          this.props.route.isEdited !== true &&
+          <FormButton 
           bsStyle="warning" 
           onClick={this.handleBack}
           label="Back"
-        >
-          Back
-        </FormButton>
-          
-        <FormButton 
-          bsStyle="warning" 
-          onClick={this.handleCancel}
-        >
-          Cancel
-        </FormButton> 
+          >
+            Back
+          </FormButton> 
+        }
+        {
+          this.props.route.isEdited !== true &&
+          <FormButton 
+            bsStyle="warning" 
+            onClick={this.handleCancel}
+          >
+            Cancel
+          </FormButton> 
+        }
       
         <FormButton 
           bsStyle="success" 
