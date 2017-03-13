@@ -72,6 +72,7 @@ class Summary extends Component {
     this.setState(validatedToTrue(this.state), () => {    
       for (var field in this.state.validation) {
         if(this.state.validation[field].status !== 'error') {
+          this.props.router.push('/confirmation');
           this.handleSubmit();
         }
       }

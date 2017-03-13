@@ -1,0 +1,102 @@
+import React, { Component } from 'react';
+import { Row, Col } from 'react-bootstrap';
+import styled from 'styled-components';
+
+export const ConfirmationBox = styled.div`
+  box-shadow: 0 0 5px rgb(227, 231, 241);  
+  width: 80%;
+  padding: 20px;
+  margin-bottom: 10px;
+  margin-left: 10%;
+`;
+export const ConfirmationBreakLine = styled.div`
+  border-bottom: 2px dotted rgba(153, 153, 153, 0.51);
+  width:100%
+`;
+export const ConfirmationBreakLineXS = styled.div`
+  border-style: dotted dashed dotted;
+  border-width: 2px;
+  border-color: #ABC6CA;
+  width: 80%;
+  margin-left:10%;
+`;
+export const ConfirmationHeading = styled.h1`
+  text-align:center;
+  color: rgba(51, 51, 51, 0.75);
+`;
+export const ConfirmationNote = styled.h4`
+  font-weight: 200;
+  text-align:center;
+  margin-top: 10px;
+`;
+export const Circle = styled.span`
+  border: 2px solid #ABC6CA;
+  border-radius: 12px;
+  padding-right: 14px;
+`;
+
+export const CircleRight = styled.span`
+  border: 2px solid #ABC6CA;
+  float:right;
+  padding-top: 16px;
+  border-radius: 10px;
+  padding-left: 14px;
+`;
+
+const PrintRecordButton = styled.label`
+  cursor: pointer;
+  padding: 17px 15px;
+  border: 1px solid #00a6b6;
+  color: #00a6b6;
+  margin-top: 10px;
+  width: 100%;
+  text-align: center;
+`;
+
+const PrintBloodCollectionButton = styled.label`
+  cursor: pointer;
+  padding: 7px 15px;
+  border: 1px solid #00a6b6;
+  color: #00a6b6;
+  margin-top: 10px;
+  text-align: center;
+`;
+
+/**
+* Confirmation - UI for ordering type of tests, selecting disorder and related genes for testing.
+*/
+class Confirmation extends Component {
+  render() {
+    return (
+      <div>
+        <ConfirmationBox>
+          <Circle/>
+          <CircleRight/>
+          <ConfirmationBreakLineXS/>
+            <ConfirmationHeading> Thank you!</ConfirmationHeading>
+          <ConfirmationBreakLineXS/>
+            <ConfirmationNote> 
+              We've sent you an email with all the details of your order!
+            </ConfirmationNote>
+            <ConfirmationNote>
+              You can now:
+            </ConfirmationNote>
+            <Row>
+              <Col md={6}>
+                <PrintRecordButton>
+                  Print out form for your records
+                </PrintRecordButton>
+              </Col>
+              <Col md={6}>
+                <PrintBloodCollectionButton>
+                  Print out Blood Collection forms for your patient(s)
+                </PrintBloodCollectionButton>
+              </Col>
+            </Row>
+        </ConfirmationBox>
+      </div>
+    );
+  }
+}
+
+export default Confirmation;
