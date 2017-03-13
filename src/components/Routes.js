@@ -15,6 +15,7 @@ import FamilyMemberDetails from './../containers/FamilyMemberDetails';
 import FamilyMemberClinicalInfo from './../containers/FamilyMemberClinicalInfo';
 import BillingInfo from './../containers/BillingInfo';
 import Summary from './../containers/Summary';
+import Confirmation from './../containers/Confirmation';
 
 function Routes({ onChange, onFamilyMemberChange, onFamilyMemberDelete, data, onEdit, isEdited }) {
   return (
@@ -31,6 +32,7 @@ function Routes({ onChange, onFamilyMemberChange, onFamilyMemberDelete, data, on
         <Route path="step6" component={BillingInfo} onChange={onChange} data={data.BillingInfo} clinicianData={data.ClinicianDetails || {}} patientData={data.PatientDetails || {}}/>
         <Route path="summary" component={Summary} onChange={onChange} data={data} onEdit={onEdit}/>
       </Route>
+      <Route path="/confirmation" component={Confirmation}/>
     </Router>
   );
 }

@@ -1,0 +1,44 @@
+exports[`Confirmation test Confirmation page renders without crashing 1`] = `
+<div>
+  <div
+    className="kEpFkI">
+    <span
+      className="idaOVj" />
+    <span
+      className="eTimuZ" />
+    <div
+      className="kZoPjc" />
+    <h1
+      className="eikxtc">
+       Thank you!
+    </h1>
+    <div
+      className="kZoPjc" />
+    <h4
+      className="bpcQEW">
+      We\'ve sent you an email with all the details of your order!
+    </h4>
+    <h4
+      className="bpcQEW">
+      You can now:
+    </h4>
+    <div
+      className="row">
+      <div
+        className="col-md-6">
+        <label
+          className="hLmasR">
+          Print out form for your records
+        </label>
+      </div>
+      <div
+        className="col-md-6">
+        <label
+          className="cocgOv">
+          Print out Blood Collection forms for your patient(s)
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+`;
