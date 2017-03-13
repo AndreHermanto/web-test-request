@@ -43,8 +43,15 @@ class FamilyMemberDetails extends Component {
   
   handleNext(passValidation) {
     if(!passValidation) return false;
-    this.props.route.onChange(this); 
-    this.props.router.push(`/step4/${this.props.params.mode}/2/${this.props.params.id}`);
+    if(this.props.route.isEdited === true)
+    {
+      this.props.route.onChange(this);
+      this.props.router.push('/summary')
+    }
+    else {
+      this.props.route.onChange(this);
+      this.props.router.push(`/step4/${this.props.params.mode}/2/${this.props.params.id}`);
+    }
   }
   
   handleConfirm() {

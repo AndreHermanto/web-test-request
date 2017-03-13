@@ -28,7 +28,7 @@ describe('Summary: reducer', () => {
   });
 
   test('validate to true test', () => {
-    const newState = validatedToTrue(state);
+    const newState = validatedToTrue({});
     expect(newState.validated).toEqual(true);
   });
 });

@@ -71,3 +71,13 @@ export const EditButtonXS = styled.i`
   color: #1ba8b7;
   margin-left:10px;
 `;
+
+
+export const Tag = styled(Label)`
+  margin-left: 10px;
+  position: absolute;
+  line-height: normal !important;
+  font-size: 12px !important;
+  margin-top: 9px;
+`;
+

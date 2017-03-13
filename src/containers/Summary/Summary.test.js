@@ -6,7 +6,7 @@ import FetchMock from 'fetch-mock';
 import Summary from './index';
 
 describe('Summary: index', () => {
-    const testData = {
+  const testData = {
     test: {
     id:'7052d137-a166-48b0-a52e-e05a167bd176',
     label: 'Consequatur adipisci modi laudantium tenetur ea exercitationem id',
@@ -27,9 +27,12 @@ describe('Summary: index', () => {
     "consent":false,
     "email":"abc@abc.gmail.com"
   }
+
+  const familyData = {"familyMember":[{"FamilyMemberDetails":{"lastName":"abc@abc.com","firstName":"abc@abc.com","dob":"2-January-1918","medicalRecordNo":"abc@abc.com","gender":"Female","genderOther":"","ethnicity":"","deceased":false,"sampleSource":"","consent":false,"email":"abc@abc.com"},"FamilyMemberClinicalInfo":{"clinicalInfo":"abc@abc.com","affected":true,"relevantInvestigation":"asdasdasd","familyHistory":"asdasdasdasd","consangunity":false}},
+    {"FamilyMemberDetails":{"lastName":"ab.com","firstName":"abcsadkfhkladsfj","dob":"2-January-1918","medicalRecordNo":"abc@abc.com","gender":"Male","genderOther":"","ethnicity":"","deceased":true,"sampleSource":"","consent":false,"email":"abc@abc.com"},"FamilyMemberClinicalInfo":{"clinicalInfo":"abc@abc.com","affected":false,"relevantInvestigation":"asdasdasdasd","familyHistory":"asdasd","consangunity":true}}]};  
   const clinicianDetails = {
     "providerNumber":"as","medicalSpecialty":"as","firstName":"John",
-    "lastName":"Doe","organisation":"as","phone":"as","email":"as","fax":"as",
+    "lastName":"Doe","organisation":"as","phone":"as","email":"as@aca.com","fax":"as",
     "copyToHCP":[{"additionalFirstName":"asdf","additionalLastName":"asdf","additionalOrganisation":"adsf","additionalEmail":"asfd"},
     {"additionalFirstName":"asdf","additionalLastName":"asdf","additionalOrganisation":"adsf","additionalEmail":"asdf"}],
     "copy":false
@@ -58,6 +61,7 @@ describe('Summary: index', () => {
         OrderTest: testData,
         PatientDetails: patientData,
         ClinicalInfo: {clinicalInfo:'abacbascs'},
+        FamilyMember: familyData,
         ClinicianDetails: clinicianDetails,
         BillingInfo: billingInfo
       }
@@ -88,7 +92,11 @@ describe('Summary: index', () => {
     }                         
     page.handleChange(event);
     expect(page.state.form.signature).toEqual(true); 
-
+  });
+  test('handleEdit works', () =>  {
+    var page = TestUtils.renderIntoDocument(React.createElement(Summary, props));                                     
+    page.handleEdit('step1');
+    expect(page.props.router.pop()).toEqual('step1');
   });
   
   test('handleSubmit works', async () => {
