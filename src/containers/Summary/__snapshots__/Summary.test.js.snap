@@ -5,13 +5,19 @@ exports[`Summary: index renders without crashing - initial state with empty gene
      Request summary
   </h3>
   <div
-    className="htJaQZ">
-    <i
-      className="glyphicon glyphicon-edit pull-right vEVwV"
-      onClick={[Function]} />
+    className="cFAMBN">
     <h3
-      className="dQtXWM">
-       Order Test 
+      className="gElTrd">
+      Test ordered
+      <button
+        className="btn btn-link"
+        disabled={false}
+        onClick={[Function]}
+        type="button">
+        <span
+          className="glyphicon glyphicon-pencil" />
+         Edit
+      </button>
     </h3>
     <div
       className="dgEelt" />
@@ -76,9 +82,9 @@ exports[`Summary: index renders without crashing - initial state with empty gene
     </div>
   </div>
   <div
-    className="htJaQZ">
+    className="cFAMBN">
     <h3
-      className="dQtXWM">
+      className="gElTrd">
        Patient - 
       Ngabcuyen abcabc
        
@@ -92,9 +98,15 @@ exports[`Summary: index renders without crashing - initial state with empty gene
         <h4
           className="hWtWAB">
           Details
-          <i
-            className="glyphicon glyphicon-edit geUSvV"
-            onClick={[Function]} />
+          <button
+            className="btn btn-link"
+            disabled={false}
+            onClick={[Function]}
+            type="button">
+            <span
+              className="glyphicon glyphicon-pencil" />
+             Edit
+          </button>
         </h4>
       </div>
       <div
@@ -157,9 +169,15 @@ exports[`Summary: index renders without crashing - initial state with empty gene
         <h4
           className="hWtWAB">
           Clinical Information
-          <i
-            className="glyphicon glyphicon-edit geUSvV"
-            onClick={[Function]} />
+          <button
+            className="btn btn-link"
+            disabled={false}
+            onClick={[Function]}
+            type="button">
+            <span
+              className="glyphicon glyphicon-pencil" />
+             Edit
+          </button>
         </h4>
       </div>
       <div
@@ -205,9 +223,9 @@ exports[`Summary: index renders without crashing - initial state with empty gene
     </div>
   </div>
   <div
-    className="htJaQZ">
+    className="cFAMBN">
     <h3
-      className="dQtXWM">
+      className="gElTrd">
        Family Member - 
       abc@abc.com abc@abc.com
       <span
@@ -224,9 +242,15 @@ exports[`Summary: index renders without crashing - initial state with empty gene
         <h4
           className="hWtWAB">
           Details
-          <i
-            className="glyphicon glyphicon-edit geUSvV"
-            onClick={[Function]} />
+          <button
+            className="btn btn-link"
+            disabled={false}
+            onClick={[Function]}
+            type="button">
+            <span
+              className="glyphicon glyphicon-pencil" />
+             Edit
+          </button>
         </h4>
       </div>
       <div
@@ -278,9 +302,15 @@ exports[`Summary: index renders without crashing - initial state with empty gene
         <h4
           className="hWtWAB">
           Clinical Information
-          <i
-            className="glyphicon glyphicon-edit geUSvV"
-            onClick={[Function]} />
+          <button
+            className="btn btn-link"
+            disabled={false}
+            onClick={[Function]}
+            type="button">
+            <span
+              className="glyphicon glyphicon-pencil" />
+             Edit
+          </button>
         </h4>
       </div>
       <div
@@ -330,9 +360,9 @@ exports[`Summary: index renders without crashing - initial state with empty gene
     </div>
   </div>
   <div
-    className="htJaQZ">
+    className="cFAMBN">
     <h3
-      className="dQtXWM">
+      className="gElTrd">
        Family Member - 
       abcsadkfhkladsfj ab.com
       <span
@@ -349,9 +379,15 @@ exports[`Summary: index renders without crashing - initial state with empty gene
         <h4
           className="hWtWAB">
           Details
-          <i
-            className="glyphicon glyphicon-edit geUSvV"
-            onClick={[Function]} />
+          <button
+            className="btn btn-link"
+            disabled={false}
+            onClick={[Function]}
+            type="button">
+            <span
+              className="glyphicon glyphicon-pencil" />
+             Edit
+          </button>
         </h4>
       </div>
       <div
@@ -414,9 +450,15 @@ exports[`Summary: index renders without crashing - initial state with empty gene
         <h4
           className="hWtWAB">
           Clinical Information
-          <i
-            className="glyphicon glyphicon-edit geUSvV"
-            onClick={[Function]} />
+          <button
+            className="btn btn-link"
+            disabled={false}
+            onClick={[Function]}
+            type="button">
+            <span
+              className="glyphicon glyphicon-pencil" />
+             Edit
+          </button>
         </h4>
       </div>
       <div
@@ -466,13 +508,19 @@ exports[`Summary: index renders without crashing - initial state with empty gene
     </div>
   </div>
   <div
-    className="htJaQZ">
-    <i
-      className="glyphicon glyphicon-edit pull-right vEVwV"
-      onClick={[Function]} />
+    className="cFAMBN">
     <h3
-      className="dQtXWM">
-       Clinician details 
+      className="gElTrd">
+      Clinician details
+      <button
+        className="btn btn-link"
+        disabled={false}
+        onClick={[Function]}
+        type="button">
+        <span
+          className="glyphicon glyphicon-pencil" />
+         Edit
+      </button>
     </h3>
     <div
       className="dgEelt" />
@@ -554,8 +602,8 @@ exports[`Summary: index renders without crashing - initial state with empty gene
       <div
         className="dgEelt" />
       <h3
-        className="dQtXWM">
-         Copy 
+        className="gElTrd">
+         Copy to clinicians
       </h3>
     </div>
     <div
@@ -624,15 +672,20 @@ exports[`Summary: index renders without crashing - initial state with empty gene
     </div>
   </div>
   <div
-    className="htJaQZ">
-    <i
-      className="glyphicon glyphicon-edit pull-right vEVwV"
-      onClick={[Function]} />
+    className="hGLhrH">
     <h3
-      className="dQtXWM">
-       
+      className="gElTrd">
       Private
-       billing 
+       billing
+      <button
+        className="btn btn-link"
+        disabled={false}
+        onClick={[Function]}
+        type="button">
+        <span
+          className="glyphicon glyphicon-pencil" />
+         Edit
+      </button>
     </h3>
     <div
       className="dgEelt" />
