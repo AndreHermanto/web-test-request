@@ -29,7 +29,6 @@ class BillingInfo extends Component {
     this.handleBack = this.handleBack.bind(this);
     this.getPayers = this.getPayers.bind(this);
     this.handleSelectChange = this.handleSelectChange.bind(this);
-    //this.handlePhoneChange = this.handlePhoneChange.bind(this);
     this.handleConfirm = this.handleConfirm.bind(this);
     this.state = initData(props.route.data);
   }
@@ -39,7 +38,7 @@ class BillingInfo extends Component {
   }
 
   handleSelectChange(event) {
-    this.setState(setSelectData(this.state, event.value, this.props.route.patientData.email));
+    this.setState(setSelectData(this.state, event.value, event.email));
   }
 
   handleBack() {
@@ -66,17 +65,32 @@ class BillingInfo extends Component {
   }
 
   getPayers() {
-    if(
-      !this.props.route.patientData.firstName ||
-      !this.props.route.patientData.lastName
-    ) return [{ value: 'Other', label: 'Other' }];
+    var payers = [{ value: 'Other', label: 'Other' }];
     
+    if(this.props.route.patientData.firstName &&
+      this.props.route.patientData.lastName) {
+      let patientName = this.props.route.patientData.firstName.toString() + ' ' + 
+                        this.props.route.patientData.lastName.toString();
+      payers.unshift({ 
+        value: patientName, 
+        label: patientName + ' (Patient)',
+        email: this.props.route.patientData.email
+      });
+    }
+
+    if(this.props.route.familyMemberData) {
+      this.props.route.familyMemberData.familyMember.forEach((member) => {
+        let memberName = member.FamilyMemberDetails.firstName.toString() + ' ' + 
+                         member.FamilyMemberDetails.lastName.toString();
+        payers.unshift({
+          value: memberName, 
+          label: memberName + ' (Family Member)',
+          email: member.FamilyMemberDetails.email
+        })
+      });
+    }
     
-    let patient = this.props.route.patientData.firstName.toString() + ' ' + this.props.route.patientData.lastName.toString();
-    return [
-      { value: patient, label: patient },
-      { value: 'Other', label: 'Other' }
-    ];
+    return payers;
   }
   
   // This renders the validation result after confirm button is clicked.
