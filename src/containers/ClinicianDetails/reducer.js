@@ -17,13 +17,19 @@ export function initialState(prefilled) {
       copy:false    
     },
     validationRule: {
-      /*providerNumber:'required',
+      providerNumber:'required',
       medicalSpecialty:'required',
       firstName: 'required',
       lastName: 'required',
       organisation:'required',
       phone:'required',
-      email: 'required email'*/
+      email: 'required email'
+    },
+    validationCopyHCPRule: {
+      additionalFirstName: 'required',
+      additionalLastName: 'required',
+      additionalOrganisation: 'required',
+      additionalEmail: 'required email'
     },
     validated: false,
     formId: 'ClinicianDetails'
@@ -38,6 +44,18 @@ export function initialState(prefilled) {
       state.validation[field] = validator(state.form[field], state.validationRule[field]);
     }
   }
+  
+  //This initialise validation copy to HCP fields.
+  state.validationCopyHCP = [];
+  state.form.copyToHCP.forEach((copyHCP) => {
+    var newHCPValidation = {};
+    for (var field in state.validationCopyHCPRule) {
+      if(field) {
+        newHCPValidation[field] = validator(copyHCP[field], state.validationCopyHCPRule[field]);
+      }
+    }
+    state.validationCopyHCP.push(newHCPValidation);
+  });
   
   return Object.assign({}, state);
 }
@@ -74,23 +92,47 @@ export function addNewHCP(state, HCPArray) {
     additionalOrganisation:'',
     additionalEmail:''
   }
+  
+  var newHCPValidation = {};
+  for (var field in state.validationCopyHCPRule) {
+    if(field) {
+      newHCPValidation[field] = validator(newHCP[field], state.validationCopyHCPRule[field]);
+    }
+  }
+  
   var newArray = HCPArray || [];
   newArray.push(newHCP);
-
-  return Object.assign({}, state.form, {
+  
+  var newValidationArray = state.validationCopyHCP.slice();
+  newValidationArray.push(newHCPValidation);
+  
+  var formStateChild = Object.assign({}, state.form, {
     copyToHCP: newArray
+  });
+  
+  return Object.assign({}, state, {
+    form: formStateChild,
+    validationCopyHCP: newValidationArray
   });
 }
 
 /**
-* remove selected HCP copy base on it index 
-*/
-export function removeHCP(state, HCPArray,  index) {
+ * remove selected HCP copy base on it index 
+ */
+export function removeHCP(state, HCPArray, index) {
   var newArray = HCPArray || [];
   newArray.splice(index, 1);
+  
+  var newValidationArray = state.validationCopyHCP.slice();
+  newValidationArray.splice(index, 1);
 
-  return Object.assign({}, state.form, {
+  var formStateChild = Object.assign({}, state.form, {
     copyToHCP: newArray
+  });
+  
+  return Object.assign({}, state, {
+    form: formStateChild,
+    validationCopyHCP: newValidationArray
   });
 }
 
@@ -99,11 +141,20 @@ export function removeHCP(state, HCPArray,  index) {
  * make change to form field base on index and target name
  */
 
-export function setHCPForm(state, HCPArray,  target, index) {
+export function setHCPForm(state, HCPArray, target, index) {
   var newArray = HCPArray || [];
   newArray[index][target.name] = target.value;
-  return Object.assign({}, state.form, {
+  
+  var newValidationArray = state.validationCopyHCP.slice();
+  newValidationArray[index][target.name] = validator(newArray[index][target.name], state.validationCopyHCPRule[target.name]);
+  
+  var formStateChild = Object.assign({}, state.form, {
     copyToHCP: newArray
+  });
+  
+  return Object.assign({}, state, {
+    form: formStateChild,
+    validationCopyHCP: newValidationArray
   });
 }
 

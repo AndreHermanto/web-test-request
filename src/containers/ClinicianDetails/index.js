@@ -90,6 +90,13 @@ class ClinicianDetails extends Component {
       for (var field in this.state.validation) {
         if(this.state.validation[field].status === 'error') pass = false;
       }
+      
+      this.state.validationCopyHCP.forEach((validateCopyHCP) => {
+        for (var field in validateCopyHCP) {
+          if(validateCopyHCP[field].status === 'error') pass = false;
+        }
+      });
+      
       this.handleNext(pass); 
     });
   }
@@ -110,6 +117,12 @@ class ClinicianDetails extends Component {
   validate() {
     return this.state.validated && this.state.validation;
   }
+  
+  // This validation is solely made for copy to HCP fields.
+  validateCopyHCP(index) {
+    return this.state.validated && this.state.validationCopyHCP[index];
+  }
+
   render() {
     return (
         <div>
@@ -190,25 +203,33 @@ class ClinicianDetails extends Component {
                 field="additionalFirstName"
                 label="First Name"
                 onChange={(e) => this.handleHCPChange(e, index)}
+                onValidate={this.validateCopyHCP(index)}
                 formState={form}
+                required
               />
               <Input
                 field="additionalLastName"
                 label="Last Name"
                 onChange={(e) => this.handleHCPChange(e, index)}
+                onValidate={this.validateCopyHCP(index)}
                 formState={form}
+                required
               />
               <Input
                 field="additionalOrganisation"
                 label="Name of organisation, or address of practice"
                 onChange={(e) => this.handleHCPChange(e, index)}
+                onValidate={this.validateCopyHCP(index)}
                 formState={form}
+                required
               />
               <Input
                 field="additionalEmail"
                 label="Email"
                 onChange={(e) => this.handleHCPChange(e, index)}
+                onValidate={this.validateCopyHCP(index)}
                 formState={form}
+                required
               />
               </AdditionalFormBox>
             })

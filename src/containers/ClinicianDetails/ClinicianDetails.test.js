@@ -42,7 +42,7 @@ describe('<ClinicianDetails />', function() {
     };
 
     view.handleHCPChange(event, 0)
-    expect(view.state.copyToHCP[0].additionalFirstName).toEqual('aa');
+    expect(view.state.form.copyToHCP[0].additionalFirstName).toEqual('aa');
 
     event = {
       target: {
@@ -51,7 +51,7 @@ describe('<ClinicianDetails />', function() {
       }
     }
     view.handleHCPChange(event, 0);
-    expect(view.state.copyToHCP[0].additionalLastName).toEqual('lastname');
+    expect(view.state.form.copyToHCP[0].additionalLastName).toEqual('lastname');
 
     event = {
       target: {
@@ -60,7 +60,7 @@ describe('<ClinicianDetails />', function() {
       }
     }
     view.handleHCPChange(event, 0);
-    expect(view.state.copyToHCP[0].additionalOrganisation).toEqual('additionalOrganisation');
+    expect(view.state.form.copyToHCP[0].additionalOrganisation).toEqual('additionalOrganisation');
 
     event = {
       target: {
@@ -69,7 +69,7 @@ describe('<ClinicianDetails />', function() {
       }
     }
     view.handleHCPChange(event, 0);
-    expect(view.state.copyToHCP[0].additionalEmail).toEqual(event.target.value);
+    expect(view.state.form.copyToHCP[0].additionalEmail).toEqual(event.target.value);
   });
 
   test('handleBack works', () =>  {
