@@ -8,6 +8,12 @@ import {
   SubLabel,
   ValidationFeedback
 } from './SharedStyle';
+import styled from 'styled-components';
+
+const Helper = styled.div`
+  font-size: 12px;
+  color: #777;
+`;
 
 /**
  * This provides a validatable input textbox
@@ -15,7 +21,7 @@ import {
 export default function TextArea({
   field,
   label,
-  placeholder,
+  helper,
   onChange,
   onValidate,
   formState,
@@ -38,15 +44,20 @@ export default function TextArea({
           {optional && (<SubLabel>Optional</SubLabel>)} 
         </ControlLabel>
       )}
+
+      {helper && (
+        <Helper>{helper}</Helper>
+      )}
+        
       <FormControl
         componentClass="textarea"
         name={field}
-        placeholder={placeholder || "Enter the " + label.toLowerCase()}
+
         onChange={onChange}
         value={formState && formState[field]}
         style={{ minHeight: 90 }}
       />
-      <FormControl.Feedback />
+      <FormControl.Feedback style={{ marginTop: 16 }} />
       <ValidationFeedback>{validator.feedback}</ValidationFeedback>
     </FormGroup>
   );
