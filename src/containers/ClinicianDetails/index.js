@@ -239,11 +239,16 @@ class ClinicianDetails extends Component {
               Request a copy of report sent to another clinician
             </HCPButton> 
           </FormGroup>
-          <FormButton 
-          bsStyle="warning" 
-          onClick={this.handleBack}>
-            Back
-          </FormButton> 
+          {
+            this.props.route.isEdited !== true &&
+            <FormButton 
+            bsStyle="warning" 
+            onClick={this.handleBack}
+            label="Back"
+            >
+              Back
+            </FormButton> 
+          }
           <FormButton 
           bsStyle="success" 
           type="submit" 

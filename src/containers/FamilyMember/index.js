@@ -164,13 +164,16 @@ class FamilyMember extends Component {
           </Modal.Footer>
         </Modal>
 
-        <FormButton 
+        {
+          this.props.route.isEdited !== true &&
+          <FormButton 
           bsStyle="warning" 
           onClick={this.handleBack}
           label="Back"
-        >
-          Back
-        </FormButton> 
+          >
+            Back
+          </FormButton> 
+        }
        
         <FormButton 
           bsStyle="success" 
