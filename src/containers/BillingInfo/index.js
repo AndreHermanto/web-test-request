@@ -78,7 +78,7 @@ class BillingInfo extends Component {
       });
     }
 
-    if(this.props.route.familyMemberData) {
+    if(this.props.route.familyMemberData && this.props.route.familyMemberData.familyMember) {
       this.props.route.familyMemberData.familyMember.forEach((member) => {
         let memberName = member.FamilyMemberDetails.firstName.toString() + ' ' + 
                          member.FamilyMemberDetails.lastName.toString();

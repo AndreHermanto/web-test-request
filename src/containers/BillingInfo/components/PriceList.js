@@ -9,7 +9,6 @@ const Box = {
   'padding-bottom': '5px'
 }
 const InfoBox = styled.div`
-  margin-right: 5.5em;
   ${Box}
 `;
 

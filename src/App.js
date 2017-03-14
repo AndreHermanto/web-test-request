@@ -66,7 +66,7 @@ class App extends Component {
         <UniversalNavigation />
         <Grid>
           <Row>
-            <Col md={10} mdOffset={1}>
+            <Col md={10} mdOffset={1} className="pageArea">
               <Routes 
                 onChange={this.handleChange}
                 onFamilyMemberChange={this.handleFamilyMemberChange}

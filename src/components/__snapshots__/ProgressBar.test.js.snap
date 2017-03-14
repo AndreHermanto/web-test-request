@@ -1,5 +1,10 @@
 exports[`ProgressBar renders without crashing 1`] = `
-<div>
+<div
+  style={
+    Object {
+      "display": "block",
+    }
+  }>
   <div
     className="row">
     <div
