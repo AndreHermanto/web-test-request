@@ -69,7 +69,7 @@ describe('<BillingInfo/>', function() {
 
   test('getPayers works', () =>  {
     var view = TestUtils.renderIntoDocument(React.createElement(BillingInfo, props));
-    const options = [{"label": "bdf abc", "value": "bdf abc"}, {"label": "Other", "value": "Other"}];
+    const options = [{"email": "abc@abc.gmail.com", "label": "bdf abc (Patient)", "value": "bdf abc"}, {"label": "Other", "value": "Other"}];
     const payers = view.getPayers();
     expect(payers).toEqual(options);
   });
