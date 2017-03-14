@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
-import { Row, Col, Button, Glyphicon, Well, Label } from 'react-bootstrap';
+import { 
+  Row, 
+  Col, 
+  Button, 
+  Glyphicon, 
+  Well, 
+  Label 
+} from 'react-bootstrap';
 import { submitTestRequest } from './api';
 import { 
   PageHeading,
@@ -503,6 +510,7 @@ class Summary extends Component {
             </Col>
           </Row>
         </LastBox>
+        <br/>
         <Toggle
           field="signature"
           label="Electronic signature"
@@ -511,6 +519,9 @@ class Summary extends Component {
           formState={this.state.form}
           required
         />
+        <p style={{ fontSize: 11, fontStyle: 'italic', marginBottom:'-10px' }}>
+            When you submit this test request, an email will be sent to this payer with a weblink to view the invoice.  
+        </p>  
         <FormButton 
           bsStyle="warning" 
           onClick={this.handleBack}
