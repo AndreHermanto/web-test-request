@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 import 'react-toggle/style.css';
 import 'react-select/dist/react-select.css';
+import 'react-notifications/lib/notifications.css';
 
 ReactDOM.render(
   <App />,

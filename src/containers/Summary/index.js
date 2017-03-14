@@ -22,8 +22,11 @@ import Toggle from './../../components/Toggle';
 import {
   initData,
   setSignatureData,
-  validatedToTrue
+  validatedToTrue,
+  setLoadingData
 } from './reducer';
+import './loading.css';
+import { NotificationContainer, NotificationManager } from 'react-notifications';
 import styled from 'styled-components';
 
 const GeneLabel = styled(Label)`
@@ -31,6 +34,7 @@ const GeneLabel = styled(Label)`
   display: inline-block !important;
   font-weight: 300 !important;
 `;
+
 
 /**
 * Summary - UI for summary page to display all form data.
@@ -68,20 +72,25 @@ class Summary extends Component {
     return submitTestRequest(this.state.form)
       .then((response) => {
         if(!response.ok) {
-          alert('Submit fail');
+          this.setState(setLoadingData(this.state, ''));
+          setTimeout(function() { 
+            NotificationManager.error('Error','Submit fail', 1000); 
+          });
           return false;
         } else {
-          alert('Submit success');
+          this.setState(setLoadingData(this.state, 'loading'));
+          setTimeout(function() { 
+            this.props.router.push('/confirmation'); 
+          }.bind(this), 3000);
           return true;
         }
     })
   }
   
   handleValidateSubmit() {
-    this.setState(validatedToTrue(this.state), () => {    
+    this.setState(validatedToTrue(this.state), () => {   
       for (var field in this.state.validation) {
         if(this.state.validation[field].status !== 'error') {
-          this.props.router.push('/confirmation');
           this.handleSubmit();
         }
       }
@@ -476,6 +485,8 @@ class Summary extends Component {
         >
           Submit
         </FormButton> 
+        <span className={this.state.loading}/>
+        <NotificationContainer/>
       </div>
     );
   }

@@ -2,6 +2,7 @@ import React from 'react';
 import { 
   initData, 
   setSignatureData, 
+  setLoadingData,
   validatedToTrue
 } from './reducer';
 
@@ -30,5 +31,10 @@ describe('Summary: reducer', () => {
   test('validate to true test', () => {
     const newState = validatedToTrue({});
     expect(newState.validated).toEqual(true);
+  });
+
+  test('loading data test', () => {
+    const newState = setLoadingData(state, 'loading');
+    expect(newState.loading).toEqual('loading');
   });
 });
