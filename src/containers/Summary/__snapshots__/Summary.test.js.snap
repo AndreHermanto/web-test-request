@@ -37,6 +37,41 @@ exports[`Summary: index renders without crashing - initial state with empty gene
             8
           </span>
         </p>
+        <div
+          className="well">
+          <span
+            className="hqFlMa label label-default">
+            GZOW
+          </span>
+          <span
+            className="hqFlMa label label-default">
+            KIHG
+          </span>
+          <span
+            className="hqFlMa label label-default">
+            DRCO
+          </span>
+          <span
+            className="hqFlMa label label-default">
+            DWBY
+          </span>
+          <span
+            className="hqFlMa label label-default">
+            ZMZY
+          </span>
+          <span
+            className="hqFlMa label label-default">
+            BMBP
+          </span>
+          <span
+            className="hqFlMa label label-default">
+            OLZO
+          </span>
+          <span
+            className="hqFlMa label label-default">
+            PZOA
+          </span>
+        </div>
       </div>
     </div>
   </div>
