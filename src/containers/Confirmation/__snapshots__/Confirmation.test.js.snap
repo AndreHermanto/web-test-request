@@ -1,7 +1,7 @@
 exports[`Confirmation test Confirmation page renders without crashing 1`] = `
 <div>
   <div
-    className="kEpFkI">
+    className="noPrint kEpFkI">
     <span
       className="idaOVj" />
     <span
@@ -27,18 +27,22 @@ exports[`Confirmation test Confirmation page renders without crashing 1`] = `
       <div
         className="col-md-6">
         <label
-          className="hLmasR">
+          className="jRatVR"
+          onClick={[Function]}>
           Print out form for your records
         </label>
       </div>
       <div
         className="col-md-6">
         <label
-          className="cocgOv">
+          className="cocgOv"
+          onClick={[Function]}>
           Print out Blood Collection forms for your patient(s)
         </label>
       </div>
     </div>
   </div>
+  <div
+    className="printMe" />
 </div>
 `;

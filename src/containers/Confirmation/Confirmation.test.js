@@ -9,4 +9,18 @@ describe('Confirmation test', () => {
     const page = renderer.create(React.createElement(Confirmation)).toJSON();
     expect(page).toMatchSnapshot();
   });
+  
+  test('handlePrintRecordButtonClick changes the print state to 1', () => {
+    const page = TestUtils.renderIntoDocument(React.createElement(Confirmation));
+    page.handlePrintRecordButtonClick();
+    expect(page.state.print).toEqual(1);
+    page.handlePrintButtonClick(2);
+    expect(page.state.print).toEqual(2);
+  });
+  
+  test('handlePrintBloodCollectionButtonClick changes the print state to 2', () => {
+    const page = TestUtils.renderIntoDocument(React.createElement(Confirmation));
+    page.handlePrintBloodCollectionButtonClick();
+    expect(page.state.print).toEqual(2);
+  });
 });
