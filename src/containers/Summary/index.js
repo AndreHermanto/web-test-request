@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Well, Label } from 'react-bootstrap';
 import { submitTestRequest } from './api';
 import { 
   PageHeading,
@@ -24,6 +24,14 @@ import {
   setSignatureData,
   validatedToTrue
 } from './reducer';
+import styled from 'styled-components';
+
+const GeneLabel = styled(Label)`
+  margin-right: 4px;
+  display: inline-block !important;
+  font-weight: 300 !important;
+`;
+
 /**
 * Summary - UI for summary page to display all form data.
 */
@@ -100,6 +108,16 @@ class Summary extends Component {
                   </Gene> 
                 </SummaryDetails>
               }
+
+              {this.props.route.data.OrderTest.genes && (
+                <Well>
+                  {
+                    this.props.route.data.OrderTest.genes.map((gene, $index) => {
+                      return <GeneLabel key={$index}>{gene}</GeneLabel> 
+                    })
+                  }
+                </Well>
+              )}
             </Col>
           </Row>
         </SummaryBox>
