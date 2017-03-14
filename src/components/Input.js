@@ -15,7 +15,6 @@ import {
 export default function Input({
   field,
   label,
-  placeholder,
   onChange,
   onValidate,
   formState,
@@ -42,7 +41,6 @@ export default function Input({
       <FormControl
         type="text"
         name={field}
-        placeholder={placeholder || "Enter the " + label.toLowerCase()}
         onChange={onChange}
         value={formState && formState[field]}
         disabled={disabled}

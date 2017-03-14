@@ -81,7 +81,7 @@ class FamilyMemberClinicalInfo extends Component {
         <TextArea
           field="clinicalInfo"
           label="Provide Clinical Information"
-          placeholder="Type or copy and paste clinical notes here. Comprehensive notes increase the chance of a successful diagnosis."
+          helper="Type or copy and paste clinical notes here. Comprehensive notes increase the chance of a successful diagnosis."
           onChange={this.handleChange}
           onValidate={this.validate()}
           formState={this.state.form}
@@ -98,7 +98,7 @@ class FamilyMemberClinicalInfo extends Component {
         <TextArea
           field="relevantInvestigation"
           label="Provide results from relevant investigations"
-          placeholder="Provide notes from genetic tests, imaging results."
+          helper="Provide notes from genetic tests, imaging results."
           onChange={this.handleChange}
           onValidate={this.validate()}
           formState={this.state.form}
@@ -108,7 +108,7 @@ class FamilyMemberClinicalInfo extends Component {
         <TextArea
           field="familyHistory"
           label="Family history"
-          placeholder="Provide notes on the suspected inheritance model and affected relatives."
+          helper="Provide notes on the suspected inheritance model and affected relatives."
           onChange={this.handleChange}
           onValidate={this.validate()}
           formState={this.state.form}

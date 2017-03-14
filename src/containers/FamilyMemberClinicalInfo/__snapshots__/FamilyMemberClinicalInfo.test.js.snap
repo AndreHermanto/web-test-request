@@ -18,12 +18,15 @@ exports[`FamilyMemberClinicalInfo: index renders without crashing 1`] = `
         Required
       </span>
     </label>
+    <div
+      className="ePuOBx">
+      Type or copy and paste clinical notes here. Comprehensive notes increase the chance of a successful diagnosis.
+    </div>
     <textarea
       className="form-control"
       id={undefined}
       name="clinicalInfo"
       onChange={[Function]}
-      placeholder="Type or copy and paste clinical notes here. Comprehensive notes increase the chance of a successful diagnosis."
       style={
         Object {
           "minHeight": 90,
@@ -106,12 +109,15 @@ exports[`FamilyMemberClinicalInfo: index renders without crashing 1`] = `
         Optional
       </span>
     </label>
+    <div
+      className="ePuOBx">
+      Provide notes from genetic tests, imaging results.
+    </div>
     <textarea
       className="form-control"
       id={undefined}
       name="relevantInvestigation"
       onChange={[Function]}
-      placeholder="Provide notes from genetic tests, imaging results."
       style={
         Object {
           "minHeight": 90,
@@ -133,12 +139,15 @@ exports[`FamilyMemberClinicalInfo: index renders without crashing 1`] = `
         Optional
       </span>
     </label>
+    <div
+      className="ePuOBx">
+      Provide notes on the suspected inheritance model and affected relatives.
+    </div>
     <textarea
       className="form-control"
       id={undefined}
       name="familyHistory"
       onChange={[Function]}
-      placeholder="Provide notes on the suspected inheritance model and affected relatives."
       style={
         Object {
           "minHeight": 90,
