@@ -23,7 +23,7 @@ import {
   initData,
   setSignatureData,
   validatedToTrue,
-  setLoadingData
+  setSubmitStatusData
 } from './reducer';
 import './loading.css';
 import { NotificationContainer, NotificationManager } from 'react-notifications';
@@ -34,7 +34,6 @@ const GeneLabel = styled(Label)`
   display: inline-block !important;
   font-weight: 300 !important;
 `;
-
 
 /**
 * Summary - UI for summary page to display all form data.
@@ -72,25 +71,24 @@ class Summary extends Component {
     return submitTestRequest(this.state.form)
       .then((response) => {
         if(!response.ok) {
-          this.setState(setLoadingData(this.state, ''));
           setTimeout(function() { 
+            this.setState(setSubmitStatusData(this.state, ''));
             NotificationManager.error('Error','Submit fail', 1000); 
-          });
+          }.bind(this), 100);
           return false;
         } else {
-          this.setState(setLoadingData(this.state, 'loading'));
-          setTimeout(function() { 
-            this.props.router.push('/confirmation'); 
-          }.bind(this), 3000);
+          this.setState(setSubmitStatusData(this.state, ''));
+          this.props.router.push('/confirmation'); 
           return true;
         }
     })
   }
   
   handleValidateSubmit() {
-    this.setState(validatedToTrue(this.state), () => {   
+    this.setState(validatedToTrue(this.state), () => {
       for (var field in this.state.validation) {
         if(this.state.validation[field].status !== 'error') {
+          this.setState(setSubmitStatusData(this.state, 'loading'));
           this.handleSubmit();
         }
       }
@@ -485,7 +483,7 @@ class Summary extends Component {
         >
           Submit
         </FormButton> 
-        <span className={this.state.loading}/>
+        <span className={this.state.submitStatus}/>
         <NotificationContainer/>
       </div>
     );

@@ -78,7 +78,7 @@ describe('Summary: index', () => {
       signature: 'signatureTrue',
     },
     validated: false,
-    loading:''
+    submitStatus:''
   }
 
   

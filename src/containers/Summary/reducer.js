@@ -10,7 +10,7 @@ export function initData(data) {
       signature: 'signatureTrue',
     },
     validated: false,
-    loading:''
+    submitStatus:''
   };
   
   
@@ -25,12 +25,13 @@ export function initData(data) {
   return Object.assign({}, state);
 }
 
-export function setLoadingData(state, value)
+export function setSubmitStatusData(state, value)
 {
   return Object.assign({}, state, {
-    loading: value
+    submitStatus: value
   });
 }
+
 /**
  * This sets the form data upon onChange.
  * @param {Object} state Targeted state to be changed.

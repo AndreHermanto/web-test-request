@@ -2,7 +2,7 @@ import React from 'react';
 import { 
   initData, 
   setSignatureData, 
-  setLoadingData,
+  setSubmitStatusData,
   validatedToTrue
 } from './reducer';
 
@@ -29,12 +29,12 @@ describe('Summary: reducer', () => {
   });
 
   test('validate to true test', () => {
-    const newState = validatedToTrue({});
+    const newState = validatedToTrue(state);
     expect(newState.validated).toEqual(true);
   });
 
-  test('loading data test', () => {
-    const newState = setLoadingData(state, 'loading');
-    expect(newState.loading).toEqual('loading');
+  test('submitStatus data test', () => {
+    const newState = setSubmitStatusData(state, 'loading');
+    expect(newState.submitStatus).toEqual('loading');
   });
 });
