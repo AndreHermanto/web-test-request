@@ -436,7 +436,11 @@ class Summary extends Component {
             <Col md={12}>
               <SummaryDetails> 
                 <SummaryTitle> Payer:  </SummaryTitle>
-                {this.props.route.data.BillingInfo.payer}
+                {
+                  this.props.route.data.BillingInfo.payer === 'Other' ?
+                  this.props.route.data.BillingInfo.firstName + ' ' + this.props.route.data.BillingInfo.lastName :
+                  this.props.route.data.BillingInfo.payer
+                } 
               </SummaryDetails>
             </Col>
             <Col md={12}>
