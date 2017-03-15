@@ -67,8 +67,15 @@ class FamilyMember extends Component {
   }
   
   handleNext() {
-    this.props.route.onChange(this);
-    this.props.router.push('/step5');
+    if(this.props.route.isEdited === true)
+    {
+      this.props.route.onChange(this);
+      this.props.router.push('/summary')
+    }
+    else {
+      this.props.route.onChange(this);
+      this.props.router.push('/step5');
+    }
   }
   
   closeDeleteModal() {

@@ -1,0 +1,56 @@
+exports[`BillingInfoModule test private renders without crashing  1`] = `
+<div
+  className="bNDqdW">
+  <h3
+    className="gElTrd">
+    Private
+     billing
+    <button
+      className="btn btn-link"
+      disabled={false}
+      onClick={[Function]}
+      type="button">
+      <span
+        className="glyphicon glyphicon-pencil" />
+       Edit
+    </button>
+  </h3>
+  <div
+    className="dgEelt" />
+  <div
+    className="row">
+    <div
+      className="col-md-12">
+      <p
+        className="doDOdK">
+        <span
+          className="jXWIEx">
+           Payer:  
+        </span>
+        abc abc
+      </p>
+    </div>
+    <div
+      className="col-md-12">
+      <p
+        className="doDOdK">
+        <span
+          className="jXWIEx">
+           Mobile:  
+        </span>
+        +61412334477
+      </p>
+    </div>
+    <div
+      className="col-md-12">
+      <p
+        className="doDOdK">
+        <span
+          className="jXWIEx">
+           Email:  
+        </span>
+      </p>
+    </div>
+  </div>
+</div>
+`;
