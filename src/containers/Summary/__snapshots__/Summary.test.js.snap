@@ -752,5 +752,11 @@ exports[`Summary: index renders without crashing - initial state with empty gene
     type="submit">
     Submit
   </button>
+  <span
+    className="" />
+  <div
+    className="notification-container notification-container-empty">
+    <span />
+  </div>
 </div>
 `;

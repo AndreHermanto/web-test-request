@@ -69,6 +69,18 @@ describe('Summary: index', () => {
     router:['/summary']
   };
 
+  var state = {
+    form: {
+      props,
+      signature:false
+    },
+    validationRule: {
+      signature: 'signatureTrue',
+    },
+    validated: false,
+    submitStatus:''
+  }
+
   
   test('renders without crashing - initial state with empty geneList', () => {
     const page = renderer.create(React.createElement(Summary, props)).toJSON();
@@ -98,20 +110,19 @@ describe('Summary: index', () => {
     page.handleEdit('step1');
     expect(page.props.router.pop()).toEqual('step1');
   });
+
   
   test('handleSubmit works', async () => {
     var page = TestUtils.renderIntoDocument(React.createElement(Summary, props));
     FetchMock.mock('*', 200);
-    
     await page.handleSubmit().then((response) => {
-      expect(response).toEqual(true)
+      expect(response).toEqual(true);
     });
-    
     FetchMock.restore();  
     FetchMock.mock('*', 404);
     
     await page.handleSubmit().then((response) => {
-      expect(response).toEqual(false)
+       expect(response).toEqual(false);
     });
     
     FetchMock.restore();

@@ -22,8 +22,11 @@ import Toggle from './../../components/Toggle';
 import {
   initData,
   setSignatureData,
-  validatedToTrue
+  validatedToTrue,
+  setSubmitStatusData
 } from './reducer';
+import './loading.css';
+import { NotificationContainer, NotificationManager } from 'react-notifications';
 import styled from 'styled-components';
 
 const GeneLabel = styled(Label)`
@@ -68,20 +71,24 @@ class Summary extends Component {
     return submitTestRequest(this.state.form)
       .then((response) => {
         if(!response.ok) {
-          alert('Submit fail');
+          setTimeout(function() { 
+            this.setState(setSubmitStatusData(this.state, ''));
+            NotificationManager.error('Error','Submit fail', 1000); 
+          }.bind(this), 100);
           return false;
         } else {
-          alert('Submit success');
+          this.setState(setSubmitStatusData(this.state, ''));
+          this.props.router.push('/confirmation'); 
           return true;
         }
     })
   }
   
   handleValidateSubmit() {
-    this.setState(validatedToTrue(this.state), () => {    
+    this.setState(validatedToTrue(this.state), () => {
       for (var field in this.state.validation) {
         if(this.state.validation[field].status !== 'error') {
-          this.props.router.push('/confirmation');
+          this.setState(setSubmitStatusData(this.state, 'loading'));
           this.handleSubmit();
         }
       }
@@ -480,6 +487,8 @@ class Summary extends Component {
         >
           Submit
         </FormButton> 
+        <span className={this.state.submitStatus}/>
+        <NotificationContainer/>
       </div>
     );
   }

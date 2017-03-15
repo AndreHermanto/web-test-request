@@ -10,6 +10,7 @@ export function initData(data) {
       signature: 'signatureTrue',
     },
     validated: false,
+    submitStatus:''
   };
   
   
@@ -24,6 +25,12 @@ export function initData(data) {
   return Object.assign({}, state);
 }
 
+export function setSubmitStatusData(state, value)
+{
+  return Object.assign({}, state, {
+    submitStatus: value
+  });
+}
 
 /**
  * This sets the form data upon onChange.
