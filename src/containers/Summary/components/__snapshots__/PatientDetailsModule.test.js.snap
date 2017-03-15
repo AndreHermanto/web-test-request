@@ -1,0 +1,147 @@
+exports[`PatientDetailsModule test renders without crashing  1`] = `
+<div
+  className="cFAMBN">
+  <h3
+    className="gElTrd">
+     Patient - 
+    Ngabcuyen abcabc
+     
+  </h3>
+  <div
+    className="dgEelt" />
+  <div
+    className="row">
+    <div
+      className="col-md-12">
+      <h4
+        className="hWtWAB">
+        Details
+        <button
+          className="btn btn-link"
+          disabled={false}
+          onClick={[Function]}
+          type="button">
+          <span
+            className="glyphicon glyphicon-pencil" />
+           Edit
+        </button>
+      </h4>
+    </div>
+    <div
+      className="col-md-12">
+      <p
+        className="doDOdK">
+        <span
+          className="jXWIEx">
+           Date of Birth: 
+        </span>
+        1-February-1917
+      </p>
+    </div>
+    <div
+      className="col-md-12">
+      <p
+        className="doDOdK">
+        <span
+          className="jXWIEx">
+           Medical record number:  
+        </span>
+        123123
+      </p>
+    </div>
+    <div
+      className="col-md-12">
+      <p
+        className="doDOdK">
+        <span
+          className="jXWIEx">
+           Gender:  
+        </span>
+        Male
+      </p>
+    </div>
+    <div
+      className="col-md-12">
+      <p
+        className="doDOdK">
+        <span
+          className="jXWIEx">
+           Ethnicity:  
+        </span>
+        Asian
+      </p>
+    </div>
+    <div
+      className="col-md-12">
+      <p
+        className="doDOdK">
+        <span
+          className="jXWIEx">
+           Email:  
+        </span>
+        abc@abc.gmail.com
+      </p>
+    </div>
+    <div
+      className="col-md-12">
+      <h4
+        className="hWtWAB">
+        Clinical Information
+        <button
+          className="btn btn-link"
+          disabled={false}
+          onClick={[Function]}
+          type="button">
+          <span
+            className="glyphicon glyphicon-pencil" />
+           Edit
+        </button>
+      </h4>
+    </div>
+    <div
+      className="col-md-12">
+      <span
+        className="jXWIEx">
+         Clinical note 
+      </span>
+      <div
+        className="kjqPPK">
+        Dissuade ecstatic and properly saw entirely sir why laughter endeavor. In on my jointure horrible margaret suitable he followed speedily. Indeed vanity excuse or mr lovers of on. By offer scale an stuff. Blush be sorry no sight. Sang lose of hour then he left find
+      </div>
+    </div>
+    <div
+      className="col-md-12">
+      <span
+        className="jXWIEx">
+         Relevant investigation 
+      </span>
+      <div
+        className="kjqPPK">
+        asdkfhgasdlfhabsdlfjhalsfdjh
+      </div>
+    </div>
+    <div
+      className="col-md-12">
+      <span
+        className="jXWIEx">
+         Family history 
+      </span>
+      <div
+        className="kjqPPK">
+        kasdfbljkbfalhfasvfkjabskldfbkjsdfbkdashfvdjhfhb;kfjv;hfv;fjbafhb;akfd
+      </div>
+    </div>
+    <div
+      className="col-md-12">
+      <p
+        className="doDOdK">
+        <span
+          className="jXWIEx">
+           Consanguinity:  
+        </span>
+        No
+      </p>
+    </div>
+  </div>
+</div>
+`;

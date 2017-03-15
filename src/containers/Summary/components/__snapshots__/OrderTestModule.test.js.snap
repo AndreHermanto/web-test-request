@@ -1,0 +1,79 @@
+exports[`OrderTestModule test renders without crashing  1`] = `
+<div
+  className="cFAMBN">
+  <h3
+    className="gElTrd">
+    Test ordered
+    <button
+      className="btn btn-link"
+      disabled={false}
+      onClick={[Function]}
+      type="button">
+      <span
+        className="glyphicon glyphicon-pencil" />
+       Edit
+    </button>
+  </h3>
+  <div
+    className="dgEelt" />
+  <div
+    className="row">
+    <div
+      className="col-md-12">
+      <p
+        className="doDOdK">
+         
+        <strong>
+          Consequatur adipisci modi laudantium tenetur ea exercitationem id
+        </strong>
+      </p>
+    </div>
+    <div
+      className="col-md-12">
+      <p
+        className="doDOdK">
+         Total number of genes available:
+        <span
+          className="creeDZ label label-default">
+          8
+        </span>
+      </p>
+      <div
+        className="well">
+        <span
+          className="hqFlMa label label-default">
+          GZOW
+        </span>
+        <span
+          className="hqFlMa label label-default">
+          KIHG
+        </span>
+        <span
+          className="hqFlMa label label-default">
+          DRCO
+        </span>
+        <span
+          className="hqFlMa label label-default">
+          DWBY
+        </span>
+        <span
+          className="hqFlMa label label-default">
+          ZMZY
+        </span>
+        <span
+          className="hqFlMa label label-default">
+          BMBP
+        </span>
+        <span
+          className="hqFlMa label label-default">
+          OLZO
+        </span>
+        <span
+          className="hqFlMa label label-default">
+          PZOA
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

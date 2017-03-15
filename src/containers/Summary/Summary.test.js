@@ -105,7 +105,6 @@ describe('Summary: index', () => {
     expect(page.props.router.pop()).toEqual('step1');
   });
 
-  
   test('handleSubmit works', async () => {
     var page = TestUtils.renderIntoDocument(React.createElement(Summary, props));
     FetchMock.mock('*', 200);

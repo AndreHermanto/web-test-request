@@ -1,0 +1,164 @@
+exports[`ClinicianDetailsModule test renders without crashing  1`] = `
+<div
+  className="cFAMBN">
+  <h3
+    className="gElTrd">
+    Clinician - 
+    John Doe
+    <button
+      className="btn btn-link"
+      disabled={false}
+      onClick={[Function]}
+      type="button">
+      <span
+        className="glyphicon glyphicon-pencil" />
+       Edit
+    </button>
+  </h3>
+  <div
+    className="dgEelt" />
+  <div
+    className="row">
+    <div
+      className="col-md-12">
+      <p
+        className="doDOdK">
+        <span
+          className="jXWIEx">
+           Organisation/Address of practice:  
+        </span>
+        as
+      </p>
+    </div>
+    <div
+      className="col-md-12">
+      <p
+        className="doDOdK">
+        <span
+          className="jXWIEx">
+           Provider number:  
+        </span>
+        as
+      </p>
+    </div>
+    <div
+      className="col-md-12">
+      <p
+        className="doDOdK">
+        <span
+          className="jXWIEx">
+           Medical specialty:  
+        </span>
+        as
+      </p>
+    </div>
+    <div
+      className="col-md-12">
+      <p
+        className="doDOdK">
+        <span
+          className="jXWIEx">
+           Phone:  
+        </span>
+        as
+      </p>
+    </div>
+    <div
+      className="col-md-12">
+      <p
+        className="doDOdK">
+        <span
+          className="jXWIEx">
+           Email:  
+        </span>
+        as@aca.com
+      </p>
+    </div>
+    <div
+      className="col-md-12">
+      <p
+        className="doDOdK">
+        <span
+          className="jXWIEx">
+           Fax:  
+        </span>
+        as
+      </p>
+    </div>
+  </div>
+  <div
+    className="row">
+    <div
+      className="col-md-12">
+      <div
+        className="dgEelt" />
+      <h3
+        className="gElTrd">
+        Copy of report to - 
+        asdf
+         
+        asdf
+      </h3>
+    </div>
+    <div
+      className="col-md-12">
+      <p
+        className="doDOdK">
+        <span
+          className="jXWIEx">
+           Organisation/Address of practice:  
+        </span>
+        adsf
+      </p>
+    </div>
+    <div
+      className="col-md-12">
+      <p
+        className="doDOdK">
+        <span
+          className="jXWIEx">
+           Email: 
+        </span>
+        asfd
+      </p>
+    </div>
+  </div>
+  <div
+    className="row">
+    <div
+      className="col-md-12">
+      <div
+        className="dgEelt" />
+      <h3
+        className="gElTrd">
+        Copy of report to - 
+        asdf
+         
+        asdf
+      </h3>
+    </div>
+    <div
+      className="col-md-12">
+      <p
+        className="doDOdK">
+        <span
+          className="jXWIEx">
+           Organisation/Address of practice:  
+        </span>
+        adsf
+      </p>
+    </div>
+    <div
+      className="col-md-12">
+      <p
+        className="doDOdK">
+        <span
+          className="jXWIEx">
+           Email: 
+        </span>
+        asdf
+      </p>
+    </div>
+  </div>
+</div>
+`;
