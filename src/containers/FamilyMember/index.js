@@ -104,31 +104,37 @@ class FamilyMember extends Component {
         <Row>
         {this.state.form.familyMember.map((member, $index) => {
           return( 
-            <Col md={6} key={$index}>
+            <Col md={12} key={$index}>
               <Thumbnail>
-                {member.FamilyMemberDetails.firstName + ' ' + member.FamilyMemberDetails.lastName}
-                <Tag bsStyle={member.FamilyMemberClinicalInfo.affected ? 'danger' : 'success'}>
-                  {member.FamilyMemberClinicalInfo.affected ? 'Affected' : 'Unaffected'}
-                </Tag>
+                <Row>
+                  <Col md={6}>
+                    {member.FamilyMemberDetails.firstName + ' ' + member.FamilyMemberDetails.lastName}
+                    <Tag bsStyle={member.FamilyMemberClinicalInfo.affected ? 'danger' : 'success'}>
+                      {member.FamilyMemberClinicalInfo.affected ? 'Affected' : 'Unaffected'}
+                    </Tag>
+                  </Col>
             
-                <BlockButton 
-                  bsSize="xsmall"
-                  bsStyle="link"
-                  name={$index}
-                  onClick={this.handleEditFamilyMember}
-                >
-                  <Glyphicon glyph="pencil"/> Edit
-                </BlockButton>
-            
-                <BlockButton 
-                  bsSize="xsmall"
-                  bsStyle="link"
-                  name={$index}
-                  style={{ color: '#d66' }}
-                  onClick={this.openDeleteModal}
-                >
-                  <Glyphicon glyph="trash"/> Remove
-                </BlockButton>
+                  <Col md={6}>
+                    <BlockButton 
+                      bsSize="xsmall"
+                      bsStyle="link"
+                      name={$index}
+                      onClick={this.handleEditFamilyMember}
+                    >
+                      <Glyphicon glyph="pencil"/> Edit
+                    </BlockButton>
+
+                    <BlockButton 
+                      bsSize="xsmall"
+                      bsStyle="link"
+                      name={$index}
+                      style={{ color: '#d66' }}
+                      onClick={this.openDeleteModal}
+                    >
+                      <Glyphicon glyph="trash"/> Remove
+                    </BlockButton>
+                  </Col>
+                </Row>
               </Thumbnail>
             </Col>
           )

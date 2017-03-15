@@ -5,7 +5,7 @@ import {
   Redirect,
   hashHistory
 } from 'react-router';
-import ProgressBar from './ProgressBar'
+import ProgressBar from './ProgressBar';
 import OrderTest from './../containers/OrderTest';
 import PatientDetails from './../containers/PatientDetails';
 import ClinicianDetails from './../containers/ClinicianDetails';
