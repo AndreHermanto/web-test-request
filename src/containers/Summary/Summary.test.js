@@ -80,12 +80,6 @@ describe('Summary: index', () => {
     validated: false,
     submitStatus:''
   }
-
-  
-  test('renders without crashing - initial state with empty geneList', () => {
-    const page = renderer.create(React.createElement(Summary, props)).toJSON();
-    expect(page).toMatchSnapshot();
-  });
   
   test('handleBack works', () =>  {
     var page = TestUtils.renderIntoDocument(React.createElement(Summary, props));                                         

@@ -10,13 +10,17 @@ export const SummaryBox = styled.div`
   border: 1px solid rgb(227, 231, 241);
   width: 100%;
   padding: 20px;
-  margin-bottom: 10px;
+  border-bottom: 0px solid transparent;
+`;
+export const LastBox = styled.div`
+  border: 1px solid rgb(227, 231, 241);
+  width: 100%;
+  padding: 20px;
 `;
 
 export const SummaryHeading = styled.h3`
   font-weight: 400;
   margin-bottom: 10px;
-  color: #1ba8b7;
   ${Font}
 `;
 
@@ -29,12 +33,6 @@ export const SummaryBreakLine = styled.div`
   margin-bottom: 15px;
 `;
 
-export const EditButton = styled.i`
-  cursor: pointer;
-  font-size: 2em;
-  line-height: 2.3 !important;
-  color: #1ba8b7;
-`;
 export const SummaryTitle = styled.span`
   ${Font}
   margin-bottom: 10px;
@@ -64,14 +62,6 @@ export const SummaryNotes = styled.div`
   border-bottom: 1px solid rgb(227, 231, 241);
   margin-bottom: 10px;
 `;
-
-export const EditButtonXS = styled.i`
-  cursor: pointer;
-  font-size: 20px;
-  color: #1ba8b7;
-  margin-left:10px;
-`;
-
 
 export const Tag = styled(Label)`
   margin-left: 10px;

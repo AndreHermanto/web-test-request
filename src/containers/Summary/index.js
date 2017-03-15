@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
-import { Row, Col, Well, Label } from 'react-bootstrap';
+import { 
+  Row, 
+  Col, 
+  Button, 
+  Glyphicon, 
+  Well, 
+  Label 
+} from 'react-bootstrap';
 import { submitTestRequest } from './api';
 import { 
   PageHeading,
@@ -7,10 +14,9 @@ import {
 } from './../../components/SharedStyle';
 import { 
   SummaryBox,
+  LastBox,
   SummaryHeading,
   SummaryBreakLine,
-  EditButton,
-  EditButtonXS,
   SummaryTitle,
   SummaryDetails,
   SectionHeading,
@@ -100,8 +106,15 @@ class Summary extends Component {
       <div>
         <PageHeading> Request summary</PageHeading>
         <SummaryBox>
-          <EditButton className="glyphicon glyphicon-edit pull-right" onClick={() => this.handleEdit('step1')}/>
-          <SummaryHeading> Order Test </SummaryHeading>
+          <SummaryHeading> 
+            Test ordered 
+            <Button
+              bsStyle="link"
+              onClick={() => this.handleEdit('step1')}
+            >
+              <Glyphicon glyph="pencil"/> Edit
+            </Button>
+          </SummaryHeading>
           <SummaryBreakLine/>
           <Row>
             <Col md={12}>
@@ -135,7 +148,12 @@ class Summary extends Component {
             <Col md={12}>
               <SectionHeading> 
                 Details
-                <EditButtonXS className="glyphicon glyphicon-edit" onClick={() => this.handleEdit('step2')}/>
+                <Button 
+                  bsStyle="link"
+                  onClick={() => this.handleEdit('step2')}
+                >
+                  <Glyphicon glyph="pencil"/> Edit
+                </Button>
               </SectionHeading>
             </Col>
             <Col md={12}>
@@ -198,7 +216,12 @@ class Summary extends Component {
             <Col md={12}>
               <SectionHeading> 
                 Clinical Information
-                <EditButtonXS className="glyphicon glyphicon-edit" onClick={() => this.handleEdit('step3')}/>
+                <Button 
+                  bsStyle="link"
+                  onClick={() => this.handleEdit('step3')}
+                >
+                  <Glyphicon glyph="pencil"/> Edit
+                </Button>
               </SectionHeading>
             </Col>
             <Col md={12}>
@@ -248,7 +271,12 @@ class Summary extends Component {
                     <Col md={12}>
                       <SectionHeading> 
                         Details
-                        <EditButtonXS className="glyphicon glyphicon-edit" onClick={() => this.handleEdit(`/step4/edit/1/${i}`)}/>
+                        <Button 
+                          bsStyle="link"
+                          onClick={() => this.handleEdit(`/step4/edit/1/${i}`)}
+                        >
+                          <Glyphicon glyph="pencil"/> Edit
+                        </Button>
                       </SectionHeading>
                     </Col>
                     <Col md={12}>
@@ -313,7 +341,12 @@ class Summary extends Component {
                     <Col md={12}>
                       <SectionHeading> 
                         Clinical Information
-                        <EditButtonXS className="glyphicon glyphicon-edit" onClick={() => this.handleEdit(`/step4/edit/2/${i}`)}/>
+                        <Button 
+                          bsStyle="link"
+                          onClick={() => this.handleEdit(`/step4/edit/2/${i}`)}
+                        >
+                          <Glyphicon glyph="pencil"/> Edit
+                        </Button>
                       </SectionHeading>
                     </Col>
                     <Col md={12}>
@@ -350,9 +383,16 @@ class Summary extends Component {
               </SummaryBox>
             })
           }
-          <SummaryBox>
-          <EditButton className="glyphicon glyphicon-edit pull-right" onClick={() => this.handleEdit('step5')}/>
-          <SummaryHeading> Clinician details </SummaryHeading>
+         <SummaryBox>
+          <SummaryHeading> 
+            Clinician details 
+            <Button
+              bsStyle="link"
+              onClick={() => this.handleEdit('step5')}
+            >
+              <Glyphicon glyph="pencil"/> Edit
+            </Button>
+          </SummaryHeading>
           <SummaryBreakLine/>
           <Row>
             <Col md={12}>
@@ -405,7 +445,7 @@ class Summary extends Component {
             this.props.route.data.ClinicianDetails.copyToHCP.length > 0 && 
             <div>
             <SummaryBreakLine/>
-            <SummaryHeading> Copy </SummaryHeading>
+            <SummaryHeading> Copy to clinicians</SummaryHeading>
             </div>
           }
           {
@@ -434,10 +474,16 @@ class Summary extends Component {
             })
           }
         </SummaryBox>
-        
-        <SummaryBox>
-          <EditButton className="glyphicon glyphicon-edit pull-right" onClick={this.handleBack}/>
-          <SummaryHeading> {this.props.route.data.BillingInfo.billOption} billing </SummaryHeading>
+        <LastBox>
+          <SummaryHeading> 
+            {this.props.route.data.BillingInfo.billOption} billing 
+            <Button
+              bsStyle="link"
+              onClick={() => this.handleEdit('step6')}
+            >
+              <Glyphicon glyph="pencil"/> Edit
+            </Button>
+          </SummaryHeading>
           <SummaryBreakLine/>
           <Row>
             <Col md={12}>
@@ -463,7 +509,8 @@ class Summary extends Component {
               </SummaryDetails>
             </Col>
           </Row>
-        </SummaryBox>
+        </LastBox>
+        <br/>
         <Toggle
           field="signature"
           label="Electronic signature"
@@ -472,14 +519,16 @@ class Summary extends Component {
           formState={this.state.form}
           required
         />
+        <p style={{ fontSize: 11, fontStyle: 'italic', marginBottom:'-10px' }}>
+            When you submit this test request, an email will be sent to this payer with a weblink to view the invoice.  
+        </p>  
         <FormButton 
           bsStyle="warning" 
           onClick={this.handleBack}
           label="Back"
         >
           Back
-        </FormButton> 
-      
+        </FormButton>       
         <FormButton 
           bsStyle="success" 
           type="submit" 
