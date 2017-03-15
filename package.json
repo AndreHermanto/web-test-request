@@ -28,7 +28,7 @@
     "react-signature-pad": "0.0.6",
     "react-toggle": "^2.2.1",
     "styled-components": "^1.4.3",
-    "web-test-request-mockserver": "0.0.2"
+    "web-test-request-mockserver": "0.0.3"
   },
   "scripts": {
     "start": "npm run json-server & REACT_APP_BASE_URL=http://localhost:4000 react-scripts start",

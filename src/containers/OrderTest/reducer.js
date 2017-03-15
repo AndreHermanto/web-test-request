@@ -33,11 +33,6 @@ export function initData(prefilled) {
  * @param {string[]} list List of tests.
  */
 export function setTestList(state, list) {
-  list.push({
-    "id": "whole",
-    "label": "Whole Genome Analysis"
-  });
-  
   return Object.assign({}, state, { 
     testList: list,
     formId: 'OrderTest'
