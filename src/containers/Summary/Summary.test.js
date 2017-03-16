@@ -57,7 +57,7 @@ describe('Summary: index', () => {
     route: {
       onChange: jest.fn(),
       onEdit: jest.fn(),
-      data: {
+      testRequest: {
         OrderTest: testData,
         PatientDetails: patientData,
         ClinicalInfo: {clinicalInfo:'abacbascs'},
@@ -71,8 +71,7 @@ describe('Summary: index', () => {
 
   var state = {
     form: {
-      props,
-      signature:false
+      props
     },
     validationRule: {
       signature: 'signatureTrue',

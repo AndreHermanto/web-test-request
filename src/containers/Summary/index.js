@@ -25,7 +25,7 @@ import BillingInfoModule from './components/BillingInfoModule';
 class Summary extends Component {
   constructor(props) {
     super(props);
-    this.state = initData(props.route.data);
+    this.state = initData(props.route.testRequest);
     this.handleBack = this.handleBack.bind(this);
     this.handleValidateSubmit = this.handleValidateSubmit.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
@@ -83,18 +83,18 @@ class Summary extends Component {
     return (
       <div>
         <PageHeading> Request summary</PageHeading>
-        <OrderTestModule orderTestModule={this.props.route.data.OrderTest} handleOnClick={this.handleEdit}/>
-        <PatientDetailsModule patientDetails={this.props.route.data.PatientDetails} clinicalInfo={this.props.route.data.ClinicalInfo} handleOnClick={this.handleEdit}/>
+        <OrderTestModule orderTestModule={this.state.form.testRequest.OrderTest} handleOnClick={this.handleEdit}/>
+        <PatientDetailsModule patientDetails={this.state.form.testRequest.PatientDetails} clinicalInfo={this.state.form.testRequest.ClinicalInfo} handleOnClick={this.handleEdit}/>
         {
-          this.props.route.data.FamilyMember.familyMember.length > 0 &&
-          this.props.route.data.FamilyMember.familyMember.map((member, i) => 
+          this.state.form.testRequest.FamilyMember.familyMember.length > 0 &&
+          this.state.form.testRequest.FamilyMember.familyMember.map((member, i) => 
           {
             return <FamilyMemberModule familyMemberDetails={member.FamilyMemberDetails} familyMemberClinicalInfo={member.FamilyMemberClinicalInfo}
               handleOnClick={this.handleEdit} key={i}/>
           })
         }
-        <ClinicianDetailsModule clinicianDetailsModule={this.props.route.data.ClinicianDetails} handleOnClick={this.handleEdit}/>
-        <BillingInfoModule billingInfoModule={this.props.route.data.BillingInfo} clinicianDetailsModule={this.props.route.data.ClinicianDetails} handleOnClick={this.handleEdit}/>
+        <ClinicianDetailsModule clinicianDetailsModule={this.state.form.testRequest.ClinicianDetails} handleOnClick={this.handleEdit}/>
+        <BillingInfoModule billingInfoModule={this.state.form.testRequest.BillingInfo} clinicianDetailsModule={this.state.form.testRequest.ClinicianDetails} handleOnClick={this.handleEdit}/>
         <Toggle
           field="signature"
           label="Electronic signature"
