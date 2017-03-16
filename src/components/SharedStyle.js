@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import {
   Button,
-  HelpBlock
+  HelpBlock,
+  Glyphicon,
+  FormControl
 } from 'react-bootstrap';
 
 export const PageHeading = styled.h3`
@@ -33,4 +35,21 @@ export const Helper = styled.p`
 export const ValidationFeedback = styled(HelpBlock)`
   font-weight: normal;
   font-size: 11px;
+`;
+
+export const SubLabelInvoice = styled.span`
+  font-weight: normal;
+  font-size: 11px;
+  color: #bbb;
+`;
+
+export const GlyphForm = styled(Glyphicon)`
+  margin-top: 5px;
+  margin-right: 100%;
+  color: #00525a;
+`;
+
+export const FormInput = styled(FormControl)`
+  border-radius: 0px !important;
+  height: 45px !important;
 `;
