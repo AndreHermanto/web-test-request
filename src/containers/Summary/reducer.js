@@ -1,10 +1,9 @@
 import validator from './../../components/validator';
 
-export function initData(data) {
+export function initData(testRequest) {
   var state = {
     form: {
-      data,
-      signature:false
+      testRequest
     },
     validationRule: {
       signature: 'signatureTrue',
@@ -12,8 +11,6 @@ export function initData(data) {
     validated: false,
     submitStatus:''
   };
-  
-  
   // This validates the data in the initial state.
   state.validation = {};
   for (var field in state.validationRule) {
