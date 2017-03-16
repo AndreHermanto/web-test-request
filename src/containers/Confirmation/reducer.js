@@ -2,8 +2,7 @@ export function initData() {
   var state = {
     print: null
   }
-  
-  return state;
+  return Object.assign({}, state);
 }
 
 /**

@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 import TestUtils from 'react-addons-test-utils';
-import Confirmation from './index';
+import PrintRecord from './PrintRecord';
+
 
   const patientData = {
     "lastName":"abcabc",
@@ -40,7 +41,8 @@ import Confirmation from './index';
     lastName:"abc",
     billOption:"Private"
   }
-    const testData = {
+
+  const testData = {
     test: {
     id:'7052d137-a166-48b0-a52e-e05a167bd176',
     label: 'Consequatur adipisci modi laudantium tenetur ea exercitationem id',
@@ -48,38 +50,14 @@ import Confirmation from './index';
     },
     genes:["GZOW","KIHG","DRCO","DWBY","ZMZY","BMBP","OLZO","PZOA"]
   }
-  const confirmationData = {
-    OrderTest: testData,
-    PatientDetails: patientData,
-    ClinicalInfo: clinicalData,
-    FamilyMember: familyData,
-    ClinicianDetails:clinicianDetails,
-    BillingInfo: billingInfo
-  }
-  const props = {
-    route: {
-      onChange: jest.fn(),
-      data: confirmationData
-    },
-    router:['/step1']
-  };
-describe('Confirmation test', () => {
-  test('Confirmation page renders without crashing', () => {
-    const page = renderer.create(React.createElement(Confirmation)).toJSON();
-    expect(page).toMatchSnapshot();
-  });
-  
-  test('handlePrintRecordButtonClick changes the print state to 1', () => {
-    const page = TestUtils.renderIntoDocument(React.createElement(Confirmation, props));
-    page.handlePrintRecordButtonClick();
-    expect(page.state.print).toEqual(1);
-    page.handlePrintButtonClick(2);
-    expect(page.state.print).toEqual(2);
-  });
-  
-  test('handlePrintBloodCollectionButtonClick changes the print state to 2', () => {
-    const page = TestUtils.renderIntoDocument(React.createElement(Confirmation));
-    page.handlePrintBloodCollectionButtonClick();
-    expect(page.state.print).toEqual(2);
-  });
+
+test('PrintRecord renders without crashing ', () => {
+  const page = renderer.create(<PrintRecord 
+    orderTestModule={testData}
+    patientDetails={patientData} clinicalInfo={clinicalData}
+    familyMember={familyData} clinicianDetails={clinicianDetails}
+    billingInfo={billingInfo}
+  />).toJSON();
+  expect(page).toMatchSnapshot();
 });
+
