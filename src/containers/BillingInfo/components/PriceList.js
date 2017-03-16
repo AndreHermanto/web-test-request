@@ -24,7 +24,7 @@ function PriceList (props) {
       <Row>
         <Col md={12}>
           <InfoBox className="col-md-9" style={props.style}>
-            {props.priceList.info} {props.index}
+            {props.priceList.description} {props.index}
           </InfoBox>
           <PriceBox className="col-md-2" style={props.style}>
             ${props.priceList.price}

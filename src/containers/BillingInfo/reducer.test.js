@@ -2,8 +2,10 @@ import React from 'react';
 import { 
   initData, 
   setFormData, 
-  setSelectData, 
+  setSelectData,
+  setBillOption,
   setPhoneData,
+  setPricing,
   validatedToTrue,
 } from './reducer';
 
@@ -38,7 +40,7 @@ describe('ClinicianDetails: reducer', () => {
       name: 'billOption',
       value: 'Institution'
     }
-    const afterBillOptionState = setFormData(newState, billOption);
+    const afterBillOptionState = setBillOption(newState, billOption, { value: '' });
     expect(afterBillOptionState.form.firstName).toEqual('');
   });
 
@@ -47,8 +49,8 @@ describe('ClinicianDetails: reducer', () => {
       name: 'billOption',
       value: 'Private'
     }
-    const afterBillOptionState = setFormData(state, billOption);
-    expect(afterBillOptionState.validation.firstName.skip).toEqual(false);
+    const afterBillOptionState = setBillOption(state, billOption, { value: 'Dave' });
+    expect(afterBillOptionState.validation.firstName.skip).toEqual(undefined);
   });
 
   test('set new select payer for form field', () => {
@@ -61,6 +63,11 @@ describe('ClinicianDetails: reducer', () => {
     let value = 'Other';
     const newState = setSelectData(state, value);
     expect(newState.form.firstName).toEqual('');
+  });
+
+  test('pricing set to have a value', () => {
+    const newState = setPricing(state, [{},{}]);
+    expect(newState.priceList.length).toEqual(2);
   });
 
   test('validate to true test', () => {
