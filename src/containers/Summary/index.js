@@ -83,18 +83,18 @@ class Summary extends Component {
     return (
       <div>
         <PageHeading> Request summary</PageHeading>
-        <OrderTestModule orderTestModule={this.props.route.testRequest.OrderTest} handleOnClick={this.handleEdit}/>
-        <PatientDetailsModule patientDetails={this.props.route.testRequest.PatientDetails} clinicalInfo={this.props.route.testRequest.ClinicalInfo} handleOnClick={this.handleEdit}/>
+        <OrderTestModule orderTestModule={this.state.form.testRequest.OrderTest} handleOnClick={this.handleEdit}/>
+        <PatientDetailsModule patientDetails={this.state.form.testRequest.PatientDetails} clinicalInfo={this.state.form.testRequest.ClinicalInfo} handleOnClick={this.handleEdit}/>
         {
-          this.props.route.testRequest.FamilyMember.familyMember.length > 0 &&
-          this.props.route.testRequest.FamilyMember.familyMember.map((member, i) => 
+          this.state.form.testRequest.FamilyMember.familyMember.length > 0 &&
+          this.state.form.testRequest.FamilyMember.familyMember.map((member, i) => 
           {
             return <FamilyMemberModule familyMemberDetails={member.FamilyMemberDetails} familyMemberClinicalInfo={member.FamilyMemberClinicalInfo}
               handleOnClick={this.handleEdit} key={i}/>
           })
         }
-        <ClinicianDetailsModule clinicianDetailsModule={this.props.route.testRequest.ClinicianDetails} handleOnClick={this.handleEdit}/>
-        <BillingInfoModule billingInfoModule={this.props.route.testRequest.BillingInfo} clinicianDetailsModule={this.props.route.testRequest.ClinicianDetails} handleOnClick={this.handleEdit}/>
+        <ClinicianDetailsModule clinicianDetailsModule={this.state.form.testRequest.ClinicianDetails} handleOnClick={this.handleEdit}/>
+        <BillingInfoModule billingInfoModule={this.state.form.testRequest.BillingInfo} clinicianDetailsModule={this.state.form.testRequest.ClinicianDetails} handleOnClick={this.handleEdit}/>
         <Toggle
           field="signature"
           label="Electronic signature"
