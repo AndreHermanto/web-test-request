@@ -24,7 +24,6 @@ const Gene = styled(Label)`
   font-weight: 300 !important;
 `;
 
-
 /**
  * OrderTest - UI for ordering type of tests, selecting disorder and related genes for testing.
  */
