@@ -4,7 +4,7 @@ export function initData(prefilled, familyHistory) {
   var state = {
     form: {
       clinicalInfo: '',
-      unaffected: false,
+      affected: false,
       relevantInvestigation: '',
       familyHistory: '',
       consanguinity: false
