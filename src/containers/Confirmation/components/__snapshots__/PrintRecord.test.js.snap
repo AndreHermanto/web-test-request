@@ -1,0 +1,398 @@
+exports[`test PrintRecord renders without crashing  1`] = `
+<div
+  className="fSVpZK">
+  <div
+    className="hxoQps">
+    <h3
+      className="dmXiqO">
+      Test Ordered
+    </h3>
+    <h4>
+      <strong>
+        Consequatur adipisci modi laudantium tenetur ea exercitationem id
+      </strong>
+    </h4>
+    <p>
+      Total number of genes available: 
+      8
+    </p>
+    <div>
+      <span
+        className="dlnqYf label label-default">
+        GZOW
+      </span>
+      <span
+        className="dlnqYf label label-default">
+        KIHG
+      </span>
+      <span
+        className="dlnqYf label label-default">
+        DRCO
+      </span>
+      <span
+        className="dlnqYf label label-default">
+        DWBY
+      </span>
+      <span
+        className="dlnqYf label label-default">
+        ZMZY
+      </span>
+      <span
+        className="dlnqYf label label-default">
+        BMBP
+      </span>
+      <span
+        className="dlnqYf label label-default">
+        OLZO
+      </span>
+      <span
+        className="dlnqYf label label-default">
+        PZOA
+      </span>
+    </div>
+  </div>
+  <div
+    className="hxoQps">
+    <h3
+      className="dmXiqO">
+      Patient - 
+      Ngabcuyen abcabc
+    </h3>
+    <p>
+      <strong>
+         Date of Birth: 
+      </strong>
+      1-February-1917
+    </p>
+    <p>
+      <strong>
+         Medical record number:  
+      </strong>
+      123123
+    </p>
+    <p>
+      <strong>
+         Gender:  
+      </strong>
+      Male
+    </p>
+    <p>
+      <strong>
+         Ethnicity:  
+      </strong>
+      Asian
+    </p>
+    <p>
+      <strong>
+         Email:  
+      </strong>
+      abc@abc.gmail.com
+    </p>
+    <p>
+      <strong>
+         Consanguinity:  
+      </strong>
+      No
+    </p>
+    <div
+      className="caGDDg" />
+    <strong>
+       Clinical note: 
+    </strong>
+    <p>
+      Dissuade ecstatic and properly saw entirely sir why laughter endeavor. In on my jointure horrible margaret suitable he followed speedily. Indeed vanity excuse or mr lovers of on. By offer scale an stuff. Blush be sorry no sight. Sang lose of hour then he left find
+    </p>
+    <br />
+    <div>
+      <strong>
+         Relevant investigation: 
+      </strong>
+      <p>
+        asdkfhgasdlfhabsdlfjhalsfdjh
+      </p>
+      <br />
+    </div>
+    <div>
+      <strong>
+         Family history: 
+      </strong>
+      <p>
+        kasdfbljkbfalhfasvfkjabskldfbkjsdfbkdashfvdjhfhb;kfjv;hfv;fjbafhb;akfd
+      </p>
+    </div>
+  </div>
+  <div>
+    <div
+      className="hxoQps">
+      <h3
+        className="dmXiqO">
+        Family Member - 
+        abc@abc.com abc@abc.com
+      </h3>
+      <p>
+        <strong>
+           Date of Birth:  
+        </strong>
+        2-January-1918
+      </p>
+      <p>
+        <strong>
+           Medical record number:  
+        </strong>
+        abc@abc.com
+      </p>
+      <p>
+        <strong>
+           Gender:  
+        </strong>
+        Female
+      </p>
+      <p>
+        <strong>
+           Email:  
+        </strong>
+        abc@abc.com
+      </p>
+      <p>
+        <strong>
+           Consanguinity:  
+        </strong>
+        No
+      </p>
+      <div
+        className="caGDDg" />
+      <strong>
+         Clinical note 
+      </strong>
+      <p>
+        abc@abc.com
+      </p>
+      <br />
+      <div>
+        <strong>
+           Relevant investigation 
+        </strong>
+        <p>
+          asdasdasd
+        </p>
+        <br />
+      </div>
+      <div>
+        <strong>
+           Family history 
+        </strong>
+        <p>
+          asdasdasdasd
+        </p>
+      </div>
+    </div>
+    <div
+      className="hxoQps">
+      <h3
+        className="dmXiqO">
+        Family Member - 
+        abcsadkfhkladsfj ab.com
+      </h3>
+      <p>
+        <strong>
+           Date of Birth:  
+        </strong>
+        2-January-1918
+      </p>
+      <p>
+        <strong>
+           Medical record number:  
+        </strong>
+        abc@abc.com
+      </p>
+      <p>
+        <strong>
+           Gender:  
+        </strong>
+        Male
+      </p>
+      <p>
+        <strong>
+           Deceased:  
+        </strong>
+        Yes
+      </p>
+      <p>
+        <strong>
+           Email:  
+        </strong>
+        abc@abc.com
+      </p>
+      <p>
+        <strong>
+           Consanguinity:  
+        </strong>
+        No
+      </p>
+      <div
+        className="caGDDg" />
+      <strong>
+         Clinical note 
+      </strong>
+      <p>
+        abc@abc.com
+      </p>
+      <br />
+      <div>
+        <strong>
+           Relevant investigation 
+        </strong>
+        <p>
+          asdasdasdasd
+        </p>
+        <br />
+      </div>
+      <div>
+        <strong>
+           Family history 
+        </strong>
+        <p>
+          asdasd
+        </p>
+      </div>
+    </div>
+  </div>
+  <div
+    className="hxoQps">
+    <h3
+      className="dmXiqO">
+      Clinician - 
+      John Doe
+    </h3>
+    <p>
+      <strong>
+         Organisation/Address of practice:  
+      </strong>
+      as
+    </p>
+    <p>
+      <strong>
+         Provider number:  
+      </strong>
+      as
+    </p>
+    <p>
+      <strong>
+         Medical specialty:  
+      </strong>
+      as
+    </p>
+    <p>
+      <strong>
+         Phone:  
+      </strong>
+      as
+    </p>
+    <p>
+      <strong>
+         Email:  
+      </strong>
+      asfd@abc.com
+    </p>
+    <p>
+      <strong>
+         Fax:  
+      </strong>
+      as
+    </p>
+    <br />
+    <div>
+      <div
+        className="caGDDg" />
+      <br />
+      <p
+        style={
+          Object {
+            "marginTop": "-5pt",
+          }
+        }>
+         
+        <strong>
+          Copy of report to - 
+          asdf
+           
+          asdf
+        </strong>
+      </p>
+      <p>
+        <strong>
+           Organisation/Address of practice:  
+        </strong>
+        adsf
+      </p>
+      <p>
+        <strong>
+           Email: 
+        </strong>
+        asfd@abc.com
+      </p>
+      <br />
+    </div>
+    <div>
+      <div
+        className="caGDDg" />
+      <br />
+      <p
+        style={
+          Object {
+            "marginTop": "-5pt",
+          }
+        }>
+         
+        <strong>
+          Copy of report to - 
+          asdf
+           
+          asdf
+        </strong>
+      </p>
+      <p>
+        <strong>
+           Organisation/Address of practice:  
+        </strong>
+        adsf
+      </p>
+      <p>
+        <strong>
+           Email: 
+        </strong>
+        asfd@abc.com
+      </p>
+      <br />
+    </div>
+  </div>
+  <div>
+    <h3
+      className="dmXiqO">
+      Billing Information
+    </h3>
+    <div>
+      <p>
+        <strong>
+           Payer:  
+        </strong>
+        abc abc
+      </p>
+      <p>
+        <strong>
+           Mobile:  
+        </strong>
+        +61412334477
+      </p>
+      <p>
+        <strong>
+           Email:  
+        </strong>
+        abc@gmail.com
+      </p>
+    </div>
+    <div
+      className="caGDDg" />
+  </div>
+</div>
+`;

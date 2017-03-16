@@ -1,0 +1,7 @@
+.printMe {display: none;}
+
+@media print {
+  .noPrint {display: none;}
+  .printMe {display: block;}
+}
+

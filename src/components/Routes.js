@@ -32,7 +32,7 @@ function Routes({ onChange, onFamilyMemberChange, onFamilyMemberDelete, data, on
         <Route path="step6" component={BillingInfo} onChange={onChange} data={data.BillingInfo} clinicianData={data.ClinicianDetails || {}} patientData={data.PatientDetails || {}} familyMemberData={data.FamilyMember || {}} isEdited={isEdited}/>
         <Route path="summary" component={Summary} onChange={onChange} data={data} onEdit={onEdit}/>
       </Route>
-      <Route path="/confirmation" component={Confirmation}/>
+      <Route path="/confirmation" component={Confirmation} data={data}/>
     </Router>
   );
 }
