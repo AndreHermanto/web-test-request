@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import { 
-  FormGroup, 
-  ControlLabel,
-  FormControl,
   Button,
   Row,
   Col,
@@ -24,10 +21,6 @@ const FormContainer = styled.div`
 
 const Container = styled.div`
 
-`;
-
-const LabelColor = styled(Col)`
-  color: #777;
 `;
 
 const SubmitButton = styled(Button)`

@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import { 
-  Grid
-} from 'react-bootstrap';
 import styled from 'styled-components';
 import { 
   initialState,
