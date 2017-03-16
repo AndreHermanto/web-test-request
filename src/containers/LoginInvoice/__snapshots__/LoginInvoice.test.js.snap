@@ -1,0 +1,80 @@
+exports[`Create new ontology page LoginInvoice renders correctly 1`] = `
+<div
+  className="iaCmgk">
+  <div
+    className="row">
+    <div
+      className="col-xs-6 col-xs-offset-3">
+      <div
+        className="hnVAPD">
+        <h4
+          className="bVcnGq">
+          INVOICE
+        </h4>
+        <div
+          className="kWiGPW" />
+        <form
+          className="">
+          <div
+            className="ceWlft">
+            <div
+              className="form-group has-feedback">
+              <label
+                className="control-label"
+                htmlFor={undefined}>
+                Phone
+                <span
+                  className="jCNiHk">
+                  Required
+                </span>
+              </label>
+              <input
+                className="form-control"
+                disabled={undefined}
+                id={undefined}
+                name="phone"
+                onChange={[Function]}
+                type="text"
+                value="" />
+              <span
+                className="SfhHK help-block" />
+            </div>
+          </div>
+          <div
+            className="ceWlft">
+            <div
+              className="form-group has-feedback">
+              <label
+                className="control-label"
+                htmlFor={undefined}>
+                Surname
+                <span
+                  className="jCNiHk">
+                  Required
+                </span>
+              </label>
+              <input
+                className="form-control"
+                disabled={undefined}
+                id={undefined}
+                name="lastName"
+                onChange={[Function]}
+                type="text"
+                value="" />
+              <span
+                className="SfhHK help-block" />
+            </div>
+          </div>
+          <button
+            className="kySqFf btn btn-success"
+            disabled={false}
+            onClick={[Function]}
+            type="button">
+            View Invoice
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+`;

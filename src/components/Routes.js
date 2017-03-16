@@ -16,6 +16,8 @@ import FamilyMemberClinicalInfo from './../containers/FamilyMemberClinicalInfo';
 import BillingInfo from './../containers/BillingInfo';
 import Summary from './../containers/Summary';
 import Confirmation from './../containers/Confirmation';
+import LoginInvoice from './../containers/LoginInvoice';
+import Invoice from './../containers/Invoice';
 
 function Routes({ onChange, onFamilyMemberChange, onFamilyMemberDelete, data, onEdit, isEdited }) {
   return (
@@ -33,6 +35,8 @@ function Routes({ onChange, onFamilyMemberChange, onFamilyMemberDelete, data, on
         <Route path="summary" component={Summary} onChange={onChange} testRequest={data} onEdit={onEdit}/>
       </Route>
       <Route path="/confirmation" component={Confirmation} data={data}/>
+      <Route path="/invoices/:id" component={LoginInvoice} />
+      <Route path="/invoice" component={Invoice} />
     </Router>
   );
 }

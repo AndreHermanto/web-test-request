@@ -43,6 +43,18 @@ exports[`<UniversalNavigation /> renders correctly 1`] = `
             className="icon-bar" />
         </button>
       </div>
+      <ul
+        className="nav navbar-nav"
+        role={null}>
+        <a
+          active={undefined}
+          activeHref={undefined}
+          activeKey={undefined}
+          href="#/invoices/123"
+          onSelect={null}>
+          Invoice
+        </a>
+      </ul>
     </div>
   </div>
 </nav>
