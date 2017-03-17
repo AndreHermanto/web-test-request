@@ -14,7 +14,8 @@ import {
 import { getPricing } from './api';
 import { 
   PageHeading,
-  FormButton
+  FormButton,
+  Helper
 } from './../../components/SharedStyle';
 import Select from 'react-select';
 import Input from './../../components/Input';
@@ -192,10 +193,9 @@ class BillingInfo extends Component {
                 formState={this.state.form}
                 required
               />
-
-              <p style={{ fontSize: 11, fontStyle: 'italic', marginTop: -12 }}>
-                I have advised the patient that this test is dependent on private payment and will not proceed till it is received.
-              </p>
+              <Helper>
+              I have advised the patient that this test is dependent on private payment and will not proceed till it is received.
+              </Helper>
             </div>
           }
           {
@@ -236,6 +236,14 @@ class BillingInfo extends Component {
                 formState={this.state.form}
                 required
               />
+              
+              <br />
+              <Helper>
+                <p>When this test request form is submitted, an email will be sent to this payer with a weblink to view the invoice. </p>
+                <p>To open the link, the payer will need to type the patient's surname, and the payer's mobile number that you provided us in the Billing section when completing this form.</p>
+                <p>Testing does not begin until payment is received.</p>
+              </Helper>
+                  
             </div>
           }
 

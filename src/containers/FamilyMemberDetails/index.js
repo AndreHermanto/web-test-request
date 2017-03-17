@@ -6,7 +6,8 @@ import {
 } from './reducer'
 import { 
   PageHeading,
-  FormButton
+  FormButton,
+  Helper
 } from './../../components/SharedStyle';
 import Input from './../../components/Input';
 import Toggle from './../../components/Toggle';
@@ -155,10 +156,9 @@ class FamilyMemberDetails extends Component {
           formState={this.state.form}
           required
         />
-            
-        <p style={{ fontSize: 11, fontStyle: 'italic', marginTop: -12 }}>
-        I confirm that the Genome.One Privacy Collection Statement has been provided to the patient and that I have received written informed consent for genomic testing
-        </p> 
+        <Helper>
+        I confirm that the Genome.One Privacy Collection Statement has been provided to the patient and that I have received written informed consent for genomic testing.
+        </Helper> 
 
         <Input
           field="email"
@@ -168,6 +168,10 @@ class FamilyMemberDetails extends Component {
           formState={this.state.form}
           required
         />
+        <Helper>
+        When you submit this test request, Genome.One's privacy policy will be sent to this email address for their record.
+        </Helper>
+        
         {
           this.props.route.isEdited !== true &&
           <FormButton 
