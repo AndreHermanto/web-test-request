@@ -6,7 +6,6 @@ exports[`test PriceList renders correctly 1`] = `
     <div
       className="col-md-9 dpLQwy"
       style={null}>
-      aa
        
     </div>
     <div

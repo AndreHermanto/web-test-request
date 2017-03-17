@@ -22,28 +22,7 @@ export function initData(prefilled) {
       payerEmail: 'required email',
       phone: 'required number'
     },
-    priceList:[
-    {
-      info:'Whole genome analysis',
-      price:4360
-    },
-    {
-      info:'Extra family member',
-      price:1950
-    },
-    {
-      info:'Extra family member',
-      price:1950
-    },
-    {
-      info:'Banking fee for international samples',
-      price:50
-    },
-    {
-      info:'TOTAL PRICE',
-      price:8310
-    }
-    ],
+    priceList:[],
     validated: false,
     formId: 'BillingInfo'
   };
@@ -55,6 +34,17 @@ export function initData(prefilled) {
   for (var field in state.validationRule) {
     if(field) {
       state.validation[field] = validator(state.form[field], state.validationRule[field]);
+    }
+  }
+  
+  // If prefilled, determine whether to skip the validation based on prefilled billOption.
+  if(state.form.billOption === 'Institution') {
+    for (field in state.validation) {
+      if(field !== 'billOption') state.validation[field].skip = true;
+    }
+  } else {
+    for (field in state.validation) {
+      if(field !== 'billOption') state.validation[field].skip = false;
     }
   }
   
@@ -81,34 +71,64 @@ export function setFormData(state, target) {
   var formStateChild = Object.assign({}, state.form, {
     [target.name]: value
   });
-  
-  if(target.name === 'billOption' && value === 'Institution') {
-    formStateChild = Object.assign({}, formStateChild, {
-      payer:'Other',
-      phone:'',
-      firstName:'',
-      lastName:'',
-      payerEmail:'',
-      consent:false
-    });
-  }
-  
+
   var validationStateChild = Object.assign({}, state.validation, {
     [target.name]: validator(value, state.validationRule[target.name])
   });
+
+  return Object.assign({}, state, {
+    form: formStateChild,
+    validation: validationStateChild
+  });
+}
+
+/**
+ * This sets the form data upon onChange.
+ * @param {Object} state Targeted state to be changed.
+ * @param {Object} payerObj The payer info.
+ */
+export function setBillOption(state, target, payerObj) {
+  var value = target.value;
+  var formStateChild = Object.assign({}, state.form, {
+    billOption: value
+  });
+
+  var validationStateChild = Object.assign({}, state.validation);
   
-  // BillOption change will change the validation
-  if(target.name === 'billOption') {
-    var field;
-    if(value === 'Institution') {
-      for (field in validationStateChild) {
-        if(field !== 'billOption') validationStateChild[field].skip = true;
-      }
-    } else {
-      for (field in validationStateChild) {
-        if(field !== 'billOption') validationStateChild[field].skip = false;
-      }
+  if(value === 'Institution') {
+    formStateChild = Object.assign({}, formStateChild, {
+      payer: payerObj.value,
+      phone: '',
+      firstName: '',
+      lastName: '',
+      payerEmail: '',
+      consent: true
+    });
+  } else {
+    formStateChild = Object.assign({}, formStateChild, {
+      payer: payerObj.value,
+      phone: '',
+      firstName: payerObj.value.split(' ')[0],
+      lastName: payerObj.value.split(' ')[1],
+      payerEmail: payerObj.email,
+      consent: false
+    });
+  }
+  
+  var field;
+  
+  if(value === 'Institution') {
+    for (field in validationStateChild) {
+      if(field !== 'billOption') validationStateChild[field].skip = true;
     }
+  } else {
+    for (field in validationStateChild) {
+      if(field !== 'billOption') validationStateChild[field].skip = false;
+    }
+  }
+  
+  for (field in validationStateChild) {
+    if(!validationStateChild[field].skip) validationStateChild[field] = validator(formStateChild[field], state.validationRule[field]);
   }
 
   return Object.assign({}, state, {
@@ -152,6 +172,17 @@ export function setSelectData(state, value, email) {
     validation: validationStateChild
   });
 }
+
+/**
+ * Set "validated" state to true - identifying the confirm button is clicked and validation processed.
+ * @param {Object} state Targeted state to be changed.
+ */
+export function setPricing(state, value) {
+  return Object.assign({}, state, {
+    priceList: value
+  });
+}
+
 
 /**
  * Set "validated" state to true - identifying the confirm button is clicked and validation processed.

@@ -6,9 +6,12 @@ import {
 import {
   initData,
   setFormData,
+  setBillOption,
   setSelectData,
+  setPricing,
   validatedToTrue
 } from './reducer'
+import { getPricing } from './api';
 import { 
   PageHeading,
   FormButton
@@ -28,17 +31,40 @@ class BillingInfo extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleBack = this.handleBack.bind(this);
     this.getPayers = this.getPayers.bind(this);
+    this.handleBillingChange = this.handleBillingChange.bind(this);
     this.handleSelectChange = this.handleSelectChange.bind(this);
     this.handleConfirm = this.handleConfirm.bind(this);
     this.state = initData(props.route.data);
+  }
+  
+  componentDidMount() {
+    this.priceChange();
+  }
+  
+  priceChange() {
+    return getPricing(
+      this.props.route.orderTestData.test ? this.props.route.orderTestData.test.id : '',
+      this.state.form.billOption === 'Institution' ? this.props.route.clinicianData.organisation : this.state.form.payer,
+      this.props.route.familyMemberData.familyMember ? this.props.route.familyMemberData.familyMember.length : 0
+    )
+      .then((pricing) => {
+        this.setState(setPricing(this.state, pricing.breakdown));
+      });
   }
 
   handleChange(event) {
     this.setState(setFormData(this.state, event.target));
   }
+  
+  handleBillingChange(event) {
+    var payer = (event.target.value === 'Institution') ? 
+                { value: this.props.route.clinicianData.organisation || '' } : 
+                this.getPayers()[0];
+    this.setState(setBillOption(this.state, event.target, payer), this.priceChange);
+  }
 
   handleSelectChange(event) {
-    this.setState(setSelectData(this.state, event.value, event.email));
+    this.setState(setSelectData(this.state, event.value, event.email), this.priceChange);
   }
 
   handleBack() {
@@ -121,7 +147,7 @@ class BillingInfo extends Component {
           options={['Institution', 'Private']}
           subLabels={[this.props.route.clinicianData.organisation,'']}
           formState={this.state.form}
-          onChange={this.handleChange}
+          onChange={this.handleBillingChange}
           onValidate={this.validate()}
         />
         {
