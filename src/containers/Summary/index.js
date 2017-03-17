@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { submitTestRequest } from './api';
 import { 
   PageHeading,
-  FormButton
+  FormButton,
+  Helper
 } from './../../components/SharedStyle';
 
 import Toggle from './../../components/Toggle';
@@ -105,9 +106,9 @@ class Summary extends Component {
           formState={this.state.form}
           required
         />
-        <p style={{ fontSize: 11, fontStyle: 'italic', marginBottom:'-10px' }}>
+        <Helper>
             When you submit this test request, an email will be sent to this payer with a weblink to view the invoice.  
-        </p>  
+        </Helper>
         <FormButton 
           bsStyle="warning" 
           onClick={this.handleBack}

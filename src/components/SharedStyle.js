@@ -22,6 +22,14 @@ export const SubLabel = styled.span`
   color: #bbb;
 `;
 
+export const Helper = styled.p`
+  color: #696969;
+  margin-top: -12px;
+  margin-bottom: 18px;
+  line-height: 1.3;
+  font-size: 90%;
+`;
+
 export const ValidationFeedback = styled(HelpBlock)`
   font-weight: normal;
   font-size: 11px;
