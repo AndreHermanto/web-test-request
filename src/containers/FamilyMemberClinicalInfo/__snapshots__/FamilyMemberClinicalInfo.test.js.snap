@@ -19,7 +19,7 @@ exports[`FamilyMemberClinicalInfo: index renders without crashing 1`] = `
       </span>
     </label>
     <div
-      className="ePuOBx">
+      className="jyfMsd">
       Type or copy and paste clinical notes here. Comprehensive notes increase the chance of a successful diagnosis.
     </div>
     <textarea
@@ -110,7 +110,7 @@ exports[`FamilyMemberClinicalInfo: index renders without crashing 1`] = `
       </span>
     </label>
     <div
-      className="ePuOBx">
+      className="jyfMsd">
       Provide notes from genetic tests, imaging results.
     </div>
     <textarea
@@ -140,7 +140,7 @@ exports[`FamilyMemberClinicalInfo: index renders without crashing 1`] = `
       </span>
     </label>
     <div
-      className="ePuOBx">
+      className="jyfMsd">
       Provide notes on the suspected inheritance model and affected relatives.
     </div>
     <textarea

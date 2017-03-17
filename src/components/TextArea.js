@@ -11,8 +11,10 @@ import {
 import styled from 'styled-components';
 
 const Helper = styled.div`
-  font-size: 12px;
-  color: #777;
+  color: #696969;
+  line-height: 1.3;
+  margin-bottom: 4px;
+  font-size: 90%;
 `;
 
 /**
