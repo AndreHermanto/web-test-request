@@ -72,12 +72,12 @@ class LoginInvoice extends Component {
   handleSubmit(passValidation) {
     if(!passValidation) return false;
     var self = this;
-    getInvoice(Object.assign({}, this.state.form, {id: this.props.params.id}))
+    getInvoice(Object.assign({}, {id: this.props.params.id}))
     .then(function(response) {
-      if(response.length){
+      if(self.state.form.lastName === response[0].data.BillingInfo.lastName && self.state.form.phone === response[0].data.BillingInfo.phone){
         hashHistory.push({
           pathname: '/invoice',
-          query: response[0]
+          query: {data: JSON.stringify(response[0].data)}
         })
       }else{
         self.setState(authenticatedToFalse(self.state));

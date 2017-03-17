@@ -32,7 +32,7 @@ export default class UniversalNavigation extends React.Component
             <Navbar.Toggle />
           </Navbar.Header>
           <Nav>
-            <a href="#/invoices/123">Invoice</a>
+            <a href="#/invoices/1">Invoice</a>
           </Nav>
         </Grid>
       </Bar>

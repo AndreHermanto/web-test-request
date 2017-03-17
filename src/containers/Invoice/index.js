@@ -18,14 +18,13 @@ class Invoice extends Component {
     this.state = initialState;
   }
   componentDidMount(){
-    this.setState(setInvoice(this.state, this.props.location.query));
+    this.setState(setInvoice(this.state, JSON.parse(this.props.location.query.data)));
   }
   render(){
     return(
 
     <Container>
       <h3>Invoice</h3>
-      <p>{this.state.invoice}</p>
     </Container>
     )
   }

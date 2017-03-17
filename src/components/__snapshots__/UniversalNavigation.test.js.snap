@@ -50,7 +50,7 @@ exports[`<UniversalNavigation /> renders correctly 1`] = `
           active={undefined}
           activeHref={undefined}
           activeKey={undefined}
-          href="#/invoices/123"
+          href="#/invoices/1"
           onSelect={null}>
           Invoice
         </a>
