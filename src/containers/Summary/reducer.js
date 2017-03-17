@@ -3,7 +3,8 @@ import validator from './../../components/validator';
 export function initData(testRequest) {
   var state = {
     form: {
-      testRequest
+      testRequest,
+      signature:false
     },
     validationRule: {
       signature: 'signatureTrue',
