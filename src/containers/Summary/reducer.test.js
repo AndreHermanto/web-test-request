@@ -3,6 +3,7 @@ import {
   initData, 
   setSignatureData, 
   setSubmitStatusData,
+  setSubmitData,
   validatedToTrue
 } from './reducer';
 
@@ -36,5 +37,10 @@ describe('Summary: reducer', () => {
   test('submitStatus data test', () => {
     const newState = setSubmitStatusData(state, 'loading');
     expect(newState.submitStatus).toEqual('loading');
+  });
+
+  test('submitData data test', () => {
+    const newState = setSubmitData(state, true);
+    expect(newState.Signature).toEqual(true);
   });
 });
