@@ -61,3 +61,11 @@ export function validatedToTrue(state) {
   });
 }
 
+export function setSubmitData(state, value) {
+
+  var formStateChild = Object.assign({}, state.form.testRequest, {
+    Signature: value
+  });
+
+  return state.form.testRequest = formStateChild;
+}

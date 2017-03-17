@@ -10,7 +10,8 @@ import {
   initData,
   setSignatureData,
   validatedToTrue,
-  setSubmitStatusData
+  setSubmitStatusData,
+  setSubmitData
 } from './reducer';
 import './loading.css';
 import { NotificationContainer, NotificationManager } from 'react-notifications';
@@ -52,7 +53,8 @@ class Summary extends Component {
 
   handleSubmit()
   {
-    return submitTestRequest({testRequest:this.state.form})
+    this.setState(setSubmitData(this.state, this.state.form.signature));
+    return submitTestRequest({testRequest:this.state.form.testRequest})
       .then((response) => {
         if(!response.ok) {
           setTimeout(function() { 
