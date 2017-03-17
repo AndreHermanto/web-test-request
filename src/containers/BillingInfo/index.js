@@ -239,9 +239,9 @@ class BillingInfo extends Component {
               
               <br />
               <Helper>
-                <p>When this test request form is submitted, an email will be sent to this payer with a weblink to view the invoice. </p>
-                <p>To open the link, the payer will need to type the patient's surname, and the payer's mobile number that you provided us in the Billing section when completing this form.</p>
-                <p>Testing does not begin until payment is received.</p>
+                When this test request form is submitted, an email will be sent to this payer with a weblink to view the invoice. <br /><br />
+                To open the link, the payer will need to type the patient's surname, and the payer's mobile number that you provided us in the Billing section when completing this form.<br /><br />
+                Testing does not begin until payment is received.
               </Helper>
                   
             </div>
