@@ -178,7 +178,12 @@ export function setSelectData(state, value, email) {
  * @param {Object} state Targeted state to be changed.
  */
 export function setPricing(state, value) {
+  let totalPrice = value[value.length - 1].price;
+  let formStateChild = Object.assign({}, state.form, {
+    billPrice: totalPrice
+  });
   return Object.assign({}, state, {
+    form: formStateChild,
     priceList: value
   });
 }
