@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { 
-  Button,
   Row,
   Col,
-  Form
+  Form,
+  Glyphicon
 } from 'react-bootstrap';
 import styled from 'styled-components';
 import { 
@@ -13,42 +13,59 @@ import {
   authenticatedToFalse } from './reducer';
 import { getInvoice } from './api';
 import { hashHistory } from 'react-router';
-import Input from './../../components/Input';
+import InputInvoice from './../../components/InputInvoice';
 
 const FormContainer = styled.div`
-  height: 100px; 
+  height: 90px; 
 `;
 
 const Container = styled.div`
-
+  margin-top: 50px;
 `;
 
-const SubmitButton = styled(Button)`
-margin-bottom: 0px;
+const SubmitButton = styled.button`
+    border-style: solid;
+    border-width: 0.01px;
+    background-color: #00a6b6;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 0px;
+    -webkit-transition: background-color 0.5s;
+    -webkit-transition-timing-function: ease;
+    text-transform: uppercase;
+    &:hover {
+      background-color: #00c9dc;
+    }
 `;
 
 const Login = styled.div`
   width: 100%;
-  height: 330px;
+  height: 400px;
   border-style: solid;
-  padding: 40px;
-  border-radius: 20px;
+  padding: 40px 40px 40px 50px;
   text-align: center;
-  border-color: #777;
+  background-color: #f6f6f6;
+  border-width: 3px;
+  border-color: #00525a;
+  color: #00525a;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `;
-const Invoice = styled.h4`
-  width:80px;
-  margin-top:-52px;
-  margin-left: 40%;
+const Invoice = styled.h3`
+  width:130px;
+  margin-top:-57px;
+  margin-left: 31%;
   margin-bottom: 30px;
   background:white;
-  color: #777;
 `;
 
 const Warning = styled.div`
   height: 15px;
-  color: red;
-  margin: 15px;
+  color: #a94442;
+  margin-bottom: 20px;
 `;
 
 /**
@@ -72,12 +89,12 @@ class LoginInvoice extends Component {
   handleSubmit(passValidation) {
     if(!passValidation) return false;
     var self = this;
-    getInvoice(Object.assign({}, {id: this.props.params.id}))
+    getInvoice(Object.assign({}, this.state.form, {id: this.props.params.id}))
     .then(function(response) {
-      if(self.state.form.lastName === response[0].data.BillingInfo.lastName && self.state.form.phone === response[0].data.BillingInfo.phone){
+      if(response.length){
         hashHistory.push({
           pathname: '/invoice',
-          query: {data: JSON.stringify(response[0].data)}
+          query: {data: JSON.stringify(response[0]).data}
         })
       }else{
         self.setState(authenticatedToFalse(self.state));
@@ -108,30 +125,30 @@ class LoginInvoice extends Component {
       <Row>
         <Col xs={6} xsOffset={3}>
           <Login>     
-            <Invoice>INVOICE</Invoice>
-            <Warning>{this.state.authenticated? null : "Invalid phone number or last name"}</Warning>
+            <Invoice><Glyphicon glyph="glyphicon glyphicon-list-alt" /> INVOICE</Invoice>
             <Form>
+              <FormContainer>              
+                <InputInvoice
+                  field="lastName"
+                  label="Last Name"
+                  onChange={this.handleInputChange}
+                  onValidate={this.validate()}
+                  formState={this.state.form}
+                  glyphicon="glyphicon-user"
+                />
+              </FormContainer>
               <FormContainer>
-                <Input
+                <InputInvoice
                   field="phone"
                   label="Phone"
                   onChange={this.handleInputChange}
                   onValidate={this.validate()}
                   formState={this.state.form}
-                  required
+                  glyphicon="glyphicon-phone-alt"
                 />
               </FormContainer>
-              <FormContainer>              
-                <Input
-                  field="lastName"
-                  label="Surname"
-                  onChange={this.handleInputChange}
-                  onValidate={this.validate()}
-                  formState={this.state.form}
-                  required
-                />
-              </FormContainer>
-              <SubmitButton type="button" onClick={this.handleConfirm} bsStyle="success">
+              <Warning>{this.state.authenticated? null : "Invalid phone number or last name"}</Warning>
+              <SubmitButton type="button" onClick={this.handleConfirm}>
                 View Invoice
               </SubmitButton>
             </Form>
