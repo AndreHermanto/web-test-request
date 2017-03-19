@@ -51,6 +51,17 @@ exports[`BillingInfoModule test private renders without crashing  1`] = `
         </span>
       </p>
     </div>
+    <div
+      className="col-md-12">
+      <p
+        className="doDOdK">
+        <span
+          className="jXWIEx">
+           Total price:  
+        </span>
+        $
+      </p>
+    </div>
   </div>
 </div>
 `;

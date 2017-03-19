@@ -390,6 +390,12 @@ exports[`test PrintRecord renders without crashing  1`] = `
         </strong>
         abc@gmail.com
       </p>
+      <p>
+        <strong>
+           Total price:  
+        </strong>
+        $
+      </p>
     </div>
     <div
       className="caGDDg" />
