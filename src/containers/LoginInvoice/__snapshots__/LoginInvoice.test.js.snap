@@ -66,7 +66,7 @@ exports[`Create new ontology page LoginInvoice renders correctly 1`] = `
           <div
             className="jhqAqZ" />
           <button
-            className="iMddqT"
+            className="btTVNa"
             onClick={[Function]}
             type="button">
             View Invoice
