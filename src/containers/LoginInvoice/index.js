@@ -24,22 +24,22 @@ const Container = styled.div`
 `;
 
 const SubmitButton = styled.button`
-    border-style: solid;
-    border-width: 0.01px;
-    background-color: #00a6b6;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 0px;
-    -webkit-transition: background-color 0.5s;
-    -webkit-transition-timing-function: ease;
-    text-transform: uppercase;
-    &:hover {
-      background-color: #00c9dc;
-    }
+  border-style: solid;
+  border-width: 0.01px;
+  background-color: #00a6b6;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 0px;
+  -webkit-transition: background-color 0.5s;
+  -webkit-transition-timing-function: ease;
+  text-transform: uppercase;
+  &:hover {
+    background-color: #00c9dc;
+  }
 `;
 
 const Login = styled.div`
