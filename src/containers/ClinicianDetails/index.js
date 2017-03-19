@@ -44,6 +44,12 @@ class ClinicianDetails extends Component {
     this.handleHCPChange = this.handleHCPChange.bind(this);
     this.state = initialState(props.route.data);
   }
+  
+  componentDidMount() {
+    if(this.props.route.preventUnvisitedFormAccess) {
+      this.props.router.setRouteLeaveHook(this.props.route, this.props.route.preventUnvisitedFormAccess.bind(this));
+    }
+  }
 
   handleChange(event) {
     this.setState(setFormData(this.state, event.target))

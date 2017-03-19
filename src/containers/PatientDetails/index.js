@@ -26,6 +26,13 @@ class PatientDetails extends Component {
     this.state = initData(props.route.data);
   }
   
+  componentDidMount() {
+    if(this.props.route.preventUnvisitedFormAccess) {
+      this.props.router.setRouteLeaveHook(this.props.route, this.props.route.preventUnvisitedFormAccess.bind(this));
+    }
+  }
+  
+  
   handleChange(event) {
     this.setState(setFormData(this.state, event.target));
   }

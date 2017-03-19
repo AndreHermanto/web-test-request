@@ -28,8 +28,10 @@ class FamilyMemberClinicalInfo extends Component {
     this.state = initData(prefill, prefillClinical);
   }
   
-  componentWillMount() {
-    if(!this.props.route.data) this.props.router.push('/step4');
+  componentDidMount() {
+    if(this.props.route.preventUnvisitedFormAccess) {
+      this.props.router.setRouteLeaveHook(this.props.route, this.props.route.preventUnvisitedFormAccess.bind(this));
+    }
   }
   
   handleChange(event) {

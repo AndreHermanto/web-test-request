@@ -29,6 +29,12 @@ class OrderTest extends Component {
       });
   }
   
+  componentDidMount() {
+    if(this.props.route.preventUnvisitedFormAccess) {
+      this.props.router.setRouteLeaveHook(this.props.route, this.props.route.preventUnvisitedFormAccess.bind(this));
+    }
+  }
+  
   handleTestSelect(value) {
     this.state.testList.forEach((panel) => {
       if(panel.id === value.id) this.setState(setTestType(this.state, panel));

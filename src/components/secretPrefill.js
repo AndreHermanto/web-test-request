@@ -1,17 +1,26 @@
+import { hashHistory } from 'react-router';
+
 export default function secretPrefill(component, target) {
   document.onkeydown = (e) => {
     if(e.which === 84 && e.ctrlKey && e.altKey){
-      alert('SHAZZZAMM!!! Your form has been magically prefilled.');
-      component.setState({
-        [target]: testData()
-      })
+      hashHistory.replace(hashHistory.getCurrentLocation().pathname + '?shazam=true');
+      window.location.reload();
     }
+  }
+  
+  if(hashHistory.getCurrentLocation().query.shazam) {
+    alert('SHAZZZAMM!!! Your form has been magically prefilled.');
+    component.setState({
+      [target]: testData()
+    })
   }
 }
                          
 function testData() {
   return {
         "OrderTest": {
+          "_secretPrefill": true,
+          "latestSelectId": "58c74b7c1020a1eb58e9dfae",
           "test": {
             "id": "58c74b7c1020a1eb58e9dfae",
             "label": "Dilated Cardiomyopathy (DCM), Complete Panel",
@@ -220,6 +229,7 @@ function testData() {
           "consent": true,
           "billPrice": 720
         },
-        "Signature": true
+        "Signature": true,
+        _secretPrefill: true
       };
 } 
