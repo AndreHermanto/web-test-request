@@ -16,7 +16,7 @@ import { hashHistory } from 'react-router';
 import InputInvoice from './../../components/InputInvoice';
 
 const FormContainer = styled.div`
-  height: 90px; 
+  height: 100px; 
 `;
 
 const Container = styled.div`

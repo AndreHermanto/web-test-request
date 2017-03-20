@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Grid, Nav } from 'react-bootstrap';
+import { Navbar, Grid } from 'react-bootstrap';
 import styled from 'styled-components';
 import logo from '../assets/images/g1_logo.png';
 
@@ -31,9 +31,6 @@ export default class UniversalNavigation extends React.Component
             </Navbar.Brand>
             <Navbar.Toggle />
           </Navbar.Header>
-          <Nav>
-            <a href="#/invoices/1">Invoice</a>
-          </Nav>
         </Grid>
       </Bar>
     )

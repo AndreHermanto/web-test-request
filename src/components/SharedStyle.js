@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import {
   Button,
   HelpBlock,
-  Glyphicon
+  Glyphicon,
+  FormControl
 } from 'react-bootstrap';
 
 export const PageHeading = styled.h3`
@@ -43,6 +44,12 @@ export const SubLabelInvoice = styled.span`
 `;
 
 export const GlyphForm = styled(Glyphicon)`
+  margin-top: 5px;
   margin-right: 100%;
   color: #00525a;
+`;
+
+export const FormInput = styled(FormControl)`
+  border-radius: 0px !important;
+  height: 45px !important;
 `;

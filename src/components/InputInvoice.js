@@ -6,7 +6,8 @@ import {
 } from 'react-bootstrap';
 import { 
   ValidationFeedback,
-  GlyphForm
+  GlyphForm,
+  FormInput
 } from './SharedStyle';
 
 /**
@@ -35,13 +36,12 @@ export default function Input({
           {label}
         </ControlLabel>
       )}
-      <FormControl
+      <FormInput
         type="text"
         name={field}
         onChange={onChange}
         value={formState && formState[field]}
         disabled={disabled}
-        placeholder={"Your " + label}
       />
       <GlyphForm glyph={"glyphicon " + glyphicon} className="form-control-feedback"/>
       <FormControl.Feedback />

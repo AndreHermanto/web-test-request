@@ -16,7 +16,7 @@ exports[`Create new ontology page LoginInvoice renders correctly 1`] = `
         <form
           className="">
           <div
-            className="bfUfcU">
+            className="ceWlft">
             <div
               className="form-group has-feedback">
               <label
@@ -25,22 +25,21 @@ exports[`Create new ontology page LoginInvoice renders correctly 1`] = `
                 Last Name
               </label>
               <input
-                className="form-control"
+                className="buRLRG form-control"
                 disabled={undefined}
                 id={undefined}
                 name="lastName"
                 onChange={[Function]}
-                placeholder="Your Last Name"
                 type="text"
                 value="" />
               <span
-                className="form-control-feedback epmpPI glyphicon glyphicon-glyphicon glyphicon-user" />
+                className="form-control-feedback iabToo glyphicon glyphicon-glyphicon glyphicon-user" />
               <span
                 className="SfhHK help-block" />
             </div>
           </div>
           <div
-            className="bfUfcU">
+            className="ceWlft">
             <div
               className="form-group has-feedback">
               <label
@@ -49,16 +48,15 @@ exports[`Create new ontology page LoginInvoice renders correctly 1`] = `
                 Phone
               </label>
               <input
-                className="form-control"
+                className="buRLRG form-control"
                 disabled={undefined}
                 id={undefined}
                 name="phone"
                 onChange={[Function]}
-                placeholder="Your Phone"
                 type="text"
                 value="" />
               <span
-                className="form-control-feedback epmpPI glyphicon glyphicon-glyphicon glyphicon-phone-alt" />
+                className="form-control-feedback iabToo glyphicon glyphicon-glyphicon glyphicon-phone-alt" />
               <span
                 className="SfhHK help-block" />
             </div>
