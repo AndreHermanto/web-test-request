@@ -1,9 +1,8 @@
 import React from 'react';
 import {
-  PrintHeading,
-  PageBreak
+  PrintHeading
 } from './../sharedPrintStyle';
-// PrintBillingInfoModule page
+// PrintBillingInfoModule section
 export default function PrintBillingInfoModule(props) {
   return (
     <div>
@@ -46,8 +45,6 @@ export default function PrintBillingInfoModule(props) {
           </p>
         </div>
       }
-    
-      <PageBreak/>
     </div>
   );
 }

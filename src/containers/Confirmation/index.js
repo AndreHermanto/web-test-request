@@ -57,14 +57,14 @@ const PrintRecordButton = styled.label`
     text-align: center;
 `;
 
-/*const PrintBloodCollectionButton = styled.label`
+const PrintBloodCollectionButton = styled.label`
   cursor: pointer;
   padding: 7px 15px;
   border: 1px solid #00a6b6;
   color: #00a6b6;
   margin-top: 10px;
   text-align: center;
-`;*/
+`;
 
 /**
 * Confirmation - UI for ordering type of tests, selecting disorder and related genes for testing.
@@ -108,28 +108,40 @@ class Confirmation extends Component {
               You can now:
             </ConfirmationNote>
             <Row>
-              <Col md={12}>
+              <Col md={6}>
                 <PrintRecordButton onClick={this.handlePrintRecordButtonClick}>
                   Print out form for your records
                 </PrintRecordButton>
               </Col>
-      {/*}<Col md={6}>
+              <Col md={6}>
                 <PrintBloodCollectionButton onClick={this.handlePrintBloodCollectionButtonClick}>
                   Print out Blood Collection forms for your patient(s)
                 </PrintBloodCollectionButton>
-              </Col>{*/}
+              </Col>
             </Row>
         </ConfirmationBox>
-                  
+
         <div className="printMe">
           {(this.state.print === 1) && 
-            <PrintRecord orderTestModule={this.props.route.data.OrderTest}
-              patientDetails={this.props.route.data.PatientDetails} clinicalInfo={this.props.route.data.ClinicalInfo}
-              familyMember={this.props.route.data.FamilyMember} clinicianDetails={this.props.route.data.ClinicianDetails}
+            <PrintRecord 
+              orderTestModule={this.props.route.data.OrderTest}
+              patientDetails={this.props.route.data.PatientDetails}
+              clinicalInfo={this.props.route.data.ClinicalInfo}
+              familyMember={this.props.route.data.FamilyMember}
+              clinicianDetails={this.props.route.data.ClinicianDetails}
               billingInfo={this.props.route.data.BillingInfo}
             />
           }
-          {(this.state.print === 2) && <PrintBloodCollection />}
+          {(this.state.print === 2) &&
+            <PrintBloodCollection 
+              orderTestModule={this.props.route.data.OrderTest}
+              patientDetails={this.props.route.data.PatientDetails}
+              clinicalInfo={this.props.route.data.ClinicalInfo}
+              familyMember={this.props.route.data.FamilyMember}
+              clinicianDetails={this.props.route.data.ClinicianDetails}
+              billingInfo={this.props.route.data.BillingInfo}
+            />
+          }
         </div>
       </div>
     );

@@ -7,8 +7,8 @@ import PrintClinicianDetailsModule from './PrintRecordComponents/PrintClinicianD
 import PrintBillingInfoModule from './PrintRecordComponents/PrintBillingInfoModule';
 const Page = styled.div`
   width: 100%;
-  margin-left:5%;
   font-size: 12pt;
+  padding: 20px 75px 20px 75px;
 `;
 
 // Print the entire test request

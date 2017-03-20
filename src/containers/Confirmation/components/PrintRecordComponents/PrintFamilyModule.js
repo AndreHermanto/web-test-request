@@ -3,7 +3,7 @@ import {
   PrintHeading,
   PageBreak,
   Section
-} from './sharedPrintStyle';
+} from './../sharedPrintStyle';
 // PrintFamilyModule page
 export default function PrintFamilyModule(props) {
   return (
@@ -72,6 +72,11 @@ export default function PrintFamilyModule(props) {
             <p> 
               <strong> Consanguinity:  </strong>
               {member.FamilyMemberClinicalInfo.consanguinity ? 'Yes' : 'No'} 
+            </p>
+            
+            <p> 
+              <strong> Affected:  </strong>
+              {member.FamilyMemberClinicalInfo.affected ? 'Yes' : 'No'} 
             </p>
 
             <PageBreak/>

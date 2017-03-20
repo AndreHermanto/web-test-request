@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Label } from 'react-bootstrap';
+
 export const PageBreak = styled.div`
   border: 1px solid #abc6ca;
   margin-top: 10pt;
@@ -19,11 +20,11 @@ export const PrintHeading = styled.h3`
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -webkit-print-color-adjust: exact;
-  -moz-print-color-adjust: exact; 
+  color-adjust: exact; 
   padding-top: 12pt;
   padding-bottom: 12pt;
   margin-bottom: 16pt;
-  color: #fff !important;
+  color: white !important;
   display: inline-block;
   width: 98%;
 `;

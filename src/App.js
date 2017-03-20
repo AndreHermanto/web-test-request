@@ -4,7 +4,7 @@ import {
   Col,
   Row
 } from 'react-bootstrap';
-
+import secretPrefill from './components/secretPrefill';
 import Routes from './components/Routes';
 import UniversalNavigation from './components/UniversalNavigation';
 import { 
@@ -26,6 +26,10 @@ class App extends Component {
       formInput: {},
       isEdited: false
     }
+  }
+  
+  componentWillMount() {
+    secretPrefill(this, 'formInput');
   }
   
   handleChange(formComponent) {

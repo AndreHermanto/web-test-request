@@ -1,0 +1,1492 @@
+exports[`test PrintBloodCollection renders without crashing  1`] = `
+<div>
+  <div
+    className="dmfEKT">
+    <div>
+      <div
+        className="row">
+        <div
+          className="col-sm-4">
+          <img
+            alt="logo"
+            className="App-logo"
+            src="test-file-stub"
+            style={
+              Object {
+                "width": 200,
+              }
+            } />
+        </div>
+        <div
+          className="col-sm-4"
+          style={
+            Object {
+              "border": "2px solid #000",
+              "padding": 12,
+            }
+          }>
+          <div>
+            <b>
+              Deliver specimens to: 
+              <br />
+              Central Specimen Reception (CSR)SydPath 
+              <br />
+            </b>
+            St Vincent’s Hospital, Xavier Building 
+            <br />
+            Level 6, 390 Victoria St 
+            <br />
+            Darlinghurst NSW 2010 Australia 
+            <br />
+            P +61 2 8382 9100
+          </div>
+        </div>
+        <div
+          className="col-sm-4">
+          <div
+            className="pull-right"
+            style={
+              Object {
+                "fontSize": 11,
+              }
+            }>
+            <p
+              style={
+                Object {
+                  "marginBottom": 8,
+                }
+              }>
+              Genome.One Pty Ltd 
+              <br />
+              ACN 608 029 732 
+              <br />
+            </p>
+            <p
+              style={
+                Object {
+                  "marginBottom": 16,
+                }
+              }>
+              370 Victoria St 
+              <br />
+              Darlinghurst NSW 2010 
+              <br />
+              Sydney  Australia
+            </p>
+            <p>
+              P +61 2 9359 8002 
+              <br />
+              F +61 2 9359 8033 
+              <br />
+              E enquiries@genome.one 
+              <br />
+              Web: www.genome.one
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div
+      className="hxoQps">
+      <h3
+        className="fwyXhE">
+        Test Ordered
+      </h3>
+      <h4>
+        <strong>
+          Consequatur adipisci modi laudantium tenetur ea exercitationem id
+        </strong>
+      </h4>
+      <p>
+        Total number of genes available: 
+        8
+      </p>
+      <div>
+        <span
+          className="dlnqYf label label-default">
+          GZOW
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          KIHG
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          DRCO
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          DWBY
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          ZMZY
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          BMBP
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          OLZO
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          PZOA
+        </span>
+      </div>
+    </div>
+    <div
+      className="hxoQps">
+      <h3
+        className="fwyXhE">
+        Patient - 
+        Ngabcuyen abcabc
+      </h3>
+      <p>
+        <strong>
+           Date of Birth: 
+        </strong>
+        1-February-1917
+      </p>
+      <p>
+        <strong>
+           Medical record number:  
+        </strong>
+        123123
+      </p>
+      <p>
+        <strong>
+           Gender:  
+        </strong>
+        Male
+      </p>
+      <p>
+        <strong>
+           Ethnicity:  
+        </strong>
+        Asian
+      </p>
+      <p>
+        <strong>
+           Consanguinity:  
+        </strong>
+        No
+      </p>
+      <div
+        className="caGDDg" />
+      <strong>
+         Clinical note: 
+      </strong>
+      <p>
+        Dissuade ecstatic and properly saw entirely sir why laughter endeavor. In on my jointure horrible margaret suitable he followed speedily. Indeed vanity excuse or mr lovers of on. By offer scale an stuff. Blush be sorry no sight. Sang lose of hour then he left find
+      </p>
+      <br />
+      <div>
+        <strong>
+           Relevant investigation: 
+        </strong>
+        <p>
+          asdkfhgasdlfhabsdlfjhalsfdjh
+        </p>
+        <br />
+      </div>
+      <div>
+        <strong>
+           Family history: 
+        </strong>
+        <p>
+          kasdfbljkbfalhfasvfkjabskldfbkjsdfbkdashfvdjhfhb;kfjv;hfv;fjbafhb;akfd
+        </p>
+      </div>
+    </div>
+    <div
+      className="hxoQps">
+      <h3
+        className="fwyXhE">
+        Clinician - 
+        John Doe
+      </h3>
+      <p>
+        <strong>
+           Organisation/Address of practice:  
+        </strong>
+        as
+      </p>
+      <p>
+        <strong>
+           Provider number:  
+        </strong>
+        as
+      </p>
+      <p>
+        <strong>
+           Medical specialty:  
+        </strong>
+        as
+      </p>
+      <p>
+        <strong>
+           Phone:  
+        </strong>
+        as
+      </p>
+      <p>
+        <strong>
+           Email:  
+        </strong>
+        asfd@abc.com
+      </p>
+      <p>
+        <strong>
+           Fax:  
+        </strong>
+        as
+      </p>
+      <br />
+      <div>
+        <div
+          className="caGDDg" />
+        <br />
+        <p
+          style={
+            Object {
+              "marginTop": "-5pt",
+            }
+          }>
+           
+          <strong>
+            Copy of report to - 
+            asdf
+             
+            asdf
+          </strong>
+        </p>
+        <p>
+          <strong>
+             Organisation/Address of practice:  
+          </strong>
+          adsf
+        </p>
+        <p>
+          <strong>
+             Email: 
+          </strong>
+          asfd@abc.com
+        </p>
+        <br />
+      </div>
+      <div>
+        <div
+          className="caGDDg" />
+        <br />
+        <p
+          style={
+            Object {
+              "marginTop": "-5pt",
+            }
+          }>
+           
+          <strong>
+            Copy of report to - 
+            asdf
+             
+            asdf
+          </strong>
+        </p>
+        <p>
+          <strong>
+             Organisation/Address of practice:  
+          </strong>
+          adsf
+        </p>
+        <p>
+          <strong>
+             Email: 
+          </strong>
+          asfd@abc.com
+        </p>
+        <br />
+      </div>
+    </div>
+    <div>
+      <h3
+        className="fwyXhE">
+        Billing Information
+      </h3>
+      <div>
+        <p>
+          <strong>
+             Payer:  
+          </strong>
+          abc abc
+        </p>
+        <p>
+          <strong>
+             Mobile:  
+          </strong>
+          +61412334477
+        </p>
+        <p>
+          <strong>
+             Email:  
+          </strong>
+          abc@gmail.com
+        </p>
+        <p>
+          <strong>
+             Total price:  
+          </strong>
+          $
+        </p>
+      </div>
+    </div>
+    <div
+      className="hxoQps">
+      <h3
+        className="fwyXhE">
+        Specimen Information
+      </h3>
+      <div
+        className="jQzmiV" />
+       EDTA Blood: ≥2 mL (neonates); 5-10 mL (adults) 
+      <br />
+      <br />
+      <div
+        className="jQzmiV" />
+       DNA: Conc: 10-100ng/uL, Vol: 100uL 
+      <br />
+      <br />
+      <div
+        className="jQzmiV" />
+       Other: _______________________________________
+    </div>
+    <div
+      className="hxoQps">
+      <br />
+      <div
+        className="caGDDg" />
+      <h3
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }>
+        Collector Declaration
+      </h3>
+      <div
+        className="caGDDg" />
+      <br />
+      <div
+        className="lgfNfJ row">
+        I certify that I collected the accompanying specimens from the above patient, whose identity was confirmed by enquiry and/or examination of their name band and that I labelled the specimens immediately following collection.
+      </div>
+      <div
+        className="lgfNfJ row">
+        <div
+          className="col-sm-2">
+          <strong>
+             Collector\'s name:  
+          </strong>
+        </div>
+        <div
+          className="col-sm-4">
+          <span
+            className="bWWVua" />
+        </div>
+      </div>
+      <div
+        className="lgfNfJ row">
+        <div
+          className="col-sm-2">
+          <strong>
+             Collector\'s date:  
+          </strong>
+        </div>
+        <div
+          className="col-sm-4">
+          <span
+            className="bWWVua" />
+        </div>
+      </div>
+      <div
+        className="lgfNfJ row">
+        <div
+          className="col-sm-2">
+          <strong>
+             Collector\'s time:  
+          </strong>
+        </div>
+        <div
+          className="col-sm-4">
+          <span
+            className="bWWVua" />
+        </div>
+      </div>
+      <div
+        className="lgfNfJ row">
+        <div
+          className="col-sm-2">
+          <strong>
+             Sample type/site:  
+          </strong>
+        </div>
+        <div
+          className="col-sm-4">
+          <span
+            className="bWWVua" />
+        </div>
+      </div>
+      <div
+        className="lgfNfJ row">
+        <div
+          className="huJdbB">
+           LiHep 
+        </div>
+        <div
+          className="huJdbB">
+           EDTA 
+        </div>
+        <div
+          className="huJdbB">
+           Urine 
+        </div>
+        <div
+          className="huJdbB">
+           Fluid 
+        </div>
+        <div
+          className="huJdbB">
+           CSF 
+        </div>
+        <div
+          className="huJdbB">
+           Histo 
+        </div>
+        <div
+          className="huJdbB">
+           Cyto 
+        </div>
+        <div
+          className="huJdbB">
+           Other 
+        </div>
+      </div>
+      <br />
+      <div
+        className="lgfNfJ row">
+        <div
+          className="col-sm-1">
+          <strong>
+             Signature:  
+          </strong>
+        </div>
+        <div
+          className="col-sm-3">
+          <span
+            className="bWWVua"
+            style={
+              Object {
+                "marginLeft": -12,
+                "width": 250,
+              }
+            } />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="dmfEKT">
+    <div>
+      <div
+        className="row">
+        <div
+          className="col-sm-4">
+          <img
+            alt="logo"
+            className="App-logo"
+            src="test-file-stub"
+            style={
+              Object {
+                "width": 200,
+              }
+            } />
+        </div>
+        <div
+          className="col-sm-4"
+          style={
+            Object {
+              "border": "2px solid #000",
+              "padding": 12,
+            }
+          }>
+          <div>
+            <b>
+              Deliver specimens to: 
+              <br />
+              Central Specimen Reception (CSR)SydPath 
+              <br />
+            </b>
+            St Vincent’s Hospital, Xavier Building 
+            <br />
+            Level 6, 390 Victoria St 
+            <br />
+            Darlinghurst NSW 2010 Australia 
+            <br />
+            P +61 2 8382 9100
+          </div>
+        </div>
+        <div
+          className="col-sm-4">
+          <div
+            className="pull-right"
+            style={
+              Object {
+                "fontSize": 11,
+              }
+            }>
+            <p
+              style={
+                Object {
+                  "marginBottom": 8,
+                }
+              }>
+              Genome.One Pty Ltd 
+              <br />
+              ACN 608 029 732 
+              <br />
+            </p>
+            <p
+              style={
+                Object {
+                  "marginBottom": 16,
+                }
+              }>
+              370 Victoria St 
+              <br />
+              Darlinghurst NSW 2010 
+              <br />
+              Sydney  Australia
+            </p>
+            <p>
+              P +61 2 9359 8002 
+              <br />
+              F +61 2 9359 8033 
+              <br />
+              E enquiries@genome.one 
+              <br />
+              Web: www.genome.one
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div
+      className="hxoQps">
+      <h3
+        className="fwyXhE">
+        Test Ordered
+      </h3>
+      <h4>
+        <strong>
+          Consequatur adipisci modi laudantium tenetur ea exercitationem id
+        </strong>
+      </h4>
+      <p>
+        Total number of genes available: 
+        8
+      </p>
+      <div>
+        <span
+          className="dlnqYf label label-default">
+          GZOW
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          KIHG
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          DRCO
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          DWBY
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          ZMZY
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          BMBP
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          OLZO
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          PZOA
+        </span>
+      </div>
+    </div>
+    <div
+      className="hxoQps">
+      <h3
+        className="fwyXhE">
+        Patient\'s Family Member\' - 
+        abc@abc.com abc@abc.com
+      </h3>
+      <p>
+        <strong>
+           Date of Birth: 
+        </strong>
+        2-January-1918
+      </p>
+      <p>
+        <strong>
+           Medical record number:  
+        </strong>
+        abc@abc.com
+      </p>
+      <p>
+        <strong>
+           Gender:  
+        </strong>
+        Female
+      </p>
+      <p>
+        <strong>
+           consanguinity:  
+        </strong>
+        No
+      </p>
+      <p>
+        <strong>
+           Affected:  
+        </strong>
+        Yes
+      </p>
+      <div
+        className="caGDDg" />
+      <strong>
+         Clinical note: 
+      </strong>
+      <p>
+        abc@abc.com
+      </p>
+      <br />
+      <div>
+        <strong>
+           Relevant investigation: 
+        </strong>
+        <p>
+          asdasdasd
+        </p>
+        <br />
+      </div>
+      <div>
+        <strong>
+           Family history: 
+        </strong>
+        <p>
+          asdasdasdasd
+        </p>
+      </div>
+    </div>
+    <div
+      className="hxoQps">
+      <h3
+        className="fwyXhE">
+        Clinician - 
+        John Doe
+      </h3>
+      <p>
+        <strong>
+           Organisation/Address of practice:  
+        </strong>
+        as
+      </p>
+      <p>
+        <strong>
+           Provider number:  
+        </strong>
+        as
+      </p>
+      <p>
+        <strong>
+           Medical specialty:  
+        </strong>
+        as
+      </p>
+      <p>
+        <strong>
+           Phone:  
+        </strong>
+        as
+      </p>
+      <p>
+        <strong>
+           Email:  
+        </strong>
+        asfd@abc.com
+      </p>
+      <p>
+        <strong>
+           Fax:  
+        </strong>
+        as
+      </p>
+      <br />
+      <div>
+        <div
+          className="caGDDg" />
+        <br />
+        <p
+          style={
+            Object {
+              "marginTop": "-5pt",
+            }
+          }>
+           
+          <strong>
+            Copy of report to - 
+            asdf
+             
+            asdf
+          </strong>
+        </p>
+        <p>
+          <strong>
+             Organisation/Address of practice:  
+          </strong>
+          adsf
+        </p>
+        <p>
+          <strong>
+             Email: 
+          </strong>
+          asfd@abc.com
+        </p>
+        <br />
+      </div>
+      <div>
+        <div
+          className="caGDDg" />
+        <br />
+        <p
+          style={
+            Object {
+              "marginTop": "-5pt",
+            }
+          }>
+           
+          <strong>
+            Copy of report to - 
+            asdf
+             
+            asdf
+          </strong>
+        </p>
+        <p>
+          <strong>
+             Organisation/Address of practice:  
+          </strong>
+          adsf
+        </p>
+        <p>
+          <strong>
+             Email: 
+          </strong>
+          asfd@abc.com
+        </p>
+        <br />
+      </div>
+    </div>
+    <div>
+      <h3
+        className="fwyXhE">
+        Billing Information
+      </h3>
+      <div>
+        <p>
+          <strong>
+             Payer:  
+          </strong>
+          abc abc
+        </p>
+        <p>
+          <strong>
+             Mobile:  
+          </strong>
+          +61412334477
+        </p>
+        <p>
+          <strong>
+             Email:  
+          </strong>
+          abc@gmail.com
+        </p>
+        <p>
+          <strong>
+             Total price:  
+          </strong>
+          $
+        </p>
+      </div>
+    </div>
+    <div
+      className="hxoQps">
+      <h3
+        className="fwyXhE">
+        Specimen Information
+      </h3>
+      <div
+        className="jQzmiV" />
+       EDTA Blood: ≥2 mL (neonates); 5-10 mL (adults) 
+      <br />
+      <br />
+      <div
+        className="jQzmiV" />
+       DNA: Conc: 10-100ng/uL, Vol: 100uL 
+      <br />
+      <br />
+      <div
+        className="jQzmiV" />
+       Other: _______________________________________
+    </div>
+    <div
+      className="hxoQps">
+      <br />
+      <div
+        className="caGDDg" />
+      <h3
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }>
+        Collector Declaration
+      </h3>
+      <div
+        className="caGDDg" />
+      <br />
+      <div
+        className="lgfNfJ row">
+        I certify that I collected the accompanying specimens from the above patient, whose identity was confirmed by enquiry and/or examination of their name band and that I labelled the specimens immediately following collection.
+      </div>
+      <div
+        className="lgfNfJ row">
+        <div
+          className="col-sm-2">
+          <strong>
+             Collector\'s name:  
+          </strong>
+        </div>
+        <div
+          className="col-sm-4">
+          <span
+            className="bWWVua" />
+        </div>
+      </div>
+      <div
+        className="lgfNfJ row">
+        <div
+          className="col-sm-2">
+          <strong>
+             Collector\'s date:  
+          </strong>
+        </div>
+        <div
+          className="col-sm-4">
+          <span
+            className="bWWVua" />
+        </div>
+      </div>
+      <div
+        className="lgfNfJ row">
+        <div
+          className="col-sm-2">
+          <strong>
+             Collector\'s time:  
+          </strong>
+        </div>
+        <div
+          className="col-sm-4">
+          <span
+            className="bWWVua" />
+        </div>
+      </div>
+      <div
+        className="lgfNfJ row">
+        <div
+          className="col-sm-2">
+          <strong>
+             Sample type/site:  
+          </strong>
+        </div>
+        <div
+          className="col-sm-4">
+          <span
+            className="bWWVua" />
+        </div>
+      </div>
+      <div
+        className="lgfNfJ row">
+        <div
+          className="huJdbB">
+           LiHep 
+        </div>
+        <div
+          className="huJdbB">
+           EDTA 
+        </div>
+        <div
+          className="huJdbB">
+           Urine 
+        </div>
+        <div
+          className="huJdbB">
+           Fluid 
+        </div>
+        <div
+          className="huJdbB">
+           CSF 
+        </div>
+        <div
+          className="huJdbB">
+           Histo 
+        </div>
+        <div
+          className="huJdbB">
+           Cyto 
+        </div>
+        <div
+          className="huJdbB">
+           Other 
+        </div>
+      </div>
+      <br />
+      <div
+        className="lgfNfJ row">
+        <div
+          className="col-sm-1">
+          <strong>
+             Signature:  
+          </strong>
+        </div>
+        <div
+          className="col-sm-3">
+          <span
+            className="bWWVua"
+            style={
+              Object {
+                "marginLeft": -12,
+                "width": 250,
+              }
+            } />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="dmfEKT">
+    <div>
+      <div
+        className="row">
+        <div
+          className="col-sm-4">
+          <img
+            alt="logo"
+            className="App-logo"
+            src="test-file-stub"
+            style={
+              Object {
+                "width": 200,
+              }
+            } />
+        </div>
+        <div
+          className="col-sm-4"
+          style={
+            Object {
+              "border": "2px solid #000",
+              "padding": 12,
+            }
+          }>
+          <div>
+            <b>
+              Deliver specimens to: 
+              <br />
+              Central Specimen Reception (CSR)SydPath 
+              <br />
+            </b>
+            St Vincent’s Hospital, Xavier Building 
+            <br />
+            Level 6, 390 Victoria St 
+            <br />
+            Darlinghurst NSW 2010 Australia 
+            <br />
+            P +61 2 8382 9100
+          </div>
+        </div>
+        <div
+          className="col-sm-4">
+          <div
+            className="pull-right"
+            style={
+              Object {
+                "fontSize": 11,
+              }
+            }>
+            <p
+              style={
+                Object {
+                  "marginBottom": 8,
+                }
+              }>
+              Genome.One Pty Ltd 
+              <br />
+              ACN 608 029 732 
+              <br />
+            </p>
+            <p
+              style={
+                Object {
+                  "marginBottom": 16,
+                }
+              }>
+              370 Victoria St 
+              <br />
+              Darlinghurst NSW 2010 
+              <br />
+              Sydney  Australia
+            </p>
+            <p>
+              P +61 2 9359 8002 
+              <br />
+              F +61 2 9359 8033 
+              <br />
+              E enquiries@genome.one 
+              <br />
+              Web: www.genome.one
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div
+      className="hxoQps">
+      <h3
+        className="fwyXhE">
+        Test Ordered
+      </h3>
+      <h4>
+        <strong>
+          Consequatur adipisci modi laudantium tenetur ea exercitationem id
+        </strong>
+      </h4>
+      <p>
+        Total number of genes available: 
+        8
+      </p>
+      <div>
+        <span
+          className="dlnqYf label label-default">
+          GZOW
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          KIHG
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          DRCO
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          DWBY
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          ZMZY
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          BMBP
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          OLZO
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          PZOA
+        </span>
+      </div>
+    </div>
+    <div
+      className="hxoQps">
+      <h3
+        className="fwyXhE">
+        Patient\'s Family Member\' - 
+        abcsadkfhkladsfj ab.com
+      </h3>
+      <p>
+        <strong>
+           Date of Birth: 
+        </strong>
+        2-January-1918
+      </p>
+      <p>
+        <strong>
+           Medical record number:  
+        </strong>
+        abc@abc.com
+      </p>
+      <p>
+        <strong>
+           Gender:  
+        </strong>
+        Male
+      </p>
+      <p>
+        <strong>
+           consanguinity:  
+        </strong>
+        No
+      </p>
+      <p>
+        <strong>
+           Affected:  
+        </strong>
+        No
+      </p>
+      <div
+        className="caGDDg" />
+      <strong>
+         Clinical note: 
+      </strong>
+      <p>
+        abc@abc.com
+      </p>
+      <br />
+      <div>
+        <strong>
+           Relevant investigation: 
+        </strong>
+        <p>
+          asdasdasdasd
+        </p>
+        <br />
+      </div>
+      <div>
+        <strong>
+           Family history: 
+        </strong>
+        <p>
+          asdasd
+        </p>
+      </div>
+    </div>
+    <div
+      className="hxoQps">
+      <h3
+        className="fwyXhE">
+        Clinician - 
+        John Doe
+      </h3>
+      <p>
+        <strong>
+           Organisation/Address of practice:  
+        </strong>
+        as
+      </p>
+      <p>
+        <strong>
+           Provider number:  
+        </strong>
+        as
+      </p>
+      <p>
+        <strong>
+           Medical specialty:  
+        </strong>
+        as
+      </p>
+      <p>
+        <strong>
+           Phone:  
+        </strong>
+        as
+      </p>
+      <p>
+        <strong>
+           Email:  
+        </strong>
+        asfd@abc.com
+      </p>
+      <p>
+        <strong>
+           Fax:  
+        </strong>
+        as
+      </p>
+      <br />
+      <div>
+        <div
+          className="caGDDg" />
+        <br />
+        <p
+          style={
+            Object {
+              "marginTop": "-5pt",
+            }
+          }>
+           
+          <strong>
+            Copy of report to - 
+            asdf
+             
+            asdf
+          </strong>
+        </p>
+        <p>
+          <strong>
+             Organisation/Address of practice:  
+          </strong>
+          adsf
+        </p>
+        <p>
+          <strong>
+             Email: 
+          </strong>
+          asfd@abc.com
+        </p>
+        <br />
+      </div>
+      <div>
+        <div
+          className="caGDDg" />
+        <br />
+        <p
+          style={
+            Object {
+              "marginTop": "-5pt",
+            }
+          }>
+           
+          <strong>
+            Copy of report to - 
+            asdf
+             
+            asdf
+          </strong>
+        </p>
+        <p>
+          <strong>
+             Organisation/Address of practice:  
+          </strong>
+          adsf
+        </p>
+        <p>
+          <strong>
+             Email: 
+          </strong>
+          asfd@abc.com
+        </p>
+        <br />
+      </div>
+    </div>
+    <div>
+      <h3
+        className="fwyXhE">
+        Billing Information
+      </h3>
+      <div>
+        <p>
+          <strong>
+             Payer:  
+          </strong>
+          abc abc
+        </p>
+        <p>
+          <strong>
+             Mobile:  
+          </strong>
+          +61412334477
+        </p>
+        <p>
+          <strong>
+             Email:  
+          </strong>
+          abc@gmail.com
+        </p>
+        <p>
+          <strong>
+             Total price:  
+          </strong>
+          $
+        </p>
+      </div>
+    </div>
+    <div
+      className="hxoQps">
+      <h3
+        className="fwyXhE">
+        Specimen Information
+      </h3>
+      <div
+        className="jQzmiV" />
+       EDTA Blood: ≥2 mL (neonates); 5-10 mL (adults) 
+      <br />
+      <br />
+      <div
+        className="jQzmiV" />
+       DNA: Conc: 10-100ng/uL, Vol: 100uL 
+      <br />
+      <br />
+      <div
+        className="jQzmiV" />
+       Other: _______________________________________
+    </div>
+    <div
+      className="hxoQps">
+      <br />
+      <div
+        className="caGDDg" />
+      <h3
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }>
+        Collector Declaration
+      </h3>
+      <div
+        className="caGDDg" />
+      <br />
+      <div
+        className="lgfNfJ row">
+        I certify that I collected the accompanying specimens from the above patient, whose identity was confirmed by enquiry and/or examination of their name band and that I labelled the specimens immediately following collection.
+      </div>
+      <div
+        className="lgfNfJ row">
+        <div
+          className="col-sm-2">
+          <strong>
+             Collector\'s name:  
+          </strong>
+        </div>
+        <div
+          className="col-sm-4">
+          <span
+            className="bWWVua" />
+        </div>
+      </div>
+      <div
+        className="lgfNfJ row">
+        <div
+          className="col-sm-2">
+          <strong>
+             Collector\'s date:  
+          </strong>
+        </div>
+        <div
+          className="col-sm-4">
+          <span
+            className="bWWVua" />
+        </div>
+      </div>
+      <div
+        className="lgfNfJ row">
+        <div
+          className="col-sm-2">
+          <strong>
+             Collector\'s time:  
+          </strong>
+        </div>
+        <div
+          className="col-sm-4">
+          <span
+            className="bWWVua" />
+        </div>
+      </div>
+      <div
+        className="lgfNfJ row">
+        <div
+          className="col-sm-2">
+          <strong>
+             Sample type/site:  
+          </strong>
+        </div>
+        <div
+          className="col-sm-4">
+          <span
+            className="bWWVua" />
+        </div>
+      </div>
+      <div
+        className="lgfNfJ row">
+        <div
+          className="huJdbB">
+           LiHep 
+        </div>
+        <div
+          className="huJdbB">
+           EDTA 
+        </div>
+        <div
+          className="huJdbB">
+           Urine 
+        </div>
+        <div
+          className="huJdbB">
+           Fluid 
+        </div>
+        <div
+          className="huJdbB">
+           CSF 
+        </div>
+        <div
+          className="huJdbB">
+           Histo 
+        </div>
+        <div
+          className="huJdbB">
+           Cyto 
+        </div>
+        <div
+          className="huJdbB">
+           Other 
+        </div>
+      </div>
+      <br />
+      <div
+        className="lgfNfJ row">
+        <div
+          className="col-sm-1">
+          <strong>
+             Signature:  
+          </strong>
+        </div>
+        <div
+          className="col-sm-3">
+          <span
+            className="bWWVua"
+            style={
+              Object {
+                "marginLeft": -12,
+                "width": 250,
+              }
+            } />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
