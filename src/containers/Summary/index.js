@@ -109,15 +109,14 @@ class Summary extends Component {
         <Helper>
             When you submit this test request, an email will be sent to this payer with a weblink to view the invoice.  
         </Helper>
-        <FormButton 
-          bsStyle="warning" 
+        <FormButton  
           onClick={this.handleBack}
           label="Back"
+          back
         >
           Back
         </FormButton>       
         <FormButton 
-          bsStyle="success" 
           type="submit" 
           onClick={this.handleValidateSubmit}
         >

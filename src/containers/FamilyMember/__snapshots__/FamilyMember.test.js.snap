@@ -62,16 +62,13 @@ exports[`<FamilyMember/> renders without crashing 1`] = `
     </div>
   </div>
   <button
-    className="iMtXso btn btn-warning"
-    disabled={false}
+    className="NghKx"
     label="Back"
-    onClick={[Function]}
-    type="button">
+    onClick={[Function]}>
     Back
   </button>
   <button
-    className="iMtXso btn btn-success"
-    disabled={false}
+    className="bupKBP"
     onClick={[Function]}
     type="submit">
     Confirm

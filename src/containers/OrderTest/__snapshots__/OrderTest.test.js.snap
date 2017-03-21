@@ -20,8 +20,7 @@ exports[`OrderTest: index renders without crashing - initial state with empty ge
       className="SfhHK help-block" />
   </div>
   <button
-    className="iMtXso btn btn-success"
-    disabled={false}
+    className="bupKBP"
     onClick={[Function]}
     type="submit">
     Confirm

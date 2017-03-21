@@ -252,16 +252,15 @@ class BillingInfo extends Component {
         {
           this.props.route.isEdited !== true &&
           <FormButton 
-          bsStyle="warning" 
           onClick={this.handleBack}
           label="Back"
+          back
           >
             Back
           </FormButton> 
         }
       
         <FormButton 
-          bsStyle="success" 
           type="submit" 
           onClick={this.handleConfirm}
         >

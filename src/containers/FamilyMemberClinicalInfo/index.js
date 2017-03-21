@@ -117,26 +117,25 @@ class FamilyMemberClinicalInfo extends Component {
             
         {
           this.props.route.isEdited !== true &&
-          <FormButton 
-          bsStyle="warning" 
+          <FormButton  
           onClick={this.handleBack}
           label="Back"
+          back
           >
             Back
           </FormButton> 
         }
         {
           this.props.route.isEdited !== true &&
-          <FormButton 
-            bsStyle="warning" 
+          <FormButton  
             onClick={this.handleCancel}
+            cancel
           >
             Cancel
           </FormButton> 
         }
       
-        <FormButton 
-          bsStyle="success" 
+        <FormButton  
           type="submit" 
           onClick={this.handleConfirm}
         >

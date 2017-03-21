@@ -6,7 +6,8 @@ import {
 } from 'react-bootstrap';
 import { 
   SubLabel,
-  ValidationFeedback
+  ValidationFeedback,
+  FormNoBorder
 } from './SharedStyle';
 import styled from 'styled-components';
 
@@ -51,7 +52,7 @@ export default function TextArea({
         <Helper>{helper}</Helper>
       )}
         
-      <FormControl
+      <FormNoBorder
         componentClass="textarea"
         name={field}
 

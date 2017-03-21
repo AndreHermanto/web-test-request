@@ -15,6 +15,12 @@ const DateSelect = styled(Typeahead)`
   float: left;
   margin-right: 12px;
   width: 100px;
+  :first-child { 
+    input:first-child{
+      border-radius: 0px;
+      height: 45px;
+    }
+  }
 `;
 
 /**
