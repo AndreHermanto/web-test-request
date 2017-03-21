@@ -5,8 +5,7 @@ exports[`OrderTest: index renders without crashing - initial state with empty ge
     Step 1: Order a Test
   </h3>
   <div
-    className="form-group"
-    onChange={[Function]}>
+    className="form-group">
     <label
       className="control-label"
       htmlFor={undefined}>

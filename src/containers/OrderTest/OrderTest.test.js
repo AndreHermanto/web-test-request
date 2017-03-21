@@ -38,9 +38,9 @@ describe('OrderTest: index', () => {
   test('handleTestSelect works - select a test panel', () => {
     const page = TestUtils.renderIntoDocument(React.createElement(OrderTest, props));
     page.state.testList = testList.data;
-    const selection = { "target": { "value": testList.data[1].id }};
+    const selection = { id: 1 };
     page.handleTestSelect(selection);
-    expect(page.state.form.test.id).toEqual(2);  
+    expect(page.state.form.test.id).toEqual(1);  
   });
   
   test('handleConfirm works without selection', () => {
@@ -52,7 +52,7 @@ describe('OrderTest: index', () => {
   test('handleConfirm works after selection', () => {
     var page = TestUtils.renderIntoDocument(React.createElement(OrderTest, props));
     page.state.testList = testList.data;
-    const selection = { "target": { "value": testList.data[1].id }};
+    const selection = { id:1};
     page.handleTestSelect(selection);
     page.handleConfirm();
     expect(page.props.router.pop()).toEqual('/step2')
@@ -62,16 +62,9 @@ describe('OrderTest: index', () => {
     var page = TestUtils.renderIntoDocument(React.createElement(OrderTest, props));
     page.state.testList = testList.data;
     page.props.route.isEdited = true;
-    const selection = { "target": { "value": testList.data[1].id }};
+    const selection = { id:1};
     page.handleTestSelect(selection);
     page.handleConfirm();
     expect(page.props.router.pop()).toEqual('/summary')
   });
-  
-  test('displayGenes shows a list of genes', () => {
-    var page = TestUtils.renderIntoDocument(React.createElement(OrderTest, props));
-    page.state.form.genes = ['AAAA', 'BBBB', 'CCCC']
-    expect(page.displayGenes().length).toEqual(3)
-  });
-  
 });
