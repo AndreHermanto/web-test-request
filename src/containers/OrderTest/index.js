@@ -1,9 +1,4 @@
 import React, { Component } from 'react';
-import {
-  ControlLabel,
-  Label,
-  Well
-} from 'react-bootstrap';
 import { getTestList } from './api';
 import {
   initData,
@@ -15,26 +10,15 @@ import {
   PageHeading,
   FormButton
 } from './../../components/SharedStyle';
-import RadioSet from './../../components/RadioSet';
-import styled from 'styled-components';
-
-const Gene = styled(Label)`
-  margin-right: 4px;
-  display: inline-block !important;
-  font-weight: 300 !important;
-`;
-
-
+import GeneLabel from './../../components/GeneLabel';
 /**
  * OrderTest - UI for ordering type of tests, selecting disorder and related genes for testing.
  */
 class OrderTest extends Component {
   constructor(props) {
     super(props);
-    
     this.handleTestSelect = this.handleTestSelect.bind(this);
     this.handleConfirm = this.handleConfirm.bind(this);
-    this.displayGenes = this.displayGenes.bind(this);
     this.state = initData(props.route.data);
   }
   
@@ -45,14 +29,13 @@ class OrderTest extends Component {
       });
   }
   
-  handleTestSelect(event) {
+  handleTestSelect(value) {
     this.state.testList.forEach((panel) => {
-      if(panel.id === event.target.value) this.setState(setTestType(this.state, panel));
+      if(panel.id === value.id) this.setState(setTestType(this.state, panel));
     });
-    
     return;
   }
-  
+
   handleNext(passValidation) {
     if(!passValidation) return false;
     if(this.props.route.isEdited === true)
@@ -75,12 +58,6 @@ class OrderTest extends Component {
       this.handleNext(pass); 
     });
   }
-  
-  displayGenes() {
-    return this.state.form.genes.map((gene, $index) => {
-        return <Gene key={$index}>{gene}</Gene> 
-    })
-  }
 
   // This renders the validation result after confirm button is clicked.
   validate() {
@@ -91,26 +68,17 @@ class OrderTest extends Component {
     return (
       <div>
         <PageHeading>Step 1: Order a Test</PageHeading>
-
-        <RadioSet 
+        <GeneLabel 
           field="test"
           label="Select a Disease Panel / Whole Genome Analysis"
           options={this.state.testList}
-          onChange={this.handleTestSelect}
+          handleClick={this.handleTestSelect}
           onValidate={this.validate()}
           formState={this.state.form}
+          latestSelectId={this.state.form.latestSelectId}
+          genes={this.state.form.genes}
           required
         />
-
-        {this.state.form.genes && (
-          <div> 
-            <ControlLabel>Available Genes:</ControlLabel>
-            <Well>
-            {this.displayGenes()}
-            </Well>
-          </div>
-        )}
-
         <FormButton 
           bsStyle="success" 
           type="submit" 

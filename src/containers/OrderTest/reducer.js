@@ -3,7 +3,8 @@ import validator from './../../components/validator';
 export function initData(prefilled) {
   var state = {
     form: {
-      test: {}
+      test: {},
+      latestSelectId:null
     },
     testList: [],
     validationRule: {
@@ -48,7 +49,8 @@ export function setTestList(state, list) {
 export function setTestType(state, value) {
   var formStateChild = Object.assign({}, state.form, {
     "test": value,
-    "genes": value.genes
+    "genes": value.genes,
+    latestSelectId: value.id
   });
   
   var validationStateChild = Object.assign({}, state.validation, {
