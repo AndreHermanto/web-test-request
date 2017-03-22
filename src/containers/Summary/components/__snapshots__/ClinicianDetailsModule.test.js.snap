@@ -2,7 +2,7 @@ exports[`ClinicianDetailsModule test renders without crashing  1`] = `
 <div
   className="cFAMBN">
   <h3
-    className="kGfomK">
+    className="iArjKn">
     Clinician - 
     John Doe
     <button
@@ -22,9 +22,9 @@ exports[`ClinicianDetailsModule test renders without crashing  1`] = `
     <div
       className="col-md-12">
       <p
-        className="doDOdK">
+        className="cEiVmq">
         <span
-          className="jXWIEx">
+          className="bdMjbs">
            Organisation/Address of practice:  
         </span>
         as
@@ -33,9 +33,9 @@ exports[`ClinicianDetailsModule test renders without crashing  1`] = `
     <div
       className="col-md-12">
       <p
-        className="doDOdK">
+        className="cEiVmq">
         <span
-          className="jXWIEx">
+          className="bdMjbs">
            Provider number:  
         </span>
         as
@@ -44,9 +44,9 @@ exports[`ClinicianDetailsModule test renders without crashing  1`] = `
     <div
       className="col-md-12">
       <p
-        className="doDOdK">
+        className="cEiVmq">
         <span
-          className="jXWIEx">
+          className="bdMjbs">
            Medical specialty:  
         </span>
         as
@@ -55,9 +55,9 @@ exports[`ClinicianDetailsModule test renders without crashing  1`] = `
     <div
       className="col-md-12">
       <p
-        className="doDOdK">
+        className="cEiVmq">
         <span
-          className="jXWIEx">
+          className="bdMjbs">
            Phone:  
         </span>
         as
@@ -66,9 +66,9 @@ exports[`ClinicianDetailsModule test renders without crashing  1`] = `
     <div
       className="col-md-12">
       <p
-        className="doDOdK">
+        className="cEiVmq">
         <span
-          className="jXWIEx">
+          className="bdMjbs">
            Email:  
         </span>
         as@aca.com
@@ -77,9 +77,9 @@ exports[`ClinicianDetailsModule test renders without crashing  1`] = `
     <div
       className="col-md-12">
       <p
-        className="doDOdK">
+        className="cEiVmq">
         <span
-          className="jXWIEx">
+          className="bdMjbs">
            Fax:  
         </span>
         as
@@ -93,7 +93,7 @@ exports[`ClinicianDetailsModule test renders without crashing  1`] = `
       <div
         className="dgEelt" />
       <h3
-        className="kGfomK">
+        className="iArjKn">
         Copy of report to - 
         asdf
          
@@ -103,9 +103,9 @@ exports[`ClinicianDetailsModule test renders without crashing  1`] = `
     <div
       className="col-md-12">
       <p
-        className="doDOdK">
+        className="cEiVmq">
         <span
-          className="jXWIEx">
+          className="bdMjbs">
            Organisation/Address of practice:  
         </span>
         adsf
@@ -114,9 +114,9 @@ exports[`ClinicianDetailsModule test renders without crashing  1`] = `
     <div
       className="col-md-12">
       <p
-        className="doDOdK">
+        className="cEiVmq">
         <span
-          className="jXWIEx">
+          className="bdMjbs">
            Email: 
         </span>
         asfd
@@ -130,7 +130,7 @@ exports[`ClinicianDetailsModule test renders without crashing  1`] = `
       <div
         className="dgEelt" />
       <h3
-        className="kGfomK">
+        className="iArjKn">
         Copy of report to - 
         asdf
          
@@ -140,9 +140,9 @@ exports[`ClinicianDetailsModule test renders without crashing  1`] = `
     <div
       className="col-md-12">
       <p
-        className="doDOdK">
+        className="cEiVmq">
         <span
-          className="jXWIEx">
+          className="bdMjbs">
            Organisation/Address of practice:  
         </span>
         adsf
@@ -151,9 +151,9 @@ exports[`ClinicianDetailsModule test renders without crashing  1`] = `
     <div
       className="col-md-12">
       <p
-        className="doDOdK">
+        className="cEiVmq">
         <span
-          className="jXWIEx">
+          className="bdMjbs">
            Email: 
         </span>
         asdf

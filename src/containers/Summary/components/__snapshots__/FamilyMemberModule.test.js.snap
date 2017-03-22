@@ -2,7 +2,7 @@ exports[`FamilyMemberModule test renders without crashing  1`] = `
 <div
   className="cFAMBN">
   <h3
-    className="kGfomK">
+    className="iArjKn">
     <div
       className="row">
       <div
@@ -43,9 +43,9 @@ exports[`FamilyMemberModule test renders without crashing  1`] = `
     <div
       className="col-md-12">
       <p
-        className="doDOdK">
+        className="cEiVmq">
         <span
-          className="jXWIEx">
+          className="bdMjbs">
            Date of Birth:  
         </span>
         2-January-1918
@@ -54,9 +54,9 @@ exports[`FamilyMemberModule test renders without crashing  1`] = `
     <div
       className="col-md-12">
       <p
-        className="doDOdK">
+        className="cEiVmq">
         <span
-          className="jXWIEx">
+          className="bdMjbs">
            Medical record number:  
         </span>
         abc@abc.com
@@ -65,9 +65,9 @@ exports[`FamilyMemberModule test renders without crashing  1`] = `
     <div
       className="col-md-12">
       <p
-        className="doDOdK">
+        className="cEiVmq">
         <span
-          className="jXWIEx">
+          className="bdMjbs">
            Gender:  
         </span>
         Female
@@ -76,9 +76,9 @@ exports[`FamilyMemberModule test renders without crashing  1`] = `
     <div
       className="col-md-12">
       <p
-        className="doDOdK">
+        className="cEiVmq">
         <span
-          className="jXWIEx">
+          className="bdMjbs">
            Email:  
         </span>
         abc@abc.com
@@ -94,7 +94,7 @@ exports[`FamilyMemberModule test renders without crashing  1`] = `
     <div
       className="col-md-12">
       <span
-        className="jXWIEx">
+        className="bdMjbs">
          Clinical note 
       </span>
       <div
@@ -105,7 +105,7 @@ exports[`FamilyMemberModule test renders without crashing  1`] = `
     <div
       className="col-md-12">
       <span
-        className="jXWIEx">
+        className="bdMjbs">
          Relevant investigation note 
       </span>
       <div
@@ -116,7 +116,7 @@ exports[`FamilyMemberModule test renders without crashing  1`] = `
     <div
       className="col-md-12">
       <span
-        className="jXWIEx">
+        className="bdMjbs">
          Family history note 
       </span>
       <div
@@ -127,9 +127,9 @@ exports[`FamilyMemberModule test renders without crashing  1`] = `
     <div
       className="col-md-12">
       <p
-        className="doDOdK">
+        className="cEiVmq">
         <span
-          className="jXWIEx">
+          className="bdMjbs">
            Consanguinity:  
         </span>
         No
