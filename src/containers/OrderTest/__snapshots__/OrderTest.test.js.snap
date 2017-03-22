@@ -20,7 +20,7 @@ exports[`OrderTest: index renders without crashing - initial state with empty ge
       className="SfhHK help-block" />
   </div>
   <button
-    className="bupKBP"
+    className="bBdbjl"
     onClick={[Function]}
     type="submit">
     Confirm

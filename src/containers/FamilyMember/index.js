@@ -103,7 +103,10 @@ class FamilyMember extends Component {
         <br /><br />
         <label>Family members associated with this patient:</label>
         <br />
-        <Button onClick={this.handleAddFamilyMember} >
+        <Button 
+        bsSize="xsmall"
+        bsStyle="link"
+        onClick={this.handleAddFamilyMember} >
           <Glyphicon glyph="plus"/> Add family member       
         </Button>
         <br /><br />

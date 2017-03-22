@@ -220,18 +220,18 @@ exports[`FamilyMemberClinicalInfo: index renders without crashing 1`] = `
       className="SfhHK help-block" />
   </div>
   <button
-    className="NghKx"
+    className="ieDBA"
     label="Back"
     onClick={[Function]}>
     Back
   </button>
   <button
-    className="cqKjQc"
+    className="bXqcMU"
     onClick={[Function]}>
     Cancel
   </button>
   <button
-    className="bupKBP"
+    className="bBdbjl"
     onClick={[Function]}
     type="submit">
     Confirm

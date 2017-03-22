@@ -154,13 +154,13 @@ exports[`ClinicalInfo: index renders without crashing 1`] = `
     </div>
   </div>
   <button
-    className="NghKx"
+    className="ieDBA"
     label="Back"
     onClick={[Function]}>
     Back
   </button>
   <button
-    className="bupKBP"
+    className="bBdbjl"
     onClick={[Function]}
     type="submit">
     Confirm

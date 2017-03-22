@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import {
-  Button,
   HelpBlock,
   Glyphicon,
   FormControl
 } from 'react-bootstrap';
+import Select from 'react-select';
 
 export const PageHeading = styled.h3`
   margin-bottom: 21px;
@@ -13,22 +13,22 @@ export const PageHeading = styled.h3`
 `;
  
 export const FormButton = styled.button`
-  margin-right: 6px;
-  margin-top: 21px;
-  border-style: solid;
-  border-width: 0.01px;
+  margin: 18px 6px 0px 0px;
+  border-style: none;
   background-color: ${props => props.back ? '#ff6f2b' : props.cancel? 'red' : '#00a6b6'};
   color: white;
-  padding: 15px 32px;
+  padding: 11px 25px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 12px;
   border-radius: 0px;
   -webkit-transition: background-color 0.3s;
   -webkit-transition-timing-function: ease;
+  text-transform: uppercase;
+
   &:hover {
-    background-color: ${props => props.back ? '#ff8d57' : props.cancel? '#ff5b5b' : '#00c9dc'};
+    background-color: ${props => props.back ? '#ff8d57' : props.cancel? '#e65f5f' :'#00c9dc'};
   }
 `;
 
@@ -67,10 +67,15 @@ export const GlyphForm = styled(Glyphicon)`
 
 export const FormInput = styled(FormControl)`
   border-radius: 0px !important;
-  height: 45px !important;
+  height: 38px !important;
 `;
 
 export const FormNoBorder = styled(FormControl)`
   border-radius: 0px !important;
 `;
 
+export const FormSelect = styled(Select)`
+  div:first-child { 
+    border-radius: 0px;
+  }
+`;

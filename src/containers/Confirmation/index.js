@@ -8,6 +8,9 @@ import {
 import PrintRecord from './components/PrintRecord';
 import PrintBloodCollection from './components/PrintBloodCollection';
 import './print.css'
+import { 
+  FormButton
+} from './../../components/SharedStyle';
 
 const ConfirmationBox = styled.div`
   box-shadow: 0 0 5px rgb(227, 231, 241);  
@@ -45,25 +48,6 @@ const CircleRight = styled.span`
   padding-top: 16px;
   border-radius: 10px;
   padding-left: 14px;
-`;
-
-const PrintRecordButton = styled.label`
-    cursor: pointer;
-    padding: 17px 15px;
-    border: 1px solid #00a6b6;
-    color: #00a6b6;
-    margin-top: 10px;
-    width: 100%;
-    text-align: center;
-`;
-
-const PrintBloodCollectionButton = styled.label`
-  cursor: pointer;
-  padding: 7px 15px;
-  border: 1px solid #00a6b6;
-  color: #00a6b6;
-  margin-top: 10px;
-  text-align: center;
 `;
 
 /**
@@ -109,14 +93,14 @@ class Confirmation extends Component {
             </ConfirmationNote>
             <Row>
               <Col md={6}>
-                <PrintRecordButton onClick={this.handlePrintRecordButtonClick}>
+                <FormButton onClick={this.handlePrintRecordButtonClick} style={{marginLeft: '20%'}}>
                   Print out form for your records
-                </PrintRecordButton>
+                </FormButton>
               </Col>
               <Col md={6}>
-                <PrintBloodCollectionButton onClick={this.handlePrintBloodCollectionButtonClick}>
+                <FormButton onClick={this.handlePrintBloodCollectionButtonClick} style={{marginRight: '20%'}}>
                   Print out Blood Collection forms for your patient(s)
-                </PrintBloodCollectionButton>
+                </FormButton>
               </Col>
             </Row>
         </ConfirmationBox>

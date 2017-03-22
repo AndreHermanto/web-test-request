@@ -15,9 +15,9 @@ import { getPricing } from './api';
 import { 
   PageHeading,
   FormButton,
-  Helper
+  Helper,
+  FormSelect
 } from './../../components/SharedStyle';
-import Select from 'react-select';
 import Input from './../../components/Input';
 import Toggle from './../../components/Toggle';
 import RadioSet from './../../components/RadioSet';
@@ -173,7 +173,7 @@ class BillingInfo extends Component {
             (this.state.form.billOption === 'Private') &&
             <FormGroup>
               <ControlLabel>Payer</ControlLabel>
-              <Select
+              <FormSelect
                 name={payers.label}
                 value={this.state.form.payer}
                 options={payers}

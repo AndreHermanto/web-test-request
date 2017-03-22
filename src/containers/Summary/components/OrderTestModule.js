@@ -3,8 +3,7 @@ import {
   Row, 
   Col,
   Glyphicon,
-  Button,
-  Well
+  Button
 } from 'react-bootstrap';
 import { 
   SummaryBox,
@@ -55,13 +54,13 @@ class OrderTestModule extends Component
             }
             {
               this.props.orderTestModule.genes && (
-              <Well>
+              <div>
               {
                 this.props.orderTestModule.genes.map((gene, $index) => {
                   return <GeneLabel key={$index}>{gene}</GeneLabel> 
                 })
               }
-              </Well>
+              </div>
             )}
           </Col>
         </Row>

@@ -40,7 +40,7 @@ exports[`<FamilyMember/> renders without crashing 1`] = `
   </label>
   <br />
   <button
-    className="btn btn-default"
+    className="btn btn-xs btn-link"
     disabled={false}
     onClick={[Function]}
     type="button">
@@ -62,13 +62,13 @@ exports[`<FamilyMember/> renders without crashing 1`] = `
     </div>
   </div>
   <button
-    className="NghKx"
+    className="ieDBA"
     label="Back"
     onClick={[Function]}>
     Back
   </button>
   <button
-    className="bupKBP"
+    className="bBdbjl"
     onClick={[Function]}
     type="submit">
     Confirm

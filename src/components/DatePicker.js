@@ -18,7 +18,7 @@ const DateSelect = styled(Typeahead)`
   :first-child { 
     input:first-child{
       border-radius: 0px;
-      height: 45px;
+      height: 38px;
     }
   }
 `;
