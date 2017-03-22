@@ -141,8 +141,8 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
       className="hxoQps">
       <h3
         className="lgKHmt">
-        Patient - 
         Ngabcuyen abcabc
+         - Patient
       </h3>
       <p>
         <strong>
@@ -205,8 +205,8 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
       className="hxoQps">
       <h3
         className="lgKHmt">
-        Clinician - 
         John Doe
+         - Clinician
       </h3>
       <p>
         <strong>
@@ -637,14 +637,14 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
       className="hxoQps">
       <h3
         className="lgKHmt">
+        abc@abc.com abc@abc.com
+         - 
          
         <span>
           of
         </span>
          
         Ngabcuyen abcabc
-         - 
-        abc@abc.com abc@abc.com
       </h3>
       <p>
         <strong>
@@ -707,8 +707,8 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
       className="hxoQps">
       <h3
         className="lgKHmt">
-        Clinician - 
         John Doe
+         - Clinician
       </h3>
       <p>
         <strong>
@@ -1139,14 +1139,14 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
       className="hxoQps">
       <h3
         className="lgKHmt">
+        abcsadkfhkladsfj ab.com
+         - 
          
         <span>
           of
         </span>
          
         Ngabcuyen abcabc
-         - 
-        abcsadkfhkladsfj ab.com
       </h3>
       <p>
         <strong>
@@ -1209,8 +1209,8 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
       className="hxoQps">
       <h3
         className="lgKHmt">
-        Clinician - 
         John Doe
+         - Clinician
       </h3>
       <p>
         <strong>

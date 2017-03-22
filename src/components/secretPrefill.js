@@ -142,6 +142,7 @@ function testData() {
               "FamilyMemberDetails": {
                 "lastName": "adsfadsf",
                 "firstName": "asdf",
+                "relationship":'father',
                 "dob": "2-February-1917",
                 "medicalRecordNo": "123",
                 "gender": "Unknown",
@@ -164,6 +165,7 @@ function testData() {
               "FamilyMemberDetails": {
                 "lastName": "adsfadsf2",
                 "firstName": "asdf2",
+                "relationship": "sister",
                 "dob": "2-February-1917",
                 "medicalRecordNo": "123",
                 "gender": "Male",
