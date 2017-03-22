@@ -6,7 +6,10 @@ import logo from '../assets/images/g1_logo.png';
 const Bar = styled(Navbar)`
   background-image: none !important;
   background-repeat: no-repeat !important;
+  height: 90px;
+  margin-bottom: 100px;
 `;
+
 
 const NavTitle = styled.span`
   margin-left: 32px;
@@ -17,7 +20,7 @@ export default class UniversalNavigation extends React.Component
   render() 
   {  
     return( 
-      <Bar>
+      <Bar fixedTop>
         <Grid>
           <Navbar.Header>
             <Navbar.Brand>
@@ -25,7 +28,7 @@ export default class UniversalNavigation extends React.Component
                 <img 
                   src={logo} 
                   alt="logo" 
-                  style={{ width: 80, height:30, marginTop: -4 }} />
+                  style={{ width: 120, height:45, marginTop: 10 }} />
               </a>
               <NavTitle>Test Request App</NavTitle>
             </Navbar.Brand>

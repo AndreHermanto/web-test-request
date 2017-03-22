@@ -1,6 +1,6 @@
 exports[`<UniversalNavigation /> renders correctly 1`] = `
 <nav
-  className="dYwTWr navbar navbar-default">
+  className="kypSk navbar navbar-default navbar-fixed-top">
   <div
     className="container">
     <div
@@ -16,9 +16,9 @@ exports[`<UniversalNavigation /> renders correctly 1`] = `
               src="test-file-stub"
               style={
                 Object {
-                  "height": 30,
-                  "marginTop": -4,
-                  "width": 80,
+                  "height": 45,
+                  "marginTop": 10,
+                  "width": 120,
                 }
               } />
           </a>
