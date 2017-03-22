@@ -16,6 +16,10 @@ export default function PrintFamilyModule(props) {
           <PrintHeading>
             Family Member - {member.FamilyMemberDetails.firstName + ' ' + member.FamilyMemberDetails.lastName}
           </PrintHeading>
+            <p> 
+              <strong> Relationship:  </strong>
+              {member.FamilyMemberDetails.relationship}
+            </p>
     
             <p> 
               <strong> Date of Birth:  </strong>

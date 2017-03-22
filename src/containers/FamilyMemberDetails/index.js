@@ -92,7 +92,16 @@ class FamilyMemberDetails extends Component {
           onValidate={this.validate()}
           formState={this.state.form}
           required
-        />                      
+        />  
+
+        <Input
+          field="relationship"
+          label="Relationship"
+          onChange={this.handleChange}
+          onValidate={this.validate()}
+          formState={this.state.form}
+          required
+        />                    
 
         <Input
           field="medicalRecordNo"

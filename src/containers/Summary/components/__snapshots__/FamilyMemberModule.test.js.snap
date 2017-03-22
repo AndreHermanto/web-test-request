@@ -36,6 +36,16 @@ exports[`FamilyMemberModule test renders without crashing  1`] = `
         className="doDOdK">
         <span
           className="jXWIEx">
+           Relationship:  
+        </span>
+      </p>
+    </div>
+    <div
+      className="col-md-12">
+      <p
+        className="doDOdK">
+        <span
+          className="jXWIEx">
            Date of Birth:  
         </span>
         2-January-1918
