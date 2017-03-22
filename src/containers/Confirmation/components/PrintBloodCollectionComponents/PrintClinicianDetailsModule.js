@@ -4,7 +4,7 @@ import {
   PageBreak,
   Section
 } from './../sharedPrintStyle';
-// PrintClinicianDetailsModule page
+// PrintClinicianDetailsModule section
 export default function PrintClinicianDetailsModule(props) {
   return (
     <Section>

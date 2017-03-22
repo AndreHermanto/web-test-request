@@ -1,10 +1,10 @@
 exports[`test PrintRecord renders without crashing  1`] = `
 <div
-  className="fSVpZK">
+  className="eeuFfv">
   <div
     className="hxoQps">
     <h3
-      className="dmXiqO">
+      className="fwyXhE">
       Test Ordered
     </h3>
     <h4>
@@ -54,7 +54,7 @@ exports[`test PrintRecord renders without crashing  1`] = `
   <div
     className="hxoQps">
     <h3
-      className="dmXiqO">
+      className="fwyXhE">
       Patient - 
       Ngabcuyen abcabc
     </h3>
@@ -125,7 +125,7 @@ exports[`test PrintRecord renders without crashing  1`] = `
     <div
       className="hxoQps">
       <h3
-        className="dmXiqO">
+        className="fwyXhE">
         Family Member - 
         abc@abc.com abc@abc.com
       </h3>
@@ -159,6 +159,12 @@ exports[`test PrintRecord renders without crashing  1`] = `
         </strong>
         No
       </p>
+      <p>
+        <strong>
+           Affected:  
+        </strong>
+        Yes
+      </p>
       <div
         className="caGDDg" />
       <strong>
@@ -189,7 +195,7 @@ exports[`test PrintRecord renders without crashing  1`] = `
     <div
       className="hxoQps">
       <h3
-        className="dmXiqO">
+        className="fwyXhE">
         Family Member - 
         abcsadkfhkladsfj ab.com
       </h3>
@@ -229,6 +235,12 @@ exports[`test PrintRecord renders without crashing  1`] = `
         </strong>
         No
       </p>
+      <p>
+        <strong>
+           Affected:  
+        </strong>
+        No
+      </p>
       <div
         className="caGDDg" />
       <strong>
@@ -260,7 +272,7 @@ exports[`test PrintRecord renders without crashing  1`] = `
   <div
     className="hxoQps">
     <h3
-      className="dmXiqO">
+      className="fwyXhE">
       Clinician - 
       John Doe
     </h3>
@@ -368,7 +380,7 @@ exports[`test PrintRecord renders without crashing  1`] = `
   </div>
   <div>
     <h3
-      className="dmXiqO">
+      className="fwyXhE">
       Billing Information
     </h3>
     <div>

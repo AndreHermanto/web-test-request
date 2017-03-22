@@ -4,7 +4,7 @@ import {
   PageBreak,
   Section
 } from './../sharedPrintStyle';
-// PrintPatientModule page
+// PrintPatientModule section
 export default function PrintPatientModule(props) {
   return (
     <Section>
@@ -40,27 +40,6 @@ export default function PrintPatientModule(props) {
           {props.patientDetails.ethnicity}
         </p>
       }
-    
-      {
-        props.patientDetails.deceased !== false &&
-        <p> 
-          <strong> Deceased:  </strong>
-          {props.patientDetails.deceased ? 'Yes' : 'No'}
-        </p>
-      }
-    
-      {
-        (props.patientDetails.deceased !== false && props.patientDetails.sampleSource !== '') &&
-        <p> 
-          <strong> Sample source:  </strong>
-          {props.patientDetails.sampleSource}
-        </p>
-      }
-
-      <p> 
-        <strong> Email:  </strong>
-        {props.patientDetails.email} 
-      </p>
 
       <p> 
         <strong> Consanguinity:  </strong>

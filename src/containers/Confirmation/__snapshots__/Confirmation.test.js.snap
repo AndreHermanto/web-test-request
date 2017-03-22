@@ -25,11 +25,19 @@ exports[`Confirmation test Confirmation page renders without crashing 1`] = `
     <div
       className="row">
       <div
-        className="col-md-12">
+        className="col-md-6">
         <label
           className="jRatVR"
           onClick={[Function]}>
           Print out form for your records
+        </label>
+      </div>
+      <div
+        className="col-md-6">
+        <label
+          className="cocgOv"
+          onClick={[Function]}>
+          Print out Blood Collection forms for your patient(s)
         </label>
       </div>
     </div>

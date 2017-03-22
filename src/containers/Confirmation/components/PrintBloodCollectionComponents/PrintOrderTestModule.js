@@ -4,7 +4,7 @@ import {
   Gene,
   Section
 } from './../sharedPrintStyle';
-// PrintOrderTestMobule page
+// PrintOrderTestModule section
 export default function PrintOrderTestModule(props) {
   return (
     <Section>
