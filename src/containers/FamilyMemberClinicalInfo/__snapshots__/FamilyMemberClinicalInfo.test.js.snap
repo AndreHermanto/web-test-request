@@ -15,7 +15,7 @@ exports[`FamilyMemberClinicalInfo: index renders without crashing 1`] = `
       Provide Clinical Information
       <span
         className="jCNiHk">
-        Required
+        Optional
       </span>
     </label>
     <div

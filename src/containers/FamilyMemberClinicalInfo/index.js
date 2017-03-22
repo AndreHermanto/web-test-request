@@ -78,7 +78,8 @@ class FamilyMemberClinicalInfo extends Component {
           onChange={this.handleChange}
           onValidate={this.validate()}
           formState={this.state.form}
-          required
+          required={this.state.form.affected}
+          optional={!this.state.form.affected}
         />
             
         <Toggle
