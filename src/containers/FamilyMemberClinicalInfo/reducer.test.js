@@ -15,4 +15,14 @@ describe('FamilyMemberClinicalInfo: reducer', () => {
     const newState = setFormData(state, event);
     expect(newState.form.clinicalInfo).toEqual('This is his clinical information.');
   });
+  
+  test('setFormData - set the affected state to true will effect the clinicalInfo\'s validation', () => {
+    const event = {
+      name: 'affected',
+      value: false
+    }
+    const state = initData();
+    const newState = setFormData(state, event);
+    expect(newState.validation.clinicalInfo.status).toEqual(null);
+  })
 });
