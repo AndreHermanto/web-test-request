@@ -16,7 +16,7 @@ exports[`ClinicalInfo: index renders without crashing 1`] = `
       </span>
     </label>
     <div
-      className="jyfMsd">
+      className="kWhIoX">
       Type or copy and paste clinical notes here. Comprehensive notes increase the chance of a successful diagnosis.
     </div>
     <textarea
@@ -46,7 +46,7 @@ exports[`ClinicalInfo: index renders without crashing 1`] = `
       </span>
     </label>
     <div
-      className="jyfMsd">
+      className="kWhIoX">
       Provide notes from genetic tests, imaging results.
     </div>
     <textarea
@@ -76,7 +76,7 @@ exports[`ClinicalInfo: index renders without crashing 1`] = `
       </span>
     </label>
     <div
-      className="jyfMsd">
+      className="kWhIoX">
       Provide notes on the suspected inheritance model and affected relatives.
     </div>
     <textarea

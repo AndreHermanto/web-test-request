@@ -8,7 +8,15 @@ import {
   SubLabel,
   ValidationFeedback
 } from './SharedStyle';
+import styled from 'styled-components';
 
+const Declaration = styled.div`
+  color: #222;
+  font-size: 90%;
+  padding-left: 14px;
+  margin-top: -4px;
+`;
+;
 /**
  * This adds bootstrap validation styling to react-toggle.
  */
@@ -18,6 +26,7 @@ export default function Toggle({
   onChange,
   onValidate,
   formState,
+  declaration,
   required,
   optional
 }) {
@@ -36,10 +45,23 @@ export default function Toggle({
         {optional && (<SubLabel>Optional</SubLabel>)} 
       </ControlLabel>
       <br />
-      <ReactToggle
-        name={field}
-        checked={formState[field] === true}
-        onChange={onChange} />
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <ReactToggle
+                name={field}
+                checked={formState[field] === true}
+                onChange={onChange} />
+            </td>
+            <td>
+              {declaration && (
+                <Declaration>{declaration}</Declaration>
+              )}
+            </td>
+          </tr>
+        </tbody>
+      </table>
       <ValidationFeedback>{validator.feedback}</ValidationFeedback>
     </FormGroup>
   );

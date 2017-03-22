@@ -23,7 +23,7 @@ export const SubLabel = styled.span`
 `;
 
 export const Helper = styled.p`
-  color: #696969;
+  color: #222;
   margin-top: -12px;
   margin-bottom: 18px;
   line-height: 1.3;
