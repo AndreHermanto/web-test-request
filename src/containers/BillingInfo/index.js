@@ -191,11 +191,9 @@ class BillingInfo extends Component {
                 onChange={this.handleChange}
                 onValidate={this.validate()}
                 formState={this.state.form}
+                declaration="I have advised the patient that this test is dependent on private payment and will not proceed till it is received."
                 required
               />
-              <Helper>
-              I have advised the patient that this test is dependent on private payment and will not proceed till it is received.
-              </Helper>
             </div>
           }
           {

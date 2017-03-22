@@ -19,7 +19,7 @@ exports[`FamilyMemberClinicalInfo: index renders without crashing 1`] = `
       </span>
     </label>
     <div
-      className="jyfMsd">
+      className="kWhIoX">
       Type or copy and paste clinical notes here. Comprehensive notes increase the chance of a successful diagnosis.
     </div>
     <textarea
@@ -45,56 +45,65 @@ exports[`FamilyMemberClinicalInfo: index renders without crashing 1`] = `
       Affected
     </label>
     <br />
-    <div
-      className="react-toggle"
-      onClick={[Function]}
-      onTouchEnd={[Function]}
-      onTouchMove={[Function]}
-      onTouchStart={[Function]}>
-      <div
-        className="react-toggle-track">
-        <div
-          className="react-toggle-track-check">
-          <svg
-            height="11"
-            viewBox="0 0 14 11"
-            width="14">
-            <title>
-              switch-check
-            </title>
-            <path
-              d="M11.264 0L5.26 6.004 2.103 2.847 0 4.95l5.26 5.26 8.108-8.107L11.264 0"
-              fill="#fff"
-              fillRule="evenodd" />
-          </svg>
-        </div>
-        <div
-          className="react-toggle-track-x">
-          <svg
-            height="10"
-            viewBox="0 0 10 10"
-            width="10">
-            <title>
-              switch-x
-            </title>
-            <path
-              d="M9.9 2.12L7.78 0 4.95 2.828 2.12 0 0 2.12l2.83 2.83L0 7.776 2.123 9.9 4.95 7.07 7.78 9.9 9.9 7.776 7.072 4.95 9.9 2.12"
-              fill="#fff"
-              fillRule="evenodd" />
-          </svg>
-        </div>
-      </div>
-      <div
-        className="react-toggle-thumb" />
-      <input
-        checked={false}
-        className="react-toggle-screenreader-only"
-        name="affected"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
-        type="checkbox" />
-    </div>
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            <div
+              className="react-toggle"
+              onClick={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}>
+              <div
+                className="react-toggle-track">
+                <div
+                  className="react-toggle-track-check">
+                  <svg
+                    height="11"
+                    viewBox="0 0 14 11"
+                    width="14">
+                    <title>
+                      switch-check
+                    </title>
+                    <path
+                      d="M11.264 0L5.26 6.004 2.103 2.847 0 4.95l5.26 5.26 8.108-8.107L11.264 0"
+                      fill="#fff"
+                      fillRule="evenodd" />
+                  </svg>
+                </div>
+                <div
+                  className="react-toggle-track-x">
+                  <svg
+                    height="10"
+                    viewBox="0 0 10 10"
+                    width="10">
+                    <title>
+                      switch-x
+                    </title>
+                    <path
+                      d="M9.9 2.12L7.78 0 4.95 2.828 2.12 0 0 2.12l2.83 2.83L0 7.776 2.123 9.9 4.95 7.07 7.78 9.9 9.9 7.776 7.072 4.95 9.9 2.12"
+                      fill="#fff"
+                      fillRule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+              <div
+                className="react-toggle-thumb" />
+              <input
+                checked={false}
+                className="react-toggle-screenreader-only"
+                name="affected"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                type="checkbox" />
+            </div>
+          </td>
+          <td />
+        </tr>
+      </tbody>
+    </table>
     <span
       className="SfhHK help-block" />
   </div>
@@ -110,7 +119,7 @@ exports[`FamilyMemberClinicalInfo: index renders without crashing 1`] = `
       </span>
     </label>
     <div
-      className="jyfMsd">
+      className="kWhIoX">
       Provide notes from genetic tests, imaging results.
     </div>
     <textarea
@@ -140,7 +149,7 @@ exports[`FamilyMemberClinicalInfo: index renders without crashing 1`] = `
       </span>
     </label>
     <div
-      className="jyfMsd">
+      className="kWhIoX">
       Provide notes on the suspected inheritance model and affected relatives.
     </div>
     <textarea
@@ -166,56 +175,65 @@ exports[`FamilyMemberClinicalInfo: index renders without crashing 1`] = `
       Consanguinity
     </label>
     <br />
-    <div
-      className="react-toggle"
-      onClick={[Function]}
-      onTouchEnd={[Function]}
-      onTouchMove={[Function]}
-      onTouchStart={[Function]}>
-      <div
-        className="react-toggle-track">
-        <div
-          className="react-toggle-track-check">
-          <svg
-            height="11"
-            viewBox="0 0 14 11"
-            width="14">
-            <title>
-              switch-check
-            </title>
-            <path
-              d="M11.264 0L5.26 6.004 2.103 2.847 0 4.95l5.26 5.26 8.108-8.107L11.264 0"
-              fill="#fff"
-              fillRule="evenodd" />
-          </svg>
-        </div>
-        <div
-          className="react-toggle-track-x">
-          <svg
-            height="10"
-            viewBox="0 0 10 10"
-            width="10">
-            <title>
-              switch-x
-            </title>
-            <path
-              d="M9.9 2.12L7.78 0 4.95 2.828 2.12 0 0 2.12l2.83 2.83L0 7.776 2.123 9.9 4.95 7.07 7.78 9.9 9.9 7.776 7.072 4.95 9.9 2.12"
-              fill="#fff"
-              fillRule="evenodd" />
-          </svg>
-        </div>
-      </div>
-      <div
-        className="react-toggle-thumb" />
-      <input
-        checked={false}
-        className="react-toggle-screenreader-only"
-        name="consanguinity"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
-        type="checkbox" />
-    </div>
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            <div
+              className="react-toggle"
+              onClick={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}>
+              <div
+                className="react-toggle-track">
+                <div
+                  className="react-toggle-track-check">
+                  <svg
+                    height="11"
+                    viewBox="0 0 14 11"
+                    width="14">
+                    <title>
+                      switch-check
+                    </title>
+                    <path
+                      d="M11.264 0L5.26 6.004 2.103 2.847 0 4.95l5.26 5.26 8.108-8.107L11.264 0"
+                      fill="#fff"
+                      fillRule="evenodd" />
+                  </svg>
+                </div>
+                <div
+                  className="react-toggle-track-x">
+                  <svg
+                    height="10"
+                    viewBox="0 0 10 10"
+                    width="10">
+                    <title>
+                      switch-x
+                    </title>
+                    <path
+                      d="M9.9 2.12L7.78 0 4.95 2.828 2.12 0 0 2.12l2.83 2.83L0 7.776 2.123 9.9 4.95 7.07 7.78 9.9 9.9 7.776 7.072 4.95 9.9 2.12"
+                      fill="#fff"
+                      fillRule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+              <div
+                className="react-toggle-thumb" />
+              <input
+                checked={false}
+                className="react-toggle-screenreader-only"
+                name="consanguinity"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                type="checkbox" />
+            </div>
+          </td>
+          <td />
+        </tr>
+      </tbody>
+    </table>
     <span
       className="SfhHK help-block" />
   </div>

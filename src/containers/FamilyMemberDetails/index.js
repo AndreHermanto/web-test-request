@@ -154,11 +154,9 @@ class FamilyMemberDetails extends Component {
           onChange={this.handleChange}
           onValidate={this.validate()}
           formState={this.state.form}
+          declaration="I confirm that the Genome.One Privacy Collection Statement has been provided to the patient and that I have received written informed consent for genomic testing."
           required
         />
-        <Helper>
-        I confirm that the Genome.One Privacy Collection Statement has been provided to the patient and that I have received written informed consent for genomic testing.
-        </Helper> 
 
         <Input
           field="email"
