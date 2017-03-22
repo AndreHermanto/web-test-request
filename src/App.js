@@ -7,6 +7,7 @@ import {
 import secretPrefill from './components/secretPrefill';
 import Routes from './components/Routes';
 import UniversalNavigation from './components/UniversalNavigation';
+import Footer from './components/Footer';
 import { 
   setFormInputData,
   setFormEditState,
@@ -82,6 +83,7 @@ class App extends Component {
             </Col>
           </Row>
         </Grid> 
+        <Footer />
       </div>
     );
   }
