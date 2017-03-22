@@ -131,6 +131,11 @@ exports[`test PrintRecord renders without crashing  1`] = `
       </h3>
       <p>
         <strong>
+           Relationship:  
+        </strong>
+      </p>
+      <p>
+        <strong>
            Date of Birth:  
         </strong>
         2-January-1918
@@ -199,6 +204,11 @@ exports[`test PrintRecord renders without crashing  1`] = `
         Family Member - 
         abcsadkfhkladsfj ab.com
       </h3>
+      <p>
+        <strong>
+           Relationship:  
+        </strong>
+      </p>
       <p>
         <strong>
            Date of Birth:  

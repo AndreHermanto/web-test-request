@@ -54,6 +54,12 @@ class FamilyMemberModule extends Component
           </Col>
           <Col md={12}>
             <SummaryDetails> 
+              <SummaryTitle> Relationship:  </SummaryTitle>
+              {this.props.familyMemberDetails.relationship}
+            </SummaryDetails>
+          </Col>
+          <Col md={12}>
+            <SummaryDetails> 
               <SummaryTitle> Date of Birth:  </SummaryTitle>
               {this.props.familyMemberDetails.dob}
             </SummaryDetails>
