@@ -93,17 +93,6 @@ class BillingInfo extends Component {
 
   getPayers() {
     var payers = [{ value: 'Other', label: 'Other' }];
-    
-    if(this.props.route.patientData.firstName &&
-      this.props.route.patientData.lastName) {
-      let patientName = this.props.route.patientData.firstName.toString() + ' ' + 
-                        this.props.route.patientData.lastName.toString();
-      payers.unshift({ 
-        value: patientName, 
-        label: patientName + ' (Patient)',
-        email: this.props.route.patientData.email
-      });
-    }
 
     if(this.props.route.familyMemberData && this.props.route.familyMemberData.familyMember) {
       this.props.route.familyMemberData.familyMember.forEach((member) => {
@@ -114,6 +103,17 @@ class BillingInfo extends Component {
           label: memberName + ' (Family Member)',
           email: member.FamilyMemberDetails.email
         })
+      });
+    }
+
+    if(this.props.route.patientData.firstName &&
+      this.props.route.patientData.lastName) {
+      let patientName = this.props.route.patientData.firstName.toString() + ' ' + 
+                        this.props.route.patientData.lastName.toString();
+      payers.unshift({ 
+        value: patientName, 
+        label: patientName + ' (Patient)',
+        email: this.props.route.patientData.email
       });
     }
     
