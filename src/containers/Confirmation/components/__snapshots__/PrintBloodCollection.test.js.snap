@@ -90,7 +90,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
     <div
       className="hxoQps">
       <h3
-        className="fwyXhE">
+        className="lgKHmt">
         Test Ordered
       </h3>
       <h4>
@@ -140,7 +140,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
     <div
       className="hxoQps">
       <h3
-        className="fwyXhE">
+        className="lgKHmt">
         Patient - 
         Ngabcuyen abcabc
       </h3>
@@ -204,7 +204,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
     <div
       className="hxoQps">
       <h3
-        className="fwyXhE">
+        className="lgKHmt">
         Clinician - 
         John Doe
       </h3>
@@ -312,7 +312,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
     </div>
     <div>
       <h3
-        className="fwyXhE">
+        className="lgKHmt">
         Billing Information
       </h3>
       <div>
@@ -345,7 +345,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
     <div
       className="hxoQps">
       <h3
-        className="fwyXhE">
+        className="lgKHmt">
         Specimen Information
       </h3>
       <div
@@ -586,7 +586,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
     <div
       className="hxoQps">
       <h3
-        className="fwyXhE">
+        className="lgKHmt">
         Test Ordered
       </h3>
       <h4>
@@ -636,8 +636,14 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
     <div
       className="hxoQps">
       <h3
-        className="fwyXhE">
-        Patient\'s Family Member\' - 
+        className="lgKHmt">
+         
+        <span>
+          of
+        </span>
+         
+        Ngabcuyen abcabc
+         - 
         abc@abc.com abc@abc.com
       </h3>
       <p>
@@ -700,7 +706,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
     <div
       className="hxoQps">
       <h3
-        className="fwyXhE">
+        className="lgKHmt">
         Clinician - 
         John Doe
       </h3>
@@ -808,7 +814,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
     </div>
     <div>
       <h3
-        className="fwyXhE">
+        className="lgKHmt">
         Billing Information
       </h3>
       <div>
@@ -841,7 +847,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
     <div
       className="hxoQps">
       <h3
-        className="fwyXhE">
+        className="lgKHmt">
         Specimen Information
       </h3>
       <div
@@ -1082,7 +1088,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
     <div
       className="hxoQps">
       <h3
-        className="fwyXhE">
+        className="lgKHmt">
         Test Ordered
       </h3>
       <h4>
@@ -1132,8 +1138,14 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
     <div
       className="hxoQps">
       <h3
-        className="fwyXhE">
-        Patient\'s Family Member\' - 
+        className="lgKHmt">
+         
+        <span>
+          of
+        </span>
+         
+        Ngabcuyen abcabc
+         - 
         abcsadkfhkladsfj ab.com
       </h3>
       <p>
@@ -1196,7 +1208,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
     <div
       className="hxoQps">
       <h3
-        className="fwyXhE">
+        className="lgKHmt">
         Clinician - 
         John Doe
       </h3>
@@ -1304,7 +1316,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
     </div>
     <div>
       <h3
-        className="fwyXhE">
+        className="lgKHmt">
         Billing Information
       </h3>
       <div>
@@ -1337,7 +1349,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
     <div
       className="hxoQps">
       <h3
-        className="fwyXhE">
+        className="lgKHmt">
         Specimen Information
       </h3>
       <div

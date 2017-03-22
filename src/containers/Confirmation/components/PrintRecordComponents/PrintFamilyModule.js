@@ -14,13 +14,8 @@ export default function PrintFamilyModule(props) {
         {
           return <Section key={i}>
           <PrintHeading>
-            Family Member - {member.FamilyMemberDetails.firstName + ' ' + member.FamilyMemberDetails.lastName}
+            Family Member ({member.FamilyMemberDetails.relationship}) - {member.FamilyMemberDetails.firstName + ' ' + member.FamilyMemberDetails.lastName}
           </PrintHeading>
-            <p> 
-              <strong> Relationship:  </strong>
-              {member.FamilyMemberDetails.relationship}
-            </p>
-    
             <p> 
               <strong> Date of Birth:  </strong>
               {member.FamilyMemberDetails.dob}

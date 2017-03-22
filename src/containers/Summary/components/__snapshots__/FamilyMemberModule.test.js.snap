@@ -2,22 +2,32 @@ exports[`FamilyMemberModule test renders without crashing  1`] = `
 <div
   className="cFAMBN">
   <h3
-    className="gElTrd">
-     Family Member - 
-    abc@abc.com abc@abc.com
-    <button
-      className="btn btn-link"
-      disabled={false}
-      onClick={[Function]}
-      type="button">
-      <span
-        className="glyphicon glyphicon-pencil" />
-       Edit
-    </button>
-    <span
-      className="bQxwRk label label-danger">
-      Affected
-    </span>
+    className="kGfomK">
+    <div
+      className="row">
+      <div
+        className="col-md-12">
+        Family Member (
+        ) - 
+        abc@abc.com abc@abc.com
+      </div>
+      <div
+        className="col-md-12">
+        <button
+          className="btn btn-link"
+          disabled={false}
+          onClick={[Function]}
+          type="button">
+          <span
+            className="glyphicon glyphicon-pencil" />
+           Edit
+        </button>
+        <span
+          className="bQxwRk label label-danger">
+          Affected
+        </span>
+      </div>
+    </div>
   </h3>
   <div
     className="dgEelt" />
@@ -29,16 +39,6 @@ exports[`FamilyMemberModule test renders without crashing  1`] = `
         className="hWtWAB">
         Details
       </h4>
-    </div>
-    <div
-      className="col-md-12">
-      <p
-        className="doDOdK">
-        <span
-          className="jXWIEx">
-           Relationship:  
-        </span>
-      </p>
     </div>
     <div
       className="col-md-12">

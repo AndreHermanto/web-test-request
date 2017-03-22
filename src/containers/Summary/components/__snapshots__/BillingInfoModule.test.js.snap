@@ -2,7 +2,7 @@ exports[`BillingInfoModule test private renders without crashing  1`] = `
 <div
   className="bNDqdW">
   <h3
-    className="gElTrd">
+    className="kGfomK">
     Private
      billing
     <button

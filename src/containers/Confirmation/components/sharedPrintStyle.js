@@ -27,6 +27,11 @@ export const PrintHeading = styled.h3`
   color: white !important;
   display: inline-block;
   width: 98%;
+  text-transform: capitalize;
+  span {
+    text-transform: lowercase;
+    color: #fff !important;
+  }
 `;
 
 export const Gene = styled(Label)`

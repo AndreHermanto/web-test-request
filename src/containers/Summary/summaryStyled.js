@@ -22,6 +22,7 @@ export const LastBox = styled.div`
 export const SummaryHeading = styled.h3`
   font-weight: 400;
   margin-bottom: 10px;
+  text-transform: capitalize;
   ${Font}
 `;
 
