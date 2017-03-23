@@ -38,7 +38,7 @@ export default function PrintBloodCollection(props) {
               <PrintHeader />
               <br />
               <PrintOrderTestModule orderTestModule={props.orderTestModule}/>
-              <PrintFamilyModule familyMemberDetails={member.FamilyMemberDetails} familyMemberClinicalInfo={member.FamilyMemberClinicalInfo}/>
+              <PrintFamilyModule patientDetails={props.patientDetails} familyMemberDetails={member.FamilyMemberDetails} familyMemberClinicalInfo={member.FamilyMemberClinicalInfo}/>
               <PrintClinicianDetailsModule clinicianDetails={props.clinicianDetails}/>
               <PrintBillingInfoModule clinicianDetails={props.clinicianDetails} billingInfo={props.billingInfo}/>
               <PrintSpecimenInfo />

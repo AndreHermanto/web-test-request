@@ -34,16 +34,23 @@ class FamilyMemberModule extends Component
   render() {
     return(
       <SummaryBox>
-        <SummaryHeading> Family Member - {this.props.familyMemberDetails.firstName + ' ' + this.props.familyMemberDetails.lastName}
-          <Button 
-            bsStyle="link"
-            onClick={this.handleOnClick}
-          >
-            <Glyphicon glyph="pencil"/> Edit
-          </Button>
-          <Tag bsStyle={this.props.familyMemberClinicalInfo.affected ? 'danger' : 'success'}>
-            {this.props.familyMemberClinicalInfo.affected ? 'Affected' : 'Unaffected'}
-          </Tag>
+        <SummaryHeading> 
+          <Row>
+            <Col md={12}>
+              Family Member ({this.props.familyMemberDetails.relationship}) - {this.props.familyMemberDetails.firstName + ' ' + this.props.familyMemberDetails.lastName}
+            </Col>
+            <Col md={12}>
+              <Button 
+                bsStyle="link"
+                onClick={this.handleOnClick}
+              >
+                <Glyphicon glyph="pencil"/> Edit
+              </Button>
+              <Tag bsStyle={this.props.familyMemberClinicalInfo.affected ? 'danger' : 'success'}>
+                {this.props.familyMemberClinicalInfo.affected ? 'Affected' : 'Unaffected'}
+              </Tag>
+            </Col>
+          </Row>
         </SummaryHeading>
         <SummaryBreakLine/>
         <Row>

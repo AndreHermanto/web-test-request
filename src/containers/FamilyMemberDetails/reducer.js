@@ -5,6 +5,7 @@ export function initData(prefilled) {
     form: {
       lastName: '',
       firstName: '',
+      relationship:'',
       dob: '',
       medicalRecordNo: '',
       gender: 'Unknown',
@@ -17,6 +18,7 @@ export function initData(prefilled) {
     },
     validationRule: {
       lastName: 'required',
+      relationship: 'required',
       firstName: 'required',
       dob: 'required',
       consent: 'consentTrue',

@@ -2,7 +2,7 @@ exports[`ClinicianDetailsModule test renders without crashing  1`] = `
 <div
   className="cFAMBN">
   <h3
-    className="gElTrd">
+    className="kGfomK">
     Clinician - 
     John Doe
     <button
@@ -93,7 +93,7 @@ exports[`ClinicianDetailsModule test renders without crashing  1`] = `
       <div
         className="dgEelt" />
       <h3
-        className="gElTrd">
+        className="kGfomK">
         Copy of report to - 
         asdf
          
@@ -130,7 +130,7 @@ exports[`ClinicianDetailsModule test renders without crashing  1`] = `
       <div
         className="dgEelt" />
       <h3
-        className="gElTrd">
+        className="kGfomK">
         Copy of report to - 
         asdf
          

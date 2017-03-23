@@ -4,7 +4,7 @@ exports[`test PrintRecord renders without crashing  1`] = `
   <div
     className="hxoQps">
     <h3
-      className="fwyXhE">
+      className="lgKHmt">
       Test Ordered
     </h3>
     <h4>
@@ -54,7 +54,7 @@ exports[`test PrintRecord renders without crashing  1`] = `
   <div
     className="hxoQps">
     <h3
-      className="fwyXhE">
+      className="lgKHmt">
       Patient - 
       Ngabcuyen abcabc
     </h3>
@@ -125,8 +125,9 @@ exports[`test PrintRecord renders without crashing  1`] = `
     <div
       className="hxoQps">
       <h3
-        className="fwyXhE">
-        Family Member - 
+        className="lgKHmt">
+        Family Member (
+        ) - 
         abc@abc.com abc@abc.com
       </h3>
       <p>
@@ -195,8 +196,9 @@ exports[`test PrintRecord renders without crashing  1`] = `
     <div
       className="hxoQps">
       <h3
-        className="fwyXhE">
-        Family Member - 
+        className="lgKHmt">
+        Family Member (
+        ) - 
         abcsadkfhkladsfj ab.com
       </h3>
       <p>
@@ -272,7 +274,7 @@ exports[`test PrintRecord renders without crashing  1`] = `
   <div
     className="hxoQps">
     <h3
-      className="fwyXhE">
+      className="lgKHmt">
       Clinician - 
       John Doe
     </h3>
@@ -380,7 +382,7 @@ exports[`test PrintRecord renders without crashing  1`] = `
   </div>
   <div>
     <h3
-      className="fwyXhE">
+      className="lgKHmt">
       Billing Information
     </h3>
     <div>

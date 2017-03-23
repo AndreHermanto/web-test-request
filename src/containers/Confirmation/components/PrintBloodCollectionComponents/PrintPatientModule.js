@@ -9,7 +9,7 @@ export default function PrintPatientModule(props) {
   return (
     <Section>
       <PrintHeading>
-        Patient - {props.patientDetails.firstName + ' ' + props.patientDetails.lastName}
+        {props.patientDetails.firstName + ' ' + props.patientDetails.lastName} - Patient
       </PrintHeading>
     
       <p> 

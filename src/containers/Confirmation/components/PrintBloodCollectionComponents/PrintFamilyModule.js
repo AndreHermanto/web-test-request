@@ -9,7 +9,7 @@ export default function PrintFamilyModule(props) {
   return (
     <Section>
       <PrintHeading>
-        Patient's Family Member' - {props.familyMemberDetails.firstName + ' ' + props.familyMemberDetails.lastName}
+        {props.familyMemberDetails.firstName + ' ' + props.familyMemberDetails.lastName} - {props.familyMemberDetails.relationship} <span>of</span> {props.patientDetails.firstName + ' ' + props.patientDetails.lastName}
       </PrintHeading>
     
       <p> 
