@@ -148,7 +148,7 @@ class FamilyMember extends Component {
         })}
   
         {this.state.form.familyMember.length === 0 && (
-          <Col md={12}><br /><i>There is no family member associated with this patient. Please select "Add family member" to include a patients family member to be tested.</i><br /></Col>
+          <Col md={12}><br />There is no family member associated with this patient. Please select "Add family member" to include a patients family member to be tested.<br /></Col>
         )}
         </Row>
         
