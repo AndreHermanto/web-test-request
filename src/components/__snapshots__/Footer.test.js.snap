@@ -1,0 +1,109 @@
+exports[`<Footer /> Match Snapshot 1`] = `
+<div
+  className="ecMRJP">
+  <div
+    className="hCJBLu">
+    <div
+      className="row">
+      <div
+        className="col-md-3">
+        <h1
+          className="fYCgqo">
+          Contact
+        </h1>
+        <div
+          className="feeldV">
+          P +61 2 9359 8002
+        </div>
+        <div
+          className="feeldV">
+          370 Victoria St.
+          <br />
+          Darlinghurst, NSW 2010,
+          <br />
+          Australia
+          <br />
+          <br />
+          ACN 608 029 732
+        </div>
+      </div>
+      <div
+        className="col-md-3">
+        <h1
+          className="fYCgqo">
+          Links
+        </h1>
+        <div
+          className="feeldV">
+          FAQ
+          <br />
+          Partners
+          <br />
+          Privacy Policy
+          <br />
+          Patient Website
+        </div>
+      </div>
+      <div
+        className="jlxRBr col-md-6">
+        <a
+          className="eQcTdK"
+          href="http://www.garvan.org.au/">
+          <img
+            alt="logo"
+            className="ijOgES"
+            src="test-file-stub"
+            style={
+              Object {
+                "width": 150,
+              }
+            } />
+        </a>
+        <a
+          className="eQcTdK"
+          href="http://www.genome.one/">
+          <img
+            alt="logo"
+            className="ijOgES"
+            src="test-file-stub"
+            style={
+              Object {
+                "width": 132,
+              }
+            } />
+        </a>
+        <div
+          className="edpsbn">
+          Genome.One is a wholly owned subsidiary of the Garvan Institute of Medical Research.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="nzDfu">
+    <div
+      className="row">
+      <div
+        className="jhwutx col-md-8">
+        COPYRIGHT © 2016 GENOME.ONE. ALL RIGHTS RESERVED
+      </div>
+      <div
+        className="jQzDYo col-md-4">
+        <img
+          alt="facebook"
+          height="20"
+          src="https://daks2k3a4ib2z.cloudfront.net/56fb123ccf591b312d55dbb6/5775bd6c191ec28b22cd6534_facebook.svg"
+          style={
+            Object {
+              "marginRight": 25,
+            }
+          } />
+        <img
+          alt="twitter"
+          height="24"
+          src="https://daks2k3a4ib2z.cloudfront.net/56fb123ccf591b312d55dbb6/5775bd6c191ec28b22cd6535_twitter.svg" />
+      </div>
+    </div>
+  </div>
+</div>
+`;

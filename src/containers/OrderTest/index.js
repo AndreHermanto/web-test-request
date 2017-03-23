@@ -10,7 +10,7 @@ import {
   PageHeading,
   FormButton
 } from './../../components/SharedStyle';
-import GeneLabel from './../../components/GeneLabel';
+import TestPanel from './../../components/TestPanel';
 /**
  * OrderTest - UI for ordering type of tests, selecting disorder and related genes for testing.
  */
@@ -68,7 +68,7 @@ class OrderTest extends Component {
     return (
       <div>
         <PageHeading>Step 1: Order a Test</PageHeading>
-        <GeneLabel 
+        <TestPanel 
           field="test"
           label="Select a Disease Panel / Whole Genome Analysis"
           options={this.state.testList}
