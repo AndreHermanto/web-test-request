@@ -28,6 +28,10 @@ export const Tag = styled(Label)`
   margin-left: 16px;
 `;
 
+export const BlockFamilyContainer = styled(Thumbnail)`
+  border-radius: 0px !important;
+`;
+
 /**
  * FamilyMember - a hub page to insert, edit and delete family member of the patient.
  */
@@ -92,11 +96,11 @@ class FamilyMember extends Component {
         <PageHeading>Step 4: Family Members</PageHeading>
         <Row>
           <Col md={12}>
-            <Thumbnail>
+            <BlockFamilyContainer>
               <label>Patient: </label> {this.props.route.patientData && this.props.route.patientData.firstName + ' ' + this.props.route.patientData.lastName}<br />
               <label>DOB: </label> {this.props.route.patientData && this.props.route.patientData.dob}<br />
               <label>Gender: </label> {this.props.route.patientData && this.props.route.patientData.gender}
-            </Thumbnail>
+            </BlockFamilyContainer>
           </Col>
         </Row>
       
@@ -115,7 +119,7 @@ class FamilyMember extends Component {
         {this.state.form.familyMember.map((member, $index) => {
           return( 
             <Col md={12} key={$index}>
-              <Thumbnail>
+              <BlockFamilyContainer>
                 <Row>
                   <Col md={6}>
                     {member.FamilyMemberDetails.firstName + ' ' + member.FamilyMemberDetails.lastName}
@@ -145,7 +149,7 @@ class FamilyMember extends Component {
                     </BlockButton>
                   </Col>
                 </Row>
-              </Thumbnail>
+              </BlockFamilyContainer>
             </Col>
           )
         })}
@@ -170,13 +174,13 @@ class FamilyMember extends Component {
             Are you sure you want to remove this family member?
           </Modal.Body>
           <Modal.Footer>
-            <Button onClick={this.closeDeleteModal}>Cancel</Button>
-            <Button
-              bsStyle="danger"
+            <FormButton onClick={this.closeDeleteModal} back>Cancel</FormButton>
+            <FormButton
               onClick={this.handleDeleteFamilyMember}
+              cancel
             >
               <Glyphicon glyph="trash" /> Delete
-            </Button>
+            </FormButton>
           </Modal.Footer>
         </Modal>
 

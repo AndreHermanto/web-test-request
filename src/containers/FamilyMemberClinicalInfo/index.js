@@ -129,7 +129,7 @@ class FamilyMemberClinicalInfo extends Component {
           this.props.route.isEdited !== true &&
           <FormButton  
             onClick={this.handleCancel}
-            cancel
+            back
           >
             Cancel
           </FormButton> 
