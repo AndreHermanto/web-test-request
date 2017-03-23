@@ -184,7 +184,7 @@ function testData() {
           ]
         },
         "ClinicianDetails": {
-          "providerNumber": "adsf",
+          "providerNumber": "123123AS",
           "medicalSpecialty": "adsf",
           "firstName": "fasdf",
           "lastName": "dfasd",
