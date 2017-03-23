@@ -40,10 +40,8 @@ exports[`<FamilyMember/> renders without crashing 1`] = `
   </label>
   <br />
   <button
-    className="btn btn-xs btn-link"
-    disabled={false}
-    onClick={[Function]}
-    type="button">
+    className="bBdbjl"
+    onClick={[Function]}>
     <span
       className="glyphicon glyphicon-plus" />
      Add family member

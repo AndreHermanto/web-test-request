@@ -24,23 +24,6 @@ describe('FamilyMemberClinicalInfo: index', () => {
     router:['/step4/add/2/3']
   };
   
-  /*var editProps = {
-    route: {
-      onChange: jest.fn(),
-      onDelete: jest.fn(),
-      data: { familyMember: [
-        { FamilyMemberDetails: {}, FamilyMemberClinicalInfo: {} },
-        { FamilyMemberDetails: {}, FamilyMemberClinicalInfo: {} },
-        { FamilyMemberDetails: {}, FamilyMemberClinicalInfo: {} }
-      ] }
-    },
-    params:{
-      mode: 'edit',
-      id: 5
-    },
-    router:['/step4/edit/2/5']
-  };*/
-  
   test('renders without crashing', () => {
     const page = renderer.create(React.createElement(FamilyMemberClinicalInfo, props)).toJSON();
     expect(page).toMatchSnapshot();

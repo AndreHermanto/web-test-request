@@ -238,13 +238,13 @@ exports[`FamilyMemberClinicalInfo: index renders without crashing 1`] = `
       className="SfhHK help-block" />
   </div>
   <button
-    className="bBdbjl"
+    className="ieDBA"
     label="Back"
     onClick={[Function]}>
     Back
   </button>
   <button
-    className="bBdbjl"
+    className="ieDBA"
     onClick={[Function]}>
     Cancel
   </button>
