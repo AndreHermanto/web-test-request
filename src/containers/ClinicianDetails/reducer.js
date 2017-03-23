@@ -17,7 +17,7 @@ export function initialState(prefilled) {
       copy:false    
     },
     validationRule: {
-      providerNumber:'required',
+      providerNumber:'id',
       medicalSpecialty:'required',
       firstName: 'required',
       lastName: 'required',

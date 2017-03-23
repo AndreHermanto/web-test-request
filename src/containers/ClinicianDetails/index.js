@@ -133,7 +133,7 @@ class ClinicianDetails extends Component {
             onChange={this.handleChange}
             onValidate={this.validate()}
             formState={this.state.form}
-            required
+            optional
           />
           <Input
             field="medicalSpecialty"

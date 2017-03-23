@@ -18,7 +18,7 @@ describe('ClinicianDetails: reducer', () => {
   }
   
   test('initialState will set the validation for Copy HCP if prefilled', () => {
-    const stateWithCopyHCP = initialState({ copyToHCP: [newHCP,newHCP,newHCP] });
+    const stateWithCopyHCP = initialState({ providerNumber:'', copyToHCP: [newHCP,newHCP,newHCP] });
     expect(stateWithCopyHCP.validationCopyHCP.length).toEqual(3);
   });
   
