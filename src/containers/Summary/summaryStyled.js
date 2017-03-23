@@ -6,12 +6,14 @@ export const SummaryBox = styled.div`
   width: 100%;
   padding: 20px;
   border-bottom: 0px solid transparent;
+  background-color: #fff;
 `;
 export const LastBox = styled.div`
   border: 1px solid rgb(227, 231, 241);
   width: 100%;
   padding: 20px;
   margin-bottom:21px;
+  background-color: #fff;
 `;
 
 export const SummaryHeading = styled.h3`
