@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FormGroup, Glyphicon } from 'react-bootstrap';
+import { FormGroup, Glyphicon, Button } from 'react-bootstrap';
 import { 
   initialState, 
   setFormData,  
@@ -22,29 +22,12 @@ const AdditionalFormBox = styled.div`
   padding-top: 10px;
 `;
 
-const HCPButton = styled.label`
-  cursor: pointer;
-  position: relative;
-  padding: 7px 15px;
-  border: 1px solid #ccc;
-  -webkit-transition: border-color .3s ease,color .3s ease,background-color .3s ease;
-  transition: border-color .3s ease,color .3s ease,background-color .3s ease;
-  color: #00a6b6;
-  margin-top: 10px;
-`;
-
-const RemoveLabel = styled.span`
+const RemoveLabel = styled(Button)`
   margin-top: -3px;
-  cursor: pointer;
   position: absolute;
   margin-top: 4px;
   margin-left: 8px;
-  font-weight: normal;
-  font-size: 11px;
-  color: #fff;
-  padding: 5px;
-  background-color: #d43f3a;
-  border-radius: .25em;
+  color: rgb(221, 102, 102) !important;
 `;
 
 /**
@@ -196,6 +179,7 @@ class ClinicianDetails extends Component {
               return <AdditionalFormBox key={index}> 
               <PageHeading> Copy to clinician {index + 1} <RemoveLabel 
                 bsSize="xsmall"
+                bsStyle="link"
                 onClick={() => this.handleRemoveHCP(index)}>
                 <Glyphicon glyph="trash"/> Remove</RemoveLabel>
               </PageHeading>
@@ -235,22 +219,21 @@ class ClinicianDetails extends Component {
             })
           }
           <FormGroup>
-            <HCPButton onClick={this.handleAddHCP}>
+            <FormButton onClick={this.handleAddHCP}>
               Request a copy of report sent to another clinician
-            </HCPButton> 
+            </FormButton> 
           </FormGroup>
           {
             this.props.route.isEdited !== true &&
             <FormButton 
-            bsStyle="warning" 
             onClick={this.handleBack}
             label="Back"
+            back
             >
               Back
             </FormButton> 
           }
           <FormButton 
-          bsStyle="success" 
           type="submit" 
           onClick={this.handleConfirm}
           >

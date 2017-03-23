@@ -38,8 +38,7 @@ exports[`OrderTestModule test renders without crashing  1`] = `
           8
         </span>
       </p>
-      <div
-        className="well">
+      <div>
         <span
           className="hqFlMa label label-default">
           GZOW

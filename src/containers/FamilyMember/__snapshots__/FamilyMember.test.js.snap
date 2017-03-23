@@ -9,7 +9,7 @@ exports[`<FamilyMember/> renders without crashing 1`] = `
     <div
       className="col-md-12">
       <div
-        className="thumbnail">
+        className="ebbddk thumbnail">
         <img
           alt={undefined}
           src={undefined} />
@@ -40,7 +40,7 @@ exports[`<FamilyMember/> renders without crashing 1`] = `
   </label>
   <br />
   <button
-    className="btn btn-default"
+    className="btn btn-xs btn-link"
     disabled={false}
     onClick={[Function]}
     type="button">
@@ -60,16 +60,13 @@ exports[`<FamilyMember/> renders without crashing 1`] = `
     </div>
   </div>
   <button
-    className="iMtXso btn btn-warning"
-    disabled={false}
+    className="ieDBA"
     label="Back"
-    onClick={[Function]}
-    type="button">
+    onClick={[Function]}>
     Back
   </button>
   <button
-    className="iMtXso btn btn-success"
-    disabled={false}
+    className="bBdbjl"
     onClick={[Function]}
     type="submit">
     Confirm

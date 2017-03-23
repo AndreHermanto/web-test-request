@@ -20,7 +20,7 @@ exports[`ClinicalInfo: index renders without crashing 1`] = `
       Type or copy and paste clinical notes here. Comprehensive notes increase the chance of a successful diagnosis.
     </div>
     <textarea
-      className="form-control"
+      className="ebbddk form-control"
       id={undefined}
       name="clinicalInfo"
       onChange={[Function]}
@@ -50,7 +50,7 @@ exports[`ClinicalInfo: index renders without crashing 1`] = `
       Provide notes from genetic tests, imaging results.
     </div>
     <textarea
-      className="form-control"
+      className="ebbddk form-control"
       id={undefined}
       name="relevantInvestigation"
       onChange={[Function]}
@@ -80,7 +80,7 @@ exports[`ClinicalInfo: index renders without crashing 1`] = `
       Provide notes on the suspected inheritance model and affected relatives.
     </div>
     <textarea
-      className="form-control"
+      className="ebbddk form-control"
       id={undefined}
       name="familyHistory"
       onChange={[Function]}
@@ -154,16 +154,13 @@ exports[`ClinicalInfo: index renders without crashing 1`] = `
     </div>
   </div>
   <button
-    className="iMtXso btn btn-warning"
-    disabled={false}
+    className="ieDBA"
     label="Back"
-    onClick={[Function]}
-    type="button">
+    onClick={[Function]}>
     Back
   </button>
   <button
-    className="iMtXso btn btn-success"
-    disabled={false}
+    className="bBdbjl"
     onClick={[Function]}
     type="submit">
     Confirm

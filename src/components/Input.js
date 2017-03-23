@@ -6,7 +6,8 @@ import {
 } from 'react-bootstrap';
 import { 
   SubLabel,
-  ValidationFeedback
+  ValidationFeedback,
+  FormInput
 } from './SharedStyle';
 
 /**
@@ -38,7 +39,7 @@ export default function Input({
           {optional && (<SubLabel>Optional</SubLabel>)} 
         </ControlLabel>
       )}
-      <FormControl
+      <FormInput
         type="text"
         name={field}
         onChange={onChange}

@@ -80,7 +80,6 @@ class OrderTest extends Component {
           required
         />
         <FormButton 
-          bsStyle="success" 
           type="submit" 
           onClick={this.handleConfirm}
         >

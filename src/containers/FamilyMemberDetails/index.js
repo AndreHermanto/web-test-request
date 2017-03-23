@@ -181,16 +181,15 @@ class FamilyMemberDetails extends Component {
         
         {
           this.props.route.isEdited !== true &&
-          <FormButton 
-            bsStyle="warning" 
+          <FormButton  
             onClick={this.handleCancel}
+            back
           >
             Cancel
           </FormButton> 
         }
       
-        <FormButton 
-          bsStyle="success" 
+        <FormButton  
           type="submit" 
           onClick={this.handleConfirm}
         >
