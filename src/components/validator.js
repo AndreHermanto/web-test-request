@@ -56,5 +56,10 @@ export default function validator(value, rule) {
     validationState.feedback = 'This field is required.';
   }
 
+  if(ruleObj.id && (value.length !== 0 && (value.length > 8 || value.length < 6 || isNaN(value.substring(0,value.length - 2)) || !(value.substring(value.length - 3, value.length)).match(/^[a-z0-9]+$/i)))) {
+    validationState.status = 'error';
+    validationState.feedback = 'This is not a valid provider number.';
+  }
+
   return validationState; 
 }
