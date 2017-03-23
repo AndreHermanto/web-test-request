@@ -69,6 +69,7 @@ class App extends Component {
     return (
       <div>
         <UniversalNavigation />
+        <br />
         <Grid>
           <Row>
             <Col md={10} mdOffset={1} className="pageArea">

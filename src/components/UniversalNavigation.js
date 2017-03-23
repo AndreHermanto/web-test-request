@@ -6,8 +6,11 @@ import logo from '../assets/images/g1_logo.png';
 const Bar = styled(Navbar)`
   background-image: none !important;
   background-repeat: no-repeat !important;
-  height: 90px;
+  height: 80px;
   margin-bottom: 100px;
+  background-color: #fff !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
 `;
 
 
@@ -20,17 +23,17 @@ export default class UniversalNavigation extends React.Component
   render() 
   {  
     return( 
-      <Bar fixedTop>
-        <Grid>
+      <Bar>
+        <Grid style={{ maxWidth: 940, padding: 0 }}>
           <Navbar.Header>
             <Navbar.Brand>
               <a href="/">
                 <img 
                   src={logo} 
                   alt="logo" 
-                  style={{ width: 120, height:45, marginTop: 10 }} />
+                  style={{ width: 'auto', height: 50, marginTop: 0 }} />
               </a>
-              <NavTitle>Test Request App</NavTitle>
+              <NavTitle style={{ color: '#222' }}>Test Request App</NavTitle>
             </Navbar.Brand>
             <Navbar.Toggle />
           </Navbar.Header>

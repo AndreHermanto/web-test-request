@@ -24,16 +24,18 @@ const TestContainer = styled.div`
   padding: 12px !important;
   border-radius: 0px;
   background-color: #fff;
-  border: 1px solid #eee;
+  border: 1px solid #ccc;
   margin-top: 10px;
   margin-bottom: 10px;
   cursor: pointer;
   color:${props => props.valid !== 'error' ? 'black' : '#A94445'};
   &:hover {
     border-color:#00a6b6;
-    box-shadow: 2px 2px 2px 0 rgba(46,46,46,.3);
-    -webkit-transform: translateY(-2px);
-    transform: translateY(-2px);
+    color: #00a6b6 !important;
+  }
+
+  &.active {
+    border-color:#00a6b6;
     color: #00a6b6 !important;
   }
 `;
@@ -41,7 +43,7 @@ const TestContainer = styled.div`
 /**
  * This creates a set of gene label buttons via a single component.
  */
-class GeneLabel extends Component {
+class TestPanel extends Component {
   constructor() {
     super();
     this.state = {
@@ -133,7 +135,7 @@ function Panel(props) {
     <TestContainer
       valid={props.valid}
       onClick={() => props.handleClick(props.option)}>
-      <Row style={{ padding: '16px' }}>
+      <Row style={{ padding: '9px' }}>
         <Col md={1}>
           <img 
             src={props.image} 
@@ -148,7 +150,7 @@ function Panel(props) {
           }
           {
             props.genes !== undefined &&
-            <div className="text-muted">
+            <div className="text-muted" style={{ fontSize: 12.5 }}>
               { 
                 props.genes.map((g, i) => {
                   return (<span key={i}> {g}</span>)
@@ -166,7 +168,7 @@ function Panel(props) {
         <Col md={12}>
           { 
             (props.geneList !== null && props.geneList !== undefined) &&
-            <div> 
+            <div style={{ padding: '8px 8px 0 8px' }}> 
               <ControlLabel>Available Genes:</ControlLabel>
               <div>{geneList}</div>
             </div>
@@ -177,4 +179,4 @@ function Panel(props) {
   )
 }
 
-export default GeneLabel;
+export default TestPanel;

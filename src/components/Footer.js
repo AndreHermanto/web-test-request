@@ -105,6 +105,7 @@ export default class Footer extends React.Component
                   ACN 608 029 732
                 </Info>
               </Col>
+              
               <Col md={3}>
                 <Header>Links</Header>
                 <Info>
@@ -117,6 +118,7 @@ export default class Footer extends React.Component
                   Patient Website
                 </Info>
               </Col>
+      
               <LogoContainer md={6}>
                 <LogoLink href="http://www.garvan.org.au/">
                   <Logo 

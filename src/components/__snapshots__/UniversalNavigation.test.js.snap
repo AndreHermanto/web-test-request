@@ -1,10 +1,16 @@
 exports[`<UniversalNavigation /> renders correctly 1`] = `
 <nav
-  className="kypSk navbar navbar-default navbar-fixed-top">
+  className="fvulNi navbar navbar-default">
   <div
     className="container">
     <div
-      className="container">
+      className="container"
+      style={
+        Object {
+          "maxWidth": 940,
+          "padding": 0,
+        }
+      }>
       <div
         className="navbar-header">
         <span
@@ -16,9 +22,9 @@ exports[`<UniversalNavigation /> renders correctly 1`] = `
               src="test-file-stub"
               style={
                 Object {
-                  "height": 45,
-                  "marginTop": 10,
-                  "width": 120,
+                  "height": 64,
+                  "marginTop": -8,
+                  "width": "auto",
                 }
               } />
           </a>
