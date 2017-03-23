@@ -226,7 +226,7 @@ exports[`FamilyMemberClinicalInfo: index renders without crashing 1`] = `
     Back
   </button>
   <button
-    className="bXqcMU"
+    className="ieDBA"
     onClick={[Function]}>
     Cancel
   </button>

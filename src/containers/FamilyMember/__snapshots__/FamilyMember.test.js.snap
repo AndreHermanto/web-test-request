@@ -9,7 +9,7 @@ exports[`<FamilyMember/> renders without crashing 1`] = `
     <div
       className="col-md-12">
       <div
-        className="thumbnail">
+        className="ebbddk thumbnail">
         <img
           alt={undefined}
           src={undefined} />
