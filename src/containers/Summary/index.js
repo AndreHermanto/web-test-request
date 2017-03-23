@@ -106,6 +106,7 @@ class Summary extends Component {
           formState={this.state.form}
           required
         />
+        <br />
         <Helper>
             When you submit this test request, an email will be sent to this payer with a weblink to view the invoice.  
         </Helper>
