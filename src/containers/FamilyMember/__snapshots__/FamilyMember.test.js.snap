@@ -55,9 +55,7 @@ exports[`<FamilyMember/> renders without crashing 1`] = `
     <div
       className="col-md-12">
       <br />
-      <i>
-        There is no family member associated with this patient. Please select \"Add family member\" to include a patients family member to be tested.
-      </i>
+      There is no family member associated with this patient. Please select \"Add family member\" to include a patients family member to be tested.
       <br />
     </div>
   </div>
