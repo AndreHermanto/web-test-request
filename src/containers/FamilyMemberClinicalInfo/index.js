@@ -71,6 +71,14 @@ class FamilyMemberClinicalInfo extends Component {
     return (
       <div>
         <PageHeading>Step 4-2: {this.props.params.mode} family member {(this.props.params.mode === 'edit') &&  `(${this.props.route.data.familyMember[this.props.params.id].FamilyMemberDetails.firstName} ${this.props.route.data.familyMember[this.props.params.id].FamilyMemberDetails.lastName})`} - clinical info</PageHeading>
+                  
+        <Toggle
+          field="affected"
+          label="Affected"
+          onChange={this.handleChange}
+          formState={this.state.form}
+        />  
+      
         <TextArea
           field="clinicalInfo"
           label="Provide Clinical Information"
@@ -80,13 +88,6 @@ class FamilyMemberClinicalInfo extends Component {
           formState={this.state.form}
           required={this.state.form.affected}
           optional={!this.state.form.affected}
-        />
-            
-        <Toggle
-          field="affected"
-          label="Affected"
-          onChange={this.handleChange}
-          formState={this.state.form}
         />
 
         <TextArea
@@ -118,25 +119,26 @@ class FamilyMemberClinicalInfo extends Component {
             
         {
           this.props.route.isEdited !== true &&
-          <FormButton  
+          <FormButton 
+          bsStyle="warning" 
           onClick={this.handleBack}
           label="Back"
-          back
           >
             Back
           </FormButton> 
         }
         {
           this.props.route.isEdited !== true &&
-          <FormButton  
+          <FormButton 
+            bsStyle="warning" 
             onClick={this.handleCancel}
-            back
           >
             Cancel
           </FormButton> 
         }
       
-        <FormButton  
+        <FormButton 
+          bsStyle="success" 
           type="submit" 
           onClick={this.handleConfirm}
         >

@@ -8,36 +8,6 @@ exports[`FamilyMemberClinicalInfo: index renders without crashing 1`] = `
      - clinical info
   </h3>
   <div
-    className="form-group has-feedback">
-    <label
-      className="control-label"
-      htmlFor={undefined}>
-      Provide Clinical Information
-      <span
-        className="jCNiHk">
-        Optional
-      </span>
-    </label>
-    <div
-      className="kWhIoX">
-      Type or copy and paste clinical notes here. Comprehensive notes increase the chance of a successful diagnosis.
-    </div>
-    <textarea
-      className="ebbddk form-control"
-      id={undefined}
-      name="clinicalInfo"
-      onChange={[Function]}
-      style={
-        Object {
-          "minHeight": 90,
-        }
-      }
-      type={undefined}
-      value="" />
-    <span
-      className="SfhHK help-block" />
-  </div>
-  <div
     className="form-group">
     <label
       className="control-label"
@@ -104,6 +74,36 @@ exports[`FamilyMemberClinicalInfo: index renders without crashing 1`] = `
         </tr>
       </tbody>
     </table>
+    <span
+      className="SfhHK help-block" />
+  </div>
+  <div
+    className="form-group has-feedback">
+    <label
+      className="control-label"
+      htmlFor={undefined}>
+      Provide Clinical Information
+      <span
+        className="jCNiHk">
+        Optional
+      </span>
+    </label>
+    <div
+      className="kWhIoX">
+      Type or copy and paste clinical notes here. Comprehensive notes increase the chance of a successful diagnosis.
+    </div>
+    <textarea
+      className="ebbddk form-control"
+      id={undefined}
+      name="clinicalInfo"
+      onChange={[Function]}
+      style={
+        Object {
+          "minHeight": 90,
+        }
+      }
+      type={undefined}
+      value="" />
     <span
       className="SfhHK help-block" />
   </div>
@@ -238,13 +238,13 @@ exports[`FamilyMemberClinicalInfo: index renders without crashing 1`] = `
       className="SfhHK help-block" />
   </div>
   <button
-    className="ieDBA"
+    className="bBdbjl"
     label="Back"
     onClick={[Function]}>
     Back
   </button>
   <button
-    className="ieDBA"
+    className="bBdbjl"
     onClick={[Function]}>
     Cancel
   </button>

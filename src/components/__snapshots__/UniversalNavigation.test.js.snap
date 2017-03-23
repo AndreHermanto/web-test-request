@@ -22,14 +22,19 @@ exports[`<UniversalNavigation /> renders correctly 1`] = `
               src="test-file-stub"
               style={
                 Object {
-                  "height": 64,
-                  "marginTop": -8,
+                  "height": 50,
+                  "marginTop": 0,
                   "width": "auto",
                 }
               } />
           </a>
           <span
-            className="hdMxID">
+            className="hdMxID"
+            style={
+              Object {
+                "color": "#222",
+              }
+            }>
             Test Request App
           </span>
         </span>
