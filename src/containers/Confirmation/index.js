@@ -18,6 +18,7 @@ const ConfirmationBox = styled.div`
   padding: 20px;
   margin-bottom: 10px;
   margin-left: 10%;
+  background-color: #fff;
 `;
 
 const ConfirmationBreakLineXS = styled.div`

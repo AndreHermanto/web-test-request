@@ -1,8 +1,8 @@
 exports[`BillingInfoModule test private renders without crashing  1`] = `
 <div
-  className="bNDqdW">
+  className="cYSRw">
   <h3
-    className="kGfomK">
+    className="iArjKn">
     Private
      billing
     <button
@@ -22,9 +22,9 @@ exports[`BillingInfoModule test private renders without crashing  1`] = `
     <div
       className="col-md-12">
       <p
-        className="doDOdK">
+        className="cEiVmq">
         <span
-          className="jXWIEx">
+          className="bdMjbs">
            Payer:  
         </span>
         abc abc
@@ -33,9 +33,9 @@ exports[`BillingInfoModule test private renders without crashing  1`] = `
     <div
       className="col-md-12">
       <p
-        className="doDOdK">
+        className="cEiVmq">
         <span
-          className="jXWIEx">
+          className="bdMjbs">
            Mobile:  
         </span>
         +61412334477
@@ -44,9 +44,9 @@ exports[`BillingInfoModule test private renders without crashing  1`] = `
     <div
       className="col-md-12">
       <p
-        className="doDOdK">
+        className="cEiVmq">
         <span
-          className="jXWIEx">
+          className="bdMjbs">
            Email:  
         </span>
       </p>
@@ -54,9 +54,9 @@ exports[`BillingInfoModule test private renders without crashing  1`] = `
     <div
       className="col-md-12">
       <p
-        className="doDOdK">
+        className="cEiVmq">
         <span
-          className="jXWIEx">
+          className="bdMjbs">
            Total price:  
         </span>
         $

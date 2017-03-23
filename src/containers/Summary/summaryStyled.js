@@ -1,29 +1,24 @@
 import styled from 'styled-components';
 import { Label } from 'react-bootstrap';
 
-export const Font = {
-  'font-family': 'Gotham A,Helvetica,sans-serif',
-  'line-height': '1.5em'
-}
-
 export const SummaryBox = styled.div`
   border: 1px solid rgb(227, 231, 241);
   width: 100%;
   padding: 20px;
   border-bottom: 0px solid transparent;
+  background-color: #fff;
 `;
 export const LastBox = styled.div`
   border: 1px solid rgb(227, 231, 241);
   width: 100%;
   padding: 20px;
   margin-bottom:21px;
+  background-color: #fff;
 `;
 
 export const SummaryHeading = styled.h3`
-  font-weight: 400;
-  margin-bottom: 10px;
-  text-transform: capitalize;
-  ${Font}
+  margin-top: 10px !important;
+  font-size: 22px !important;
 `;
 
 export const SectionHeading = styled.h4`
@@ -36,16 +31,12 @@ export const SummaryBreakLine = styled.div`
 `;
 
 export const SummaryTitle = styled.span`
-  ${Font}
   margin-bottom: 10px;
-  font-size: 16px;
   font-weight: 200;
 `;
 
 export const SummaryDetails = styled.p`
-  ${Font}
   margin-bottom: 10px;
-  font-size: 16px;
   font-weight: 200;
   line-height: 1;
 `;
