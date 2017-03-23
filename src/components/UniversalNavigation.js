@@ -7,7 +7,6 @@ const Bar = styled(Navbar)`
   background-image: none !important;
   background-repeat: no-repeat !important;
   height: 80px;
-  margin-bottom: 100px;
   background-color: #fff !important;
   box-shadow: none !important;
   border-radius: 0 !important;

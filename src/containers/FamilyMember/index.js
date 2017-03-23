@@ -107,12 +107,11 @@ class FamilyMember extends Component {
         <br /><br />
         <label>Family members associated with this patient:</label>
         <br />
-        <Button 
-        bsSize="xsmall"
-        bsStyle="link"
-        onClick={this.handleAddFamilyMember} >
+        <FormButton 
+          onClick={this.handleAddFamilyMember}
+        >
           <Glyphicon glyph="plus"/> Add family member       
-        </Button>
+        </FormButton>
         <br /><br />
       
         <Row>
@@ -187,9 +186,9 @@ class FamilyMember extends Component {
         {
           this.props.route.isEdited !== true &&
           <FormButton  
-          onClick={this.handleBack}
-          label="Back"
-          back
+            onClick={this.handleBack}
+            label="Back"
+            back
           >
             Back
           </FormButton> 
