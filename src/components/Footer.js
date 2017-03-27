@@ -88,7 +88,7 @@ export default class Footer extends React.Component
   render() 
   {  
     return( 
-      <FooterContainer>
+      <FooterContainer className="noPrint">
         <FooterContent>
             <Row>
               <Col md={3}>

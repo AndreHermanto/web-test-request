@@ -40,6 +40,9 @@ class BillingInfo extends Component {
   
   componentDidMount() {
     this.priceChange();
+    if(this.props.route.preventUnvisitedFormAccess) {
+      this.props.router.setRouteLeaveHook(this.props.route, this.props.route.preventUnvisitedFormAccess.bind(this));
+    }
   }
   
   priceChange() {

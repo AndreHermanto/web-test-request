@@ -60,3 +60,13 @@ export function setFormEditState(state) {
     isEdited: true
   })
 }
+
+/**
+ * Set "validated" state to true - identifying the confirm button is clicked and validation processed.
+ * @param {Object} state Targeted state to be changed.
+ */
+export function validatedToTrue(state) {
+  return Object.assign({}, state, {
+    validated: true
+  });
+}

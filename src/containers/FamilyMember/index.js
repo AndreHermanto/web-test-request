@@ -48,6 +48,12 @@ class FamilyMember extends Component {
     this.state = initData(props.route.data);
   }
   
+  componentDidMount() {
+    if(this.props.route.preventUnvisitedFormAccess) {
+      this.props.router.setRouteLeaveHook(this.props.route, this.props.route.preventUnvisitedFormAccess.bind(this));
+    }
+  }
+  
   handleAddFamilyMember() {
     return this.setState(addFamilyMember(this.state, this.state.form.familyMember), () => {
       this.props.route.onChange(this);
