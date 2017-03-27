@@ -1,22 +1,69 @@
 exports[`<Footer /> Match Snapshot 1`] = `
 <div
-  className="noPrint ecMRJP">
+  className="noPrint dmZfJj">
   <div
-    className="hCJBLu">
+    className="inxpzu">
     <div
       className="row">
       <div
         className="col-md-3">
         <h1
-          className="fYCgqo">
-          Contact
+          className="UcpAd">
+          Learn More
         </h1>
         <div
-          className="feeldV">
-          P +61 2 9359 8002
+          className="fpKqHF">
+          <a
+            className="jufSRj"
+            href="http://genomeone-new.webflow.io/partners">
+            Partners
+          </a>
+          <br />
+          <a
+            className="jufSRj"
+            href="http://genomeone-new.webflow.io/privacy-policy">
+            Privacy Policy
+          </a>
+          <br />
+          <a
+            className="jufSRj"
+            href="http://genomeone-new.webflow.io/resources/careers">
+            Careers
+          </a>
+          <br />
+          <a
+            className="jufSRj"
+            href="http://genomeone-new.webflow.io/about-us">
+            About us
+          </a>
+          <br />
+          <a
+            className="jufSRj"
+            href="http://genomeone-new.webflow.io/news">
+            News
+          </a>
         </div>
+      </div>
+      <div
+        className="col-md-3">
+        <h1
+          className="UcpAd">
+          Contact Us
+        </h1>
+        <a
+          className="hzPsem"
+          href="mailto:enquiries@genome.one?subject=General Inquiry">
+          enquiries@genome.one
+        </a>
         <div
-          className="feeldV">
+          className="fpKqHF"
+          style={
+            Object {
+              "color": "#929292",
+            }
+          }>
+          P +61 2 9359 8002
+          <br />
           370 Victoria St.
           <br />
           Darlinghurst, NSW 2010,
@@ -25,23 +72,6 @@ exports[`<Footer /> Match Snapshot 1`] = `
           <br />
           <br />
           ACN 608 029 732
-        </div>
-      </div>
-      <div
-        className="col-md-3">
-        <h1
-          className="fYCgqo">
-          Links
-        </h1>
-        <div
-          className="feeldV">
-          FAQ
-          <br />
-          Partners
-          <br />
-          Privacy Policy
-          <br />
-          Patient Website
         </div>
       </div>
       <div
@@ -73,35 +103,40 @@ exports[`<Footer /> Match Snapshot 1`] = `
             } />
         </a>
         <div
-          className="edpsbn">
+          className="dCXArS">
           Genome.One is a wholly owned subsidiary of the Garvan Institute of Medical Research.
         </div>
       </div>
     </div>
   </div>
+  <hr
+    className="kMeaUb" />
   <div
-    className="nzDfu">
+    className="irWDrC">
     <div
       className="row">
       <div
-        className="jhwutx col-md-8">
+        className="mXBHO col-md-8">
         COPYRIGHT © 2016 GENOME.ONE. ALL RIGHTS RESERVED
       </div>
       <div
         className="jQzDYo col-md-4">
-        <img
-          alt="facebook"
-          height="20"
-          src="https://daks2k3a4ib2z.cloudfront.net/56fb123ccf591b312d55dbb6/5775bd6c191ec28b22cd6534_facebook.svg"
-          style={
-            Object {
-              "marginRight": 25,
-            }
-          } />
-        <img
-          alt="twitter"
-          height="24"
-          src="https://daks2k3a4ib2z.cloudfront.net/56fb123ccf591b312d55dbb6/5775bd6c191ec28b22cd6535_twitter.svg" />
+        <a
+          className="feCCVI"
+          href="https://www.facebook.com/Genome.One/"
+          target="_blank">
+          <img
+            height="23"
+            src="https://daks2k3a4ib2z.cloudfront.net/56fb123ccf591b312d55dbb6/5897e8d62a25945021987407_FB-f-Logo__blue_100.png" />
+        </a>
+        <a
+          className="footer-social-link w-inline-block feCCVI"
+          href="https://twitter.com/GenomeOneHealth"
+          target="_blank">
+          <img
+            height="35"
+            src="https://daks2k3a4ib2z.cloudfront.net/56fb123ccf591b312d55dbb6/5897e87dbfd5fa6c63bc313e_TwitterLogo_%2355acee.png" />
+        </a>
       </div>
     </div>
   </div>
