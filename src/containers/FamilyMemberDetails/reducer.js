@@ -20,7 +20,7 @@ export function initData(prefilled) {
       lastName: 'required',
       relationship: 'required',
       firstName: 'required',
-      dob: 'required',
+      dob: 'requiredDate',
       consent: 'consentTrue',
       email: 'required email'
     },

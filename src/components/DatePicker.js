@@ -1,26 +1,34 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import {
   FormGroup,
   ControlLabel
 } from 'react-bootstrap';
-
-import { Typeahead } from 'react-bootstrap-typeahead';
 import styled from 'styled-components';
 import { 
   SubLabel,
-  ValidationFeedback
+  ValidationFeedback,
+  FormInput
 } from './SharedStyle';
 
-const DateSelect = styled(Typeahead)`
-  float: left;
+const DateLabel = styled.span`
+  color: #222;
+  margin-top: 8px;
+  margin-bottom: 2px;
+  font-size: 90%;
+`;
+
+const DateBlock = styled.div`
+  float: left !important;
   margin-right: 12px;
-  width: 100px;
-  :first-child { 
-    input:first-child{
-      border-radius: 0px;
-      height: 38px;
-    }
-  }
+  display:inline-block;
+`;
+
+const DateSlash = styled.div`
+  float: left !important;
+  margin-right: 12px;
+  font-size: 28px;
+  margin-top: 18px;
 `;
 
 /**
@@ -30,7 +38,7 @@ class DatePicker extends Component {
   constructor(props) {
     super(props);
 
-    this.handleSelectionChange = this.handleSelectionChange.bind(this);
+    this.handleDateChange = this.handleDateChange.bind(this);
     
     var prefill = [];
     if(props.formState[props.field]) {
@@ -44,17 +52,29 @@ class DatePicker extends Component {
     }
   }
   
-  handleSelectionChange(e) {
-    var select = e[0];
-    if(!select) { return; }
+  handleDateChange(event) {
+    var target = event.currentTarget;
+    if(!target) { return; }
     
-    this.setState({ [select.name]: select.value }, () => {
+    if(target.name === 'day' && target.value.length > 2) target.value = target.value.substring(0,2);
+    if(target.name === 'month' && target.value.length > 2) target.value = target.value.substring(0,2);
+    if(target.name === 'year' && target.value.length > 4) target.value = target.value.substring(0,4);
+    
+    this.setState({ [target.name]: target.value }, () => {
       var date = Object.assign({}, this.state), value;
-      if(!date.day || !date.month || !date.year) {
+      if(
+        !date.day || !date.month || !date.year ||
+        date.day > 31 || date.day < 1 ||
+        date.month > 12 || date.day < 1 ||
+        date.year.length !== 4
+      ) {
         value = '';
       } else {
-        value = date.day + '-' + date.month + '-' + date.year;
+        value = parseInt(date.day, 0) + '-' + parseInt(date.month, 0) + '-' + parseInt(date.year, 0);
       }
+
+      if(target.name === 'day' && target.value.length >= 2) ReactDOM.findDOMNode(this.refs.month).focus();
+      if(target.name === 'month' && target.value.length >= 2) ReactDOM.findDOMNode(this.refs.year).focus();
       
       this.props.onChange({
         target: {
@@ -84,69 +104,47 @@ class DatePicker extends Component {
           {this.props.optional && (<SubLabel>Optional</SubLabel>)} 
         </ControlLabel>
         <br />
-        <DateSelect
-          labelKey={option => `${option.label}`}
-          placeholder="Day"
-          style={{ width: 30 }}
-          onChange={this.handleSelectionChange}
-          defaultSelected={[this.state.day]}
-          options={ 
-            (function() {
-              var arr = [], i;
-              for(i=1;i<=31;i++) {
-                arr.push({
-                  name: 'day',
-                  value: i, 
-                  label: i
-                });
-              }
-              return arr;
-            })()
-          }
-        />
+        <div className="date" style={{ height: 25 }}>      
+          <DateBlock
+            style={{ width: 50 }}
+          >
+            <DateLabel>Day</DateLabel>
+            <FormInput
+              type="text"
+              name="day"
+              ref="day"
+              onChange={this.handleDateChange}
+              value={this.state.day || ''}
+            />
+          </DateBlock>
+          <DateSlash> / </DateSlash>
+          <DateBlock
+            style={{ width: 50 }}
+          >
+            <DateLabel>Month</DateLabel>
+            <FormInput
+              type="text"
+              name="month"
+              ref="month"
+              onChange={this.handleDateChange}
+              value={this.state.month || ''}
+            />
+          </DateBlock>
+          <DateSlash> / </DateSlash>
+          <DateBlock
+            style={{ width: 80 }}
+          >
+            <DateLabel>Year</DateLabel>
+            <FormInput
+              type="text"
+              name="year"
+              ref="year"
+              onChange={this.handleDateChange}
+              value={this.state.year || ''}
+            />
+          </DateBlock>
+        </div>
 
-        <DateSelect
-          labelKey={option => `${option.label}`}
-          placeholder="Month"
-          onChange={this.handleSelectionChange}
-          defaultSelected={[this.state.month]}
-          options={ 
-            ([
-              'January', 'February', 'March', 
-              'April', 'May', 'June', 
-              'July', 'August', 'September', 
-              'October', 'November', 'December'         
-            ]).map(function(mm) {
-              return (
-                {
-                  name: 'month',
-                  value: mm, 
-                  label: mm
-                }
-              );
-            })
-          }
-        />
-        
-        <DateSelect
-          labelKey={option => `${option.label}`}
-          placeholder="Year"
-          onChange={this.handleSelectionChange}
-          defaultSelected={[this.state.year]}
-          options={ 
-            (function() {
-              var arr = [], i;
-              for(i=0;i<100;i++) {
-                arr.push({
-                  name: 'year',
-                  value: i+1917, 
-                  label: i+1917
-                });
-              }
-              return arr;
-            })()
-          }
-        />
         <br /><br />
         <ValidationFeedback>{validator.feedback}</ValidationFeedback>
       </FormGroup>
