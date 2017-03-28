@@ -190,7 +190,7 @@ class BillingInfo extends Component {
             <div>
               <Toggle
                 field="consent"
-                label="Payer's consent confirmation"
+                label="Has payer's consent been received?"
                 onChange={this.handleChange}
                 onValidate={this.validate()}
                 formState={this.state.form}

@@ -99,7 +99,7 @@ class FamilyMember extends Component {
   render() {
     return (
       <div>
-        <PageHeading>Step 4: Family Members</PageHeading>
+        <PageHeading>Step 4: Add Family Members who will also provide samples</PageHeading>
         <Row>
           <Col md={12}>
             <BlockFamilyContainer>

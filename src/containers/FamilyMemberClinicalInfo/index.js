@@ -84,7 +84,7 @@ class FamilyMemberClinicalInfo extends Component {
         <TextArea
           field="clinicalInfo"
           label="Provide Clinical Information"
-          helper="Type or copy and paste clinical notes here. Comprehensive notes increase the chance of a successful diagnosis."
+          helper="Type or copy and paste clinical notes and the diagnosis here. Comprehensive notes increase the chance of a successful diagnosis."
           onChange={this.handleChange}
           onValidate={this.validate()}
           formState={this.state.form}
