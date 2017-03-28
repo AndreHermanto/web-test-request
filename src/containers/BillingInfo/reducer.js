@@ -110,7 +110,7 @@ export function setBillOption(state, target, payerObj) {
       phone: '',
       firstName: payerObj.value.split(' ')[0],
       lastName: payerObj.value.split(' ')[1],
-      payerEmail: payerObj.email,
+      payerEmail: '',
       consent: false
     });
   }
@@ -140,7 +140,7 @@ export function setBillOption(state, target, payerObj) {
 /**
 * set the phone state when user choose a payer
 */
-export function setSelectData(state, value, email) {
+export function setSelectData(state, value) {
   let formStateChild, 
       validationStateChild = Object.assign({}, state.validation);
   if(value !== 'Other')
@@ -150,7 +150,7 @@ export function setSelectData(state, value, email) {
       payer: value,
       firstName: payer[0],
       lastName: payer[1],
-      payerEmail: email
+      payerEmail: ''
     });
   }
   else {

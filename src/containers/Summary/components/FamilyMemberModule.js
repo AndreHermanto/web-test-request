@@ -112,12 +112,6 @@ class FamilyMemberModule extends Component
             </Col>
           }
           <Col md={12}>
-            <SummaryDetails> 
-              <SummaryTitle> Email:  </SummaryTitle>
-              {this.props.familyMemberDetails.email}
-            </SummaryDetails>
-          </Col>
-          <Col md={12}>
             <SectionHeading> 
               Clinical Information
             </SectionHeading>

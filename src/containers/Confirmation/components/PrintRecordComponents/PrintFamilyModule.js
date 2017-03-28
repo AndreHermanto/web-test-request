@@ -62,12 +62,6 @@ export default function PrintFamilyModule(props) {
               </p>
             }
 
-
-            <p> 
-              <strong> Email:  </strong>
-              {member.FamilyMemberDetails.email}
-            </p>
-
             <p> 
               <strong> Consanguinity:  </strong>
               {member.FamilyMemberClinicalInfo.consanguinity ? 'Yes' : 'No'} 

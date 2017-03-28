@@ -84,12 +84,6 @@ exports[`test PrintRecord renders without crashing  1`] = `
     </p>
     <p>
       <strong>
-         Email:  
-      </strong>
-      abc@abc.gmail.com
-    </p>
-    <p>
-      <strong>
          Consanguinity:  
       </strong>
       No
@@ -147,12 +141,6 @@ exports[`test PrintRecord renders without crashing  1`] = `
            Gender:  
         </strong>
         Female
-      </p>
-      <p>
-        <strong>
-           Email:  
-        </strong>
-        abc@abc.com
       </p>
       <p>
         <strong>
@@ -224,12 +212,6 @@ exports[`test PrintRecord renders without crashing  1`] = `
            Deceased:  
         </strong>
         Yes
-      </p>
-      <p>
-        <strong>
-           Email:  
-        </strong>
-        abc@abc.com
       </p>
       <p>
         <strong>
