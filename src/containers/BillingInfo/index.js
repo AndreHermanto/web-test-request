@@ -68,7 +68,7 @@ class BillingInfo extends Component {
   }
 
   handleSelectChange(event) {
-    this.setState(setSelectData(this.state, event.value, event.email), this.priceChange);
+    this.setState(setSelectData(this.state, event.value), this.priceChange);
   }
 
   handleBack() {
@@ -103,8 +103,7 @@ class BillingInfo extends Component {
                          member.FamilyMemberDetails.lastName.toString();
         payers.unshift({
           value: memberName, 
-          label: memberName + ' (Family Member)',
-          email: member.FamilyMemberDetails.email
+          label: memberName + ' (Family Member)'
         })
       });
     }
@@ -115,8 +114,7 @@ class BillingInfo extends Component {
                         this.props.route.patientData.lastName.toString();
       payers.unshift({ 
         value: patientName, 
-        label: patientName + ' (Patient)',
-        email: this.props.route.patientData.email
+        label: patientName + ' (Patient)'
       });
     }
     
@@ -227,7 +225,6 @@ class BillingInfo extends Component {
                 onValidate={this.validate()}
                 formState={this.state.form}
                 required
-                disabled={(this.state.form.payer !== 'Other')}
               />
               <Input
                 field="phone"

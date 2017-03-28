@@ -58,11 +58,6 @@ export default function PrintPatientModule(props) {
       }
 
       <p> 
-        <strong> Email:  </strong>
-        {props.patientDetails.email} 
-      </p>
-
-      <p> 
         <strong> Consanguinity:  </strong>
           {props.clinicalInfo.consanguinity ? 'Yes' : 'No'} 
       </p>
