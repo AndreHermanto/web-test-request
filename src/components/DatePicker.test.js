@@ -4,12 +4,7 @@ import renderer from 'react-test-renderer';
 import TestUtils from 'react-addons-test-utils';
 
 describe('DatePicker', function() {
-  /*test('renders correctly', function() {
-    const component = renderer.create(<DatePicker  name="dob" onChange={(a)=>{send = a.target.value;}} />).toJSON();
-    expect(component).toMatchSnapshot();
-  });*/
-  
-  test('onSelectionChange updates and parse the value to parent\'s date state correctly', async function() {
+  test('handleDateChange updates and parse the value to parent\'s date state correctly', async function() {
     var send;
     const component = TestUtils.renderIntoDocument(
       <DatePicker 
@@ -19,11 +14,11 @@ describe('DatePicker', function() {
       />
     );
     component.state = {}; 
-    component.handleSelectionChange([{ name: 'year', value: '1999' }]);
+    component.handleDateChange({ currentTarget: { name: 'year', value: '1999' }});
     expect(send).toEqual('');
-    component.handleSelectionChange([{ name: 'month', value: 'June' }]);
+    component.handleDateChange({ currentTarget: { name: 'month', value: '12' }});
     expect(send).toEqual('');
-    component.handleSelectionChange([{ name: 'day', value: '21' }]);
-    expect(send).toEqual('21-June-1999');
+    component.handleDateChange({ currentTarget: { name: 'day', value: '21' }});
+    expect(send).toEqual('21-12-1999');
   });
 });

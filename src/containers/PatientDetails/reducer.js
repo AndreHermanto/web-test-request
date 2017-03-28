@@ -18,7 +18,7 @@ export function initData(prefilled) {
     validationRule: {
       lastName: 'required',
       firstName: 'required',
-      dob: 'required',
+      dob: 'requiredDate',
       consent: 'consentTrue',
       email: 'required email'
     },

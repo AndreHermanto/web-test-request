@@ -50,6 +50,11 @@ export default function validator(value, rule) {
     validationState.status = 'error';
     validationState.feedback = 'You must select one of above.';
   }
+  
+  if(ruleObj.requiredDate && !value) {
+    validationState.status = 'error';
+    validationState.feedback = 'This date is not valid.';
+  }
 
   if(ruleObj.required && !value) {
     validationState.status = 'error';
