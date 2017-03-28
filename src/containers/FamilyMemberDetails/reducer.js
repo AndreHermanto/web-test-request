@@ -13,16 +13,14 @@ export function initData(prefilled) {
       ethnicity: '',
       deceased: false,
       sampleSource: '',
-      consent: false,
-      email: ''    
+      consent: false
     },
     validationRule: {
       lastName: 'required',
       relationship: 'required',
       firstName: 'required',
       dob: 'required',
-      consent: 'consentTrue',
-      email: 'required email'
+      consent: 'consentTrue'
     },
     validated: false,
     formId: 'FamilyMemberDetails'

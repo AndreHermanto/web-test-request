@@ -137,7 +137,6 @@ function testData() {
           "deceased": true,
           "sampleSource": "",
           "consent": true,
-          "email": "a@a.aa"
         },
         "ClinicalInfo": {
           "clinicalInfo": "adsfasdf",
@@ -160,7 +159,6 @@ function testData() {
                 "deceased": true,
                 "sampleSource": "",
                 "consent": true,
-                "email": "a@a.aa"
               },
               "FamilyMemberClinicalInfo": {
                 "clinicalInfo": "asdfasdf",
@@ -182,7 +180,6 @@ function testData() {
                 "ethnicity": "",
                 "deceased": false,
                 "consent": true,
-                "email": "a@a.aa"
               },
               "FamilyMemberClinicalInfo": {
                 "clinicalInfo": "asdfasdf2",
