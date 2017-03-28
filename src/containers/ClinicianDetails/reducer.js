@@ -26,13 +26,13 @@ export function initialState(prefilled) {
       email: 'required email'
     },
     validationCopyHCPRule: {
-      additionalFirstName: 'required',
-      additionalLastName: 'required',
-      additionalOrganisation: 'required',
-      additionalEmail: 'required email'
+      firstName: 'required',
+      lastName: 'required',
+      organisation: 'required',
+      email: 'required email'
     },
     validated: false,
-    formId: 'ClinicianDetails'
+    formId: 'clinicianDetailsModule'
   };
 
   if(prefilled && Object.keys(prefilled).length !== 0) state.form = prefilled;
@@ -82,15 +82,15 @@ export function setFormData(state, target) {
 }
 
 /**
-* add new HCP copy form field to additionalForm state
+* add new HCP copy
 * unlimited copy 
 */
 export function addNewHCP(state, HCPArray) {
   const newHCP = {
-    additionalFirstName:'',
-    additionalLastName:'',
-    additionalOrganisation:'',
-    additionalEmail:''
+    firstName:'',
+    lastName:'',
+    organisation:'',
+    email:''
   }
   
   var newHCPValidation = {};
@@ -162,7 +162,6 @@ export function setHCPForm(state, HCPArray, target, index) {
 * submit button validation before moving to next step
 * Set copyToHCP to empty array in case validation is fail
 * Check if user request a copy HCP
-* if yes then transfer it from additionalForm to copyToHCP form state
 * set validated to true and move to next step
 */
 export function validateClinicianForm(state) {

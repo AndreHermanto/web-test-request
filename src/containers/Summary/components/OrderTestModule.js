@@ -45,18 +45,18 @@ class OrderTestModule extends Component
           </Col>
           <Col md={12}>
             {
-              this.props.orderTestModule.genes && 
+              this.props.orderTestModule.test.genes && 
               <SummaryDetails> Total number of genes available: 
                 <Gene>
-                  {this.props.orderTestModule.genes.length} 
+                  {this.props.orderTestModule.test.genes.length} 
                 </Gene> 
               </SummaryDetails>
             }
             {
-              this.props.orderTestModule.genes && (
+              this.props.orderTestModule.test.genes && (
               <div>
               {
-                this.props.orderTestModule.genes.map((gene, $index) => {
+                this.props.orderTestModule.test.genes.map((gene, $index) => {
                   return <GeneLabel key={$index}>{gene}</GeneLabel> 
                 })
               }

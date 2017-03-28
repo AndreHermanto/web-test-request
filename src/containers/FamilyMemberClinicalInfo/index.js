@@ -23,7 +23,7 @@ class FamilyMemberClinicalInfo extends Component {
     this.handleConfirm = this.handleConfirm.bind(this);
     
     var prefill, prefillClinical;
-    if(props.route.data) prefill = props.route.data.familyMember[props.params.id].FamilyMemberClinicalInfo;
+    if(props.route.data) prefill = props.route.data.familyMembers[props.params.id].familyMemberClinicalInfo;
     if(props.route.clinicalInfoData) prefillClinical = props.route.clinicalInfoData.familyHistory
     this.state = initData(prefill, prefillClinical);
   }
@@ -72,7 +72,7 @@ class FamilyMemberClinicalInfo extends Component {
   render() {
     return (
       <div>
-        <PageHeading>Step 4-2: {this.props.params.mode} family member {(this.props.params.mode === 'edit') &&  `(${this.props.route.data.familyMember[this.props.params.id].FamilyMemberDetails.firstName} ${this.props.route.data.familyMember[this.props.params.id].FamilyMemberDetails.lastName})`} - clinical info</PageHeading>
+        <PageHeading>Step 4-2: {this.props.params.mode} family member {(this.props.params.mode === 'edit') &&  `(${this.props.route.data.familyMembers[this.props.params.id].familyMemberDetails.firstName} ${this.props.route.data.familyMembers[this.props.params.id].familyMemberDetails.lastName})`} - clinical info</PageHeading>
                   
         <Toggle
           field="affected"

@@ -12,7 +12,7 @@ export function initData(prefilled) {
       clinicalInfo: 'required'
     },
     validated: false,
-    formId: 'ClinicalInfo'
+    formId: 'clinicalInfoModule'
   };
   
   if(prefilled && Object.keys(prefilled).length !== 0) state.form = prefilled;

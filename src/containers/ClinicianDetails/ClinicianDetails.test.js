@@ -37,39 +37,39 @@ describe('<ClinicianDetails />', function() {
     let event = {
       target: {
         value:'aa',
-        name:'additionalFirstName'
+        name:'firstName'
       }
     };
 
     view.handleHCPChange(event, 0)
-    expect(view.state.form.copyToHCP[0].additionalFirstName).toEqual('aa');
+    expect(view.state.form.copyToHCP[0].firstName).toEqual('aa');
 
     event = {
       target: {
         value:'lastname',
-        name:'additionalLastName'
+        name:'lastName'
       }
     }
     view.handleHCPChange(event, 0);
-    expect(view.state.form.copyToHCP[0].additionalLastName).toEqual('lastname');
+    expect(view.state.form.copyToHCP[0].lastName).toEqual('lastname');
 
     event = {
       target: {
-        value:'additionalOrganisation',
-        name:'additionalOrganisation'
+        value:'organisation',
+        name:'organisation'
       }
     }
     view.handleHCPChange(event, 0);
-    expect(view.state.form.copyToHCP[0].additionalOrganisation).toEqual('additionalOrganisation');
+    expect(view.state.form.copyToHCP[0].organisation).toEqual('organisation');
 
     event = {
       target: {
-        value:'additionalEmail',
-        name:'additionalEmail'
+        value:'email',
+        name:'email'
       }
     }
     view.handleHCPChange(event, 0);
-    expect(view.state.form.copyToHCP[0].additionalEmail).toEqual(event.target.value);
+    expect(view.state.form.copyToHCP[0].email).toEqual(event.target.value);
   });
 
   test('handleBack works', () =>  {

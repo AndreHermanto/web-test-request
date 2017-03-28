@@ -24,7 +24,7 @@ class FamilyMemberDetails extends Component {
     this.handleConfirm = this.handleConfirm.bind(this);
     
     var prefill;
-    if(props.route.data) prefill = props.route.data.familyMember[props.params.id].FamilyMemberDetails;
+    if(props.route.data) prefill = props.route.data.familyMembers[props.params.id].familyMemberDetails;
     this.state = initData(prefill);
   }
   

@@ -9,94 +9,94 @@ export default function PrintFamilyModule(props) {
   return (
     <div>
       {
-        props.familyMember.familyMember.length > 0 &&
-        props.familyMember.familyMember.map((member, i) => 
+        props.familyMember.familyMembers.length > 0 &&
+        props.familyMember.familyMembers.map((member, i) => 
         {
           return <Section key={i}>
           <PrintHeading>
-            Family Member ({member.FamilyMemberDetails.relationship}) - {member.FamilyMemberDetails.firstName + ' ' + member.FamilyMemberDetails.lastName}
+            Family Member ({member.familyMemberDetails.relationship}) - {member.familyMemberDetails.firstName + ' ' + member.familyMemberDetails.lastName}
           </PrintHeading>
             <p> 
               <strong> Date of Birth:  </strong>
-              {member.FamilyMemberDetails.dob}
+              {member.familyMemberDetails.dob}
             </p>
 
             {
-              member.FamilyMemberDetails.medicalRecordNo !== '' && 
+              member.familyMemberDetails.medicalRecordNo !== '' && 
               <p> 
                 <strong> Medical record number:  </strong>
-                {member.FamilyMemberDetails.medicalRecordNo}
+                {member.familyMemberDetails.medicalRecordNo}
               </p>
             }
 
             <p> 
               <strong> Gender:  </strong>
               {
-                member.FamilyMemberDetails.gender === 'Other' ?
-                member.FamilyMemberDetails.genderOther + ' (Other)' :
-                member.FamilyMemberDetails.gender
+                member.familyMemberDetails.gender === 'Other' ?
+                member.familyMemberDetails.genderOther + ' (Other)' :
+                member.familyMemberDetails.gender
               } 
             </p>
 
             {
-              member.FamilyMemberDetails.ethnicity !== '' && 
+              member.familyMemberDetails.ethnicity !== '' && 
               <p> 
                 <strong> Ethnicity:  </strong>
-                {member.FamilyMemberDetails.ethnicity}
+                {member.familyMemberDetails.ethnicity}
               </p>
             }
     
             {
-              member.FamilyMemberDetails.deceased !== false &&
+              member.familyMemberDetails.deceased !== false &&
               <p> 
                 <strong> Deceased:  </strong>
-                {member.FamilyMemberDetails.deceased ? 'Yes' : 'No'}
+                {member.familyMemberDetails.deceased ? 'Yes' : 'No'}
               </p>
             }
     
             {
-              (member.FamilyMemberDetails.deceased !== false && member.FamilyMemberDetails.sampleSource !== '') && 
+              (member.familyMemberDetails.deceased !== false && member.familyMemberDetails.sampleSource !== '') && 
               <p> 
                 <strong> Sample source:  </strong>
-                {member.FamilyMemberDetails.sampleSource}
+                {member.familyMemberDetails.sampleSource}
               </p>
             }
 
             <p> 
               <strong> Consanguinity:  </strong>
-              {member.FamilyMemberClinicalInfo.consanguinity ? 'Yes' : 'No'} 
+              {member.familyMemberClinicalInfo.consanguinity ? 'Yes' : 'No'} 
             </p>
             
             <p> 
               <strong> Affected:  </strong>
-              {member.FamilyMemberClinicalInfo.affected ? 'Yes' : 'No'} 
+              {member.familyMemberClinicalInfo.affected ? 'Yes' : 'No'} 
             </p>
 
             <PageBreak/>
 
             <strong> Clinical note </strong>
             <p>
-              {member.FamilyMemberClinicalInfo.clinicalInfo}
+              {member.familyMemberClinicalInfo.clinicalInfo}
             </p>
             <br />
 
             {
-              member.FamilyMemberClinicalInfo.relevantInvestigation !== '' &&
+              member.familyMemberClinicalInfo.relevantInvestigation !== '' &&
               <div>
                 <strong> Relevant investigation </strong>
                 <p>
-                  {member.FamilyMemberClinicalInfo.relevantInvestigation}
+                  {member.familyMemberClinicalInfo.relevantInvestigation}
                 </p>
                 <br />
               </div>
             }
               
             {
-              member.FamilyMemberClinicalInfo.familyHistory !== '' &&
+              member.familyMemberClinicalInfo.familyHistory !== '' &&
               <div>
                 <strong> Family history </strong>
                 <p>
-                  {member.FamilyMemberClinicalInfo.familyHistory}
+                  {member.familyMemberClinicalInfo.familyHistory}
                 </p>
               </div>
             }

@@ -22,7 +22,7 @@ describe('App', () => {
   var familyMemberProps = {
     route: {
       onChange: jest.fn(),
-      data: { familyMember: [{ FamilyMemberDetails: {}, FamilyMemberClinicalInfo: {} }] }
+      data: { familyMembers: [{ familyMemberDetails: {}, familyMemberClinicalInfo: {} }] }
     },
     params: { id: 0 },
     location:{ pathname: '/step4' },
@@ -68,17 +68,17 @@ describe('App', () => {
   
   test('handleFamilyMemberChange modifies family member attribute in root state', () => {
     const page = TestUtils.renderIntoDocument(<App />);
-    page.state.formInput = { FamilyMember: familyMemberProps.route.data };
+    page.state.formInput = { familyMembersModule: familyMemberProps.route.data };
     const form = TestUtils.renderIntoDocument(React.createElement(FamilyMember, familyMemberProps));
     page.handleFamilyMemberChange(form);
-    expect(page.state.formInput.FamilyMember.familyMember.length).toEqual(1);  
+    expect(page.state.formInput.familyMembersModule.familyMembers.length).toEqual(1);  
   });  
   
   test('handleFamilyMemberDelete deletes a family member in root state', () => {
     const page = TestUtils.renderIntoDocument(<App />);
-    page.state.formInput = { FamilyMember: { familyMember: [{}, {}, {}] }};
+    page.state.formInput = { familyMembersModule: { familyMembers: [{}, {}, {}] }};
     page.handleFamilyMemberDelete(1);
-    expect(page.state.formInput.FamilyMember.familyMember.length).toEqual(2);  
+    expect(page.state.formInput.familyMembersModule.familyMembers.length).toEqual(2);  
   });
   
   test('handleEdit', () => {

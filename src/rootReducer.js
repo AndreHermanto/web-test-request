@@ -22,11 +22,11 @@ export function setFormInputData(state, name, value) {
  * @param {string} value Value for updating.
  */
 export function setFamilyMemberData(state, name, index, value) {
-  var arr = state.formInput.FamilyMember.familyMember.slice();
+  var arr = state.formInput.familyMembersModule.familyMembers.slice();
   arr[index][name] = value;
   
   var formState = Object.assign({}, state.formInput, {
-    FamilyMember: { familyMember: arr }
+    familyMembersModule: { familyMembers: arr }
   });
 
   return Object.assign({}, state, {
@@ -40,11 +40,11 @@ export function setFamilyMemberData(state, name, index, value) {
  * @param {Integer} index Id of the family member in the array.
  */
 export function deleteFamilyMemberData(state, index, value) {
-  var arr = state.formInput.FamilyMember.familyMember.slice();
+  var arr = state.formInput.familyMembersModule.familyMembers.slice();
   arr.splice(index, 1);
   
   var formState = Object.assign({}, state.formInput, {
-    FamilyMember: { familyMember: arr }
+    familyMembersModule: { familyMembers: arr }
   });
 
   return Object.assign({}, state, {

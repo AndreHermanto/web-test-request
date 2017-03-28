@@ -9,7 +9,7 @@ describe('FamilyMember: reducer', () => {
   test('addFamilyMember add a family object', () => {
     const state = initData();
     const newState = addFamilyMember(state);
-    expect(newState.form.familyMember.length).toEqual(1);
+    expect(newState.form.familyMembers.length).toEqual(1);
   });
   
   test('setDeleteModal sets the delete modal', () => {

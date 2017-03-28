@@ -24,7 +24,7 @@ export function initData(prefilled) {
     },
     priceList:[],
     validated: false,
-    formId: 'BillingInfo'
+    formId: 'billingInfoModule'
   };
   
   if(prefilled && Object.keys(prefilled).length !== 0) state.form = prefilled;
@@ -149,16 +149,14 @@ export function setSelectData(state, value) {
     formStateChild = Object.assign({}, state.form, {
       payer: value,
       firstName: payer[0],
-      lastName: payer[1],
-      payerEmail: ''
+      lastName: payer[1]
     });
   }
   else {
     formStateChild = Object.assign({}, state.form, {
       payer: value,
       firstName: '',
-      lastName: '',
-      payerEmail: ''
+      lastName: ''
     });
   }
   

@@ -41,6 +41,6 @@ describe('Summary: reducer', () => {
 
   test('submitData data test', () => {
     const newState = setSubmitData(state, true);
-    expect(newState.Signature).toEqual(true);
+    expect(newState.signature).toEqual(true);
   });
 });
