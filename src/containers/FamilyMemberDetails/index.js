@@ -161,7 +161,7 @@ class FamilyMemberDetails extends Component {
         
         <Toggle
           field="consent"
-          label="Consent confirmation"
+          label="Has consent been received?"
           onChange={this.handleChange}
           onValidate={this.validate()}
           formState={this.state.form}

@@ -100,7 +100,7 @@ class Summary extends Component {
         <BillingInfoModule billingInfoModule={this.state.form.testRequest.BillingInfo} clinicianDetailsModule={this.state.form.testRequest.ClinicianDetails} handleOnClick={this.handleEdit}/>
         <Toggle
           field="signature"
-          label="Electronic signature"
+          label="Click here to digitally sign the form"
           onChange={this.handleChange}
           onValidate={this.validate()}
           formState={this.state.form}

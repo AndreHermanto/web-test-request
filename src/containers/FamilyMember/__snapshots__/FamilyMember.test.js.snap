@@ -2,7 +2,7 @@ exports[`<FamilyMember/> renders without crashing 1`] = `
 <div>
   <h3
     className="jhCkYx">
-    Step 4: Family Members
+    Step 4: Add Family Members who will also provide samples
   </h3>
   <div
     className="row">

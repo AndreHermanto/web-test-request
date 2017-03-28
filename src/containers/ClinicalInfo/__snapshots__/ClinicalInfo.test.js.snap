@@ -17,7 +17,7 @@ exports[`ClinicalInfo: index renders without crashing 1`] = `
     </label>
     <div
       className="kWhIoX">
-      Type or copy and paste clinical notes here. Comprehensive notes increase the chance of a successful diagnosis.
+      Type or copy and paste clinical notes and the diagnosis here. Comprehensive notes increase the chance of a successful diagnosis.
     </div>
     <textarea
       className="ebbddk form-control"
