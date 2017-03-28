@@ -6,11 +6,6 @@ import FetchMock from 'fetch-mock';
 import PatientDetails from './index';
 
 describe('PatientDetails: index', () => {
-  /*test('renders without crashing', () => {
-    const page = renderer.create(<PatientDetails />).toJSON();
-    expect(page).toMatchSnapshot();
-  });*/
-  
   var props = {
     route: {
       onChange: jest.fn(),

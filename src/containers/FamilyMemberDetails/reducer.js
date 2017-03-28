@@ -23,7 +23,7 @@ export function initData(prefilled) {
       consent: 'consentTrue'
     },
     validated: false,
-    formId: 'FamilyMemberDetails'
+    formId: 'familyMemberDetails'
   };
   
   if(prefilled && Object.keys(prefilled).length !== 0) state.form = prefilled;

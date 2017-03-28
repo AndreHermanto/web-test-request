@@ -3,15 +3,14 @@ import validator from './../../components/validator';
 export function initData(prefilled) {
   var state = {
     form: {
-      test: {},
-      latestSelectId:null
+      test: {}
     },
     testList: [],
     validationRule: {
       test: 'requireSelect',
     },
     validated: false,
-    formId: 'OrderTest'
+    formId: 'orderTestModule'
   };
   
   if(prefilled && Object.keys(prefilled).length !== 0) state.form = prefilled;
@@ -36,7 +35,7 @@ export function initData(prefilled) {
 export function setTestList(state, list) {
   return Object.assign({}, state, { 
     testList: list,
-    formId: 'OrderTest'
+    formId: 'orderTestModule'
   });
 }
 
@@ -48,9 +47,7 @@ export function setTestList(state, list) {
  */
 export function setTestType(state, value) {
   var formStateChild = Object.assign({}, state.form, {
-    "test": value,
-    "genes": value.genes,
-    latestSelectId: value.id
+    "test": value
   });
   
   var validationStateChild = Object.assign({}, state.validation, {

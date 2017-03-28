@@ -49,7 +49,7 @@ class BillingInfo extends Component {
     return getPricing(
       this.props.route.orderTestData.test ? this.props.route.orderTestData.test.id : '',
       this.state.form.billOption === 'Institution' ? this.props.route.clinicianData.organisation : this.state.form.payer,
-      this.props.route.familyMemberData.familyMember ? this.props.route.familyMemberData.familyMember.length : 0
+      this.props.route.familyMemberData.familyMembers ? this.props.route.familyMemberData.familyMembers.length : 0
     )
       .then((pricing) => {
         this.setState(setPricing(this.state, pricing.breakdown));
@@ -97,10 +97,10 @@ class BillingInfo extends Component {
   getPayers() {
     var payers = [{ value: 'Other', label: 'Other' }];
 
-    if(this.props.route.familyMemberData && this.props.route.familyMemberData.familyMember) {
-      this.props.route.familyMemberData.familyMember.forEach((member) => {
-        let memberName = member.FamilyMemberDetails.firstName.toString() + ' ' + 
-                         member.FamilyMemberDetails.lastName.toString();
+    if(this.props.route.familyMemberData && this.props.route.familyMemberData.familyMembers) {
+      this.props.route.familyMemberData.familyMembers.forEach((member) => {
+        let memberName = member.familyMemberDetails.firstName.toString() + ' ' + 
+                         member.familyMemberDetails.lastName.toString();
         payers.unshift({
           value: memberName, 
           label: memberName + ' (Family Member)'

@@ -24,7 +24,7 @@ export function initData(prefilled) {
     },
     priceList:[],
     validated: false,
-    formId: 'BillingInfo'
+    formId: 'billingInfoModule'
   };
   
   if(prefilled && Object.keys(prefilled).length !== 0) state.form = prefilled;

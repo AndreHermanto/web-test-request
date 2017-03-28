@@ -109,22 +109,22 @@ class Confirmation extends Component {
         <div className="printMe">
           {(this.state.print === 1) && 
             <PrintRecord 
-              orderTestModule={this.props.route.data.OrderTest}
-              patientDetails={this.props.route.data.PatientDetails}
-              clinicalInfo={this.props.route.data.ClinicalInfo}
-              familyMember={this.props.route.data.FamilyMember}
-              clinicianDetails={this.props.route.data.ClinicianDetails}
-              billingInfo={this.props.route.data.BillingInfo}
+              orderTestModule={this.props.route.data.orderTestModule}
+              patientDetails={this.props.route.data.patientDetailsModule}
+              clinicalInfo={this.props.route.data.clinicalInfoModule}
+              familyMember={this.props.route.data.familyMembersModule}
+              clinicianDetails={this.props.route.data.clinicianDetailsModule}
+              billingInfo={this.props.route.data.billingInfoModule}
             />
           }
           {(this.state.print === 2) &&
             <PrintBloodCollection 
-              orderTestModule={this.props.route.data.OrderTest}
-              patientDetails={this.props.route.data.PatientDetails}
-              clinicalInfo={this.props.route.data.ClinicalInfo}
-              familyMember={this.props.route.data.FamilyMember}
-              clinicianDetails={this.props.route.data.ClinicianDetails}
-              billingInfo={this.props.route.data.BillingInfo}
+              orderTestModule={this.props.route.data.orderTestModule}
+              patientDetails={this.props.route.data.patientDetailsModule}
+              clinicalInfo={this.props.route.data.clinicalInfoModule}
+              familyMember={this.props.route.data.familyMembersModule}
+              clinicianDetails={this.props.route.data.clinicianDetailsModule}
+              billingInfo={this.props.route.data.billingInfoModule}
             />
           }
         </div>

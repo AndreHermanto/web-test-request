@@ -27,14 +27,14 @@ describe('<FamilyMember/>', function() {
   test('handleAddFamilyMember adds an object in familyMember array', () =>  {
     var view = TestUtils.renderIntoDocument(React.createElement(FamilyMember, props));                                         
     view.handleAddFamilyMember();
-    expect(view.state.form.familyMember.length).toEqual(1)
+    expect(view.state.form.familyMembers.length).toEqual(1)
   });
   
   test('handleDeleteFamilyMember deletes the appointed object in familyMember array and closes the modal', () =>  {
     var view = TestUtils.renderIntoDocument(React.createElement(FamilyMember, props));
-    view.state.form.familyMember = [
-      { FamilyMemberDetails: {}, FamilyMemberClinicalInfo: {} },
-      { FamilyMemberDetails: {}, FamilyMemberClinicalInfo: {} }
+    view.state.form.familyMembers = [
+      { familyMemberDetails: {}, familyMemberClinicalInfo: {} },
+      { familyMemberDetails: {}, familyMemberClinicalInfo: {} }
     ];
     var select = { currentTarget: { name: 0 } }
     view.handleDeleteFamilyMember(select);

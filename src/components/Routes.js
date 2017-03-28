@@ -36,7 +36,7 @@ function Routes({
           path="step1"
           component={OrderTest}
           onChange={onChange}
-          data={data.OrderTest}
+          data={data.orderTestModule}
           isEdited={isEdited}
           preventUnvisitedFormAccess={preventUnvisitedFormAccess}
         />
@@ -44,7 +44,7 @@ function Routes({
           path="step2"
           component={PatientDetails}
           onChange={onChange}
-          data={data.PatientDetails}
+          data={data.patientDetailsModule}
           isEdited={isEdited}
           preventUnvisitedFormAccess={preventUnvisitedFormAccess}
         />
@@ -52,7 +52,7 @@ function Routes({
           path="step3"
           component={ClinicalInfo}
           onChange={onChange}
-          data={data.ClinicalInfo}
+          data={data.clinicalInfoModule}
           isEdited={isEdited}
           preventUnvisitedFormAccess={preventUnvisitedFormAccess}
         />
@@ -61,8 +61,8 @@ function Routes({
           component={FamilyMember}
           onChange={onChange}
           onDelete={onFamilyMemberDelete}
-          data={data.FamilyMember}
-          patientData={data.PatientDetails}
+          data={data.familyMembersModule}
+          patientData={data.patientDetailsModule}
           isEdited={isEdited}
           preventUnvisitedFormAccess={preventUnvisitedFormAccess}
         />
@@ -71,7 +71,7 @@ function Routes({
           component={FamilyMemberDetails}
           onChange={onFamilyMemberChange}
           onDelete={onFamilyMemberDelete}
-          data={data.FamilyMember}
+          data={data.familyMembersModule}
           preventUnvisitedFormAccess={preventUnvisitedFormAccess}
         />
         <Route
@@ -79,15 +79,15 @@ function Routes({
           component={FamilyMemberClinicalInfo}
           onChange={onFamilyMemberChange}
           onDelete={onFamilyMemberDelete}
-          data={data.FamilyMember}
-          clinicalInfoData={data.ClinicalInfo}
+          data={data.familyMembersModule}
+          clinicalInfoData={data.clinicalInfoModule}
           preventUnvisitedFormAccess={preventUnvisitedFormAccess}
         />
         <Route
           path="step5"
           component={ClinicianDetails}
           onChange={onChange}
-          data={data.ClinicianDetails}
+          data={data.clinicianDetailsModule}
           isEdited={isEdited}
           preventUnvisitedFormAccess={preventUnvisitedFormAccess}
         />
@@ -95,11 +95,11 @@ function Routes({
           path="step6"
           component={BillingInfo}
           onChange={onChange}
-          data={data.BillingInfo}
-          orderTestData={data.OrderTest || {}}
-          clinicianData={data.ClinicianDetails || {}}
-          patientData={data.PatientDetails || {}}
-          familyMemberData={data.FamilyMember || {}}
+          data={data.billingInfoModule}
+          orderTestData={data.orderTestModule || {}}
+          clinicianData={data.clinicianDetailsModule || {}}
+          patientData={data.patientDetailsModule || {}}
+          familyMemberData={data.familyMembersModule || {}}
           isEdited={isEdited}
           preventUnvisitedFormAccess={preventUnvisitedFormAccess}
         />

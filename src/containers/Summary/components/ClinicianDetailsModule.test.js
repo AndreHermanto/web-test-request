@@ -11,8 +11,8 @@ describe('ClinicianDetailsModule test', () => {
   const clinicianDetails = {
     "providerNumber":"as","medicalSpecialty":"as","firstName":"John",
     "lastName":"Doe","organisation":"as","phone":"as","email":"as@aca.com","fax":"as",
-    "copyToHCP":[{"additionalFirstName":"asdf","additionalLastName":"asdf","additionalOrganisation":"adsf","additionalEmail":"asfd"},
-    {"additionalFirstName":"asdf","additionalLastName":"asdf","additionalOrganisation":"adsf","additionalEmail":"asdf"}],
+    "copyToHCP":[{"firstName":"asdf","lastName":"asdf","organisation":"adsf","email":"asfd"},
+    {"firstName":"asdf","lastName":"asdf","organisation":"adsf","email":"asdf"}],
     "copy":false
   }
   const props = {

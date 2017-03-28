@@ -54,16 +54,16 @@ export default function PrintClinicianDetailsModule(props) {
               <PageBreak/>
             
               <br />
-              <p style={{marginTop:'-5pt'}}> <strong>Copy of report to - {c.additionalFirstName} {c.additionalLastName}</strong></p>
+              <p style={{marginTop:'-5pt'}}> <strong>Copy of report to - {c.firstName} {c.lastName}</strong></p>
 
               <p>
                 <strong> Organisation/Address of practice:  </strong>
-                {c.additionalOrganisation}
+                {c.organisation}
               </p>
 
               <p> 
                 <strong> Email: </strong>
-                {c.additionalEmail}
+                {c.email}
               </p>
               <br />
           </div>

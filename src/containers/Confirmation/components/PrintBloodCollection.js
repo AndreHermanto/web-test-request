@@ -32,13 +32,13 @@ export default function PrintBloodCollection(props) {
         <PrintCollectorDeclaration />
       </Page>
       
-      {props.familyMember.familyMember.map((member, $index) => {
+      {props.familyMember.familyMembers.map((member, $index) => {
           return (
             <Page key={$index}>
               <PrintHeader />
               <br />
               <PrintOrderTestModule orderTestModule={props.orderTestModule}/>
-              <PrintFamilyModule patientDetails={props.patientDetails} familyMemberDetails={member.FamilyMemberDetails} familyMemberClinicalInfo={member.FamilyMemberClinicalInfo}/>
+              <PrintFamilyModule patientDetails={props.patientDetails} familyMemberDetails={member.familyMemberDetails} familyMemberClinicalInfo={member.familyMemberClinicalInfo}/>
               <PrintClinicianDetailsModule clinicianDetails={props.clinicianDetails}/>
               <PrintBillingInfoModule clinicianDetails={props.clinicianDetails} billingInfo={props.billingInfo}/>
               <PrintSpecimenInfo />

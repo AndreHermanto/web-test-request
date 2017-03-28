@@ -10,11 +10,11 @@ describe('FamilyMemberClinicalInfo: index', () => {
     route: {
       onChange: jest.fn(),
       onDelete: jest.fn(),
-      data: { familyMember: [
-        { FamilyMemberDetails: {}, FamilyMemberClinicalInfo: {} },
-        { FamilyMemberDetails: {}, FamilyMemberClinicalInfo: {} },
-        { FamilyMemberDetails: {}, FamilyMemberClinicalInfo: {} },
-        { FamilyMemberDetails: {}, FamilyMemberClinicalInfo: {} }
+      data: { familyMembers: [
+        { familyMemberDetails: {}, familyMemberClinicalInfo: {} },
+        { familyMemberDetails: {}, familyMemberClinicalInfo: {} },
+        { familyMemberDetails: {}, familyMemberClinicalInfo: {} },
+        { familyMemberDetails: {}, familyMemberClinicalInfo: {} }
       ] }
     },
     params:{

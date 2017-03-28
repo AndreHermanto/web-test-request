@@ -190,7 +190,7 @@ class ClinicianDetails extends Component {
                 <Glyphicon glyph="trash"/> Remove</RemoveLabel>
               </PageHeading>
               <Input
-                field="additionalFirstName"
+                field="firstName"
                 label="First Name"
                 onChange={(e) => this.handleHCPChange(e, index)}
                 onValidate={this.validateCopyHCP(index)}
@@ -198,7 +198,7 @@ class ClinicianDetails extends Component {
                 required
               />
               <Input
-                field="additionalLastName"
+                field="lastName"
                 label="Last Name"
                 onChange={(e) => this.handleHCPChange(e, index)}
                 onValidate={this.validateCopyHCP(index)}
@@ -206,7 +206,7 @@ class ClinicianDetails extends Component {
                 required
               />
               <Input
-                field="additionalOrganisation"
+                field="organisation"
                 label="Name of organisation, or address of practice"
                 onChange={(e) => this.handleHCPChange(e, index)}
                 onValidate={this.validateCopyHCP(index)}
@@ -214,7 +214,7 @@ class ClinicianDetails extends Component {
                 required
               />
               <Input
-                field="additionalEmail"
+                field="email"
                 label="Email"
                 onChange={(e) => this.handleHCPChange(e, index)}
                 onValidate={this.validateCopyHCP(index)}

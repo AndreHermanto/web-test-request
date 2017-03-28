@@ -11,10 +11,10 @@ import {
 describe('ClinicianDetails: reducer', () => {
   const state = initialState();
   const newHCP = {
-    additionalFirstName:'',
-    additionalLastName:'',
-    additionalOrganisation:'',
-    additionalEmail:''
+    firstName:'',
+    lastName:'',
+    organisation:'',
+    email:''
   }
   
   test('initialState will set the validation for Copy HCP if prefilled', () => {
@@ -46,13 +46,13 @@ describe('ClinicianDetails: reducer', () => {
     expect(removeState.form.copyToHCP.length).toEqual(0);
 
     let target = {
-      name: 'additionalFirstName',
+      name: 'firstName',
       value: 'aa'    
     }
 
     let setFormState = addNewHCP(state, HCPArray);
     setFormState = setHCPForm(setFormState, HCPArray, target, 0);
-    expect(setFormState.form.copyToHCP[0].additionalFirstName).toEqual('aa');
+    expect(setFormState.form.copyToHCP[0].firstName).toEqual('aa');
   });
 
   test('validate form field', () => {

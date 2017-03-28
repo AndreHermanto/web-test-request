@@ -17,24 +17,23 @@ describe('Summary: index', () => {
   const patientData = {
     "lastName":"abcabc",
     "firstName":"Ngabcuyen",
-    "dob":"1-February-1917",
+    "dob":"1/February/1917",
     "medicalRecordNo":"123123",
     "gender":"Male",
     "genderOther":"",
     "ethnicity":"Asian",
     "deceased":false,
     "sampleSource":"",
-    "consent":false,
-    "email":"abc@abc.gmail.com"
+    "consent":false
   }
 
-  const familyData = {"familyMember":[{"FamilyMemberDetails":{"lastName":"abc@abc.com","firstName":"abc@abc.com","dob":"2-January-1918","medicalRecordNo":"abc@abc.com","gender":"Female","genderOther":"","ethnicity":"","deceased":false,"sampleSource":"","consent":false,"email":"abc@abc.com"},"FamilyMemberClinicalInfo":{"clinicalInfo":"abc@abc.com","affected":true,"relevantInvestigation":"asdasdasd","familyHistory":"asdasdasdasd","consangunity":false}},
-    {"FamilyMemberDetails":{"lastName":"ab.com","firstName":"abcsadkfhkladsfj","dob":"2-January-1918","medicalRecordNo":"abc@abc.com","gender":"Male","genderOther":"","ethnicity":"","deceased":true,"sampleSource":"","consent":false,"email":"abc@abc.com"},"FamilyMemberClinicalInfo":{"clinicalInfo":"abc@abc.com","affected":false,"relevantInvestigation":"asdasdasdasd","familyHistory":"asdasd","consangunity":true}}]};  
+  const familyData = {"familyMembers":[{"familyMemberDetails":{"lastName":"abc@abc.com","firstName":"abc@abc.com","dob":"2/January/1918","medicalRecordNo":"abc@abc.com","gender":"Female","genderOther":"","ethnicity":"","deceased":false,"sampleSource":"","consent":false},"familyMemberClinicalInfo":{"clinicalInfo":"abc@abc.com","affected":true,"relevantInvestigation":"asdasdasd","familyHistory":"asdasdasdasd","consangunity":false}},
+    {"familyMemberDetails":{"lastName":"ab.com","firstName":"abcsadkfhkladsfj","dob":"2/January/1918","medicalRecordNo":"abc@abc.com","gender":"Male","genderOther":"","ethnicity":"","deceased":true,"sampleSource":"","consent":false},"familyMemberClinicalInfo":{"clinicalInfo":"abc@abc.com","affected":false,"relevantInvestigation":"asdasdasdasd","familyHistory":"asdasd","consangunity":true}}]};  
   const clinicianDetails = {
     "providerNumber":"as","medicalSpecialty":"as","firstName":"John",
-    "lastName":"Doe","organisation":"as","phone":"as","email":"as@aca.com","fax":"as",
-    "copyToHCP":[{"additionalFirstName":"asdf","additionalLastName":"asdf","additionalOrganisation":"adsf","additionalEmail":"asfd"},
-    {"additionalFirstName":"asdf","additionalLastName":"asdf","additionalOrganisation":"adsf","additionalEmail":"asdf"}],
+    "lastName":"Doe","organisation":"as","phone":"as","email":"asfd@abc.com","fax":"as",
+    "copyToHCP":[{"firstName":"asdf","lastName":"asdf","organisation":"adsf","email":"asfd@abc.com"},
+    {"firstName":"asdf","lastName":"asdf","organisation":"adsf","email":"asfd@abc.com"}],
     "copy":false
   }
   const clinicalData = {
@@ -58,12 +57,12 @@ describe('Summary: index', () => {
       onChange: jest.fn(),
       onEdit: jest.fn(),
       testRequest: {
-        OrderTest: testData,
-        PatientDetails: patientData,
-        ClinicalInfo: {clinicalInfo:'abacbascs'},
-        FamilyMember: familyData,
-        ClinicianDetails: clinicianDetails,
-        BillingInfo: billingInfo
+        orderTestModule: testData,
+        patientDetailsModule: patientData,
+        clinicalInfoModule: {clinicalInfo:'abacbascs'},
+        familyMembersModule: familyData,
+        clinicianDetailsModule: clinicianDetails,
+        billingInfoModule: billingInfo
       }
     },
     router:['/summary']

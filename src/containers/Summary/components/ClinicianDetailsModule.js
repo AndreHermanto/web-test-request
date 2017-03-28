@@ -88,19 +88,19 @@ class ClinicianDetailsModule extends Component
               <Col md={12}>
                 <SummaryBreakLine/>
                 <SummaryHeading> 
-                  Copy of report to - {c.additionalFirstName} {c.additionalLastName}
+                  Copy of report to - {c.firstName} {c.lastName}
                 </SummaryHeading>
               </Col>
               <Col md={12}>
                 <SummaryDetails>
                   <SummaryTitle> Organisation/Address of practice:  </SummaryTitle>
-                  {c.additionalOrganisation}
+                  {c.organisation}
                 </SummaryDetails>
               </Col>
               <Col md={12}>
                 <SummaryDetails> 
                   <SummaryTitle> Email: </SummaryTitle>
-                  {c.additionalEmail}
+                  {c.email}
                 </SummaryDetails>
               </Col>
             </Row>
