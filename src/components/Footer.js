@@ -179,10 +179,10 @@ export default class Footer extends React.Component
             <Disclaimer md={8}>COPYRIGHT © 2016 GENOME.ONE. ALL RIGHTS RESERVED</Disclaimer>
             <SocialContainer md={4}>
               <SocialLogo href="https://www.facebook.com/Genome.One/" target="_blank">
-                <img height="23" src="https://daks2k3a4ib2z.cloudfront.net/56fb123ccf591b312d55dbb6/5897e8d62a25945021987407_FB-f-Logo__blue_100.png" />
+                <img height="23" alt="fb" src="https://daks2k3a4ib2z.cloudfront.net/56fb123ccf591b312d55dbb6/5897e8d62a25945021987407_FB-f-Logo__blue_100.png" />
               </SocialLogo>
               <SocialLogo className="footer-social-link w-inline-block" href="https://twitter.com/GenomeOneHealth" target="_blank">
-                <img height="35" src="https://daks2k3a4ib2z.cloudfront.net/56fb123ccf591b312d55dbb6/5897e87dbfd5fa6c63bc313e_TwitterLogo_%2355acee.png" />
+                <img height="35" alt="twitter" src="https://daks2k3a4ib2z.cloudfront.net/56fb123ccf591b312d55dbb6/5897e87dbfd5fa6c63bc313e_TwitterLogo_%2355acee.png" />
               </SocialLogo>
             </SocialContainer>
           </Row>

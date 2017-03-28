@@ -109,6 +109,11 @@ class App extends Component {
       return true;
     }
     
+    // If current step is 4, allow /step4/add and /step4/edit
+    if(targetStep === 4 && currentStep === 4) {
+      return true;
+    }
+    
     // Allow summary after step6.
     if(pass && nextLocation.pathname === '/summary' && currentStep === 6) {
       return true;

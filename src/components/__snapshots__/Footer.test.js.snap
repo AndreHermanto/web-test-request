@@ -126,6 +126,7 @@ exports[`<Footer /> Match Snapshot 1`] = `
           href="https://www.facebook.com/Genome.One/"
           target="_blank">
           <img
+            alt="fb"
             height="23"
             src="https://daks2k3a4ib2z.cloudfront.net/56fb123ccf591b312d55dbb6/5897e8d62a25945021987407_FB-f-Logo__blue_100.png" />
         </a>
@@ -134,6 +135,7 @@ exports[`<Footer /> Match Snapshot 1`] = `
           href="https://twitter.com/GenomeOneHealth"
           target="_blank">
           <img
+            alt="twitter"
             height="35"
             src="https://daks2k3a4ib2z.cloudfront.net/56fb123ccf591b312d55dbb6/5897e87dbfd5fa6c63bc313e_TwitterLogo_%2355acee.png" />
         </a>
