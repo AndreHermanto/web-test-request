@@ -55,7 +55,7 @@ class Summary extends Component {
   handleSubmit()
   {
     this.setState(setSubmitData(this.state, this.state.form.signature));
-    return submitTestRequest({testRequest:this.state.form.testRequest})
+    return submitTestRequest(this.state.form.testRequest)
       .then((response) => {
         if(!response.ok) {
           setTimeout(function() { 
