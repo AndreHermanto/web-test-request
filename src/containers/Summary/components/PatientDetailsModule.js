@@ -13,7 +13,8 @@ import {
   SummaryDetails,
   SummaryNotes,
   SectionHeading
-} from '../summaryStyled'; 
+} from '../summaryStyled';
+import { isoToShortDate } from './../../../components/dateConvert';
 
 /**
 * PatientDetailsModule summary - UI for summary page to display all patient details/clinical info data.
@@ -56,7 +57,7 @@ class PatientDetailsModule extends Component
         <Col md={12}>
           <SummaryDetails> 
             <SummaryTitle> Date of Birth: </SummaryTitle>
-            {this.props.patientDetails.dob}
+            {isoToShortDate(this.props.patientDetails.dob)}
           </SummaryDetails>
         </Col>
         {

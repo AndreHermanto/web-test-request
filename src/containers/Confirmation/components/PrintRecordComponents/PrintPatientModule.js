@@ -4,6 +4,7 @@ import {
   PageBreak,
   Section
 } from './../sharedPrintStyle';
+import { isoToShortDate } from './../../../../components/dateConvert';
 // PrintPatientModule page
 export default function PrintPatientModule(props) {
   return (
@@ -14,7 +15,7 @@ export default function PrintPatientModule(props) {
     
       <p> 
         <strong> Date of Birth: </strong>
-        {props.patientDetails.dob}
+        {isoToShortDate(props.patientDetails.dob)}
       </p>
     
       {

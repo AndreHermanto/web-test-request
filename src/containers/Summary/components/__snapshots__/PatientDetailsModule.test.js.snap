@@ -35,7 +35,7 @@ exports[`PatientDetailsModule test renders without crashing  1`] = `
           className="bdMjbs">
            Date of Birth: 
         </span>
-        1-February-1917
+        1917/February/1
       </p>
     </div>
     <div

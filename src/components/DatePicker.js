@@ -42,13 +42,13 @@ class DatePicker extends Component {
     
     var prefill = [];
     if(props.formState[props.field]) {
-      prefill = props.formState[props.field].split('/');
+      prefill = props.formState[props.field].split('-');
     }
     
     this.state = {
-      day: prefill[0] || '',
+      day: prefill[2] || '',
       month: prefill[1] || '',
-      year: prefill[2] || ''
+      year: prefill[0] || ''
     }
   }
   
@@ -70,7 +70,7 @@ class DatePicker extends Component {
       ) {
         value = '';
       } else {
-        value = parseInt(date.day, 0) + '/' + parseInt(date.month, 0) + '/' + parseInt(date.year, 0);
+        value = parseInt(date.year, 0) + '-' + parseInt(date.month, 0) + '-' + parseInt(date.day, 0);
       }
 
       if(target.name === 'day' && target.value.length >= 2) ReactDOM.findDOMNode(this.refs.month).focus();

@@ -19,6 +19,6 @@ describe('DatePicker', function() {
     component.handleDateChange({ currentTarget: { name: 'month', value: '12' }});
     expect(send).toEqual('');
     component.handleDateChange({ currentTarget: { name: 'day', value: '21' }});
-    expect(send).toEqual('21/12/1999');
+    expect(send).toEqual('1999-12-21');
   });
 });

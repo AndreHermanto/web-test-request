@@ -58,7 +58,7 @@ function testData() {
     "patientDetailsModule": {
         "lastName": "Agudo",
         "firstName": "Joshua",
-        "dob": "02/02/2020",
+        "dob": "2020-02-02",
         "medicalRecordNo": "",
         "gender": "Male",
         "genderOther": "",
@@ -80,7 +80,7 @@ function testData() {
                 "familyMemberDetails": {
                     "lastName": "Blah",
                     "firstName": "Mother",
-                    "dob": "02/02/2020",
+                    "dob": "2020-02-02",
                     "medicalRecordNo": "adsa",
                     "gender": "Female",
                     "genderOther": "",

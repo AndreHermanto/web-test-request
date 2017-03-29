@@ -18,6 +18,7 @@ import {
   FormButton
 } from './../../components/SharedStyle';
 import styled from 'styled-components';
+import { isoToShortDate } from './../../components/dateConvert';
 
 export const BlockButton = styled(Button)`
   margin-left: 6px;
@@ -104,7 +105,7 @@ class FamilyMember extends Component {
           <Col md={12}>
             <BlockFamilyContainer>
               <label>Patient: </label> {this.props.route.patientData && this.props.route.patientData.firstName + ' ' + this.props.route.patientData.lastName}<br />
-              <label>DOB: </label> {this.props.route.patientData && this.props.route.patientData.dob}<br />
+              <label>DOB: </label> {this.props.route.patientData && isoToShortDate(this.props.route.patientData.dob)}<br />
               <label>Gender: </label> {this.props.route.patientData && this.props.route.patientData.gender}
             </BlockFamilyContainer>
           </Col>

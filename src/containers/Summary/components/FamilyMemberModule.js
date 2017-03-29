@@ -14,7 +14,8 @@ import {
   SummaryNotes,
   SectionHeading,
   Tag
-} from '../summaryStyled'; 
+} from '../summaryStyled';
+import { isoToShortDate } from './../../../components/dateConvert';
 
 /**
 * FamilyMemberModule summary - UI for summary page to display all family member details/clinical info data.
@@ -62,7 +63,7 @@ class FamilyMemberModule extends Component
           <Col md={12}>
             <SummaryDetails> 
               <SummaryTitle> Date of Birth:  </SummaryTitle>
-              {this.props.familyMemberDetails.dob}
+              {isoToShortDate(this.props.familyMemberDetails.dob)}
             </SummaryDetails>
           </Col>
           {
