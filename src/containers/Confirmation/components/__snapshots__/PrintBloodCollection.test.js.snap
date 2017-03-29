@@ -148,7 +148,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
         <strong>
            Date of Birth: 
         </strong>
-        1-February-1917
+        undefined/undefined/1/February/1917
       </p>
       <p>
         <strong>
@@ -650,7 +650,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
         <strong>
            Date of Birth: 
         </strong>
-        2-January-1918
+        undefined/undefined/2/January/1918
       </p>
       <p>
         <strong>
@@ -1152,7 +1152,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
         <strong>
            Date of Birth: 
         </strong>
-        2-January-1918
+        undefined/undefined/2/January/1918
       </p>
       <p>
         <strong>

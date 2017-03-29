@@ -10,11 +10,11 @@ describe('FamilyMemberDetails: index', () => {
     route: {
       onChange: jest.fn(),
       onDelete: jest.fn(),
-      data: { familyMember: [
-        { FamilyMemberDetails: {}, FamilyMemberClinicalInfo: {} },
-        { FamilyMemberDetails: {}, FamilyMemberClinicalInfo: {} },
-        { FamilyMemberDetails: {}, FamilyMemberClinicalInfo: {} },
-        { FamilyMemberDetails: {}, FamilyMemberClinicalInfo: {} }
+      data: { familyMembers: [
+        { familyMemberDetails: {}, familyMemberClinicalInfo: {} },
+        { familyMemberDetails: {}, familyMemberClinicalInfo: {} },
+        { familyMemberDetails: {}, familyMemberClinicalInfo: {} },
+        { familyMemberDetails: {}, familyMemberClinicalInfo: {} }
       ] }
     },
     params:{
@@ -23,23 +23,6 @@ describe('FamilyMemberDetails: index', () => {
     },
     router:['/step4/add/1/3']
   };
-  
-  /*var editProps = {
-    route: {
-      onChange: jest.fn(),
-      onDelete: jest.fn(),
-      data: { familyMember: [
-        { FamilyMemberDetails: {}, FamilyMemberClinicalInfo: {} },
-        { FamilyMemberDetails: {}, FamilyMemberClinicalInfo: {} },
-        { FamilyMemberDetails: {}, FamilyMemberClinicalInfo: {} }
-      ] }
-    },
-    params:{
-      mode: 'edit',
-      id: 5
-    },
-    router:['/step4/edit/1/5']
-  };*/
   
   test('handleChange works - general', () => {
     const page = TestUtils.renderIntoDocument(React.createElement(FamilyMemberDetails, props));

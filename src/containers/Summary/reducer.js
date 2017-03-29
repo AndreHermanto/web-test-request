@@ -62,9 +62,8 @@ export function validatedToTrue(state) {
 }
 
 export function setSubmitData(state, value) {
-
   var formStateChild = Object.assign({}, state.form.testRequest, {
-    Signature: value
+    signature: value
   });
 
   return state.form.testRequest = formStateChild;

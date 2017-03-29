@@ -14,17 +14,17 @@ export default function PrintOrderTestModule(props) {
       <h4><strong>{props.orderTestModule.test.label}</strong></h4>
     
       {
-        props.orderTestModule.genes && 
+        props.orderTestModule.test.genes && 
         <p> 
-          Total number of genes available: {props.orderTestModule.genes.length} 
+          Total number of genes available: {props.orderTestModule.test.genes.length} 
         </p>
       }
     
       {
-        props.orderTestModule.genes && (
+        props.orderTestModule.test.genes && (
         <div>
           {
-            props.orderTestModule.genes.map((gene, $index) => {
+            props.orderTestModule.test.genes.map((gene, $index) => {
               return <Gene key={$index}>{gene}</Gene> 
             })
           }

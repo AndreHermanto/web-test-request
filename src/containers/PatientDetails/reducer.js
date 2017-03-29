@@ -21,7 +21,7 @@ export function initData(prefilled) {
       consent: 'consentTrue'
     },
     validated: false,
-    formId: 'PatientDetails'
+    formId: 'patientDetailsModule'
   };
   
   if(prefilled && Object.keys(prefilled).length !== 0) state.form = prefilled;

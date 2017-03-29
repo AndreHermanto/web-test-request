@@ -1,9 +1,9 @@
 export function initData(prefilled) {
   var state = {
     form: {
-      familyMember: []
+      familyMembers: []
     },
-    formId: 'FamilyMember',
+    formId: 'familyMembersModule',
     deleteModal:{
       display: false,
       familyMemberId: null
@@ -22,11 +22,11 @@ export function initData(prefilled) {
  */
 export function addFamilyMember(state, familyMemberArray) {
   var newArray = familyMemberArray || [];
-  newArray.push({ FamilyMemberDetails: {}, FamilyMemberClinicalInfo: {} })
+  newArray.push({ familyMemberDetails: {}, familyMemberClinicalInfo: {} })
   
   return Object.assign({}, state, {
     form: {
-      "familyMember": newArray
+      "familyMembers": newArray
     }
   });
 }

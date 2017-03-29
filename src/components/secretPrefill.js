@@ -18,215 +18,115 @@ export default function secretPrefill(component, target) {
                          
 function testData() {
   return {
-        "OrderTest": {
-          "_secretPrefill": true,
-          "latestSelectId": "58c74b7c1020a1eb58e9dfae",
-          "test": {
-            "id": "58c74b7c1020a1eb58e9dfae",
-            "label": "Dilated Cardiomyopathy (DCM), Complete Panel",
+    "orderTestModule": {
+        "test": {
+            "id": "58c74b7c1020a1eb58e9dfac",
+            "label": "Dilated Cardiomyopathy (DCM), Core Panel",
             "genes": [
-              "ACTC1",
-              "ACTN2",
-              "ALMS1",
-              "ANKRD1",
-              "BAG3",
-              "CRYAB",
-              "CSRP3",
-              "DES",
-              "DMD",
-              "DNAJC19",
-              "DOLK",
-              "DSG2",
-              "DSP",
-              "EMD",
-              "EYA4",
-              "FKTN",
-              "FLNC",
-              "GATAD1",
-              "HFE",
-              "ILK",
-              "JUP",
-              "LAMA4",
-              "LAMP2",
-              "LDB3",
-              "LMNA",
-              "MYBPC3",
-              "MYH6",
-              "MYH7",
-              "MYPN",
-              "NEXN",
-              "NKX2-5",
-              "OBSCN",
-              "PLN",
-              "RBM20",
-              "SCN5A",
-              "SDHA",
-              "SGCB",
-              "SGCD",
-              "SYNE1",
-              "SYNE2",
-              "TAZ",
-              "TCAP",
-              "TNNC1",
-              "TNNI3",
-              "TNNT2",
-              "TPM1",
-              "TTN",
-              "VCL"
+                "ACTC1",
+                "BAG3",
+                "CRYAB",
+                "CSRP3",
+                "DES",
+                "DMD",
+                "DSG2",
+                "DSP",
+                "FLNC",
+                "HFE",
+                "ILK",
+                "LAMA4",
+                "LAMP2",
+                "LDB3",
+                "LMNA",
+                "MYBPC3",
+                "MYH7",
+                "NEXN",
+                "NKX2-5",
+                "PLN",
+                "RBM20",
+                "SCN5A",
+                "TAZ",
+                "TNNC1",
+                "TNNI3",
+                "TNNT2",
+                "TPM1",
+                "TTN",
+                "VCL"
             ]
-          },
-          "genes": [
-            "ACTC1",
-            "ACTN2",
-            "ALMS1",
-            "ANKRD1",
-            "BAG3",
-            "CRYAB",
-            "CSRP3",
-            "DES",
-            "DMD",
-            "DNAJC19",
-            "DOLK",
-            "DSG2",
-            "DSP",
-            "EMD",
-            "EYA4",
-            "FKTN",
-            "FLNC",
-            "GATAD1",
-            "HFE",
-            "ILK",
-            "JUP",
-            "LAMA4",
-            "LAMP2",
-            "LDB3",
-            "LMNA",
-            "MYBPC3",
-            "MYH6",
-            "MYH7",
-            "MYPN",
-            "NEXN",
-            "NKX2-5",
-            "OBSCN",
-            "PLN",
-            "RBM20",
-            "SCN5A",
-            "SDHA",
-            "SGCB",
-            "SGCD",
-            "SYNE1",
-            "SYNE2",
-            "TAZ",
-            "TCAP",
-            "TNNC1",
-            "TNNI3",
-            "TNNT2",
-            "TPM1",
-            "TTN",
-            "VCL"
-          ]
-        },
-        "PatientDetails": {
-          "lastName": "asdfadsf",
-          "firstName": "asdfas",
-          "dob": "2-1-1918",
-          "medicalRecordNo": "",
-          "gender": "Female",
-          "genderOther": "",
-          "ethnicity": "",
-          "deceased": true,
-          "sampleSource": "",
-          "consent": true,
-        },
-        "ClinicalInfo": {
-          "clinicalInfo": "adsfasdf",
-          "relevantInvestigation": "asdfasdfasdfasdffasdf",
-          "familyHistory": "",
-          "consanguinity": true
-        },
-        "FamilyMember": {
-          "familyMember": [
+        }
+    },
+    "patientDetailsModule": {
+        "lastName": "Agudo",
+        "firstName": "Joshua",
+        "dob": "2020-02-02",
+        "medicalRecordNo": "",
+        "gender": "Male",
+        "genderOther": "",
+        "ethnicity": "Filipino",
+        "deceased": false,
+        "sampleSource": "",
+        "consent": true
+    },
+    "clinicalInfoModule": {
+        "clinicalInfo": "Here is some clinical information",
+        "affected": false,
+        "relevantInvestigation": "",
+        "familyHistory": "",
+        "consanguinity": false
+    },
+    "familyMembersModule": {
+        "familyMembers": [
             {
-              "FamilyMemberDetails": {
-                "lastName": "adsfadsf",
-                "firstName": "asdf",
-                "relationship":'father',
-                "dob": "2-2-1917",
-                "medicalRecordNo": "123",
-                "gender": "Unknown",
-                "genderOther": "",
-                "ethnicity": "",
-                "deceased": true,
-                "sampleSource": "",
-                "consent": true,
-              },
-              "FamilyMemberClinicalInfo": {
-                "clinicalInfo": "asdfasdf",
-                "affected": true,
-                "relevantInvestigation": "",
-                "familyHistory": "",
-                "consanguinity": false
-              }
-            },
-            {
-              "FamilyMemberDetails": {
-                "lastName": "adsfadsf2",
-                "firstName": "asdf2",
-                "relationship": "sister",
-                "dob": "2-2-1917",
-                "medicalRecordNo": "123",
-                "gender": "Male",
-                "genderOther": "",
-                "ethnicity": "",
-                "deceased": false,
-                "consent": true,
-              },
-              "FamilyMemberClinicalInfo": {
-                "clinicalInfo": "asdfasdf2",
-                "affected": true,
-                "relevantInvestigation": "",
-                "familyHistory": "",
-                "consanguinity": false
-              }
+                "familyMemberDetails": {
+                    "lastName": "Blah",
+                    "firstName": "Mother",
+                    "dob": "2020-02-02",
+                    "medicalRecordNo": "adsa",
+                    "gender": "Female",
+                    "genderOther": "",
+                    "ethnicity": "",
+                    "deceased": false,
+                    "sampleSource": "",
+                    "consent": true
+                },
+                "familyMemberClinicalInfo": {
+                    "clinicalInfo": "adssda",
+                    "affected": true,
+                    "relevantInvestigation": "",
+                    "familyHistory": "",
+                    "consanguinity": false
+                }
             }
-          ]
-        },
-        "ClinicianDetails": {
-          "providerNumber": "123123AS",
-          "medicalSpecialty": "adsf",
-          "firstName": "fasdf",
-          "lastName": "dfasd",
-          "organisation": "sdfas",
-          "phone": "123123",
-          "email": "a@a.aa",
-          "fax": "",
-          "copyToHCP": [
-            {
-              "additionalFirstName": "adsf",
-              "additionalLastName": "adsfasd",
-              "additionalOrganisation": "asdf",
-              "additionalEmail": "a@aa.aa"
-            },
-            {
-              "additionalFirstName": "adsf2",
-              "additionalLastName": "adsfasd2",
-              "additionalOrganisation": "asdf",
-              "additionalEmail": "a@aa.aa"
-            }
-          ],
-          "copy": false
-        },
-        "BillingInfo": {
-          "billOption": "Private",
-          "payer": "asdf adsfadsf",
-          "phone": "12123",
-          "firstName": "asdf",
-          "lastName": "adsfadsf",
-          "payerEmail": "a@a.aa",
-          "consent": true,
-          "billPrice": 720
-        },
-        "Signature": true,
-        _secretPrefill: true
-      };
+        ]
+    },
+    "clinicianDetailsModule": {
+        "providerNumber": "123123",
+        "medicalSpecialty": "IBD",
+        "firstName": "Boaty",
+        "lastName": "McBoatFace",
+        "organisation": "Garvan Institute",
+        "phone": "12390098123",
+        "email": "slkjs@alkjs.com",
+        "fax": "",
+        "copy": false,
+        "copyToHCP": [
+                {
+                    "firstName": "Hello",
+                    "lastName": "World",
+                    "organisation": "Some organisation",
+                    "email": "hello@world.com"
+                }
+        ],
+    },
+    "billingInfoModule": {
+        "billOption": "Private",
+        "payer": "Joshua Agudo",
+        "phone": "1231232131",
+        "firstName": "Joshua",
+        "lastName": "Agudo",
+        "payerEmail": "joshua.agudo@genome.one",
+        "consent": true
+    },
+    "signature": false
+}
 } 

@@ -18,6 +18,7 @@ import {
   FormButton
 } from './../../components/SharedStyle';
 import styled from 'styled-components';
+import { isoToShortDate } from './../../components/dateConvert';
 
 export const BlockButton = styled(Button)`
   margin-left: 6px;
@@ -55,9 +56,9 @@ class FamilyMember extends Component {
   }
   
   handleAddFamilyMember() {
-    return this.setState(addFamilyMember(this.state, this.state.form.familyMember), () => {
+    return this.setState(addFamilyMember(this.state, this.state.form.familyMembers), () => {
       this.props.route.onChange(this);
-      this.props.router.push(`/step4/add/1/${(this.state.form.familyMember.length - 1)}`)
+      this.props.router.push(`/step4/add/1/${(this.state.form.familyMembers.length - 1)}`)
     });
   }
   
@@ -104,7 +105,7 @@ class FamilyMember extends Component {
           <Col md={12}>
             <BlockFamilyContainer>
               <label>Patient: </label> {this.props.route.patientData && this.props.route.patientData.firstName + ' ' + this.props.route.patientData.lastName}<br />
-              <label>DOB: </label> {this.props.route.patientData && this.props.route.patientData.dob}<br />
+              <label>DOB: </label> {this.props.route.patientData && isoToShortDate(this.props.route.patientData.dob)}<br />
               <label>Gender: </label> {this.props.route.patientData && this.props.route.patientData.gender}
             </BlockFamilyContainer>
           </Col>
@@ -121,15 +122,15 @@ class FamilyMember extends Component {
         <br /><br />
       
         <Row>
-        {this.state.form.familyMember.map((member, $index) => {
+        {this.state.form.familyMembers.map((member, $index) => {
           return( 
             <Col md={12} key={$index}>
               <BlockFamilyContainer>
                 <Row>
                   <Col md={6}>
-                    {member.FamilyMemberDetails.firstName + ' ' + member.FamilyMemberDetails.lastName}
-                    <Tag bsStyle={member.FamilyMemberClinicalInfo.affected ? 'danger' : 'success'}>
-                      {member.FamilyMemberClinicalInfo.affected ? 'Affected' : 'Unaffected'}
+                    {member.familyMemberDetails.firstName + ' ' + member.familyMemberDetails.lastName}
+                    <Tag bsStyle={member.familyMemberClinicalInfo.affected ? 'danger' : 'success'}>
+                      {member.familyMemberClinicalInfo.affected ? 'Affected' : 'Unaffected'}
                     </Tag>
                   </Col>
             
@@ -159,7 +160,7 @@ class FamilyMember extends Component {
           )
         })}
   
-        {this.state.form.familyMember.length === 0 && (
+        {this.state.form.familyMembers.length === 0 && (
           <Col md={12}><br />There is no family member associated with this patient. Please select "Add family member" to include a patients family member to be tested.<br /></Col>
         )}
         </Row>
@@ -168,9 +169,9 @@ class FamilyMember extends Component {
           <Modal.Header closeButton>
             <Modal.Title>
               Remove family member ({
-                (this.state.form.familyMember[this.state.deleteModal.familyMemberId]) && (
-                  this.state.form.familyMember[this.state.deleteModal.familyMemberId].FamilyMemberDetails.firstName + ' ' +
-                  this.state.form.familyMember[this.state.deleteModal.familyMemberId].FamilyMemberDetails.lastName
+                (this.state.form.familyMembers[this.state.deleteModal.familyMemberId]) && (
+                  this.state.form.familyMembers[this.state.deleteModal.familyMemberId].familyMemberDetails.firstName + ' ' +
+                  this.state.form.familyMembers[this.state.deleteModal.familyMemberId].familyMemberDetails.lastName
                 )
               })
             </Modal.Title>

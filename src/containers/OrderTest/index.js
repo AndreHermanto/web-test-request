@@ -81,8 +81,8 @@ class OrderTest extends Component {
           handleClick={this.handleTestSelect}
           onValidate={this.validate()}
           formState={this.state.form}
-          latestSelectId={this.state.form.latestSelectId}
-          genes={this.state.form.genes}
+          latestSelectId={this.state.form.test ? this.state.form.test.id : ''}
+          genes={this.state.form.test ? this.state.form.test.genes : []}
           required
         />
         <FormButton 

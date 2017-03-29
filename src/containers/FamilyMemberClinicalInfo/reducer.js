@@ -13,7 +13,7 @@ export function initData(prefilled, familyHistory) {
       clinicalInfo: 'required'
     },
     validated: false,
-    formId: 'FamilyMemberClinicalInfo'
+    formId: 'familyMemberClinicalInfo'
   };
   
   if(prefilled && Object.keys(prefilled).length !== 0) state.form = prefilled;
