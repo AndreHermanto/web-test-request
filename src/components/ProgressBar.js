@@ -72,7 +72,7 @@ export default class ProgressBar extends Component
         <Container>
           <Lists>
             <Nav style={hashHistory.getCurrentLocation().pathname === "/step1"? active : {}}>
-              Order Test
+              Select Test
             </Nav>
 
             <Nav style={hashHistory.getCurrentLocation().pathname === "/step2"? active : {}}>
