@@ -14,7 +14,7 @@ exports[`ProgressBar renders without crashing 1`] = `
         <li
           className="jCRgif"
           style={Object {}}>
-          Order Test
+          Select Test
         </li>
         <li
           className="jCRgif"

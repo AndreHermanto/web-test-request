@@ -1,8 +1,7 @@
 import React from 'react';
 import FetchMock from 'fetch-mock';
 import { 
-  getTestList, 
-  getTest
+  getPanelsData
 } from './api';
 
 describe('OrderTest: api', () => {
@@ -12,7 +11,7 @@ describe('OrderTest: api', () => {
       { "id": "test2", "label": "Test2" },
       { "id": "test3", "label": "Test3" }
     ]});
-    await getTestList()
+    await getPanelsData()
       .then((response) => {
         expect(response.length > 0).toEqual(true); 
       });

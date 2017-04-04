@@ -2,14 +2,14 @@ exports[`OrderTest: index renders without crashing - initial state with empty ge
 <div>
   <h3
     className="jhCkYx">
-    Step 1: Order a Test
+    Step 1: Select a Test
   </h3>
   <div
     className="form-group">
     <label
       className="control-label"
       htmlFor={undefined}>
-      Select a Disease Panel / Whole Genome Analysis
+      Select the type of test
       <span
         className="jCNiHk">
         Required
@@ -19,11 +19,13 @@ exports[`OrderTest: index renders without crashing - initial state with empty ge
     <span
       className="SfhHK help-block" />
   </div>
+  <br />
+  <br />
   <button
     className="bBdbjl"
     onClick={[Function]}
     type="submit">
-    Confirm
+    Next
   </button>
 </div>
 `;

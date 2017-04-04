@@ -1,0 +1,151 @@
+exports[`TestPanel TestPanel overall renders well 1`] = `
+<div
+  className="form-group">
+  <label
+    className="control-label"
+    htmlFor={undefined}>
+    <span
+      className="jCNiHk">
+      Required
+    </span>
+  </label>
+  <br />
+  <div
+    className="jzxtnx"
+    label="p1"
+    onClick={[Function]}
+    selected={false}>
+    <img
+      alt="logo"
+      src="test-file-stub"
+      style={
+        Object {
+          "float": "left",
+          "height": 30,
+        }
+      } />
+    
+    <div
+      style={
+        Object {
+          "display": "table-cell",
+          "height": 30,
+          "paddingLeft": 20,
+          "paddingRight": 20,
+          "verticalAlign": "middle",
+        }
+      }>
+      p1
+      <div
+        className="text-muted"
+        style={
+          Object {
+            "fontSize": 11,
+            "marginTop": 2,
+          }
+        }>
+        <span>
+           
+          AAA
+        </span>
+        <span>
+           
+          BBB
+        </span>
+        <span>
+           
+          CCC
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    className="jzxtnx"
+    label="p2"
+    onClick={[Function]}
+    selected={false}>
+    <img
+      alt="logo"
+      src="test-file-stub"
+      style={
+        Object {
+          "float": "left",
+          "height": 30,
+        }
+      } />
+    
+    <div
+      style={
+        Object {
+          "display": "table-cell",
+          "height": 30,
+          "paddingLeft": 20,
+          "paddingRight": 20,
+          "verticalAlign": "middle",
+        }
+      }>
+      p2
+      <div
+        className="text-muted"
+        style={
+          Object {
+            "fontSize": 11,
+            "marginTop": 2,
+          }
+        }>
+        <span>
+           
+          DDD
+        </span>
+        <span>
+           
+          EEE
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    className="jzxtnx"
+    label="p3"
+    onClick={[Function]}
+    selected={false}>
+    <img
+      alt="logo"
+      src="test-file-stub"
+      style={
+        Object {
+          "float": "left",
+          "height": 30,
+        }
+      } />
+    
+    <div
+      style={
+        Object {
+          "display": "table-cell",
+          "height": 30,
+          "paddingLeft": 20,
+          "paddingRight": 20,
+          "verticalAlign": "middle",
+        }
+      }>
+      p3
+      <div
+        className="text-muted"
+        style={
+          Object {
+            "fontSize": 11,
+            "marginTop": 2,
+          }
+        }>
+        <span>
+           
+          FFF
+        </span>
+      </div>
+    </div>
+  </div>
+  <span
+    className="SfhHK help-block" />
+</div>
+`;
