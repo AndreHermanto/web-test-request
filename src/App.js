@@ -4,7 +4,6 @@ import {
   Col,
   Row
 } from 'react-bootstrap';
-import secretPrefill from './components/secretPrefill';
 import { NotificationContainer, NotificationManager } from 'react-notifications';
 import Routes from './components/Routes';
 import UniversalNavigation from './components/UniversalNavigation';
@@ -33,7 +32,6 @@ class App extends Component {
   }
   
   componentDidMount() {
-    secretPrefill(this, 'formInput');
     window.onbeforeunload = function(){
       return "Are you sure to leave this page?";
     }
@@ -84,8 +82,6 @@ class App extends Component {
   // If a user attempt to skip the process via changing the url, it will block that attempt unless going back
   // to the previous form.
   preventUnvisitedFormAccess(nextLocation) {
-    if(this.props.location.query && this.props.location.query.shazam) return true;
-    
     var pass = true;
     var targetStep = parseInt(nextLocation.pathname.split('step')[1], 0);
     var currentStep = parseInt(this.props.location.pathname.split('step')[1], 0);
