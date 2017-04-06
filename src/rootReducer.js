@@ -24,9 +24,19 @@ export function setFormInputData(state, name, value) {
 export function setFamilyMemberData(state, name, index, value) {
   var arr = state.formInput.familyMembersModule.familyMembers.slice();
   arr[index][name] = value;
-  
+
+  let FamilyMemberObj = {
+    familyMembers: arr
+  }
+  if(arr.length){
+    FamilyMemberObj = {
+      familyMembers: arr,
+      optFamily: 'Yes'
+    }
+  }
+
   var formState = Object.assign({}, state.formInput, {
-    familyMembersModule: { familyMembers: arr }
+    familyMembersModule: FamilyMemberObj
   });
 
   return Object.assign({}, state, {

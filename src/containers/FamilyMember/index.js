@@ -11,7 +11,9 @@ import {
 import {
   initData,
   addFamilyMember,
-  setDeleteModal
+  setDeleteModal,
+  setOptFamily,
+  validatedToTrue
 } from './reducer'
 import { 
   PageHeading,
@@ -19,6 +21,7 @@ import {
 } from './../../components/SharedStyle';
 import styled from 'styled-components';
 import { isoToShortDate } from './../../components/dateConvert';
+import RadioSet from './../../components/RadioSet';
 
 export const BlockButton = styled(Button)`
   margin-left: 6px;
@@ -33,6 +36,10 @@ export const BlockFamilyContainer = styled(Thumbnail)`
   border-radius: 0px !important;
 `;
 
+export const OptContainer = styled.div`
+  margin-left: 5px;
+`;
+
 /**
  * FamilyMember - a hub page to insert, edit and delete family member of the patient.
  */
@@ -41,11 +48,13 @@ class FamilyMember extends Component {
     super(props);
     this.handleBack = this.handleBack.bind(this);
     this.handleNext = this.handleNext.bind(this);
+    this.handleConfirm = this.handleConfirm.bind(this);
     this.handleAddFamilyMember = this.handleAddFamilyMember.bind(this);
     this.handleDeleteFamilyMember = this.handleDeleteFamilyMember.bind(this);
     this.handleEditFamilyMember = this.handleEditFamilyMember.bind(this);
     this.closeDeleteModal = this.closeDeleteModal.bind(this);
     this.openDeleteModal = this.openDeleteModal.bind(this);
+    this.handleOptFamilyChange = this.handleOptFamilyChange.bind(this);
     this.state = initData(props.route.data);
   }
   
@@ -77,7 +86,8 @@ class FamilyMember extends Component {
     this.props.router.push('/step3');
   }
   
-  handleNext() {
+  handleNext(passValidation) {
+    if(!passValidation) return false;
     if(this.props.route.isEdited === true)
     {
       this.props.route.onChange(this);
@@ -89,6 +99,16 @@ class FamilyMember extends Component {
     }
   }
   
+  handleConfirm() {
+    return this.setState(validatedToTrue(this.state), () => {    
+      var pass = true;
+      for (var field in this.state.validation) {
+        if(this.state.validation[field].status === 'error') pass = false;
+      }
+      this.handleNext(pass); 
+    });
+  }
+
   closeDeleteModal() {
     this.setState(setDeleteModal(this.state, false, null));
   }
@@ -97,22 +117,32 @@ class FamilyMember extends Component {
     this.setState(setDeleteModal(this.state, true, event.currentTarget.name));
   }
 
+  handleOptFamilyChange(event){
+    this.setState(setOptFamily(this.state,event.target.value))
+  }
+
+  // This renders the validation result after confirm button is clicked.
+  validate() {
+    return this.state.validated && this.state.validation;
+  }
+
   render() {
     return (
       <div>
         <PageHeading>Step 4: Add Family Members who will also provide samples</PageHeading>
-        <Row>
-          <Col md={12}>
-            <BlockFamilyContainer>
-              <label>Patient: </label> {this.props.route.patientData && this.props.route.patientData.firstName + ' ' + this.props.route.patientData.lastName}<br />
-              <label>DOB: </label> {this.props.route.patientData && isoToShortDate(this.props.route.patientData.dob)}<br />
-              <label>Gender: </label> {this.props.route.patientData && this.props.route.patientData.gender}
-            </BlockFamilyContainer>
-          </Col>
-        </Row>
-      
+        <RadioSet
+          label="Is there any family members who will also provide samples?"
+          field="optFamily"
+          options={['Yes', 'No']}
+          formState={this.state.form}
+          onChange={this.handleOptFamilyChange}
+          onValidate={this.validate()}
+        />
+
+        {this.state.form.optFamily === 'Yes'? 
+        <div>
         <br /><br />
-        <label>Family members associated with this patient:</label>
+        <label>Family members who are to be tested:</label>
         <br />
         <FormButton 
           onClick={this.handleAddFamilyMember}
@@ -129,6 +159,9 @@ class FamilyMember extends Component {
                 <Row>
                   <Col md={6}>
                     {member.familyMemberDetails.firstName + ' ' + member.familyMemberDetails.lastName}
+                    <Tag bsStyle='primary'>
+                      <Glyphicon glyph="glyphicon glyphicon-link" />{' ' + member.familyMemberDetails.relationship}
+                    </Tag>
                     <Tag bsStyle={member.familyMemberClinicalInfo.affected ? 'danger' : 'success'}>
                       {member.familyMemberClinicalInfo.affected ? 'Affected' : 'Unaffected'}
                     </Tag>
@@ -189,7 +222,8 @@ class FamilyMember extends Component {
             </FormButton>
           </Modal.Footer>
         </Modal>
-
+        </div>
+        : null}
         {
           this.props.route.isEdited !== true &&
           <FormButton  
@@ -203,7 +237,7 @@ class FamilyMember extends Component {
        
         <FormButton  
           type="submit" 
-          onClick={this.handleNext}
+          onClick={this.handleConfirm}
         >
           Confirm
         </FormButton>

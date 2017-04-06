@@ -132,13 +132,6 @@ class FamilyMemberDetails extends Component {
             style={{ marginTop: 8 }}
           />   
         )}
-      
-        <Input
-          field="ethnicity"
-          label="Ethnicity"
-          onChange={this.handleChange}
-          optional
-        />
         
         <Toggle
           field="deceased"

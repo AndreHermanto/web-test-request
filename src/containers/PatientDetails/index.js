@@ -128,13 +128,6 @@ class PatientDetails extends Component {
           />   
         )}
       
-        <Input
-          field="ethnicity"
-          label="Ethnicity"
-          onChange={this.handleChange}
-          optional
-        />
-            
         <Toggle
           field="deceased"
           label="Is this person deceased?"
