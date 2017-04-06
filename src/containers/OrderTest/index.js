@@ -3,6 +3,8 @@ import { getPanelsData } from './api';
 import {
   initData,
   setPanelsData,
+  setNewMainCategory,
+  setNewSubCategory,
   setCategory,
   setPanel,
   validatedToTrue
@@ -55,30 +57,11 @@ class OrderTest extends Component {
   }
   
   handleMainCategoryChange(category) {
-    this.setState(setPanel(this.state, {}),   
-      () => this.setState(setCategory(this.state, 'chosenPanelSubCategory', {}),               
-        () => this.setState(
-          setCategory(this.state, 'chosenPanelMainCategory', category),
-          () => {
-            if(this.state.chosenPanelMainCategory.categories.length === 1) {
-              this.setState(
-                setCategory(this.state, 'chosenPanelSubCategory', this.state.chosenPanelMainCategory.categories[0]),
-                () => {
-                  if(this.state.chosenPanelSubCategory.panels.length === 1) {
-                    this.setState(setPanel(this.state, this.state.chosenPanelSubCategory.panels[0]));
-                  }
-                }
-              );
-            }
-          }
-        )               
-      )
-    );
-    
+    this.setState(setNewMainCategory(this.state, category));
   }
   
   handleSubCategoryChange(category) {
-    this.setState(setCategory(this.state, 'chosenPanelSubCategory', category));
+    this.setState(setNewSubCategory(this.state, category));
   }
   
   handleTestSelect(value) {

@@ -27,15 +27,15 @@ const TestContainer = styled.div`
   margin-bottom: 6px;
   cursor: pointer;
   line-height: 1.2;
-  color:${props => props.selected ? '#77BC1F' : '#000'};
-  border-color: ${props => props.selected ? '#77BC1F' : '#ccc'};
+  color:${props => props.selected ? '#00a6b6' : '#000'};
+  border-color: ${props => props.selected ? '#00a6b6' : '#ccc'};
   &:hover {
-    border-color:#00a6b6;
+    border-color: #00a6b6;
     color: #00a6b6 !important;
   }
 
   &.active {
-    border-color:#00a6b6;
+    border-color: #00a6b6;
     color: #00a6b6 !important;
   }
 
