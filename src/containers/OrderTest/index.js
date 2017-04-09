@@ -7,6 +7,7 @@ import {
   setNewSubCategory,
   setCategory,
   setPanel,
+  setPanelType,
   validatedToTrue
 } from './reducer'
 import { 
@@ -24,6 +25,7 @@ class OrderTest extends Component {
     this.handleMainCategoryChange = this.handleMainCategoryChange.bind(this);
     this.handleSubCategoryChange = this.handleSubCategoryChange.bind(this);
     this.handleTestSelect = this.handleTestSelect.bind(this);
+    this.handleTypeSelect = this.handleTypeSelect.bind(this);
     this.handleConfirm = this.handleConfirm.bind(this);
     this.state = initData(props.route.data);
   }
@@ -71,6 +73,11 @@ class OrderTest extends Component {
       if(panel.id === value.id) this.setState(setPanel(this.state, panel));
     });
     return;
+  }
+  
+  handleTypeSelect(event, value) { 
+    event.stopPropagation();
+    this.setState(setPanelType(this.state, value));
   }
 
   handleNext(passValidation) {
@@ -148,14 +155,14 @@ class OrderTest extends Component {
             label="Select a Panel"
             options={this.state.chosenPanelSubCategory.panels}
             handleClick={this.handleTestSelect}
+            handleTypeClick={this.handleTypeSelect}
             onValidate={this.validate()}
             formState={this.state.form}
-            latestSelectId={this.state.form.test ? this.state.form.test.id : ''}
-            genes={this.state.form.test ? this.state.form.test.genes : []}
+            preSelect={this.state.form.test}
             required
           />
         }
-          
+
         <FormButton 
           type="submit" 
           onClick={this.handleConfirm}

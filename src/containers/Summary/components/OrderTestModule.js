@@ -45,18 +45,19 @@ class OrderTestModule extends Component
           </Col>
           <Col md={12}>
             {
-              this.props.orderTestModule.test.genes && 
-              <SummaryDetails> Total number of genes available: 
+              (this.props.orderTestModule.test.geneLists.length > 0) && 
+              <SummaryDetails style={{ textTransform: 'capitalize', fontWeight: 400 }}> 
+                {this.props.orderTestModule.test.geneLists[0].type} panel - included genes: 
                 <Gene>
-                  {this.props.orderTestModule.test.genes.length} 
+                  {this.props.orderTestModule.test.geneLists[0].genes.length} 
                 </Gene> 
               </SummaryDetails>
             }
             {
-              this.props.orderTestModule.test.genes && (
+              (this.props.orderTestModule.test.geneLists.length > 0) && (
               <div>
               {
-                this.props.orderTestModule.test.genes.map((gene, $index) => {
+                this.props.orderTestModule.test.geneLists[0].genes.map((gene, $index) => {
                   return <GeneLabel key={$index}>{gene}</GeneLabel> 
                 })
               }

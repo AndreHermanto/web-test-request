@@ -11,140 +11,181 @@ exports[`TestPanel TestPanel overall renders well 1`] = `
   </label>
   <br />
   <div
-    className="gUZRRl"
+    className="iRRKpJ"
     label="p1"
     onClick={[Function]}
     selected={false}>
-    <img
-      alt="logo"
-      src="test-file-stub"
-      style={
-        Object {
-          "float": "left",
-          "height": 30,
-        }
-      } />
-    
-    <div
-      style={
-        Object {
-          "display": "table-cell",
-          "height": 30,
-          "paddingLeft": 20,
-          "paddingRight": 20,
-          "verticalAlign": "middle",
-        }
-      }>
-      p1
-      <div
-        className="text-muted"
+    <div>
+      <img
+        alt="logo"
+        src="test-file-stub"
         style={
           Object {
-            "fontSize": 11,
-            "marginTop": 2,
+            "float": "left",
+            "height": 30,
+          }
+        } />
+      
+      <div
+        style={
+          Object {
+            "display": "table-cell",
+            "height": 30,
+            "paddingLeft": 20,
+            "paddingRight": 20,
+            "verticalAlign": "middle",
           }
         }>
-        <span>
-           
-          AAA
-        </span>
-        <span>
-           
-          BBB
-        </span>
-        <span>
-           
-          CCC
-        </span>
+        p1
       </div>
     </div>
   </div>
   <div
-    className="gUZRRl"
+    className="iujgGu"
     label="p2"
     onClick={[Function]}
-    selected={false}>
-    <img
-      alt="logo"
-      src="test-file-stub"
-      style={
-        Object {
-          "float": "left",
-          "height": 30,
-        }
-      } />
-    
+    selected={true}>
+    <div>
+      <img
+        alt="logo"
+        src="test-file-stub"
+        style={
+          Object {
+            "float": "left",
+            "height": 30,
+          }
+        } />
+      
+      <div
+        style={
+          Object {
+            "display": "initial",
+            "height": 30,
+            "paddingLeft": 20,
+            "paddingRight": 20,
+            "verticalAlign": "middle",
+          }
+        }>
+        p2
+      </div>
+    </div>
     <div
       style={
         Object {
-          "display": "table-cell",
-          "height": 30,
-          "paddingLeft": 20,
-          "paddingRight": 20,
-          "verticalAlign": "middle",
+          "marginTop": 32,
         }
       }>
-      p2
       <div
-        className="text-muted"
+        className="row"
         style={
           Object {
-            "fontSize": 11,
-            "marginTop": 2,
+            "padding": 8,
           }
         }>
-        <span>
-           
-          DDD
-        </span>
-        <span>
-           
-          EEE
-        </span>
+        <div
+          className="col-lg-3">
+          <div
+            className="radio"
+            style={
+              Object {
+                "color": "#00a6b6",
+                "margin": 0,
+              }
+            }>
+            <label>
+              <input
+                defaultChecked={false}
+                disabled={false}
+                name="type"
+                onClick={[Function]}
+                type="radio"
+                value="complete" />
+              Complete
+               Panel 
+              <small
+                style={
+                  Object {
+                    "display": "inline-block",
+                  }
+                }>
+                (
+                3
+                 genes included)
+              </small>
+            </label>
+          </div>
+        </div>
+        <div
+          className="col-lg-9">
+          <span
+            className="hynVdE label label-default"
+            data-inCore={true}>
+            DDD
+          </span>
+          <span
+            className="hynVdE label label-default"
+            data-inCore={true}>
+            EEE
+          </span>
+          <span
+            className="hynVdE label label-default"
+            data-inCore={true}>
+            FFF
+          </span>
+        </div>
+      </div>
+      <div
+        className="row"
+        style={
+          Object {
+            "padding": 8,
+          }
+        }>
+        <div
+          className="col-lg-3">
+          <div
+            className="radio"
+            style={
+              Object {
+                "color": "#7788aa",
+                "margin": 0,
+              }
+            }>
+            <label>
+              <input
+                defaultChecked={true}
+                disabled={false}
+                name="type"
+                onClick={[Function]}
+                type="radio"
+                value="core" />
+              Core
+               Panel 
+              <small
+                style={
+                  Object {
+                    "display": "inline-block",
+                  }
+                }>
+                (
+                1
+                 genes included)
+              </small>
+            </label>
+          </div>
+        </div>
+        <div
+          className="col-lg-9">
+          <span
+            className="hynVdE label label-default"
+            data-inCore={true}>
+            FFF
+          </span>
+        </div>
       </div>
     </div>
   </div>
-  <div
-    className="gUZRRl"
-    label="p3"
-    onClick={[Function]}
-    selected={false}>
-    <img
-      alt="logo"
-      src="test-file-stub"
-      style={
-        Object {
-          "float": "left",
-          "height": 30,
-        }
-      } />
-    
-    <div
-      style={
-        Object {
-          "display": "table-cell",
-          "height": 30,
-          "paddingLeft": 20,
-          "paddingRight": 20,
-          "verticalAlign": "middle",
-        }
-      }>
-      p3
-      <div
-        className="text-muted"
-        style={
-          Object {
-            "fontSize": 11,
-            "marginTop": 2,
-          }
-        }>
-        <span>
-           
-          FFF
-        </span>
-      </div>
-    </div>
-  </div>
+  <br />
   <span
     className="SfhHK help-block" />
 </div>

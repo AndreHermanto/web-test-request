@@ -61,20 +61,44 @@ export function setCategory(state, categoryState, value) {
  * This sets a test panel.
  * @param {Object} state Targeted state to be changed.
  * @param {string} name Name of the child in the form state.
- * @param {string} value Value for updating.
+ * @param {string} panel Value for updating.
  */
-export function setPanel(state, value) {
+export function setPanel(state, panel) {
   var formStateChild = Object.assign({}, state.form, {
-    "test": value
+    "test": {
+      id: panel.id,
+      label: panel.label,
+      geneLists: panel.geneLists ? [panel.geneLists[panel.geneLists.length - 1]] : []
+    }
   });
   
   var validationStateChild = Object.assign({}, state.validation, {
-    test: validator(value, state.validationRule['test'])
+    test: validator(panel, state.validationRule['test'])
   });
   
   return Object.assign({}, state, {
     form: formStateChild,
     validation: validationStateChild
+  });
+}
+
+/**
+ * Set the type of the test panel.
+ * @param {Object} state Targeted state to be changed.
+ * @param {string} name Name of the child in the form state.
+ * @param {string} panel Value for updating.
+ */
+export function setPanelType(state, panelType) {
+  var formStateChild = Object.assign({}, state.form, {
+    "test": {
+      id: state.form.test.id,
+      label: state.form.test.label,
+      geneLists: [panelType]
+    }
+  });
+  
+  return Object.assign({}, state, {
+    form: formStateChild
   });
 }
 

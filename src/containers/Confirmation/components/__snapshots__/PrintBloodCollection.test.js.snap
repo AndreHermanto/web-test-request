@@ -98,9 +98,15 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
           Consequatur adipisci modi laudantium tenetur ea exercitationem id
         </strong>
       </h4>
-      <p>
-        Total number of genes available: 
-        8
+      <p
+        style={
+          Object {
+            "fontWeight": 400,
+            "textTransform": "capitalize",
+          }
+        }>
+        complete
+         panel - included genes:
       </p>
       <div>
         <span
@@ -594,9 +600,15 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
           Consequatur adipisci modi laudantium tenetur ea exercitationem id
         </strong>
       </h4>
-      <p>
-        Total number of genes available: 
-        8
+      <p
+        style={
+          Object {
+            "fontWeight": 400,
+            "textTransform": "capitalize",
+          }
+        }>
+        complete
+         panel - included genes:
       </p>
       <div>
         <span
@@ -1096,9 +1108,15 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
           Consequatur adipisci modi laudantium tenetur ea exercitationem id
         </strong>
       </h4>
-      <p>
-        Total number of genes available: 
-        8
+      <p
+        style={
+          Object {
+            "fontWeight": 400,
+            "textTransform": "capitalize",
+          }
+        }>
+        complete
+         panel - included genes:
       </p>
       <div>
         <span
