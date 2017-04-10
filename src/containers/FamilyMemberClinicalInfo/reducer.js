@@ -47,7 +47,13 @@ export function setFormData(state, target) {
       value = target.checked;
       break;
     default:
-      value = target.value;
+      if(target.value === 'Yes'){
+        value = true;
+      }else if(target.value === 'No'){
+        value = false;
+      }else{
+        value = target.value;
+      }
       break;
   } 
 

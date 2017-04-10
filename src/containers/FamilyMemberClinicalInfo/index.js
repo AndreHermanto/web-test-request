@@ -10,6 +10,7 @@ import {
 } from './../../components/SharedStyle';
 import TextArea from './../../components/TextArea';
 import Toggle from './../../components/Toggle';
+import RadioSet from './../../components/RadioSet';
 
 /**
  * FamilyMemberClinicalInfo - UI for input patient details.
@@ -67,14 +68,15 @@ class FamilyMemberClinicalInfo extends Component {
     return (
       <div>
         <PageHeading>Step 4-2: {this.props.params.mode} family member {(this.props.params.mode === 'edit') &&  `(${this.props.route.data.familyMembers[this.props.params.id].familyMemberDetails.firstName} ${this.props.route.data.familyMembers[this.props.params.id].familyMemberDetails.lastName})`} - clinical info</PageHeading>
-                  
-        <Toggle
+ 
+        <RadioSet
+          label="Is the family member affected?"
           field="affected"
-          label="Affected"
-          onChange={this.handleChange}
+          options={[true, false]}
           formState={this.state.form}
-        />  
-      
+          onChange={this.handleChange}
+        />
+
         <TextArea
           field="clinicalInfo"
           label="Provide Clinical Information"
