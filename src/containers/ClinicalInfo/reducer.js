@@ -6,6 +6,7 @@ export function initData(prefilled) {
       clinicalInfo: '',
       relevantInvestigation: '',
       familyHistory: '',
+      consanguinityInfo: '',
       consanguinity: false
     },
     validationRule: {

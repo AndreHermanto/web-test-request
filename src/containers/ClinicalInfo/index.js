@@ -15,6 +15,7 @@ import {
   FormButton
 } from './../../components/SharedStyle';
 import TextArea from './../../components/TextArea';
+import Input from './../../components/Input';
 
 /**
  * PatientDetails - UI for input patient details.
@@ -113,6 +114,16 @@ class ClinicalInfo extends Component {
             checked={this.state.form.consanguinity === true}
             onChange={this.handleChange} />
         </FormGroup>
+
+        {this.state.form.consanguinity && (
+          <Input
+            field="consanguinityInfo"
+            label="Consanguinity Information"
+            onChange={this.handleChange}
+            formState={this.state.form}
+            optional
+          />
+        )}
             
         {
           this.props.route.isEdited !== true &&
