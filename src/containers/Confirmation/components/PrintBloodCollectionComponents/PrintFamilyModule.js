@@ -46,6 +46,22 @@ export default function PrintFamilyModule(props) {
         <strong> consanguinity:  </strong>
           {props.familyMemberClinicalInfo.consanguinity ? 'Yes' : 'No'} 
       </p>
+
+      {
+        (props.familyMemberClinicalInfo.consanguinity && props.familyMemberClinicalInfo.consanguinityInfo !== '') &&
+        <p> 
+          <strong> Consanguinity Information:  </strong>
+          {props.familyMemberClinicalInfo.consanguinityInfo} 
+        </p>
+      } 
+
+      {
+        (props.familyMemberClinicalInfo.consanguinity && props.familyMemberClinicalInfo.consanguinityInfo !== '') &&
+        <p> 
+          <strong> Consanguinity Information:  </strong>
+          {props.familyMemberClinicalInfo.consanguinityInfo}
+        </p>
+      }
     
       <p> 
         <strong> Affected:  </strong>

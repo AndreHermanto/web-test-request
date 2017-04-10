@@ -36,7 +36,7 @@ export function initData(prefilled) {
  * @param {Object} target Target object captured from UI event change.
  */
 export function setFormData(state, target) {
-  var value;
+  var value, formStateChild;
   switch(target.type) {
     case 'checkbox':
       value = target.checked;
@@ -45,10 +45,18 @@ export function setFormData(state, target) {
       value = target.value;
       break;
   } 
-  
-  var formStateChild = Object.assign({}, state.form, {
-    [target.name]: value
-  });
+
+  if(value === false) {
+    formStateChild = Object.assign({}, state.form, {
+      [target.name]: value,
+      consanguinityInfo: ''
+    });
+  }
+  else {
+    formStateChild = Object.assign({}, state.form, {
+      [target.name]: value
+    });
+  }
   
   var validationStateChild = Object.assign({}, state.validation, {
     [target.name]: validator(value, state.validationRule[target.name])

@@ -47,6 +47,14 @@ export default function PrintPatientModule(props) {
         <strong> Consanguinity:  </strong>
           {props.clinicalInfo.consanguinity ? 'Yes' : 'No'} 
       </p>
+
+      {
+        (props.clinicalInfo.consanguinity && props.clinicalInfo.consanguinityInfo !== '') &&
+        <p> 
+          <strong> Consanguinity Information:  </strong>
+          {props.clinicalInfo.consanguinityInfo}
+        </p>
+      }
           
       <PageBreak />
         

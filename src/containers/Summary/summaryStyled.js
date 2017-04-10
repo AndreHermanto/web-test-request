@@ -58,6 +58,7 @@ export const SummaryNotes = styled.div`
   padding: 1.3em;
   border-bottom: 1px solid rgb(227, 231, 241);
   margin-bottom: 10px;
+  margin-top: 10px;
 `;
 
 export const Tag = styled(Label)`

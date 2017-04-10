@@ -147,6 +147,15 @@ class FamilyMemberModule extends Component
               {this.props.familyMemberClinicalInfo.consanguinity ? 'Yes' : 'No'} 
             </SummaryDetails>
           </Col>
+          {
+            (this.props.familyMemberClinicalInfo.consanguinity && this.props.familyMemberClinicalInfo.consanguinityInfo !== '') &&
+            <Col md={12}>
+              <SummaryTitle> Consanguinity Information </SummaryTitle>
+              <SummaryNotes>
+                {this.props.familyMemberClinicalInfo.consanguinityInfo}
+              </SummaryNotes>
+            </Col>
+          }
         </Row>
       </SummaryBox>
     )
