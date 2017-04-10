@@ -24,5 +24,6 @@ describe('FamilyMember: reducer', () => {
     const state = initData();
     const newState = setOptFamily(state, 'Yes');
     expect(newState.form.optFamily).toEqual('Yes');
+    expect(newState.validation.familyMembers.status).toEqual('error');
   });
 });

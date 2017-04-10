@@ -6,7 +6,8 @@ import {
   Col,
   Button,
   Label,
-  Modal
+  Modal,
+  Well
 } from 'react-bootstrap';
 import {
   initData,
@@ -30,14 +31,36 @@ export const BlockButton = styled(Button)`
 
 export const Tag = styled(Label)`
   margin-left: 16px;
+  margin-top: 150px;
 `;
 
 export const BlockFamilyContainer = styled(Thumbnail)`
   border-radius: 0px !important;
+  background-color: #ffffff !important;
+  padding: 0px !important; 
 `;
 
 export const OptContainer = styled.div`
   margin-left: 5px;
+`;
+
+export const Relationship = styled.p`
+  margin-top: -4px;
+  font-size: x-small;
+  color: #6f6f6f;
+  margin-bottom: -4px;
+`;
+
+export const RelationshipContainer = styled.span`
+  font-weight: bold;
+  margin-left: 5px;
+  margin-right: 5px;
+`;
+
+export const FamilyMemberContainer = styled(Well)`
+  border-radius: 0px !important;
+  background-color: #eee !important;
+  background-image: none !important;
 `;
 
 /**
@@ -129,27 +152,22 @@ class FamilyMember extends Component {
   render() {
     return (
       <div>
-        <PageHeading>Step 4: Add Family Members who will also provide samples</PageHeading>
+        <PageHeading>Step 4: Family Members</PageHeading>
         <RadioSet
-          label="Is there any family members who will also provide samples?"
+          label="Are there any family members who will also provide samples?"
           field="optFamily"
           options={['Yes', 'No']}
           formState={this.state.form}
           onChange={this.handleOptFamilyChange}
           onValidate={this.validate()}
+          inline={true}
         />
 
         {this.state.form.optFamily === 'Yes'? 
-        <div>
-        <br /><br />
+        <FamilyMemberContainer>
+        <br />
         <label>Family members who are to be tested:</label>
         <br />
-        <FormButton 
-          onClick={this.handleAddFamilyMember}
-        >
-          <Glyphicon glyph="plus"/> Add family member       
-        </FormButton>
-        <br /><br />
       
         <Row>
         {this.state.form.familyMembers.map((member, $index) => {
@@ -158,10 +176,7 @@ class FamilyMember extends Component {
               <BlockFamilyContainer>
                 <Row>
                   <Col md={6}>
-                    {member.familyMemberDetails.firstName + ' ' + member.familyMemberDetails.lastName}
-                    <Tag bsStyle='primary'>
-                      <Glyphicon glyph="glyphicon glyphicon-link" />{' ' + member.familyMemberDetails.relationship}
-                    </Tag>
+                    {'(' + member.familyMemberDetails.relationship + ') - ' + member.familyMemberDetails.firstName + ' ' + member.familyMemberDetails.lastName }
                     <Tag bsStyle={member.familyMemberClinicalInfo.affected ? 'danger' : 'success'}>
                       {member.familyMemberClinicalInfo.affected ? 'Affected' : 'Unaffected'}
                     </Tag>
@@ -197,6 +212,12 @@ class FamilyMember extends Component {
           <Col md={12}><br />There is no family member associated with this patient. Please select "Add family member" to include a patients family member to be tested.<br /></Col>
         )}
         </Row>
+
+        <FormButton 
+          onClick={this.handleAddFamilyMember}
+        >
+          <Glyphicon glyph="plus"/> Add family member       
+        </FormButton>
         
         <Modal show={this.state.deleteModal.display} onHide={this.closeDeleteModal} style={{ paddingRight: 12 }}>
           <Modal.Header closeButton>
@@ -222,8 +243,12 @@ class FamilyMember extends Component {
             </FormButton>
           </Modal.Footer>
         </Modal>
-        </div>
+        </FamilyMemberContainer>
         : null}
+
+        {this.state.validation.familyMembers.status === "error" && this.state.validation.optFamily.status === null ? 
+        <p> {this.state.validation.familyMembers.feedback} </p> : 
+        null}
         {
           this.props.route.isEdited !== true &&
           <FormButton  

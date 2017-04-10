@@ -2,7 +2,7 @@ exports[`<FamilyMember/> renders without crashing 1`] = `
 <div>
   <h3
     className="jhCkYx">
-    Step 4: Add Family Members who will also provide samples
+    Step 4: Family Members
   </h3>
   <div
     className="form-group"
@@ -10,35 +10,31 @@ exports[`<FamilyMember/> renders without crashing 1`] = `
     <label
       className="control-label"
       htmlFor={undefined}>
-      Is there any family members who will also provide samples?
+      Are there any family members who will also provide samples?
     </label>
     <br />
-    <div
-      className="radio"
+    <label
+      className="radio-inline"
       style={undefined}>
-      <label>
-        <input
-          defaultChecked={false}
-          disabled={false}
-          name="optFamily"
-          type="radio"
-          value="Yes" />
-        Yes
-      </label>
-    </div>
-    <div
-      className="radio"
+      <input
+        defaultChecked={false}
+        disabled={false}
+        name="optFamily"
+        type="radio"
+        value="Yes" />
+      Yes
+    </label>
+    <label
+      className="radio-inline"
       style={undefined}>
-      <label>
-        <input
-          defaultChecked={false}
-          disabled={false}
-          name="optFamily"
-          type="radio"
-          value="No" />
-        No
-      </label>
-    </div>
+      <input
+        defaultChecked={false}
+        disabled={false}
+        name="optFamily"
+        type="radio"
+        value="No" />
+      No
+    </label>
     <span
       className="SfhHK help-block" />
   </div>

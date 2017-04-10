@@ -13,12 +13,17 @@ export function initData(prefilled) {
     },
     validationRule: {
       optFamily: 'requireSelectNoObj',
+      familyMembers: 'familyMember'
     },
     validated: false
   };
   
   if(prefilled && Object.keys(prefilled).length !== 0) state.form = prefilled;
   
+  if(state.form.familyMembers.length){
+    state.form.optFamily = 'Yes';
+  }
+
   // This validates the data in the initial state.
   state.validation = {};
   for (var field in state.validationRule) {
@@ -55,7 +60,9 @@ export function addFamilyMember(state, familyMemberArray) {
  * @param {Integer} familyMemberId The index of family member to be removed.
  */
 export function setDeleteModal(state, display, familyMemberId) {
+  var curForm = Object.assign({}, state.form);
   return Object.assign({}, state, {
+    form: curForm,
     deleteModal: {
       display: display,
       familyMemberId: familyMemberId
@@ -68,14 +75,49 @@ export function setDeleteModal(state, display, familyMemberId) {
  * @param {Object} state Targeted state to be changed.
  */
 export function setOptFamily(state, value) {
-  return Object.assign({}, state, {
-    form:{
-      optFamily : value,
-      familyMembers: []
-    },
-    validation: {
-      optFamily: validator(value, state.validationRule.optFamily)
+  var validationStateChild = Object.assign({}, state.validation);
+
+  var formStateChild = Object.assign({}, state.form, {
+    optFamily: value
+  });
+
+  var field;
+
+  if(value === 'No') {
+    for (field in validationStateChild) {
+      if(field === 'familyMembers') {
+        validationStateChild[field].skip = true;
+      }else{
+        validationStateChild[field].skip = false;
+      }
     }
+  }else{
+    for (field in validationStateChild) {
+      if(field === 'familyMembers') {
+        validationStateChild[field].skip = false;
+      }
+    }    
+  }
+
+
+  for (field in validationStateChild) {
+    if(!validationStateChild[field].skip) {
+      validationStateChild[field] = validator(formStateChild[field], state.validationRule[field]);
+    }else{
+      validationStateChild[field].status = null
+    }
+  }
+
+  if(value === 'No'){
+    formStateChild = Object.assign({}, state.form, {
+      optFamily: value,
+      familyMembers: []
+    });
+  }
+
+  return Object.assign({}, state, {
+    form: formStateChild,
+    validation: validationStateChild
   });
 }
 
