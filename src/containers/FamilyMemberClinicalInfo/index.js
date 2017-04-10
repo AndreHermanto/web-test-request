@@ -154,7 +154,7 @@ class FamilyMemberClinicalInfo extends Component {
           type="submit" 
           onClick={this.handleConfirm}
         >
-          Confirm
+          Next
         </FormButton> 
       </div>
     );

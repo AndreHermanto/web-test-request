@@ -5,7 +5,7 @@ exports[`TestPanel TestPanel overall renders well 1`] = `
     className="control-label"
     htmlFor={undefined}>
     <span
-      className="jCNiHk">
+      className="eKeSPz">
       Required
     </span>
   </label>

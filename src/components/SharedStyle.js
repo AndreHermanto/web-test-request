@@ -8,7 +8,7 @@ import Select from 'react-select';
 
 export const PageHeading = styled.h3`
   margin-bottom: 21px;
-  font-weight: 300;
+  font-weight: bold;
   text-transform:capitalize;
 `;
  
@@ -37,7 +37,7 @@ export const SubLabel = styled.span`
   margin-left: 8px;
   font-weight: normal;
   font-size: 11px;
-  color: #bbb;
+  color: #007171;
 `;
 
 export const Helper = styled.p`
