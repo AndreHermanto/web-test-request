@@ -47,7 +47,7 @@ exports[`ClinicalInfo: index renders without crashing 1`] = `
     </label>
     <div
       className="kWhIoX">
-      Provide notes from genetic tests, imaging results.
+      Provide notes from genetic tests, imaging results, etc.
     </div>
     <textarea
       className="ebbddk form-control"
@@ -77,7 +77,7 @@ exports[`ClinicalInfo: index renders without crashing 1`] = `
     </label>
     <div
       className="kWhIoX">
-      Provide notes on the suspected inheritance model and affected relatives.
+      Please describe the family history, or attach a scanned pedigree.
     </div>
     <textarea
       className="ebbddk form-control"

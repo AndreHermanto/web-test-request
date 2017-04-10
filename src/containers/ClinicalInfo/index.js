@@ -88,7 +88,7 @@ class ClinicalInfo extends Component {
         <TextArea
           field="relevantInvestigation"
           label="Provide results from relevant investigations"
-          helper="Provide notes from genetic tests, imaging results."
+          helper="Provide notes from genetic tests, imaging results, etc."
           onChange={this.handleChange}
           onValidate={this.validate()}
           formState={this.state.form}
@@ -98,7 +98,7 @@ class ClinicalInfo extends Component {
         <TextArea
           field="familyHistory"
           label="Family history"
-          helper="Provide notes on the suspected inheritance model and affected relatives."
+          helper="Please describe the family history, or attach a scanned pedigree."
           onChange={this.handleChange}
           onValidate={this.validate()}
           formState={this.state.form}
