@@ -167,7 +167,7 @@ class FamilyMemberDetails extends Component {
             onClick={this.handleCancel}
             back
           >
-            Cancel
+            Back
           </FormButton> 
         }
       

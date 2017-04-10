@@ -78,7 +78,7 @@ class App extends Component {
   
   handleFamilyMemberDelete(index) {           
     this.setState(deleteFamilyMemberData(
-      this.state
+      this.state, index
     ));
   }
   

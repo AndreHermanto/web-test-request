@@ -18,7 +18,6 @@ class FamilyMemberClinicalInfo extends Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
-    this.handleCancel = this.handleCancel.bind(this);
     this.handleBack = this.handleBack.bind(this);
     this.handleConfirm = this.handleConfirm.bind(this);
     
@@ -36,11 +35,6 @@ class FamilyMemberClinicalInfo extends Component {
   
   handleChange(event) {
     this.setState(setFormData(this.state, event.target));
-  }
-  
-  handleCancel() {
-    if(this.props.params.mode === 'add') this.props.route.onDelete(this.props.params.id);
-    this.props.router.push('/step4');
   }
   
   handleBack() {
@@ -137,16 +131,6 @@ class FamilyMemberClinicalInfo extends Component {
             back
           >
             Back
-          </FormButton> 
-        }
-
-        {
-          this.props.route.isEdited !== true &&
-          <FormButton 
-            onClick={this.handleCancel}
-            back
-          >
-            Cancel
           </FormButton> 
         }
       

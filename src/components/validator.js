@@ -68,7 +68,7 @@ export default function validator(value, rule) {
 
   if(ruleObj.familyMember && value.length === 0) {
     validationState.status = 'error';
-    validationState.feedback = 'You must add at least one family member.';
+    validationState.feedback = 'Please add at least one family member.';
   }
 
   return validationState; 

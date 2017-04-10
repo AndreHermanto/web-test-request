@@ -49,7 +49,7 @@ export function setFamilyMemberData(state, name, index, value) {
  * @param {Object} state Targeted state to be changed.
  * @param {Integer} index Id of the family member in the array.
  */
-export function deleteFamilyMemberData(state, index, value) {
+export function deleteFamilyMemberData(state, index) {
   var arr = state.formInput.familyMembersModule.familyMembers.slice();
   arr.splice(index, 1);
   

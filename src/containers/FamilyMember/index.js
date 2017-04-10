@@ -209,7 +209,11 @@ class FamilyMember extends Component {
         })}
   
         {this.state.form.familyMembers.length === 0 && (
-          <Col md={12}><br />There is no family member associated with this patient. Please select "Add family member" to include a patients family member to be tested.<br /></Col>
+          
+        this.state.validation.familyMembers.status === "error" && this.state.validation.optFamily.status === null ? 
+        <Col md={12}><br />{this.state.validation.familyMembers.feedback}<br /></Col> : 
+        null
+          
         )}
         </Row>
 
@@ -246,9 +250,6 @@ class FamilyMember extends Component {
         </FamilyMemberContainer>
         : null}
 
-        {this.state.validation.familyMembers.status === "error" && this.state.validation.optFamily.status === null ? 
-        <p> {this.state.validation.familyMembers.feedback} </p> : 
-        null}
         {
           this.props.route.isEdited !== true &&
           <FormButton  

@@ -37,7 +37,7 @@ export const SubLabel = styled.span`
   margin-left: 8px;
   font-weight: normal;
   font-size: 11px;
-  color: #007171;
+  color: #008b8b;
 `;
 
 export const Helper = styled.p`

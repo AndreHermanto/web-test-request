@@ -11,7 +11,7 @@ exports[`OrderTest: index renders without crashing - initial state with empty ge
       htmlFor={undefined}>
       Select the type of test
       <span
-        className="eKeSPz">
+        className="lnMAUb">
         Required
       </span>
     </label>
