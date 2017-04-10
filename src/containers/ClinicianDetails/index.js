@@ -115,7 +115,7 @@ class ClinicianDetails extends Component {
   render() {
     return (
         <div>
-          <PageHeading>Step 5: Clinician Details</PageHeading>
+          <PageHeading>Step 5: Requesting clinician</PageHeading>
           <Input
             field="providerNumber"
             label="Provider Number"
@@ -183,7 +183,7 @@ class ClinicianDetails extends Component {
           {
             this.state.form.copyToHCP.map((form, index) => {
               return <AdditionalFormBox key={index}> 
-              <PageHeading> Copy to clinician {index + 1} <RemoveLabel 
+              <PageHeading> Copy report to another clinician <RemoveLabel 
                 bsSize="xsmall"
                 bsStyle="link"
                 onClick={() => this.handleRemoveHCP(index)}>
