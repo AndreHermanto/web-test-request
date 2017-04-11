@@ -255,7 +255,7 @@ class FamilyMember extends Component {
         </FamilyMemberContainer>
         : null}
 
-        <ValidationMessage>{this.doneConfirm?this.state.validation.familyMembers.feedback:null}</ValidationMessage>
+        <ValidationMessage>{this.doneConfirm && this.state.form.optFamily === 'Yes' ?this.state.validation.familyMembers.feedback:null}</ValidationMessage>
 
         {
           this.props.route.isEdited !== true &&
