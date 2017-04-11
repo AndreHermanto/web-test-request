@@ -69,7 +69,7 @@ class FamilyMemberDetails extends Component {
     return (
       <div>
         <PageHeading>Step 4: Family Members</PageHeading>
-        <SubHeading>1) {this.props.params.mode} family member {(this.props.params.mode === 'edit') &&  `(${this.state.form.firstName} ${this.state.form.lastName})`} - member details</SubHeading>
+        <SubHeading>{this.props.params.mode} family member {(this.props.params.mode === 'edit') &&  `(${this.state.form.firstName} ${this.state.form.lastName})`} - member details</SubHeading>
         <Input
           field="lastName"
           label="Surname"

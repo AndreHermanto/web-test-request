@@ -6,46 +6,36 @@ exports[`FamilyMemberClinicalInfo: index renders without crashing 1`] = `
   </h3>
   <h4
     className="bsPkLg">
-    2) 
     add
      family member 
-     - clinical info
+     - clinical information
   </h4>
   <div
     className="form-group"
     onChange={[Function]}>
-    <label
-      className="control-label"
-      htmlFor={undefined}>
-      Is the family member affected?
-    </label>
     <br />
-    <div
-      className="radio"
+    <label
+      className="radio-inline"
       style={undefined}>
-      <label>
-        <input
-          defaultChecked={false}
-          disabled={false}
-          name="affected"
-          type="radio"
-          value={true} />
-        Yes
-      </label>
-    </div>
-    <div
-      className="radio"
+      <input
+        defaultChecked={true}
+        disabled={false}
+        name="affected"
+        type="radio"
+        value={true} />
+      Affected
+    </label>
+    <label
+      className="radio-inline"
       style={undefined}>
-      <label>
-        <input
-          defaultChecked={true}
-          disabled={false}
-          name="affected"
-          type="radio"
-          value={false} />
-        No
-      </label>
-    </div>
+      <input
+        defaultChecked={true}
+        disabled={false}
+        name="affected"
+        type="radio"
+        value={false} />
+      Unaffected
+    </label>
     <span
       className="SfhHK help-block" />
   </div>
@@ -98,36 +88,6 @@ exports[`FamilyMemberClinicalInfo: index renders without crashing 1`] = `
       className="ebbddk form-control"
       id={undefined}
       name="relevantInvestigation"
-      onChange={[Function]}
-      style={
-        Object {
-          "minHeight": 90,
-        }
-      }
-      type={undefined}
-      value="" />
-    <span
-      className="SfhHK help-block" />
-  </div>
-  <div
-    className="form-group has-feedback">
-    <label
-      className="control-label"
-      htmlFor={undefined}>
-      Family history
-      <span
-        className="lnMAUb">
-        Optional
-      </span>
-    </label>
-    <div
-      className="kWhIoX">
-      Provide notes on the suspected inheritance model and affected relatives.
-    </div>
-    <textarea
-      className="ebbddk form-control"
-      id={undefined}
-      name="familyHistory"
       onChange={[Function]}
       style={
         Object {

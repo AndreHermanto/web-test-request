@@ -69,13 +69,13 @@ class FamilyMemberClinicalInfo extends Component {
     return (
       <div>
         <PageHeading>Step 4: Family Members</PageHeading>
-        <SubHeading>2) {this.props.params.mode} family member {(this.props.params.mode === 'edit') &&  `(${this.props.route.data.familyMembers[this.props.params.id].familyMemberDetails.firstName} ${this.props.route.data.familyMembers[this.props.params.id].familyMemberDetails.lastName})`} - clinical info</SubHeading>
+        <SubHeading>{this.props.params.mode} family member {(this.props.params.mode === 'edit') &&  `(${this.props.route.data.familyMembers[this.props.params.id].familyMemberDetails.firstName} ${this.props.route.data.familyMembers[this.props.params.id].familyMemberDetails.lastName})`} - clinical information</SubHeading>
         <RadioSet
-          label="Is the family member affected?"
           field="affected"
           options={[true, false]}
           formState={this.state.form}
           onChange={this.handleChange}
+          inline={true}
         />
 
         <TextArea
@@ -93,16 +93,6 @@ class FamilyMemberClinicalInfo extends Component {
           field="relevantInvestigation"
           label="Provide results from relevant investigations"
           helper="Provide notes from genetic tests, imaging results."
-          onChange={this.handleChange}
-          onValidate={this.validate()}
-          formState={this.state.form}
-          optional
-        />
-            
-        <TextArea
-          field="familyHistory"
-          label="Family history"
-          helper="Provide notes on the suspected inheritance model and affected relatives."
           onChange={this.handleChange}
           onValidate={this.validate()}
           formState={this.state.form}

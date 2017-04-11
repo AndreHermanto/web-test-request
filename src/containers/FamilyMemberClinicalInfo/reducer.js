@@ -42,18 +42,13 @@ export function initData(prefilled, familyHistory) {
  */
 export function setFormData(state, target) {
   var value, formStateChild;
+
   switch(target.type) {
     case 'checkbox':
       value = target.checked;
       break;
     default:
-      if(target.value === 'Yes'){
-        value = true;
-      }else if(target.value === 'No'){
-        value = false;
-      }else{
         value = target.value;
-      }
       break;
   } 
 

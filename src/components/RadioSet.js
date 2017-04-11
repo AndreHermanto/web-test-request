@@ -50,13 +50,13 @@ export default function RadioSet({
           defaultVal = formState[field] ? formState[field].id : '';
         } else if(typeof option === "boolean"){
           if(option){
-            label = "Yes";
-            id = option;
-            defaultVal = formState[field];
+            label = "Affected";
+            id = true;
+            defaultVal = true;
           }else{
-            label = "No";
-            id = option;
-            defaultVal = formState[field];            
+            label = "Unaffected";
+            id = false;
+            defaultVal = false;            
           }
         }else {
           label = option;
