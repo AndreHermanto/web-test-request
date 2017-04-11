@@ -38,7 +38,7 @@ describe('rootReducer', () => {
     const state = { 
       isEdited: false
     };
-    const newState = setFormEditState(true);
+    const newState = setFormEditState(state, true);
     expect(newState.isEdited).toEqual(true);
   });
 

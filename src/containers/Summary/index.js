@@ -11,6 +11,7 @@ import {
   initData,
   setSignatureData,
   validatedToTrue,
+  setPricing,
   setSubmitStatusData,
   setSubmitData
 } from './reducer';
@@ -21,6 +22,8 @@ import PatientDetailsModule  from './components/PatientDetailsModule';
 import FamilyMemberModule from './components/FamilyMemberModule';
 import ClinicianDetailsModule  from './components/ClinicianDetailsModule';
 import BillingInfoModule from './components/BillingInfoModule';
+
+import { getPricing } from './../BillingInfo/api'; // uses same api with billInfoModule
 /**
 * Summary - UI for summary page to display all form data.
 */
@@ -28,10 +31,32 @@ class Summary extends Component {
   constructor(props) {
     super(props);
     this.state = initData(props.route.testRequest);
+    this.componentWillMount = this.componentWillMount.bind(this);
+    this.priceChange = this.priceChange.bind(this);
     this.handleBack = this.handleBack.bind(this);
     this.handleValidateSubmit = this.handleValidateSubmit.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+  }
+  
+  componentWillMount() {
+    // This will ensure the priceChange only happen once. Please do not remove this if statement.
+    if(this.props.route.isEdited) {
+      this.props.route.onEdit(false); 
+      this.priceChange(); 
+    }
+  }
+  
+  priceChange() {
+    return getPricing(
+      this.state.form.testRequest.orderTestModule.test ? this.state.form.testRequest.orderTestModule.test.id : '',
+      (this.state.form.testRequest.orderTestModule.test && this.state.form.testRequest.orderTestModule.test.geneLists.length > 0) ? this.state.form.testRequest.orderTestModule.test.geneLists[0].type : 'complete',
+      this.state.form.testRequest.billingInfoModule.payer,
+      this.state.form.testRequest.familyMembersModule.familyMembers ? this.state.form.testRequest.familyMembersModule.familyMembers.length : 0
+    )
+      .then((pricing) => {
+        this.props.route.onChange(setPricing(this.state.form.testRequest.billingInfoModule, pricing.breakdown));
+      });
   }
 
   handleChange(event) {
@@ -52,8 +77,7 @@ class Summary extends Component {
     return this.state.validated && this.state.validation;
   }
 
-  handleSubmit()
-  {
+  handleSubmit() {
     this.setState(setSubmitData(this.state, this.state.form.signature));
     return submitTestRequest(this.state.form.testRequest)
       .then((response) => {
@@ -73,11 +97,14 @@ class Summary extends Component {
   
   handleValidateSubmit() {
     this.setState(validatedToTrue(this.state), () => {
+      var pass = true;
       for (var field in this.state.validation) {
-        if(this.state.validation[field].status !== 'error') {
-          this.setState(setSubmitStatusData(this.state, 'loading'));
-          this.handleSubmit();
-        }
+        if(this.state.validation[field].status === 'error') pass = false;
+      }
+      
+      if(pass) {
+        this.setState(setSubmitStatusData(this.state, 'loading'));
+        this.handleSubmit();
       }
     });
   }
