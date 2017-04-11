@@ -48,6 +48,7 @@ class BillingInfo extends Component {
   priceChange() {
     return getPricing(
       this.props.route.orderTestData.test ? this.props.route.orderTestData.test.id : '',
+      (this.props.route.orderTestData.test && this.props.route.orderTestData.test.geneLists.length > 0) ? this.props.route.orderTestData.test.geneLists[0].type : 'complete',
       this.state.form.billOption === 'Institution' ? this.props.route.clinicianData.organisation : this.state.form.payer,
       this.props.route.familyMemberData.familyMembers ? this.props.route.familyMemberData.familyMembers.length : 0
     )

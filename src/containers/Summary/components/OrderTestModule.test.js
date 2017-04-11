@@ -10,11 +10,13 @@ function getStep(value) {
 describe('OrderTestModule test', () => {
   const testData = {
     test: {
-    id:'7052d137-a166-48b0-a52e-e05a167bd176',
-    label: 'Consequatur adipisci modi laudantium tenetur ea exercitationem id',
-    genes:["GZOW","KIHG","DRCO","DWBY","ZMZY","BMBP","OLZO","PZOA"]
-    },
-    genes:["GZOW","KIHG","DRCO","DWBY","ZMZY","BMBP","OLZO","PZOA"]
+      id:'7052d137-a166-48b0-a52e-e05a167bd176',
+      label: 'Consequatur adipisci modi laudantium tenetur ea exercitationem id',
+      geneLists:[{
+        type: "complete",
+        genes: ["GZOW","KIHG","DRCO","DWBY","ZMZY","BMBP","OLZO","PZOA"]
+      }]
+    }
   }
   const props = {
     orderTestModule: testData,

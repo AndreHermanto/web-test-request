@@ -31,8 +31,15 @@ exports[`OrderTestModule test renders without crashing  1`] = `
     <div
       className="col-md-12">
       <p
-        className="cEiVmq">
-         Total number of genes available:
+        className="cEiVmq"
+        style={
+          Object {
+            "fontWeight": 400,
+            "textTransform": "capitalize",
+          }
+        }>
+        complete
+         panel - included genes:
         <span
           className="creeDZ label label-default">
           8

@@ -14,23 +14,21 @@ export default function PrintOrderTestModule(props) {
       <h4><strong>{props.orderTestModule.test.label}</strong></h4>
     
       {
-        props.orderTestModule.test.genes && 
-        <p> 
-          Total number of genes available: {props.orderTestModule.test.genes.length} 
+        (props.orderTestModule.test.geneLists.length > 0) && 
+        <p style={{ textTransform: 'capitalize', fontWeight: 400 }}> 
+          {props.orderTestModule.test.geneLists[0].type} panel - included genes: 
         </p>
       }
-    
       {
-        props.orderTestModule.test.genes && (
+        (props.orderTestModule.test.geneLists.length > 0) && (
         <div>
-          {
-            props.orderTestModule.test.genes.map((gene, $index) => {
-              return <Gene key={$index}>{gene}</Gene> 
-            })
-          }
+        {
+          props.orderTestModule.test.geneLists[0].genes.map((gene, $index) => {
+            return <Gene key={$index}>{gene}</Gene> 
+          })
+        }
         </div>
-        )
-      }
+      )}
     </Section>
   );
 }

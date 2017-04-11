@@ -8,6 +8,6 @@ describe('OrderTest: reducer', () => {
     const list = ['Test1','Test2','Test3'];
     const state = {};
     const newState = setPanelsData(state, list);
-    //expect(newState.panels).toEqual(list);
+    expect(newState.panelCategories).toEqual(list);
   });
 });

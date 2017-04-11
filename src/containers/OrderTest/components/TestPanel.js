@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import {
   FormGroup,
   ControlLabel,
-  Label
+  Label,
+  Badge,
+  Row,
+  Col,
+  Radio
 } from 'react-bootstrap';
 import { 
   SubLabel,
@@ -16,6 +20,7 @@ const Gene = styled(Label)`
   margin-right: 4px;
   display: inline-block !important;
   font-weight: 300 !important;
+  background: ${props => props['data-inCore'] ? '#7788aa' : '#00a6b6'} !important;
 `;
 
 const TestContainer = styled.div`
@@ -27,21 +32,21 @@ const TestContainer = styled.div`
   margin-bottom: 6px;
   cursor: pointer;
   line-height: 1.2;
-  color:${props => props.selected ? '#77BC1F' : '#000'};
-  border-color: ${props => props.selected ? '#77BC1F' : '#ccc'};
+  color:${props => props.selected ? '#00a6b6' : '#000'};
+  border-color: ${props => props.selected ? '#00a6b6' : '#ccc'};
   &:hover {
-    border-color:#00a6b6;
+    border-color: #00a6b6;
     color: #00a6b6 !important;
   }
 
   &.active {
-    border-color:#00a6b6;
+    border-color: #00a6b6;
     color: #00a6b6 !important;
   }
 
-  -webkit-box-shadow: inset 7px 0px 0px 0px ${props => determinePanelColor(props.label)};
-  -moz-box-shadow: inset 7px 0px 0px 0px ${props => determinePanelColor(props.label)};
-  box-shadow: inset 7px 0px 0px 0px ${props => determinePanelColor(props.label)};
+  -webkit-box-shadow: inset 7px 0px 0px 0px ${props => props.selected ? '#00a6b6' : '#ccc'};
+  -moz-box-shadow: inset 7px 0px 0px 0px ${props => props.selected ? '#00a6b6' : '#ccc'};
+  box-shadow: inset 7px 0px 0px 0px ${props => props.selected ? '#00a6b6' : '#ccc'};
 `;
 
 const Tag = styled(Label)`
@@ -55,12 +60,11 @@ const Tag = styled(Label)`
  * This creates a set of gene label buttons via a single component.
  */
 class TestPanel extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.getValidator = this.getValidator.bind(this);
     this.getLabel = this.getLabel.bind(this);
-    this.getGene = this.getGene.bind(this);
     this.handleOnClick = this.handleOnClick.bind(this);
   }
 
@@ -79,17 +83,6 @@ class TestPanel extends Component {
     </ControlLabel>
   }
 
-  getGene(genes) {
-    let gene = [];
-    if(genes !== undefined) {
-      genes.map((g, i) =>{
-        if(i < 3) return gene.push(g);
-        return gene;
-      })
-      return gene;
-    }
-  }
-
   handleOnClick(panel) {
     this.props.handleClick(panel);
   }
@@ -104,36 +97,30 @@ class TestPanel extends Component {
         {
           (this.props.options && this.props.options.length > 0) && 
           this.props.options.map((option, i) => {
-            let genes = this.getGene(option.genes);
-            let totalGene;
             let panels;
-      
-            if(option.genes !== undefined) {
-              totalGene = option.genes.length - 3;
-            }
-      
-            if(this.props.latestSelectId === option.id) {
+
+            if(this.props.preSelect.id === option.id) {
               panels = <Panel
                         key={i}
                         image={checked} 
-                        geneList={this.props.genes}
-                        totalGene={totalGene}
                         option={option}
-                        genes={genes}
                         valid={validator.status}
-                        handleClick={this.handleOnClick}
+                        panelClick={this.handleOnClick}
+                        typeSelect={this.props.handleTypeClick}
+                        preSelectType={this.props.preSelect.geneLists[0] ? this.props.preSelect.geneLists[0].type : 'complete'}
+                        formState={this.state}
                         selected={true}
                       />;
             } else {
               panels = <Panel
                         key={i}
                         image={grayCheck}
-                        geneList={null}
-                        totalGene={totalGene}
                         option={option}
-                        genes={genes}
                         valid={validator.status}
-                        handleClick={this.handleOnClick}
+                        panelClick={this.handleOnClick}
+                        typeSelect={this.props.handleTypeClick}
+                        preSelectType={this.props.preSelect.geneLists[0] ? this.props.preSelect.geneLists[0].type : 'complete'}
+                        formState={this.state}
                         selected={false}
                       />;
             }
@@ -141,16 +128,11 @@ class TestPanel extends Component {
             return panels;
           })
         }
+        <br/>
         <ValidationFeedback>{validator.feedback}</ValidationFeedback> 
       </FormGroup>
     );
   }
-}
-
-function determinePanelColor(label) {
-  if(label.search('Core Panel') !== -1) return '#79f5ff';
-  if(label.search('Complete Panel') !== -1) return '#00a6b6';
-  return '#eee';
 }
 
 function determineTag(label) {
@@ -160,61 +142,76 @@ function determineTag(label) {
 }
 
 function Panel(props) {
-  let geneList;
-  if(props.geneList !== undefined && props.geneList !== null) {
-    geneList = props.geneList.map((gene, $index) => {
-      return <Gene key={$index}>{gene}</Gene> 
-    })
-  }
-  else {
-    geneList = '';
-  }
+  // Process in a way that the format would work with RadioSet module - needs id and label.
+  var geneList = props.option.geneLists ? props.option.geneLists.slice(0) : [];
+  geneList.map((list) => {
+    list.id = list.type;
+    list.label = list.type.toUpperCase().slice(0,1) + list.type.slice(1);   
+    return list;
+  })
+
   return (
     <TestContainer
       valid={props.valid}
-      onClick={() => props.handleClick(props.option)}
       selected={props.selected}
       label={props.option.label}
+      onClick={() => props.panelClick(props.option)}
     >
-          <img 
-            src={props.image} 
-            alt="logo" 
-            style={{ height:30, float: 'left'}} />
-          
-          {determineTag(props.option.label)}
-          
-          <div style={{ height: 30, verticalAlign: 'middle', display: 'table-cell', paddingLeft: 20, paddingRight: 20 }}>
-            {props.option.label}
+      <div>
+        <img 
+          src={props.image} 
+          alt="logo" 
+          style={{ height:30, float: 'left'}} />
 
-            {
-              (
-                props.genes !== undefined &&
-                props.geneList === null && 
-                props.geneList !== undefined
-              ) &&
-              <div className="text-muted" style={{ fontSize: 11, marginTop: 2 }}>
-                { 
-                  props.genes.map((g, i) => {
-                    return (<span key={i}> {g}</span>)
-                  })
-                }
+        {determineTag(props.option.label)}
 
-                {
-                  props.totalGene > 0 &&
-                  <span> + {props.totalGene} more </span>
-                }
-              </div>
-            }
-          </div>
-
-          { 
-            (props.geneList !== null && props.geneList !== undefined) &&
-            <div> 
-              <ControlLabel style={{ marginTop: 16 }}>Included Genes:</ControlLabel>
-              <div>{geneList}</div>
-            </div>
+        <div style={{ 
+          height: 30, 
+          verticalAlign: 'middle', 
+          display: props.selected ? 'initial' : 'table-cell', 
+          paddingLeft: 20, 
+          paddingRight: 20 
+        }}>
+        
+          {props.option.label}
+        </div>
+      </div>
+        
+      {
+        props.selected &&
+        <div style={{ marginTop: 32 }}>
+          {
+            geneList.map((list, $index) => {
+              return <Row key={$index} style={{ padding: 8 }}>
+                <Col lg={3}>
+                  <Radio
+                    style={{ margin: 0, color: list.type === 'core' ? '#7788aa' : '#00a6b6'}}
+                    key={$index}
+                    name="type" 
+                    value={list.type}
+                    onClick={(event) => props.typeSelect(event, list)}
+                    defaultChecked={list.type === props.preSelectType}
+                  >
+                    {list.label} Panel <small style={{ display: 'inline-block' }}>({list.genes.length} genes included)</small>
+                  </Radio>
+                </Col>
+                <Col lg={9}>
+                  {list.genes.map((gene, $geneIndex) => {
+                    // detect whether the gene is in both core and complete.
+                    var inCore = false; 
+                    if(geneList.length > 1) {
+                      geneList[0].genes.forEach((coregene) => {
+                        if(coregene === gene) inCore = true;
+                      });
+                    }
+                    return <Gene key={$geneIndex} data-inCore={inCore} >{gene}</Gene> 
+                  })}
+                </Col>
+              </Row>
+            })
           }
-
+        </div>
+      }
     </TestContainer>
   )
 }

@@ -19,15 +19,15 @@ const TestContainer = styled.div`
   border: 1px solid;
   margin: 6px 0 6px 0;
   cursor: pointer;
-  color:${props => props.selected ? '#77BC1F' : '#000'};
-  border-color: ${props => props.selected ? '#77BC1F' : '#ccc'};
+  color:${props => props.selected ? '#00a6b6' : '#000'};
+  border-color: ${props => props.selected ? '#00a6b6' : '#ccc'};
   &:hover {
-    border-color:#00a6b6;
+    border-color: #00a6b6;
     color: #00a6b6 !important;
   }
 
   &.active {
-    border-color:#00a6b6;
+    border-color: #00a6b6;
     color: #00a6b6 !important;
   }
 `;
@@ -37,7 +37,7 @@ const Arrow = styled.span`
   margin-top: -25px;
   font-size: 18px;
   margin-right: 8px;
-  color:${props => props.selected ? '#77BC1F' : '#ccc'};
+  color:${props => props.selected ? '#00a6b6' : '#ccc'};
 `;
 
 /**

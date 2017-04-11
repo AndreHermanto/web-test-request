@@ -24,9 +24,10 @@ describe('<BillingInfo/>', function() {
       orderTestData: {
         "id": "58c74b7c1020a1eb58e9dfb6",
         "label": "Left Ventricular Noncompaction (LVNC), Extended Panel",
-        "genes": [
-          "MIB1"
-        ]
+        "geneLists": [{
+          type: 'core',
+          genes: ["MIB1"]
+        }]
       },
       clinicianData: { firstName:'aa' },
       patientData: patientData,
