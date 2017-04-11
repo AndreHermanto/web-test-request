@@ -19,6 +19,7 @@ import Confirmation from './../containers/Confirmation';
 
 function Routes({ 
   onChange,
+  onClean,
   onFamilyMemberChange,
   onFamilyMemberDelete,
   data,
@@ -112,7 +113,7 @@ function Routes({
           preventUnvisitedFormAccess={preventUnvisitedFormAccess}
         />
       </Route>
-      <Route path="/confirmation" component={Confirmation} data={data}/>
+      <Route path="/confirmation" component={Confirmation} data={data} onClean={onClean}/>
     </Router>
   );
 }
