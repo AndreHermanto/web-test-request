@@ -8,13 +8,13 @@ import Select from 'react-select';
 
 export const PageHeading = styled.h3`
   margin-bottom: 21px;
-  font-weight: bold;
+  font-weight: 500;
   text-transform:capitalize;
 `;
 
 export const SubHeading = styled.h4`
   margin-bottom: 15px;
-  font-weight: 550;
+  font-weight: 450;
   text-transform:capitalize;
 `;
 
