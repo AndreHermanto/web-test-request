@@ -30,7 +30,7 @@ exports[`ClinicalInfo: index renders without crashing 1`] = `
         }
       }
       type={undefined}
-      value="" />
+      value={undefined} />
     <span
       className="SfhHK help-block" />
   </div>
@@ -60,7 +60,7 @@ exports[`ClinicalInfo: index renders without crashing 1`] = `
         }
       }
       type={undefined}
-      value="" />
+      value={undefined} />
     <span
       className="SfhHK help-block" />
   </div>
@@ -77,7 +77,7 @@ exports[`ClinicalInfo: index renders without crashing 1`] = `
     </label>
     <div
       className="kWhIoX">
-      Please describe the family history, or attach a scanned pedigree.
+      Please describe the family history.
     </div>
     <textarea
       className="ebbddk form-control"
@@ -90,9 +90,133 @@ exports[`ClinicalInfo: index renders without crashing 1`] = `
         }
       }
       type={undefined}
-      value="" />
+      value={undefined} />
     <span
       className="SfhHK help-block" />
+  </div>
+  <p
+    className="kvAVcE"
+    style={
+      Object {
+        "margin": "16px 0 4px 0",
+      }
+    }>
+    Or, you can also attach a scanned pedigree. 
+    <br />
+     Please drop some files in the area below, or click the \"Upload\" button to select files to upload.
+  </p>
+  <div
+    className=""
+    onClick={[Function]}
+    onDragEnter={[Function]}
+    onDragLeave={[Function]}
+    onDragOver={[Function]}
+    onDragStart={[Function]}
+    onDrop={[Function]}
+    style={
+      Object {
+        "border": "1px dashed #aaa",
+        "marginBottom": 24,
+        "padding": 16,
+        "width": "100%",
+      }
+    }>
+    <div
+      style={
+        Object {
+          "marginBottom": 24,
+        }
+      }>
+      <div
+        className="iubaNK">
+        <button
+          className="jEoofW btn btn-link"
+          disabled={false}
+          onClick={[Function]}
+          type="button">
+          <span
+            className="glyphicon glyphicon-file" />
+           
+          A
+        </button>
+        <button
+          className="gVOLHi btn btn-xs btn-link"
+          disabled={false}
+          name={0}
+          onClick={[Function]}
+          type="button">
+          <span
+            className="glyphicon glyphicon-trash" />
+           Remove
+        </button>
+      </div>
+      <div
+        className="iubaNK">
+        <button
+          className="jEoofW btn btn-link"
+          disabled={false}
+          onClick={[Function]}
+          type="button">
+          <span
+            className="glyphicon glyphicon-file" />
+           
+          B
+        </button>
+        <button
+          className="gVOLHi btn btn-xs btn-link"
+          disabled={false}
+          name={1}
+          onClick={[Function]}
+          type="button">
+          <span
+            className="glyphicon glyphicon-trash" />
+           Remove
+        </button>
+      </div>
+      <div
+        className="iubaNK">
+        <button
+          className="jEoofW btn btn-link"
+          disabled={false}
+          onClick={[Function]}
+          type="button">
+          <span
+            className="glyphicon glyphicon-file" />
+           
+          C
+        </button>
+        <button
+          className="gVOLHi btn btn-xs btn-link"
+          disabled={false}
+          name={2}
+          onClick={[Function]}
+          type="button">
+          <span
+            className="glyphicon glyphicon-trash" />
+           Remove
+        </button>
+      </div>
+    </div>
+    <button
+      className="bBdbjl"
+      onClick={[Function]}
+      style={
+        Object {
+          "margin": "12px 0",
+        }
+      }>
+      Upload Attachment
+    </button>
+    <input
+      accept={undefined}
+      multiple={true}
+      onChange={[Function]}
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+      type="file" />
   </div>
   <div
     className="form-group">

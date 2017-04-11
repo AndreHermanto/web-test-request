@@ -4,7 +4,12 @@ import {
   PageBreak,
   Section
 } from './../sharedPrintStyle';
+import { Glyphicon } from 'react-bootstrap';
 import { isoToShortDate } from './../../../../components/dateConvert';
+import { 
+  FileList,
+  FileLink
+} from './../../../../components/SharedStyle';
 // PrintPatientModule page
 export default function PrintPatientModule(props) {
   return (
@@ -89,6 +94,25 @@ export default function PrintPatientModule(props) {
           <p>
             {props.clinicalInfo.familyHistory}
           </p>
+        </div>
+      }
+
+      { 
+        (props.clinicalInfo.attachments && props.clinicalInfo.attachments.length > 0) &&
+        <div>
+          <strong> Attachments: </strong>
+          {
+            props.clinicalInfo.attachments.map((attachment, $index) => {
+              return <FileList key={$index}>
+                <FileLink 
+                  bsStyle="link" 
+                  style={{ padding: '6px 0'}}
+                >
+                  <Glyphicon glyph="file"/> {attachment.filename}
+                </FileLink>
+              </FileList>
+            })
+          }
         </div>
       }
     </Section>

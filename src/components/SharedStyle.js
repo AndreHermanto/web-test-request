@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import {
   HelpBlock,
   Glyphicon,
-  FormControl
+  FormControl,
+  Button
 } from 'react-bootstrap';
 import Select from 'react-select';
 
@@ -84,4 +85,20 @@ export const FormSelect = styled(Select)`
   div:first-child { 
     border-radius: 0px;
   }
+`;
+
+export const FileList = styled.div`
+  width: 100%;
+  height: 24px;
+  margin-bottom: 8px;
+
+`;
+
+export const FileLink = styled(Button)`
+  color: #000 !important; 
+  float: left;
+  width: 70%;
+  word-break: break-all;
+  white-space: normal !important;
+  text-align: left !important;
 `;
