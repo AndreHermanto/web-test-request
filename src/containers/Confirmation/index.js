@@ -21,13 +21,6 @@ const ConfirmationBox = styled.div`
   background-color: #fff;
 `;
 
-const ConfirmationBreakLineXS = styled.div`
-  border-style: dotted dashed dotted;
-  border-width: 2px;
-  border-color: #ABC6CA;
-  width: 80%;
-  margin-left:10%;
-`;
 const ConfirmationHeading = styled.h1`
   text-align:center;
   color: rgba(51, 51, 51, 0.75);
@@ -37,18 +30,18 @@ const ConfirmationNote = styled.h4`
   text-align:center;
   margin-top: 10px;
 `;
-const Circle = styled.span`
-  border: 2px solid #ABC6CA;
-  border-radius: 12px;
-  padding-right: 14px;
-`;
 
-const CircleRight = styled.span`
-  border: 2px solid #ABC6CA;
-  float:right;
-  padding-top: 16px;
-  border-radius: 10px;
-  padding-left: 14px;
+const GenomeButton = styled.a`
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 20px;
+  width: 50%;
+  text-align: center;
+  color: #000;
+  &:hover {
+    text-decoration: none;
+    color:#337ab7;
+  }
 `;
 
 /**
@@ -81,14 +74,7 @@ class Confirmation extends Component {
     return (
       <div>
         <ConfirmationBox className="noPrint">
-          <Circle/>
-          <CircleRight/>
-          <ConfirmationBreakLineXS/>
             <ConfirmationHeading> Thank you!</ConfirmationHeading>
-          <ConfirmationBreakLineXS/>
-            <ConfirmationNote> 
-              We've sent you an email with all the details of your order!
-            </ConfirmationNote>
             <ConfirmationNote>
               You can now:
             </ConfirmationNote>
@@ -102,6 +88,15 @@ class Confirmation extends Component {
                 <FormButton onClick={this.handlePrintBloodCollectionButtonClick} style={{marginRight: '20%'}}>
                   Print out Blood Collection forms for your patient(s)
                 </FormButton>
+              </Col>
+            </Row>
+
+            <Row>
+              <Col md={6} style={{marginTop:'2em'}}>
+                <GenomeButton href="https://www.genome.one/" style={{float:'left'}}> Back to Genome.One</GenomeButton>
+              </Col>
+              <Col md={6} style={{marginTop:'2em'}}>
+                <GenomeButton href="#" style={{float:'right'}}> Order new Test </GenomeButton>
               </Col>
             </Row>
         </ConfirmationBox>
