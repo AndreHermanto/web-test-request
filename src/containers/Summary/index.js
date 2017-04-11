@@ -100,7 +100,7 @@ class Summary extends Component {
         <BillingInfoModule billingInfoModule={this.state.form.testRequest.billingInfoModule} clinicianDetailsModule={this.state.form.testRequest.clinicianDetailsModule} handleOnClick={this.handleEdit}/>
         <Toggle
           field="signature"
-          label="Click here to digitally sign the form"
+          label="Confirm"
           onChange={this.handleChange}
           onValidate={this.validate()}
           formState={this.state.form}
@@ -108,7 +108,7 @@ class Summary extends Component {
         />
         <br />
         <Helper>
-            When you submit this test request, an email will be sent to this payer with a weblink to view the invoice.  
+          When you submit this test request, an invoice will be emailed to the payer if this test is privately billed.
         </Helper>
         <FormButton  
           onClick={this.handleBack}
