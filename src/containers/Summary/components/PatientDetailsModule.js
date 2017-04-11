@@ -79,15 +79,6 @@ class PatientDetailsModule extends Component
           </SummaryDetails>
         </Col>
         {
-          this.props.patientDetails.ethnicity !== '' &&
-          <Col md={12}>
-            <SummaryDetails> 
-              <SummaryTitle> Ethnicity:  </SummaryTitle>
-                {this.props.patientDetails.ethnicity}
-            </SummaryDetails>
-          </Col>
-        }
-        {
           this.props.patientDetails.deceased !== false &&
           <Col md={12}>
             <SummaryDetails> 
