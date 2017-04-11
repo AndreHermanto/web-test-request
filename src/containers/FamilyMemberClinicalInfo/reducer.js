@@ -64,6 +64,15 @@ export function setFormData(state, target) {
     });
   }
   
+  if(value === 'true'){
+    value = true;
+  }else if(value === 'false'){
+    value = false;
+  }
+  formStateChild = Object.assign({}, state.form, {
+    [target.name]: value
+  });
+  
   var validationStateChild = Object.assign({}, state.validation, {
     [target.name]: validator(value, state.validationRule[target.name])
   });

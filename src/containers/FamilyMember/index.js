@@ -21,7 +21,6 @@ import {
   FormButton
 } from './../../components/SharedStyle';
 import styled from 'styled-components';
-import { isoToShortDate } from './../../components/dateConvert';
 import RadioSet from './../../components/RadioSet';
 
 export const BlockButton = styled(Button)`
@@ -49,6 +48,10 @@ export const Relationship = styled.p`
   font-size: x-small;
   color: #6f6f6f;
   margin-bottom: -4px;
+`;
+
+export const ValidationMessage = styled.p`
+  color: #a94442;
 `;
 
 export const RelationshipContainer = styled.span`
@@ -79,6 +82,7 @@ class FamilyMember extends Component {
     this.openDeleteModal = this.openDeleteModal.bind(this);
     this.handleOptFamilyChange = this.handleOptFamilyChange.bind(this);
     this.state = initData(props.route.data);
+    this.doneConfirm = false;
   }
   
   componentDidMount() {
@@ -123,6 +127,7 @@ class FamilyMember extends Component {
   }
   
   handleConfirm() {
+    this.doneConfirm = true;
     return this.setState(validatedToTrue(this.state), () => {    
       var pass = true;
       for (var field in this.state.validation) {
@@ -211,7 +216,7 @@ class FamilyMember extends Component {
         {this.state.form.familyMembers.length === 0 && (
           
         this.state.validation.familyMembers.status === "error" && this.state.validation.optFamily.status === null ? 
-        <Col md={12}><br />{this.state.validation.familyMembers.feedback}<br /></Col> : 
+        <Col md={12}><br />Please add at least one family member.<br /></Col> : 
         null
           
         )}
@@ -249,6 +254,8 @@ class FamilyMember extends Component {
         </Modal>
         </FamilyMemberContainer>
         : null}
+
+        <ValidationMessage>{this.doneConfirm?this.state.validation.familyMembers.feedback:null}</ValidationMessage>
 
         {
           this.props.route.isEdited !== true &&
