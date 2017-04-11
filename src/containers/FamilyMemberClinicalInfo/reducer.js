@@ -6,7 +6,6 @@ export function initData(prefilled, familyHistory) {
       clinicalInfo: '',
       affected: false,
       relevantInvestigation: '',
-      familyHistory: '',
       consanguinity: false,
       consanguinityInfo:''
     },

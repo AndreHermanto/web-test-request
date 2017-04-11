@@ -1,11 +1,11 @@
 exports[`FamilyMemberClinicalInfo: index renders without crashing 1`] = `
 <div>
   <h3
-    className="fMppxj">
+    className="AElMG">
     Step 4: Family Members
   </h3>
   <h4
-    className="bsPkLg">
+    className="cZAycE">
     add
      family member 
      - clinical information

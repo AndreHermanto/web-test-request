@@ -10,7 +10,6 @@ export function initData(prefilled) {
       medicalRecordNo: '',
       gender: 'Unknown',
       genderOther: '',
-      ethnicity: '',
       deceased: false,
       sampleSource: '',
       consent: false
