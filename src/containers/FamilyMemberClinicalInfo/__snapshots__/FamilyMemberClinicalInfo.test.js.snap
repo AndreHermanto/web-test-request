@@ -2,11 +2,15 @@ exports[`FamilyMemberClinicalInfo: index renders without crashing 1`] = `
 <div>
   <h3
     className="fMppxj">
-    Step 4-2: 
+    Step 4: Family Members
+  </h3>
+  <h4
+    className="bsPkLg">
+    2) 
     add
      family member 
      - clinical info
-  </h3>
+  </h4>
   <div
     className="form-group"
     onChange={[Function]}>

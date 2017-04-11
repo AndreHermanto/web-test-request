@@ -11,7 +11,13 @@ export const PageHeading = styled.h3`
   font-weight: bold;
   text-transform:capitalize;
 `;
- 
+
+export const SubHeading = styled.h4`
+  margin-bottom: 15px;
+  font-weight: 550;
+  text-transform:capitalize;
+`;
+
 export const FormButton = styled.button`
   margin: 18px 6px 0px 0px;
   border-style: none;

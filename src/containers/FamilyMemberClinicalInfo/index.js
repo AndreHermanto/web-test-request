@@ -6,7 +6,8 @@ import {
 } from './reducer'
 import { 
   PageHeading,
-  FormButton
+  FormButton,
+  SubHeading
 } from './../../components/SharedStyle';
 import TextArea from './../../components/TextArea';
 import Toggle from './../../components/Toggle';
@@ -67,8 +68,8 @@ class FamilyMemberClinicalInfo extends Component {
   render() {
     return (
       <div>
-        <PageHeading>Step 4-2: {this.props.params.mode} family member {(this.props.params.mode === 'edit') &&  `(${this.props.route.data.familyMembers[this.props.params.id].familyMemberDetails.firstName} ${this.props.route.data.familyMembers[this.props.params.id].familyMemberDetails.lastName})`} - clinical info</PageHeading>
- 
+        <PageHeading>Step 4: Family Members</PageHeading>
+        <SubHeading>2) {this.props.params.mode} family member {(this.props.params.mode === 'edit') &&  `(${this.props.route.data.familyMembers[this.props.params.id].familyMemberDetails.firstName} ${this.props.route.data.familyMembers[this.props.params.id].familyMemberDetails.lastName})`} - clinical info</SubHeading>
         <RadioSet
           label="Is the family member affected?"
           field="affected"
