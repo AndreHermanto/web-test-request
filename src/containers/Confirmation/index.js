@@ -31,19 +31,6 @@ const ConfirmationNote = styled.h4`
   margin-top: 10px;
 `;
 
-const GenomeButton = styled.a`
-  padding: 10px;
-  border: 1px solid #eee;
-  border-radius: 20px;
-  width: 50%;
-  text-align: center;
-  color: #000;
-  &:hover {
-    text-decoration: none;
-    color:#337ab7;
-  }
-`;
-
 /**
 * Confirmation - UI for ordering type of tests, selecting disorder and related genes for testing.
 */
@@ -52,6 +39,7 @@ class Confirmation extends Component {
     super(props);
     this.handlePrintRecordButtonClick = this.handlePrintRecordButtonClick.bind(this);
     this.handlePrintBloodCollectionButtonClick = this.handlePrintBloodCollectionButtonClick.bind(this);
+    this.handleRedirect = this.handleRedirect.bind(this);
     this.state = initData();
   }
   
@@ -68,6 +56,16 @@ class Confirmation extends Component {
   
   handlePrintBloodCollectionButtonClick() {
     this.handlePrintButtonClick(2);
+  }
+
+  handleRedirect(place) {
+    if(place === 'home') {
+      this.props.route.onClean();
+      this.props.router.push('/step1'); 
+    }
+    else {
+      window.location.replace('https://www.genome.one/'); 
+    }
   }
   
   render() {
@@ -92,13 +90,18 @@ class Confirmation extends Component {
             </Row>
 
             <Row>
-              <Col md={6} style={{marginTop:'2em'}}>
-                <GenomeButton href="https://www.genome.one/" style={{float:'left'}}> Back to Genome.One</GenomeButton>
+              <Col md={6}>
+                <FormButton onClick={() => this.handleRedirect('genome')} style={{marginLeft: '20%', width: '78.26%'}}>
+                  Back to Genome.One
+                </FormButton>
               </Col>
-              <Col md={6} style={{marginTop:'2em'}}>
-                <GenomeButton href="#" style={{float:'right'}}> Order new Test </GenomeButton>
+              <Col md={6}>
+                <FormButton onClick={() => this.handleRedirect('home')} style={{marginRight: '20%', width:'80%'}}>
+                  Order new Test
+                </FormButton>
               </Col>
             </Row>
+
         </ConfirmationBox>
 
         <div className="printMe">

@@ -13,7 +13,8 @@ import {
   setFormEditState,
   setFamilyMemberData,
   deleteFamilyMemberData,
-  validatedToTrue
+  validatedToTrue,
+  cleanFormState
 } from './rootReducer';
 import './App.css';
 
@@ -24,6 +25,7 @@ class App extends Component {
     this.handleFamilyMemberChange = this.handleFamilyMemberChange.bind(this);
     this.handleFamilyMemberDelete = this.handleFamilyMemberDelete.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
+    this.handleClean = this.handleClean.bind(this);
     this.redirectStepOne = this.redirectStepOne.bind(this);
     this.state = {
       formInput: {},
@@ -52,6 +54,10 @@ class App extends Component {
     this.setState(setFormEditState(this.state));
   }
   
+  handleClean() {
+    this.setState(cleanFormState(this.state));
+  }
+
   handleFamilyMemberChange(formComponent) {
     if(!formComponent.state) return;
                
@@ -137,6 +143,7 @@ class App extends Component {
             <Col md={11} className="pageArea">
               <Routes 
                 onChange={this.handleChange}
+                onClean={this.handleClean}
                 onFamilyMemberChange={this.handleFamilyMemberChange}
                 onFamilyMemberDelete={this.handleFamilyMemberDelete}
                 data={this.state.formInput}
