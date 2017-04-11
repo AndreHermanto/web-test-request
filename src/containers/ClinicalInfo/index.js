@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
 import {
-  FormGroup,
-  ControlLabel
-} from 'react-bootstrap';
-
-import Toggle from 'react-toggle';
-import {
   initData,
   setFormData,
   validatedToTrue
@@ -15,6 +9,7 @@ import {
   FormButton
 } from './../../components/SharedStyle';
 import TextArea from './../../components/TextArea';
+import Toggle from './../../components/Toggle';
 
 /**
  * PatientDetails - UI for input patient details.
@@ -105,14 +100,22 @@ class ClinicalInfo extends Component {
           optional
         />
         
-        <FormGroup>
-          <ControlLabel>Consanguinity</ControlLabel>
-          <br />
-          <Toggle
-            name="consanguinity"
-            checked={this.state.form.consanguinity === true}
-            onChange={this.handleChange} />
-        </FormGroup>
+        <Toggle
+          field="consanguinity"
+          label="Consanguinity"
+          onChange={this.handleChange}
+          checked={this.state.form.consanguinity === true}
+          formState={this.state.form}
+        />
+
+        {this.state.form.consanguinity && (
+          <TextArea
+            field="consanguinityInfo"
+            helper="Please provide details"
+            onChange={this.handleChange}
+            formState={this.state.form}
+          />
+        )}
             
         {
           this.props.route.isEdited !== true &&

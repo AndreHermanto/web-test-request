@@ -116,8 +116,18 @@ class FamilyMemberClinicalInfo extends Component {
           field="consanguinity"
           label="Consanguinity"
           onChange={this.handleChange}
+          checked={this.state.form.consanguinity === true}
           formState={this.state.form}
         />
+
+        {this.state.form.consanguinity && (
+          <TextArea
+            field="consanguinityInfo"
+            helper="Please provide details"
+            onChange={this.handleChange}
+            formState={this.state.form}
+          />
+        )}
             
         {
           this.props.route.isEdited !== true &&

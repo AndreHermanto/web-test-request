@@ -143,9 +143,18 @@ class PatientDetailsModule extends Component
         <Col md={12}>
           <SummaryDetails> 
             <SummaryTitle> Consanguinity:  </SummaryTitle>
-              {this.props.clinicalInfo.consanguinity ? 'Yes' : 'No'} 
+              {this.props.clinicalInfo.consanguinity ? 'Yes' : 'No'}
             </SummaryDetails>
         </Col>
+        {
+          (this.props.clinicalInfo.consanguinity && this.props.clinicalInfo.consanguinityInfo !== '') &&
+          <Col md={12}>
+            <SummaryTitle> Consanguinity Information </SummaryTitle>
+            <SummaryNotes>
+              {this.props.clinicalInfo.consanguinityInfo}
+            </SummaryNotes>
+          </Col>
+        }
       </Row>
     </SummaryBox>
     )

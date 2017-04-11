@@ -87,7 +87,7 @@ exports[`FamilyMemberModule test renders without crashing  1`] = `
          Clinical note 
       </span>
       <div
-        className="kjqPPK">
+        className="gczsYD">
         abc@abc.com
       </div>
     </div>
@@ -98,7 +98,7 @@ exports[`FamilyMemberModule test renders without crashing  1`] = `
          Relevant investigation note 
       </span>
       <div
-        className="kjqPPK">
+        className="gczsYD">
         asdasdasd
       </div>
     </div>
@@ -109,7 +109,7 @@ exports[`FamilyMemberModule test renders without crashing  1`] = `
          Family history note 
       </span>
       <div
-        className="kjqPPK">
+        className="gczsYD">
         asdasdasdasd
       </div>
     </div>
