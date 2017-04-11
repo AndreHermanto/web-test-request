@@ -33,9 +33,15 @@ class App extends Component {
     }
   }
   
+  /*
+  * only display message if user's not in confirmation page
+  */
   componentDidMount() {
-    window.onbeforeunload = function(){
-      return "Are you sure to leave this page?";
+    window.onbeforeunload = function() {
+      if(window.location.hash !== '#/confirmation') 
+      { 
+        return "Are you sure to leave this page?";
+      }
     }
   }
 
