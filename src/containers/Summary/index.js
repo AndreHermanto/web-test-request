@@ -65,9 +65,12 @@ class Summary extends Component {
           return false;
         } else {
           this.setState(setSubmitStatusData(this.state, ''));
-          this.props.router.push('/confirmation'); 
-          return true;
+          return response.json();
         }
+    })
+    .then((json) => {
+      if(json) this.props.router.push('/confirmation/' + json.data.id);
+      return json;
     })
   }
   

@@ -113,7 +113,8 @@ function Routes({
           preventUnvisitedFormAccess={preventUnvisitedFormAccess}
         />
       </Route>
-      <Route path="/confirmation" component={Confirmation} data={data} onClean={onClean}/>
+
+      <Route path="/confirmation/:id" component={Confirmation} data={data} onClean={onClean}/>
     </Router>
   );
 }
