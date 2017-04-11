@@ -1,15 +1,36 @@
 import React, { Component } from 'react';
 import {
+  Button,
+  Glyphicon,
+  Modal
+} from 'react-bootstrap';
+import Dropzone from 'react-dropzone';
+import {
   initData,
   setFormData,
+  addAttachment,
+  removeAttachment,
+  setDeleteModal,
   validatedToTrue
 } from './reducer'
+import { upload } from './api'
 import { 
   PageHeading,
-  FormButton
+  FormButton,
+  Helper,
+  FileList,
+  FileLink
 } from './../../components/SharedStyle';
 import TextArea from './../../components/TextArea';
 import Toggle from './../../components/Toggle';
+import styled from 'styled-components';
+
+const FileRemove = styled(Button)`
+  color: #d66 !important; 
+  float: right;
+  margin-top: 8px;
+  padding-left: 18px;
+`;
 
 /**
  * PatientDetails - UI for input patient details.
@@ -19,7 +40,12 @@ class ClinicalInfo extends Component {
     super(props);
     this.handleChange = this.handleChange.bind(this);
     this.handleBack = this.handleBack.bind(this);
+    this.handleDrop = this.handleDrop.bind(this);
+    this.handleRemoveAttachment = this.handleRemoveAttachment.bind(this);
     this.handleConfirm = this.handleConfirm.bind(this);
+    this.closeDeleteModal = this.closeDeleteModal.bind(this);
+    this.openDeleteModal = this.openDeleteModal.bind(this);
+    this.openFileSelect = this.openFileSelect.bind(this);
     this.state = initData(props.route.data);
   }
   
@@ -31,6 +57,18 @@ class ClinicalInfo extends Component {
   
   handleChange(event) {
     this.setState(setFormData(this.state, event.target));
+  }
+  
+  handleDrop(acceptedFiles) {
+    return upload(acceptedFiles[0])
+      .then((json) => {
+        this.setState(addAttachment(this.state, acceptedFiles[0], json.data.id));
+      })
+  }
+
+  handleRemoveAttachment() {
+    this.setState(removeAttachment(this.state, this.state.deleteModal.fileId),
+    () => this.closeDeleteModal());
   }
   
   handleBack() {
@@ -59,6 +97,18 @@ class ClinicalInfo extends Component {
       }
       this.handleNext(pass); 
     });
+  }
+  
+  closeDeleteModal() {
+    this.setState(setDeleteModal(this.state, false, null));
+  }
+
+  openDeleteModal(event) {
+    this.setState(setDeleteModal(this.state, true, event.currentTarget.name));
+  }
+  
+  openFileSelect() {
+    this.refs.dropzone.open();
   }
   
   // This renders the validation result after confirm button is clicked.
@@ -93,13 +143,79 @@ class ClinicalInfo extends Component {
         <TextArea
           field="familyHistory"
           label="Family history"
-          helper="Please describe the family history, or attach a scanned pedigree."
+          helper="Please describe the family history."
           onChange={this.handleChange}
           onValidate={this.validate()}
           formState={this.state.form}
           optional
         />
+            
+        <Helper style={{ margin: '16px 0 4px 0' }}>Or, you can also attach a scanned pedigree. <br /> Please drop some files in the area below, or click the "Upload" button to select files to upload.</Helper>
+        <Dropzone 
+          onDrop={this.handleDrop} 
+          disableClick={true}
+          ref="dropzone"
+          style={{
+            width: '100%',
+            padding: 16,
+            marginBottom: 24,
+            border: '1px dashed #aaa'       
+          }}
+        >
+          
+          {
+            (this.state.form.attachments.length > 0) &&
+            <div style={{ marginBottom: 24 }}>
+              { 
+                this.state.form.attachments.map((attachment, $index) => {
+                  return <FileList key={$index}>
+                    <FileLink bsStyle="link" onClick={() => window.open(attachment.preview, '_blank')}>
+                      <Glyphicon glyph="file"/> {attachment.filename}
+                    </FileLink>
+
+                    <FileRemove 
+                      bsSize="xsmall" 
+                      bsStyle="link"
+                      name={$index}
+                      onClick={this.openDeleteModal}
+                    >
+                      <Glyphicon glyph="trash"/> Remove
+                    </FileRemove>
+                  </FileList>
+                })
+              }
+            </div>
+          }
+          
+          <FormButton style={{ margin: '12px 0' }} onClick={this.openFileSelect}>
+            Upload Attachment
+          </FormButton> 
+        </Dropzone>
         
+        <Modal show={this.state.deleteModal.display} onHide={this.closeDeleteModal} style={{ paddingRight: 12 }}>
+          <Modal.Header closeButton>
+            <Modal.Title>
+              Remove attachment ({
+                (this.state.form.attachments[this.state.deleteModal.fileId]) && (
+                  this.state.form.attachments[this.state.deleteModal.fileId].filename
+                )
+              })
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            Are you sure you want to remove this attachment?
+          </Modal.Body>
+          <Modal.Footer>
+            <FormButton onClick={this.closeDeleteModal} back>Cancel</FormButton>
+            <FormButton
+              onClick={this.handleRemoveAttachment}
+              cancel
+            >
+              <Glyphicon glyph="trash" /> Delete
+            </FormButton>
+          </Modal.Footer>
+        </Modal>    
+            
         <Toggle
           field="consanguinity"
           label="Consanguinity"
@@ -116,13 +232,13 @@ class ClinicalInfo extends Component {
             formState={this.state.form}
           />
         )}
-            
+
         {
           this.props.route.isEdited !== true &&
           <FormButton 
-          onClick={this.handleBack}
-          label="Back"
-          back
+            onClick={this.handleBack}
+            label="Back"
+            back
           >
             Back
           </FormButton> 
