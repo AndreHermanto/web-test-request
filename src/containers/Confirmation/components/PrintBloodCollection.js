@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import PrintHeader from './PrintBloodCollectionComponents/PrintHeader';
+import PrintHeader from './PrintHeader';
 import PrintOrderTestModule from './PrintBloodCollectionComponents/PrintOrderTestModule';
 import PrintPatientModule from './PrintBloodCollectionComponents/PrintPatientModule';
 import PrintFamilyModule  from './PrintBloodCollectionComponents/PrintFamilyModule';
@@ -22,7 +22,7 @@ export default function PrintBloodCollection(props) {
   return (
     <div>
       <Page>
-        <PrintHeader />
+        <PrintHeader showId={props.showId} showDate={props.showDate} />
         <br />
         <PrintOrderTestModule orderTestModule={props.orderTestModule}/>
         <PrintPatientModule patientDetails={props.patientDetails} clinicalInfo={props.clinicalInfo}/>

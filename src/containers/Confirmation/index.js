@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
+import { getTestRequestById } from './api';
 import {
   initData,
+  setRetrievedData,
   setPrintType 
 } from './reducer';
 import PrintRecord from './components/PrintRecord';
@@ -13,12 +15,10 @@ import {
 } from './../../components/SharedStyle';
 
 const ConfirmationBox = styled.div`
-  box-shadow: 0 0 5px rgb(227, 231, 241);  
   width: 80%;
   padding: 20px;
   margin-bottom: 10px;
   margin-left: 10%;
-  background-color: #fff;
 `;
 
 const ConfirmationHeading = styled.h1`
@@ -37,10 +37,18 @@ const ConfirmationNote = styled.h4`
 class Confirmation extends Component {
   constructor(props) {
     super(props);
+    this.componentWillMount = this.componentWillMount.bind(this);
     this.handlePrintRecordButtonClick = this.handlePrintRecordButtonClick.bind(this);
     this.handlePrintBloodCollectionButtonClick = this.handlePrintBloodCollectionButtonClick.bind(this);
     this.handleRedirect = this.handleRedirect.bind(this);
     this.state = initData();
+  }
+  
+  componentWillMount() {
+    return getTestRequestById(this.props.params.id)
+      .then((data) => {
+        this.setState(setRetrievedData(this.state, data));
+      });
   }
   
   handlePrintButtonClick(type) {
@@ -106,23 +114,27 @@ class Confirmation extends Component {
 
         <div className="printMe">
           {(this.state.print === 1) && 
-            <PrintRecord 
-              orderTestModule={this.props.route.data.orderTestModule}
-              patientDetails={this.props.route.data.patientDetailsModule}
-              clinicalInfo={this.props.route.data.clinicalInfoModule}
-              familyMember={this.props.route.data.familyMembersModule}
-              clinicianDetails={this.props.route.data.clinicianDetailsModule}
-              billingInfo={this.props.route.data.billingInfoModule}
+            <PrintRecord
+              showId={this.state.form.id}
+              showDate={this.state.form.createdDateTime}
+              orderTestModule={this.state.form.orderTestModule}
+              patientDetails={this.state.form.patientDetailsModule}
+              clinicalInfo={this.state.form.clinicalInfoModule}
+              familyMember={this.state.form.familyMembersModule}
+              clinicianDetails={this.state.form.clinicianDetailsModule}
+              billingInfo={this.state.form.billingInfoModule}
             />
           }
           {(this.state.print === 2) &&
-            <PrintBloodCollection 
-              orderTestModule={this.props.route.data.orderTestModule}
-              patientDetails={this.props.route.data.patientDetailsModule}
-              clinicalInfo={this.props.route.data.clinicalInfoModule}
-              familyMember={this.props.route.data.familyMembersModule}
-              clinicianDetails={this.props.route.data.clinicianDetailsModule}
-              billingInfo={this.props.route.data.billingInfoModule}
+            <PrintBloodCollection
+              showId={this.state.form.id}
+              showDate={this.state.form.createdDateTime}
+              orderTestModule={this.state.form.orderTestModule}
+              patientDetails={this.state.form.patientDetailsModule}
+              clinicalInfo={this.state.form.clinicalInfoModule}
+              familyMember={this.state.form.familyMembersModule}
+              clinicianDetails={this.state.form.clinicianDetailsModule}
+              billingInfo={this.state.form.billingInfoModule}
             />
           }
         </div>
