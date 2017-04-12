@@ -10,7 +10,13 @@ const Content = styled.strong`
 
 const Container = styled(Col)`
   padding-top: 30px;
+  padding-left: 77px !important;
+
+`;
+
+const ContainerContent = styled(Col)`
   padding-left: 70px !important;
+  border-left: thin solid #CCC;
 `;
 
 const Lists = styled.ul`
@@ -180,9 +186,9 @@ export default class ProgressBar extends Component
           } 
           </Lists>
         </Container>
-        <Col md={9}>
+        <ContainerContent md={9}>
           {this.props.children}
-        </Col>
+        </ContainerContent>
       </Row>
     </div>
     )

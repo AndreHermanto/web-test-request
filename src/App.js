@@ -132,8 +132,9 @@ class App extends Component {
       <div>
         <UniversalNavigation />
         <br />
+        <Grid>
           <Row>
-            <Col md={10} className="pageArea">
+            <Col md={11} className="pageArea">
               <Routes 
                 onChange={this.handleChange}
                 onFamilyMemberChange={this.handleFamilyMemberChange}
@@ -147,6 +148,7 @@ class App extends Component {
               <NotificationContainer/>
             </Col>
           </Row>
+        </Grid>
         <Footer />
       </div>
     );
