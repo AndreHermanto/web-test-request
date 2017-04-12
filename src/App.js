@@ -152,9 +152,8 @@ class App extends Component {
       <div>
         <UniversalNavigation />
         <br />
-        <Grid>
           <Row>
-            <Col md={10} mdOffset={1} className="pageArea">
+            <Col md={10} className="pageArea">
               <Routes 
                 onChange={this.handleChange}
                 onClean={this.handleClean}
