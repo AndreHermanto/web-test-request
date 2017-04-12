@@ -70,7 +70,9 @@ describe('<BillingInfo/>', function() {
   test('handleSelectChange works', () =>  {
     var view = TestUtils.renderIntoDocument(React.createElement(BillingInfo, props)); 
     const select = {
-      value: 'payer'
+      target: {
+        value: 'payer'
+      }
     };                              
     view.handleSelectChange(select);
     expect(view.state.form.payer).toEqual('payer');
@@ -78,9 +80,16 @@ describe('<BillingInfo/>', function() {
 
   test('getPayers works', () =>  {
     var view = TestUtils.renderIntoDocument(React.createElement(BillingInfo, props));
-    const options = [{ "label": "bdf abc (Patient)", "value": "bdf abc"}, {"label": "Other", "value": "Other"}];
+    const options = [{ "label": "bdf abc (Patient)", "id": "bdf abc"}, {"label": "Other", "id": "Other"}];
     const payers = view.getPayers();
     expect(payers).toEqual(options);
+  });
+
+  test('getPayerOption works', () =>  {
+    var view = TestUtils.renderIntoDocument(React.createElement(BillingInfo, props));
+    const options = [{ "label": "bdf abc (Patient)", "id": "bdf abc"}, {"label": "Other", "id": "Other"}];
+    const payerOption = view.getPayerOption(options);
+    expect(payerOption[0]).toEqual(options[0].label);
   });
 
   test('handleConfirm works', () =>  {

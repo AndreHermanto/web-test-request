@@ -7,7 +7,7 @@ export function initData(prefilled) {
   var state = {
     form: {
       billOption:'',
-      payer:'Other',
+      payer:'',
       phone:'',
       firstName:'',
       lastName:'',
@@ -97,7 +97,7 @@ export function setBillOption(state, target, payerObj) {
   
   if(value === 'Institution') {
     formStateChild = Object.assign({}, formStateChild, {
-      payer: payerObj.value,
+      payer: payerObj.id,
       phone: '',
       firstName: '',
       lastName: '',
@@ -106,15 +106,14 @@ export function setBillOption(state, target, payerObj) {
     });
   } else {
     formStateChild = Object.assign({}, formStateChild, {
-      payer: payerObj.value,
+      payer: payerObj.label,
       phone: '',
-      firstName: payerObj.value.split(' ')[0],
-      lastName: payerObj.value.split(' ')[1],
+      firstName: payerObj.id.split(' ')[0],
+      lastName: payerObj.id.split(' ')[1],
       payerEmail: '',
       consent: false
     });
   }
-  
   var field;
   
   if(value === 'Institution') {
@@ -149,14 +148,18 @@ export function setSelectData(state, value) {
     formStateChild = Object.assign({}, state.form, {
       payer: value,
       firstName: payer[0],
-      lastName: payer[1]
+      lastName: payer[1],
+      phone:'',
+      payerEmail:''
     });
   }
   else {
     formStateChild = Object.assign({}, state.form, {
       payer: value,
       firstName: '',
-      lastName: ''
+      lastName: '',
+      phone:'',
+      payerEmail:''
     });
   }
   

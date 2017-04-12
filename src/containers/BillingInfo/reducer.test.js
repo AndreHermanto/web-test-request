@@ -49,7 +49,7 @@ describe('ClinicianDetails: reducer', () => {
       name: 'billOption',
       value: 'Private'
     }
-    const afterBillOptionState = setBillOption(state, billOption, { value: 'Dave' });
+    const afterBillOptionState = setBillOption(state, billOption, { id: 'Dave' });
     expect(afterBillOptionState.validation.firstName.skip).toEqual(undefined);
   });
 
