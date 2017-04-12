@@ -2,22 +2,10 @@ exports[`Confirmation test Confirmation page renders without crashing 1`] = `
 <div>
   <div
     className="noPrint dJeoDW">
-    <span
-      className="idaOVj" />
-    <span
-      className="eTimuZ" />
-    <div
-      className="kZoPjc" />
     <h1
       className="eikxtc">
        Thank you!
     </h1>
-    <div
-      className="kZoPjc" />
-    <h4
-      className="bpcQEW">
-      We\'ve sent you an email with all the details of your order!
-    </h4>
     <h4
       className="bpcQEW">
       You can now:
@@ -48,6 +36,37 @@ exports[`Confirmation test Confirmation page renders without crashing 1`] = `
             }
           }>
           Print out Blood Collection forms for your patient(s)
+        </button>
+      </div>
+    </div>
+    <div
+      className="row">
+      <div
+        className="col-md-6">
+        <button
+          className="bBdbjl"
+          onClick={[Function]}
+          style={
+            Object {
+              "marginLeft": "20%",
+              "width": "78.26%",
+            }
+          }>
+          Back to Genome.One
+        </button>
+      </div>
+      <div
+        className="col-md-6">
+        <button
+          className="bBdbjl"
+          onClick={[Function]}
+          style={
+            Object {
+              "marginRight": "20%",
+              "width": "80%",
+            }
+          }>
+          Order new Test
         </button>
       </div>
     </div>

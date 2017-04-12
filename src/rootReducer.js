@@ -70,3 +70,13 @@ export function validatedToTrue(state) {
     validated: true
   });
 }
+
+/**
+ * clean form state if user click back from confirmation page to order new test
+ */
+export function cleanFormState(state) {
+  return Object.assign({}, state, {
+    formInput: {},
+    isEdited: false
+  })
+}

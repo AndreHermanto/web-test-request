@@ -21,13 +21,6 @@ const ConfirmationBox = styled.div`
   background-color: #fff;
 `;
 
-const ConfirmationBreakLineXS = styled.div`
-  border-style: dotted dashed dotted;
-  border-width: 2px;
-  border-color: #ABC6CA;
-  width: 80%;
-  margin-left:10%;
-`;
 const ConfirmationHeading = styled.h1`
   text-align:center;
   color: rgba(51, 51, 51, 0.75);
@@ -36,19 +29,6 @@ const ConfirmationNote = styled.h4`
   font-weight: 200;
   text-align:center;
   margin-top: 10px;
-`;
-const Circle = styled.span`
-  border: 2px solid #ABC6CA;
-  border-radius: 12px;
-  padding-right: 14px;
-`;
-
-const CircleRight = styled.span`
-  border: 2px solid #ABC6CA;
-  float:right;
-  padding-top: 16px;
-  border-radius: 10px;
-  padding-left: 14px;
 `;
 
 /**
@@ -59,6 +39,7 @@ class Confirmation extends Component {
     super(props);
     this.handlePrintRecordButtonClick = this.handlePrintRecordButtonClick.bind(this);
     this.handlePrintBloodCollectionButtonClick = this.handlePrintBloodCollectionButtonClick.bind(this);
+    this.handleRedirect = this.handleRedirect.bind(this);
     this.state = initData();
   }
   
@@ -76,19 +57,22 @@ class Confirmation extends Component {
   handlePrintBloodCollectionButtonClick() {
     this.handlePrintButtonClick(2);
   }
+
+  handleRedirect(place) {
+    if(place === 'home') {
+      this.props.route.onClean();
+      this.props.router.push('/step1'); 
+    }
+    else {
+      window.location.replace('https://www.genome.one/'); 
+    }
+  }
   
   render() {
     return (
       <div>
         <ConfirmationBox className="noPrint">
-          <Circle/>
-          <CircleRight/>
-          <ConfirmationBreakLineXS/>
             <ConfirmationHeading> Thank you!</ConfirmationHeading>
-          <ConfirmationBreakLineXS/>
-            <ConfirmationNote> 
-              We've sent you an email with all the details of your order!
-            </ConfirmationNote>
             <ConfirmationNote>
               You can now:
             </ConfirmationNote>
@@ -104,6 +88,20 @@ class Confirmation extends Component {
                 </FormButton>
               </Col>
             </Row>
+
+            <Row>
+              <Col md={6}>
+                <FormButton onClick={() => this.handleRedirect('genome')} style={{marginLeft: '20%', width: '78.26%'}}>
+                  Back to Genome.One
+                </FormButton>
+              </Col>
+              <Col md={6}>
+                <FormButton onClick={() => this.handleRedirect('home')} style={{marginRight: '20%', width:'80%'}}>
+                  Order new Test
+                </FormButton>
+              </Col>
+            </Row>
+
         </ConfirmationBox>
 
         <div className="printMe">

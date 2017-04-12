@@ -66,6 +66,7 @@ const confirmationData = {
 const props = {
   route: {
     onChange: jest.fn(),
+    onClean: jest.fn(),
     data: confirmationData
   },
   router:['/step1']
@@ -89,5 +90,11 @@ describe('Confirmation test', () => {
     const page = TestUtils.renderIntoDocument(React.createElement(Confirmation, props));
     page.handlePrintBloodCollectionButtonClick();
     expect(page.state.print).toEqual(2);
+  });
+
+  test('handleNext works', () => {
+    var view = TestUtils.renderIntoDocument(React.createElement(Confirmation, props));                                         
+    view.handleRedirect('home');
+    expect(view.props.router.pop()).toEqual('/step1');
   });
 });
