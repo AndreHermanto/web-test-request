@@ -14,7 +14,8 @@ import {
 import { getPricing } from './api';
 import { 
   PageHeading,
-  FormButton
+  FormButton,
+  BreakLine
 } from './../../components/SharedStyle';
 import Input from './../../components/Input';
 import Toggle from './../../components/Toggle';
@@ -178,17 +179,20 @@ class BillingInfo extends Component {
           </FormGroup>
           {
             (this.state.form.billOption === 'Private') &&
-            <FormGroup>
-              <ControlLabel style={{'fontSize':'1.5em'}}>Payer</ControlLabel>
-              <div style={{marginTop:'-2em'}}>
-              <RadioSet 
-                field="payer"
-                options={options}
-                onChange={this.handleSelectChange}
-                formState={this.state.form}
-              />
-              </div>
-            </FormGroup>
+            <div>
+              <BreakLine top={'2em'} bottom={'2em'}></BreakLine>
+              <FormGroup>
+                <ControlLabel style={{fontSize:24, fontWeight:500}}>Payer</ControlLabel>
+                <div style={{marginTop:'-2em'}}>
+                  <RadioSet 
+                    field="payer"
+                    options={options}
+                    onChange={this.handleSelectChange}
+                    formState={this.state.form}
+                  />
+                </div>
+              </FormGroup>
+            </div>
           }
           {
             (this.state.form.billOption === 'Private') &&

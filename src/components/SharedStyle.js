@@ -85,3 +85,12 @@ export const FormSelect = styled(Select)`
     border-radius: 0px;
   }
 `;
+
+
+export const BreakLine = styled.div`
+  border:1px solid #eee;
+  margin-top: ${props => props.top ? props.top : 0};
+  margin-right: ${props => props.right ? props.right : 0};
+  margin-bottom: ${props => props.bottom ? props.bottom : 0};
+  margin-left: ${props => props.left ? props.left : 0};
+`;
