@@ -86,15 +86,6 @@ class FamilyMemberModule extends Component
             </SummaryDetails>
           </Col>
           {
-            this.props.familyMemberDetails.ethnicity !== '' && 
-            <Col md={12}>
-              <SummaryDetails> 
-                <SummaryTitle> Ethnicity:  </SummaryTitle>
-                {this.props.familyMemberDetails.ethnicity}
-              </SummaryDetails>
-            </Col>
-          }
-          {
             this.props.familyMemberDetails.deceased !== false &&
             <Col md={12}>
               <SummaryDetails> 
@@ -129,15 +120,6 @@ class FamilyMemberModule extends Component
               <SummaryTitle> Relevant investigation note </SummaryTitle>
               <SummaryNotes>
                 {this.props.familyMemberClinicalInfo.relevantInvestigation}
-              </SummaryNotes>
-            </Col>
-          }
-          {
-            this.props.familyMemberClinicalInfo.familyHistory !== '' &&
-            <Col md={12}>
-              <SummaryTitle> Family history note </SummaryTitle>
-              <SummaryNotes>
-                {this.props.familyMemberClinicalInfo.familyHistory}
               </SummaryNotes>
             </Col>
           }

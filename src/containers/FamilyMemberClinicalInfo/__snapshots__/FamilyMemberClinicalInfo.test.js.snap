@@ -1,79 +1,41 @@
 exports[`FamilyMemberClinicalInfo: index renders without crashing 1`] = `
 <div>
   <h3
-    className="jhCkYx">
-    Step 4-2: 
+    className="AElMG">
+    Step 4: Family Members
+  </h3>
+  <h4
+    className="cZAycE">
     add
      family member 
-     - clinical info
-  </h3>
+     - clinical information
+  </h4>
   <div
-    className="form-group">
+    className="form-group"
+    onChange={[Function]}>
+    <br />
     <label
-      className="control-label"
-      htmlFor={undefined}>
+      className="radio-inline"
+      style={undefined}>
+      <input
+        defaultChecked={false}
+        disabled={false}
+        name="affected"
+        type="radio"
+        value={true} />
       Affected
     </label>
-    <br />
-    <table>
-      <tbody>
-        <tr>
-          <td>
-            <div
-              className="react-toggle"
-              onClick={[Function]}
-              onTouchEnd={[Function]}
-              onTouchMove={[Function]}
-              onTouchStart={[Function]}>
-              <div
-                className="react-toggle-track">
-                <div
-                  className="react-toggle-track-check">
-                  <svg
-                    height="11"
-                    viewBox="0 0 14 11"
-                    width="14">
-                    <title>
-                      switch-check
-                    </title>
-                    <path
-                      d="M11.264 0L5.26 6.004 2.103 2.847 0 4.95l5.26 5.26 8.108-8.107L11.264 0"
-                      fill="#fff"
-                      fillRule="evenodd" />
-                  </svg>
-                </div>
-                <div
-                  className="react-toggle-track-x">
-                  <svg
-                    height="10"
-                    viewBox="0 0 10 10"
-                    width="10">
-                    <title>
-                      switch-x
-                    </title>
-                    <path
-                      d="M9.9 2.12L7.78 0 4.95 2.828 2.12 0 0 2.12l2.83 2.83L0 7.776 2.123 9.9 4.95 7.07 7.78 9.9 9.9 7.776 7.072 4.95 9.9 2.12"
-                      fill="#fff"
-                      fillRule="evenodd" />
-                  </svg>
-                </div>
-              </div>
-              <div
-                className="react-toggle-thumb" />
-              <input
-                checked={false}
-                className="react-toggle-screenreader-only"
-                name="affected"
-                onBlur={[Function]}
-                onChange={[Function]}
-                onFocus={[Function]}
-                type="checkbox" />
-            </div>
-          </td>
-          <td />
-        </tr>
-      </tbody>
-    </table>
+    <label
+      className="radio-inline"
+      style={undefined}>
+      <input
+        defaultChecked={true}
+        disabled={false}
+        name="affected"
+        type="radio"
+        value={false} />
+      Unaffected
+    </label>
     <span
       className="SfhHK help-block" />
   </div>
@@ -84,7 +46,7 @@ exports[`FamilyMemberClinicalInfo: index renders without crashing 1`] = `
       htmlFor={undefined}>
       Provide Clinical Information
       <span
-        className="jCNiHk">
+        className="lnMAUb">
         Optional
       </span>
     </label>
@@ -114,7 +76,7 @@ exports[`FamilyMemberClinicalInfo: index renders without crashing 1`] = `
       htmlFor={undefined}>
       Provide results from relevant investigations
       <span
-        className="jCNiHk">
+        className="lnMAUb">
         Optional
       </span>
     </label>
@@ -126,36 +88,6 @@ exports[`FamilyMemberClinicalInfo: index renders without crashing 1`] = `
       className="ebbddk form-control"
       id={undefined}
       name="relevantInvestigation"
-      onChange={[Function]}
-      style={
-        Object {
-          "minHeight": 90,
-        }
-      }
-      type={undefined}
-      value="" />
-    <span
-      className="SfhHK help-block" />
-  </div>
-  <div
-    className="form-group has-feedback">
-    <label
-      className="control-label"
-      htmlFor={undefined}>
-      Family history
-      <span
-        className="jCNiHk">
-        Optional
-      </span>
-    </label>
-    <div
-      className="kWhIoX">
-      Provide notes on the suspected inheritance model and affected relatives.
-    </div>
-    <textarea
-      className="ebbddk form-control"
-      id={undefined}
-      name="familyHistory"
       onChange={[Function]}
       style={
         Object {
@@ -244,15 +176,10 @@ exports[`FamilyMemberClinicalInfo: index renders without crashing 1`] = `
     Back
   </button>
   <button
-    className="ieDBA"
-    onClick={[Function]}>
-    Cancel
-  </button>
-  <button
     className="bBdbjl"
     onClick={[Function]}
     type="submit">
-    Confirm
+    Next
   </button>
 </div>
 `;

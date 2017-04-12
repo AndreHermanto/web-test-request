@@ -57,12 +57,6 @@ describe('FamilyMemberClinicalInfo: index', () => {
     expect(page.props.router.pop()).toEqual('/step4/add/1/3')
   });
   
-  test('handleCancel works', () =>  {
-    var page = TestUtils.renderIntoDocument(React.createElement(FamilyMemberClinicalInfo, props));                                         
-    page.handleCancel();
-    expect(page.props.router.pop()).toEqual('/step4');
-  });
-  
   test('handleNext works', () => {
     var page = TestUtils.renderIntoDocument(React.createElement(FamilyMemberClinicalInfo, props));
     page.handleNext(false);

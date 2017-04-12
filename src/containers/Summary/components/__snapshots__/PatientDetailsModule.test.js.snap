@@ -62,17 +62,6 @@ exports[`PatientDetailsModule test renders without crashing  1`] = `
     </div>
     <div
       className="col-md-12">
-      <p
-        className="cEiVmq">
-        <span
-          className="bdMjbs">
-           Ethnicity:  
-        </span>
-        Asian
-      </p>
-    </div>
-    <div
-      className="col-md-12">
       <h4
         className="hWtWAB">
         Clinical Information

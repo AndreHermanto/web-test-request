@@ -6,7 +6,6 @@ export function initData(prefilled, familyHistory) {
       clinicalInfo: '',
       affected: false,
       relevantInvestigation: '',
-      familyHistory: '',
       consanguinity: false,
       consanguinityInfo:''
     },
@@ -42,12 +41,13 @@ export function initData(prefilled, familyHistory) {
  */
 export function setFormData(state, target) {
   var value, formStateChild;
+
   switch(target.type) {
     case 'checkbox':
       value = target.checked;
       break;
     default:
-      value = target.value;
+        value = target.value;
       break;
   } 
 
@@ -62,6 +62,15 @@ export function setFormData(state, target) {
       [target.name]: value
     });
   }
+  
+  if(value === 'true'){
+    value = true;
+  }else if(value === 'false'){
+    value = false;
+  }
+  formStateChild = Object.assign({}, state.form, {
+    [target.name]: value
+  });
   
   var validationStateChild = Object.assign({}, state.validation, {
     [target.name]: validator(value, state.validationRule[target.name])

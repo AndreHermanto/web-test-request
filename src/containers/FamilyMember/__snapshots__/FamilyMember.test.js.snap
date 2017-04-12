@@ -1,62 +1,45 @@
 exports[`<FamilyMember/> renders without crashing 1`] = `
 <div>
   <h3
-    className="jhCkYx">
-    Step 4: Add Family Members who will also provide samples
+    className="AElMG">
+    Step 4: Family Members
   </h3>
   <div
-    className="row">
-    <div
-      className="col-md-12">
-      <div
-        className="ebbddk thumbnail">
-        <img
-          alt={undefined}
-          src={undefined} />
-        <div
-          className="caption">
-          <label>
-            Patient: 
-          </label>
-           
-          <br />
-          <label>
-            DOB: 
-          </label>
-           
-          <br />
-          <label>
-            Gender: 
-          </label>
-           
-        </div>
-      </div>
-    </div>
-  </div>
-  <br />
-  <br />
-  <label>
-    Family members associated with this patient:
-  </label>
-  <br />
-  <button
-    className="bBdbjl"
-    onClick={[Function]}>
+    className="form-group"
+    onChange={[Function]}>
+    <label
+      className="control-label"
+      htmlFor={undefined}>
+      Are there any family members who will also provide samples?
+    </label>
+    <br />
+    <label
+      className="radio-inline"
+      style={undefined}>
+      <input
+        defaultChecked={false}
+        disabled={false}
+        name="optFamily"
+        type="radio"
+        value="Yes" />
+      Yes
+    </label>
+    <label
+      className="radio-inline"
+      style={undefined}>
+      <input
+        defaultChecked={false}
+        disabled={false}
+        name="optFamily"
+        type="radio"
+        value="No" />
+      No
+    </label>
     <span
-      className="glyphicon glyphicon-plus" />
-     Add family member
-  </button>
-  <br />
-  <br />
-  <div
-    className="row">
-    <div
-      className="col-md-12">
-      <br />
-      There is no family member associated with this patient. Please select \"Add family member\" to include a patients family member to be tested.
-      <br />
-    </div>
+      className="SfhHK help-block" />
   </div>
+  <p
+    className="fTucJa" />
   <button
     className="ieDBA"
     label="Back"
@@ -67,7 +50,7 @@ exports[`<FamilyMember/> renders without crashing 1`] = `
     className="bBdbjl"
     onClick={[Function]}
     type="submit">
-    Confirm
+    Next
   </button>
 </div>
 `;

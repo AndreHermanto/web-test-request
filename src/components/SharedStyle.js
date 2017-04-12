@@ -8,10 +8,16 @@ import Select from 'react-select';
 
 export const PageHeading = styled.h3`
   margin-bottom: 21px;
-  font-weight: 300;
+  font-weight: 500;
   text-transform:capitalize;
 `;
- 
+
+export const SubHeading = styled.h4`
+  margin-bottom: 15px;
+  font-weight: 450;
+  text-transform:capitalize;
+`;
+
 export const FormButton = styled.button`
   margin: 18px 6px 0px 0px;
   border-style: none;
@@ -37,7 +43,7 @@ export const SubLabel = styled.span`
   margin-left: 8px;
   font-weight: normal;
   font-size: 11px;
-  color: #bbb;
+  color: #008b8b;
 `;
 
 export const Helper = styled.p`

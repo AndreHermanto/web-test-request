@@ -104,17 +104,6 @@ exports[`FamilyMemberModule test renders without crashing  1`] = `
     </div>
     <div
       className="col-md-12">
-      <span
-        className="bdMjbs">
-         Family history note 
-      </span>
-      <div
-        className="gczsYD">
-        asdasdasdasd
-      </div>
-    </div>
-    <div
-      className="col-md-12">
       <p
         className="cEiVmq">
         <span

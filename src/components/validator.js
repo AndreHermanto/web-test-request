@@ -66,5 +66,10 @@ export default function validator(value, rule) {
     validationState.feedback = 'This is not a valid provider number.';
   }
 
+  if(ruleObj.familyMember && value.length === 0) {
+    validationState.status = 'error';
+    validationState.feedback = 'You must include at least one family member';
+  }
+
   return validationState; 
 }
