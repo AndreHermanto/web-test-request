@@ -18,7 +18,7 @@ exports[`FamilyMemberClinicalInfo: index renders without crashing 1`] = `
       className="radio-inline"
       style={undefined}>
       <input
-        defaultChecked={true}
+        defaultChecked={false}
         disabled={false}
         name="affected"
         type="radio"
