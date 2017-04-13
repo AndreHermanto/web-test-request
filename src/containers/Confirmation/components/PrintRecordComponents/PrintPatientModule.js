@@ -35,14 +35,6 @@ export default function PrintPatientModule(props) {
       </p>
     
       {
-        props.patientDetails.ethnicity !== '' &&
-        <p> 
-          <strong> Ethnicity:  </strong>
-          {props.patientDetails.ethnicity}
-        </p>
-      }
-    
-      {
         props.patientDetails.deceased !== false &&
         <p> 
           <strong> Deceased:  </strong>

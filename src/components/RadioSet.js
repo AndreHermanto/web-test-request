@@ -48,12 +48,21 @@ export default function RadioSet({
           label = option.label;
           id = option.id;
           defaultVal = formState[field] ? formState[field].id : '';
-        } else {
+        } else if(typeof option === "boolean"){
+          if(option){
+            label = "Affected";
+            id = true;
+            defaultVal = formState[field];
+          }else{
+            label = "Unaffected";
+            id = false;
+            defaultVal = formState[field];            
+          }
+        }else {
           label = option;
           id = option;
           defaultVal = formState[field];
         }
-       
         return (
           <Radio
             key={id}

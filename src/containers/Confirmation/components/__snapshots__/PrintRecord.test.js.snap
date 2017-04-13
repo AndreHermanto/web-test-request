@@ -84,12 +84,6 @@ exports[`test PrintRecord renders without crashing  1`] = `
     </p>
     <p>
       <strong>
-         Ethnicity:  
-      </strong>
-      Asian
-    </p>
-    <p>
-      <strong>
          Consanguinity:  
       </strong>
       No
@@ -178,14 +172,6 @@ exports[`test PrintRecord renders without crashing  1`] = `
         </p>
         <br />
       </div>
-      <div>
-        <strong>
-           Family history 
-        </strong>
-        <p>
-          asdasdasdasd
-        </p>
-      </div>
     </div>
     <div
       className="hxoQps">
@@ -248,14 +234,6 @@ exports[`test PrintRecord renders without crashing  1`] = `
           asdasdasdasd
         </p>
         <br />
-      </div>
-      <div>
-        <strong>
-           Family history 
-        </strong>
-        <p>
-          asdasd
-        </p>
       </div>
     </div>
   </div>

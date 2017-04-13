@@ -3,7 +3,6 @@ import {
   FormGroup,
   ControlLabel,
   Label,
-  Badge,
   Row,
   Col,
   Radio

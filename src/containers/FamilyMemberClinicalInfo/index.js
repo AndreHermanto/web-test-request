@@ -6,10 +6,12 @@ import {
 } from './reducer'
 import { 
   PageHeading,
-  FormButton
+  FormButton,
+  SubHeading
 } from './../../components/SharedStyle';
 import TextArea from './../../components/TextArea';
 import Toggle from './../../components/Toggle';
+import RadioSet from './../../components/RadioSet';
 
 /**
  * FamilyMemberClinicalInfo - UI for input patient details.
@@ -18,7 +20,6 @@ class FamilyMemberClinicalInfo extends Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
-    this.handleCancel = this.handleCancel.bind(this);
     this.handleBack = this.handleBack.bind(this);
     this.handleConfirm = this.handleConfirm.bind(this);
     
@@ -36,11 +37,6 @@ class FamilyMemberClinicalInfo extends Component {
   
   handleChange(event) {
     this.setState(setFormData(this.state, event.target));
-  }
-  
-  handleCancel() {
-    if(this.props.params.mode === 'add') this.props.route.onDelete(this.props.params.id);
-    this.props.router.push('/step4');
   }
   
   handleBack() {
@@ -72,15 +68,16 @@ class FamilyMemberClinicalInfo extends Component {
   render() {
     return (
       <div>
-        <PageHeading>Step 4-2: {this.props.params.mode} family member {(this.props.params.mode === 'edit') &&  `(${this.props.route.data.familyMembers[this.props.params.id].familyMemberDetails.firstName} ${this.props.route.data.familyMembers[this.props.params.id].familyMemberDetails.lastName})`} - clinical info</PageHeading>
-                  
-        <Toggle
+        <PageHeading>Step 4: Family Members</PageHeading>
+        <SubHeading>{this.props.params.mode} family member {(this.props.params.mode === 'edit') &&  `(${this.props.route.data.familyMembers[this.props.params.id].familyMemberDetails.firstName} ${this.props.route.data.familyMembers[this.props.params.id].familyMemberDetails.lastName})`} - clinical information</SubHeading>
+        <RadioSet
           field="affected"
-          label="Affected"
-          onChange={this.handleChange}
+          options={[true, false]}
           formState={this.state.form}
-        />  
-      
+          onChange={this.handleChange}
+          inline={true}
+        />
+
         <TextArea
           field="clinicalInfo"
           label="Provide Clinical Information"
@@ -96,16 +93,6 @@ class FamilyMemberClinicalInfo extends Component {
           field="relevantInvestigation"
           label="Provide results from relevant investigations"
           helper="Provide notes from genetic tests, imaging results."
-          onChange={this.handleChange}
-          onValidate={this.validate()}
-          formState={this.state.form}
-          optional
-        />
-            
-        <TextArea
-          field="familyHistory"
-          label="Family history"
-          helper="Provide notes on the suspected inheritance model and affected relatives."
           onChange={this.handleChange}
           onValidate={this.validate()}
           formState={this.state.form}
@@ -139,22 +126,12 @@ class FamilyMemberClinicalInfo extends Component {
             Back
           </FormButton> 
         }
-
-        {
-          this.props.route.isEdited !== true &&
-          <FormButton 
-            onClick={this.handleCancel}
-            back
-          >
-            Cancel
-          </FormButton> 
-        }
       
         <FormButton 
           type="submit" 
           onClick={this.handleConfirm}
         >
-          Confirm
+          Next
         </FormButton> 
       </div>
     );

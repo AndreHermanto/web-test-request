@@ -38,14 +38,6 @@ export default function PrintFamilyModule(props) {
                 member.familyMemberDetails.gender
               } 
             </p>
-
-            {
-              member.familyMemberDetails.ethnicity !== '' && 
-              <p> 
-                <strong> Ethnicity:  </strong>
-                {member.familyMemberDetails.ethnicity}
-              </p>
-            }
     
             {
               member.familyMemberDetails.deceased !== false &&
@@ -97,16 +89,6 @@ export default function PrintFamilyModule(props) {
                   {member.familyMemberClinicalInfo.relevantInvestigation}
                 </p>
                 <br />
-              </div>
-            }
-              
-            {
-              member.familyMemberClinicalInfo.familyHistory !== '' &&
-              <div>
-                <strong> Family history </strong>
-                <p>
-                  {member.familyMemberClinicalInfo.familyHistory}
-                </p>
               </div>
             }
           </Section>

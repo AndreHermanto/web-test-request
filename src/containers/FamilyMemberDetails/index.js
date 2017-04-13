@@ -6,7 +6,8 @@ import {
 } from './reducer'
 import { 
   PageHeading,
-  FormButton
+  FormButton,
+  SubHeading
 } from './../../components/SharedStyle';
 import Input from './../../components/Input';
 import Toggle from './../../components/Toggle';
@@ -67,7 +68,8 @@ class FamilyMemberDetails extends Component {
   render() {
     return (
       <div>
-        <PageHeading>Step 4-1: {this.props.params.mode} family member {(this.props.params.mode === 'edit') &&  `(${this.state.form.firstName} ${this.state.form.lastName})`} - member details</PageHeading>
+        <PageHeading>Step 4: Family Members</PageHeading>
+        <SubHeading>{this.props.params.mode} family member {(this.props.params.mode === 'edit') &&  `(${this.state.form.firstName} ${this.state.form.lastName})`} - member details</SubHeading>
         <Input
           field="lastName"
           label="Surname"
@@ -132,13 +134,6 @@ class FamilyMemberDetails extends Component {
             style={{ marginTop: 8 }}
           />   
         )}
-      
-        <Input
-          field="ethnicity"
-          label="Ethnicity"
-          onChange={this.handleChange}
-          optional
-        />
         
         <Toggle
           field="deceased"
@@ -174,7 +169,7 @@ class FamilyMemberDetails extends Component {
             onClick={this.handleCancel}
             back
           >
-            Cancel
+            Back
           </FormButton> 
         }
       
@@ -182,7 +177,7 @@ class FamilyMemberDetails extends Component {
           type="submit" 
           onClick={this.handleConfirm}
         >
-          Confirm
+          Next
         </FormButton> 
       </div>
     );
