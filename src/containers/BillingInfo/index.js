@@ -15,8 +15,7 @@ import { getPricing } from './api';
 import { 
   PageHeading,
   FormButton,
-  Helper,
-  FormSelect
+  BreakLine
 } from './../../components/SharedStyle';
 import Input from './../../components/Input';
 import Toggle from './../../components/Toggle';
@@ -63,13 +62,13 @@ class BillingInfo extends Component {
   
   handleBillingChange(event) {
     var payer = (event.target.value === 'Institution') ? 
-                { value: this.props.route.clinicianData.organisation || '' } : 
+                { id: this.props.route.clinicianData.organisation || '' } : 
                 this.getPayers()[0];
     this.setState(setBillOption(this.state, event.target, payer), this.priceChange);
   }
 
   handleSelectChange(event) {
-    this.setState(setSelectData(this.state, event.value), this.priceChange);
+    this.setState(setSelectData(this.state, event.target.value), this.priceChange);
   }
 
   handleBack() {
@@ -96,14 +95,14 @@ class BillingInfo extends Component {
   }
 
   getPayers() {
-    var payers = [{ value: 'Other', label: 'Other' }];
+    var payers = [{ id: 'Other', label: 'Other' }];
 
     if(this.props.route.familyMemberData && this.props.route.familyMemberData.familyMembers) {
       this.props.route.familyMemberData.familyMembers.forEach((member) => {
         let memberName = member.familyMemberDetails.firstName.toString() + ' ' + 
                          member.familyMemberDetails.lastName.toString();
         payers.unshift({
-          value: memberName, 
+          id: memberName, 
           label: memberName + ' (Family Member)'
         })
       });
@@ -114,12 +113,19 @@ class BillingInfo extends Component {
       let patientName = this.props.route.patientData.firstName.toString() + ' ' + 
                         this.props.route.patientData.lastName.toString();
       payers.unshift({ 
-        value: patientName, 
+        id: patientName, 
         label: patientName + ' (Patient)'
       });
     }
-    
     return payers;
+  }
+
+  getPayerOption(payers) {
+    let options = [];
+    payers.map((p) => {
+      return options.push(p.label);
+    })
+    return options;
   }
   
   // This renders the validation result after confirm button is clicked.
@@ -128,6 +134,7 @@ class BillingInfo extends Component {
   }
   
   render() {
+
     const even = {
       backgroundColor:'#f9f9f9'
     }
@@ -138,9 +145,8 @@ class BillingInfo extends Component {
       backgroundColor:'#fcf8e3',
       borderBottom: '1px solid #eee'
     }
-
     const payers = this.getPayers();
-
+    const options = this.getPayerOption(payers);
     return (
       <div>
         <PageHeading>Step 6: Billing info</PageHeading>
@@ -173,16 +179,20 @@ class BillingInfo extends Component {
           </FormGroup>
           {
             (this.state.form.billOption === 'Private') &&
-            <FormGroup>
-              <ControlLabel>Payer</ControlLabel>
-              <FormSelect
-                name={payers.label}
-                value={this.state.form.payer}
-                options={payers}
-                onChange={this.handleSelectChange}
-                clearable={false}
-              />
-            </FormGroup>
+            <div>
+              <BreakLine top={'2em'} bottom={'2em'}></BreakLine>
+              <FormGroup>
+                <ControlLabel style={{fontSize:24, fontWeight:500}}>Payer</ControlLabel>
+                <div style={{marginTop:'-2em'}}>
+                  <RadioSet 
+                    field="payer"
+                    options={options}
+                    onChange={this.handleSelectChange}
+                    formState={this.state.form}
+                  />
+                </div>
+              </FormGroup>
+            </div>
           }
           {
             (this.state.form.billOption === 'Private') &&
@@ -235,14 +245,6 @@ class BillingInfo extends Component {
                 formState={this.state.form}
                 required
               />
-              
-              <br />
-              <Helper>
-                When this test request form is submitted, an email will be sent to this payer with a weblink to view the invoice. <br /><br />
-                To open the link, the payer will need to type the patient's surname, and the payer's mobile number that you provided us in the Billing section when completing this form.<br /><br />
-                Testing does not begin until payment is received.
-              </Helper>
-                  
             </div>
           }
 
