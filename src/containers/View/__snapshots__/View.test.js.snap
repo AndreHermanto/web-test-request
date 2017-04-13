@@ -1,0 +1,89 @@
+exports[`View test View page renders without crashing 1`] = `
+<div
+  id="testRequestSearch">
+  <div
+    className="dQyqsI">
+    <h3
+      className="AElMG">
+      Search Test Request
+    </h3>
+    <div
+      className="form-group"
+      onChange={[Function]}>
+      <label
+        className="control-label"
+        htmlFor={undefined}>
+        Search by
+      </label>
+      <br />
+      <label
+        className="radio-inline"
+        style={
+          Object {
+            "marginRight": 8,
+          }
+        }>
+        <input
+          defaultChecked={true}
+          disabled={false}
+          name="searchBy"
+          type="radio"
+          value="Test Request Id" />
+        Test Request Id
+      </label>
+      <label
+        className="radio-inline"
+        style={
+          Object {
+            "marginRight": 8,
+          }
+        }>
+        <input
+          defaultChecked={false}
+          disabled={false}
+          name="searchBy"
+          type="radio"
+          value="Patient Details" />
+        Patient Details
+      </label>
+      <span
+        className="SfhHK help-block" />
+    </div>
+    <hr />
+    <div>
+      <div
+        className="form-group has-feedback">
+        <label
+          className="control-label"
+          htmlFor={undefined}>
+          Test Request Id
+        </label>
+        <input
+          className="fkPJON form-control"
+          disabled={undefined}
+          id={undefined}
+          name="testRequestId"
+          onChange={[Function]}
+          type="text"
+          value="" />
+        <span
+          className="SfhHK help-block" />
+      </div>
+      <button
+        className="bBdbjl"
+        onClick={[Function]}
+        type="submit">
+        Search
+      </button>
+    </div>
+  </div>
+  <div
+    className="kLsVgF">
+    <p>
+      <br />
+      <br />
+      Please use the left hand panel to search for test request. 
+    </p>
+  </div>
+</div>
+`;

@@ -20,7 +20,7 @@ class ConfirmationModal extends Component {
   render() {
     return (
       <span>
-        <FormButton 
+        <FormButton
           onClick={this.open}
         >
           Confirm

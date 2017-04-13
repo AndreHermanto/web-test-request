@@ -69,6 +69,7 @@ export default function RadioSet({
             name={field} 
             value={id} 
             inline={inline}
+            style={{ marginRight: 8 }}
             defaultChecked={defaultVal === id}
           >
             {label}{(subLabels && subLabels[$index]) && (<SubLabel>({subLabels[$index]})</SubLabel>)}

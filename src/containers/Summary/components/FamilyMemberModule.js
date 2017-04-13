@@ -53,16 +53,21 @@ class FamilyMemberModule extends Component
             <Col md={12}>
               Family Member ({this.props.familyMemberDetails.relationship}) - {this.props.familyMemberDetails.firstName + ' ' + this.props.familyMemberDetails.lastName}
             </Col>
+          </Row>
+          <Row>
             <Col md={12}>
-              <Button 
-                bsStyle="link"
-                onClick={this.handleOnClick}
-              >
-                <Glyphicon glyph="pencil"/> Edit
-              </Button>
               <Tag bsStyle={this.props.familyMemberClinicalInfo.affected ? 'danger' : 'success'}>
                 {this.props.familyMemberClinicalInfo.affected ? 'Affected' : 'Unaffected'}
               </Tag>
+              
+              {this.props.handleOnClick &&
+                <Button 
+                  bsStyle="link"
+                  onClick={this.handleDetailsClick}
+                >
+                  <Glyphicon glyph="pencil"/> Edit
+                </Button>
+              }
             </Col>
           </Row>
         </SummaryHeading>
