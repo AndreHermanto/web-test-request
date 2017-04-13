@@ -6,7 +6,7 @@ exports[`ProgressBar renders without crashing 1`] = `
     }
   }>
   <div
-    className="jnaMsl">
+    className="bHgOwu">
     <ul
       className="ggxPyW">
       <li
@@ -61,6 +61,6 @@ exports[`ProgressBar renders without crashing 1`] = `
     </ul>
   </div>
   <div
-    className="hIqpFl" />
+    className="kWdJSX" />
 </div>
 `;
