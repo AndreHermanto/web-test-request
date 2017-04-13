@@ -17,6 +17,10 @@ export default function PrintHeader(props) {
             alt="logo"
             style={{ width: 200 }}
             />
+          <div style={{ marginTop: 70 }}>
+            Request Id: {props.showId} <br />
+            Date submitted: {props.showDate}
+          </div>
         </Col>
 
         <Col sm={4} style={{ border: '2px solid #000', padding: 12 }}>

@@ -16,6 +16,17 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
                 "width": 200,
               }
             } />
+          <div
+            style={
+              Object {
+                "marginTop": 70,
+              }
+            }>
+            Request Id: 
+             
+            <br />
+            Date submitted: 
+          </div>
         </div>
         <div
           className="col-sm-4"
@@ -518,6 +529,17 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
                 "width": 200,
               }
             } />
+          <div
+            style={
+              Object {
+                "marginTop": 70,
+              }
+            }>
+            Request Id: 
+             
+            <br />
+            Date submitted: 
+          </div>
         </div>
         <div
           className="col-sm-4"
@@ -1026,6 +1048,17 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
                 "width": 200,
               }
             } />
+          <div
+            style={
+              Object {
+                "marginTop": 70,
+              }
+            }>
+            Request Id: 
+             
+            <br />
+            Date submitted: 
+          </div>
         </div>
         <div
           className="col-sm-4"

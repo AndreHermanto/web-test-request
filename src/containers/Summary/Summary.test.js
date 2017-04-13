@@ -107,9 +107,9 @@ describe('Summary: index', () => {
 
   test('handleSubmit works', async () => {
     var page = TestUtils.renderIntoDocument(React.createElement(Summary, props));
-    FetchMock.mock('*', 200);
+    FetchMock.mock('*', { data: { id: 1 } });
     await page.handleSubmit().then((response) => {
-      expect(response).toEqual(true);
+      expect(response.data.id).toEqual(1);
     });
     FetchMock.restore();  
     FetchMock.mock('*', 404);

@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 import TestUtils from 'react-addons-test-utils';
+import FetchMock from 'fetch-mock';
 import Confirmation from './index';
 
 const patientData = {
@@ -60,7 +61,8 @@ const confirmationData = {
   clinicalInfoModule: clinicalData,
   familyMembersModule: familyData,
   clinicianDetailsModule:clinicianDetails,
-  billingInfoModule: billingInfo
+  billingInfoModule: billingInfo,
+  id: 1
 }
 
 const props = {
@@ -69,17 +71,27 @@ const props = {
     onClean: jest.fn(),
     data: confirmationData
   },
+  params: { id: 1 },
   router:['/step1']
 };
 
 describe('Confirmation test', () => {
   test('Confirmation page renders without crashing', () => {
-    const page = renderer.create(React.createElement(Confirmation)).toJSON();
+    const page = renderer.create(React.createElement(Confirmation, props)).toJSON();
     expect(page).toMatchSnapshot();
+  });
+  
+  test('componentWillMount will retrieve data and add to state', async () => {
+    FetchMock.get('*', { data: confirmationData });
+    const page = TestUtils.renderIntoDocument(React.createElement(Confirmation, props));
+    await page.componentWillMount();
+    expect(page.state.form.id).toEqual(1);
+    FetchMock.restore();
   });
   
   test('handlePrintRecordButtonClick changes the print state to 1', () => {
     const page = TestUtils.renderIntoDocument(React.createElement(Confirmation, props));
+    page.state.form = confirmationData;
     page.handlePrintRecordButtonClick();
     expect(page.state.print).toEqual(1);
     page.handlePrintButtonClick(2);
@@ -88,6 +100,7 @@ describe('Confirmation test', () => {
   
   test('handlePrintBloodCollectionButtonClick changes the print state to 2', () => {
     const page = TestUtils.renderIntoDocument(React.createElement(Confirmation, props));
+    page.state.form = confirmationData;
     page.handlePrintBloodCollectionButtonClick();
     expect(page.state.print).toEqual(2);
   });
