@@ -1,13 +1,12 @@
 import React from 'react';
 import {
   PrintHeading,
-  PageBreak,
-  Section
+  PageBreak
 } from './../sharedPrintStyle';
 // PrintClinicianDetailsModule page
 export default function PrintClinicianDetailsModule(props) {
   return (
-    <Section>
+    <div style={{marginTop:'-20pt'}}>
       <PrintHeading>
         Clinician - {props.clinicianDetails.firstName + ' ' + props.clinicianDetails.lastName}
       </PrintHeading>
@@ -69,6 +68,6 @@ export default function PrintClinicianDetailsModule(props) {
           </div>
         })
       }
-    </Section>
+    </div>
   );
 }

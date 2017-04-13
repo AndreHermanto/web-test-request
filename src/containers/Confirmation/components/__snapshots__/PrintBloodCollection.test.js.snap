@@ -1,7 +1,7 @@
 exports[`test PrintBloodCollection renders without crashing  1`] = `
 <div>
   <div
-    className="dmfEKT">
+    className="dNRwmG">
     <div>
       <div
         className="row">
@@ -98,10 +98,9 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
       </div>
     </div>
     <br />
-    <div
-      className="hxoQps">
+    <div>
       <h3
-        className="lgKHmt">
+        className="kTDTpA">
         Test Ordered
       </h3>
       <h4>
@@ -154,10 +153,9 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
         </span>
       </div>
     </div>
-    <div
-      className="hxoQps">
+    <div>
       <h3
-        className="lgKHmt">
+        className="kTDTpA">
         Ngabcuyen abcabc
          - Patient
       </h3>
@@ -219,9 +217,13 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
       </div>
     </div>
     <div
-      className="hxoQps">
+      style={
+        Object {
+          "marginTop": "-15pt",
+        }
+      }>
       <h3
-        className="lgKHmt">
+        className="kTDTpA">
         John Doe
          - Clinician
       </h3>
@@ -329,7 +331,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
     </div>
     <div>
       <h3
-        className="lgKHmt">
+        className="kTDTpA">
         Billing Information
       </h3>
       <div>
@@ -359,10 +361,9 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
         </p>
       </div>
     </div>
-    <div
-      className="hxoQps">
+    <div>
       <h3
-        className="lgKHmt">
+        className="kTDTpA">
         Specimen Information
       </h3>
       <div
@@ -379,21 +380,12 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
         className="jQzmiV" />
        Other: _______________________________________
     </div>
-    <div
-      className="hxoQps">
+    <div>
       <br />
-      <div
-        className="caGDDg" />
       <h3
-        style={
-          Object {
-            "textAlign": "center",
-          }
-        }>
+        className="kTDTpA">
         Collector Declaration
       </h3>
-      <div
-        className="caGDDg" />
       <br />
       <div
         className="lgfNfJ row">
@@ -514,7 +506,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
     </div>
   </div>
   <div
-    className="dmfEKT">
+    className="dNRwmG">
     <div>
       <div
         className="row">
@@ -611,10 +603,9 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
       </div>
     </div>
     <br />
-    <div
-      className="hxoQps">
+    <div>
       <h3
-        className="lgKHmt">
+        className="kTDTpA">
         Test Ordered
       </h3>
       <h4>
@@ -667,10 +658,9 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
         </span>
       </div>
     </div>
-    <div
-      className="hxoQps">
+    <div>
       <h3
-        className="lgKHmt">
+        className="kTDTpA">
         abc@abc.com abc@abc.com
          - 
          
@@ -738,9 +728,13 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
       </div>
     </div>
     <div
-      className="hxoQps">
+      style={
+        Object {
+          "marginTop": "-15pt",
+        }
+      }>
       <h3
-        className="lgKHmt">
+        className="kTDTpA">
         John Doe
          - Clinician
       </h3>
@@ -848,7 +842,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
     </div>
     <div>
       <h3
-        className="lgKHmt">
+        className="kTDTpA">
         Billing Information
       </h3>
       <div>
@@ -878,10 +872,9 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
         </p>
       </div>
     </div>
-    <div
-      className="hxoQps">
+    <div>
       <h3
-        className="lgKHmt">
+        className="kTDTpA">
         Specimen Information
       </h3>
       <div
@@ -898,21 +891,12 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
         className="jQzmiV" />
        Other: _______________________________________
     </div>
-    <div
-      className="hxoQps">
+    <div>
       <br />
-      <div
-        className="caGDDg" />
       <h3
-        style={
-          Object {
-            "textAlign": "center",
-          }
-        }>
+        className="kTDTpA">
         Collector Declaration
       </h3>
-      <div
-        className="caGDDg" />
       <br />
       <div
         className="lgfNfJ row">
@@ -1033,7 +1017,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
     </div>
   </div>
   <div
-    className="dmfEKT">
+    className="dNRwmG">
     <div>
       <div
         className="row">
@@ -1130,10 +1114,9 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
       </div>
     </div>
     <br />
-    <div
-      className="hxoQps">
+    <div>
       <h3
-        className="lgKHmt">
+        className="kTDTpA">
         Test Ordered
       </h3>
       <h4>
@@ -1186,10 +1169,9 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
         </span>
       </div>
     </div>
-    <div
-      className="hxoQps">
+    <div>
       <h3
-        className="lgKHmt">
+        className="kTDTpA">
         abcsadkfhkladsfj ab.com
          - 
          
@@ -1257,9 +1239,13 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
       </div>
     </div>
     <div
-      className="hxoQps">
+      style={
+        Object {
+          "marginTop": "-15pt",
+        }
+      }>
       <h3
-        className="lgKHmt">
+        className="kTDTpA">
         John Doe
          - Clinician
       </h3>
@@ -1367,7 +1353,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
     </div>
     <div>
       <h3
-        className="lgKHmt">
+        className="kTDTpA">
         Billing Information
       </h3>
       <div>
@@ -1397,10 +1383,9 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
         </p>
       </div>
     </div>
-    <div
-      className="hxoQps">
+    <div>
       <h3
-        className="lgKHmt">
+        className="kTDTpA">
         Specimen Information
       </h3>
       <div
@@ -1417,21 +1402,12 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
         className="jQzmiV" />
        Other: _______________________________________
     </div>
-    <div
-      className="hxoQps">
+    <div>
       <br />
-      <div
-        className="caGDDg" />
       <h3
-        style={
-          Object {
-            "textAlign": "center",
-          }
-        }>
+        className="kTDTpA">
         Collector Declaration
       </h3>
-      <div
-        className="caGDDg" />
       <br />
       <div
         className="lgfNfJ row">
