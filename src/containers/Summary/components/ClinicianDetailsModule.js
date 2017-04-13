@@ -32,12 +32,14 @@ class ClinicianDetailsModule extends Component
       <SummaryBox>
         <SummaryHeading> 
           Clinician - {this.props.clinicianDetailsModule.firstName + ' ' + this.props.clinicianDetailsModule.lastName}
-          <Button
-            bsStyle="link"
-            onClick={this.handleOnClick}
-          >
-            <Glyphicon glyph="pencil"/> Edit
-          </Button>
+          {this.props.handleOnClick &&
+            <Button 
+              bsStyle="link"
+              onClick={this.handleDetailsClick}
+            >
+              <Glyphicon glyph="pencil"/> Edit
+            </Button>
+          }
         </SummaryHeading>
         <SummaryBreakLine/>
         <Row>

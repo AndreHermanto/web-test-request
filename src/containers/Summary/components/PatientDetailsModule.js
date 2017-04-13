@@ -65,12 +65,14 @@ class PatientDetailsModule extends Component
         <Col md={12}>
           <SectionHeading> 
             Details
-            <Button 
-              bsStyle="link"
-              onClick={this.handleDetailsClick}
-            >
-              <Glyphicon glyph="pencil"/> Edit
-            </Button>
+            {this.props.handleOnClick &&
+              <Button 
+                bsStyle="link"
+                onClick={this.handleDetailsClick}
+              >
+                <Glyphicon glyph="pencil"/> Edit
+              </Button>
+            }
           </SectionHeading>
         </Col>
         <Col md={12}>
@@ -118,12 +120,14 @@ class PatientDetailsModule extends Component
         <Col md={12}>
           <SectionHeading> 
             Clinical Information
-            <Button 
-              bsStyle="link"
-              onClick={this.handleClinicalInfoClick}
-            >
-              <Glyphicon glyph="pencil"/> Edit
-            </Button>
+            {this.props.handleOnClick &&
+              <Button 
+                bsStyle="link"
+                onClick={this.handleDetailsClick}
+              >
+                <Glyphicon glyph="pencil"/> Edit
+              </Button>
+            }
           </SectionHeading>
         </Col>
         <Col md={12}>

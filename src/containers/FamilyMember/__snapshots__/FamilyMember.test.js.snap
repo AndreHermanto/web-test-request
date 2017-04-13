@@ -15,7 +15,11 @@ exports[`<FamilyMember/> renders without crashing 1`] = `
     <br />
     <label
       className="radio-inline"
-      style={undefined}>
+      style={
+        Object {
+          "marginRight": 8,
+        }
+      }>
       <input
         defaultChecked={false}
         disabled={false}
@@ -26,7 +30,11 @@ exports[`<FamilyMember/> renders without crashing 1`] = `
     </label>
     <label
       className="radio-inline"
-      style={undefined}>
+      style={
+        Object {
+          "marginRight": 8,
+        }
+      }>
       <input
         defaultChecked={false}
         disabled={false}
