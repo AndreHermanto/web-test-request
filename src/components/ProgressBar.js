@@ -9,17 +9,17 @@ const Content = styled.strong`
 
 const Container = styled.div`
   padding-top: 30px;
-  padding-left: 10%;
-  width: 30%;
+  width: 22%;
   float: left;
   overflow: hidden;
 `;
 
 const ContainerContent = styled.div`
-  width: 70%
+  width: 78%
   padding-left: 6%;
   float: left;
   border-left: thin solid #e7e7e7;
+  min-height: 320px;
 `;
 
 const Lists = styled.ul`

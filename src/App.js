@@ -145,7 +145,7 @@ class App extends Component {
         <br />
         <Grid>
           <Row>
-            <Col md={11} className="pageArea">
+            <Col md={10} mdOffset={1} className="pageArea">
               <Routes 
                 onChange={this.handleChange}
                 onClean={this.handleClean}
