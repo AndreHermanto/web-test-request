@@ -62,8 +62,6 @@ export const SummaryNotes = styled.div`
 `;
 
 export const Tag = styled(Label)`
-  margin-left: 10px;
-  position: absolute;
   line-height: normal !important;
   font-size: 12px !important;
   margin-top: 9px;

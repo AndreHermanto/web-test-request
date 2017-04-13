@@ -42,8 +42,10 @@ class App extends Component {
   */
   componentDidMount() {
     window.onbeforeunload = function() {
-      if(window.location.hash !== '#/confirmation') 
-      { 
+      if(
+        window.location.hash !== '#/confirmation' &&
+        window.location.hash !== '#/view'
+      ) { 
         return "Are you sure to leave this page?";
       }
     }
