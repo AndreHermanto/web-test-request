@@ -8,6 +8,7 @@ import Dropzone from 'react-dropzone';
 import {
   initData,
   setFormData,
+  setIsUploading,
   addAttachment,
   removeAttachment,
   setDeleteModal,
@@ -24,12 +25,19 @@ import {
 import TextArea from './../../components/TextArea';
 import Toggle from './../../components/Toggle';
 import styled from 'styled-components';
+import './spin.css';
 
 const FileRemove = styled(Button)`
   color: #d66 !important; 
   float: right;
   margin-top: 8px;
   padding-left: 18px;
+`;
+
+const SpinningLogo = styled(Glyphicon)`
+  margin-left: 16px;
+  -webkit-animation: spin 1000ms infinite linear;
+  animation: spin 1000ms infinite linear;  
 `;
 
 /**
@@ -60,9 +68,12 @@ class ClinicalInfo extends Component {
   }
   
   handleDrop(acceptedFiles) {
+    this.setState(setIsUploading(this.state, true));
+    
     return upload(acceptedFiles[0])
       .then((json) => {
-        this.setState(addAttachment(this.state, acceptedFiles[0], json.data.id));
+        this.setState(addAttachment(this.state, acceptedFiles[0], json.data.id), 
+          () => this.setState(setIsUploading(this.state, false)));
       })
   }
 
@@ -189,7 +200,14 @@ class ClinicalInfo extends Component {
           
           <FormButton style={{ margin: '12px 0' }} onClick={this.openFileSelect}>
             Upload Attachment
-          </FormButton> 
+          </FormButton>
+            
+          {
+            this.state.isUploading && 
+              <span>
+                <SpinningLogo glyph="refresh" /> Uploading...
+              </span>
+          }
         </Dropzone>
         
         <Modal show={this.state.deleteModal.display} onHide={this.closeDeleteModal} style={{ paddingRight: 12 }}>
@@ -237,6 +255,7 @@ class ClinicalInfo extends Component {
           this.props.route.isEdited !== true &&
           <FormButton 
             onClick={this.handleBack}
+            disabled={this.state.isUploading}
             label="Back"
             back
           >
@@ -247,6 +266,7 @@ class ClinicalInfo extends Component {
         <FormButton  
           type="submit" 
           onClick={this.handleConfirm}
+          disabled={this.state.isUploading}
         >
           Next
         </FormButton> 

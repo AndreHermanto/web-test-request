@@ -290,12 +290,14 @@ exports[`ClinicalInfo: index renders without crashing 1`] = `
   </div>
   <button
     className="ieDBA"
+    disabled={false}
     label="Back"
     onClick={[Function]}>
     Back
   </button>
   <button
     className="bBdbjl"
+    disabled={false}
     onClick={[Function]}
     type="submit">
     Next

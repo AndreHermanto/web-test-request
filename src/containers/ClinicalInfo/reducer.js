@@ -18,7 +18,8 @@ export function initData(prefilled) {
     deleteModal:{
       display: false,
       fileId: null
-    }
+    },
+    isUploading: false
   };
   
   if(prefilled && Object.keys(prefilled).length !== 0) state.form = prefilled;
@@ -69,6 +70,17 @@ export function setFormData(state, target) {
   return Object.assign({}, state, {
     form: formStateChild,
     validation: validationStateChild
+  });
+}
+
+/**
+ * Set isUploading state - for display the loading circle + disable/enable buttons
+ * @param {Object} state Targeted state to be changed.
+ * @param {Boolean} boolean True or false
+ */
+export function setIsUploading(state, boolean) {
+  return Object.assign({}, state, {
+    isUploading: boolean
   });
 }
 
