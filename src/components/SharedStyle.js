@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import {
   HelpBlock,
   Glyphicon,
-  FormControl
+  FormControl,
+  Button
 } from 'react-bootstrap';
 import Select from 'react-select';
 
@@ -86,11 +87,26 @@ export const FormSelect = styled(Select)`
   }
 `;
 
-
 export const BreakLine = styled.div`
   border:1px solid #eee;
   margin-top: ${props => props.top ? props.top : 0};
   margin-right: ${props => props.right ? props.right : 0};
   margin-bottom: ${props => props.bottom ? props.bottom : 0};
   margin-left: ${props => props.left ? props.left : 0};
+`;
+
+export const FileList = styled.div`
+  width: 100%;
+  height: 24px;
+  margin-bottom: 8px;
+
+`;
+
+export const FileLink = styled(Button)`
+  color: #000 !important; 
+  float: left;
+  width: 70%;
+  word-break: break-all;
+  white-space: normal !important;
+  text-align: left !important;
 `;

@@ -6,14 +6,20 @@ export function initData(prefilled) {
       clinicalInfo: '',
       relevantInvestigation: '',
       familyHistory: '',
-      consanguinityInfo: '',
-      consanguinity: false
+      attachments: [],
+      consanguinity: false,
+      consanguinityInfo: ''
     },
     validationRule: {
       clinicalInfo: 'required'
     },
     validated: false,
-    formId: 'clinicalInfoModule'
+    formId: 'clinicalInfoModule',
+    deleteModal:{
+      display: false,
+      fileId: null
+    },
+    isUploading: false
   };
   
   if(prefilled && Object.keys(prefilled).length !== 0) state.form = prefilled;
@@ -46,13 +52,12 @@ export function setFormData(state, target) {
       break;
   } 
 
-  if(value === false) {
+  if(value === false && target.name === 'consanguinity') {
     formStateChild = Object.assign({}, state.form, {
       [target.name]: value,
       consanguinityInfo: ''
     });
-  }
-  else {
+  } else {
     formStateChild = Object.assign({}, state.form, {
       [target.name]: value
     });
@@ -65,6 +70,72 @@ export function setFormData(state, target) {
   return Object.assign({}, state, {
     form: formStateChild,
     validation: validationStateChild
+  });
+}
+
+/**
+ * Set isUploading state - for display the loading circle + disable/enable buttons
+ * @param {Object} state Targeted state to be changed.
+ * @param {Boolean} boolean True or false
+ */
+export function setIsUploading(state, boolean) {
+  return Object.assign({}, state, {
+    isUploading: boolean
+  });
+}
+
+/**
+ * Adds an attachment.
+ * @param {Object} state Targeted state to be changed.
+ * @param {Object} file File for upload.
+ */
+export function addAttachment(state, file, id) {
+  var attachments = state.form.attachments.slice();
+  attachments.push({
+    filename: file.name,
+    preview: file.preview,
+    id: id
+  });
+  
+  var formStateChild = Object.assign({}, state.form, {
+    attachments: attachments
+  });
+  
+  return Object.assign({}, state, {
+    form: formStateChild
+  });
+}
+
+/**
+ * This sets the form's family member data upon onFamilyMemberChange.
+ * @param {Object} state Targeted state to be changed.
+ * @param {Integer} index Id of the family member in the array.
+ */
+export function removeAttachment(state, index) {
+  var attachments = state.form.attachments.slice();
+  attachments.splice(parseInt(index, 0), 1);
+  
+  var formStateChild = Object.assign({}, state.form, {
+    attachments: attachments
+  });
+  
+  return Object.assign({}, state, {
+    form: formStateChild
+  });
+}
+
+/**
+ * Set the state for the delete modal.
+ * @param {Object} state Targeted state to be changed.
+ * @param {Boolean} display Whether to display the delete modal.
+ * @param {Integer} fileId The index of file to be removed.
+ */
+export function setDeleteModal(state, display, fileId) {
+  return Object.assign({}, state, {
+    deleteModal: {
+      display: display,
+      fileId: fileId
+    }
   });
 }
 

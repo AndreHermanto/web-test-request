@@ -60,7 +60,7 @@ export default function TextArea({
         value={formState && formState[field]}
         style={{ minHeight: 90 }}
       />
-      <FormControl.Feedback style={{ marginTop: 16 }} />
+      <FormControl.Feedback style={{ marginTop: 36 }} />
       <ValidationFeedback>{validator.feedback}</ValidationFeedback>
     </FormGroup>
   );

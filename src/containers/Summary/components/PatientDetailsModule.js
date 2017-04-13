@@ -14,6 +14,10 @@ import {
   SummaryNotes,
   SectionHeading
 } from '../summaryStyled';
+import { 
+  FileList,
+  FileLink
+} from './../../../components/SharedStyle';
 import { isoToShortDate } from './../../../components/dateConvert';
 
 /**
@@ -131,6 +135,30 @@ class PatientDetailsModule extends Component
             </SummaryNotes>
           </Col>
         }
+
+        {
+          (this.props.clinicalInfo.attachments && this.props.clinicalInfo.attachments.length > 0) &&
+          <Col md={12}>
+            <SummaryTitle> Attachments </SummaryTitle>
+              <div>
+              { 
+                this.props.clinicalInfo.attachments.map((attachment, $index) => {
+                  return <FileList key={$index}>
+                    <FileLink 
+                      bsStyle="link" 
+                      onClick={() => window.open(attachment.preview, '_blank')}
+                      style={{ padding: '6px 0'}}
+                    >
+                      <Glyphicon glyph="file"/> {attachment.filename}
+                    </FileLink>
+                  </FileList>
+                })
+              }
+            </div>
+            <br />
+          </Col>
+        }
+
         <Col md={12}>
           <SummaryDetails> 
             <SummaryTitle> Consanguinity:  </SummaryTitle>
