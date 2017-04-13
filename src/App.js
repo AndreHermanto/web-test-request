@@ -54,10 +54,9 @@ class App extends Component {
       formComponent.state.form
     ));
   }
-  
 
-  handleEdit() {
-    this.setState(setFormEditState(this.state));
+  handleEdit(boolean) {
+    this.setState(setFormEditState(this.state, boolean));
   }
   
   handleClean() {
@@ -162,7 +161,7 @@ class App extends Component {
             </Col>
           </Row>
         </Grid> 
-        <Footer />
+        <Footer />{this.state.formInput.billingInfoModule && JSON.stringify(this.state.formInput.billingInfoModule)}
       </div>
     );
   }

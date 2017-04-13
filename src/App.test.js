@@ -83,7 +83,7 @@ describe('App', () => {
   
   test('handleEdit', () => {
     const page = TestUtils.renderIntoDocument(<App />);
-    page.handleEdit();
+    page.handleEdit(true);
     expect(page.state.isEdited).toEqual(true);  
   });
   

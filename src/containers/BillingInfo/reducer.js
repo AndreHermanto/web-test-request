@@ -175,8 +175,9 @@ export function setSelectData(state, value) {
 }
 
 /**
- * Set "validated" state to true - identifying the confirm button is clicked and validation processed.
+ * Set pricing.
  * @param {Object} state Targeted state to be changed.
+ * @param {Object[]} value A breakdown array used to caluclate pricing.
  */
 export function setPricing(state, value) {
   let totalPrice = value[value.length - 1].price;

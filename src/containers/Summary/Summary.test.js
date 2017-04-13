@@ -58,6 +58,7 @@ describe('Summary: index', () => {
     route: {
       onChange: jest.fn(),
       onEdit: jest.fn(),
+      isEdited: true,
       testRequest: {
         orderTestModule: testData,
         patientDetailsModule: patientData,
@@ -81,6 +82,35 @@ describe('Summary: index', () => {
     submitStatus:''
   }
   
+  test('componentWillMount calls onEdit', () => {
+    var page = TestUtils.renderIntoDocument(React.createElement(Summary, props));                                         
+    page.componentWillMount();
+    expect(page.props.route.onEdit).toHaveBeenCalled();
+  });
+  
+  test('priceChange calls onChange in props', async () => {
+    FetchMock.mock('*', {
+      "data": {
+        "panelId": "58e5a5c21020a1e8075ed313",
+        "payer": "asdf",
+        "breakdown": [
+          {
+            "description": "Catecholaminergic Polymorphic Ventricular Tachycardia (CPVT)",
+            "price": 40
+          },
+          {
+            "description": "TOTAL PRICE",
+            "price": 40
+          }
+        ]
+      }
+    });
+    var page = TestUtils.renderIntoDocument(React.createElement(Summary, props));                                         
+    await page.priceChange();
+    expect(page.props.route.onChange).toHaveBeenCalled();
+    FetchMock.restore(); 
+  });
+  
   test('handleBack works', () =>  {
     var page = TestUtils.renderIntoDocument(React.createElement(Summary, props));                                         
     page.handleBack();
@@ -99,6 +129,7 @@ describe('Summary: index', () => {
     page.handleChange(event);
     expect(page.state.form.signature).toEqual(true); 
   });
+  
   test('handleEdit works', () =>  {
     var page = TestUtils.renderIntoDocument(React.createElement(Summary, props));                                     
     page.handleEdit('step1');
@@ -119,5 +150,12 @@ describe('Summary: index', () => {
     });
     
     FetchMock.restore();
+  });
+  
+  test('handleValidateSubmit works', () =>  {
+    var page = TestUtils.renderIntoDocument(React.createElement(Summary, props));   
+    page.state.validation = [{ status: null }, { status: null }];
+    page.handleValidateSubmit();
+    expect(page.state.submitStatus).toEqual('loading');
   });
 });

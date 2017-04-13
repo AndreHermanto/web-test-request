@@ -4,13 +4,13 @@ export function initData(testRequest) {
   var state = {
     form: {
       testRequest,
-      signature:false
+      signature: false
     },
     validationRule: {
       signature: 'signatureTrue',
     },
     validated: false,
-    submitStatus:''
+    submitStatus: ''
   };
   // This validates the data in the initial state.
   state.validation = {};
@@ -51,6 +51,25 @@ export function setSignatureData(state, target) {
     validation: validationStateChild
   });
 }
+
+/**
+ * Set pricing.
+ * @param {Object} state Targeted state to be changed.
+ * @param {Object[]} value A breakdown array used to caluclate pricing.
+ */
+export function setPricing(state, value) {
+  let totalPrice = value[value.length - 1].price;
+  let formStateChild = Object.assign({}, state, {
+    billPrice: totalPrice
+  });
+  let newState = Object.assign({}, {
+    form: formStateChild,
+    formId: 'billingInfoModule'
+  });
+  
+  return { state: newState };
+}
+
 /**
  * Set "validated" state to true - identifying the confirm button is clicked and validation processed.
  * @param {Object} state Targeted state to be changed.
