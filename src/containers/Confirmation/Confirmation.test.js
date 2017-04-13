@@ -5,70 +5,105 @@ import TestUtils from 'react-addons-test-utils';
 import FetchMock from 'fetch-mock';
 import Confirmation from './index';
 
-const patientData = {
-  "lastName":"abcabc",
-  "firstName":"Ngabcuyen",
-  "dob":"1/February/1917",
-  "medicalRecordNo":"123123",
-  "gender":"Male",
-  "genderOther":"",
-  "ethnicity":"Asian",
-  "deceased":false,
-  "sampleSource":"",
-  "consent":false
+const data = {
+  "orderTestModule": {
+        "test": {
+            "id": "58c74b7c1020a1eb58e9dfac",
+            "label": "Dilated Cardiomyopathy (DCM), Core Panel",
+            "geneLists": []
+        }
+    },
+    "patientDetailsModule": {
+        "lastName": "Agudo",
+        "firstName": "Joshua",
+        "dob": "2020-02-02",
+        "medicalRecordNo": "",
+        "gender": "Male",
+        "genderOther": "",
+        "ethnicity": "Filipino",
+        "deceased": false,
+        "sampleSource": "",
+        "consent": true
+    },
+    "clinicalInfoModule": {
+        "clinicalInfo": "Here is some clinical information",
+        "affected": false,
+        "relevantInvestigation": "",
+        "familyHistory": "",
+        "consanguinity": false
+    },
+    "familyMembersModule": {
+        "familyMembers": [
+            {
+                "familyMemberDetails": {
+                    "lastName": "Blah",
+                    "firstName": "Mother",
+                    "dob": "2020-02-02",
+                    "medicalRecordNo": "adsa",
+                    "gender": "Female",
+                    "genderOther": "",
+                    "ethnicity": "",
+                    "deceased": false,
+                    "sampleSource": "",
+                    "consent": true
+                },
+                "familyMemberClinicalInfo": {
+                    "clinicalInfo": "adssda",
+                    "affected": true,
+                    "relevantInvestigation": "",
+                    "familyHistory": "",
+                    "consanguinity": false
+                }
+            }
+        ]
+    },
+    "clinicianDetailsModule": {
+        "providerNumber": "123123",
+        "medicalSpecialty": "IBD",
+        "firstName": "Boaty",
+        "lastName": "McBoatFace",
+        "organisation": "Garvan Institute",
+        "phone": "12390098123",
+        "email": "slkjs@alkjs.com",
+        "fax": "",
+        "copy": false,
+        "copyToHCP": [
+                {
+                    "firstName": "Hello",
+                    "lastName": "World",
+                    "organisation": "Some organisation",
+                    "email": "hello@world.com"
+                }
+        ],
+    },
+    "billingInfoModule": {
+        "billOption": "Private",
+        "payer": "Joshua Agudo",
+        "phone": "1231232131",
+        "firstName": "Joshua",
+        "lastName": "Agudo",
+        "payerEmail": "joshua.agudo@genome.one",
+        "consent": true
+    },
+    "signature": false
 }
 
-const familyData = {"familyMembers":[{"familyMemberDetails":{"lastName":"abc@abc.com","firstName":"abc@abc.com","dob":"2/January/1918","medicalRecordNo":"abc@abc.com","gender":"Female","genderOther":"","ethnicity":"","deceased":false,"sampleSource":"","consent":false},"familyMemberClinicalInfo":{"clinicalInfo":"abc@abc.com","affected":true,"relevantInvestigation":"asdasdasd","familyHistory":"asdasdasdasd","consangunity":false}},
-  {"familyMemberDetails":{"lastName":"ab.com","firstName":"abcsadkfhkladsfj","dob":"2/January/1918","medicalRecordNo":"abc@abc.com","gender":"Male","genderOther":"","ethnicity":"","deceased":true,"sampleSource":"","consent":false},"familyMemberClinicalInfo":{"clinicalInfo":"abc@abc.com","affected":false,"relevantInvestigation":"asdasdasdasd","familyHistory":"asdasd","consangunity":true}}]};  
-const clinicianDetails = {
-  "providerNumber":"as","medicalSpecialty":"as","firstName":"John",
-  "lastName":"Doe","organisation":"as","phone":"as","email":"asfd@abc.com","fax":"as",
-  "copyToHCP":[{"firstName":"asdf","lastName":"asdf","organisation":"adsf","email":"asfd@abc.com"},
-  {"firstName":"asdf","lastName":"asdf","organisation":"adsf","email":"asfd@abc.com"}],
-  "copy":false
-}
-
-const clinicalData = {
-  clinicalInfo: "Dissuade ecstatic and properly saw entirely sir why laughter endeavor. In on my jointure horrible margaret suitable he followed speedily. Indeed vanity excuse or mr lovers of on. By offer scale an stuff. Blush be sorry no sight. Sang lose of hour then he left find",
-  consangunity: false,
-  familyHistory: "kasdfbljkbfalhfasvfkjabskldfbkjsdfbkdashfvdjhfhb;kfjv;hfv;fjbafhb;akfd",
-  relevantInvestigation:"asdkfhgasdlfhabsdlfjhalsfdjh"
-}
-
-const billingInfo = {
-  payer:"abc abc",
-  phone:"+61412334477",
-  payerEmail:"abc@gmail.com",
-  firstName:"abc",
-  lastName:"abc",
-  billOption:"Private"
-}
-
-const testData = {
-  test: {
-    id:'7052d137-a166-48b0-a52e-e05a167bd176',
-    label: 'Consequatur adipisci modi laudantium tenetur ea exercitationem id',
-    geneLists:[{
-      type: "complete",
-      genes: ["GZOW","KIHG","DRCO","DWBY","ZMZY","BMBP","OLZO","PZOA"]
-    }]
-  }
-}
 
 const confirmationData = {
-  orderTestModule: testData,
-  patientDetailsModule: patientData,
-  clinicalInfoModule: clinicalData,
-  familyMembersModule: familyData,
-  clinicianDetailsModule:clinicianDetails,
-  billingInfoModule: billingInfo,
-  id: 1
+  id:1,
+  orderTestModule: data.orderTestModule,
+  patientDetailsModule: data.patientDetailsModule,
+  clinicalInfoModule: data.clinicalInfoModule,
+  familyMembersModule: data.familyMembersModule,
+  clinicianDetailsModule:data.clinicianDetailsModule,
+  billingInfoModule: data.billingInfoModule
 }
 
 const props = {
   route: {
     onChange: jest.fn(),
     onClean: jest.fn(),
+    isReSubmit: false,
     data: confirmationData
   },
   params: { id: 1 },

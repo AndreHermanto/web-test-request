@@ -81,12 +81,14 @@ describe('App', () => {
     expect(page.state.formInput.familyMembersModule.familyMembers.length).toEqual(2);  
   });
   
-  test('handleEdit', () => {
+  test('handleFormState and handleClean', () => {
     const page = TestUtils.renderIntoDocument(<App />);
-    page.handleEdit(true);
-    expect(page.state.isEdited).toEqual(true);  
+    page.handleFormState('isEdited', true);
+    expect(page.state.isEdited).toEqual(true); 
+    page.handleClean(); 
+    expect(page.state.isEdited).toEqual(false); 
   });
-  
+
   test('preventUnvisitedFormAccess prevents access to later steps when the current step has not been completed.', () => {
     const page = TestUtils.renderIntoDocument(React.createElement(App, props));
     page.props.router.replace = jest.fn();

@@ -19,12 +19,15 @@ import Confirmation from './../containers/Confirmation';
 
 function Routes({ 
   onChange,
-  onClean,
   onFamilyMemberChange,
   onFamilyMemberDelete,
+  onFormState,
+  onClean,
   data,
-  onEdit,
   isEdited,
+  isSubmitted,
+  isReSubmit,
+  lastestRequestID,
   redirectStepOne,
   preventUnvisitedFormAccess
 }) {
@@ -109,13 +112,14 @@ function Routes({
           component={Summary}
           onChange={onChange}
           testRequest={data}
-          onEdit={onEdit}
+          onFormState={onFormState}
           isEdited={isEdited}
+          isSubmitted={isSubmitted}
+          lastestRequestID={lastestRequestID}
           preventUnvisitedFormAccess={preventUnvisitedFormAccess}
         />
       </Route>
-
-      <Route path="/confirmation/:id" component={Confirmation} data={data} onClean={onClean}/>
+      <Route path="/confirmation/:id" component={Confirmation} data={data} isReSubmit={isReSubmit} onClean={onClean}/>
     </Router>
   );
 }

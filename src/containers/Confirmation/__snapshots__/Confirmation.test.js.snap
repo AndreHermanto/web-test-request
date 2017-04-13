@@ -73,5 +73,9 @@ exports[`Confirmation test Confirmation page renders without crashing 1`] = `
   </div>
   <div
     className="printMe" />
+  <div
+    className="notification-container notification-container-empty">
+    <span />
+  </div>
 </div>
 `;

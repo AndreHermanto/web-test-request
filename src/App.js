@@ -10,7 +10,7 @@ import UniversalNavigation from './components/UniversalNavigation';
 import Footer from './components/Footer';
 import { 
   setFormInputData,
-  setFormEditState,
+  setFormState,
   setFamilyMemberData,
   deleteFamilyMemberData,
   validatedToTrue,
@@ -24,12 +24,15 @@ class App extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleFamilyMemberChange = this.handleFamilyMemberChange.bind(this);
     this.handleFamilyMemberDelete = this.handleFamilyMemberDelete.bind(this);
-    this.handleEdit = this.handleEdit.bind(this);
+    this.handleFormState = this.handleFormState.bind(this);
     this.handleClean = this.handleClean.bind(this);
     this.redirectStepOne = this.redirectStepOne.bind(this);
     this.state = {
       formInput: {},
-      isEdited: false
+      isEdited: false,
+      isSubmitted: false,
+      isReSubmit: false,
+      lastestRequestID:null
     }
   }
   
@@ -55,8 +58,9 @@ class App extends Component {
     ));
   }
 
-  handleEdit(boolean) {
-    this.setState(setFormEditState(this.state, boolean));
+
+  handleFormState(state, value) {
+    this.setState(setFormState(this.state, state, value));
   }
   
   handleClean() {
@@ -130,6 +134,11 @@ class App extends Component {
     if(pass && nextLocation.pathname === '/summary' && this.props.route.isEdited) {
       return true;
     }
+
+    if(nextLocation.pathname === '/confirmation' && !this.props.route.isSubmitted) {
+      NotificationManager.success('Your request has been submitted successfully', 'Success!', 6000);
+      return true;
+    }
     
     // If any url other than back/next a step, it will block the accessand enforce the user to use the buttons. 
     NotificationManager.warning('Please do not intend to skip the form via manually editing the url', 'Steps cannot be skipped.', 6000);
@@ -152,8 +161,11 @@ class App extends Component {
                 onFamilyMemberChange={this.handleFamilyMemberChange}
                 onFamilyMemberDelete={this.handleFamilyMemberDelete}
                 data={this.state.formInput}
-                onEdit={this.handleEdit}
+                onFormState={this.handleFormState}
                 isEdited={this.state.isEdited}
+                isSubmitted={this.state.isSubmitted}
+                isReSubmit={this.state.isReSubmit}
+                lastestRequestID={this.state.lastestRequestID}
                 redirectStepOne={this.redirectStepOne}
                 preventUnvisitedFormAccess={this.preventUnvisitedFormAccess}
               />
@@ -161,7 +173,7 @@ class App extends Component {
             </Col>
           </Row>
         </Grid> 
-        <Footer />{this.state.formInput.billingInfoModule && JSON.stringify(this.state.formInput.billingInfoModule)}
+        <Footer />
       </div>
     );
   }

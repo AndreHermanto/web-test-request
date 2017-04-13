@@ -1,5 +1,5 @@
 import React from 'react';
-import { setFormInputData, setFormEditState, cleanFormState } from './rootReducer';
+import { setFormInputData, setFormState, cleanFormState } from './rootReducer';
 
 describe('rootReducer', () => {
   test('add a property in form state without interfering other state properties', () => {
@@ -33,12 +33,12 @@ describe('rootReducer', () => {
     });
   });
 
-  it('set edit state if move back from summary', () => {
+  it('set form state function test', () => {
 
     const state = { 
       isEdited: false
     };
-    const newState = setFormEditState(state, true);
+    const newState = setFormState(state, 'isEdited', true);
     expect(newState.isEdited).toEqual(true);
   });
 

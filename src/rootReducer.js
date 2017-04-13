@@ -63,11 +63,11 @@ export function deleteFamilyMemberData(state, index) {
 }
 
 /**
- * set isEdited to true if user move back from summary page
+ * set form state to check whether isEdited or isSubmitted 
  */
-export function setFormEditState(state, boolean) {
+export function setFormState(state, name, value) {
   return Object.assign({}, state, {
-    isEdited: boolean
+    [name]: value
   })
 }
 
@@ -87,6 +87,8 @@ export function validatedToTrue(state) {
 export function cleanFormState(state) {
   return Object.assign({}, state, {
     formInput: {},
-    isEdited: false
+    isEdited: false,
+    isSubmitted: false,
+    isReSubmit: false
   })
 }
