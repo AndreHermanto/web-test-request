@@ -13,6 +13,7 @@ import './print.css'
 import { 
   FormButton
 } from './../../components/SharedStyle';
+import { NotificationContainer, NotificationManager } from 'react-notifications';
 
 const ConfirmationBox = styled.div`
   width: 80%;
@@ -45,10 +46,20 @@ class Confirmation extends Component {
   }
   
   componentWillMount() {
+    if(!this.props.route.isReSubmit) {
+      setTimeout(function() { 
+        NotificationManager.success('Your request has been submitted successfully', 'Success', 6000);
+      }, 100);
+    }
+    else {
+      setTimeout(function() { 
+        NotificationManager.warning('Your request has already been submitted', 'Already been submitted', 6000);
+      }, 100);
+    }
     return getTestRequestById(this.props.params.id)
       .then((data) => {
         this.setState(setRetrievedData(this.state, data));
-      });
+    });
   }
   
   handlePrintButtonClick(type) {
@@ -138,6 +149,7 @@ class Confirmation extends Component {
             />
           }
         </div>
+        <NotificationContainer/>
       </div>
     );
   }

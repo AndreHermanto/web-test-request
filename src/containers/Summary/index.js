@@ -42,7 +42,7 @@ class Summary extends Component {
   componentWillMount() {
     // This will ensure the priceChange only happen once. Please do not remove this if statement.
     if(this.props.route.isEdited) {
-      this.props.route.onEdit(false); 
+      this.props.route.onFormState('isEdited', false); 
       this.priceChange(); 
     }
   }
@@ -64,7 +64,7 @@ class Summary extends Component {
   }
 
   handleEdit(step) {
-    this.props.route.onEdit(true); 
+    this.props.route.onFormState('isEdited', true); 
     this.props.router.push(step);
   }
   
@@ -79,10 +79,11 @@ class Summary extends Component {
 
   handleSubmit() {
     this.setState(setSubmitData(this.state, this.state.form.signature));
-    return submitTestRequest(this.state.form.testRequest)
-      .then((response) => {
-        if(!response.ok) {
-          setTimeout(function() { 
+    if(!this.props.route.isSubmitted) {
+      return submitTestRequest(this.state.form.testRequest)
+        .then((response) => {
+          if(!response.ok) {
+            setTimeout(function() { 
             this.setState(setSubmitStatusData(this.state, ''));
             NotificationManager.error('Error','Submit fail', 1000); 
           }.bind(this), 100);
@@ -91,11 +92,20 @@ class Summary extends Component {
           this.setState(setSubmitStatusData(this.state, ''));
           return response.json();
         }
-    })
-    .then((json) => {
-      if(json) this.props.router.push('/confirmation/' + json.data.id);
-      return json;
-    })
+      })
+      .then((json) => {
+        if(json) {
+          this.props.route.onFormState('isSubmitted', true); 
+          this.props.route.onFormState('lastestRequestID', json.data.id)
+          this.props.router.push('/confirmation/' + json.data.id);
+        }
+        return json;
+      })
+    }
+    else {
+      this.props.route.onFormState('isReSubmit', true);
+      this.props.router.push('/confirmation/' + this.props.route.lastestRequestID); 
+    }
   }
   
   handleValidateSubmit() {

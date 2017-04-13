@@ -57,8 +57,8 @@ describe('Summary: index', () => {
   var props = {
     route: {
       onChange: jest.fn(),
-      onEdit: jest.fn(),
       isEdited: true,
+      onFormState: jest.fn(),
       testRequest: {
         orderTestModule: testData,
         patientDetailsModule: patientData,
@@ -85,7 +85,7 @@ describe('Summary: index', () => {
   test('componentWillMount calls onEdit', () => {
     var page = TestUtils.renderIntoDocument(React.createElement(Summary, props));                                         
     page.componentWillMount();
-    expect(page.props.route.onEdit).toHaveBeenCalled();
+    expect(page.props.route.onFormState).toHaveBeenCalled();
   });
   
   test('priceChange calls onChange in props', async () => {
