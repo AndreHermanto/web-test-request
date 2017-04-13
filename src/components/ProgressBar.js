@@ -1,22 +1,25 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { hashHistory } from 'react-router';
-import { Row, Col } from 'react-bootstrap';
 
 const Content = styled.strong`
   display: block;
   font-weight: 500;
 `;
 
-const Container = styled(Col)`
+const Container = styled.div`
   padding-top: 30px;
-  padding-left: 77px !important;
-
+  padding-left: 10%;
+  width: 30%;
+  float: left;
+  overflow: hidden;
 `;
 
-const ContainerContent = styled(Col)`
-  padding-left: 70px !important;
-  border-left: thin solid #CCC;
+const ContainerContent = styled.div`
+  width: 70%
+  padding-left: 6%;
+  float: left;
+  border-left: thin solid #e7e7e7;
 `;
 
 const Lists = styled.ul`
@@ -85,7 +88,7 @@ const Active = styled.li`
       left: -30px;
       height: 100%;
       width: 10px;
-      border-left: 2px solid green;
+      border-left: 2px solid #CCC;
     }
     
     &::after {
@@ -112,8 +115,7 @@ export default class ProgressBar extends Component
   {  
     return(
     <div style={{ display: hashHistory.getCurrentLocation().pathname === "/confirmation" ? 'none' : 'block' }}>
-      <Row>
-        <Container md={3}>
+        <Container>
           <Lists>
           {hashHistory.getCurrentLocation().pathname === "/step1"?
             <Active>
@@ -186,10 +188,9 @@ export default class ProgressBar extends Component
           } 
           </Lists>
         </Container>
-        <ContainerContent md={9}>
+        <ContainerContent>
           {this.props.children}
         </ContainerContent>
-      </Row>
     </div>
     )
   }

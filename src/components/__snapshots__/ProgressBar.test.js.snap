@@ -6,50 +6,61 @@ exports[`ProgressBar renders without crashing 1`] = `
     }
   }>
   <div
-    className="row">
-    <div
-      className="jdYBqz">
-      <ul
-        className="LOkzU">
-        <li
-          className="jCRgif"
-          style={Object {}}>
+    className="jnaMsl">
+    <ul
+      className="ggxPyW">
+      <li
+        className="hjLEmf">
+        <strong
+          className="bnFmTM">
           Select Test
-        </li>
-        <li
-          className="jCRgif"
-          style={Object {}}>
+        </strong>
+      </li>
+      <li
+        className="hjLEmf">
+        <strong
+          className="bnFmTM">
           Patient Details
-        </li>
-        <li
-          className="jCRgif"
-          style={Object {}}>
+        </strong>
+      </li>
+      <li
+        className="hjLEmf">
+        <strong
+          className="bnFmTM">
           Clinical Information
-        </li>
-        <li
-          className="jCRgif"
-          style={Object {}}>
+        </strong>
+      </li>
+      <li
+        className="hjLEmf">
+        <strong
+          className="bnFmTM">
           Family Member
-        </li>
-        <li
-          className="jCRgif"
-          style={Object {}}>
+        </strong>
+      </li>
+      <li
+        className="hjLEmf">
+        <strong
+          className="bnFmTM">
           Clinician Details
-        </li>
-        <li
-          className="jCRgif"
-          style={Object {}}>
+        </strong>
+      </li>
+      <li
+        className="hjLEmf">
+        <strong
+          className="bnFmTM">
           Billing Info
-        </li>
-        <li
-          className="jCRgif"
-          style={Object {}}>
+        </strong>
+      </li>
+      <li
+        className="hjLEmf">
+        <strong
+          className="bnFmTM">
           Summary
-        </li>
-      </ul>
-    </div>
+        </strong>
+      </li>
+    </ul>
   </div>
   <div
-    className="row" />
+    className="hIqpFl" />
 </div>
 `;
