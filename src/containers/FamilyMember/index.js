@@ -128,6 +128,7 @@ class FamilyMember extends Component {
   
   handleConfirm() {
     this.doneConfirm = true;
+    this.setState(setOptFamily(this.state,this.state.form.optFamily));
     return this.setState(validatedToTrue(this.state), () => {    
       var pass = true;
       for (var field in this.state.validation) {
