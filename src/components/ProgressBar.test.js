@@ -43,25 +43,4 @@ describe('ProgressBar', function() {
     const page = renderer.create(React.createElement(ProgressBar, props)).toJSON();
     expect(page).toMatchSnapshot();
   });
-
-  /*it('checkPatientDetails', function() {
-  	expect(view.checkPatientDetails(props.route.data)).toBe(true);
-  	expect(view.checkPatientDetails({})).toBe(false);
-  });
-
-  it('checkClinicalInfo', function() {
-  	expect(view.checkClinicalInfo(props.route.data)).toBe(true);
-  	expect(view.checkClinicalInfo({})).toBe(false);
-  });
-
-  it('checkClinicianDetails', function() {
-  	expect(view.checkClinicianDetails(props.route.data)).toBe(true);
-  	expect(view.checkClinicianDetails({})).toBe(false);
-  });
-
-  it('checkBillingInfo', function() {
-  	expect(view.checkBillingInfo(props.route.data)).toBe(true);
-  	expect(view.checkBillingInfo({})).toBe(false);
-  });
-  */
 });
