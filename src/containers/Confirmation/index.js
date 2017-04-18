@@ -32,6 +32,7 @@ const ConfirmationNote = styled.h4`
   margin-top: 10px;
 `;
 
+
 /**
 * Confirmation - UI for ordering type of tests, selecting disorder and related genes for testing.
 */
@@ -47,7 +48,7 @@ class Confirmation extends Component {
   
   componentWillMount() {
     if(!this.props.route.isReSubmit) {
-      setTimeout(function() { 
+      setTimeout(function() {  
         NotificationManager.success('Your request has been submitted successfully', 'Success', 6000);
       }, 100);
     }
@@ -149,7 +150,7 @@ class Confirmation extends Component {
             />
           }
         </div>
-        <NotificationContainer/>
+          <NotificationContainer/>
       </div>
     );
   }

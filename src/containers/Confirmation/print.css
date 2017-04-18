@@ -8,6 +8,9 @@
 @media print {
   .noPrint {display: none;}
   .printMe {display: block;}
+  .notification-success, .notification-warning{
+    display: none;
+  }
 }
 
 
