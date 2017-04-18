@@ -1,0 +1,30 @@
+exports[`EmptyFamilyMemberModule test renders without crashing  1`] = `
+<div
+  className="iKCvIz">
+  <h3
+    className="iArjKn">
+    Family Member
+    <button
+      className="btn btn-link"
+      disabled={false}
+      onClick={[Function]}
+      type="button">
+      <span
+        className="glyphicon glyphicon-pencil" />
+       Edit
+    </button>
+  </h3>
+  <div
+    className="dgEelt" />
+  <div
+    className="row">
+    <div
+      className="col-md-12">
+      <p
+        className="cEiVmq">
+        No family member is included for this test.
+      </p>
+    </div>
+  </div>
+</div>
+`;
