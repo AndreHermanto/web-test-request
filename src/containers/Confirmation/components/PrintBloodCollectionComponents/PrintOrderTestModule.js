@@ -1,13 +1,12 @@
 import React from 'react';
 import {
   PrintHeading,
-  Gene,
-  Section
+  Gene
 } from './../sharedPrintStyle';
 // PrintOrderTestModule section
 export default function PrintOrderTestModule(props) {
   return (
-    <Section>
+    <div>
       <PrintHeading>
         Test Ordered
       </PrintHeading>
@@ -29,6 +28,6 @@ export default function PrintOrderTestModule(props) {
         }
         </div>
       )}
-    </Section>
+    </div>
   );
 }

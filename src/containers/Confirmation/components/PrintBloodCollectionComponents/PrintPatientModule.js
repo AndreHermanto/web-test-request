@@ -1,15 +1,14 @@
 import React from 'react';
 import {
   PrintHeading,
-  PageBreak,
-  Section
+  PageBreak
 } from './../sharedPrintStyle';
 import { isoToShortDate } from './../../../../components/dateConvert';
 
 // PrintPatientModule section
 export default function PrintPatientModule(props) {
   return (
-    <Section>
+    <div>
       <PrintHeading>
         {props.patientDetails.firstName + ' ' + props.patientDetails.lastName} - Patient
       </PrintHeading>
@@ -84,6 +83,6 @@ export default function PrintPatientModule(props) {
           </p>
         </div>
       }
-    </Section>
+    </div>
   );
 }

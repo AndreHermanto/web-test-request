@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   PrintHeading,
-  PageBreak
+  PageEnd
 } from './../sharedPrintStyle';
 // PrintBillingInfoModule page
 export default function PrintBillingInfoModule(props) {
@@ -47,7 +47,7 @@ export default function PrintBillingInfoModule(props) {
         </div>
       }
     
-      <PageBreak/>
+      <PageEnd/>
     </div>
   );
 }

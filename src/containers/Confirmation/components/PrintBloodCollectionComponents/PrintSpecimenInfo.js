@@ -1,7 +1,6 @@
 import React from 'react';
 import {
-  PrintHeading,
-  Section
+  PrintHeading
 } from './../sharedPrintStyle';
 import styled from 'styled-components';
 
@@ -17,7 +16,7 @@ export const TickBox = styled.div`
 // PrintSpecimenInfo section
 export default function PrintSpecimenInfo(props) {
   return (
-    <Section>
+    <div>
       <PrintHeading>
         Specimen Information
       </PrintHeading>
@@ -25,6 +24,6 @@ export default function PrintSpecimenInfo(props) {
       <TickBox /> EDTA Blood: ≥2 mL (neonates); 5-10 mL (adults) <br /><br />
       <TickBox /> DNA: Conc: 10-100ng/uL, Vol: 100uL <br /><br />
       <TickBox /> Other: _______________________________________
-    </Section>
+    </div>
   );
 }

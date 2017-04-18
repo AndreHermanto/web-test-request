@@ -1,19 +1,18 @@
 import React from 'react';
 import {
   PrintHeading,
-  PageBreak,
-  Section
+  PageBreak
 } from './../sharedPrintStyle';
 import { isoToShortDate } from './../../../../components/dateConvert';
 // PrintFamilyModule page
 export default function PrintFamilyModule(props) {
   return (
-    <div>
+    <div style={{marginTop:'-20pt'}}>
       {
         props.familyMember.familyMembers.length > 0 &&
         props.familyMember.familyMembers.map((member, i) => 
         {
-          return <Section key={i}>
+          return <div key={i}>
           <PrintHeading>
             Family Member ({member.familyMemberDetails.relationship}) - {member.familyMemberDetails.firstName + ' ' + member.familyMemberDetails.lastName}
           </PrintHeading>
@@ -91,7 +90,7 @@ export default function PrintFamilyModule(props) {
                 <br />
               </div>
             }
-          </Section>
+          </div>
         })
       }
     </div>

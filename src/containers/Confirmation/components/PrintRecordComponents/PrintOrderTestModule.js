@@ -1,17 +1,16 @@
 import React from 'react';
 import {
   PrintHeading,
-  Gene,
-  Section
+  Gene
 } from './../sharedPrintStyle';
 // PrintOrderTestMobule page
 export default function PrintOrderTestModule(props) {
   return (
-    <Section>
+    <div>
       <PrintHeading>
         Test Ordered
       </PrintHeading>
-      <h4><strong>{props.orderTestModule.test.label}</strong></h4>
+      <h4 style={{fontSize: '16pt'}}><strong>{props.orderTestModule.test.label}</strong></h4>
     
       {
         (props.orderTestModule.test.geneLists.length > 0) && 
@@ -29,6 +28,6 @@ export default function PrintOrderTestModule(props) {
         }
         </div>
       )}
-    </Section>
+    </div>
   );
 }

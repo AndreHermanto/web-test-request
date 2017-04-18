@@ -1,8 +1,7 @@
 import React from 'react';
 import {
   PrintHeading,
-  PageBreak,
-  Section
+  PageBreak
 } from './../sharedPrintStyle';
 import { Glyphicon } from 'react-bootstrap';
 import { isoToShortDate } from './../../../../components/dateConvert';
@@ -13,7 +12,7 @@ import {
 // PrintPatientModule page
 export default function PrintPatientModule(props) {
   return (
-    <Section>
+    <div style={{marginTop:'5pt'}}>
       <PrintHeading>
         Patient - {props.patientDetails.firstName + ' ' + props.patientDetails.lastName}
       </PrintHeading>
@@ -115,6 +114,6 @@ export default function PrintPatientModule(props) {
           }
         </div>
       }
-    </Section>
+    </div>
   );
 }

@@ -1,6 +1,6 @@
 exports[`test PrintRecord renders without crashing  1`] = `
 <div
-  className="dmfEKT">
+  className="hJOtKA">
   <div>
     <div
       className="row">
@@ -97,13 +97,17 @@ exports[`test PrintRecord renders without crashing  1`] = `
     </div>
   </div>
   <br />
-  <div
-    className="hxoQps">
+  <div>
     <h3
-      className="lgKHmt">
+      className="kTDTpA">
       Test Ordered
     </h3>
-    <h4>
+    <h4
+      style={
+        Object {
+          "fontSize": "16pt",
+        }
+      }>
       <strong>
         Consequatur adipisci modi laudantium tenetur ea exercitationem id
       </strong>
@@ -154,9 +158,13 @@ exports[`test PrintRecord renders without crashing  1`] = `
     </div>
   </div>
   <div
-    className="hxoQps">
+    style={
+      Object {
+        "marginTop": "5pt",
+      }
+    }>
     <h3
-      className="lgKHmt">
+      className="kTDTpA">
       Patient - 
       Ngabcuyen abcabc
     </h3>
@@ -211,11 +219,15 @@ exports[`test PrintRecord renders without crashing  1`] = `
       </p>
     </div>
   </div>
-  <div>
-    <div
-      className="hxoQps">
+  <div
+    style={
+      Object {
+        "marginTop": "-20pt",
+      }
+    }>
+    <div>
       <h3
-        className="lgKHmt">
+        className="kTDTpA">
         Family Member (
         ) - 
         abc@abc.com abc@abc.com
@@ -269,10 +281,9 @@ exports[`test PrintRecord renders without crashing  1`] = `
         <br />
       </div>
     </div>
-    <div
-      className="hxoQps">
+    <div>
       <h3
-        className="lgKHmt">
+        className="kTDTpA">
         Family Member (
         ) - 
         abcsadkfhkladsfj ab.com
@@ -334,9 +345,13 @@ exports[`test PrintRecord renders without crashing  1`] = `
     </div>
   </div>
   <div
-    className="hxoQps">
+    style={
+      Object {
+        "marginTop": "-20pt",
+      }
+    }>
     <h3
-      className="lgKHmt">
+      className="kTDTpA">
       Clinician - 
       John Doe
     </h3>
@@ -444,7 +459,7 @@ exports[`test PrintRecord renders without crashing  1`] = `
   </div>
   <div>
     <h3
-      className="lgKHmt">
+      className="kTDTpA">
       Billing Information
     </h3>
     <div>
@@ -474,7 +489,7 @@ exports[`test PrintRecord renders without crashing  1`] = `
       </p>
     </div>
     <div
-      className="caGDDg" />
+      className="fuxWdL" />
   </div>
 </div>
 `;

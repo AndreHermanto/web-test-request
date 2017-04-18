@@ -13,6 +13,7 @@ const Page = styled.div`
   -webkit-region-break-after: always !important;
   position: static !important;
   padding: 0px 75px 0px 75px !important;
+  font-size: 16pt;
 `;
 
 // Print the entire test request

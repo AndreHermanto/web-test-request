@@ -4,8 +4,7 @@ import {
   Col
 } from 'react-bootstrap';
 import {
-  PageBreak,
-  Section
+  PrintHeading
 } from './../sharedPrintStyle';
 import styled from 'styled-components';
 
@@ -41,11 +40,11 @@ const FieldLine = styled.span`
 // PrintOrderTestModule section
 export default function PrintCollectorDeclaration(props) {
   return (
-    <Section>
+    <div>
       <br />
-      <PageBreak />
-      <h3 style={{ textAlign: 'center' }}>Collector Declaration</h3>
-      <PageBreak />
+      <PrintHeading>
+        Collector Declaration
+      </PrintHeading>
       <br />
       
       <FieldRow>
@@ -101,6 +100,6 @@ export default function PrintCollectorDeclaration(props) {
       </FieldRow>
     
   
-    </Section>
+    </div>
   );
 }
