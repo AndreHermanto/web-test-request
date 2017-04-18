@@ -25,7 +25,8 @@ describe('PatientDetailsModule test', () => {
     clinicalInfo: "Dissuade ecstatic and properly saw entirely sir why laughter endeavor. In on my jointure horrible margaret suitable he followed speedily. Indeed vanity excuse or mr lovers of on. By offer scale an stuff. Blush be sorry no sight. Sang lose of hour then he left find",
     consangunity: false,
     familyHistory: "kasdfbljkbfalhfasvfkjabskldfbkjsdfbkdashfvdjhfhb;kfjv;hfv;fjbafhb;akfd",
-    relevantInvestigation:"asdkfhgasdlfhabsdlfjhalsfdjh"
+    relevantInvestigation:"asdkfhgasdlfhabsdlfjhalsfdjh",
+    attachments:[{filename:'aaa', preview:null}]
   }
   const props = {
     patientDetails: patientData,

@@ -111,6 +111,34 @@ exports[`PatientDetailsModule test renders without crashing  1`] = `
     </div>
     <div
       className="col-md-12">
+      <span
+        className="bdMjbs">
+         Attachments 
+      </span>
+      <div>
+        <div
+          className="iubaNK">
+          <button
+            className="jEoofW btn btn-link"
+            disabled={false}
+            onClick={[Function]}
+            style={
+              Object {
+                "padding": "6px 0",
+              }
+            }
+            type="button">
+            <span
+              className="glyphicon glyphicon-file" />
+             
+            aaa
+          </button>
+        </div>
+      </div>
+      <br />
+    </div>
+    <div
+      className="col-md-12">
       <p
         className="cEiVmq">
         <span

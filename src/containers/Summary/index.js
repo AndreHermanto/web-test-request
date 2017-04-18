@@ -20,6 +20,7 @@ import { NotificationContainer, NotificationManager } from 'react-notifications'
 import OrderTestModule from './components/OrderTestModule';
 import PatientDetailsModule  from './components/PatientDetailsModule';
 import FamilyMemberModule from './components/FamilyMemberModule';
+import EmptyFamilyMemberModule from './components/EmptyFamilyMemberModule';
 import ClinicianDetailsModule  from './components/ClinicianDetailsModule';
 import BillingInfoModule from './components/BillingInfoModule';
 
@@ -129,12 +130,14 @@ class Summary extends Component {
         <OrderTestModule orderTestModule={this.state.form.testRequest.orderTestModule} handleOnClick={this.handleEdit}/>
         <PatientDetailsModule patientDetails={this.state.form.testRequest.patientDetailsModule} clinicalInfo={this.state.form.testRequest.clinicalInfoModule} handleOnClick={this.handleEdit}/>
         {
-          this.state.form.testRequest.familyMembersModule.familyMembers.length > 0 &&
+          this.state.form.testRequest.familyMembersModule.familyMembers.length > 0 ?
           this.state.form.testRequest.familyMembersModule.familyMembers.map((member, i) => 
           {
             return <FamilyMemberModule familyMemberDetails={member.familyMemberDetails} familyMemberClinicalInfo={member.familyMemberClinicalInfo}
               handleOnClick={this.handleEdit} key={i}/>
           })
+          :
+          <EmptyFamilyMemberModule handleOnClick={this.handleEdit}/> 
         }
         <ClinicianDetailsModule clinicianDetailsModule={this.state.form.testRequest.clinicianDetailsModule} handleOnClick={this.handleEdit}/>
         <BillingInfoModule billingInfoModule={this.state.form.testRequest.billingInfoModule} clinicianDetailsModule={this.state.form.testRequest.clinicianDetailsModule} handleOnClick={this.handleEdit}/>

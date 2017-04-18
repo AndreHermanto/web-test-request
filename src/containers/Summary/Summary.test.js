@@ -56,8 +56,27 @@ describe('Summary: index', () => {
   
   var props = {
     route: {
-      onChange: jest.fn(),
       isEdited: true,
+      onChange: jest.fn(),
+      onFormState: jest.fn(),
+      testRequest: {
+        orderTestModule: testData,
+        patientDetailsModule: patientData,
+        clinicalInfoModule: {clinicalInfo:'abacbascs'},
+        familyMembersModule: familyData,
+        clinicianDetailsModule: clinicianDetails,
+        billingInfoModule: billingInfo
+      }
+    },
+    router:['/summary']
+  };
+
+  var resubmitProps = {
+    route: {
+      isSubmitted: true,
+      lastestRequestID: 1,
+      isEdited: true,
+      onChange: jest.fn(),
       onFormState: jest.fn(),
       testRequest: {
         orderTestModule: testData,
@@ -147,9 +166,22 @@ describe('Summary: index', () => {
     
     await page.handleSubmit().then((response) => {
        expect(response).toEqual(false);
+       expect(page.state.submitStatus).toEqual('');
     });
     
     FetchMock.restore();
+  });
+
+  test('reSubmit test', async () => {
+    var page = TestUtils.renderIntoDocument(React.createElement(Summary, resubmitProps));
+
+    page.handleSubmit();
+    expect(page.props.route.onFormState).toHaveBeenCalled();
+    // await page.handleSubmit().then((response) => {
+    //    expect(page.props.route.onFormState).toHaveBeenCalled();
+    // });
+    
+    // FetchMock.restore();
   });
   
   test('handleValidateSubmit works', () =>  {
