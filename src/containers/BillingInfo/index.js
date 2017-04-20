@@ -232,7 +232,7 @@ class BillingInfo extends Component {
                 formState={this.state.form}
                 required
               />
-              <Helper style={{marginTop:-5}}>
+              <Helper style={{marginTop:-5, color:'#008b8b'}}>
                 The mobile number entered will be used as the password to open the invoice sent to the payer.
               </Helper>
             </div>
