@@ -7,11 +7,14 @@ import { isoToShortDate } from './../../../../components/dateConvert';
 // PrintFamilyModule page
 export default function PrintFamilyModule(props) {
   return (
-    <div style={{marginTop:'-20pt'}}>
+    <div >
       {
         props.familyMember.familyMembers.length > 0 &&
         props.familyMember.familyMembers.map((member, i) => 
         {
+          let clinicalNotes = member.familyMemberClinicalInfo.clinicalInfo.split(/\r?\n/);
+          let relevantInvestigationNotes = member.familyMemberClinicalInfo.relevantInvestigation.split(/\r?\n/);
+          let consanguinityNotes = member.familyMemberClinicalInfo.consanguinityInfo.split(/\r?\n/);
           return <div key={i}>
           <PrintHeading>
             Family Member ({member.familyMemberDetails.relationship}) - {member.familyMemberDetails.firstName + ' ' + member.familyMemberDetails.lastName}
@@ -61,10 +64,16 @@ export default function PrintFamilyModule(props) {
 
             {
               (member.familyMemberClinicalInfo.consanguinity && member.familyMemberClinicalInfo.consanguinityInfo !== '') &&
-              <p> 
+              <div> 
                 <strong> Consanguinity Information:  </strong>
-                {member.familyMemberClinicalInfo.consanguinityInfo} 
-              </p>
+                {
+                  consanguinityNotes.length > 1 ?
+                  consanguinityNotes.map((ri, i) => {
+                    return <p key={i} style={{fontWeight:200}}>{ri}</p>;
+                  })
+                  : <p>{member.familyMemberClinicalInfo.consanguinityInfo}</p>
+                }
+              </div>
             }
             
             <p> 
@@ -75,18 +84,29 @@ export default function PrintFamilyModule(props) {
             <PageBreak/>
 
             <strong> Clinical note </strong>
-            <p>
-              {member.familyMemberClinicalInfo.clinicalInfo}
-            </p>
+            <div>
+              {
+                clinicalNotes.length > 1 ? 
+                clinicalNotes.map((n, i) => {
+                  return <p key={i}>{n}</p>;
+                }) 
+                : <p>member.familyMemberClinicalInfo.clinicalInfo</p>
+              }
+            </div>
             <br />
-
             {
               member.familyMemberClinicalInfo.relevantInvestigation !== '' &&
               <div>
                 <strong> Relevant investigation </strong>
-                <p>
-                  {member.familyMemberClinicalInfo.relevantInvestigation}
-                </p>
+                <div>
+                {
+                  relevantInvestigationNotes.length > 1 ?
+                  relevantInvestigationNotes.map((ri, i) => {
+                    return <p key={i}>{ri}</p>;
+                  })
+                  : <p>{member.familyMemberClinicalInfo.relevantInvestigation}</p>
+                }
+                </div>
                 <br />
               </div>
             }

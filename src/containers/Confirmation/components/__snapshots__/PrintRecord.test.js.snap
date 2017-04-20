@@ -219,12 +219,7 @@ exports[`test PrintRecord renders without crashing  1`] = `
       </p>
     </div>
   </div>
-  <div
-    style={
-      Object {
-        "marginTop": "-20pt",
-      }
-    }>
+  <div>
     <div>
       <h3
         className="kTDTpA">
@@ -267,17 +262,21 @@ exports[`test PrintRecord renders without crashing  1`] = `
       <strong>
          Clinical note 
       </strong>
-      <p>
-        abc@abc.com
-      </p>
+      <div>
+        <p>
+          member.familyMemberClinicalInfo.clinicalInfo
+        </p>
+      </div>
       <br />
       <div>
         <strong>
            Relevant investigation 
         </strong>
-        <p>
-          asdasdasd
-        </p>
+        <div>
+          <p>
+            asdasdasd
+          </p>
+        </div>
         <br />
       </div>
     </div>
@@ -329,17 +328,21 @@ exports[`test PrintRecord renders without crashing  1`] = `
       <strong>
          Clinical note 
       </strong>
-      <p>
-        abc@abc.com
-      </p>
+      <div>
+        <p>
+          member.familyMemberClinicalInfo.clinicalInfo
+        </p>
+      </div>
       <br />
       <div>
         <strong>
            Relevant investigation 
         </strong>
-        <p>
-          asdasdasdasd
-        </p>
+        <div>
+          <p>
+            asdasdasdasd
+          </p>
+        </div>
         <br />
       </div>
     </div>

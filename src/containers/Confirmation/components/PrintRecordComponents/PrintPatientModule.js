@@ -11,6 +11,10 @@ import {
 } from './../../../../components/SharedStyle';
 // PrintPatientModule page
 export default function PrintPatientModule(props) {
+  let clinicalNotes = props.clinicalInfo.clinicalInfo.split(/\r?\n/);
+  let relevantInvestigationNotes = props.clinicalInfo.relevantInvestigation.split(/\r?\n/);
+  let familyNotes = props.clinicalInfo.familyHistory.split(/\r?\n/);
+  let consanguinityNotes = props.clinicalInfo.consanguinityInfo.split(/\r?\n/);
   return (
     <div style={{marginTop:'5pt'}}>
       <PrintHeading>
@@ -61,27 +65,41 @@ export default function PrintPatientModule(props) {
 
       {
         (props.clinicalInfo.consanguinity && props.clinicalInfo.consanguinityInfo !== '') &&
-        <p> 
+        <div> 
         <strong> Consanguinity Information:  </strong>
-          {props.clinicalInfo.consanguinityInfo} 
-        </p>
+          {
+            consanguinityNotes.length > 1 ?
+            consanguinityNotes.map((ri, i) => {
+              return <p key={i}>{ri}</p>;
+            })
+            : <p>{props.clinicalInfo.consanguinityInfo}</p>
+          }
+        </div>
       }
           
       <PageBreak />
         
       <strong> Clinical note: </strong>
-      <p>
-        {props.clinicalInfo.clinicalInfo}
-      </p>
+        {
+          clinicalNotes.length > 1 ? 
+          clinicalNotes.map((n, i) => {
+            return <p key={i}>{n}</p>;
+          }) 
+          : <p>{props.clinicalInfo.clinicalInfo}</p>
+        }
       <br />
         
       {
         props.clinicalInfo.relevantInvestigation !== '' &&
         <div>
           <strong> Relevant investigation: </strong>
-          <p>
-            {props.clinicalInfo.relevantInvestigation}
-          </p>
+          {
+            relevantInvestigationNotes.length > 1 ?
+            relevantInvestigationNotes.map((ri, i) => {
+              return <p key={i}>{ri}</p>;
+            })
+            : <p>{props.clinicalInfo.relevantInvestigation}</p>
+          }
           <br />
         </div>
       }
@@ -90,9 +108,13 @@ export default function PrintPatientModule(props) {
         props.clinicalInfo.familyHistory !== '' &&
         <div>
           <strong> Family history: </strong>
-          <p>
-            {props.clinicalInfo.familyHistory}
-          </p>
+          {
+            familyNotes.length > 1 ?
+            familyNotes.map((ri, i) => {
+              return <p key={i}>{ri}</p>;
+            })
+            : <p>{props.clinicalInfo.familyHistory}</p>
+          }
         </div>
       }
 

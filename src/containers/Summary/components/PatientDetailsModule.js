@@ -42,6 +42,10 @@ class PatientDetailsModule extends Component
   }
 
   render() {
+    let clinicalNotes = this.props.clinicalInfo.clinicalInfo.split(/\r?\n/);
+    let relevantInvestigationNotes = this.props.clinicalInfo.relevantInvestigation.split(/\r?\n/);
+    let familyNotes = this.props.clinicalInfo.familyHistory.split(/\r?\n/);
+    let consanguinityNotes = this.props.clinicalInfo.consanguinityInfo.split(/\r?\n/);
     return(
     <SummaryBox>
       <SummaryHeading> Patient - {this.props.patientDetails.firstName + ' ' + this.props.patientDetails.lastName} </SummaryHeading>
@@ -114,7 +118,13 @@ class PatientDetailsModule extends Component
         <Col md={12}>
           <SummaryTitle> Clinical note </SummaryTitle>
           <SummaryNotes>
-            {this.props.clinicalInfo.clinicalInfo}
+          {
+            clinicalNotes.length > 1 ? 
+            clinicalNotes.map((n, i) => {
+              return <p key={i} style={{fontWeight:200}}>{n}</p>;
+            }) 
+            : this.props.clinicalInfo.clinicalInfo
+          }
           </SummaryNotes>
         </Col>
         {
@@ -122,7 +132,13 @@ class PatientDetailsModule extends Component
           <Col md={12}>
             <SummaryTitle> Relevant investigation </SummaryTitle>
             <SummaryNotes>
-              {this.props.clinicalInfo.relevantInvestigation}
+              {
+                relevantInvestigationNotes.length > 1 ?
+                relevantInvestigationNotes.map((ri, i) => {
+                  return <p key={i} style={{fontWeight:200}}>{ri}</p>;
+                })
+                : this.props.clinicalInfo.relevantInvestigation
+              }
             </SummaryNotes>
           </Col>
         }
@@ -131,11 +147,16 @@ class PatientDetailsModule extends Component
           <Col md={12}>
             <SummaryTitle> Family history </SummaryTitle>
             <SummaryNotes>
-              {this.props.clinicalInfo.familyHistory}
+              {
+                familyNotes.length > 1 ?
+                familyNotes.map((ri, i) => {
+                  return <p key={i} style={{fontWeight:200}}>{ri}</p>;
+                })
+                : this.props.clinicalInfo.familyHistory
+              }
             </SummaryNotes>
           </Col>
         }
-
         {
           (this.props.clinicalInfo.attachments && this.props.clinicalInfo.attachments.length > 0) &&
           <Col md={12}>
@@ -170,7 +191,13 @@ class PatientDetailsModule extends Component
           <Col md={12}>
             <SummaryTitle> Consanguinity Information </SummaryTitle>
             <SummaryNotes>
-              {this.props.clinicalInfo.consanguinityInfo}
+            {
+              consanguinityNotes.length > 1 ?
+              consanguinityNotes.map((ri, i) => {
+                return <p key={i} style={{fontWeight:200}}>{ri}</p>;
+              })
+              : this.props.clinicalInfo.consanguinityInfo
+            }
             </SummaryNotes>
           </Col>
         }

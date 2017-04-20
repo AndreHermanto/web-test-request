@@ -28,8 +28,9 @@ const data = {
     "clinicalInfoModule": {
         "clinicalInfo": "Here is some clinical information",
         "affected": false,
-        "relevantInvestigation": "",
-        "familyHistory": "",
+        "consanguinityInfo": "asjhdasbdlkahsdjb",
+        "familyHistory": "kasdfbljkbfalhfasvfkjabskldfbkjsdfbkdashfvdjhfhb;kfjv;hfv;fjbafhb;akfd",
+        "relevantInvestigation":"asdkfhgasdlfhabsdlfjhalsfdjh",
         "consanguinity": false
     },
     "familyMembersModule": {
@@ -50,8 +51,9 @@ const data = {
                 "familyMemberClinicalInfo": {
                     "clinicalInfo": "adssda",
                     "affected": true,
-                    "relevantInvestigation": "",
-                    "familyHistory": "",
+                    "consanguinityInfo": "asjhdasbdlkahsdjb",
+                    "familyHistory": "kasdfbljkbfalhfasvfkjabskldfbkjsdfbkdashfvdjhfhb;kfjv;hfv;fjbafhb;akfd",
+                    "relevantInvestigation":"asdkfhgasdlfhabsdlfjhalsfdjh",
                     "consanguinity": false
                 }
             }
