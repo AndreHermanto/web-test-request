@@ -69,7 +69,7 @@ exports[`ClinicalInfo: index renders without crashing 1`] = `
     <label
       className="control-label"
       htmlFor={undefined}>
-      Family history
+      Family History
       <span
         className="lnMAUb">
         Optional
@@ -94,16 +94,22 @@ exports[`ClinicalInfo: index renders without crashing 1`] = `
     <span
       className="SfhHK help-block" />
   </div>
+  <label
+    className="jEVCcT">
+    Attachments
+    <span
+      className="lnMAUb">
+      Optional
+    </span>
+  </label>
   <p
     className="kvAVcE"
     style={
       Object {
-        "margin": "16px 0 4px 0",
+        "margin": "0 0 4px 0",
       }
     }>
-    Or, you can also attach a scanned pedigree. 
-    <br />
-     Please drop some files in the area below, or click the \"Upload\" button to select files to upload.
+    Please upload any relevant attachments e.g. a scanned pedigree
   </p>
   <div
     className=""

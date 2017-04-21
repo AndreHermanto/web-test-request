@@ -20,7 +20,8 @@ import {
   FormButton,
   Helper,
   FileList,
-  FileLink
+  FileLink,
+  SubLabel
 } from './../../components/SharedStyle';
 import TextArea from './../../components/TextArea';
 import Toggle from './../../components/Toggle';
@@ -38,6 +39,12 @@ const SpinningLogo = styled(Glyphicon)`
   margin-left: 16px;
   -webkit-animation: spin 1000ms infinite linear;
   animation: spin 1000ms infinite linear;  
+`;
+
+const AttachmentHeader = styled.label`
+  display: inline-block;
+  max-width: 100%;
+  font-weight: bold;
 `;
 
 /**
@@ -153,15 +160,16 @@ class ClinicalInfo extends Component {
             
         <TextArea
           field="familyHistory"
-          label="Family history"
+          label="Family History"
           helper="Please describe the family history."
           onChange={this.handleChange}
           onValidate={this.validate()}
           formState={this.state.form}
           optional
         />
-            
-        <Helper style={{ margin: '16px 0 4px 0' }}>Or, you can also attach a scanned pedigree. <br /> Please drop some files in the area below, or click the "Upload" button to select files to upload.</Helper>
+        
+        <AttachmentHeader>Attachments<SubLabel>Optional</SubLabel></AttachmentHeader>
+        <Helper style={{ margin: '0 0 4px 0' }}>Please upload any relevant attachments e.g. a scanned pedigree</Helper>
         <Dropzone 
           onDrop={this.handleDrop} 
           disableClick={true}
