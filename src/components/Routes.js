@@ -17,13 +17,97 @@ import BillingInfo from './../containers/BillingInfo';
 import Summary from './../containers/Summary';
 import Confirmation from './../containers/Confirmation';
 
+const data = {
+  "orderTestModule": {
+            test: {
+      id:'7052d137-a166-48b0-a52e-e05a167bd176',
+      label: 'Consequatur adipisci modi laudantium tenetur ea exercitationem id',
+      geneLists:[{
+        type: "complete",
+        genes: ["GZOW","KIHG","DRCO","DWBY","ZMZY","BMBP","OLZO","PZOA"]
+      }]
+    }
+    },
+    "patientDetailsModule": {
+        "lastName": "Agudo",
+        "firstName": "Joshua",
+        "dob": "2020-02-02",
+        "medicalRecordNo": "",
+        "gender": "Male",
+        "genderOther": "",
+        "ethnicity": "Filipino",
+        "deceased": false,
+        "sampleSource": "",
+        "consent": true
+    },
+    "clinicalInfoModule": {
+        "clinicalInfo": "Here is some clinical information",
+        "affected": false,
+        "relevantInvestigation": "",
+        "familyHistory": "",
+        "consanguinity": false,
+        "attachments":[]
+    },
+    "familyMembersModule": {
+        "familyMembers": [
+            {
+                "familyMemberDetails": {
+                    "lastName": "Blah",
+                    "firstName": "Mother",
+                    "dob": "2020-02-02",
+                    "medicalRecordNo": "adsa",
+                    "gender": "Female",
+                    "genderOther": "",
+                    "ethnicity": "",
+                    "deceased": false,
+                    "sampleSource": "",
+                    "consent": true
+                },
+                "familyMemberClinicalInfo": {
+                    "clinicalInfo": "adssda",
+                    "affected": true,
+                    "relevantInvestigation": "",
+                    "familyHistory": "",
+                    "consanguinity": false
+                }
+            }
+        ]
+    },
+    "clinicianDetailsModule": {
+        "providerNumber": "123123",
+        "medicalSpecialty": "IBD",
+        "firstName": "Boaty",
+        "lastName": "McBoatFace",
+        "organisation": "Garvan Institute",
+        "phone": "12390098123",
+        "email": "slkjs@alkjs.com",
+        "fax": "",
+        "copy": false,
+        "copyToHCP": [
+                {
+                    "firstName": "Hello",
+                    "lastName": "World",
+                    "organisation": "Some organisation",
+                    "email": "hello@world.com"
+                }
+        ],
+    },
+    "billingInfoModule": {
+        "billOption": "Private",
+        "payer": "Joshua Agudo",
+        "phone": "1231232131",
+        "firstName": "Joshua",
+        "lastName": "Agudo",
+        "payerEmail": "joshua.agudo@genome.one",
+        "consent": true
+    }
+}
 function Routes({ 
   onChange,
   onFamilyMemberChange,
   onFamilyMemberDelete,
   onFormState,
   onClean,
-  data,
   isEdited,
   isSubmitted,
   isReSubmit,

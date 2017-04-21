@@ -2,18 +2,14 @@ import React, { Component } from 'react';
 import { submitTestRequest } from './api';
 import { 
   PageHeading,
-  FormButton,
-  Helper
+  FormButton
 } from './../../components/SharedStyle';
 
-import Toggle from './../../components/Toggle';
 import {
   initData,
   setSignatureData,
-  validatedToTrue,
   setPricing,
-  setSubmitStatusData,
-  setSubmitData
+  setSubmitStatusData
 } from './reducer';
 import './loading.css';
 import { NotificationContainer, NotificationManager } from 'react-notifications';
@@ -23,7 +19,7 @@ import FamilyMemberModule from './components/FamilyMemberModule';
 import EmptyFamilyMemberModule from './components/EmptyFamilyMemberModule';
 import ClinicianDetailsModule  from './components/ClinicianDetailsModule';
 import BillingInfoModule from './components/BillingInfoModule';
-
+import ConfirmationModal from './components/ConfirmationModal';
 import { getPricing } from './../BillingInfo/api'; // uses same api with billInfoModule
 /**
 * Summary - UI for summary page to display all form data.
@@ -37,7 +33,6 @@ class Summary extends Component {
     this.handleBack = this.handleBack.bind(this);
     this.handleValidateSubmit = this.handleValidateSubmit.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
   }
   
   componentWillMount() {
@@ -60,10 +55,6 @@ class Summary extends Component {
       });
   }
 
-  handleChange(event) {
-    this.setState(setSignatureData(this.state, event.target));
-  }
-
   handleEdit(step) {
     this.props.route.onFormState('isEdited', true); 
     this.props.router.push(step);
@@ -77,9 +68,10 @@ class Summary extends Component {
   validate() {
     return this.state.validated && this.state.validation;
   }
-
-  handleSubmit() {
-    this.setState(setSubmitData(this.state, this.state.form.signature));
+  
+  handleValidateSubmit() {
+    this.setState(setSubmitStatusData(this.state, 'loading'));
+    this.setState(setSignatureData(this.state, true));
     if(!this.props.route.isSubmitted) {
       return submitTestRequest(this.state.form.testRequest)
         .then((response) => {
@@ -108,20 +100,6 @@ class Summary extends Component {
       this.props.router.push('/confirmation/' + this.props.route.lastestRequestID); 
     }
   }
-  
-  handleValidateSubmit() {
-    this.setState(validatedToTrue(this.state), () => {
-      var pass = true;
-      for (var field in this.state.validation) {
-        if(this.state.validation[field].status === 'error') pass = false;
-      }
-      
-      if(pass) {
-        this.setState(setSubmitStatusData(this.state, 'loading'));
-        this.handleSubmit();
-      }
-    });
-  }
 
   render() {
     return (
@@ -141,18 +119,6 @@ class Summary extends Component {
         }
         <ClinicianDetailsModule clinicianDetailsModule={this.state.form.testRequest.clinicianDetailsModule} handleOnClick={this.handleEdit}/>
         <BillingInfoModule billingInfoModule={this.state.form.testRequest.billingInfoModule} clinicianDetailsModule={this.state.form.testRequest.clinicianDetailsModule} handleOnClick={this.handleEdit}/>
-        <Toggle
-          field="signature"
-          label="Confirm"
-          onChange={this.handleChange}
-          onValidate={this.validate()}
-          formState={this.state.form}
-          required
-        />
-        <br />
-        <Helper>
-          When you submit this test request, an invoice will be emailed to the payer if this test is privately billed.
-        </Helper>
         <FormButton  
           onClick={this.handleBack}
           label="Back"
@@ -160,12 +126,7 @@ class Summary extends Component {
         >
           Back
         </FormButton>       
-        <FormButton 
-          type="submit" 
-          onClick={this.handleValidateSubmit}
-        >
-          Submit
-        </FormButton> 
+        <ConfirmationModal handleValidateSubmit={this.handleValidateSubmit}/> 
         <span className={this.state.submitStatus}/>
         <NotificationContainer/>
       </div>
