@@ -5,7 +5,6 @@ import PrintOrderTestModule from './PrintBloodCollectionComponents/PrintOrderTes
 import PrintPatientModule from './PrintBloodCollectionComponents/PrintPatientModule';
 import PrintFamilyModule  from './PrintBloodCollectionComponents/PrintFamilyModule';
 import PrintClinicianDetailsModule from './PrintBloodCollectionComponents/PrintClinicianDetailsModule';
-import PrintBillingInfoModule from './PrintBloodCollectionComponents/PrintBillingInfoModule';
 import PrintSpecimenInfo from './PrintBloodCollectionComponents/PrintSpecimenInfo';
 import PrintCollectorDeclaration from './PrintBloodCollectionComponents/PrintCollectorDeclaration';
 const Page = styled.div`
@@ -25,10 +24,9 @@ export default function PrintBloodCollection(props) {
       <Page>
         <PrintHeader showId={props.showId} showDate={props.showDate} />
         <br />
-        <PrintOrderTestModule orderTestModule={props.orderTestModule}/>
         <PrintPatientModule patientDetails={props.patientDetails} clinicalInfo={props.clinicalInfo}/>
         <PrintClinicianDetailsModule clinicianDetails={props.clinicianDetails}/>
-        <PrintBillingInfoModule clinicianDetails={props.clinicianDetails} billingInfo={props.billingInfo}/>
+        <PrintOrderTestModule orderTestModule={props.orderTestModule}/>
         <PrintSpecimenInfo />
         <PrintCollectorDeclaration />
       </Page>
@@ -38,10 +36,9 @@ export default function PrintBloodCollection(props) {
             <Page key={$index}>
               <PrintHeader />
               <br />
-              <PrintOrderTestModule orderTestModule={props.orderTestModule}/>
               <PrintFamilyModule patientDetails={props.patientDetails} familyMemberDetails={member.familyMemberDetails} familyMemberClinicalInfo={member.familyMemberClinicalInfo}/>
               <PrintClinicianDetailsModule clinicianDetails={props.clinicianDetails}/>
-              <PrintBillingInfoModule clinicianDetails={props.clinicianDetails} billingInfo={props.billingInfo}/>
+              <PrintOrderTestModule orderTestModule={props.orderTestModule}/>
               <PrintSpecimenInfo />
               <PrintCollectorDeclaration />
             </Page>  
