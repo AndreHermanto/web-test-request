@@ -32,6 +32,30 @@ const ConfirmationNote = styled.h4`
   margin-top: 10px;
 `;
 
+const LeftButton = styled(FormButton)`
+  border: 1px solid #00a6b6;
+  backgroundColor: #fff;
+  color: black;
+  marginLeft: 20%;
+  width: 78.26%;
+  &:hover {
+    backgroundColor: #00a6b6;
+    color: #fff;
+  }
+`;
+
+const RightButton = styled(FormButton)`
+  border: 1px solid #00a6b6;
+  backgroundColor: #fff;
+  color: black;
+  marginRight: 20%;
+  width: 80%;
+  &:hover {
+    backgroundColor: #00a6b6;
+    color: #fff;
+  }
+`;
+
 /**
 * Confirmation - UI for ordering type of tests, selecting disorder and related genes for testing.
 */
@@ -110,14 +134,14 @@ class Confirmation extends Component {
 
             <Row>
               <Col md={6}>
-                <FormButton onClick={() => this.handleRedirect('genome')} style={{marginLeft: '20%', width: '78.26%'}}>
-                  Back to Genome.One
-                </FormButton>
+                <LeftButton onClick={() => this.handleRedirect('genome')}>
+                  Go back to Genome.One
+                </LeftButton>
               </Col>
               <Col md={6}>
-                <FormButton onClick={() => this.handleRedirect('home')} style={{marginRight: '20%', width:'80%'}}>
+                <RightButton onClick={() => this.handleRedirect('home')}>
                   Order new Test
-                </FormButton>
+                </RightButton>
               </Col>
             </Row>
 
