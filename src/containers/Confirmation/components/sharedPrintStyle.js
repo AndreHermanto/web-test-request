@@ -3,8 +3,8 @@ import { Label } from 'react-bootstrap';
 
 export const PageBreak = styled.div`
   border: 1px solid #abc6ca;
-  margin-top: 10pt;
-  margin-bottom: 10pt;
+  margin-top: 20pt;
+  margin-bottom: 20pt;
   width: 98%;
 `;
 

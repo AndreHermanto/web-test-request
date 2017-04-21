@@ -190,7 +190,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
         No
       </p>
       <div
-        className="caGDDg" />
+        className="dDFwYz" />
       <strong>
          Clinical note: 
       </strong>
@@ -221,6 +221,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
           </p>
         </div>
       </div>
+      <br />
     </div>
     <div
       style={
@@ -272,7 +273,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
       <br />
       <div>
         <div
-          className="caGDDg" />
+          className="dDFwYz" />
         <br />
         <p
           style={
@@ -304,7 +305,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
       </div>
       <div>
         <div
-          className="caGDDg" />
+          className="dDFwYz" />
         <br />
         <p
           style={
@@ -712,7 +713,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
         Yes
       </p>
       <div
-        className="caGDDg" />
+        className="dDFwYz" />
       <strong>
          Clinical note: 
       </strong>
@@ -790,7 +791,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
       <br />
       <div>
         <div
-          className="caGDDg" />
+          className="dDFwYz" />
         <br />
         <p
           style={
@@ -822,7 +823,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
       </div>
       <div>
         <div
-          className="caGDDg" />
+          className="dDFwYz" />
         <br />
         <p
           style={
@@ -1230,7 +1231,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
         No
       </p>
       <div
-        className="caGDDg" />
+        className="dDFwYz" />
       <strong>
          Clinical note: 
       </strong>
@@ -1308,7 +1309,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
       <br />
       <div>
         <div
-          className="caGDDg" />
+          className="dDFwYz" />
         <br />
         <p
           style={
@@ -1340,7 +1341,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
       </div>
       <div>
         <div
-          className="caGDDg" />
+          className="dDFwYz" />
         <br />
         <p
           style={

@@ -68,8 +68,13 @@ export default function PrintFamilyModule(props) {
                 <strong> Consanguinity Information:  </strong>
                 {
                   consanguinityNotes.length > 1 ?
-                  consanguinityNotes.map((ri, i) => {
-                    return <p key={i} style={{fontWeight:200}}>{ri}</p>;
+                  consanguinityNotes.map((c, i) => {
+                    if(c === '') {
+                      return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:20}}></p>;
+                    }
+                    else {
+                      return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc'}}>{c}</p>;
+                    }                  
                   })
                   : <p>{member.familyMemberClinicalInfo.consanguinityInfo}</p>
                 }
@@ -88,7 +93,12 @@ export default function PrintFamilyModule(props) {
               {
                 clinicalNotes.length > 1 ? 
                 clinicalNotes.map((n, i) => {
-                  return <p key={i}>{n}</p>;
+                  if(n === '') {
+                    return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:20}}></p>;
+                  }
+                  else {
+                    return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc'}}>{n}</p>;
+                  }
                 }) 
                 : <p>member.familyMemberClinicalInfo.clinicalInfo</p>
               }
@@ -101,8 +111,13 @@ export default function PrintFamilyModule(props) {
                 <div>
                 {
                   relevantInvestigationNotes.length > 1 ?
-                  relevantInvestigationNotes.map((ri, i) => {
-                    return <p key={i}>{ri}</p>;
+                  relevantInvestigationNotes.map((r, i) => {
+                    if(r === '') {
+                      return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:20}}></p>;
+                    }
+                    else {
+                      return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc'}}>{r}</p>;
+                    }                  
                   })
                   : <p>{member.familyMemberClinicalInfo.relevantInvestigation}</p>
                 }

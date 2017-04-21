@@ -57,8 +57,13 @@ export default function PrintPatientModule(props) {
           <strong> Consanguinity Information:  </strong>
           {
             consanguinityNotes.length > 1 ?
-            consanguinityNotes.map((ri, i) => {
-              return <p key={i}>{ri}</p>;
+            consanguinityNotes.map((c, i) => {
+              if(c === '') {
+                return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:20}}></p>;
+              }
+              else {
+                return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc'}}>{c}</p>;
+              }            
             })
             : <p>{props.clinicalInfo.consanguinityInfo}</p>
           }
@@ -72,7 +77,12 @@ export default function PrintPatientModule(props) {
         {
           clinicalNotes.length > 1 ? 
           clinicalNotes.map((n, i) => {
-            return <p key={i}>{n}</p>;
+            if(n === '') {
+              return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:20}}></p>;
+            }
+            else {
+              return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc'}}>{n}</p>;
+            }          
           }) 
           : <p>{props.clinicalInfo.clinicalInfo}</p>
         }
@@ -86,8 +96,13 @@ export default function PrintPatientModule(props) {
           <div>
             {
               relevantInvestigationNotes.length > 1 ?
-              relevantInvestigationNotes.map((ri, i) => {
-                return <p key={i}>{ri}</p>;
+              relevantInvestigationNotes.map((r, i) => {
+                if(r === '') {
+                  return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:20}}></p>;
+                }
+                else {
+                  return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc'}}>{r}</p>;
+                }
               })
               : <p>props.clinicalInfo.relevantInvestigation</p>
             }
@@ -103,14 +118,20 @@ export default function PrintPatientModule(props) {
           <div>
             {
               familyNotes.length > 1 ?
-              familyNotes.map((ri, i) => {
-                return <p key={i}>{ri}</p>;
+              familyNotes.map((f, i) => {
+                if(f === '') {
+                  return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:20}}></p>;
+                }
+                else {
+                  return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc'}}>{f}</p>;
+                }              
               })
               : <p>{props.clinicalInfo.familyHistory}</p>
             }          
           </div>
         </div>
       }
+      <br/>
     </div>
   );
 }

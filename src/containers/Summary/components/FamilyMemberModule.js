@@ -117,7 +117,12 @@ class FamilyMemberModule extends Component
               {
                 clinicalNotes.length > 1 ? 
                 clinicalNotes.map((n, i) => {
-                  return <p key={i} style={{fontWeight:200}}>{n}</p>;
+                  if(n === '') {
+                    return <p key={i} style={{fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:15}}></p>;
+                  }
+                  else {
+                    return <p key={i} style={{fontWeight:200, borderBottom: '1px solid #ccc'}}>{n}</p>;
+                  }
                 }) 
                 : this.props.familyMemberClinicalInfo.clinicalInfo
               }
@@ -130,8 +135,13 @@ class FamilyMemberModule extends Component
               <SummaryNotes>
               {
                 relevantInvestigationNotes.length > 1 ?
-                relevantInvestigationNotes.map((ri, i) => {
-                  return <p key={i} style={{fontWeight:200}}>{ri}</p>;
+                relevantInvestigationNotes.map((r, i) => {
+                  if(r === '') {
+                    return <p key={i} style={{fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:15}}></p>;
+                  }
+                  else {
+                    return <p key={i} style={{fontWeight:200, borderBottom: '1px solid #ccc'}}>{r}</p>;
+                  }
                 })
                 : this.props.familyMemberClinicalInfo.relevantInvestigation
               }
@@ -151,8 +161,13 @@ class FamilyMemberModule extends Component
               <SummaryNotes>
                 {
                   consanguinityNotes.length > 1 ?
-                  consanguinityNotes.map((ri, i) => {
-                    return <p key={i} style={{fontWeight:200}}>{ri}</p>;
+                  consanguinityNotes.map((c, i) => {
+                    if(c === '') {
+                      return <p key={i} style={{fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:15}}></p>;
+                    }
+                    else {
+                      return <p key={i} style={{fontWeight:200, borderBottom: '1px solid #ccc'}}>{c}</p>;
+                    }
                   })
                   : this.props.familyMemberClinicalInfo.consanguinityInfo
                 }
