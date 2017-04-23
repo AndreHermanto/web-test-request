@@ -32,7 +32,8 @@ class App extends Component {
       isEdited: false,
       isSubmitted: false,
       isReSubmit: false,
-      lastestRequestID:null
+      latestRequestID:null,
+      createdDateTime:null
     }
   }
   
@@ -165,7 +166,8 @@ class App extends Component {
                 isEdited={this.state.isEdited}
                 isSubmitted={this.state.isSubmitted}
                 isReSubmit={this.state.isReSubmit}
-                lastestRequestID={this.state.lastestRequestID}
+                latestRequestID={this.state.latestRequestID}
+                createdDateTime={this.state.createdDateTime}
                 redirectStepOne={this.redirectStepOne}
                 preventUnvisitedFormAccess={this.preventUnvisitedFormAccess}
               />

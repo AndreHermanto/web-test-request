@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
-import { getTestRequestById } from './api';
 import {
   initData,
-  setRetrievedData,
   setPrintType 
 } from './reducer';
 import PrintRecord from './components/PrintRecord';
@@ -42,7 +40,7 @@ class Confirmation extends Component {
     this.handlePrintRecordButtonClick = this.handlePrintRecordButtonClick.bind(this);
     this.handlePrintBloodCollectionButtonClick = this.handlePrintBloodCollectionButtonClick.bind(this);
     this.handleRedirect = this.handleRedirect.bind(this);
-    this.state = initData();
+    this.state = initData(this.props.route.data, this.props.route.latestRequestID, this.props.route.createdDateTime);
   }
   
   componentWillMount() {
@@ -56,10 +54,6 @@ class Confirmation extends Component {
         NotificationManager.warning('Your request has already been submitted', 'Already been submitted', 6000);
       }, 100);
     }
-    return getTestRequestById(this.props.params.id)
-      .then((data) => {
-        this.setState(setRetrievedData(this.state, data));
-    });
   }
   
   handlePrintButtonClick(type) {
@@ -126,7 +120,7 @@ class Confirmation extends Component {
         <div className="printMe">
           {(this.state.print === 1) && 
             <PrintRecord
-              showId={this.state.form.id}
+              showId={this.state.form.latestRequestID}
               showDate={this.state.form.createdDateTime}
               orderTestModule={this.state.form.orderTestModule}
               patientDetails={this.state.form.patientDetailsModule}
@@ -138,7 +132,7 @@ class Confirmation extends Component {
           }
           {(this.state.print === 2) &&
             <PrintBloodCollection
-              showId={this.state.form.id}
+              showId={this.state.form.latestRequestID}
               showDate={this.state.form.createdDateTime}
               orderTestModule={this.state.form.orderTestModule}
               patientDetails={this.state.form.patientDetailsModule}

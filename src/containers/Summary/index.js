@@ -97,7 +97,8 @@ class Summary extends Component {
       .then((json) => {
         if(json) {
           this.props.route.onFormState('isSubmitted', true); 
-          this.props.route.onFormState('lastestRequestID', json.data.id)
+          this.props.route.onFormState('latestRequestID', json.data.id);
+          this.props.route.onFormState('createdDateTime', json.data.createdDateTime);
           this.props.router.push('/confirmation/' + json.data.id);
         }
         return json;
@@ -105,7 +106,7 @@ class Summary extends Component {
     }
     else {
       this.props.route.onFormState('isReSubmit', true);
-      this.props.router.push('/confirmation/' + this.props.route.lastestRequestID); 
+      this.props.router.push('/confirmation/' + this.props.route.latestRequestID); 
     }
   }
   
