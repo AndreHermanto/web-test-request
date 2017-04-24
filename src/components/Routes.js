@@ -27,7 +27,8 @@ function Routes({
   isEdited,
   isSubmitted,
   isReSubmit,
-  lastestRequestID,
+  latestRequestID,
+  createdDateTime,
   redirectStepOne,
   preventUnvisitedFormAccess
 }) {
@@ -115,11 +116,12 @@ function Routes({
           onFormState={onFormState}
           isEdited={isEdited}
           isSubmitted={isSubmitted}
-          lastestRequestID={lastestRequestID}
+          latestRequestID={latestRequestID}
           preventUnvisitedFormAccess={preventUnvisitedFormAccess}
         />
       </Route>
-      <Route path="/confirmation/:id" component={Confirmation} data={data} isReSubmit={isReSubmit} onClean={onClean}/>
+      <Route path="/confirmation/:id" component={Confirmation} data={data} isReSubmit={isReSubmit} 
+        onClean={onClean} latestRequestID={latestRequestID} createdDateTime={createdDateTime}/>
     </Router>
   );
 }

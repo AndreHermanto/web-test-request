@@ -1,22 +1,14 @@
-export function initData(props) {
+export function initData(data, latestRequestID, createdDateTime) {
   var state = {
-    form: {},
+    form: data,
     print: null
   }
+  state.form = Object.assign({}, state.form, {
+    latestRequestID: latestRequestID,
+    createdDateTime: createdDateTime
+  });
   return Object.assign({}, state);
 }
-
-/**
- * After making a api call, populate the form, id and date fields.
- * @param {Object} state Targeted state to be changed.
- * @param {Object} data Retrieved data to be added.
- */
-export function setRetrievedData(state, data) {
-  return Object.assign({}, state, {
-    form: data,
-  });
-}
-
 
 /**
  * Set "print" state to determine which type of report to print.

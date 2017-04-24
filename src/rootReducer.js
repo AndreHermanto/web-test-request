@@ -89,6 +89,8 @@ export function cleanFormState(state) {
     formInput: {},
     isEdited: false,
     isSubmitted: false,
-    isReSubmit: false
+    isReSubmit: false,
+    latestRequestID:null,
+    createdDateTime:null
   })
 }
