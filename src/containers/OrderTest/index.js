@@ -121,15 +121,15 @@ class OrderTest extends Component {
           handleClick={this.handleMainCategoryChange}
           onValidate={this.validate()}
           formState={this.state}
-          latestSelectId={this.state.chosenPanelMainCategory ? this.state.chosenPanelMainCategory.id : ''}
+          latestSelectPanel={this.state.chosenPanelMainCategory ? this.state.chosenPanelMainCategory.latestSelectPanel : ''}
           required
         />
         <br />    
         {
           (
             this.state.chosenPanelMainCategory && 
-            this.state.chosenPanelMainCategory.id &&
-            this.state.chosenPanelMainCategory.label !== 'Whole Genome Analysis'
+            this.state.chosenPanelMainCategory.label !== 'Whole Genome Analysis' &&
+            this.state.chosenPanelMainCategory.label !== 'Polycystic Kidney Disorder'
           ) &&
           <TestPanelCategory 
             field="chosenPanelSubCategory"
@@ -142,13 +142,14 @@ class OrderTest extends Component {
             latestSelectId={this.state.chosenPanelSubCategory ? this.state.chosenPanelSubCategory.id : ''}
             required
           />
-        }    
+        }   
         <br />
         {
           (
             this.state.chosenPanelSubCategory && 
             this.state.chosenPanelSubCategory.id &&
-            this.state.chosenPanelMainCategory.label !== 'Whole Genome Analysis'
+            this.state.chosenPanelMainCategory.label !== 'Whole Genome Analysis' &&
+            this.state.chosenPanelMainCategory.label !== 'Polycystic Kidney Disorder'
           ) &&
           <TestPanel 
             field="test"
