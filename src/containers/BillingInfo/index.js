@@ -15,7 +15,8 @@ import { getPricing } from './api';
 import { 
   PageHeading,
   FormButton,
-  BreakLine
+  BreakLine,
+  Helper
 } from './../../components/SharedStyle';
 import Input from './../../components/Input';
 import Toggle from './../../components/Toggle';
@@ -197,20 +198,6 @@ class BillingInfo extends Component {
           {
             (this.state.form.billOption === 'Private') &&
             <div>
-              <Toggle
-                field="consent"
-                label="Has payer's consent been received?"
-                onChange={this.handleChange}
-                onValidate={this.validate()}
-                formState={this.state.form}
-                declaration="I have advised the patient that this test is dependent on private payment and will not proceed till it is received."
-                required
-              />
-            </div>
-          }
-          {
-            (this.state.form.billOption === 'Private') &&
-            <div>
               <Input
                 field="firstName"
                 label="First Name"
@@ -243,6 +230,23 @@ class BillingInfo extends Component {
                 onChange={this.handleChange}
                 onValidate={this.validate()}
                 formState={this.state.form}
+                required
+              />
+              <Helper style={{marginTop:-5, color:'#008b8b'}}>
+                The mobile number entered will be used as the password to open the invoice sent to the payer.
+              </Helper>
+            </div>
+          }
+          {
+            (this.state.form.billOption === 'Private') &&
+            <div>
+              <Toggle
+                field="consent"
+                label="Has payer's consent been received?"
+                onChange={this.handleChange}
+                onValidate={this.validate()}
+                formState={this.state.form}
+                declaration="I have advised the patient that this test is dependent on private payment and will not proceed till it is received."
                 required
               />
             </div>
