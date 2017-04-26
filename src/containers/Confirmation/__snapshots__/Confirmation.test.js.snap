@@ -15,7 +15,7 @@ exports[`Confirmation test Confirmation page renders without crashing 1`] = `
       <div
         className="col-md-6">
         <button
-          className="bBdbjl"
+          className="hrhdPQ"
           onClick={[Function]}
           style={
             Object {
@@ -28,7 +28,7 @@ exports[`Confirmation test Confirmation page renders without crashing 1`] = `
       <div
         className="col-md-6">
         <button
-          className="bBdbjl"
+          className="hrhdPQ"
           onClick={[Function]}
           style={
             Object {
@@ -44,16 +44,26 @@ exports[`Confirmation test Confirmation page renders without crashing 1`] = `
       <div
         className="col-md-6">
         <button
-          className="gKXfcI"
-          onClick={[Function]}>
+          className="eAkGBX"
+          onClick={[Function]}
+          style={
+            Object {
+              "marginLeft": "20%",
+            }
+          }>
           Go back to Genome.One
         </button>
       </div>
       <div
         className="col-md-6">
         <button
-          className="kYfYVh"
-          onClick={[Function]}>
+          className="eAkGBX"
+          onClick={[Function]}
+          style={
+            Object {
+              "marginRight": "20%",
+            }
+          }>
           Order new Test
         </button>
       </div>
