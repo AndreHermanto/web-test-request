@@ -30,6 +30,18 @@ const ConfirmationNote = styled.h4`
   margin-top: 10px;
 `;
 
+const ConfirmationButton = styled(FormButton)`
+  border: ${props => props.main ? '' : '1px solid #00a6b6'};
+  background-color: ${props => props.main ? '#00a6b6' : '#fff'};
+  color: ${props => props.main ? '#fff' : '#333'};
+  width: 80%;
+  &:hover {
+    border-color: #00c9dc;
+    color: #fff;
+  }
+`;
+
+
 /**
 * Confirmation - UI for ordering type of tests, selecting disorder and related genes for testing.
 */
@@ -91,27 +103,27 @@ class Confirmation extends Component {
             </ConfirmationNote>
             <Row>
               <Col md={6}>
-                <FormButton onClick={this.handlePrintRecordButtonClick} style={{marginLeft: '20%'}}>
+                <ConfirmationButton main onClick={this.handlePrintRecordButtonClick} style={{marginLeft: '20%'}}>
                   Print out form for your records
-                </FormButton>
+                </ConfirmationButton>
               </Col>
               <Col md={6}>
-                <FormButton onClick={this.handlePrintBloodCollectionButtonClick} style={{marginRight: '20%'}}>
+                <ConfirmationButton main onClick={this.handlePrintBloodCollectionButtonClick} style={{marginRight: '20%'}}>
                   Print out Blood Collection forms for your patient(s)
-                </FormButton>
+                </ConfirmationButton>
               </Col>
             </Row>
 
             <Row>
               <Col md={6}>
-                <FormButton onClick={() => this.handleRedirect('genome')} style={{marginLeft: '20%', width: '78.26%'}}>
-                  Back to Genome.One
-                </FormButton>
+                <ConfirmationButton onClick={() => this.handleRedirect('genome')} style={{marginLeft: '20%'}}>
+                  Go back to Genome.One
+                </ConfirmationButton>
               </Col>
               <Col md={6}>
-                <FormButton onClick={() => this.handleRedirect('home')} style={{marginRight: '20%', width:'80%'}}>
+                <ConfirmationButton onClick={() => this.handleRedirect('home')} style={{marginRight: '20%'}}>
                   Order new Test
-                </FormButton>
+                </ConfirmationButton>
               </Col>
             </Row>
 
