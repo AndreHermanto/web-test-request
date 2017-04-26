@@ -137,19 +137,6 @@ describe('Summary: index', () => {
     page.handleBack();
     expect(page.props.router.pop()).toEqual('/step6')
   });
-
-  test('handleChange works', () =>  {
-    var page = TestUtils.renderIntoDocument(React.createElement(Summary, props)); 
-    let event = {
-      target: {
-        name:'signature',
-        type: 'checkbox',
-        checked: true
-      } 
-    }                         
-    page.handleChange(event);
-    expect(page.state.form.signature).toEqual(true); 
-  });
   
   test('handleEdit works', () =>  {
     var page = TestUtils.renderIntoDocument(React.createElement(Summary, props));                                     
@@ -160,15 +147,14 @@ describe('Summary: index', () => {
   test('handleSubmit works', async () => {
     var page = TestUtils.renderIntoDocument(React.createElement(Summary, props));
     FetchMock.mock('*', { data: { id: 1 } });
-    await page.handleSubmit().then((response) => {
+    await page.handleValidateSubmit().then((response) => {
       expect(response.data.id).toEqual(1);
     });
     FetchMock.restore();  
     FetchMock.mock('*', 404);
     
-    await page.handleSubmit().then((response) => {
+    await page.handleValidateSubmit().then((response) => {
        expect(response).toEqual(false);
-       expect(page.state.submitStatus).toEqual('');
     });
     
     FetchMock.restore();
@@ -177,19 +163,8 @@ describe('Summary: index', () => {
   test('reSubmit test', async () => {
     var page = TestUtils.renderIntoDocument(React.createElement(Summary, resubmitProps));
 
-    page.handleSubmit();
-    expect(page.props.route.onFormState).toHaveBeenCalled();
-    // await page.handleSubmit().then((response) => {
-    //    expect(page.props.route.onFormState).toHaveBeenCalled();
-    // });
-    
-    // FetchMock.restore();
-  });
-  
-  test('handleValidateSubmit works', () =>  {
-    var page = TestUtils.renderIntoDocument(React.createElement(Summary, props));   
-    page.state.validation = [{ status: null }, { status: null }];
     page.handleValidateSubmit();
-    expect(page.state.submitStatus).toEqual('loading');
+    expect(page.props.route.onFormState).toHaveBeenCalled();
   });
+
 });
