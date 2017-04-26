@@ -193,7 +193,7 @@ exports[`test PrintRecord renders without crashing  1`] = `
       No
     </p>
     <div
-      className="caGDDg" />
+      className="dDFwYz" />
     <strong>
        Clinical note: 
     </strong>
@@ -219,12 +219,7 @@ exports[`test PrintRecord renders without crashing  1`] = `
       </p>
     </div>
   </div>
-  <div
-    style={
-      Object {
-        "marginTop": "-20pt",
-      }
-    }>
+  <div>
     <div>
       <h3
         className="kTDTpA">
@@ -263,21 +258,25 @@ exports[`test PrintRecord renders without crashing  1`] = `
         Yes
       </p>
       <div
-        className="caGDDg" />
+        className="dDFwYz" />
       <strong>
          Clinical note 
       </strong>
-      <p>
-        abc@abc.com
-      </p>
+      <div>
+        <p>
+          member.familyMemberClinicalInfo.clinicalInfo
+        </p>
+      </div>
       <br />
       <div>
         <strong>
            Relevant investigation 
         </strong>
-        <p>
-          asdasdasd
-        </p>
+        <div>
+          <p>
+            asdasdasd
+          </p>
+        </div>
         <br />
       </div>
     </div>
@@ -325,21 +324,25 @@ exports[`test PrintRecord renders without crashing  1`] = `
         No
       </p>
       <div
-        className="caGDDg" />
+        className="dDFwYz" />
       <strong>
          Clinical note 
       </strong>
-      <p>
-        abc@abc.com
-      </p>
+      <div>
+        <p>
+          member.familyMemberClinicalInfo.clinicalInfo
+        </p>
+      </div>
       <br />
       <div>
         <strong>
            Relevant investigation 
         </strong>
-        <p>
-          asdasdasdasd
-        </p>
+        <div>
+          <p>
+            asdasdasdasd
+          </p>
+        </div>
         <br />
       </div>
     </div>
@@ -394,7 +397,7 @@ exports[`test PrintRecord renders without crashing  1`] = `
     <br />
     <div>
       <div
-        className="caGDDg" />
+        className="dDFwYz" />
       <br />
       <p
         style={
@@ -426,7 +429,7 @@ exports[`test PrintRecord renders without crashing  1`] = `
     </div>
     <div>
       <div
-        className="caGDDg" />
+        className="dDFwYz" />
       <br />
       <p
         style={

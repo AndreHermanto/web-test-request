@@ -33,6 +33,9 @@ class FamilyMemberModule extends Component
   }
 
   render() {
+    let clinicalNotes = this.props.familyMemberClinicalInfo.clinicalInfo.split(/\r?\n/);
+    let relevantInvestigationNotes = this.props.familyMemberClinicalInfo.relevantInvestigation.split(/\r?\n/);
+    let consanguinityNotes = this.props.familyMemberClinicalInfo.consanguinityInfo.split(/\r?\n/);
     return(
       <SummaryBox>
         <SummaryHeading> 
@@ -111,7 +114,18 @@ class FamilyMemberModule extends Component
           <Col md={12}>
             <SummaryTitle> Clinical note </SummaryTitle>
             <SummaryNotes>
-              {this.props.familyMemberClinicalInfo.clinicalInfo}
+              {
+                clinicalNotes.length > 1 ? 
+                clinicalNotes.map((n, i) => {
+                  if(n === '') {
+                    return <p key={i} style={{fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:15}}></p>;
+                  }
+                  else {
+                    return <p key={i} style={{fontWeight:200, borderBottom: '1px solid #ccc'}}>{n}</p>;
+                  }
+                }) 
+                : this.props.familyMemberClinicalInfo.clinicalInfo
+              }
             </SummaryNotes>
           </Col>
           {
@@ -119,7 +133,18 @@ class FamilyMemberModule extends Component
             <Col md={12}>
               <SummaryTitle> Relevant investigation note </SummaryTitle>
               <SummaryNotes>
-                {this.props.familyMemberClinicalInfo.relevantInvestigation}
+              {
+                relevantInvestigationNotes.length > 1 ?
+                relevantInvestigationNotes.map((r, i) => {
+                  if(r === '') {
+                    return <p key={i} style={{fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:15}}></p>;
+                  }
+                  else {
+                    return <p key={i} style={{fontWeight:200, borderBottom: '1px solid #ccc'}}>{r}</p>;
+                  }
+                })
+                : this.props.familyMemberClinicalInfo.relevantInvestigation
+              }
               </SummaryNotes>
             </Col>
           }
@@ -134,7 +159,18 @@ class FamilyMemberModule extends Component
             <Col md={12}>
               <SummaryTitle> Consanguinity Information </SummaryTitle>
               <SummaryNotes>
-                {this.props.familyMemberClinicalInfo.consanguinityInfo}
+                {
+                  consanguinityNotes.length > 1 ?
+                  consanguinityNotes.map((c, i) => {
+                    if(c === '') {
+                      return <p key={i} style={{fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:15}}></p>;
+                    }
+                    else {
+                      return <p key={i} style={{fontWeight:200, borderBottom: '1px solid #ccc'}}>{c}</p>;
+                    }
+                  })
+                  : this.props.familyMemberClinicalInfo.consanguinityInfo
+                }
               </SummaryNotes>
             </Col>
           }

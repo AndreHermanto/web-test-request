@@ -7,6 +7,10 @@ import { isoToShortDate } from './../../../../components/dateConvert';
 
 // PrintPatientModule section
 export default function PrintPatientModule(props) {
+  let clinicalNotes = props.clinicalInfo.clinicalInfo.split(/\r?\n/);
+  let relevantInvestigationNotes = props.clinicalInfo.relevantInvestigation.split(/\r?\n/);
+  let familyNotes = props.clinicalInfo.familyHistory.split(/\r?\n/);
+  let consanguinityNotes = props.clinicalInfo.consanguinityInfo.split(/\r?\n/);
   return (
     <div>
       <PrintHeading>
@@ -49,27 +53,60 @@ export default function PrintPatientModule(props) {
 
       {
         (props.clinicalInfo.consanguinity && props.clinicalInfo.consanguinityInfo !== '') &&
-        <p> 
+        <div> 
           <strong> Consanguinity Information:  </strong>
-          {props.clinicalInfo.consanguinityInfo}
-        </p>
+          {
+            consanguinityNotes.length > 1 ?
+            consanguinityNotes.map((c, i) => {
+              if(c === '') {
+                return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:20}}></p>;
+              }
+              else {
+                return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc'}}>{c}</p>;
+              }            
+            })
+            : <p>{props.clinicalInfo.consanguinityInfo}</p>
+          }
+        </div>
       }
           
       <PageBreak />
         
       <strong> Clinical note: </strong>
-      <p>
-        {props.clinicalInfo.clinicalInfo}
-      </p>
+      <div>
+        {
+          clinicalNotes.length > 1 ? 
+          clinicalNotes.map((n, i) => {
+            if(n === '') {
+              return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:20}}></p>;
+            }
+            else {
+              return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc'}}>{n}</p>;
+            }          
+          }) 
+          : <p>{props.clinicalInfo.clinicalInfo}</p>
+        }
+      </div>
       <br />
         
       {
         props.clinicalInfo.relevantInvestigation !== '' &&
         <div>
           <strong> Relevant investigation: </strong>
-          <p>
-            {props.clinicalInfo.relevantInvestigation}
-          </p>
+          <div>
+            {
+              relevantInvestigationNotes.length > 1 ?
+              relevantInvestigationNotes.map((r, i) => {
+                if(r === '') {
+                  return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:20}}></p>;
+                }
+                else {
+                  return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc'}}>{r}</p>;
+                }
+              })
+              : <p>props.clinicalInfo.relevantInvestigation</p>
+            }
+          </div>
           <br />
         </div>
       }
@@ -78,11 +115,23 @@ export default function PrintPatientModule(props) {
         props.clinicalInfo.familyHistory !== '' &&
         <div>
           <strong> Family history: </strong>
-          <p>
-            {props.clinicalInfo.familyHistory}
-          </p>
+          <div>
+            {
+              familyNotes.length > 1 ?
+              familyNotes.map((f, i) => {
+                if(f === '') {
+                  return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:20}}></p>;
+                }
+                else {
+                  return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc'}}>{f}</p>;
+                }              
+              })
+              : <p>{props.clinicalInfo.familyHistory}</p>
+            }          
+          </div>
         </div>
       }
+      <br/>
     </div>
   );
 }

@@ -190,31 +190,38 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
         No
       </p>
       <div
-        className="caGDDg" />
+        className="dDFwYz" />
       <strong>
          Clinical note: 
       </strong>
-      <p>
-        Dissuade ecstatic and properly saw entirely sir why laughter endeavor. In on my jointure horrible margaret suitable he followed speedily. Indeed vanity excuse or mr lovers of on. By offer scale an stuff. Blush be sorry no sight. Sang lose of hour then he left find
-      </p>
+      <div>
+        <p>
+          Dissuade ecstatic and properly saw entirely sir why laughter endeavor. In on my jointure horrible margaret suitable he followed speedily. Indeed vanity excuse or mr lovers of on. By offer scale an stuff. Blush be sorry no sight. Sang lose of hour then he left find
+        </p>
+      </div>
       <br />
       <div>
         <strong>
            Relevant investigation: 
         </strong>
-        <p>
-          asdkfhgasdlfhabsdlfjhalsfdjh
-        </p>
+        <div>
+          <p>
+            props.clinicalInfo.relevantInvestigation
+          </p>
+        </div>
         <br />
       </div>
       <div>
         <strong>
            Family history: 
         </strong>
-        <p>
-          kasdfbljkbfalhfasvfkjabskldfbkjsdfbkdashfvdjhfhb;kfjv;hfv;fjbafhb;akfd
-        </p>
+        <div>
+          <p>
+            kasdfbljkbfalhfasvfkjabskldfbkjsdfbkdashfvdjhfhb;kfjv;hfv;fjbafhb;akfd
+          </p>
+        </div>
       </div>
+      <br />
     </div>
     <div
       style={
@@ -266,7 +273,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
       <br />
       <div>
         <div
-          className="caGDDg" />
+          className="dDFwYz" />
         <br />
         <p
           style={
@@ -298,7 +305,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
       </div>
       <div>
         <div
-          className="caGDDg" />
+          className="dDFwYz" />
         <br />
         <p
           style={
@@ -658,7 +665,12 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
         </span>
       </div>
     </div>
-    <div>
+    <div
+      style={
+        Object {
+          "marginTop": "10pt",
+        }
+      }>
       <h3
         className="kTDTpA">
         abc@abc.com abc@abc.com
@@ -701,21 +713,23 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
         Yes
       </p>
       <div
-        className="caGDDg" />
+        className="dDFwYz" />
       <strong>
          Clinical note: 
       </strong>
-      <p>
-        abc@abc.com
-      </p>
+      <div>
+        <p>
+          props.familyMemberClinicalInfo.clinicalInfo
+        </p>
+      </div>
       <br />
       <div>
         <strong>
            Relevant investigation: 
         </strong>
-        <p>
+        <div>
           asdasdasd
-        </p>
+        </div>
         <br />
       </div>
       <div>
@@ -777,7 +791,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
       <br />
       <div>
         <div
-          className="caGDDg" />
+          className="dDFwYz" />
         <br />
         <p
           style={
@@ -809,7 +823,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
       </div>
       <div>
         <div
-          className="caGDDg" />
+          className="dDFwYz" />
         <br />
         <p
           style={
@@ -1169,7 +1183,12 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
         </span>
       </div>
     </div>
-    <div>
+    <div
+      style={
+        Object {
+          "marginTop": "10pt",
+        }
+      }>
       <h3
         className="kTDTpA">
         abcsadkfhkladsfj ab.com
@@ -1212,21 +1231,23 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
         No
       </p>
       <div
-        className="caGDDg" />
+        className="dDFwYz" />
       <strong>
          Clinical note: 
       </strong>
-      <p>
-        abc@abc.com
-      </p>
+      <div>
+        <p>
+          props.familyMemberClinicalInfo.clinicalInfo
+        </p>
+      </div>
       <br />
       <div>
         <strong>
            Relevant investigation: 
         </strong>
-        <p>
+        <div>
           asdasdasdasd
-        </p>
+        </div>
         <br />
       </div>
       <div>
@@ -1288,7 +1309,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
       <br />
       <div>
         <div
-          className="caGDDg" />
+          className="dDFwYz" />
         <br />
         <p
           style={
@@ -1320,7 +1341,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
       </div>
       <div>
         <div
-          className="caGDDg" />
+          className="dDFwYz" />
         <br />
         <p
           style={

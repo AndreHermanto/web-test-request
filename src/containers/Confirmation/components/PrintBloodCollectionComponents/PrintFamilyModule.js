@@ -6,8 +6,11 @@ import {
 import { isoToShortDate } from './../../../../components/dateConvert';
 // PrintFamilyModule section
 export default function PrintFamilyModule(props) {
+  let clinicalNotes = props.familyMemberClinicalInfo.clinicalInfo.split(/\r?\n/);
+  let relevantInvestigationNotes = props.familyMemberClinicalInfo.relevantInvestigation.split(/\r?\n/);
+  let consanguinityNotes = props.familyMemberClinicalInfo.consanguinityInfo.split(/\r?\n/);
   return (
-    <div>
+    <div style={{marginTop:'10pt'}}>
       <PrintHeading>
         {props.familyMemberDetails.firstName + ' ' + props.familyMemberDetails.lastName} - {props.familyMemberDetails.relationship} <span>of</span> {props.patientDetails.firstName + ' ' + props.patientDetails.lastName}
       </PrintHeading>
@@ -48,10 +51,21 @@ export default function PrintFamilyModule(props) {
 
       {
         (props.familyMemberClinicalInfo.consanguinity && props.familyMemberClinicalInfo.consanguinityInfo !== '') &&
-        <p> 
+        <div> 
           <strong> Consanguinity Information:  </strong>
-          {props.familyMemberClinicalInfo.consanguinityInfo} 
-        </p>
+          {
+            consanguinityNotes.length > 1 ?
+            consanguinityNotes.map((c, i) => {
+              if(c === '') {
+                return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:20}}></p>;
+              }
+              else {
+                return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc'}}>{c}</p>;
+              }            
+            })
+            : <p>{props.familyMemberClinicalInfo.consanguinityInfo}</p>
+          } 
+        </div>
       } 
 
       {
@@ -70,18 +84,40 @@ export default function PrintFamilyModule(props) {
       <PageBreak />
         
       <strong> Clinical note: </strong>
-      <p>
-        {props.familyMemberClinicalInfo.clinicalInfo}
-      </p>
+      <div>
+      {
+        clinicalNotes.length > 1 ? 
+        clinicalNotes.map((n, i) => {
+          if(n === '') {
+            return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:20}}></p>;
+          }
+          else {
+            return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc'}}>{n}</p>;
+          }
+        }) 
+        : <p>props.familyMemberClinicalInfo.clinicalInfo</p>
+      }
+      </div>
       <br />
         
       {
         props.familyMemberClinicalInfo.relevantInvestigation !== '' &&
         <div>
           <strong> Relevant investigation: </strong>
-          <p>
-            {props.familyMemberClinicalInfo.relevantInvestigation}
-          </p>
+          <div>
+          {
+            relevantInvestigationNotes.length > 1 ?
+            relevantInvestigationNotes.map((r, i) => {
+              if(r === '') {
+                return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:20}}></p>;
+              }
+              else {
+                return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc'}}>{r}</p>;
+              }                      
+            })
+            : props.familyMemberClinicalInfo.relevantInvestigation
+          }
+          </div>
           <br />
         </div>
       }
