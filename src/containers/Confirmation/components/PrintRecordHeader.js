@@ -14,7 +14,7 @@ export default function PrintRecordHeader(props) {
     hour: 'numeric',
     minute:'numeric',
     second:'numeric'
-  }).split('/').join('-');
+  }).split(',').join(' ');
 
   return (
     <div>
