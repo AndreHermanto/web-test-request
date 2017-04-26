@@ -140,7 +140,7 @@ function Panel(props) {
         {props.option.label}
       </div>
       {
-        props.option.label !== 'Whole Genome Analysis' &&
+        props.option.label !== 'Whole Genome Analysis' && props.option.label !== 'Polycystic Kidney Disorder' &&
         <Arrow selected={props.selected}>
           <Glyphicon glyph={props.selected ? 'triangle-bottom' : 'triangle-left'} />
         </Arrow>
