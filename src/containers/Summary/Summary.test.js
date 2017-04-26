@@ -163,11 +163,6 @@ describe('Summary: index', () => {
 
     page.handleValidateSubmit();
     expect(page.props.route.onFormState).toHaveBeenCalled();
-    // await page.handleSubmit().then((response) => {
-    //    expect(page.props.route.onFormState).toHaveBeenCalled();
-    // });
-    
-    // FetchMock.restore();
   });
 
 });

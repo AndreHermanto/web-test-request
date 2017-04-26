@@ -29,7 +29,7 @@ class ConfirmationModal extends Component {
 
         <Modal show={this.state.showModal} onHide={this.close}>
           <Modal.Header closeButton>
-            <Modal.Title>Confirm your order</Modal.Title>
+            <Modal.Title>Confirm your request</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             When you submit this test request, an invoice will be emailed to the payer if this test is privately billed.
