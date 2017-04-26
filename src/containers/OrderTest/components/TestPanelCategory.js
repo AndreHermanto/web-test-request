@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import {
   FormGroup,
   ControlLabel,
-  Glyphicon
+  Glyphicon,
+  Row,
+  Col,
+  Label
 } from 'react-bootstrap';
 import { 
   SubLabel,
@@ -11,6 +14,13 @@ import {
 import styled from 'styled-components';
 import checked from './../../../assets/images/checked.svg';
 import grayCheck from './../../../assets/images/checked-gray.svg';
+
+const Gene = styled(Label)`
+  margin-right: 4px;
+  display: inline-block !important;
+  font-weight: 300 !important;
+  background: ${props => props['data-inCore'] ? '#7788aa' : '#00a6b6'} !important;
+`;
 
 const TestContainer = styled.div`
   padding: 11px 0px 11px 21px !important;
@@ -130,12 +140,52 @@ function Panel(props) {
         {props.option.label}
       </div>
       {
-        props.option.label !== 'Whole Genome Analysis' &&
+        props.option.label !== 'Whole Genome Analysis' && props.option.label !== 'Polycystic Kidney Disorder' &&
         <Arrow selected={props.selected}>
           <Glyphicon glyph={props.selected ? 'triangle-bottom' : 'triangle-left'} />
         </Arrow>
       }
+      {
+        (props.option.label === 'Polycystic Kidney Disorder' && props.selected) &&
+        <GeneList option={props.option.categories[0].panels[0]}/>
+      }
     </TestContainer>
+  )
+}
+
+/*
+* display gene list if PKD is selected
+*/
+function GeneList(props) {
+  var geneList = props.option.geneLists ? props.option.geneLists.slice(0) : [];
+  geneList.map((list) => {
+    list.id = list.type;
+    list.label = list.type.toUpperCase().slice(0,1) + list.type.slice(1);   
+    return list;
+  })
+  return (
+    <div style={{ marginTop: 20 }}>
+    {
+      geneList.map((list, $index) => {
+        return <Row key={$index} style={{ padding: 8 }}>
+          <Col lg={3}>
+            {list.label} Panel <small style={{ display: 'inline-block' }}>({list.genes.length} genes included)</small>
+          </Col>
+          <Col lg={9}>
+            {list.genes.map((gene, $geneIndex) => {
+              var inCore = false; 
+              if(geneList.length > 1) {
+                geneList[0].genes.forEach((coregene) => {
+                  if(coregene === gene) inCore = true;
+                });
+              }
+              return <Gene key={$geneIndex} data-inCore={inCore} >{gene}</Gene> 
+            })}
+          </Col>
+        </Row>
+      })
+    }
+    </div>
   )
 }
 

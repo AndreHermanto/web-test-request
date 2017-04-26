@@ -129,7 +129,8 @@ class OrderTest extends Component {
           (
             this.state.chosenPanelMainCategory && 
             this.state.chosenPanelMainCategory.id &&
-            this.state.chosenPanelMainCategory.label !== 'Whole Genome Analysis'
+            this.state.chosenPanelMainCategory.label !== 'Whole Genome Analysis' &&
+            this.state.chosenPanelMainCategory.label !== 'Polycystic Kidney Disorder'
           ) &&
           <TestPanelCategory 
             field="chosenPanelSubCategory"
@@ -148,7 +149,8 @@ class OrderTest extends Component {
           (
             this.state.chosenPanelSubCategory && 
             this.state.chosenPanelSubCategory.id &&
-            this.state.chosenPanelMainCategory.label !== 'Whole Genome Analysis'
+            this.state.chosenPanelMainCategory.label !== 'Whole Genome Analysis' &&
+            this.state.chosenPanelMainCategory.label !== 'Polycystic Kidney Disorder'
           ) &&
           <TestPanel 
             field="test"
