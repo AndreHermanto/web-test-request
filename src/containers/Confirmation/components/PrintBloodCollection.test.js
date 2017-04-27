@@ -34,15 +34,6 @@ import PrintBloodCollection from './PrintBloodCollection';
     relevantInvestigation:"asdkfhgasdlfhabsdlfjhalsfdjh"
   }
 
-  const billingInfo = {
-    payer:"abc abc",
-    phone:"+61412334477",
-    payerEmail:"abc@gmail.com",
-    firstName:"abc",
-    lastName:"abc",
-    billOption:"Private"
-  }
-
   const testData = {
     test: {
       id:'7052d137-a166-48b0-a52e-e05a167bd176',
@@ -59,7 +50,6 @@ test('PrintBloodCollection renders without crashing ', () => {
     orderTestModule={testData}
     patientDetails={patientData} clinicalInfo={clinicalData}
     familyMember={familyData} clinicianDetails={clinicianDetails}
-    billingInfo={billingInfo}
   />).toJSON();
   expect(page).toMatchSnapshot();
 });

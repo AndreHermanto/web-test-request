@@ -5,8 +5,8 @@ import {
   Col
 } from 'react-bootstrap';
 
-// Print Header
-export default function PrintHeader(props) {
+// Print Record Header
+export default function PrintRecordHeader(props) {
   let date = (new Date(props.showDate)).toLocaleDateString('en-GB', {
     day : 'numeric',
     month : 'numeric',
@@ -15,15 +15,16 @@ export default function PrintHeader(props) {
     minute:'numeric',
     second:'numeric'
   }).split(',').join(' ');
+
   return (
     <div>
       <Row>
-        <Col sm={4}>
+        <Col sm={6}>
           <img 
             src={logo} 
             className="App-logo" 
             alt="logo"
-            style={{ width: 200 }}
+            style={{ width: 250, marginTop:20 }}
             />
           <div style={{ marginTop: 70 }}>
             Request Id: {props.showId} <br />
@@ -31,21 +32,8 @@ export default function PrintHeader(props) {
           </div>
         </Col>
 
-        <Col sm={4} style={{ border: '2px solid #000', padding: 12 }}>
-          <div>
-            <b>
-            Deliver specimens to: <br />
-            Central Specimen Reception (CSR)SydPath <br />
-            </b>
-            St Vincent’s Hospital, Xavier Building <br />
-            Level 6, 390 Victoria St <br />
-            Darlinghurst NSW 2010 Australia <br />
-            P +61 2 8382 9100
-          </div>
-        </Col>
-
-        <Col sm={4}>
-          <div style={{ fontSize: 11 }} className="pull-right">
+        <Col sm={6}>
+          <div className="pull-right" style={{marginRight:'20pt'}}>
             <p style={{ marginBottom: 8 }}>
             Genome.One Pty Ltd <br />
             ACN 608 029 732 <br />

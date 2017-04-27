@@ -26,6 +26,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
              
             <br />
             Date submitted: 
+            Invalid Date
           </div>
         </div>
         <div
@@ -98,61 +99,6 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
       </div>
     </div>
     <br />
-    <div>
-      <h3
-        className="kTDTpA">
-        Test Ordered
-      </h3>
-      <h4>
-        <strong>
-          Consequatur adipisci modi laudantium tenetur ea exercitationem id
-        </strong>
-      </h4>
-      <p
-        style={
-          Object {
-            "fontWeight": 400,
-            "textTransform": "capitalize",
-          }
-        }>
-        complete
-         panel - included genes:
-      </p>
-      <div>
-        <span
-          className="dlnqYf label label-default">
-          GZOW
-        </span>
-        <span
-          className="dlnqYf label label-default">
-          KIHG
-        </span>
-        <span
-          className="dlnqYf label label-default">
-          DRCO
-        </span>
-        <span
-          className="dlnqYf label label-default">
-          DWBY
-        </span>
-        <span
-          className="dlnqYf label label-default">
-          ZMZY
-        </span>
-        <span
-          className="dlnqYf label label-default">
-          BMBP
-        </span>
-        <span
-          className="dlnqYf label label-default">
-          OLZO
-        </span>
-        <span
-          className="dlnqYf label label-default">
-          PZOA
-        </span>
-      </div>
-    </div>
     <div>
       <h3
         className="kTDTpA">
@@ -339,33 +285,56 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
     <div>
       <h3
         className="kTDTpA">
-        Billing Information
+        Test Ordered
       </h3>
+      <h4>
+        <strong>
+          Consequatur adipisci modi laudantium tenetur ea exercitationem id
+        </strong>
+      </h4>
+      <p
+        style={
+          Object {
+            "fontWeight": 400,
+            "textTransform": "capitalize",
+          }
+        }>
+        complete
+         panel - included genes:
+      </p>
       <div>
-        <p>
-          <strong>
-             Payer:  
-          </strong>
-          abc abc
-        </p>
-        <p>
-          <strong>
-             Mobile:  
-          </strong>
-          +61412334477
-        </p>
-        <p>
-          <strong>
-             Email:  
-          </strong>
-          abc@gmail.com
-        </p>
-        <p>
-          <strong>
-             Total price:  
-          </strong>
-          $
-        </p>
+        <span
+          className="dlnqYf label label-default">
+          GZOW
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          KIHG
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          DRCO
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          DWBY
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          ZMZY
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          BMBP
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          OLZO
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          PZOA
+        </span>
       </div>
     </div>
     <div>
@@ -538,6 +507,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
              
             <br />
             Date submitted: 
+            Invalid Date
           </div>
         </div>
         <div
@@ -610,61 +580,6 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
       </div>
     </div>
     <br />
-    <div>
-      <h3
-        className="kTDTpA">
-        Test Ordered
-      </h3>
-      <h4>
-        <strong>
-          Consequatur adipisci modi laudantium tenetur ea exercitationem id
-        </strong>
-      </h4>
-      <p
-        style={
-          Object {
-            "fontWeight": 400,
-            "textTransform": "capitalize",
-          }
-        }>
-        complete
-         panel - included genes:
-      </p>
-      <div>
-        <span
-          className="dlnqYf label label-default">
-          GZOW
-        </span>
-        <span
-          className="dlnqYf label label-default">
-          KIHG
-        </span>
-        <span
-          className="dlnqYf label label-default">
-          DRCO
-        </span>
-        <span
-          className="dlnqYf label label-default">
-          DWBY
-        </span>
-        <span
-          className="dlnqYf label label-default">
-          ZMZY
-        </span>
-        <span
-          className="dlnqYf label label-default">
-          BMBP
-        </span>
-        <span
-          className="dlnqYf label label-default">
-          OLZO
-        </span>
-        <span
-          className="dlnqYf label label-default">
-          PZOA
-        </span>
-      </div>
-    </div>
     <div
       style={
         Object {
@@ -857,33 +772,56 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
     <div>
       <h3
         className="kTDTpA">
-        Billing Information
+        Test Ordered
       </h3>
+      <h4>
+        <strong>
+          Consequatur adipisci modi laudantium tenetur ea exercitationem id
+        </strong>
+      </h4>
+      <p
+        style={
+          Object {
+            "fontWeight": 400,
+            "textTransform": "capitalize",
+          }
+        }>
+        complete
+         panel - included genes:
+      </p>
       <div>
-        <p>
-          <strong>
-             Payer:  
-          </strong>
-          abc abc
-        </p>
-        <p>
-          <strong>
-             Mobile:  
-          </strong>
-          +61412334477
-        </p>
-        <p>
-          <strong>
-             Email:  
-          </strong>
-          abc@gmail.com
-        </p>
-        <p>
-          <strong>
-             Total price:  
-          </strong>
-          $
-        </p>
+        <span
+          className="dlnqYf label label-default">
+          GZOW
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          KIHG
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          DRCO
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          DWBY
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          ZMZY
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          BMBP
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          OLZO
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          PZOA
+        </span>
       </div>
     </div>
     <div>
@@ -1056,6 +994,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
              
             <br />
             Date submitted: 
+            Invalid Date
           </div>
         </div>
         <div
@@ -1128,61 +1067,6 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
       </div>
     </div>
     <br />
-    <div>
-      <h3
-        className="kTDTpA">
-        Test Ordered
-      </h3>
-      <h4>
-        <strong>
-          Consequatur adipisci modi laudantium tenetur ea exercitationem id
-        </strong>
-      </h4>
-      <p
-        style={
-          Object {
-            "fontWeight": 400,
-            "textTransform": "capitalize",
-          }
-        }>
-        complete
-         panel - included genes:
-      </p>
-      <div>
-        <span
-          className="dlnqYf label label-default">
-          GZOW
-        </span>
-        <span
-          className="dlnqYf label label-default">
-          KIHG
-        </span>
-        <span
-          className="dlnqYf label label-default">
-          DRCO
-        </span>
-        <span
-          className="dlnqYf label label-default">
-          DWBY
-        </span>
-        <span
-          className="dlnqYf label label-default">
-          ZMZY
-        </span>
-        <span
-          className="dlnqYf label label-default">
-          BMBP
-        </span>
-        <span
-          className="dlnqYf label label-default">
-          OLZO
-        </span>
-        <span
-          className="dlnqYf label label-default">
-          PZOA
-        </span>
-      </div>
-    </div>
     <div
       style={
         Object {
@@ -1375,33 +1259,56 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
     <div>
       <h3
         className="kTDTpA">
-        Billing Information
+        Test Ordered
       </h3>
+      <h4>
+        <strong>
+          Consequatur adipisci modi laudantium tenetur ea exercitationem id
+        </strong>
+      </h4>
+      <p
+        style={
+          Object {
+            "fontWeight": 400,
+            "textTransform": "capitalize",
+          }
+        }>
+        complete
+         panel - included genes:
+      </p>
       <div>
-        <p>
-          <strong>
-             Payer:  
-          </strong>
-          abc abc
-        </p>
-        <p>
-          <strong>
-             Mobile:  
-          </strong>
-          +61412334477
-        </p>
-        <p>
-          <strong>
-             Email:  
-          </strong>
-          abc@gmail.com
-        </p>
-        <p>
-          <strong>
-             Total price:  
-          </strong>
-          $
-        </p>
+        <span
+          className="dlnqYf label label-default">
+          GZOW
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          KIHG
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          DRCO
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          DWBY
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          ZMZY
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          BMBP
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          OLZO
+        </span>
+        <span
+          className="dlnqYf label label-default">
+          PZOA
+        </span>
       </div>
     </div>
     <div>

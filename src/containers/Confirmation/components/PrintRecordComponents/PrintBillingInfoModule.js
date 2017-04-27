@@ -6,7 +6,7 @@ import {
 // PrintBillingInfoModule page
 export default function PrintBillingInfoModule(props) {
   return (
-    <div>
+    <div style={{marginTop:'10pt'}}>
       <PrintHeading>
         Billing Information
       </PrintHeading>
