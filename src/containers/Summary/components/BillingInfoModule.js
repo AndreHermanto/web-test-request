@@ -64,12 +64,6 @@ class BillingInfoModule extends Component
                 {this.props.billingInfoModule.payerEmail}
               </SummaryDetails>
             </Col>
-            <Col md={12}>
-              <SummaryDetails> 
-                <SummaryTitle> Total price:  </SummaryTitle>
-                ${this.props.billingInfoModule.billPrice}
-              </SummaryDetails>
-            </Col>
           </Row>
           :
           <Row>
@@ -77,12 +71,6 @@ class BillingInfoModule extends Component
               <SummaryDetails> 
                 <SummaryTitle> Payer:  </SummaryTitle>
                 {this.props.clinicianDetailsModule.organisation}
-              </SummaryDetails>
-            </Col>
-            <Col md={12}>
-              <SummaryDetails> 
-                <SummaryTitle> Total price:  </SummaryTitle>
-                ${this.props.billingInfoModule.billPrice}
               </SummaryDetails>
             </Col>
           </Row>

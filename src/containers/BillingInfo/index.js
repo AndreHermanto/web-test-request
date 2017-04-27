@@ -21,7 +21,6 @@ import {
 import Input from './../../components/Input';
 import Toggle from './../../components/Toggle';
 import RadioSet from './../../components/RadioSet';
-import PriceList from './components/PriceList';
 
 /**
  * BillingInfo - UI for input billing details.
@@ -135,17 +134,6 @@ class BillingInfo extends Component {
   }
   
   render() {
-
-    const even = {
-      backgroundColor:'#f9f9f9'
-    }
-    const odd = {
-      backgroundColor:'#fff'
-    }
-    const total = {
-      backgroundColor:'#fcf8e3',
-      borderBottom: '1px solid #eee'
-    }
     const payers = this.getPayers();
     const options = this.getPayerOption(payers);
     return (
@@ -161,43 +149,20 @@ class BillingInfo extends Component {
           onValidate={this.validate()}
         />
         {
-          this.state.form.billOption !== '' &&
+          this.state.form.billOption === 'Private' &&
           <div>  
-          <FormGroup>
-          {
-            this.state.priceList.map((p, i) => {
-              if(i === (this.state.priceList.length - 1)) {
-                return <PriceList style={total} priceList={p} key={i}/>;
-              }
-              else if(i % 2 === 0) {
-                return <PriceList style={even} priceList={p} key={i}/>;
-              }
-              else {
-                return <PriceList style={odd} priceList={p} key={i}/>;
-              }
-            })
-          }
-          </FormGroup>
-          {
-            (this.state.form.billOption === 'Private') &&
-            <div>
-              <BreakLine top={'2em'} bottom={'2em'}></BreakLine>
-              <FormGroup>
-                <ControlLabel style={{fontSize:24, fontWeight:500}}>Payer</ControlLabel>
-                <div style={{marginTop:'-2em'}}>
-                  <RadioSet 
-                    field="payer"
-                    options={options}
-                    onChange={this.handleSelectChange}
-                    formState={this.state.form}
-                  />
-                </div>
-              </FormGroup>
-            </div>
-          }
-          {
-            (this.state.form.billOption === 'Private') &&
-            <div>
+            <BreakLine top={'2em'} bottom={'2em'}></BreakLine>
+            <FormGroup>
+              <ControlLabel style={{fontSize:24, fontWeight:500}}>Payer</ControlLabel>
+              <div style={{marginTop:'-2em'}}>
+                <RadioSet 
+                  field="payer"
+                  options={options}
+                  onChange={this.handleSelectChange}
+                  formState={this.state.form}
+                />
+              </div>
+            </FormGroup>
               <Input
                 field="firstName"
                 label="First Name"
@@ -235,11 +200,6 @@ class BillingInfo extends Component {
               <Helper style={{marginTop:-5, color:'#008b8b'}}>
                 The mobile number entered will be used as the password to open the invoice sent to the payer.
               </Helper>
-            </div>
-          }
-          {
-            (this.state.form.billOption === 'Private') &&
-            <div>
               <Toggle
                 field="consent"
                 label="Has payer's consent been received?"
@@ -249,9 +209,6 @@ class BillingInfo extends Component {
                 declaration="I have advised the patient that this test is dependent on private payment and will not proceed till it is received."
                 required
               />
-            </div>
-          }
-
           </div>
         }
         {

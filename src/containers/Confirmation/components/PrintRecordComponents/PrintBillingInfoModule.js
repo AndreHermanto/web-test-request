@@ -29,20 +29,12 @@ export default function PrintBillingInfoModule(props) {
             <strong> Email:  </strong>
             {props.billingInfo.payerEmail}
           </p>
-          <p> 
-            <strong> Total price:  </strong>
-            ${props.billingInfo.billPrice}
-          </p>
         </div>
         :
         <div>
           <p> 
             <strong> Payer:  </strong>
             {props.clinicianDetails.organisation}
-          </p>
-          <p> 
-            <strong> Total price:  </strong>
-            ${props.billingInfo.billPrice}
           </p>
         </div>
       }
