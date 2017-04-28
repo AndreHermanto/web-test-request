@@ -108,6 +108,7 @@ export function setBillOption(state, target, payerObj) {
     let payer = payerObj.id.trim().split(' ');
     let firstname = payer[0];
     let lastname;
+
     for(let i = 1; i < payer.length; i++){
       if(payer[i] !== ' '){
         lastname = payer[i];
@@ -152,10 +153,11 @@ export function setSelectData(state, value) {
       validationStateChild = Object.assign({}, state.validation);
 
     let payer = value.trim().split(' ');
+    
     let firstname = payer[0];
     let lastname;
     for(let i = 1; i < payer.length; i++){
-      if(payer[i] !==  ' '){
+      if(payer[i] !==  ' ' && payer[i]!==  ""){
         lastname = payer[i];
         i = payer.length;
       }
