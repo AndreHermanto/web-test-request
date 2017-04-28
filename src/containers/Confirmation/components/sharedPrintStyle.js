@@ -18,8 +18,7 @@ export const PageEnd = styled.div`
 
 export const PrintHeading = styled.h3`
   text-align: center !important;
-  border-top: 1px solid #333;
-  border-bottom: 1px solid #333;
+  border: 1px solid #333;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;

@@ -85,11 +85,15 @@ export default function PrintFamilyModule(props) {
               <strong> Affected:  </strong>
               {member.familyMemberClinicalInfo.affected ? 'Yes' : 'No'} 
             </p>
-
-            <PageBreak/>
-
-            <strong> Clinical note </strong>
-            <div>
+            {
+              (member.familyMemberClinicalInfo.clinicalInfo !== '' || member.familyMemberClinicalInfo.relevantInvestigation !== '') &&
+              <PageBreak/>
+            }
+            
+            {
+              member.familyMemberClinicalInfo.clinicalInfo !== '' &&
+              <div>
+              <strong> Clinical note </strong>
               {
                 clinicalNotes.length > 1 ? 
                 clinicalNotes.map((n, i) => {
@@ -100,9 +104,10 @@ export default function PrintFamilyModule(props) {
                     return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc'}}>{n}</p>;
                   }
                 }) 
-                : <p>member.familyMemberClinicalInfo.clinicalInfo</p>
+                : <p>{member.familyMemberClinicalInfo.clinicalInfo}</p>
               }
-            </div>
+              </div>
+            }
             <br />
             {
               member.familyMemberClinicalInfo.relevantInvestigation !== '' &&

@@ -9,10 +9,11 @@ export default function PrintFamilyModule(props) {
   let clinicalNotes = props.familyMemberClinicalInfo.clinicalInfo.split(/\r?\n/);
   let relevantInvestigationNotes = props.familyMemberClinicalInfo.relevantInvestigation.split(/\r?\n/);
   let consanguinityNotes = props.familyMemberClinicalInfo.consanguinityInfo.split(/\r?\n/);
+
   return (
     <div style={{marginTop:'10pt'}}>
       <PrintHeading>
-        {props.familyMemberDetails.firstName + ' ' + props.familyMemberDetails.lastName} - {props.familyMemberDetails.relationship} <span>of</span> {props.patientDetails.firstName + ' ' + props.patientDetails.lastName}
+        {props.familyMemberDetails.firstName + ' ' + props.familyMemberDetails.lastName} - {props.familyMemberDetails.relationship} of {props.patientDetails.firstName + ' ' + props.patientDetails.lastName}
       </PrintHeading>
     
       <p> 
@@ -35,17 +36,9 @@ export default function PrintFamilyModule(props) {
           props.familyMemberDetails.gender
         } 
       </p>
-    
-      {
-        props.familyMemberDetails.ethnicity !== '' &&
-        <p> 
-          <strong> Ethnicity:  </strong>
-          {props.familyMemberDetails.ethnicity}
-        </p>
-      }
 
       <p> 
-        <strong> consanguinity:  </strong>
+        <strong> Consanguinity:  </strong>
           {props.familyMemberClinicalInfo.consanguinity ? 'Yes' : 'No'} 
       </p>
 
@@ -67,38 +60,36 @@ export default function PrintFamilyModule(props) {
           } 
         </div>
       } 
-
-      {
-        (props.familyMemberClinicalInfo.consanguinity && props.familyMemberClinicalInfo.consanguinityInfo !== '') &&
-        <p> 
-          <strong> Consanguinity Information:  </strong>
-          {props.familyMemberClinicalInfo.consanguinityInfo}
-        </p>
-      }
     
       <p> 
         <strong> Affected:  </strong>
         {props.familyMemberClinicalInfo.affected ? 'Yes' : 'No'} 
       </p>
           
-      <PageBreak />
-        
-      <strong> Clinical note: </strong>
-      <div>
       {
-        clinicalNotes.length > 1 ? 
-        clinicalNotes.map((n, i) => {
-          if(n === '') {
-            return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:20}}></p>;
-          }
-          else {
-            return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc'}}>{n}</p>;
-          }
-        }) 
-        : <p>props.familyMemberClinicalInfo.clinicalInfo</p>
+        (props.familyMemberClinicalInfo.clinicalInfo !== '' || props.familyMemberClinicalInfo.relevantInvestigation !== '') &&
+        <PageBreak/>
       }
-      </div>
-      <br />
+            
+      {
+        props.familyMemberClinicalInfo.clinicalInfo !== '' &&
+        <div>  
+          <strong> Clinical note: </strong>
+          {
+            clinicalNotes.length > 1 ? 
+            clinicalNotes.map((n, i) => {
+              if(n === '') {
+                return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:20}}></p>;
+              }
+              else {
+                return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc'}}>{n}</p>;
+              }
+            }) 
+            : <p>props.familyMemberClinicalInfo.clinicalInfo</p>
+          }
+          <br />
+        </div>
+      }
         
       {
         props.familyMemberClinicalInfo.relevantInvestigation !== '' &&
@@ -118,17 +109,6 @@ export default function PrintFamilyModule(props) {
             : props.familyMemberClinicalInfo.relevantInvestigation
           }
           </div>
-          <br />
-        </div>
-      }
-      
-      {
-        props.familyMemberClinicalInfo.familyHistory !== '' &&
-        <div>
-          <strong> Family history: </strong>
-          <p>
-            {props.familyMemberClinicalInfo.familyHistory}
-          </p>
         </div>
       }
     </div>

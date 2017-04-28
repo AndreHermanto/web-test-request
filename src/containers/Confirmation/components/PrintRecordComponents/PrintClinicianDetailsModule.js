@@ -15,11 +15,13 @@ export default function PrintClinicianDetailsModule(props) {
         <strong> Organisation/Address of practice:  </strong>
         {props.clinicianDetails.organisation}
       </p>
-
-      <p> 
-        <strong> Provider number:  </strong>
-        {props.clinicianDetails.providerNumber}
-      </p>
+      {
+        props.clinicianDetails.providerNumber !== '' &&
+        <p> 
+          <strong> Provider number:  </strong>
+          {props.clinicianDetails.providerNumber}
+        </p>
+      }
 
       <p> 
         <strong> Medical specialty:  </strong>

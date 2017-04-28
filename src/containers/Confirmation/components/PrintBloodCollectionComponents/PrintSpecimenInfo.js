@@ -16,7 +16,7 @@ export const TickBox = styled.div`
 // PrintSpecimenInfo section
 export default function PrintSpecimenInfo(props) {
   return (
-    <div>
+    <div style={{marginTop:'10pt'}}>
       <PrintHeading>
         Specimen Information
       </PrintHeading>

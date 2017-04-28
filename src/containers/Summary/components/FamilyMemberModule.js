@@ -111,23 +111,26 @@ class FamilyMemberModule extends Component
               Clinical Information
             </SectionHeading>
           </Col>
-          <Col md={12}>
-            <SummaryTitle> Clinical note </SummaryTitle>
-            <SummaryNotes>
-              {
-                clinicalNotes.length > 1 ? 
-                clinicalNotes.map((n, i) => {
-                  if(n === '') {
-                    return <p key={i} style={{fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:15}}></p>;
-                  }
-                  else {
-                    return <p key={i} style={{fontWeight:200, borderBottom: '1px solid #ccc'}}>{n}</p>;
-                  }
-                }) 
-                : this.props.familyMemberClinicalInfo.clinicalInfo
-              }
-            </SummaryNotes>
-          </Col>
+          {
+            this.props.familyMemberClinicalInfo.clinicalInfo !== '' &&
+            <Col md={12}>
+              <SummaryTitle> Clinical note </SummaryTitle>
+              <SummaryNotes>
+                {
+                  clinicalNotes.length > 1 ? 
+                  clinicalNotes.map((n, i) => {
+                    if(n === '') {
+                      return <p key={i} style={{fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:15}}></p>;
+                    }
+                    else {
+                      return <p key={i} style={{fontWeight:200, borderBottom: '1px solid #ccc'}}>{n}</p>;
+                    }
+                  }) 
+                  : this.props.familyMemberClinicalInfo.clinicalInfo
+                }
+              </SummaryNotes>
+            </Col>
+          }
           {
             this.props.familyMemberClinicalInfo.relevantInvestigation !== '' &&
             <Col md={12}>

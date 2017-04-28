@@ -1,7 +1,7 @@
 exports[`test PrintBloodCollection renders without crashing  1`] = `
 <div>
   <div
-    className="dNRwmG">
+    className="eyZJRC">
     <div>
       <div
         className="row">
@@ -59,7 +59,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
             className="pull-right"
             style={
               Object {
-                "fontSize": 11,
+                "fontSize": 12,
               }
             }>
             <p
@@ -101,7 +101,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
     <br />
     <div>
       <h3
-        className="kTDTpA">
+        className="gcYJLi">
         Ngabcuyen abcabc
          - Patient
       </h3>
@@ -125,12 +125,6 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
       </p>
       <p>
         <strong>
-           Ethnicity:  
-        </strong>
-        Asian
-      </p>
-      <p>
-        <strong>
            Consanguinity:  
         </strong>
         No
@@ -145,8 +139,8 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
           Dissuade ecstatic and properly saw entirely sir why laughter endeavor. In on my jointure horrible margaret suitable he followed speedily. Indeed vanity excuse or mr lovers of on. By offer scale an stuff. Blush be sorry no sight. Sang lose of hour then he left find
         </p>
       </div>
-      <br />
       <div>
+        <br />
         <strong>
            Relevant investigation: 
         </strong>
@@ -166,17 +160,17 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
             kasdfbljkbfalhfasvfkjabskldfbkjsdfbkdashfvdjhfhb;kfjv;hfv;fjbafhb;akfd
           </p>
         </div>
+        <br />
       </div>
-      <br />
     </div>
     <div
       style={
         Object {
-          "marginTop": "-15pt",
+          "marginTop": "-5pt",
         }
       }>
       <h3
-        className="kTDTpA">
+        className="gcYJLi">
         John Doe
          - Clinician
       </h3>
@@ -284,7 +278,12 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
     </div>
     <div>
       <h3
-        className="kTDTpA">
+        className="gcYJLi"
+        style={
+          Object {
+            "marginTop": "5pt",
+          }
+        }>
         Test Ordered
       </h3>
       <h4>
@@ -337,9 +336,14 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
         </span>
       </div>
     </div>
-    <div>
+    <div
+      style={
+        Object {
+          "marginTop": "10pt",
+        }
+      }>
       <h3
-        className="kTDTpA">
+        className="gcYJLi">
         Specimen Information
       </h3>
       <div
@@ -359,7 +363,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
     <div>
       <br />
       <h3
-        className="kTDTpA">
+        className="gcYJLi">
         Collector Declaration
       </h3>
       <br />
@@ -482,7 +486,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
     </div>
   </div>
   <div
-    className="dNRwmG">
+    className="eyZJRC">
     <div>
       <div
         className="row">
@@ -540,7 +544,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
             className="pull-right"
             style={
               Object {
-                "fontSize": 11,
+                "fontSize": 12,
               }
             }>
             <p
@@ -587,14 +591,10 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
         }
       }>
       <h3
-        className="kTDTpA">
+        className="gcYJLi">
         abc@abc.com abc@abc.com
          - 
-         
-        <span>
-          of
-        </span>
-         
+         of 
         Ngabcuyen abcabc
       </h3>
       <p>
@@ -617,7 +617,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
       </p>
       <p>
         <strong>
-           consanguinity:  
+           Consanguinity:  
         </strong>
         No
       </p>
@@ -629,15 +629,15 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
       </p>
       <div
         className="dDFwYz" />
-      <strong>
-         Clinical note: 
-      </strong>
       <div>
+        <strong>
+           Clinical note: 
+        </strong>
         <p>
           props.familyMemberClinicalInfo.clinicalInfo
         </p>
+        <br />
       </div>
-      <br />
       <div>
         <strong>
            Relevant investigation: 
@@ -645,25 +645,16 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
         <div>
           asdasdasd
         </div>
-        <br />
-      </div>
-      <div>
-        <strong>
-           Family history: 
-        </strong>
-        <p>
-          asdasdasdasd
-        </p>
       </div>
     </div>
     <div
       style={
         Object {
-          "marginTop": "-15pt",
+          "marginTop": "-5pt",
         }
       }>
       <h3
-        className="kTDTpA">
+        className="gcYJLi">
         John Doe
          - Clinician
       </h3>
@@ -771,7 +762,12 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
     </div>
     <div>
       <h3
-        className="kTDTpA">
+        className="gcYJLi"
+        style={
+          Object {
+            "marginTop": "5pt",
+          }
+        }>
         Test Ordered
       </h3>
       <h4>
@@ -824,9 +820,14 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
         </span>
       </div>
     </div>
-    <div>
+    <div
+      style={
+        Object {
+          "marginTop": "10pt",
+        }
+      }>
       <h3
-        className="kTDTpA">
+        className="gcYJLi">
         Specimen Information
       </h3>
       <div
@@ -846,7 +847,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
     <div>
       <br />
       <h3
-        className="kTDTpA">
+        className="gcYJLi">
         Collector Declaration
       </h3>
       <br />
@@ -969,7 +970,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
     </div>
   </div>
   <div
-    className="dNRwmG">
+    className="eyZJRC">
     <div>
       <div
         className="row">
@@ -1027,7 +1028,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
             className="pull-right"
             style={
               Object {
-                "fontSize": 11,
+                "fontSize": 12,
               }
             }>
             <p
@@ -1074,14 +1075,10 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
         }
       }>
       <h3
-        className="kTDTpA">
+        className="gcYJLi">
         abcsadkfhkladsfj ab.com
          - 
-         
-        <span>
-          of
-        </span>
-         
+         of 
         Ngabcuyen abcabc
       </h3>
       <p>
@@ -1104,7 +1101,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
       </p>
       <p>
         <strong>
-           consanguinity:  
+           Consanguinity:  
         </strong>
         No
       </p>
@@ -1116,15 +1113,15 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
       </p>
       <div
         className="dDFwYz" />
-      <strong>
-         Clinical note: 
-      </strong>
       <div>
+        <strong>
+           Clinical note: 
+        </strong>
         <p>
           props.familyMemberClinicalInfo.clinicalInfo
         </p>
+        <br />
       </div>
-      <br />
       <div>
         <strong>
            Relevant investigation: 
@@ -1132,25 +1129,16 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
         <div>
           asdasdasdasd
         </div>
-        <br />
-      </div>
-      <div>
-        <strong>
-           Family history: 
-        </strong>
-        <p>
-          asdasd
-        </p>
       </div>
     </div>
     <div
       style={
         Object {
-          "marginTop": "-15pt",
+          "marginTop": "-5pt",
         }
       }>
       <h3
-        className="kTDTpA">
+        className="gcYJLi">
         John Doe
          - Clinician
       </h3>
@@ -1258,7 +1246,12 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
     </div>
     <div>
       <h3
-        className="kTDTpA">
+        className="gcYJLi"
+        style={
+          Object {
+            "marginTop": "5pt",
+          }
+        }>
         Test Ordered
       </h3>
       <h4>
@@ -1311,9 +1304,14 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
         </span>
       </div>
     </div>
-    <div>
+    <div
+      style={
+        Object {
+          "marginTop": "10pt",
+        }
+      }>
       <h3
-        className="kTDTpA">
+        className="gcYJLi">
         Specimen Information
       </h3>
       <div
@@ -1333,7 +1331,7 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
     <div>
       <br />
       <h3
-        className="kTDTpA">
+        className="gcYJLi">
         Collector Declaration
       </h3>
       <br />
