@@ -34,7 +34,7 @@ class BillingInfo extends Component {
     this.handleBillingChange = this.handleBillingChange.bind(this);
     this.handleSelectChange = this.handleSelectChange.bind(this);
     this.handleConfirm = this.handleConfirm.bind(this);
-    this.state = initData(props.route.data);
+    this.state = initData(props.route.data, this.props.route.patientData);
   }
   
   componentDidMount() {

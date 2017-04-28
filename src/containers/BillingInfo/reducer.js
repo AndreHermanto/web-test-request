@@ -3,7 +3,7 @@ import validator from './../../components/validator';
 /**
 * initialise billing form data
 */
-export function initData(prefilled) {
+export function initData(prefilled, patientData) {
   var state = {
     form: {
       billOption:'',
@@ -27,7 +27,15 @@ export function initData(prefilled) {
     formId: 'billingInfoModule'
   };
   
-  if(prefilled && Object.keys(prefilled).length !== 0) state.form = prefilled;
+
+  if(prefilled && Object.keys(prefilled).length !== 0){
+    state.form = prefilled;
+    if(state.form.billOption === 'Private'){
+      state.form.firstName = patientData.firstName;
+      state.form.lastName = patientData.lastName;
+      state.form.payer = patientData.firstName + ' ' + patientData.lastName + ' (Patient)'
+    }
+  } 
   
   // This validates the data in the initial state.
   state.validation = {};
