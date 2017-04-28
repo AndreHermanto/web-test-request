@@ -138,7 +138,7 @@ class BillingInfo extends Component {
     const options = this.getPayerOption(payers);
     return (
       <div>
-        <PageHeading>Step 6: Billing info</PageHeading>
+        <PageHeading>Step 6: Billing Information</PageHeading>
         <RadioSet
           label="Select billing option"
           field="billOption"
@@ -202,7 +202,7 @@ class BillingInfo extends Component {
               </Helper>
               <Toggle
                 field="consent"
-                label="Has payer's consent been received?"
+                label="Has payer's financial consent been received?"
                 onChange={this.handleChange}
                 onValidate={this.validate()}
                 formState={this.state.form}
