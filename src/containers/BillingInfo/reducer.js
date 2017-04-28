@@ -105,11 +105,19 @@ export function setBillOption(state, target, payerObj) {
       consent: true
     });
   } else {
+    let payer = payerObj.id.trim().split(' ');
+    let firstname = payer[0];
+    let lastname;
+    for(let i = 1; i < payer.length; i++){
+      if(payer[i] !== ' '){
+        lastname = payer[i];
+      }
+    }
     formStateChild = Object.assign({}, formStateChild, {
       payer: payerObj.label,
       phone: '',
-      firstName: payerObj.id.split(' ')[0],
-      lastName: payerObj.id.split(' ')[1],
+      firstName: firstname,
+      lastName: lastname,
       payerEmail: '',
       consent: false
     });
@@ -142,13 +150,23 @@ export function setBillOption(state, target, payerObj) {
 export function setSelectData(state, value) {
   let formStateChild, 
       validationStateChild = Object.assign({}, state.validation);
+
+    let payer = value.trim().split(' ');
+    let firstname = payer[0];
+    let lastname;
+    for(let i = 1; i < payer.length; i++){
+      if(payer[i] !==  ' '){
+        lastname = payer[i];
+        i = payer.length;
+      }
+    }
   if(value !== 'Other')
   {
-    let payer = value.split(' ');
+
     formStateChild = Object.assign({}, state.form, {
       payer: value,
-      firstName: payer[0],
-      lastName: payer[1],
+      firstName: firstname,
+      lastName: lastname,
       phone:'',
       payerEmail:''
     });
