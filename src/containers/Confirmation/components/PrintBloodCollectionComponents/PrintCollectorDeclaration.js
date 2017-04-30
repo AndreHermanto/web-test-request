@@ -32,8 +32,6 @@ const FieldLine = styled.span`
   width: 400px;
   height: 16px;
   display: inline-block;
-  margin-top: 12px;
-  margin-left: -42px;
   border-bottom: 1px solid #000;
 `;
 
@@ -55,28 +53,28 @@ export default function PrintCollectorDeclaration(props) {
         <Col sm={2}>
           <strong> Collector's name:  </strong>
         </Col>
-        <Col sm={4}><FieldLine /></Col>
+        <Col sm={4}><FieldLine style={{ marginLeft: -14}}/></Col>
       </FieldRow>
     
       <FieldRow> 
         <Col sm={2}>
           <strong> Collector's date:  </strong>
         </Col>
-        <Col sm={4}><FieldLine /></Col>
+        <Col sm={4}><FieldLine style={{ marginLeft: -24}}/></Col>
       </FieldRow>
     
       <FieldRow>
         <Col sm={2}>
           <strong> Collector's time:  </strong>
         </Col>
-        <Col sm={4}><FieldLine /></Col>
+        <Col sm={4}><FieldLine style={{ marginLeft: -24}}/></Col>
       </FieldRow>
     
       <FieldRow>
         <Col sm={2}>
           <strong> Sample type/site:  </strong>
         </Col>
-        <Col sm={4}><FieldLine /></Col>
+        <Col sm={4}><FieldLine style={{ marginLeft: -14}}/></Col>
       </FieldRow>
     
       <FieldRow>
@@ -96,7 +94,7 @@ export default function PrintCollectorDeclaration(props) {
         <Col sm={1}>
           <strong> Signature:  </strong>
         </Col>
-        <Col sm={3}><FieldLine style={{ marginLeft: -12, width: 250 }}/></Col>
+        <Col sm={3}><FieldLine style={{ marginLeft: 2, width: 250 }}/></Col>
       </FieldRow>
     
   
