@@ -48,7 +48,7 @@ exports[`ProgressBar renders without crashing 1`] = `
         className="hjLEmf">
         <strong
           className="bnFmTM">
-          Billing Info
+          Billing Information
         </strong>
       </li>
       <li
