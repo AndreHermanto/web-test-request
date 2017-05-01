@@ -30,12 +30,13 @@ export function initData(prefilled) {
     }
   };
   var selectedPayer;
+
   if(prefilled && Object.keys(prefilled).length !== 0) {
     state.form = prefilled;
     if(state.form.payer !== 'Other'){
       selectedPayer = Object.assign({}, state.payer, {
         id: prefilled.firstName + ' ' + prefilled.lastName
-      });      
+      });     
     }else{
       selectedPayer = Object.assign({}, state.payer, {
         id: 'Other'
@@ -163,19 +164,17 @@ export function setBillOption(state, target, payerObj) {
 /**
 * set the phone state when user choose a payer
 */
-export function setSelectData(state, value, test) {
+export function setSelectData(state, value, payerObj) {
   let formStateChild, 
       validationStateChild = Object.assign({}, state.validation);
-
-    let payer = value.trim().split(' ');
 
   if(value !== 'Other')
   {
 
     formStateChild = Object.assign({}, state.form, {
       payer: value,
-      firstName: payer[0],
-      lastName: payer[1],
+      firstName: payerObj.firstName,
+      lastName: payerObj.lastName,
       phone:'',
       payerEmail:''
     });

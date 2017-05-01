@@ -54,9 +54,10 @@ describe('ClinicianDetails: reducer', () => {
   });
 
   test('set new select payer for form field', () => {
-    let value = 'payer';
-    const newState = setSelectData(state, value);
-    expect(newState.form.payer).toEqual('payer');
+    let value = 'payer payer';
+    let payerObj = {firstName: 'payer', lastName: 'payer'}
+    const newState = setSelectData(state, value, payerObj);
+    expect(newState.form.payer).toEqual('payer payer');
   });
 
   test('set new other payer for form field, firstName attribute is blank', () => {

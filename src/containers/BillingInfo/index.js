@@ -68,7 +68,14 @@ class BillingInfo extends Component {
   }
 
   handleSelectChange(event) {
-    this.setState(setSelectData(this.state, event.target.value, event.target), this.priceChange);
+    var payers = this.getPayers();
+    var payer = {id: "Other", label: "Other", firstName: "", lastName: ""};
+    payers.forEach(function(item){
+      if(item.id === event.target.value){
+        payer = item;
+      }
+    });
+    this.setState(setSelectData(this.state, event.target.value, payer), this.priceChange);
   }
 
   handleBack() {
