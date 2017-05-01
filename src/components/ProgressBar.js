@@ -169,11 +169,11 @@ export default class ProgressBar extends Component
 
           {hashHistory.getCurrentLocation().pathname === "/step6"?
             <Active>
-              <Content>Billing Info</Content>
+              <Content>Billing Information</Content>
             </Active>
             :
             <Nav>
-              <Content>Billing Info</Content>
+              <Content>Billing Information</Content>
             </Nav>
           }
 
