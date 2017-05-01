@@ -113,3 +113,119 @@ exports[`TestPanel TestPanel overall renders well 1`] = `
     className="SfhHK help-block" />
 </div>
 `;
+
+exports[`TestPanelCategory TestPanelCategory overall renders well 1`] = `
+<div
+  className="form-group">
+  <label
+    className="control-label"
+    htmlFor={undefined}>
+    <span
+      className="lnMAUb">
+      Required
+    </span>
+  </label>
+  <br />
+  <div
+    className="fnPrcH"
+    onClick={[Function]}
+    selected={false}
+    width={undefined}>
+    <img
+      alt="logo"
+      src="test-file-stub"
+      style={
+        Object {
+          "float": "left",
+          "height": 30,
+        }
+      } />
+    <div
+      style={
+        Object {
+          "display": "table-cell",
+          "height": 30,
+          "paddingLeft": 20,
+          "verticalAlign": "middle",
+          "width": "inherit",
+        }
+      }>
+      p1
+    </div>
+    <span
+      className="kLCISb"
+      selected={false}>
+      <span
+        className="glyphicon glyphicon-triangle-left" />
+    </span>
+  </div>
+  <div
+    className="fnPrcH"
+    onClick={[Function]}
+    selected={false}
+    width={undefined}>
+    <img
+      alt="logo"
+      src="test-file-stub"
+      style={
+        Object {
+          "float": "left",
+          "height": 30,
+        }
+      } />
+    <div
+      style={
+        Object {
+          "display": "table-cell",
+          "height": 30,
+          "paddingLeft": 20,
+          "verticalAlign": "middle",
+          "width": "inherit",
+        }
+      }>
+      p2
+    </div>
+    <span
+      className="kLCISb"
+      selected={false}>
+      <span
+        className="glyphicon glyphicon-triangle-left" />
+    </span>
+  </div>
+  <div
+    className="fnPrcH"
+    onClick={[Function]}
+    selected={false}
+    width={undefined}>
+    <img
+      alt="logo"
+      src="test-file-stub"
+      style={
+        Object {
+          "float": "left",
+          "height": 30,
+        }
+      } />
+    <div
+      style={
+        Object {
+          "display": "table-cell",
+          "height": 30,
+          "paddingLeft": 20,
+          "verticalAlign": "middle",
+          "width": "inherit",
+        }
+      }>
+      p3
+    </div>
+    <span
+      className="kLCISb"
+      selected={false}>
+      <span
+        className="glyphicon glyphicon-triangle-left" />
+    </span>
+  </div>
+  <span
+    className="SfhHK help-block" />
+</div>
+`;

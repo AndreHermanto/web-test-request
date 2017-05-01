@@ -10,8 +10,12 @@ function getStep(value) {
 describe('FamilyMemberModule test', () => {
   const member = {
       "FamilyMemberDetails":{"lastName":"abc@abc.com","firstName":"abc@abc.com","dob":"2-January-1918","medicalRecordNo":"abc@abc.com","gender":"Female","genderOther":"","ethnicity":"","deceased":false,"sampleSource":"","consent":false,"email":"abc@abc.com"},
-      "FamilyMemberClinicalInfo":{"clinicalInfo":"abc@abc.com","affected":true,"relevantInvestigation":"asdasdasd","familyHistory":"asdasdasdasd","consangunity":false,     consanguinityInfo: "asjhdasbdlkahsdjb"}
+      "FamilyMemberClinicalInfo":{"clinicalInfo":"abc@abc.com\n\n","affected":true,"relevantInvestigation":"asdasdasd","familyHistory":"asdasdasdasd","consangunity":false, consanguinityInfo: "asjhdasbdlkahsdjb"}
   };  
+
+  const secondMember ={
+    "FamilyMemberClinicalInfo":{"clinicalInfo":"","affected":true,"relevantInvestigation":"asdasdasd","familyHistory":"asdasdasdasd","consangunity":false, consanguinityInfo: "asjhdasbdlkahsdjb"}
+  }
 
   const props = {
     familyMemberDetails: member.FamilyMemberDetails,
@@ -24,12 +28,15 @@ describe('FamilyMemberModule test', () => {
     expect(page).toMatchSnapshot();
   });
   
-  test('handleOnClick test', () => {
+  test('handleOnClick/displayNotes test', () => {
     var page = TestUtils.renderIntoDocument(
       <FamilyMemberModule familyMemberDetails={member.FamilyMemberDetails} familyMemberClinicalInfo={member.FamilyMemberClinicalInfo}
               handleOnClick={getStep}/>
     );
     expect(page.props.handleOnClick('step4')).toEqual('step4');
     expect(page.handleOnClick()).toEqual(4);
+
+    let notes = page.displayNotes(page.props.familyMemberClinicalInfo.clinicalInfo.split(/\r?\n/));
+    expect(notes.length).toEqual(3);
   });
 });

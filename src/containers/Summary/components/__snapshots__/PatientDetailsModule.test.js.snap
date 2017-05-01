@@ -84,7 +84,14 @@ exports[`PatientDetailsModule test renders without crashing  1`] = `
       </span>
       <div
         className="gczsYD">
-        Dissuade ecstatic and properly saw entirely sir why laughter endeavor. In on my jointure horrible margaret suitable he followed speedily. Indeed vanity excuse or mr lovers of on. By offer scale an stuff. Blush be sorry no sight. Sang lose of hour then he left find
+        <p
+          style={
+            Object {
+              "borderBottom": "1px solid #ccc",
+              "fontWeight": 200,
+              "paddingTop": 15,
+            }
+          } />
       </div>
     </div>
     <div
@@ -95,7 +102,15 @@ exports[`PatientDetailsModule test renders without crashing  1`] = `
       </span>
       <div
         className="gczsYD">
-        asdkfhgasdlfhabsdlfjhalsfdjh
+        <p
+          style={
+            Object {
+              "borderBottom": "1px solid #ccc",
+              "fontWeight": 200,
+            }
+          }>
+          asdkfhgasdlfhabsdlfjhalsfdjh
+        </p>
       </div>
     </div>
     <div
@@ -106,7 +121,15 @@ exports[`PatientDetailsModule test renders without crashing  1`] = `
       </span>
       <div
         className="gczsYD">
-        kasdfbljkbfalhfasvfkjabskldfbkjsdfbkdashfvdjhfhb;kfjv;hfv;fjbafhb;akfd
+        <p
+          style={
+            Object {
+              "borderBottom": "1px solid #ccc",
+              "fontWeight": 200,
+            }
+          }>
+          kasdfbljkbfalhfasvfkjabskldfbkjsdfbkdashfvdjhfhb;kfjv;hfv;fjbafhb;akfd
+        </p>
       </div>
     </div>
     <div

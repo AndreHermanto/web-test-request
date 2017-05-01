@@ -41,11 +41,22 @@ class PatientDetailsModule extends Component
     return 3;
   }
 
+  displayNotes(notes) {
+    return notes.map((n, i) => {
+      if(n === '') {
+        return <p key={i} style={{fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:15}}></p>;
+      }
+      else {
+        return <p key={i} style={{fontWeight:200, borderBottom: '1px solid #ccc'}}>{n}</p>;
+      }
+    })
+  }
+
   render() {
-    let clinicalNotes = this.props.clinicalInfo.clinicalInfo.split(/\r?\n/);
-    let relevantInvestigationNotes = this.props.clinicalInfo.relevantInvestigation.split(/\r?\n/);
-    let familyNotes = this.props.clinicalInfo.familyHistory.split(/\r?\n/);
-    let consanguinityNotes = this.props.clinicalInfo.consanguinityInfo.split(/\r?\n/);
+    let clinicalNotes = this.displayNotes(this.props.clinicalInfo.clinicalInfo.split(/\r?\n/));
+    let relevantInvestigationNotes = this.displayNotes(this.props.clinicalInfo.relevantInvestigation.split(/\r?\n/));
+    let familyNotes = this.displayNotes(this.props.clinicalInfo.familyHistory.split(/\r?\n/));
+    let consanguinityNotes = this.displayNotes(this.props.clinicalInfo.consanguinityInfo.split(/\r?\n/));
     return(
     <SummaryBox>
       <SummaryHeading> Patient - {this.props.patientDetails.firstName + ' ' + this.props.patientDetails.lastName} </SummaryHeading>
@@ -118,18 +129,7 @@ class PatientDetailsModule extends Component
         <Col md={12}>
           <SummaryTitle> Clinical note </SummaryTitle>
           <SummaryNotes>
-          {
-            clinicalNotes.length > 1 ? 
-            clinicalNotes.map((n, i) => {
-              if(n === '') {
-                return <p key={i} style={{fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:15}}></p>;
-              }
-              else {
-                return <p key={i} style={{fontWeight:200, borderBottom: '1px solid #ccc'}}>{n}</p>;
-              }
-            }) 
-            : this.props.clinicalInfo.clinicalInfo
-          }
+          {clinicalNotes}
           </SummaryNotes>
         </Col>
         {
@@ -137,18 +137,7 @@ class PatientDetailsModule extends Component
           <Col md={12}>
             <SummaryTitle> Relevant investigation </SummaryTitle>
             <SummaryNotes>
-              {
-                relevantInvestigationNotes.length > 1 ?
-                relevantInvestigationNotes.map((r, i) => {
-                  if(r === '') {
-                    return <p key={i} style={{fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:15}}></p>;
-                  }
-                  else {
-                    return <p key={i} style={{fontWeight:200, borderBottom: '1px solid #ccc'}}>{r}</p>;
-                  }
-                })
-                : this.props.clinicalInfo.relevantInvestigation
-              }
+              {relevantInvestigationNotes}
             </SummaryNotes>
           </Col>
         }
@@ -157,18 +146,7 @@ class PatientDetailsModule extends Component
           <Col md={12}>
             <SummaryTitle> Family history </SummaryTitle>
             <SummaryNotes>
-              {
-                familyNotes.length > 1 ?
-                familyNotes.map((f, i) => {
-                  if(f === '') {
-                    return <p key={i} style={{fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:15}}></p>;
-                  }
-                  else {
-                    return <p key={i} style={{fontWeight:200, borderBottom: '1px solid #ccc'}}>{f}</p>;
-                  }
-                })
-                : this.props.clinicalInfo.familyHistory
-              }
+              {familyNotes}
             </SummaryNotes>
           </Col>
         }
@@ -206,18 +184,7 @@ class PatientDetailsModule extends Component
           <Col md={12}>
             <SummaryTitle> Consanguinity Information </SummaryTitle>
             <SummaryNotes>
-            {
-              consanguinityNotes.length > 1 ?
-              consanguinityNotes.map((c, i) => {
-                if(c === '') {
-                  return <p key={i} style={{fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:15}}></p>;
-                }
-                else {
-                  return <p key={i} style={{fontWeight:200, borderBottom: '1px solid #ccc'}}>{c}</p>;
-                }
-              })
-              : this.props.clinicalInfo.consanguinityInfo
-            }
+            {consanguinityNotes}
             </SummaryNotes>
           </Col>
         }

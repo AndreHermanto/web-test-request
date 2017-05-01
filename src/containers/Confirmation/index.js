@@ -57,14 +57,10 @@ class Confirmation extends Component {
   
   componentWillMount() {
     if(!this.props.route.isReSubmit) {
-      setTimeout(function() { 
-        NotificationManager.success('Your request has been submitted successfully', 'Success', 6000);
-      }, 100);
+      NotificationManager.success('Your request has been submitted successfully', 'Success', 6000);
     }
     else {
-      setTimeout(function() { 
-        NotificationManager.warning('Your request has already been submitted', 'Already been submitted', 6000);
-      }, 100);
+      NotificationManager.warning('Your request has already been submitted', 'Already been submitted', 6000);
     }
   }
   
@@ -90,6 +86,7 @@ class Confirmation extends Component {
     }
     else {
       window.location.replace('https://www.genome.one/'); 
+      return place;
     }
   }
   

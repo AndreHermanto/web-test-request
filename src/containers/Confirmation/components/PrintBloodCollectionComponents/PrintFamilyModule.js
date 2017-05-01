@@ -4,11 +4,21 @@ import {
   PageBreak
 } from './../sharedPrintStyle';
 import { isoToShortDate } from './../../../../components/dateConvert';
+const displayNotes = (notes) => {
+  return notes.map((n, i) => {
+    if(n === '') {
+      return <p key={i} style={{fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:15}}></p>;
+    }
+    else {
+      return <p key={i} style={{fontWeight:200, borderBottom: '1px solid #ccc'}}>{n}</p>;
+    }
+  })
+}
 // PrintFamilyModule section
 export default function PrintFamilyModule(props) {
-  let clinicalNotes = props.familyMemberClinicalInfo.clinicalInfo.split(/\r?\n/);
-  let relevantInvestigationNotes = props.familyMemberClinicalInfo.relevantInvestigation.split(/\r?\n/);
-  let consanguinityNotes = props.familyMemberClinicalInfo.consanguinityInfo.split(/\r?\n/);
+  let clinicalNotes = displayNotes(props.familyMemberClinicalInfo.clinicalInfo.split(/\r?\n/));
+  let relevantInvestigationNotes = displayNotes(props.familyMemberClinicalInfo.relevantInvestigation.split(/\r?\n/));
+  let consanguinityNotes = displayNotes(props.familyMemberClinicalInfo.consanguinityInfo.split(/\r?\n/));
 
   return (
     <div style={{marginTop:'10pt'}}>
@@ -46,18 +56,7 @@ export default function PrintFamilyModule(props) {
         (props.familyMemberClinicalInfo.consanguinity && props.familyMemberClinicalInfo.consanguinityInfo !== '') &&
         <div> 
           <strong> Consanguinity Information:  </strong>
-          {
-            consanguinityNotes.length > 1 ?
-            consanguinityNotes.map((c, i) => {
-              if(c === '') {
-                return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:20}}></p>;
-              }
-              else {
-                return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc'}}>{c}</p>;
-              }            
-            })
-            : <p>{props.familyMemberClinicalInfo.consanguinityInfo}</p>
-          } 
+          {consanguinityNotes} 
         </div>
       } 
     
@@ -75,18 +74,7 @@ export default function PrintFamilyModule(props) {
         props.familyMemberClinicalInfo.clinicalInfo !== '' &&
         <div>  
           <strong> Clinical note: </strong>
-          {
-            clinicalNotes.length > 1 ? 
-            clinicalNotes.map((n, i) => {
-              if(n === '') {
-                return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:20}}></p>;
-              }
-              else {
-                return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc'}}>{n}</p>;
-              }
-            }) 
-            : <p>props.familyMemberClinicalInfo.clinicalInfo</p>
-          }
+          {clinicalNotes}
           <br />
         </div>
       }
@@ -96,18 +84,7 @@ export default function PrintFamilyModule(props) {
         <div>
           <strong> Relevant investigation: </strong>
           <div>
-          {
-            relevantInvestigationNotes.length > 1 ?
-            relevantInvestigationNotes.map((r, i) => {
-              if(r === '') {
-                return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:20}}></p>;
-              }
-              else {
-                return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc'}}>{r}</p>;
-              }                      
-            })
-            : props.familyMemberClinicalInfo.relevantInvestigation
-          }
+          {relevantInvestigationNotes}
           </div>
         </div>
       }

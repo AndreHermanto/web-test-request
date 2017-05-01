@@ -64,22 +64,16 @@ class Summary extends Component {
     this.props.route.onChange(this); 
     this.props.router.push('/step6');
   }
-
-  validate() {
-    return this.state.validated && this.state.validation;
-  }
   
   handleValidateSubmit() {
     this.setState(setSubmitStatusData(this.state, 'loading'));
     this.setState(setSignatureData(this.state, true));
     if(!this.props.route.isSubmitted) {
       return submitTestRequest(this.state.form.testRequest)
-        .then((response) => {
-          if(!response.ok) {
-            setTimeout(function() { 
-            this.setState(setSubmitStatusData(this.state, ''));
-            NotificationManager.error('Error','Submit fail', 1000); 
-          }.bind(this), 100);
+      .then((response) => {
+        if(!response.ok) {
+          this.setState(setSubmitStatusData(this.state, ''));
+          NotificationManager.error('Error','Submit fail', 1000); 
           return false;
         } else {
           this.setState(setSubmitStatusData(this.state, ''));

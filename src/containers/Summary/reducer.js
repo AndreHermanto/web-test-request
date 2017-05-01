@@ -1,5 +1,3 @@
-import validator from './../../components/validator';
-
 export function initData(testRequest) {
   var state = {
     form: {
@@ -7,13 +5,6 @@ export function initData(testRequest) {
     },
     submitStatus: ''
   };
-  // This validates the data in the initial state.
-  state.validation = {};
-  for (var field in state.validationRule) {
-    if(field) {
-      state.validation[field] = validator(state.form[field], state.validationRule[field]);
-    }
-  }
   
   return Object.assign({}, state);
 }

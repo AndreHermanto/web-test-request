@@ -4,6 +4,7 @@ import renderer from 'react-test-renderer';
 import TestUtils from 'react-addons-test-utils';
 import FetchMock from 'fetch-mock';
 import Confirmation from './index';
+import { NotificationManager } from 'react-notifications';
 
 const data = {
   "orderTestModule": {
@@ -112,18 +113,27 @@ const props = {
   router:['/step1']
 };
 
+const resubmitProps = {
+  route: {
+    onChange: jest.fn(),
+    onClean: jest.fn(),
+    isReSubmit: true,
+    data: confirmationData
+  },
+  params: { id: 1 },
+  router:['/step1']
+};
+
 describe('Confirmation test', () => {
+  NotificationManager.addListener = jest.fn();
   test('Confirmation page renders without crashing', () => {
     const page = renderer.create(React.createElement(Confirmation, props)).toJSON();
     expect(page).toMatchSnapshot();
   });
   
-  test('componentWillMount will retrieve data and add to state', async () => {
-    FetchMock.get('*', { data: confirmationData });
-    const page = TestUtils.renderIntoDocument(React.createElement(Confirmation, props));
-    await page.componentWillMount();
-    expect(page.state.form.id).toEqual(1);
-    FetchMock.restore();
+  test('componentWillMount', async () => {
+    const page = TestUtils.renderIntoDocument(React.createElement(Confirmation, resubmitProps));
+    expect(NotificationManager.addListener).toHaveBeenCalled();
   });
   
   test('handlePrintRecordButtonClick changes the print state to 1', () => {
@@ -146,5 +156,6 @@ describe('Confirmation test', () => {
     var view = TestUtils.renderIntoDocument(React.createElement(Confirmation, props));                                         
     view.handleRedirect('home');
     expect(view.props.router.pop()).toEqual('/step1');
+    expect(view.handleRedirect('genome')).toEqual('genome');    
   });
 });

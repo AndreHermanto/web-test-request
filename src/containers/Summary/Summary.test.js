@@ -155,6 +155,7 @@ describe('Summary: index', () => {
     
     await page.handleValidateSubmit().then((response) => {
        expect(response).toEqual(false);
+       expect(page.state.submitStatus).toEqual('');
     });
     
     FetchMock.restore();

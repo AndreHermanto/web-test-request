@@ -25,17 +25,4 @@ describe('ConfirmationModal', function() {
     expect(component.state.showModal).toEqual(false);
   });
   
-  // test('submit action triggers the handleValidateSubmit', async () => {
-  //   var data = [
-  //     {'testRequest':''}
-  //   ]
-    
-  //   FetchMock.delete('*', { "data": data });
-    
-  //   await component.submit()
-  //     .then((response) => {
-  //       expect(component.props.handleValidateSubmit).toBeCalled();
-  //     });
-  //   FetchMock.restore();
-  // });
 });
