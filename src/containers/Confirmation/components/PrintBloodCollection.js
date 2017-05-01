@@ -8,7 +8,7 @@ import PrintClinicianDetailsModule from './PrintBloodCollectionComponents/PrintC
 import PrintSpecimenInfo from './PrintBloodCollectionComponents/PrintSpecimenInfo';
 import PrintCollectorDeclaration from './PrintBloodCollectionComponents/PrintCollectorDeclaration';
 const Page = styled.div`
-  font-size: 16pt;
+  font-size: 14pt;
   display: block !important;
   box-sizing: content-box !important; 
   page-break-after: always !important;

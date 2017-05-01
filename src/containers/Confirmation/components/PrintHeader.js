@@ -45,7 +45,7 @@ export default function PrintHeader(props) {
         </Col>
 
         <Col sm={4}>
-          <div style={{ fontSize: 11 }} className="pull-right">
+          <div style={{ fontSize: 12 }} className="pull-right">
             <p style={{ marginBottom: 8 }}>
             Genome.One Pty Ltd <br />
             ACN 608 029 732 <br />

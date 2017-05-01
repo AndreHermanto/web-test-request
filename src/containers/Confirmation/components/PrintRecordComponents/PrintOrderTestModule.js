@@ -6,11 +6,11 @@ import {
 // PrintOrderTestMobule page
 export default function PrintOrderTestModule(props) {
   return (
-    <div>
+    <div style={{marginTop:'-5pt'}}>
       <PrintHeading>
         Test Ordered
       </PrintHeading>
-      <h4 style={{fontSize: '16pt'}}><strong>{props.orderTestModule.test.label}</strong></h4>
+      <h4><strong>{props.orderTestModule.test.label}</strong></h4>
     
       {
         (props.orderTestModule.test.geneLists.length > 0) && 

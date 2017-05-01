@@ -47,12 +47,15 @@ class ClinicianDetailsModule extends Component
               {this.props.clinicianDetailsModule.organisation}
             </SummaryDetails>
           </Col>
-          <Col md={12}>
-            <SummaryDetails> 
-              <SummaryTitle> Provider number:  </SummaryTitle>
-              {this.props.clinicianDetailsModule.providerNumber}
-            </SummaryDetails>
-          </Col>
+          {
+            this.props.clinicianDetailsModule.providerNumber !== '' &&
+            <Col md={12}>
+              <SummaryDetails> 
+                <SummaryTitle> Provider number:  </SummaryTitle>
+                {this.props.clinicianDetailsModule.providerNumber}
+              </SummaryDetails>
+            </Col>
+          }
           <Col md={12}>
             <SummaryDetails> 
               <SummaryTitle> Medical specialty:  </SummaryTitle>

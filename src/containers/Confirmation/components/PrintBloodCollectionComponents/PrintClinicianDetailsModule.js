@@ -6,7 +6,7 @@ import {
 // PrintClinicianDetailsModule section
 export default function PrintClinicianDetailsModule(props) {
   return (
-    <div style={{marginTop:'-15pt'}}>
+    <div style={{marginTop:'-5pt'}}>
       <PrintHeading>
         {props.clinicianDetails.firstName + ' ' + props.clinicianDetails.lastName} - Clinician
       </PrintHeading>
@@ -16,10 +16,13 @@ export default function PrintClinicianDetailsModule(props) {
         {props.clinicianDetails.organisation}
       </p>
 
-      <p> 
-        <strong> Provider number:  </strong>
-        {props.clinicianDetails.providerNumber}
-      </p>
+      {
+        props.clinicianDetails.providerNumber !== '' &&
+        <p> 
+          <strong> Provider number:  </strong>
+          {props.clinicianDetails.providerNumber}
+        </p>
+      }
 
       <p> 
         <strong> Medical specialty:  </strong>

@@ -37,14 +37,6 @@ export default function PrintPatientModule(props) {
           props.patientDetails.gender
         } 
       </p>
-    
-      {
-        props.patientDetails.ethnicity !== '' &&
-        <p> 
-          <strong> Ethnicity:  </strong>
-          {props.patientDetails.ethnicity}
-        </p>
-      }
 
       <p> 
         <strong> Consanguinity:  </strong>
@@ -86,12 +78,11 @@ export default function PrintPatientModule(props) {
           }) 
           : <p>{props.clinicalInfo.clinicalInfo}</p>
         }
-      </div>
-      <br />
-        
+      </div>        
       {
         props.clinicalInfo.relevantInvestigation !== '' &&
         <div>
+          <br />
           <strong> Relevant investigation: </strong>
           <div>
             {
@@ -129,9 +120,9 @@ export default function PrintPatientModule(props) {
               : <p>{props.clinicalInfo.familyHistory}</p>
             }          
           </div>
+          <br/>
         </div>
       }
-      <br/>
     </div>
   );
 }
