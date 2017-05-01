@@ -51,7 +51,7 @@ export function setFormData(state, target) {
       value = target.checked;
       break;
     default:
-      value = target.value.trim();
+      value = target.value;
       break;
   } 
   

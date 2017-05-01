@@ -68,7 +68,7 @@ class BillingInfo extends Component {
   }
 
   handleSelectChange(event) {
-    this.setState(setSelectData(this.state, event.target.value), this.priceChange);
+    this.setState(setSelectData(this.state, event.target.value, event.target), this.priceChange);
   }
 
   handleBack() {
@@ -95,7 +95,7 @@ class BillingInfo extends Component {
   }
 
   getPayers() {
-    var payers = [{ id: 'Other', label: 'Other' }];
+    var payers = [{ id: 'Other', label: 'Other', firstName: '', lastName: '' }];
 
     if(this.props.route.familyMemberData && this.props.route.familyMemberData.familyMembers) {
       this.props.route.familyMemberData.familyMembers.forEach((member) => {
@@ -103,7 +103,9 @@ class BillingInfo extends Component {
                          member.familyMemberDetails.lastName.toString();
         payers.unshift({
           id: memberName, 
-          label: memberName + ' (Family Member)'
+          label: memberName + ' (Family Member)',
+          firstName: member.familyMemberDetails.firstName.toString(),
+          lastName: member.familyMemberDetails.lastName.toString()
         })
       });
     }
@@ -114,18 +116,12 @@ class BillingInfo extends Component {
                         this.props.route.patientData.lastName.toString();
       payers.unshift({ 
         id: patientName, 
-        label: patientName + ' (Patient)'
+        label: patientName + ' (Patient)',
+        firstName: this.props.route.patientData.firstName.toString(),
+        lastName: this.props.route.patientData.lastName.toString()
       });
     }
     return payers;
-  }
-
-  getPayerOption(payers) {
-    let options = [];
-    payers.map((p) => {
-      return options.push(p.label);
-    })
-    return options;
   }
   
   // This renders the validation result after confirm button is clicked.
@@ -135,7 +131,6 @@ class BillingInfo extends Component {
   
   render() {
     const payers = this.getPayers();
-    const options = this.getPayerOption(payers);
     return (
       <div>
         <PageHeading>Step 6: Billing info</PageHeading>
@@ -157,9 +152,9 @@ class BillingInfo extends Component {
               <div style={{marginTop:'-2em'}}>
                 <RadioSet 
                   field="payer"
-                  options={options}
+                  options={payers}
                   onChange={this.handleSelectChange}
-                  formState={this.state.form}
+                  formState={this.state}
                 />
               </div>
             </FormGroup>
