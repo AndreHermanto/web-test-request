@@ -26,7 +26,7 @@ class FamilyMemberDetails extends Component {
     
     var prefill;
     if(props.route.data) prefill = props.route.data.familyMembers[props.params.id].familyMemberDetails;
-    this.state = initData(prefill);
+    this.state = initData(prefill, this.props.route.billingInfo);
   }
   
   componentDidMount() {
@@ -36,7 +36,7 @@ class FamilyMemberDetails extends Component {
   }
   
   handleChange(event) {
-    this.setState(setFormData(this.state, event.target));
+    this.setState(setFormData(this.state, event.target, this.props.route.billingInfo));
   }
   
   handleCancel() {

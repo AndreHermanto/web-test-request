@@ -25,7 +25,7 @@ export function initData(prefilled) {
     priceList:[],
     validated: false,
     formId: 'billingInfoModule',
-    payer: {
+    selectedPayer: {
       id: ''
     }
   };
@@ -34,11 +34,11 @@ export function initData(prefilled) {
   if(prefilled && Object.keys(prefilled).length !== 0) {
     state.form = prefilled;
     if(state.form.payer !== 'Other'){
-      selectedPayer = Object.assign({}, state.payer, {
+      selectedPayer = Object.assign({}, state.selectedPayer, {
         id: prefilled.firstName + ' ' + prefilled.lastName
       });     
     }else{
-      selectedPayer = Object.assign({}, state.payer, {
+      selectedPayer = Object.assign({}, state.selectedPayer, {
         id: 'Other'
       });  
     }
@@ -114,7 +114,7 @@ export function setBillOption(state, target, payerObj) {
 
   var validationStateChild = Object.assign({}, state.validation);
 
-  var selectPayer = Object.assign({}, state.payer);
+  var selectPayer = Object.assign({}, state.selectPayer);
   
   if(value === 'Institution') {
     formStateChild = Object.assign({}, formStateChild, {
@@ -134,7 +134,7 @@ export function setBillOption(state, target, payerObj) {
       payerEmail: '',
       consent: false
     });
-    selectPayer = Object.assign({}, state.payer, {
+    selectPayer = Object.assign({}, state.selectPayer, {
       id: payerObj.id
     });
   }

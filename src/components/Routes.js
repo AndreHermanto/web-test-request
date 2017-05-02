@@ -52,6 +52,7 @@ function Routes({
           data={data.patientDetailsModule}
           isEdited={isEdited}
           preventUnvisitedFormAccess={preventUnvisitedFormAccess}
+          billingInfo={data.billingInfoModule || {}}
         />
         <Route 
           path="step3"
@@ -77,6 +78,7 @@ function Routes({
           onChange={onFamilyMemberChange}
           onDelete={onFamilyMemberDelete}
           data={data.familyMembersModule}
+          billingInfo={data.billingInfoModule || {}}
           preventUnvisitedFormAccess={preventUnvisitedFormAccess}
         />
         <Route

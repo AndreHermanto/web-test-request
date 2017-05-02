@@ -1,6 +1,6 @@
 import validator from './../../components/validator';
 
-export function initData(prefilled) {
+export function initData(prefilled, billingInfo) {
   var state = {
     form: {
       lastName: '',
@@ -22,10 +22,16 @@ export function initData(prefilled) {
       consent: 'consentTrue'
     },
     validated: false,
-    formId: 'familyMemberDetails'
+    formId: 'familyMemberDetails',
+    selectedAsPayer: false
   };
   
-  if(prefilled && Object.keys(prefilled).length !== 0) state.form = prefilled;
+  if(prefilled && Object.keys(prefilled).length !== 0){
+    state.form = prefilled;
+    if(state.form.lastName === billingInfo.lastName && state.form.firstName === billingInfo.firstName){
+      state.selectedAsPayer = true;
+    }
+  } 
 
   // This validates the data in the initial state.
   state.validation = {};
@@ -44,7 +50,7 @@ export function initData(prefilled) {
  * @param {Object} state Targeted state to be changed.
  * @param {Object} target Target object captured from UI event change.
  */
-export function setFormData(state, target) {
+export function setFormData(state, target, billingInfo) {
   var value;
   switch(target.type) {
     case 'checkbox':
@@ -58,6 +64,14 @@ export function setFormData(state, target) {
   var formStateChild = Object.assign({}, state.form, {
     [target.name]: value
   });
+
+  if(state.selectedAsPayer){
+      if(target.name === 'lastName'){
+        billingInfo.lastName = value;
+      }else if(target.name === 'firstName'){
+        billingInfo.firstName = value;
+      }
+  }
   
   var validationStateChild = Object.assign({}, state.validation, {
     [target.name]: validator(value, state.validationRule[target.name])

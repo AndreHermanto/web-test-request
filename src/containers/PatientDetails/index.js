@@ -22,7 +22,7 @@ class PatientDetails extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleBack = this.handleBack.bind(this);
     this.handleConfirm = this.handleConfirm.bind(this);
-    this.state = initData(props.route.data);
+    this.state = initData(props.route.data, this.props.route.billingInfo);
   }
   
   componentDidMount() {
@@ -33,7 +33,7 @@ class PatientDetails extends Component {
   
   
   handleChange(event) {
-    this.setState(setFormData(this.state, event.target));
+    this.setState(setFormData(this.state, event.target, this.props.route.billingInfo));
   }
   
   handleBack() {
