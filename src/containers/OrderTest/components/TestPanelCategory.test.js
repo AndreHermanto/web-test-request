@@ -12,9 +12,14 @@ var props = {
   ]
 }
 
-describe('TestPanel', function() {
-  test('TestPanel overall renders well', async function() {
+describe('TestPanelCategory', function() {
+  test('TestPanelCategory overall renders well', async function() {
     const page = renderer.create(React.createElement(TestPanelCategory, props)).toJSON();
     expect(page).toMatchSnapshot();
+  });
+  test('handleOnClick calls the props handleClick function', async function() {
+    const page = TestUtils.renderIntoDocument(React.createElement(TestPanelCategory, props));
+    page.handleOnClick();
+    expect(page.props.handleClick).toHaveBeenCalled();
   });
 });

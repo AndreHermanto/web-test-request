@@ -4,7 +4,6 @@ import { FormButton } from './../../../components/SharedStyle';
 class ConfirmationModal extends Component {
   constructor(props) {
     super(props);
-
     this.close = this.close.bind(this);
     this.open = this.open.bind(this);
     this.state = { showModal: false };

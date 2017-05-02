@@ -9,12 +9,23 @@ import {
   FileList,
   FileLink
 } from './../../../../components/SharedStyle';
+
+const displayNotes = (notes) => {
+  return notes.map((n, i) => {
+    if(n === '') {
+      return <p key={i} style={{fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:15}}></p>;
+    }
+    else {
+      return <p key={i} style={{fontWeight:200, borderBottom: '1px solid #ccc'}}>{n}</p>;
+    }
+  })
+}
 // PrintPatientModule page
 export default function PrintPatientModule(props) {
-  let clinicalNotes = props.clinicalInfo.clinicalInfo.split(/\r?\n/);
-  let relevantInvestigationNotes = props.clinicalInfo.relevantInvestigation.split(/\r?\n/);
-  let familyNotes = props.clinicalInfo.familyHistory.split(/\r?\n/);
-  let consanguinityNotes = props.clinicalInfo.consanguinityInfo.split(/\r?\n/);
+  let clinicalNotes = displayNotes(props.clinicalInfo.clinicalInfo.split(/\r?\n/));
+  let relevantInvestigationNotes = displayNotes(props.clinicalInfo.relevantInvestigation.split(/\r?\n/));
+  let familyNotes = displayNotes(props.clinicalInfo.familyHistory.split(/\r?\n/));
+  let consanguinityNotes = displayNotes(props.clinicalInfo.consanguinityInfo.split(/\r?\n/));
   return (
     <div style={{marginTop:'5pt'}}>
       <PrintHeading>
@@ -67,54 +78,21 @@ export default function PrintPatientModule(props) {
         (props.clinicalInfo.consanguinity && props.clinicalInfo.consanguinityInfo !== '') &&
         <div> 
         <strong> Consanguinity Information:  </strong>
-          {
-            consanguinityNotes.length > 1 ?
-            consanguinityNotes.map((c, i) => {
-              if(c === '') {
-                return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:20}}></p>;
-              }
-              else {
-                return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc'}}>{c}</p>;
-              }
-            })
-            : <p>{props.clinicalInfo.consanguinityInfo}</p>
-          }
+          {consanguinityNotes}
         </div>
       }
 
       <PageBreak/>
         
       <strong> Clinical note: </strong>
-        {
-          clinicalNotes.length > 1 ? 
-          clinicalNotes.map((n, i) => {
-            if(n === '') {
-              return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:20}}></p>;
-            }
-            else {
-              return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc'}}>{n}</p>;
-            }          
-          }) 
-          : <p>{props.clinicalInfo.clinicalInfo}</p>
-        }
+        {clinicalNotes}
       <br />
         
       {
         props.clinicalInfo.relevantInvestigation !== '' &&
         <div>
           <strong> Relevant investigation: </strong>
-          {
-            relevantInvestigationNotes.length > 1 ?
-            relevantInvestigationNotes.map((r, i) => {
-              if(r === '') {
-                return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:20}}></p>;
-              }
-              else {
-                return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc'}}>{r}</p>;
-              }
-            })
-            : <p>{props.clinicalInfo.relevantInvestigation}</p>
-          }
+          {relevantInvestigationNotes}
           <br />
         </div>
       }
@@ -123,18 +101,8 @@ export default function PrintPatientModule(props) {
         props.clinicalInfo.familyHistory !== '' &&
         <div>
           <strong> Family history: </strong>
-          {
-            familyNotes.length > 1 ?
-            familyNotes.map((f, i) => {
-              if(f === '') {
-                return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:20}}></p>;
-              }
-              else {
-                return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc'}}>{f}</p>;
-              }
-            })
-            : <p>{props.clinicalInfo.familyHistory}</p>
-          }
+          {familyNotes}
+          <br />
         </div>
       }
 

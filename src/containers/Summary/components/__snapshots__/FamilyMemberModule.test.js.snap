@@ -88,7 +88,31 @@ exports[`FamilyMemberModule test renders without crashing  1`] = `
       </span>
       <div
         className="gczsYD">
-        abc@abc.com
+        <p
+          style={
+            Object {
+              "borderBottom": "1px solid #ccc",
+              "fontWeight": 200,
+            }
+          }>
+          abc@abc.com
+        </p>
+        <p
+          style={
+            Object {
+              "borderBottom": "1px solid #ccc",
+              "fontWeight": 200,
+              "paddingTop": 15,
+            }
+          } />
+        <p
+          style={
+            Object {
+              "borderBottom": "1px solid #ccc",
+              "fontWeight": 200,
+              "paddingTop": 15,
+            }
+          } />
       </div>
     </div>
     <div
@@ -99,7 +123,15 @@ exports[`FamilyMemberModule test renders without crashing  1`] = `
       </span>
       <div
         className="gczsYD">
-        asdasdasd
+        <p
+          style={
+            Object {
+              "borderBottom": "1px solid #ccc",
+              "fontWeight": 200,
+            }
+          }>
+          asdasdasd
+        </p>
       </div>
     </div>
     <div

@@ -22,7 +22,7 @@ describe('PatientDetailsModule test', () => {
     "email":"abc@abc.gmail.com"
   }
   const clinicalData = {
-    clinicalInfo: "Dissuade ecstatic and properly saw entirely sir why laughter endeavor. In on my jointure horrible margaret suitable he followed speedily. Indeed vanity excuse or mr lovers of on. By offer scale an stuff. Blush be sorry no sight. Sang lose of hour then he left find",
+    clinicalInfo: "",
     consangunity: false,
     consanguinityInfo: "asjhdasbdlkahsdjb",
     familyHistory: "kasdfbljkbfalhfasvfkjabskldfbkjsdfbkdashfvdjhfhb;kfjv;hfv;fjbafhb;akfd",
@@ -32,7 +32,8 @@ describe('PatientDetailsModule test', () => {
   const props = {
     patientDetails: patientData,
     clinicalInfo: clinicalData,
-    handleOnClick: getStep
+    handleDetailsClick: getStep,
+    handleClinicalInfoClick: getStep
   };
     
   test('renders without crashing ', () => {
@@ -40,13 +41,21 @@ describe('PatientDetailsModule test', () => {
     expect(page).toMatchSnapshot();
   });
   
-  // test('handleOnClick test', () => {
-  //   var page = TestUtils.renderIntoDocument(
-  //     <PatientDetailsModule patientDetails={patientData} clinicalInfo={clinicalData} handleOnClick={getStep}/>
-  //   );
-  //   expect(page.props.handleOnClick('step2')).toEqual('step2');
-  //   expect(page.handleDetailsClick()).toEqual(2);
-  //   expect(page.props.handleOnClick('step3')).toEqual('step3');
-  //   expect(page.handleClinicalInfoClick()).toEqual(3);
-  // });
+  test('handleDetailsClick/handleClinicalInfoClick test', () => {
+    var page = TestUtils.renderIntoDocument(
+      <PatientDetailsModule patientDetails={patientData} clinicalInfo={clinicalData} handleOnClick={getStep}/>
+    );
+    expect(page.props.handleOnClick('step2')).toEqual('step2');
+    expect(page.handleDetailsClick()).toEqual(2);
+    expect(page.props.handleOnClick('step3')).toEqual('step3');
+    expect(page.handleClinicalInfoClick()).toEqual(3);
+  });
+
+  test('displayNotes test', () => {
+    var page = TestUtils.renderIntoDocument(
+      <PatientDetailsModule patientDetails={patientData} clinicalInfo={clinicalData}/>
+    );
+    let notes = page.displayNotes(page.props.clinicalInfo.clinicalInfo.split(/\r?\n/));
+    expect(notes.length).toEqual(1);
+  });
 });

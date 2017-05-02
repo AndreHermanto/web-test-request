@@ -1,4 +1,4 @@
-exports[`TestPanel TestPanel overall renders well 1`] = `
+exports[`TestPanelCategory TestPanelCategory overall renders well 1`] = `
 <div
   className="form-group">
   <label

@@ -4,6 +4,18 @@ import {
   PageBreak
 } from './../sharedPrintStyle';
 import { isoToShortDate } from './../../../../components/dateConvert';
+
+const displayNotes = (notes) => {
+  return notes.map((n, i) => {
+    if(n === '') {
+      return <p key={i} style={{fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:15}}></p>;
+    }
+    else {
+      return <p key={i} style={{fontWeight:200, borderBottom: '1px solid #ccc'}}>{n}</p>;
+    }
+  })
+}
+
 // PrintFamilyModule page
 export default function PrintFamilyModule(props) {
   return (
@@ -12,9 +24,9 @@ export default function PrintFamilyModule(props) {
         props.familyMember.familyMembers.length > 0 &&
         props.familyMember.familyMembers.map((member, i) => 
         {
-          let clinicalNotes = member.familyMemberClinicalInfo.clinicalInfo.split(/\r?\n/);
-          let relevantInvestigationNotes = member.familyMemberClinicalInfo.relevantInvestigation.split(/\r?\n/);
-          let consanguinityNotes = member.familyMemberClinicalInfo.consanguinityInfo.split(/\r?\n/);
+          let clinicalNotes = displayNotes(member.familyMemberClinicalInfo.clinicalInfo.split(/\r?\n/));
+          let relevantInvestigationNotes = displayNotes(member.familyMemberClinicalInfo.relevantInvestigation.split(/\r?\n/));
+          let consanguinityNotes = displayNotes(member.familyMemberClinicalInfo.consanguinityInfo.split(/\r?\n/));
           return <div key={i}>
           <PrintHeading>
             Family Member ({member.familyMemberDetails.relationship}) - {member.familyMemberDetails.firstName + ' ' + member.familyMemberDetails.lastName}
@@ -66,18 +78,7 @@ export default function PrintFamilyModule(props) {
               (member.familyMemberClinicalInfo.consanguinity && member.familyMemberClinicalInfo.consanguinityInfo !== '') &&
               <div> 
                 <strong> Consanguinity Information:  </strong>
-                {
-                  consanguinityNotes.length > 1 ?
-                  consanguinityNotes.map((c, i) => {
-                    if(c === '') {
-                      return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:20}}></p>;
-                    }
-                    else {
-                      return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc'}}>{c}</p>;
-                    }                  
-                  })
-                  : <p>{member.familyMemberClinicalInfo.consanguinityInfo}</p>
-                }
+                {consanguinityNotes}
               </div>
             }
             
@@ -94,18 +95,7 @@ export default function PrintFamilyModule(props) {
               member.familyMemberClinicalInfo.clinicalInfo !== '' &&
               <div>
               <strong> Clinical note </strong>
-              {
-                clinicalNotes.length > 1 ? 
-                clinicalNotes.map((n, i) => {
-                  if(n === '') {
-                    return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:20}}></p>;
-                  }
-                  else {
-                    return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc'}}>{n}</p>;
-                  }
-                }) 
-                : <p>{member.familyMemberClinicalInfo.clinicalInfo}</p>
-              }
+              {clinicalNotes}
               </div>
             }
             <br />
@@ -114,18 +104,7 @@ export default function PrintFamilyModule(props) {
               <div>
                 <strong> Relevant investigation </strong>
                 <div>
-                {
-                  relevantInvestigationNotes.length > 1 ?
-                  relevantInvestigationNotes.map((r, i) => {
-                    if(r === '') {
-                      return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc', paddingTop:20}}></p>;
-                    }
-                    else {
-                      return <p key={i} style={{width:'98%', fontWeight:200, borderBottom: '1px solid #ccc'}}>{r}</p>;
-                    }                  
-                  })
-                  : <p>{member.familyMemberClinicalInfo.relevantInvestigation}</p>
-                }
+                {relevantInvestigationNotes}
                 </div>
                 <br />
               </div>

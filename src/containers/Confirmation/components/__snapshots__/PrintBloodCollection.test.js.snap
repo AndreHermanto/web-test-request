@@ -135,7 +135,13 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
          Clinical note: 
       </strong>
       <div>
-        <p>
+        <p
+          style={
+            Object {
+              "borderBottom": "1px solid #ccc",
+              "fontWeight": 200,
+            }
+          }>
           Dissuade ecstatic and properly saw entirely sir why laughter endeavor. In on my jointure horrible margaret suitable he followed speedily. Indeed vanity excuse or mr lovers of on. By offer scale an stuff. Blush be sorry no sight. Sang lose of hour then he left find
         </p>
       </div>
@@ -145,8 +151,14 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
            Relevant investigation: 
         </strong>
         <div>
-          <p>
-            props.clinicalInfo.relevantInvestigation
+          <p
+            style={
+              Object {
+                "borderBottom": "1px solid #ccc",
+                "fontWeight": 200,
+              }
+            }>
+            asdkfhgasdlfhabsdlfjhalsfdjh
           </p>
         </div>
         <br />
@@ -156,7 +168,13 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
            Family history: 
         </strong>
         <div>
-          <p>
+          <p
+            style={
+              Object {
+                "borderBottom": "1px solid #ccc",
+                "fontWeight": 200,
+              }
+            }>
             kasdfbljkbfalhfasvfkjabskldfbkjsdfbkdashfvdjhfhb;kfjv;hfv;fjbafhb;akfd
           </p>
         </div>
@@ -653,8 +671,14 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
         <strong>
            Clinical note: 
         </strong>
-        <p>
-          props.familyMemberClinicalInfo.clinicalInfo
+        <p
+          style={
+            Object {
+              "borderBottom": "1px solid #ccc",
+              "fontWeight": 200,
+            }
+          }>
+          abc@abc.com
         </p>
         <br />
       </div>
@@ -663,7 +687,15 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
            Relevant investigation: 
         </strong>
         <div>
-          asdasdasd
+          <p
+            style={
+              Object {
+                "borderBottom": "1px solid #ccc",
+                "fontWeight": 200,
+              }
+            }>
+            asdasdasd
+          </p>
         </div>
       </div>
     </div>
@@ -1157,8 +1189,14 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
         <strong>
            Clinical note: 
         </strong>
-        <p>
-          props.familyMemberClinicalInfo.clinicalInfo
+        <p
+          style={
+            Object {
+              "borderBottom": "1px solid #ccc",
+              "fontWeight": 200,
+            }
+          }>
+          abc@abc.com
         </p>
         <br />
       </div>
@@ -1167,7 +1205,15 @@ exports[`test PrintBloodCollection renders without crashing  1`] = `
            Relevant investigation: 
         </strong>
         <div>
-          asdasdasdasd
+          <p
+            style={
+              Object {
+                "borderBottom": "1px solid #ccc",
+                "fontWeight": 200,
+              }
+            }>
+            asdasdasdasd
+          </p>
         </div>
       </div>
     </div>
