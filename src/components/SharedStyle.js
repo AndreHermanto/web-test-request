@@ -6,6 +6,7 @@ import {
   Button
 } from 'react-bootstrap';
 import Select from 'react-select';
+import colorLine from './../assets/images/color_line.jpg';
 
 export const PageHeading = styled.h3`
   margin-bottom: 21px;
@@ -13,7 +14,7 @@ export const PageHeading = styled.h3`
   text-transform:capitalize;
 
   &:after { 
-    background:url(http://uploads.webflow.com/58ef79e6af69d159faa3bec0/58ef79e7af69d159faa3bedf_color_line.jpg) no-repeat;
+    background:url(${colorLine}) no-repeat;
     background-size: 50px 6.25px;
     content:" ";
     display: block;
