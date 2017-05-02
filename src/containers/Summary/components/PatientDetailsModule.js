@@ -19,6 +19,7 @@ import {
   FileLink
 } from './../../../components/SharedStyle';
 import { isoToShortDate } from './../../../components/dateConvert';
+import { downloadAttachment } from './../api';
 
 /**
 * PatientDetailsModule summary - UI for summary page to display all patient details/clinical info data.
@@ -164,7 +165,7 @@ class PatientDetailsModule extends Component
                   return <FileList key={$index}>
                     <FileLink 
                       bsStyle="link" 
-                      onClick={() => window.open(attachment.preview, '_blank')}
+                      onClick={() => downloadAttachment(attachment.id, attachment.filename)}
                       style={{ padding: '6px 0'}}
                     >
                       <Glyphicon glyph="file"/> {attachment.filename}
