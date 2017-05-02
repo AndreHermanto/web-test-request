@@ -35,7 +35,7 @@ exports[`<UniversalNavigation /> renders correctly 1`] = `
                 "color": "#222",
               }
             }>
-            Test Request App
+            Test Request Form
           </span>
         </span>
         <button

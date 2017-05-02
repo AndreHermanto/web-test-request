@@ -32,7 +32,7 @@ export default class UniversalNavigation extends React.Component
                   alt="logo" 
                   style={{ width: 'auto', height: 50, marginTop: 0 }} />
               </a>
-              <NavTitle style={{ color: '#222' }}>Test Request App</NavTitle>
+              <NavTitle style={{ color: '#222' }}>Test Request Form</NavTitle>
             </Navbar.Brand>
             <Navbar.Toggle />
           </Navbar.Header>
