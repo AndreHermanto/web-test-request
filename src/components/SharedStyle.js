@@ -11,6 +11,16 @@ export const PageHeading = styled.h3`
   margin-bottom: 21px;
   font-weight: 500;
   text-transform:capitalize;
+
+  &:after { 
+    background:url(http://uploads.webflow.com/58ef79e6af69d159faa3bec0/58ef79e7af69d159faa3bedf_color_line.jpg) no-repeat;
+    background-size: 50px 6.25px;
+    content:" ";
+    display: block;
+    width: 50px;
+    height: 6.25px;
+    margin: 20px 0 20px 0;
+  }
 `;
 
 export const SubHeading = styled.h4`
