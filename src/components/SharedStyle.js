@@ -19,7 +19,7 @@ export const PageHeading = styled.h3`
     display: block;
     width: 50px;
     height: 6.25px;
-    margin: 40px 0 40px 0;
+    margin: 20px 0 20px 0;
   }
 `;
 
