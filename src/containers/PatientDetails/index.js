@@ -43,6 +43,11 @@ class PatientDetails extends Component {
   
   handleNext(passValidation) {
     if(!passValidation) return false;
+    if(this.state.selectedAsPayer){
+      this.props.route.billingInfo.lastName = this.state.form.lastName;
+      this.props.route.billingInfo.firstName = this.state.form.firstName;
+      this.props.route.billingInfo.payer = this.state.form.firstName + ' ' + this.state.form.lastName;
+    }
     if(this.props.route.isEdited === true)
     {
       this.props.route.onChange(this);

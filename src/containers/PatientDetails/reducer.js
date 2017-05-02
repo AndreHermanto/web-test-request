@@ -62,14 +62,6 @@ export function setFormData(state, target, billingInfo) {
   var formStateChild = Object.assign({}, state.form, {
     [target.name]: value
   });
-  
-  if(state.selectedAsPayer){
-      if(target.name === 'lastName'){
-        billingInfo.lastName = value;
-      }else if(target.name === 'firstName'){
-        billingInfo.firstName = value;
-      }
-  }
 
   var validationStateChild = Object.assign({}, state.validation, {
     [target.name]: validator(value, state.validationRule[target.name])
