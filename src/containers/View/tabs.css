@@ -1,0 +1,23 @@
+#testRequestSearch .nav-stacked {
+  padding: 0 !important;
+}
+
+#testRequestSearch .nav-stacked li {
+  border-top: 1px solid #ccc;
+  margin-top: 0 !important;
+}
+
+#testRequestSearch .nav-stacked li:first-child {
+  border-top: none;
+}
+
+#testRequestSearch .nav-stacked .active a {
+  background: #00a6b6;
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+#testRequestSearch .nav-stacked li:hover a {
+  border: none !important;
+  border-radius: 0 !important;
+}

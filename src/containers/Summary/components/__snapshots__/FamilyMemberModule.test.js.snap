@@ -11,21 +11,24 @@ exports[`FamilyMemberModule test renders without crashing  1`] = `
         ) - 
         abc@abc.com abc@abc.com
       </div>
+    </div>
+    <div
+      className="row">
       <div
         className="col-md-12">
+        <span
+          className="fSAJGN label label-danger">
+          Affected
+        </span>
         <button
           className="btn btn-link"
           disabled={false}
-          onClick={[Function]}
+          onClick={undefined}
           type="button">
           <span
             className="glyphicon glyphicon-pencil" />
            Edit
         </button>
-        <span
-          className="bQxwRk label label-danger">
-          Affected
-        </span>
       </div>
     </div>
   </h3>

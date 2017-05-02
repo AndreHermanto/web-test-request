@@ -11,6 +11,7 @@
   .notification-success, .notification-warning{
     display: none;
   }
+  .notification-container {display: none;}
 }
 
 

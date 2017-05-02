@@ -16,6 +16,7 @@ import FamilyMemberClinicalInfo from './../containers/FamilyMemberClinicalInfo';
 import BillingInfo from './../containers/BillingInfo';
 import Summary from './../containers/Summary';
 import Confirmation from './../containers/Confirmation';
+import View from './../containers/View';
 
 function Routes({ 
   onChange,
@@ -124,6 +125,7 @@ function Routes({
       </Route>
       <Route path="/confirmation/:id" component={Confirmation} data={data} isReSubmit={isReSubmit} 
         onClean={onClean} latestRequestID={latestRequestID} createdDateTime={createdDateTime}/>
+      <Route path="/view" component={View} />
     </Router>
   );
 }

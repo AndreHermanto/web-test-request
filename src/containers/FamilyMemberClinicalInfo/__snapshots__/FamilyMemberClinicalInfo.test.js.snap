@@ -16,7 +16,11 @@ exports[`FamilyMemberClinicalInfo: index renders without crashing 1`] = `
     <br />
     <label
       className="radio-inline"
-      style={undefined}>
+      style={
+        Object {
+          "marginRight": 8,
+        }
+      }>
       <input
         defaultChecked={false}
         disabled={false}
@@ -27,7 +31,11 @@ exports[`FamilyMemberClinicalInfo: index renders without crashing 1`] = `
     </label>
     <label
       className="radio-inline"
-      style={undefined}>
+      style={
+        Object {
+          "marginRight": 8,
+        }
+      }>
       <input
         defaultChecked={true}
         disabled={false}

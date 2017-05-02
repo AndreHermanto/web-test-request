@@ -31,12 +31,14 @@ class BillingInfoModule extends Component
       <LastBox>
         <SummaryHeading> 
           {this.props.billingInfoModule.billOption} billing 
-          <Button
-            bsStyle="link"
-            onClick={this.handleOnClick}
-          >
-            <Glyphicon glyph="pencil"/> Edit
-          </Button>
+          {this.props.handleOnClick &&
+            <Button 
+              bsStyle="link"
+              onClick={this.handleDetailsClick}
+            >
+              <Glyphicon glyph="pencil"/> Edit
+            </Button>
+          }
         </SummaryHeading>
         <SummaryBreakLine/>
         {
