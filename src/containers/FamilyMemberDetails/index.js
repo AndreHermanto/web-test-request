@@ -26,7 +26,7 @@ class FamilyMemberDetails extends Component {
     
     var prefill;
     if(props.route.data) prefill = props.route.data.familyMembers[props.params.id].familyMemberDetails;
-    this.state = initData(prefill);
+    this.state = initData(prefill, this.props.route.billingInfo);
   }
   
   componentDidMount() {
@@ -36,7 +36,7 @@ class FamilyMemberDetails extends Component {
   }
   
   handleChange(event) {
-    this.setState(setFormData(this.state, event.target));
+    this.setState(setFormData(this.state, event.target, this.props.route.billingInfo));
   }
   
   handleCancel() {
@@ -46,6 +46,12 @@ class FamilyMemberDetails extends Component {
   
   handleNext(passValidation) {
     if(!passValidation) return false;
+    if(this.state.selectedAsPayer){
+      this.props.route.billingInfo.lastName = this.state.form.lastName;
+      this.props.route.billingInfo.firstName = this.state.form.firstName;
+      this.props.route.billingInfo.payer = this.state.form.firstName + ' ' + this.state.form.lastName;
+    }
+ 
     this.props.route.onChange(this);
     this.props.router.push(`/step4/${this.props.params.mode}/2/${this.props.params.id}`);
   }

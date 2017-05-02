@@ -24,11 +24,26 @@ export function initData(prefilled) {
     },
     priceList:[],
     validated: false,
-    formId: 'billingInfoModule'
+    formId: 'billingInfoModule',
+    selectedPayer: {
+      id: ''
+    }
   };
-  
-  if(prefilled && Object.keys(prefilled).length !== 0) state.form = prefilled;
-  
+  var selectedPayer;
+
+  if(prefilled && Object.keys(prefilled).length !== 0) {
+    state.form = prefilled;
+    if(state.form.payer !== 'Other'){
+      selectedPayer = Object.assign({}, state.selectedPayer, {
+        id: prefilled.firstName + ' ' + prefilled.lastName
+      });     
+    }else{
+      selectedPayer = Object.assign({}, state.selectedPayer, {
+        id: 'Other'
+      });  
+    }
+
+  }
   // This validates the data in the initial state.
   state.validation = {};
   for (var field in state.validationRule) {
@@ -42,13 +57,16 @@ export function initData(prefilled) {
     for (field in state.validation) {
       if(field !== 'billOption') state.validation[field].skip = true;
     }
+      return Object.assign({}, state);
   } else {
     for (field in state.validation) {
       if(field !== 'billOption') state.validation[field].skip = false;
     }
+    return Object.assign({}, state, {
+      payer: selectedPayer
+    });
   }
   
-  return Object.assign({}, state);
 }
 
 
@@ -89,11 +107,14 @@ export function setFormData(state, target) {
  */
 export function setBillOption(state, target, payerObj) {
   var value = target.value;
+
   var formStateChild = Object.assign({}, state.form, {
     billOption: value
   });
 
   var validationStateChild = Object.assign({}, state.validation);
+
+  var selectPayer = Object.assign({}, state.selectPayer);
   
   if(value === 'Institution') {
     formStateChild = Object.assign({}, formStateChild, {
@@ -108,10 +129,13 @@ export function setBillOption(state, target, payerObj) {
     formStateChild = Object.assign({}, formStateChild, {
       payer: payerObj.label,
       phone: '',
-      firstName: payerObj.id.split(' ')[0],
-      lastName: payerObj.id.split(' ')[1],
+      firstName: payerObj.firstName,
+      lastName: payerObj.lastName,
       payerEmail: '',
       consent: false
+    });
+    selectPayer = Object.assign({}, state.selectPayer, {
+      id: payerObj.id
     });
   }
   var field;
@@ -132,23 +156,25 @@ export function setBillOption(state, target, payerObj) {
 
   return Object.assign({}, state, {
     form: formStateChild,
-    validation: validationStateChild
+    validation: validationStateChild,
+    payer : selectPayer
   });
 }
 
 /**
 * set the phone state when user choose a payer
 */
-export function setSelectData(state, value) {
+export function setSelectData(state, value, payerObj) {
   let formStateChild, 
       validationStateChild = Object.assign({}, state.validation);
+
   if(value !== 'Other')
   {
-    let payer = value.split(' ');
+
     formStateChild = Object.assign({}, state.form, {
       payer: value,
-      firstName: payer[0],
-      lastName: payer[1],
+      firstName: payerObj.firstName,
+      lastName: payerObj.lastName,
       phone:'',
       payerEmail:''
     });
