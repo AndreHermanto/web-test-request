@@ -5,6 +5,9 @@ import TestUtils from 'react-addons-test-utils';
 import FetchMock from 'fetch-mock';
 import View from './index';
 
+jest.unmock('./api.js');
+import * as api from './api';
+
 var mockData = [
   {
   "orderTestModule": {
@@ -110,8 +113,12 @@ describe('View test', () => {
     expect(page.state.testRequestList.length).toEqual(0); 
   });
   
-  test('handleSearchById search for one test request', async () => {
-    /*FetchMock.get('*', { "data": mockData[0]  });
+  test('handleSearchById search for one test request',  () => {
+    api.getTestRequestById = jest.fn(() => {
+      return new Promise( resolve => 
+        resolve(mockData[0])
+      );
+    })
     const page = TestUtils.renderIntoDocument(React.createElement(View));
     const selection1 = { "target": { 
       "value": "admin",
@@ -128,14 +135,18 @@ describe('View test', () => {
     page.handleChange(selection1);
     page.handleChange(selection2);
     page.handleChange(selection3);
-    await page.handleSearchById();
-    expect(page.state.testRequestList[0].id).toEqual(1);
-    FetchMock.restore();*/
+
+    page.handleSearchById()
+    expect(api.getTestRequestById).toBeCalled();
   });
   
-  test('handleSearchById search fails occur when no input is done', async () => {
-    /*FetchMock.get('*', { "data": mockData[0]  });
+  test('handleSearchById search fails occur when no input is done',  () => {
     const page = TestUtils.renderIntoDocument(React.createElement(View));
+    api.getTestRequestById = jest.fn(() => {
+      return new Promise( resolve => 
+        resolve(mockData[0])
+      );
+    })
     const selection1 = { "target": { 
       "value": "admin",
       "name": "username"
@@ -146,13 +157,16 @@ describe('View test', () => {
     }};
     page.handleChange(selection1);
     page.handleChange(selection2);
-    await page.handleSearchById();
-    expect(page.state.testRequestList.length).toEqual(0);
-    FetchMock.restore();*/
+    page.handleSearchById();
+    expect(api.getTestRequestById).not.toBeCalled();
   });
   
-  test('handleSearchByPatientDetails search for one test request', async () => {
-    /*FetchMock.get('*', { "data": mockData  });
+  test('handleSearchByPatientDetails search for one test request', () => {
+    api.getTestRequestByPatientInfo = jest.fn(() => {
+      return new Promise( resolve => 
+        resolve(mockData)
+      );
+    })
     const page = TestUtils.renderIntoDocument(React.createElement(View));
     const selection1 = { "target": { 
       "value": "admin",
@@ -179,16 +193,18 @@ describe('View test', () => {
     page.handleChange(selection3);
     page.handleChange(selection4);
     page.handleChange(selection5);
-    await page.handleSearchByPatientDetails();
-    expect(page.state.testRequestList.length).toEqual(1);
-    FetchMock.restore();*/
+    page.handleSearchByPatientDetails();
+    expect(api.getTestRequestByPatientInfo).toBeCalled();
   });
   
-  test('handleSearchByPatientDetails search fails occur when no input is done', async () => {
-    /*FetchMock.get('*', { "data": mockData  });
+  test('handleSearchByPatientDetails search fails occur when no input is done', () => {
+    api.getTestRequestByPatientInfo = jest.fn(() => {
+      return new Promise( resolve => 
+        resolve(mockData)
+      );
+    })
     const page = TestUtils.renderIntoDocument(React.createElement(View));
-    await page.handleSearchByPatientDetails();
-    expect(page.state.testRequestList.length).toEqual(0);
-    FetchMock.restore();*/
+    page.handleSearchByPatientDetails();
+    expect(api.getTestRequestByPatientInfo).not.toBeCalled();
   });
 })
