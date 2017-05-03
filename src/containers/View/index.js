@@ -202,7 +202,7 @@ class View extends Component {
             {(this.state.testRequestList && this.state.validated) &&
               <div>
                 <br /><hr />
-                <PageHeading>Found Test Request</PageHeading>
+                <PageHeading>Test Requests Found</PageHeading>
                 {
                   (this.state.testRequestList.length > 0) &&
                   <ListContainer bsStyle="pills" stacked>
