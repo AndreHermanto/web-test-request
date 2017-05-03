@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import PrintHeader from './PrintHeader';
+import PrintRecordHeader from './PrintRecordHeader';
 import PrintOrderTestModule from './PrintRecordComponents/PrintOrderTestModule';
 import PrintPatientModule from './PrintRecordComponents/PrintPatientModule';
 import PrintFamilyModule  from './PrintRecordComponents/PrintFamilyModule';
@@ -20,7 +20,7 @@ const Page = styled.div`
 export default function PrintRecord(props) {
   return (
     <Page>
-      <PrintHeader showId={props.showId} showDate={props.showDate} />
+      <PrintRecordHeader showId={props.showId} showDate={props.showDate} />
       <br />
       <PrintPatientModule patientDetails={props.patientDetails} clinicalInfo={props.clinicalInfo}/>
       <PrintFamilyModule familyMember={props.familyMember}/>

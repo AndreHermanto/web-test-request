@@ -5,7 +5,7 @@ exports[`test PrintRecord renders without crashing  1`] = `
     <div
       className="row">
       <div
-        className="col-sm-4">
+        className="col-sm-6">
         <img
           alt="logo"
           className="App-logo"
@@ -29,36 +29,13 @@ exports[`test PrintRecord renders without crashing  1`] = `
         </div>
       </div>
       <div
-        className="col-sm-4"
-        style={
-          Object {
-            "border": "2px solid #000",
-            "padding": 12,
-          }
-        }>
-        <div>
-          <b>
-            Deliver specimens to: 
-            <br />
-            Central Specimen Reception (CSR)SydPath 
-            <br />
-          </b>
-          St Vincent’s Hospital, Xavier Building 
-          <br />
-          Level 6, 390 Victoria St 
-          <br />
-          Darlinghurst NSW 2010 Australia 
-          <br />
-          P +61 2 8382 9100
-        </div>
-      </div>
-      <div
-        className="col-sm-4">
+        className="col-sm-6">
         <div
           className="pull-right"
           style={
             Object {
               "fontSize": 12,
+              "marginRight": 20,
             }
           }>
           <p
