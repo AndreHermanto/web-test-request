@@ -93,16 +93,13 @@ class View extends Component {
       this.state.validation.password.status !== 'error' &&
       this.state.validation.testRequestId.status !== 'error'
     ) {
-      return getTestRequestById(
+      var array = [getTestRequestById(
         this.state.form.testRequestId,
         this.state.form.username,
         this.state.form.password
-      )
-        .then((data) => {
-          var array = [];
-          if(data.id) array.push(data);
-          this.setState(setTestRequestList(this.state, array));
-        });
+      )];
+      setTimeout(() => this.setState(setTestRequestList(this.state, array)), 100);
+      return true;
     }
     
     return false;
@@ -118,16 +115,15 @@ class View extends Component {
       this.state.validation.lastName.status !== 'error' &&
       this.state.validation.dob.status !== 'error'
     ) {                              
-      return getTestRequestByPatientInfo(
+      var array = getTestRequestByPatientInfo(
         this.state.form.firstName,
         this.state.form.lastName,
         this.state.form.dob,
         this.state.form.username,
         this.state.form.password
-      )
-        .then((data) => {
-          this.setState(setTestRequestList(this.state, data));
-        });  
+      );
+      setTimeout(() => this.setState(setTestRequestList(this.state, array)), 100);
+      return true;
     }
                                   
     return false;
