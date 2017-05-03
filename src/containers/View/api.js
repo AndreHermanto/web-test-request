@@ -4,7 +4,9 @@
  */
 export function getTestRequestById(id, username, password) {
   return fetch(`${process.env.REACT_APP_BASE_URL}/test-requests/${id}`, {
-      Authorization: 'Basic ' + btoa(username + ':' + password)
+      headers: {
+        Authorization: 'Basic ' + btoa(username + ':' + password)  
+      }
     })
     .then((response) => response.json())
     .then((json) => json.data);
@@ -16,7 +18,9 @@ export function getTestRequestById(id, username, password) {
  */
 export function getTestRequestByPatientInfo(firstName, lastName, dob, username, password) {
   return fetch(`${process.env.REACT_APP_BASE_URL}/test-requests?firstName=${firstName}&lastName=${lastName}&dob=${dob}`, {
-      Authorization: 'Basic ' + btoa(username + ':' + password)
+      headers: {
+        Authorization: 'Basic ' + btoa(username + ':' + password)  
+      }
     })
     .then((response) => response.json())
     .then((json) => json.data);
