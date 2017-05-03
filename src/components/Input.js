@@ -21,7 +21,8 @@ export default function Input({
   formState,
   required,
   optional,
-  disabled
+  disabled,
+  password
 }) {
   var validator;
   if(!onValidate) {
@@ -40,7 +41,7 @@ export default function Input({
         </ControlLabel>
       )}
       <FormInput
-        type="text"
+        type={password ? 'password' : 'text'}
         name={field}
         onChange={onChange}
         value={formState && formState[field]}

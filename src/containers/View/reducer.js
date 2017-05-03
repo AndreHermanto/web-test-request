@@ -3,6 +3,8 @@ import validator from './../../components/validator';
 export function initData() {
   var state = {
     form: {
+      username: '',
+      password: '',
       searchBy:'Test Request Id',
       testRequestId:'',
       lastName: '',
@@ -12,6 +14,8 @@ export function initData() {
     testRequestData: {},
     testRequestList: [],
     validationRule: {
+      username: 'required',
+      password: 'required',
       testRequestId: 'required',
       lastName: 'required',
       firstName: 'required',

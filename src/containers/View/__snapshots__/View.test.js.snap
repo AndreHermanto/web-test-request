@@ -5,6 +5,52 @@ exports[`View test View page renders without crashing 1`] = `
     className="dQyqsI">
     <h3
       className="fbPKgP">
+      Credientials
+    </h3>
+    <div
+      className="form-group has-feedback">
+      <label
+        className="control-label"
+        htmlFor={undefined}>
+        Username
+      </label>
+      <input
+        className="fkPJON form-control"
+        disabled={undefined}
+        id={undefined}
+        name="username"
+        onChange={[Function]}
+        type="text"
+        value="" />
+      <span
+        className="SfhHK help-block" />
+    </div>
+    <div
+      className="form-group has-feedback">
+      <label
+        className="control-label"
+        htmlFor={undefined}>
+        Password
+      </label>
+      <input
+        className="fkPJON form-control"
+        disabled={undefined}
+        id={undefined}
+        name="password"
+        onChange={[Function]}
+        type="password"
+        value="" />
+      <span
+        className="SfhHK help-block" />
+    </div>
+    <br />
+    <p
+      className="kvAVcE">
+      You must enter the correct credentials to be able to search.
+    </p>
+    <hr />
+    <h3
+      className="fbPKgP">
       Search Test Request
     </h3>
     <div

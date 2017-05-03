@@ -22,7 +22,8 @@ import ClinicianDetailsModule  from './../Summary/components/ClinicianDetailsMod
 import BillingInfoModule from './../Summary/components/BillingInfoModule';
 import { 
   FormButton,
-  PageHeading
+  PageHeading,
+  Helper
 } from './../../components/SharedStyle';
 import Input from './../../components/Input';
 import RadioSet from './../../components/RadioSet';
@@ -88,9 +89,15 @@ class View extends Component {
     this.setState(validatedToTrue(this.state));
     
     if(
+      this.state.validation.username.status !== 'error' &&
+      this.state.validation.password.status !== 'error' &&
       this.state.validation.testRequestId.status !== 'error'
     ) {
-      return getTestRequestById(this.state.form.testRequestId)
+      return getTestRequestById(
+        this.state.form.testRequestId,
+        this.state.form.username,
+        this.state.form.password
+      )
         .then((data) => {
           var array = [];
           if(data.id) array.push(data);
@@ -105,6 +112,8 @@ class View extends Component {
     this.setState(validatedToTrue(this.state));
     
     if(
+      this.state.validation.username.status !== 'error' &&
+      this.state.validation.password.status !== 'error' &&
       this.state.validation.firstName.status !== 'error' &&
       this.state.validation.lastName.status !== 'error' &&
       this.state.validation.dob.status !== 'error'
@@ -112,7 +121,9 @@ class View extends Component {
       return getTestRequestByPatientInfo(
         this.state.form.firstName,
         this.state.form.lastName,
-        this.state.form.dob
+        this.state.form.dob,
+        this.state.form.username,
+        this.state.form.password
       )
         .then((data) => {
           this.setState(setTestRequestList(this.state, data));
@@ -132,6 +143,30 @@ class View extends Component {
       <Tab.Container id="testRequestSearch">
         <div>
           <SearchArea>
+            <PageHeading>Credientials</PageHeading>
+
+            <Input
+              field="username"
+              label="Username"
+              onChange={this.handleChange}
+              onValidate={this.validate()}
+              formState={this.state.form}
+            />
+            
+            <Input
+              field="password"
+              label="Password"
+              onChange={this.handleChange}
+              onValidate={this.validate()}
+              formState={this.state.form}
+              password
+            />
+            
+            <br />
+            <Helper>You must enter the correct credentials to be able to search.</Helper>
+            
+            <hr />
+      
             <PageHeading>Search Test Request</PageHeading>
 
             <RadioSet 

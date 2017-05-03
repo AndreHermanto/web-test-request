@@ -113,11 +113,21 @@ describe('View test', () => {
   test('handleSearchById search for one test request', async () => {
     FetchMock.get('*', { "data": mockData[0]  });
     const page = TestUtils.renderIntoDocument(React.createElement(View));
-    const selection = { "target": { 
+    const selection1 = { "target": { 
+      "value": "admin",
+      "name": "username"
+    }};
+    const selection2 = { "target": { 
+      "value": "secret",
+      "name": "password"
+    }};
+    const selection3 = { "target": { 
       "value": 1,
       "name": "testRequestId"
     }};
-    page.handleChange(selection);
+    page.handleChange(selection1);
+    page.handleChange(selection2);
+    page.handleChange(selection3);
     await page.handleSearchById();
     expect(page.state.testRequestList[0].id).toEqual(1);
     FetchMock.restore();
@@ -126,6 +136,16 @@ describe('View test', () => {
   test('handleSearchById search fails occur when no input is done', async () => {
     FetchMock.get('*', { "data": mockData[0]  });
     const page = TestUtils.renderIntoDocument(React.createElement(View));
+    const selection1 = { "target": { 
+      "value": "admin",
+      "name": "username"
+    }};
+    const selection2 = { "target": { 
+      "value": "secret",
+      "name": "password"
+    }};
+    page.handleChange(selection1);
+    page.handleChange(selection2);
     await page.handleSearchById();
     expect(page.state.testRequestList.length).toEqual(0);
     FetchMock.restore();
@@ -135,20 +155,30 @@ describe('View test', () => {
     FetchMock.get('*', { "data": mockData  });
     const page = TestUtils.renderIntoDocument(React.createElement(View));
     const selection1 = { "target": { 
+      "value": "admin",
+      "name": "username"
+    }};
+    const selection2 = { "target": { 
+      "value": "secret",
+      "name": "password"
+    }};
+    const selection3 = { "target": { 
       "value": "Joshua",
       "name": "firstName"
     }};
-    const selection2 = { "target": { 
+    const selection4 = { "target": { 
       "value": "Agudo",
       "name": "lastName"
     }};
-    const selection3 = { "target": { 
+    const selection5 = { "target": { 
       "value": "2020-02-02",
       "name": "dob"
     }};
     page.handleChange(selection1);
     page.handleChange(selection2);
     page.handleChange(selection3);
+    page.handleChange(selection4);
+    page.handleChange(selection5);
     await page.handleSearchByPatientDetails();
     expect(page.state.testRequestList.length).toEqual(1);
     FetchMock.restore();
