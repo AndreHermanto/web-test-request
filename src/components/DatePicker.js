@@ -70,7 +70,9 @@ class DatePicker extends Component {
       ) {
         value = '';
       } else {
-        value = parseInt(date.year, 0) + '-' + parseInt(date.month, 0) + '-' + parseInt(date.day, 0);
+        var monthChar = (date.month < 10) ? '0'+parseInt(date.month, 0) : parseInt(date.month, 0);
+        var dayChar = (date.day < 10) ? '0'+parseInt(date.day, 0) : parseInt(date.day, 0);
+        value = parseInt(date.year, 0) + '-' + monthChar + '-' + dayChar;
       }
 
       if(target.name === 'day' && target.value.length >= 2) ReactDOM.findDOMNode(this.refs.month).focus();
