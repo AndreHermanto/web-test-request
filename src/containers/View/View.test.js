@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 import TestUtils from 'react-addons-test-utils';
-import FetchMock from 'fetch-mock';
 import View from './index';
 
 jest.unmock('./api.js');

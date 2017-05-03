@@ -143,7 +143,7 @@ class View extends Component {
       <Tab.Container id="testRequestSearch">
         <div>
           <SearchArea>
-            <PageHeading>Credientials</PageHeading>
+            <PageHeading>Credentials</PageHeading>
 
             <Input
               field="username"

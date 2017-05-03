@@ -5,7 +5,7 @@ exports[`View test View page renders without crashing 1`] = `
     className="dQyqsI">
     <h3
       className="fbPKgP">
-      Credientials
+      Credentials
     </h3>
     <div
       className="form-group has-feedback">
