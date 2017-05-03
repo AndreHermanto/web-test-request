@@ -63,7 +63,7 @@ class FamilyMemberModule extends Component
               {this.props.handleOnClick &&
                 <Button 
                   bsStyle="link"
-                  onClick={this.handleDetailsClick}
+                  onClick={this.handleOnClick}
                 >
                   <Glyphicon glyph="pencil"/> Edit
                 </Button>

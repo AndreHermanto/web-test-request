@@ -124,7 +124,7 @@ class PatientDetailsModule extends Component
             {this.props.handleOnClick &&
               <Button 
                 bsStyle="link"
-                onClick={this.handleDetailsClick}
+                onClick={this.handleClinicalInfoClick}
               >
                 <Glyphicon glyph="pencil"/> Edit
               </Button>
