@@ -3,7 +3,9 @@
  * @return {Object[]} json Currently returns an array of test panel object - including id and label
  */
 export function getTestRequestById(id) {
-  return fetch(`${process.env.REACT_APP_BASE_URL}/test-requests/${id}`)
+  return fetch(`${process.env.REACT_APP_BASE_URL}/test-requests/${id}`, {
+      credentials: 'include'
+    })
     .then((response) => response.json())
     .then((json) => json.data);
 }
@@ -13,7 +15,9 @@ export function getTestRequestById(id) {
  * @return {Object[]} json Currently returns an array of test panel object - including id and label
  */
 export function getTestRequestByPatientInfo(firstName, lastName, dob) {
-  return fetch(`${process.env.REACT_APP_BASE_URL}/test-requests?firstName=${firstName}&lastName=${lastName}&dob=${dob}`)
+  return fetch(`${process.env.REACT_APP_BASE_URL}/test-requests?firstName=${firstName}&lastName=${lastName}&dob=${dob}`, {
+      credentials: 'include'
+    })
     .then((response) => response.json())
     .then((json) => json.data);
 }
