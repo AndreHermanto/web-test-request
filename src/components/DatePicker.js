@@ -66,7 +66,7 @@ class DatePicker extends Component {
         !date.day || !date.month || !date.year ||
         date.day > 31 || date.day < 1 ||
         date.month > 12 || date.day < 1 ||
-        date.year.length !== 4
+        date.year.length !== 4 || date.year < 1900
       ) {
         value = '';
       } else {
