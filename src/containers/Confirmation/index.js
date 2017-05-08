@@ -65,9 +65,14 @@ class Confirmation extends Component {
   }
   
   handlePrintButtonClick(type) {
+    var typeLabel = 'Clinician Record';
+    if (type === 2) typeLabel = 'Blood Collection';
+    
     this.setState(setPrintType(this.state, type));
+    document.title = `Genome One Test Request - ${typeLabel} #${this.state.form.latestRequestID}`;
     setTimeout(() => {
       window.print();
+      document.title = 'Genome One Test Request';
     }, 200);
   }
   
