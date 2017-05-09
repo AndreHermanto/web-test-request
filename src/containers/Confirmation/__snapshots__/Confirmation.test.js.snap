@@ -15,20 +15,22 @@ exports[`Confirmation test Confirmation page renders without crashing 1`] = `
       <div
         className="col-md-6">
         <button
-          className="hrhdPQ"
+          className="kDwGLh"
           onClick={[Function]}
           style={
             Object {
               "marginLeft": "20%",
             }
           }>
-          Print out form for your records
+          Print out form 
+          <br />
+           for your records
         </button>
       </div>
       <div
         className="col-md-6">
         <button
-          className="hrhdPQ"
+          className="kDwGLh"
           onClick={[Function]}
           style={
             Object {
@@ -44,7 +46,7 @@ exports[`Confirmation test Confirmation page renders without crashing 1`] = `
       <div
         className="col-md-6">
         <button
-          className="eAkGBX"
+          className="jkcjyt"
           onClick={[Function]}
           style={
             Object {
@@ -57,7 +59,7 @@ exports[`Confirmation test Confirmation page renders without crashing 1`] = `
       <div
         className="col-md-6">
         <button
-          className="eAkGBX"
+          className="jkcjyt"
           onClick={[Function]}
           style={
             Object {

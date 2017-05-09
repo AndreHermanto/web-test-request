@@ -1,7 +1,7 @@
 exports[`ConfirmationModal the button and modal renders correctly 1`] = `
 <span>
   <button
-    className="bBdbjl"
+    className="duaYLW"
     onClick={[Function]}>
     Confirm
   </button>

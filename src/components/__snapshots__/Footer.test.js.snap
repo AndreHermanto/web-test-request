@@ -1,83 +1,100 @@
 exports[`<Footer /> Match Snapshot 1`] = `
 <div
-  className="noPrint dmZfJj">
+  className="noPrint bmNkUc">
   <div
-    className="inxpzu">
+    className="fxxkca">
     <div
       className="row">
       <div
-        className="col-md-3">
+        className="col-md-2"
+        style={
+          Object {
+            "marginRight": 25,
+          }
+        }>
         <h1
-          className="UcpAd">
+          className="dgeqig">
           Learn More
         </h1>
         <div
-          className="fpKqHF">
+          className="fRgoNH">
           <a
-            className="jufSRj"
-            href="http://genomeone-new.webflow.io/partners">
-            Partners
-          </a>
-          <br />
-          <a
-            className="jufSRj"
+            className="grUvqh"
             href="http://genomeone-new.webflow.io/privacy-policy">
             Privacy Policy
           </a>
-          <br />
           <a
-            className="jufSRj"
+            className="grUvqh"
             href="http://genomeone-new.webflow.io/resources/careers">
             Careers
           </a>
-          <br />
           <a
-            className="jufSRj"
+            className="grUvqh"
             href="http://genomeone-new.webflow.io/about-us">
-            About us
+            About Us
           </a>
-          <br />
           <a
-            className="jufSRj"
+            className="grUvqh"
             href="http://genomeone-new.webflow.io/news">
             News
+          </a>
+          <a
+            className="grUvqh"
+            href="http://genomeone-new.webflow.io/contact-us">
+            Contact
           </a>
         </div>
       </div>
       <div
-        className="col-md-3">
+        className="col-md-4">
         <h1
-          className="UcpAd">
+          className="dgeqig">
           Contact Us
         </h1>
-        <a
-          className="hzPsem"
-          href="mailto:enquiries@genome.one?subject=General Inquiry">
-          enquiries@genome.one
-        </a>
         <div
-          className="fpKqHF"
+          className="fRgoNH"
           style={
             Object {
               "color": "#929292",
             }
           }>
-          P +61 2 9359 8002
-          <br />
-          370 Victoria St.
-          <br />
-          Darlinghurst, NSW 2010,
-          <br />
-          Australia
-          <br />
-          <br />
-          ACN 608 029 732
+          <div
+            className="kJXHYL">
+            370 Victoria St.
+          </div>
+          <div
+            className="kJXHYL">
+            Darlinghurst,
+          </div>
+          <div
+            className="kJXHYL">
+            NSW 2010, Australia
+          </div>
+          <div
+            className="kJXHYL">
+            ACN 608 029 732
+          </div>
+          <a
+            className="hVwlIN"
+            href="mailto:enquiries@genome.one?subject=General Inquiry">
+            enquiries@genome.one
+          </a>
+          <a
+            className="hVwlIN"
+            href="tel:+61293598002">
+            +61 2 9359 8002
+          </a>
         </div>
       </div>
       <div
-        className="jlxRBr col-md-6">
+        className="jlxRBr col-md-6"
+        style={
+          Object {
+            "marginLeft": -25,
+          }
+        }>
         <a
-          className="eQcTdK"
+          className="buLijZ"
           href="http://www.garvan.org.au/">
           <img
             alt="logo"
@@ -90,7 +107,7 @@ exports[`<Footer /> Match Snapshot 1`] = `
             } />
         </a>
         <a
-          className="eQcTdK"
+          className="buLijZ"
           href="http://www.genome.one/">
           <img
             alt="logo"
@@ -98,46 +115,53 @@ exports[`<Footer /> Match Snapshot 1`] = `
             src="test-file-stub"
             style={
               Object {
-                "width": 132,
+                "width": 170,
               }
             } />
         </a>
         <div
-          className="dCXArS">
+          className="dpeMvn">
           Genome.One is a wholly owned subsidiary of the Garvan Institute of Medical Research.
         </div>
       </div>
     </div>
   </div>
-  <hr
-    className="kMeaUb" />
   <div
-    className="irWDrC">
+    className="crjzcD">
     <div
       className="row">
       <div
-        className="mXBHO col-md-8">
-        COPYRIGHT © 2016 GENOME.ONE. ALL RIGHTS RESERVED
+        className="czsMyP col-md-8">
+        Copyright © 2017 Genome.One. All Rights Reserved
       </div>
       <div
         className="jQzDYo col-md-4">
         <a
-          className="feCCVI"
+          className="jTDtNq"
           href="https://www.facebook.com/Genome.One/"
           target="_blank">
           <img
             alt="fb"
-            height="23"
-            src="https://daks2k3a4ib2z.cloudfront.net/56fb123ccf591b312d55dbb6/5897e8d62a25945021987407_FB-f-Logo__blue_100.png" />
+            height="35"
+            src="http://uploads.webflow.com/58ef79e6af69d159faa3bec0/58fe720eca066f71c96775d8_facebook.svg" />
         </a>
         <a
-          className="footer-social-link w-inline-block feCCVI"
+          className="footer-social-link w-inline-block jTDtNq"
           href="https://twitter.com/GenomeOneHealth"
           target="_blank">
           <img
             alt="twitter"
             height="35"
-            src="https://daks2k3a4ib2z.cloudfront.net/56fb123ccf591b312d55dbb6/5897e87dbfd5fa6c63bc313e_TwitterLogo_%2355acee.png" />
+            src="http://uploads.webflow.com/58ef79e6af69d159faa3bec0/58fe721857dd045f17ae2afe_twitter.svg" />
+        </a>
+        <a
+          className="footer-social-link w-inline-block jTDtNq"
+          href="https://www.linkedin.com/company/genome.one"
+          target="_blank">
+          <img
+            alt="twitter"
+            height="35"
+            src="http://uploads.webflow.com/58ef79e6af69d159faa3bec0/58fe7232d89baf2a02258fad_linkedin.svg" />
         </a>
       </div>
     </div>

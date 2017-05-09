@@ -111,7 +111,7 @@ class OrderTest extends Component {
   render() {
     return (
       <div>
-        <PageHeading>Step 1: Select a Test</PageHeading>
+        <PageHeading>Step 1: Select Test</PageHeading>
         
         <TestPanelCategory 
           field="chosenPanelMainCategory"

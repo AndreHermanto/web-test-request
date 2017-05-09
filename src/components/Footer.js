@@ -7,8 +7,7 @@ import logoGarvan from '../assets/images/logo_footer_garvan.png';
 const FooterContainer = styled.div`
   position: relative;
   z-index: 1;
-  padding-top: 50px;
-  padding-bottom: 0;
+  padding: 50px 20px 20px 20px;
   background-color: #fff;
   border-top: 1px solid #e0e0e0;
   margin-top: 12px;
@@ -19,14 +18,10 @@ const FooterContent = styled.div`
   margin-right: auto;
   margin-bottom: 55px;
   max-width: 960px;
-  padding-left: 20px;
-  padding-right: 20px;
-`;
-
-const FooterBreakLine = styled.hr`
-  padding: 0;
-  margin: 0;
-  color: #333c45;
+  font-weight: 300;
+  font-size: 16px;
+  color: #484848;
+  line-height: 16px;
 `;
 
 const FooterDisclaimer = styled.div`
@@ -36,30 +31,28 @@ const FooterDisclaimer = styled.div`
   margin-left: auto;
   margin-right: auto;
   max-width: 960px;
-  padding-left: 20px;
-  padding-right: 20px;
 `;
 
 const Header = styled.h1`
-  color: #000;
-  font-size: 13px;
-  line-height: 19px;
-  letter-spacing: 3px;
+  color: black;
+  line-height: 16px;
   max-width: 100%;
   display: inline-block;
-  text-transform: uppercase;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  font-weight: 700;
+  font-size: 16px;
 `;
 
 const Info = styled.div`
-  line-height: 26px;
   font-weight: 400;
 `;
 
-const MailTo = styled.a`
+const Contact = styled.a`
   color: #00a6b6;
   text-decoration: none;
   cursor: pointer;
+  display: block;
+  padding: 8px 0px 8px 0px;
 
   &:hover {
     color: #00a6b6;
@@ -67,10 +60,19 @@ const MailTo = styled.a`
   }
 `;
 
+const FooterBlock = styled.div`
+  color: #484848;
+  padding: 8px 0px 8px 0px;
+  margin: 0;
+`;
+
 const FooterLink = styled.a`
-  color: #000;
+  color: #484848;
   text-decoration: none;
   cursor: pointer;
+  padding: 8px 0px 8px 0px;
+  margin: 0;
+  display: block;
 `;
 
 const LogoContainer = styled(Col)`
@@ -87,22 +89,22 @@ const Logo = styled.img`
 `;
 
 const LogoLink = styled.a`
-  margin-right: 15px;
+  margin-left: 15px;
 `;
 
 const Subsidiary = styled.div`
   margin-top: 36px;
   padding-left: 113px;
-  color: #333c45;
+  color: #757575;
   line-height: 20px;
 `;
 
 const Disclaimer = styled(Col)`
-  font-size: 10px;
-  letter-spacing: 1px;
+  font-size: 14px;
+  line-height: 21px;
   margin-top: 8px;
-  text-transform: uppercase;
-  color: #929292;
+  color: #757575;
+  margin-left: 0;
 `;
 
 const SocialContainer = styled(Col)`
@@ -111,8 +113,7 @@ const SocialContainer = styled(Col)`
 `;
 
 const SocialLogo = styled.a`
-  padding-left: 20px;
-  opacity: .7;
+  margin-left: 10px;
 `;
 
 export default class Footer extends React.Component 
@@ -123,38 +124,31 @@ export default class Footer extends React.Component
       <FooterContainer className="noPrint">
         <FooterContent>
           <Row>
-            <Col md={3}>
+            <Col md={2} style={{ marginRight: 25 }}>
               <Header>Learn More</Header>
               <Info>
-                <FooterLink href="http://genomeone-new.webflow.io/partners">Partners</FooterLink>
-                <br />
                 <FooterLink href="http://genomeone-new.webflow.io/privacy-policy">Privacy Policy</FooterLink>
-                <br />
                 <FooterLink href="http://genomeone-new.webflow.io/resources/careers">Careers</FooterLink>
-                <br />
-                <FooterLink href="http://genomeone-new.webflow.io/about-us">About us</FooterLink>
-                <br />
+                <FooterLink href="http://genomeone-new.webflow.io/about-us">About Us</FooterLink>
                 <FooterLink href="http://genomeone-new.webflow.io/news">News</FooterLink>
+                <FooterLink href="http://genomeone-new.webflow.io/contact-us">Contact</FooterLink>
               </Info>
             </Col>
 
-            <Col md={3}>
+            <Col md={4}>
               <Header>Contact Us</Header>
-              <MailTo href="mailto:enquiries@genome.one?subject=General Inquiry">enquiries@genome.one</MailTo>
+              
               <Info style={{ color: '#929292' }}>
-                P +61 2 9359 8002<br />
-                370 Victoria St.
-                <br />
-                Darlinghurst, NSW 2010,
-                <br />
-                Australia
-                <br />
-                <br />
-                ACN 608 029 732
+                <FooterBlock>370 Victoria St.</FooterBlock>
+                <FooterBlock>Darlinghurst,</FooterBlock>
+                <FooterBlock>NSW 2010, Australia</FooterBlock>
+                <FooterBlock>ACN 608 029 732</FooterBlock>
+                <Contact href="mailto:enquiries@genome.one?subject=General Inquiry">enquiries@genome.one</Contact>
+                <Contact href="tel:+61293598002">+61 2 9359 8002</Contact>
               </Info>
             </Col>
 
-            <LogoContainer md={6}>
+            <LogoContainer md={6} style={{ marginLeft: -25 }}>
               <LogoLink href="http://www.garvan.org.au/">
                 <Logo 
                   src={logoGarvan} 
@@ -165,7 +159,7 @@ export default class Footer extends React.Component
                 <Logo 
                   src={logoGenome} 
                   alt="logo" 
-                  style={{ width: 132 }}/>
+                  style={{ width: 170 }}/>
               </LogoLink>
               <Subsidiary>
                 Genome.One is a wholly owned subsidiary of the Garvan Institute of Medical Research.
@@ -173,16 +167,18 @@ export default class Footer extends React.Component
             </LogoContainer>
           </Row>
         </FooterContent>
-        <FooterBreakLine />
         <FooterDisclaimer>
           <Row>
-            <Disclaimer md={8}>COPYRIGHT © 2016 GENOME.ONE. ALL RIGHTS RESERVED</Disclaimer>
+            <Disclaimer md={8}>Copyright © 2017 Genome.One. All Rights Reserved</Disclaimer>
             <SocialContainer md={4}>
               <SocialLogo href="https://www.facebook.com/Genome.One/" target="_blank">
-                <img height="23" alt="fb" src="https://daks2k3a4ib2z.cloudfront.net/56fb123ccf591b312d55dbb6/5897e8d62a25945021987407_FB-f-Logo__blue_100.png" />
+                <img height="35" alt="fb" src="http://uploads.webflow.com/58ef79e6af69d159faa3bec0/58fe720eca066f71c96775d8_facebook.svg" />
               </SocialLogo>
               <SocialLogo className="footer-social-link w-inline-block" href="https://twitter.com/GenomeOneHealth" target="_blank">
-                <img height="35" alt="twitter" src="https://daks2k3a4ib2z.cloudfront.net/56fb123ccf591b312d55dbb6/5897e87dbfd5fa6c63bc313e_TwitterLogo_%2355acee.png" />
+                <img height="35" alt="twitter" src="http://uploads.webflow.com/58ef79e6af69d159faa3bec0/58fe721857dd045f17ae2afe_twitter.svg" />
+              </SocialLogo>
+              <SocialLogo className="footer-social-link w-inline-block" href="https://www.linkedin.com/company/genome.one" target="_blank">
+                <img height="35" alt="twitter" src="http://uploads.webflow.com/58ef79e6af69d159faa3bec0/58fe7232d89baf2a02258fad_linkedin.svg" />
               </SocialLogo>
             </SocialContainer>
           </Row>

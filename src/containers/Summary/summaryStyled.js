@@ -46,11 +46,12 @@ export const Gene = styled(Label)`
   font-weight: 300 !important;
   background-color: #00a6b6 !important;
   padding: 5px 10px 5px 10px !important;
-  margin-left:5px;
+  margin-left: 5px;
 `;
 export const GeneLabel = styled(Label)`
   margin-right: 4px;
   display: inline-block !important;
+  padding: 4px 8px 3px 8px !important;
   font-weight: 300 !important;
 `;
 export const SummaryNotes = styled.div`

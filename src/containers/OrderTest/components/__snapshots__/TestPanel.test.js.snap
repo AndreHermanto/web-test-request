@@ -25,7 +25,6 @@ exports[`TestPanel TestPanel overall renders well 1`] = `
             "height": 30,
           }
         } />
-      
       <div
         style={
           Object {
@@ -55,7 +54,6 @@ exports[`TestPanel TestPanel overall renders well 1`] = `
             "height": 30,
           }
         } />
-      
       <div
         style={
           Object {
@@ -118,17 +116,17 @@ exports[`TestPanel TestPanel overall renders well 1`] = `
         <div
           className="col-lg-9">
           <span
-            className="hynVdE label label-default"
+            className="coWrgb label label-default"
             data-inCore={true}>
             DDD
           </span>
           <span
-            className="hynVdE label label-default"
+            className="coWrgb label label-default"
             data-inCore={true}>
             EEE
           </span>
           <span
-            className="hynVdE label label-default"
+            className="coWrgb label label-default"
             data-inCore={true}>
             FFF
           </span>
@@ -177,7 +175,7 @@ exports[`TestPanel TestPanel overall renders well 1`] = `
         <div
           className="col-lg-9">
           <span
-            className="hynVdE label label-default"
+            className="coWrgb label label-default"
             data-inCore={true}>
             FFF
           </span>

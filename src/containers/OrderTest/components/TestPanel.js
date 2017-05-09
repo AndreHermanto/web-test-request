@@ -17,8 +17,10 @@ import grayCheck from './../../../assets/images/checked-gray.svg';
 
 const Gene = styled(Label)`
   margin-right: 4px;
+  margin-bottom: 4px;
   display: inline-block !important;
   font-weight: 300 !important;
+  padding: 4px 8px 3px 8px !important;
   background: ${props => props['data-inCore'] ? '#7788aa' : '#00a6b6'} !important;
 `;
 
@@ -47,13 +49,6 @@ const TestContainer = styled.div`
   -moz-box-shadow: inset 7px 0px 0px 0px ${props => props.selected ? '#00a6b6' : '#ccc'};
   box-shadow: inset 7px 0px 0px 0px ${props => props.selected ? '#00a6b6' : '#ccc'};
 `;
-
-const Tag = styled(Label)`
-  float: right;
-  margin-right: 12px;
-  padding: 4px 8px 3px 8px !important;
-  background: ${props => props.type === 'core' ? '#00d6e6' : '#007580'} !important;
-`; 
 
 /**
  * This creates a set of gene label buttons via a single component.
@@ -134,12 +129,6 @@ class TestPanel extends Component {
   }
 }
 
-function determineTag(label) {
-  if(label.search('Core Panel') !== -1) return <Tag type="core">Core</Tag>;
-  if(label.search('Complete Panel') !== -1) return <Tag type="complete">Complete</Tag>;
-  return '';
-}
-
 function Panel(props) {
   // Process in a way that the format would work with RadioSet module - needs id and label.
   var geneList = props.option.geneLists ? props.option.geneLists.slice(0) : [];
@@ -161,8 +150,6 @@ function Panel(props) {
           src={props.image} 
           alt="logo" 
           style={{ height:30, float: 'left'}} />
-
-        {determineTag(props.option.label)}
 
         <div style={{ 
           height: 30, 

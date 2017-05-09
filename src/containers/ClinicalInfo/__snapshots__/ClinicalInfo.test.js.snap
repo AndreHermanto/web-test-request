@@ -1,7 +1,7 @@
 exports[`ClinicalInfo: index renders without crashing 1`] = `
 <div>
   <h3
-    className="fbPKgP">
+    className="kiJONz">
     Step 3: Clinical Information
   </h3>
   <div
@@ -204,7 +204,7 @@ exports[`ClinicalInfo: index renders without crashing 1`] = `
       </div>
     </div>
     <button
-      className="bBdbjl"
+      className="duaYLW"
       onClick={[Function]}
       style={
         Object {
@@ -295,14 +295,14 @@ exports[`ClinicalInfo: index renders without crashing 1`] = `
       className="SfhHK help-block" />
   </div>
   <button
-    className="ieDBA"
+    className="lfojZt"
     disabled={false}
     label="Back"
     onClick={[Function]}>
     Back
   </button>
   <button
-    className="bBdbjl"
+    className="duaYLW"
     disabled={false}
     onClick={[Function]}
     type="submit">

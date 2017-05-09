@@ -10,8 +10,11 @@ import colorLine from './../assets/images/color_line.jpg';
 
 export const PageHeading = styled.h3`
   margin-bottom: 21px;
-  font-weight: 500;
   text-transform:capitalize;
+  font-weight: 400;
+  font-size: 32px
+  line-height: 38px;
+  color: #484848;
 
   &:after { 
     background:url(${colorLine}) no-repeat;
@@ -32,22 +35,20 @@ export const SubHeading = styled.h4`
 
 export const FormButton = styled.button`
   margin: 18px 6px 0px 0px;
-  border-style: none;
-  background-color: ${props => props.back ? '#ff6f2b' : props.cancel? 'red' : '#00a6b6'};
-  color: white;
-  padding: 11px 25px;
+  border: 2px solid;
+  border-color: rgba(0, 0, 0, .1)
+  border-radius: 100px;
+  background-color: ${props => props.back ? '#fff' : props.cancel? 'red' : '#00a6b6'};
+  color: ${props => props.back ? 'black' : '#fff'};
+  padding: 0 30px 0 30px;
+  height: 40px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 12px;
-  border-radius: 0px;
-  -webkit-transition: background-color 0.3s;
-  -webkit-transition-timing-function: ease;
-  text-transform: uppercase;
-
-  &:hover {
-    background-color: ${props => props.back ? '#ff8d57' : props.cancel? '#e65f5f' :'#00c9dc'};
-  }
+  font-size: 14px;
+  font-family: Avenir;
+  line-height: 16px;
+  font-weight: 800;
 `;
 
 

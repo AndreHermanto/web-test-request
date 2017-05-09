@@ -31,7 +31,6 @@ const ConfirmationNote = styled.h4`
 `;
 
 const ConfirmationButton = styled(FormButton)`
-  border: ${props => props.main ? '' : '1px solid #00a6b6'};
   background-color: ${props => props.main ? '#00a6b6' : '#fff'};
   color: ${props => props.main ? '#fff' : '#333'};
   width: 80%;
@@ -106,7 +105,7 @@ class Confirmation extends Component {
             <Row>
               <Col md={6}>
                 <ConfirmationButton main onClick={this.handlePrintRecordButtonClick} style={{marginLeft: '20%'}}>
-                  Print out form for your records
+                  Print out form <br /> for your records
                 </ConfirmationButton>
               </Col>
               <Col md={6}>

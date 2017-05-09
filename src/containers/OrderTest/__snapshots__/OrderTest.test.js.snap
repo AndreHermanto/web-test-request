@@ -1,8 +1,8 @@
 exports[`OrderTest: index renders without crashing - initial state with empty geneList 1`] = `
 <div>
   <h3
-    className="fbPKgP">
-    Step 1: Select a Test
+    className="kiJONz">
+    Step 1: Select Test
   </h3>
   <div
     className="form-group">
@@ -22,7 +22,7 @@ exports[`OrderTest: index renders without crashing - initial state with empty ge
   <br />
   <br />
   <button
-    className="bBdbjl"
+    className="duaYLW"
     onClick={[Function]}
     type="submit">
     Next
